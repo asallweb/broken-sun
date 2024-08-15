@@ -4433,8 +4433,6 @@ body {
 .class__runes-circle-1 img,
 .class__runes-circle-2 img,
 .class__runes-circle-3 img {
-  -webkit-animation: rotate 20s linear infinite;
-  animation: rotate 20s linear infinite;
   width: 100%;
   height: auto;
   -o-object-fit: cover;

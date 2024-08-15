@@ -4068,6 +4068,90 @@ body {
   background: url(../img/background/register-button_disabled.webp) 0 0 no-repeat;
   background-size: 100% 100%
 }
+.class-icon {
+  position: relative;
+  color: #b19f63;
+  line-height: 1.36;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  transition: all .3s ease-in-out
+}
+.class-icon:hover {
+  cursor: pointer;
+  color: #f9df94;
+  text-shadow: 0 2px 5px rgba(0,0,0,.65)
+}
+.class-icon._active {
+  cursor: pointer;
+  color: #f9df94;
+  text-shadow: 0 2px 5px rgba(0,0,0,.65)
+}
+.class-icon__wrapper {
+  position: relative;
+  width: 64px;
+  height: 64px
+}
+.class-icon__wrapper::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 74px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  background-size: contain!important;
+  opacity: 1;
+  transition: all .3s ease-in-out
+}
+.class-icon__wrapper:hover::after {
+  opacity: 0
+}
+.class-icon__wrapper::before {
+  content: "";
+  background: url(../img/icons/classes/shadow__active.webp) center center no-repeat;
+  background-size: contain;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+  display: block;
+  width: 86px;
+  height: 86px;
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
+}
+.class-icon__wrapper:hover::before {
+  opacity: 1
+}
+.class-icon._active .class-icon__wrapper::before {
+  opacity: 1
+}
+.class-icon._active .class-icon__wrapper::after {
+  opacity: 0
+}
+._red .class-icon__wrapper::after {
+  background: url(../img/icons/classes/shadow__red.webp) center center no-repeat
+}
+._green .class-icon__wrapper::after {
+  background: url(../img/icons/classes/shadow__green.webp) center center no-repeat
+}
+._violet .class-icon__wrapper::after {
+  background: url(../img/icons/classes/shadow__violet.webp) center center no-repeat
+}
+.class-icon img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: relative;
+  z-index: 1
+}
 .hero {
   position: relative;
   margin-bottom: 10px
@@ -4373,7 +4457,37 @@ body {
 .gods__item-text p {
   margin-bottom: 15px
 }
+.classes {
+  position: relative
+}
+.classes::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 75px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: url(../img/background/shadow.webp) left top repeat-x
+}
+.classes::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 75px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: url(../img/background/shadow.webp) left top repeat-x;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
 .class {
+  display: none;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -4381,24 +4495,27 @@ body {
   position: relative;
   overflow: hidden
 }
+.class._active {
+  display: block
+}
 .class._bg-warrior {
-  background-image: url(../img/background/class__warrior.webp)
+  background-image: url(../img/background/classes/class__warrior.webp)
 }
 .class._bg-assasin {
-  background-image: url(../img/background/class__assasin.webp)
+  background-image: url(../img/background/classes/class__assasin.webp)
 }
 .class._bg-mage {
-  background-image: url(../img/background/class__mage.webp)
+  background-image: url(../img/background/classes/class__mage.webp)
 }
 .class__runes {
   position: absolute;
   left: 50%;
-  top: 0;
+  top: 50%;
   width: 100%;
   height: 100%;
   max-width: 1440px;
-  -webkit-transform: translate(-50%,0);
-  transform: translate(-50%,0)
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%)
 }
 .class__runes-center {
   position: absolute;
@@ -4406,6 +4523,12 @@ body {
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%)
+}
+.class__runes-center img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover
 }
 .class__runes-circle-1 {
   position: absolute;
@@ -4418,21 +4541,23 @@ body {
 }
 .class__runes-circle-2 {
   position: absolute;
-  left: 0;
+  left: -60px;
   bottom: 0;
-  width: 504px;
-  height: 504px
+  width: 472px;
+  height: 472px
 }
 .class__runes-circle-3 {
   position: absolute;
-  right: 10px;
-  bottom: 20px;
-  width: 540px;
-  height: 540px
+  right: -60px;
+  bottom: -50px;
+  width: 472px;
+  height: 472px
 }
 .class__runes-circle-1 img,
 .class__runes-circle-2 img,
 .class__runes-circle-3 img {
+  -webkit-animation: rotate 20s linear infinite;
+  animation: rotate 20s linear infinite;
   width: 100%;
   height: auto;
   -o-object-fit: cover;
@@ -4479,20 +4604,6 @@ body {
   align-items: center;
   gap: 56px;
   margin-bottom: 55px
-}
-.class__list-item {
-  color: #b19f63;
-  line-height: 1.36;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 8px
-}
-.class__list-item:hover {
-  cursor: pointer;
-  color: #f9df94;
-  text-shadow: 0 2px 5px rgba(0,0,0,.65)
 }
 .class__title {
   color: #f9df94;
@@ -4592,6 +4703,80 @@ body {
     transform: rotate(0)
   }
 }
+.pvp {
+  position: relative
+}
+.pvp::after,
+.pvp::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100px;
+  position: absolute;
+  top: 0;
+  background: url(../img/background/shadow__vertical.webp) left top repeat-y;
+  pointer-events: none;
+  z-index: 1
+}
+.pvp::before {
+  left: 0;
+  -webkit-transform: scale(-1,1);
+  transform: scale(-1,1)
+}
+.pvp::after {
+  right: 0
+}
+.pvp .__container {
+  width: 100%
+}
+.pvp__wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute
+}
+.pvp__content {
+  position: relative;
+  z-index: 1;
+  max-width: 504px;
+  margin-left: 8.5%;
+  margin-top: -15px
+}
+._text-right .pvp__content {
+  margin-left: auto;
+  margin-right: 8.5%
+}
+.pvp__title {
+  color: #f9df94;
+  text-shadow: 0 2px 5px rgba(0,0,0,.65);
+  font-size: 42px;
+  line-height: 1.19;
+  margin-bottom: 16px
+}
+.pvp__text {
+  color: #e6e6e6;
+  text-shadow: 0 2px 5px rgba(0,0,0,.65);
+  font-weight: 300;
+  line-height: 1.36
+}
+.pvp__background {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.pvp .border-bottom {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,rgba(119,96,48,0) 0,#776030 10%,#ffebb2 50%,#776030 90%,rgba(119,96,48,0) 100%);
+  z-index: 1
+}
 @media (min-width:90em) {
   [class*=__container] {
     padding-left: 2.5rem
@@ -4631,6 +4816,10 @@ body {
     font-size: 14px;
     width: 175px;
     height: 36px
+  }
+  .class-icon {
+    font-size: 18px;
+    line-height: 1.22
   }
   .hero {
     margin-bottom: 0
@@ -4732,37 +4921,24 @@ body {
   .class__runes {
     max-width: 920px
   }
-  .class__runes-center img {
-    width: 156px;
-    height: auto;
-    -o-object-fit: cover;
-    object-fit: cover
+  .class__runes-center {
+    width: 156px
   }
-  .class__runes-circle-1 img {
+  .class__runes-circle-1 {
     width: 494px;
-    height: auto;
-    -o-object-fit: cover;
-    object-fit: cover
+    height: 494px
   }
   .class__runes-circle-2 {
-    left: 10%;
-    bottom: 5%
-  }
-  .class__runes-circle-2 img {
+    left: 5%;
+    bottom: 5%;
     width: 250px;
-    height: auto;
-    -o-object-fit: cover;
-    object-fit: cover
+    height: 250px
   }
   .class__runes-circle-3 {
     right: 8%;
-    bottom: 1%
-  }
-  .class__runes-circle-3 img {
+    bottom: 1%;
     width: 244px;
-    height: auto;
-    -o-object-fit: cover;
-    object-fit: cover
+    height: 244px
   }
   .class__content {
     max-width: 360px;
@@ -4777,16 +4953,6 @@ body {
   }
   .class__list {
     margin-bottom: 50px
-  }
-  .class__list-item {
-    font-size: 18px;
-    line-height: 1.22
-  }
-  .class__list-item img {
-    width: 48px;
-    height: auto;
-    -o-object-fit: cover;
-    object-fit: cover
   }
   .class__title {
     font-size: 22px;
@@ -4815,6 +4981,38 @@ body {
   }
   .class__image-src {
     max-width: 577px
+  }
+  .pvp__content {
+    max-width: 357px;
+    margin-top: 0
+  }
+  .pvp__title {
+    text-shadow: 0 3px 3px rgba(0,0,0,.25);
+    font-size: 26px;
+    line-height: 1.23
+  }
+  .pvp__text {
+    text-shadow: 0 3px 3px rgba(0,0,0,.25);
+    font-size: 18px;
+    line-height: 1.22
+  }
+  .pvp__background {
+    height: 345px
+  }
+}
+@media (max-width:920px) {
+  .class-icon__wrapper {
+    width: 48px;
+    height: 48px
+  }
+  .class-icon__wrapper::after {
+    width: 54px;
+    height: 55px
+  }
+  .class-icon__wrapper::before {
+    width: 64px;
+    height: 64px;
+    top: -8px
   }
 }
 @media (max-width:919px) {
@@ -4873,25 +5071,16 @@ body {
   .class__runes {
     max-width: 768px
   }
-  .class__runes-center img {
-    width: 176px
-  }
-  .class__runes-circle-1 img {
-    width: 540px
-  }
   .class__runes-circle-2 {
-    left: 10%;
-    bottom: 5%
-  }
-  .class__runes-circle-2 img {
-    width: 208px
+    left: 1%;
+    bottom: 5%;
+    width: 208px;
+    height: 208px
   }
   .class__runes-circle-3 {
-    right: 8%;
-    bottom: 1%
-  }
-  .class__runes-circle-3 img {
-    width: 202px
+    right: 3%;
+    width: 202px;
+    height: 202px
   }
   .class__content {
     margin-left: 0;
@@ -4919,6 +5108,15 @@ body {
   }
   .class__image-src {
     max-width: 478px
+  }
+  .pvp__content {
+    margin-left: 0
+  }
+  ._text-right .pvp__content {
+    margin-right: 0
+  }
+  .pvp__background {
+    height: 288px
   }
 }
 @media (max-width:768px) {
@@ -5040,29 +5238,36 @@ body {
   }
   .class__runes {
     max-width: 390px;
-    -webkit-transform: translate(-65%,10%);
-    transform: translate(-65%,10%)
+    left: 0;
+    top: 0;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
   }
-  .class__runes-center img {
-    width: 112px
+  .class__runes-center {
+    width: 112px;
+    left: 70px;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%)
   }
-  .class__runes-circle-1 img {
-    width: 350px
+  .class__runes-circle-1 {
+    width: 350px;
+    height: 350px;
+    left: -50px;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%)
   }
   .class__runes-circle-2 {
     left: auto;
     bottom: auto;
     right: 0;
-    top: 5%
-  }
-  .class__runes-circle-2 img {
+    top: 5%;
     width: 160px
   }
   .class__runes-circle-3 {
     right: -14%;
-    bottom: 10%
-  }
-  .class__runes-circle-3 img {
+    bottom: 10%;
     width: 160px
   }
   .class__body {
@@ -5123,6 +5328,44 @@ body {
   }
   .class__image-src {
     max-width: 380px
+  }
+  .pvp::after,
+  .pvp::before {
+    display: none
+  }
+  .pvp .__container {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 20px
+  }
+  .pvp__content {
+    max-width: 270px;
+    margin-top: auto;
+    padding-left: 5px
+  }
+  ._text-right .pvp__content {
+    margin-left: 0;
+    margin-right: auto
+  }
+  .pvp__title {
+    font-size: 22px;
+    line-height: 1.36;
+    margin-bottom: 8px
+  }
+  .pvp__text {
+    font-size: 14px;
+    line-height: 1.28
+  }
+  .pvp__background {
+    height: 325px;
+    left: -43%;
+    position: relative;
+    width: 145%
+  }
+  .pvp__background._scaled-mobile {
+    -webkit-transform: scale(-1,1);
+    transform: scale(-1,1)
   }
 }
 @media (max-width:500px) {

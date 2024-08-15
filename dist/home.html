@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240815125021">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240815192934">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,14 +113,14 @@
 						</div>
 					</div>
 					<picture>
-						<source srcset="img/background/hero_2k.webp" media="(min-width: 1921px)">
-						<source srcset="img/background/hero_1440.webp" media="(min-width: 1200px)">
-						<source srcset="img/background/hero_920.webp" media="(min-width: 920px)">
-						<source srcset="img/background/hero_768.webp" media="(min-width: 400px)">
-						<source srcset="img/background/hero_390.webp" media="(min-width: 320px)">
-						<img src="img/background/hero_390.webp" class="hero__background">
+						<source srcset="img/background/hero/hero_2k.webp" media="(min-width: 1921px)">
+						<source srcset="img/background/hero/hero_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/background/hero/hero_920.webp" media="(min-width: 920px)">
+						<source srcset="img/background/hero/hero_768.webp" media="(min-width: 400px)">
+						<source srcset="img/background/hero/hero_390.webp" media="(min-width: 320px)">
+						<img src="img/background/hero/hero_390.webp" class="hero__background">
 					</picture>
-					<img src="img/background/hero__arrow.webp" class="hero__arrow">
+					<img src="img/background/hero/hero__arrow.webp" class="hero__arrow">
 				</div>
 			</section>
 			<section class="world">
@@ -132,12 +132,12 @@
 						</div>
 					</div>
 					<picture>
-						<source srcset="img/background/world_2k.webp" media="(min-width: 1921px)">
-						<source srcset="img/background/world_1440.webp" media="(min-width: 1200px)">
-						<source srcset="img/background/world_920.webp" media="(min-width: 920px)">
-						<source srcset="img/background/world_768.webp" media="(min-width: 501px)">
-						<source srcset="img/background/world_390.webp" media="(min-width: 320px)">
-						<img src="img/background/world_390.webp" class="world__background">
+						<source srcset="img/background/world/world_2k.webp" media="(min-width: 1921px)">
+						<source srcset="img/background/world/world_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/background/world/world_920.webp" media="(min-width: 920px)">
+						<source srcset="img/background/world/world_768.webp" media="(min-width: 501px)">
+						<source srcset="img/background/world/world_390.webp" media="(min-width: 320px)">
+						<img src="img/background/world/world_390.webp" class="world__background">
 					</picture>
 				</div>
 			</section>
@@ -201,19 +201,19 @@
 				</div>
 			</section>
 			<section class="classes">
-				<div class="class _bg-warrior">
+				<div class="class _active _bg-warrior" data-class="warrior">
 					<div class="class__runes">
 						<div class="class__runes-circle-1">
-							<img src="img/background/class__warrior-circle-1.webp">
+							<img src="img/background/classes/class__warrior-circle-1.webp">
 						</div>
 						<div class="class__runes-circle-2">
-							<img src="img/background/class__warrior-circle-1.webp">
+							<img src="img/background/classes/class__warrior-circle-1.webp">
 						</div>
 						<div class="class__runes-circle-3">
-							<img src="img/background/class__warrior-circle-1.webp">
+							<img src="img/background/classes/class__warrior-circle-1.webp">
 						</div>
 						<div class="class__runes-center">
-							<img src="img/background/class__warrior-center.webp">
+							<img src="img/background/classes/class__warrior-center.webp">
 						</div>
 					</div>
 					<div class="__container">
@@ -221,16 +221,22 @@
 							<div class="class__content">
 								<div class="class__name">Классы</div>
 								<div class="class__list">
-									<div class="class__list-item">
-										<img src="img/icons/class__warrior-icon.webp">
+									<div class="class-icon _red _active" data-showclass="warrior">
+										<div class="class-icon__wrapper">
+											<img src="img/icons/classes/warrior.webp">
+										</div>
 										Воин
 									</div>
-									<div class="class__list-item">
-										<img src="img/icons/class__archer-icon.webp">
+									<div class="class-icon _green" data-showclass="assasin">
+										<div class="class-icon__wrapper">
+											<img src="img/icons/classes/archer.webp">
+										</div>
 										Стрелок
 									</div>
-									<div class="class__list-item">
-										<img src="img/icons/class__mage-icon.webp">
+									<div class="class-icon _violet" data-showclass="mage">
+										<div class="class-icon__wrapper">
+											<img src="img/icons/classes/mage.webp">
+										</div>
 										Маг
 									</div>
 								</div>
@@ -262,19 +268,19 @@
 						</div>
 					</div>
 				</div>
-				<div class="class _bg-assasin">
+				<div class="class _bg-assasin" data-class="assasin">
 					<div class="class__runes">
 						<div class="class__runes-circle-1">
-							<img src="img/background/class__warrior-circle-1.webp">
+							<img src="img/background/classes/class__warrior-circle-1.webp">
 						</div>
 						<div class="class__runes-circle-2">
-							<img src="img/background/class__warrior-circle-1.webp">
+							<img src="img/background/classes/class__warrior-circle-1.webp">
 						</div>
 						<div class="class__runes-circle-3">
-							<img src="img/background/class__warrior-circle-1.webp">
+							<img src="img/background/classes/class__warrior-circle-1.webp">
 						</div>
 						<div class="class__runes-center">
-							<img src="img/background/class__assasin-center.webp">
+							<img src="img/background/classes/class__assasin-center.webp">
 						</div>
 					</div>
 					<div class="__container">
@@ -282,16 +288,22 @@
 							<div class="class__content">
 								<div class="class__name">Классы</div>
 								<div class="class__list">
-									<div class="class__list-item">
-										<img src="img/icons/class__warrior-icon.webp">
+									<div class="class-icon _red _active" data-showclass="warrior">
+										<div class="class-icon__wrapper">
+											<img src="img/icons/classes/warrior.webp">
+										</div>
 										Воин
 									</div>
-									<div class="class__list-item">
-										<img src="img/icons/class__archer-icon.webp">
+									<div class="class-icon _green" data-showclass="assasin">
+										<div class="class-icon__wrapper">
+											<img src="img/icons/classes/archer.webp">
+										</div>
 										Стрелок
 									</div>
-									<div class="class__list-item">
-										<img src="img/icons/class__mage-icon.webp">
+									<div class="class-icon _violet" data-showclass="mage">
+										<div class="class-icon__wrapper">
+											<img src="img/icons/classes/mage.webp">
+										</div>
 										Маг
 									</div>
 								</div>
@@ -319,19 +331,19 @@
 						</div>
 					</div>
 				</div>
-				<div class="class _bg-mage">
+				<div class="class _bg-mage" data-class="mage">
 					<div class="class__runes">
 						<div class="class__runes-circle-1">
-							<img src="img/background/class__warrior-circle-1.webp">
+							<img src="img/background/classes/class__warrior-circle-1.webp">
 						</div>
 						<div class="class__runes-circle-2">
-							<img src="img/background/class__warrior-circle-1.webp">
+							<img src="img/background/classes/class__warrior-circle-1.webp">
 						</div>
 						<div class="class__runes-circle-3">
-							<img src="img/background/class__warrior-circle-1.webp">
+							<img src="img/background/classes/class__warrior-circle-1.webp">
 						</div>
 						<div class="class__runes-center">
-							<img src="img/background/class__mage-center.webp">
+							<img src="img/background/classes/class__mage-center.webp">
 						</div>
 					</div>
 					<div class="__container">
@@ -339,16 +351,22 @@
 							<div class="class__content">
 								<div class="class__name">Классы</div>
 								<div class="class__list">
-									<div class="class__list-item">
-										<img src="img/icons/class__warrior-icon.webp">
+									<div class="class-icon _red _active" data-showclass="warrior">
+										<div class="class-icon__wrapper">
+											<img src="img/icons/classes/warrior.webp">
+										</div>
 										Воин
 									</div>
-									<div class="class__list-item">
-										<img src="img/icons/class__archer-icon.webp">
+									<div class="class-icon _green" data-showclass="assasin">
+										<div class="class-icon__wrapper">
+											<img src="img/icons/classes/archer.webp">
+										</div>
 										Стрелок
 									</div>
-									<div class="class__list-item">
-										<img src="img/icons/class__mage-icon.webp">
+									<div class="class-icon _violet" data-showclass="mage">
+										<div class="class-icon__wrapper">
+											<img src="img/icons/classes/mage.webp">
+										</div>
 										Маг
 									</div>
 								</div>
@@ -385,6 +403,29 @@
 					</div>
 				</div>
 			</section>
+			<section class="pvp">
+				<div class="pvp__wrapper">
+					<div class="__container">
+						<div class="pvp__content">
+							<div class="pvp__title">PvE-режимы</div>
+							<div class="pvp__text">Исследуйте открытый мир в режиме PvE! Покиньте безопасные города и бейтесь с мародерами, мутантами и жуткими призраками на осколках Империума и Лепестках божественных Пантеонов.</div>
+						</div>
+					</div>
+				</div>
+				<img src="img/content/pvp__1.webp" class="pvp__background">
+				<div class="border-bottom"></div>
+			</section>
+			<section class="pvp _text-right">
+				<div class="pvp__wrapper">
+					<div class="__container">
+						<div class="pvp__content">
+							<div class="pvp__title">PvP-режимы</div>
+							<div class="pvp__text">Испытайте себя в жестоких PvP-битвах на уникальных аренах! Окунитесь в великие сражения с тысячами игроков и получайте награды за каждую победу.</div>
+						</div>
+					</div>
+				</div>
+				<img src="img/content/pvp__2.webp" class="pvp__background _scaled-mobile">
+			</section>
 			<div style="height: 100px;"></div>
 		</main>
 		<footer class="footer">
@@ -392,7 +433,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240815125021"></script>
+	<script src="js/app.min.js?_v=20240815192934"></script>
 </body>
 
 </html>

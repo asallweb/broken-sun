@@ -73,6 +73,19 @@
             }));
         }), 100);
     }));
+    const icons = document.querySelectorAll(".class-icon");
+    const script_elements = document.querySelectorAll(".class");
+    icons.forEach((icon => {
+        icon.addEventListener("click", (() => {
+            const showClass = icon.dataset.showclass;
+            script_elements.forEach((element => {
+                if (element.dataset.class === showClass) element.classList.add("_active"); else element.classList.remove("_active");
+            }));
+            icons.forEach((icon => {
+                if (icon.dataset.showclass === showClass) icon.classList.add("_active"); else icon.classList.remove("_active");
+            }));
+        }));
+    }));
     window["FLS"] = false;
     menuInit();
 })();

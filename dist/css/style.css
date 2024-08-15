@@ -4387,6 +4387,9 @@ body {
 .class._bg-assasin {
   background-image: url(../img/background/class__assasin.webp)
 }
+.class._bg-mage {
+  background-image: url(../img/background/class__mage.webp)
+}
 .class__runes {
   position: absolute;
   left: 50%;
@@ -4409,23 +4412,33 @@ body {
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%)
+  transform: translate(-50%,-50%);
+  width: 856px;
+  height: 856px
 }
 .class__runes-circle-2 {
   position: absolute;
   left: 0;
-  bottom: 0
+  bottom: 0;
+  width: 504px;
+  height: 504px
 }
 .class__runes-circle-3 {
   position: absolute;
   right: 10px;
-  bottom: 20px
+  bottom: 20px;
+  width: 540px;
+  height: 540px
 }
 .class__runes-circle-1 img,
 .class__runes-circle-2 img,
 .class__runes-circle-3 img {
   -webkit-animation: rotate 20s linear infinite;
-  animation: rotate 20s linear infinite
+  animation: rotate 20s linear infinite;
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover
 }
 .class__runes-circle-1 img {
   -webkit-animation-name: rotate-reverse;

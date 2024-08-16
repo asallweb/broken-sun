@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240815192934">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240816143130">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +43,7 @@
 								<a href="" class="menu__lang-link">EN</a>
 							</div>
 							<div class="menu__register">
-								<button class="menu__register-button register-button">Предрегистрация</button>
+								<button class="menu__button button">Предрегистрация</button>
 							</div>
 							<div class="menu__folowus">
 								<a href="" class="menu__folowus-link _twch">
@@ -60,7 +60,7 @@
 						</nav>
 					</div>
 					<div class="header__register">
-						<button class="header__register-button register-button">Предрегистрация</button>
+						<button class="header__button button">Предрегистрация</button>
 					</div>
 					<div class="header__lang">
 						<div class="header__lang-current">
@@ -83,7 +83,7 @@
 						</div>
 						<div class="hero__bottom">
 							<div class="hero__register">
-								<button class="hero__register-button register-button">Предрегистрация</button>
+								<button class="hero__button button">Предрегистрация</button>
 							</div>
 							<div class="hero__platforms">
 								<a href="" class="hero__platform-link">
@@ -263,7 +263,13 @@
 								</div>
 							</div>
 							<div class="class__image">
-								<img src="img/content/class__warrior.webp" class="class__image-src">
+								<picture>
+									<source srcset="img/content/classes/class__warrior-1440.webp" media="(min-width: 1200px)">
+									<source srcset="img/content/classes/class__warrior-920.webp" media="(min-width: 920px)">
+									<source srcset="img/content/classes/class__warrior-768.webp" media="(min-width: 551px)">
+									<source srcset="img/content/classes/class__warrior-390.webp" media="(min-width: 320px)">
+									<img src="img/content/classes/class__warrior-768.webp" class="class__image-src">
+								</picture>
 							</div>
 						</div>
 					</div>
@@ -326,7 +332,13 @@
 								</div>
 							</div>
 							<div class="class__image">
-								<img src="img/content/class__assasin.webp" class="class__image-src">
+								<picture>
+									<source srcset="img/content/classes/class__assasin-1440.webp" media="(min-width: 1200px)">
+									<source srcset="img/content/classes/class__assasin-920.webp" media="(min-width: 920px)">
+									<source srcset="img/content/classes/class__assasin-768.webp" media="(min-width: 551px)">
+									<source srcset="img/content/classes/class__assasin-390.webp" media="(min-width: 320px)">
+									<img src="img/content/classes/class__assasin-768.webp" class="class__image-src">
+								</picture>
 							</div>
 						</div>
 					</div>
@@ -397,7 +409,13 @@
 								</div>
 							</div>
 							<div class="class__image">
-								<img src="img/content/class__mage.webp" class="class__image-src">
+								<picture>
+									<source srcset="img/content/classes/class__mage-1440.webp" media="(min-width: 1200px)">
+									<source srcset="img/content/classes/class__mage-920.webp" media="(min-width: 920px)">
+									<source srcset="img/content/classes/class__mage-768.webp" media="(min-width: 551px)">
+									<source srcset="img/content/classes/class__mage-390.webp" media="(min-width: 320px)">
+									<img src="img/content/classes/class__mage-768.webp" class="class__image-src">
+								</picture>
 							</div>
 						</div>
 					</div>
@@ -412,7 +430,13 @@
 						</div>
 					</div>
 				</div>
-				<img src="img/content/pvp__1.webp" class="pvp__background">
+				<picture>
+					<source srcset="img/content/pvp/pvp__1-1440.webp" media="(min-width: 1200px)">
+					<source srcset="img/content/pvp/pvp__1-920.webp" media="(min-width: 920px)">
+					<source srcset="img/content/pvp/pvp__1-768.webp" media="(min-width: 551px)">
+					<source srcset="img/content/pvp/pvp__1-390.webp" media="(min-width: 320px)">
+					<img src="img/content/pvp/pvp__1-768.webp" class="pvp__background">
+				</picture>
 				<div class="border-bottom"></div>
 			</section>
 			<section class="pvp _text-right">
@@ -424,7 +448,34 @@
 						</div>
 					</div>
 				</div>
-				<img src="img/content/pvp__2.webp" class="pvp__background _scaled-mobile">
+				<picture>
+					<source srcset="img/content/pvp/pvp__2-1440.webp" media="(min-width: 1200px)">
+					<source srcset="img/content/pvp/pvp__2-920.webp" media="(min-width: 920px)">
+					<source srcset="img/content/pvp/pvp__2-768.webp" media="(min-width: 501px)">
+					<source srcset="img/content/pvp/pvp__2-390.webp" media="(min-width: 320px)">
+					<img src="img/content/pvp/pvp__2-768.webp" class="pvp__background">
+				</picture>
+			</section>
+			<section class="awards">
+				<div class="__container">
+					<div class="awards__content">
+						<div class="awards__title">Награды</div>
+						<div class="awards__text">Получайте за сражения экипировку, ингредиентыи редкие расходники, которые не добыть иным способом. Становитесь сильнее самиили продавайте и обменивайте трофеи.</div>
+						<button class="awards__button button">Предрегистрация</button>
+					</div>
+				</div>
+				<div class="awards__ornament">
+					<img src="img/background/awards__ornament.webp" class="awards__ornament-src">
+				</div>
+				<div class="awards__image">
+					<picture>
+						<source srcset="img/content/awards/awards_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/content/awards/awards_920.webp" media="(min-width: 920px)">
+						<source srcset="img/content/awards/awards_768.webp" media="(min-width: 501px)">
+						<source srcset="img/content/awards/awards_390.webp" media="(min-width: 320px)">
+						<img src="img/content/awards/awards_768.webp" class="awards__image-src">
+					</picture>
+				</div>
 			</section>
 			<div style="height: 100px;"></div>
 		</main>
@@ -433,7 +484,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240815192934"></script>
+	<script src="js/app.min.js?_v=20240816143130"></script>
 </body>
 
 </html>

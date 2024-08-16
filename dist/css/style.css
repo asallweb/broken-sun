@@ -3937,7 +3937,7 @@ h6 {
 .menu__register {
   display: none
 }
-.menu__register-button.register-button {
+.menu__button.button {
   width: 275px;
   height: 48px;
   font-size: 18px
@@ -4038,8 +4038,8 @@ h6 {
 body {
   background: url(../img/background/main.webp) 0 0 repeat
 }
-.register-button {
-  background: url(../img/background/register-button.webp) 0 0 no-repeat;
+.button {
+  background: url(../img/background/button.webp) 0 0 no-repeat;
   background-size: 100% 100%;
   width: 275px;
   height: 48px;
@@ -4053,19 +4053,19 @@ body {
   text-transform: uppercase;
   transition: all .3s ease-in-out
 }
-.register-button:hover {
+.button:hover {
   color: #f9df94;
-  background: url(../img/background/register-button_hover.webp) 0 0 no-repeat;
+  background: url(../img/background/button_hover.webp) 0 0 no-repeat;
   background-size: 100% 100%
 }
-.register-button:active {
+.button:active {
   color: #f9df94;
-  background: url(../img/background/register-button_active.webp) 0 0 no-repeat;
+  background: url(../img/background/button_active.webp) 0 0 no-repeat;
   background-size: 100% 100%
 }
-.register-button:disabled {
+.button:disabled {
   color: #25201b;
-  background: url(../img/background/register-button_disabled.webp) 0 0 no-repeat;
+  background: url(../img/background/button_disabled.webp) 0 0 no-repeat;
   background-size: 100% 100%
 }
 .class-icon {
@@ -4657,51 +4657,14 @@ body {
   bottom: 0;
   right: -1.5%
 }
+._bg-mage .class__image {
+  right: -10%
+}
 .class__image-src {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
   object-fit: cover
-}
-@-webkit-keyframes rotate {
-  from {
-    -webkit-transform: rotate(0);
-    transform: rotate(0)
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg)
-  }
-}
-@keyframes rotate {
-  from {
-    -webkit-transform: rotate(0);
-    transform: rotate(0)
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg)
-  }
-}
-@-webkit-keyframes rotate-reverse {
-  from {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg)
-  }
-  to {
-    -webkit-transform: rotate(0);
-    transform: rotate(0)
-  }
-}
-@keyframes rotate-reverse {
-  from {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg)
-  }
-  to {
-    -webkit-transform: rotate(0);
-    transform: rotate(0)
-  }
 }
 .pvp {
   position: relative
@@ -4777,6 +4740,134 @@ body {
   background: linear-gradient(90deg,rgba(119,96,48,0) 0,#776030 10%,#ffebb2 50%,#776030 90%,rgba(119,96,48,0) 100%);
   z-index: 1
 }
+.awards {
+  background: url(../img/background/awards.webp) left top repeat;
+  position: relative;
+  overflow: hidden;
+  height: 1024px
+}
+.awards::after,
+.awards::before {
+  content: "";
+  background: url(../img/background/shadow.webp) 0 0 repeat-x;
+  display: block;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  pointer-events: none
+}
+.awards::before {
+  top: 0
+}
+.awards::after {
+  bottom: 0;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
+.awards__content {
+  position: absolute;
+  z-index: 2;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+  margin-top: 110px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
+}
+.awards__title {
+  text-align: center;
+  color: #f2d993;
+  font-size: 42px;
+  line-height: 1.19;
+  text-shadow: 0 2px 5px rgba(0,0,0,.65);
+  margin-bottom: 16px
+}
+.awards__text {
+  color: #fafafa;
+  font-weight: 300;
+  line-height: 1.36;
+  text-align: center;
+  margin-bottom: 42px
+}
+.awards__button {
+  margin: 0 auto
+}
+.awards__image {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  max-width: 1440px;
+  width: 100%
+}
+.awards__image-src {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: relative;
+  z-index: 1
+}
+.awards__ornament {
+  position: absolute;
+  top: -120px;
+  left: 49.8%;
+  pointer-events: none;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  max-width: 920px;
+  width: 100%
+}
+.awards__ornament-src {
+  width: 100%;
+  height: auto;
+  -webkit-animation: rotate 20s linear infinite;
+  animation: rotate 20s linear infinite
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+@-webkit-keyframes rotate-reverse {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+  to {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+}
+@keyframes rotate-reverse {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+  to {
+    -webkit-transform: rotate(0);
+    transform: rotate(0)
+  }
+}
 @media (min-width:90em) {
   [class*=__container] {
     padding-left: 2.5rem
@@ -4812,7 +4903,7 @@ body {
   .header__lang {
     font-size: 16px
   }
-  .register-button {
+  .button {
     font-size: 14px;
     width: 175px;
     height: 36px
@@ -4977,10 +5068,7 @@ body {
     object-fit: cover
   }
   .class__image {
-    right: -14%
-  }
-  .class__image-src {
-    max-width: 577px
+    right: -3%
   }
   .pvp__content {
     max-width: 357px;
@@ -4998,6 +5086,35 @@ body {
   }
   .pvp__background {
     height: 345px
+  }
+  .awards {
+    height: 690px
+  }
+  .awards::after,
+  .awards::before {
+    height: 75px
+  }
+  .awards__content {
+    max-width: 430px;
+    margin-top: 75px
+  }
+  .awards__title {
+    font-size: 26px;
+    line-height: 1.23;
+    text-shadow: 0 3px 3px rgba(0,0,0,.25)
+  }
+  .awards__text {
+    font-size: 18px;
+    line-height: 1.22;
+    margin-bottom: 28px
+  }
+  .awards__image {
+    max-width: 880px
+  }
+  .awards__ornament {
+    max-width: 600px;
+    top: 0;
+    left: 50%
   }
 }
 @media (max-width:920px) {
@@ -5103,12 +5220,6 @@ body {
     font-size: 16px;
     line-height: 1.25
   }
-  .class__image {
-    right: -13%
-  }
-  .class__image-src {
-    max-width: 478px
-  }
   .pvp__content {
     margin-left: 0
   }
@@ -5135,6 +5246,23 @@ body {
   }
   .hero__folowus {
     bottom: 30px
+  }
+  .awards {
+    height: 576px
+  }
+  .awards::after,
+  .awards::before {
+    height: 50px
+  }
+  .awards__content {
+    margin-top: 60px
+  }
+  .awards__image {
+    max-width: 728px
+  }
+  .awards__ornament {
+    max-width: 380px;
+    top: 100px
   }
 }
 @media (max-width:750px) {
@@ -5233,6 +5361,40 @@ body {
   .gods__item-text p {
     margin-bottom: 10px
   }
+  .pvp::after,
+  .pvp::before {
+    display: none
+  }
+  .pvp .__container {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 20px
+  }
+  .pvp__content {
+    max-width: 270px;
+    margin-top: auto;
+    padding-left: 5px
+  }
+  ._text-right .pvp__content {
+    margin-left: 0;
+    margin-right: auto
+  }
+  .pvp__title {
+    font-size: 22px;
+    line-height: 1.36;
+    margin-bottom: 8px
+  }
+  .pvp__text {
+    font-size: 14px;
+    line-height: 1.28
+  }
+  .pvp__background {
+    height: 325px;
+    position: relative
+  }
+}
+@media (max-width:550px) {
   .class {
     height: 650px
   }
@@ -5323,50 +5485,6 @@ body {
   .class__roles-item img {
     width: 32px
   }
-  .class__image {
-    right: -19%
-  }
-  .class__image-src {
-    max-width: 380px
-  }
-  .pvp::after,
-  .pvp::before {
-    display: none
-  }
-  .pvp .__container {
-    height: 100%;
-    display: flex;
-    align-items: flex-end;
-    padding-bottom: 20px
-  }
-  .pvp__content {
-    max-width: 270px;
-    margin-top: auto;
-    padding-left: 5px
-  }
-  ._text-right .pvp__content {
-    margin-left: 0;
-    margin-right: auto
-  }
-  .pvp__title {
-    font-size: 22px;
-    line-height: 1.36;
-    margin-bottom: 8px
-  }
-  .pvp__text {
-    font-size: 14px;
-    line-height: 1.28
-  }
-  .pvp__background {
-    height: 325px;
-    left: -43%;
-    position: relative;
-    width: 145%
-  }
-  .pvp__background._scaled-mobile {
-    -webkit-transform: scale(-1,1);
-    transform: scale(-1,1)
-  }
 }
 @media (max-width:500px) {
   .world__content {
@@ -5388,6 +5506,31 @@ body {
     font-size: 14px;
     line-height: 1.28;
     text-align: center
+  }
+  .awards {
+    height: 650px
+  }
+  .awards__content {
+    max-width: 100%;
+    padding: 0 15px
+  }
+  .awards__title {
+    font-size: 22px;
+    line-height: 1.36;
+    margin-bottom: 8px
+  }
+  .awards__text {
+    font-size: 14px;
+    line-height: 1.28;
+    margin-bottom: 24px;
+    text-align: left
+  }
+  .awards__image {
+    max-width: 100%
+  }
+  .awards__ornament {
+    max-width: 380px;
+    top: 100px
   }
 }
 @media (max-width:400px) {

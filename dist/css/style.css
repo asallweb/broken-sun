@@ -5259,6 +5259,12 @@ body {
     background: url(../img/background/counter/counter_2k.webp) 0 0 no-repeat
   }
 }
+@media (min-width:1441px) {
+  .footer {
+    background: url(../img/background/footer/footer_2k.webp) center top no-repeat;
+    background-size: cover
+  }
+}
 @media (min-width:1921px) {
   .world__content {
     top: 20%

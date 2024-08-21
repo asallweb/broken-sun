@@ -3988,15 +3988,19 @@ h6 {
   visibility: visible
 }
 .header {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  z-index: 3;
   left: 0;
   width: 100%;
-  z-index: 1;
   border-bottom: 1px solid rgba(30,37,51,.7);
   background: rgba(30,37,51,.7);
   -webkit-backdrop-filter: blur(7.5px);
-  backdrop-filter: blur(7.5px)
+  backdrop-filter: blur(7.5px);
+  top: -100%;
+  transition: all .45s ease-in-out
+}
+.header._active {
+  top: 0
 }
 .header__wrapper {
   display: flex;
@@ -4782,7 +4786,8 @@ body {
   z-index: 1
 }
 .awards {
-  background: url(../img/background/awards.webp) left top repeat;
+  background: url(../img/background/awards.webp) 0 0 repeat,linear-gradient(90deg,#25201b 59.53%,#383029 100%);
+  background-blend-mode: overlay,normal;
   position: relative;
   overflow: hidden;
   height: 1024px

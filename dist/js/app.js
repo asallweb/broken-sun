@@ -3827,6 +3827,15 @@
             }));
         }));
     }));
+    document.addEventListener("DOMContentLoaded", (function() {
+        const header = document.querySelector(".header");
+        const heroArrow = document.querySelector(".hero__arrow");
+        function checkPosition() {
+            const rect = heroArrow.getBoundingClientRect();
+            if (rect.top <= 0) header.classList.add("_active"); else header.classList.remove("_active");
+        }
+        window.addEventListener("scroll", checkPosition);
+    }));
     window["FLS"] = false;
     menuInit();
 })();

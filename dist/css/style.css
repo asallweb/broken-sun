@@ -4202,7 +4202,7 @@ body {
   margin-bottom: 10px
 }
 .hero__background {
-  width: 100%;
+  width: 100vw;
   height: auto;
   display: block;
   -o-object-fit: cover;
@@ -5216,6 +5216,23 @@ body {
     transform: rotate(0)
   }
 }
+.intro-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: 9998;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .8s ease-in-out
+}
+._video-active {
+  opacity: 1;
+  visibility: visible
+}
 .swiper {
   overflow: hidden
 }
@@ -5323,9 +5340,6 @@ body {
   }
   .hero {
     margin-bottom: 0
-  }
-  .hero__background {
-    height: 690px
   }
   .hero__arrow {
     max-width: 340px;
@@ -5650,9 +5664,6 @@ body {
   .header__register {
     margin-right: -4px
   }
-  .hero__background {
-    height: 576px
-  }
   .hero__logo {
     top: 58px;
     max-width: 288px
@@ -5794,9 +5805,6 @@ body {
   }
 }
 @media (max-width:768px) {
-  .hero__background {
-    height: 576px
-  }
   .hero__logo {
     top: 58px;
     max-width: 288px
@@ -6220,9 +6228,6 @@ body {
   }
 }
 @media (max-width:400px) {
-  .hero__background {
-    height: 650px
-  }
   .hero__logo-title {
     font-size: 13px;
     top: 64.5%

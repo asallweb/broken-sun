@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240821152529">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240821162040">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,12 +20,14 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
+			width: 100vw;
+			height: 100vh;
 			transition: all 0.4s ease-in-out;
 		}
 
 		.preloader__background {
-			width: 100%;
-			height: 100%;
+			width: 100vw;
+			height: 100vh;
 			object-fit: cover;
 		}
 
@@ -65,7 +67,7 @@
 		.wrapper {
 			visibility: hidden;
 			opacity: 0;
-			transition: all 0.5s ease-in-out;
+			transition: all 0.8s ease-in-out;
 		}
 
 		._wrapper-active {
@@ -85,20 +87,48 @@
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
 			const startTime = new Date().getTime();
+			const video = document.getElementById("introVideo");
+
+			function setVideoSource() {
+				if (window.matchMedia("(max-width: 767px)").matches) {
+					// Для мобильных устройств
+					video.src = "img/video/hd.mp4";
+				} else if (window.matchMedia("(min-width: 768px) and (max-width: 1440px)").matches) {
+					// Для планшетов
+					video.src = "img/video/fhd.mp4";
+				} else {
+					// Для десктопов
+					video.src = "img/video/2k.mp4";
+				}
+			}
 
 			function hidePreloader() {
 				const currentTime = new Date().getTime();
 				const elapsedTime = currentTime - startTime;
+
 				if (elapsedTime < 1000) {
 					setTimeout(hidePreloader, 1000 - elapsedTime);
 				} else {
-					document.getElementById("preloader").classList.add('_preloader-nonactive')
-					document.getElementById("wrapper").classList.add('_wrapper-active')
+					document.getElementById("preloader").classList.add('_preloader-nonactive');
+
+					const video = document.getElementById("introVideo");
+					video.classList.add('_video-active');
+					video.play();
+
+					video.addEventListener('ended', function() {
+						video.classList.remove('_video-active');
+						document.getElementById("wrapper").classList.add('_wrapper-active');
+					});
 				}
 			}
+
+			setVideoSource(); // Устанавливаем исходный файл видео
 			window.onload = hidePreloader;
 		});
 	</script>
+
+	<video id="introVideo" class="intro-video" autoplay muted></video>
+
 	<div class="wrapper" id="wrapper">
 		<header class="header">
 			<div class="header__container">
@@ -791,7 +821,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240821152529"></script>
+	<script src="js/app.min.js?_v=20240821162040"></script>
 </body>
 
 </html>

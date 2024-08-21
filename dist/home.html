@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240821111703">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240821112947">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +22,7 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
+			transition: all 0.4s ease-in-out;
 		}
 
 		.loader {
@@ -41,14 +42,9 @@
 			animation: spin 1s linear infinite;
 		}
 
-		@-webkit-keyframes spin {
-			0% {
-				-webkit-transform: rotate(0deg);
-			}
-
-			100% {
-				-webkit-transform: rotate(360deg);
-			}
+		._preloader-nonactive {
+			visibility: hidden;
+			opacity: 0;
 		}
 
 		@keyframes spin {
@@ -62,7 +58,14 @@
 		}
 
 		.wrapper {
-			display: none;
+			visibility: hidden;
+			opacity: 0;
+			transition: all 0.5s ease-in-out;
+		}
+
+		._wrapper-active {
+			visibility: visible;
+			opacity: 1;
 		}
 	</style>
 	<div id="preloader">
@@ -77,11 +80,11 @@
 			function hidePreloader() {
 				const currentTime = new Date().getTime();
 				const elapsedTime = currentTime - startTime;
-				if (elapsedTime < 800) {
-					setTimeout(hidePreloader, 800 - elapsedTime);
+				if (elapsedTime < 1000) {
+					setTimeout(hidePreloader, 1000 - elapsedTime);
 				} else {
-					// document.getElementById("preloader").style.display = "none";
-					// document.getElementById("wrapper").style.display = "block";
+					document.getElementById("preloader").classList.add('_preloader-nonactive')
+					document.getElementById("wrapper").classList.add('_wrapper-active')
 				}
 			}
 			window.onload = hidePreloader;
@@ -779,7 +782,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240821111703"></script>
+	<script src="js/app.min.js?_v=20240821112947"></script>
 </body>
 
 </html>

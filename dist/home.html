@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240821112947">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240821115352">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +15,6 @@
 <body>
 	<style>
 		#preloader {
-			background: url('img/background/preloader/background.webp') center center no-repeat;
-			background-size: 100% 100%;
 			position: fixed;
 			top: 0;
 			left: 0;
@@ -25,20 +23,27 @@
 			transition: all 0.4s ease-in-out;
 		}
 
-		.loader {
-			position: relative;
-			background: url('img/background/preloader/star.svg') center center no-repeat;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+		.preloader__background {
 			width: 100%;
 			height: 100%;
+			object-fit: cover;
 		}
 
-		.loader__spinner {
-			background: url('img/background/preloader/spinner.webp') center center no-repeat;
-			width: 152px;
-			height: 152px;
+		.loader {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.loader-image {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.loader__spinner img {
 			animation: spin 1s linear infinite;
 		}
 
@@ -69,8 +74,12 @@
 		}
 	</style>
 	<div id="preloader">
+		<img src="img/background/preloader/background.webp" class="preloader__background">
 		<div class="loader">
-			<div class="loader__spinner"></div>
+			<img src="img/background/preloader/star.svg" class="loader-image">
+			<div class="loader__spinner">
+				<img src="img/background/preloader/spinner.webp">
+			</div>
 		</div>
 	</div>
 	<script>
@@ -782,7 +791,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240821112947"></script>
+	<script src="js/app.min.js?_v=20240821115352"></script>
 </body>
 
 </html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240822183936">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<style>
+		#preloader {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100vw;
+			height: 100vh;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.preloader__background {
+			width: 100vw;
+			height: 100vh;
+			object-fit: cover;
+		}
+
+		.loader {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.loader-image {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.loader-image-src {
+			animation: spin 5s linear infinite;
+		}
+
+		.loader__spinner img {
+			animation: spin 1s linear infinite;
+		}
+
+		._preloader-nonactive {
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		.wrapper {
+			visibility: hidden;
+			opacity: 0;
+			transition: all 0.3s ease-in-out;
+		}
+
+		._wrapper-active {
+			visibility: visible;
+			opacity: 1;
+		}
+	</style>
+	<div id="preloader">
+		<img src="img/background/preloader/background.webp" class="preloader__background">
+		<div class="loader">
+			<div class="loader-image">
+				<img src="img/background/preloader/star.svg" class="loader-image-src">
+			</div>
+			<div class="loader__spinner">
+				<img src="img/background/preloader/spinner.webp">
+			</div>
+		</div>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Прокрутка страницы к началу при загрузке
+			window.scrollTo(0, 0);
+			document.documentElement.classList.add('lock'); // Добавляем класс .lock на <html>
+
+			const startTime = new Date().getTime();
+
+			function hidePreloader() {
+				const currentTime = new Date().getTime();
+				const elapsedTime = currentTime - startTime;
+
+				if (elapsedTime < 1000) {
+					setTimeout(hidePreloader, 1000 - elapsedTime);
+				} else {
+					document.getElementById("preloader").classList.add('_preloader-nonactive');
+					document.getElementById("wrapper").classList.add('_wrapper-active');
+					document.documentElement.classList.remove('lock'); // Убираем класс .lock с <html>
+				}
+			}
+			window.onload = hidePreloader;
+		});
+	</script>
+
+	<div class="wrapper" id="wrapper">
+		<header class="header _active _relative">
+			<div class="header__container">
+				<div class="header__wrapper">
+					<a href="" class="header__logo">
+						<picture>
+							<source srcset="img/logos/logo.svg" media="(min-width: 1201px)">
+							<source srcset="img/logos/logo-mini.svg" media="(min-width: 920px)">
+							<img src="img/logos/logo-mini.svg" alt="Broken Sun">
+						</picture>
+					</a>
+					<div class="header__socials">
+						<a href="" class="header__socials-link _twch">
+							<img src="img/icons/twch.svg">
+						</a>
+						<a href="" class="header__socials-link _tg">
+							<img src="img/icons/tg.svg">
+						</a>
+						<a href="" class="header__socials-link _vk">
+							<img src="img/icons/vk.svg">
+						</a>
+					</div>
+					<div class="header__lang">
+						<div class="header__lang-current">
+							RU
+							<img src="img/icons/lang.svg">
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="form">
+				<div class="__container">
+					<div class="form__wrapper">
+						<div class="form__wrapper-inner">
+							<div class="form__inner">
+								<div class="form__title">Заполните анкету участника ЗБТ</div>
+								<div class="field-wrapper">
+									<label for=""><span>*</span>Как к Вам можно обращаться?</label>
+									<input type="text" placeholder="Ваше фамилия и имя" value="">
+								</div>
+								<div class="field-wrapper">
+									<label for=""><span>*</span>Укажите e-mail</label>
+									<input type="email" placeholder="E-mail" value="">
+								</div>
+								<div class="field-title">
+									<span>*</span>В какой социальной сети с Вами можно связаться? Укажите адрес своего аккаунта
+								</div>
+								<div class="field-checkbox-input">
+									<div class="field-checkbox-input__checkbox">
+										<input type="checkbox">
+										<label for="">ВКонтакте</label>
+									</div>
+									<input type="text" placeholder="Ссылка" value="">
+								</div>
+								<div class="field-checkbox-input">
+									<div class="field-checkbox-input__checkbox">
+										<input type="checkbox">
+										<label for="">Telegram</label>
+									</div>
+									<input type="text" placeholder="Ссылка" value="">
+								</div>
+								<div class="field-checkbox-input">
+									<div class="field-checkbox-input__checkbox">
+										<input type="checkbox">
+										<label for="">Discord</label>
+									</div>
+									<input type="text" placeholder="Ссылка" value="">
+								</div>
+								<div class="field-title">
+									<span>*</span>Какой у Вас опыт в MMORPG играх? <br>
+									В какие проекты играли и какого уровня достигли?
+								</div>
+								<textarea placeholder="“Смешарики Онлайн” считаются?)"></textarea>
+								<div class="field-title">
+									<span>*</span>Есть ли у Вас уже опыт участия в игровых тестированиях?<br>
+									Если да, то какой и в каких проектах?
+								</div>
+								<textarea placeholder="“Смешарики Онлайн” считаются?)"></textarea>
+								<div class="field-title">
+									<span>*</span>Сколько времени вы готовы уделять игре в день?
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="hours">
+									<label for="">1 час</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="hours">
+									<label for="">1-2 час</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="hours">
+									<label for="">Больше 2 часов</label>
+								</div>
+								<div class="field-title">
+									<span>*</span>Каким устройством вы пользуетесь?
+								</div>
+								<div class="field-checkbox-input">
+									<div class="field-checkbox-input__checkbox">
+										<input type="checkbox">
+										<label for="">Android</label>
+									</div>
+									<input type="text" placeholder="Ссылка" value="">
+								</div>
+								<div class="field-checkbox-input">
+									<div class="field-checkbox-input__checkbox">
+										<input type="checkbox">
+										<label for="">iOS</label>
+									</div>
+									<input type="text" placeholder="Ссылка" value="">
+								</div>
+								<div class="field-checkbox-input">
+									<div class="field-checkbox-input__checkbox">
+										<input type="checkbox">
+										<label for="">PC</label>
+									</div>
+									<input type="text" placeholder="Ссылка" value="">
+								</div>
+								<div class="field-title">
+									<span>*</span>Почему Вы хотите принять участие в тестировании Broken Sun?
+								</div>
+								<textarea placeholder="Text"></textarea>
+								<div class="checkbox-wrapper">
+									<input type="checkbox">
+									<label for="">Я соглашаюсь на обработку моих персональных данных и принимаю <a href="">Privacy Policy</a></label>
+								</div>
+								<div class="checkbox-wrapper">
+									<input type="checkbox">
+									<label for="">Я соглашаюсь и принимаю <a href="">Правила участия в ЗБТ</a></label>
+								</div>
+								<div class="submit-wrapper">
+									<button class="button" disabled>Подать заявку</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__wrapper">
+					<div class="footer__socials">
+						<a href="" class="footer__socials-link _twch">
+							<img src="img/icons/twch.svg">
+						</a>
+						<a href="" class="footer__socials-link _tg">
+							<img src="img/icons/tg.svg">
+						</a>
+						<a href="" class="footer__socials-link _vk">
+							<img src="img/icons/vk.svg">
+						</a>
+					</div>
+					<div class="footer__logo">
+						<a href="" class="footer__logo-link">
+							<img src="img/logos/footer.svg" class="footer__logo-src">
+						</a>
+					</div>
+					<div class="footer__text">
+						<div class="footer__text-left">© OIJO FZCO, 2024</div>
+						<div class="footer__text-middle">All rights reserved. All trademarks referenced herein are the properties of their respective owners. <a href="">Privacy Policy</a></div>
+						<div class="footer__text-right"><a href="mail:contact@oijo.com">contact@oijo.com</a></div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20240822183936"></script>
+</body>
+
+</html>

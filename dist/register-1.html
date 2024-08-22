@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HomePage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20240822183936">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<style>
+		#preloader {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100vw;
+			height: 100vh;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.preloader__background {
+			width: 100vw;
+			height: 100vh;
+			object-fit: cover;
+		}
+
+		.loader {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.loader-image {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		.loader-image-src {
+			animation: spin 5s linear infinite;
+		}
+
+		.loader__spinner img {
+			animation: spin 1s linear infinite;
+		}
+
+		._preloader-nonactive {
+			visibility: hidden;
+			opacity: 0;
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		.wrapper {
+			visibility: hidden;
+			opacity: 0;
+			transition: all 0.3s ease-in-out;
+		}
+
+		._wrapper-active {
+			visibility: visible;
+			opacity: 1;
+		}
+	</style>
+	<div id="preloader">
+		<img src="img/background/preloader/background.webp" class="preloader__background">
+		<div class="loader">
+			<div class="loader-image">
+				<img src="img/background/preloader/star.svg" class="loader-image-src">
+			</div>
+			<div class="loader__spinner">
+				<img src="img/background/preloader/spinner.webp">
+			</div>
+		</div>
+	</div>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Прокрутка страницы к началу при загрузке
+			window.scrollTo(0, 0);
+			document.documentElement.classList.add('lock'); // Добавляем класс .lock на <html>
+
+			const startTime = new Date().getTime();
+
+			function hidePreloader() {
+				const currentTime = new Date().getTime();
+				const elapsedTime = currentTime - startTime;
+
+				if (elapsedTime < 1000) {
+					setTimeout(hidePreloader, 1000 - elapsedTime);
+				} else {
+					document.getElementById("preloader").classList.add('_preloader-nonactive');
+					document.getElementById("wrapper").classList.add('_wrapper-active');
+					document.documentElement.classList.remove('lock'); // Убираем класс .lock с <html>
+				}
+			}
+			window.onload = hidePreloader;
+		});
+	</script>
+
+	<div class="wrapper" id="wrapper">
+		<header class="header _active _relative">
+			<div class="header__container">
+				<div class="header__wrapper">
+					<a href="" class="header__logo">
+						<picture>
+							<source srcset="img/logos/logo.svg" media="(min-width: 1201px)">
+							<source srcset="img/logos/logo-mini.svg" media="(min-width: 920px)">
+							<img src="img/logos/logo-mini.svg" alt="Broken Sun">
+						</picture>
+					</a>
+					<div class="header__socials">
+						<a href="" class="header__socials-link _twch">
+							<img src="img/icons/twch.svg">
+						</a>
+						<a href="" class="header__socials-link _tg">
+							<img src="img/icons/tg.svg">
+						</a>
+						<a href="" class="header__socials-link _vk">
+							<img src="img/icons/vk.svg">
+						</a>
+					</div>
+					<div class="header__lang">
+						<div class="header__lang-current">
+							RU
+							<img src="img/icons/lang.svg">
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="register _bg">
+				<div class="__container">
+					<div class="register__wrapper">
+						<div class="register__title">Открой удивительный мир Broken Sun одним из первых!</div>
+						<div class="register__subtitle">Рады, что Вы с нами. Теперь у Вас есть два пути:</div>
+						<div class="register__item _mb56">
+							<div class="register__item-title">Дождаться официального выхода игры и получить награду за e-mail</div>
+							<div class="register__item-list">
+								<div class="register__item-image">
+									<img src="img/content/register/register__item-image-1.webp">
+								</div>
+								<div class="register__item-image">
+									<img src="img/content/register/register__item-image-2.webp">
+								</div>
+								<div class="register__item-image">
+									<img src="img/content/register/register__item-image-3.webp">
+								</div>
+							</div>
+							<button class="register__item-button button">Получить приз</button>
+						</div>
+						<div class="register__item">
+							<div class="register__item-title">Войти в игру как полноценный участник ЗБТ и получить в разы больше возможностей и наград</div>
+							<div class="register__item-list">
+								<div class="register__item-image">
+									<img src="img/content/register/register__item-image-4.webp">
+								</div>
+								<div class="register__item-image">
+									<img src="img/content/register/register__item-image-5.webp">
+								</div>
+								<div class="register__item-image">
+									<img src="img/content/register/register__item-image-6.webp">
+								</div>
+								<div class="register__item-image">
+									<img src="img/content/register/register__item-image-7.webp">
+								</div>
+								<div class="register__item-image">
+									<img src="img/content/register/register__item-image-8.webp">
+								</div>
+								<div class="register__item-image">
+									<img src="img/content/register/register__item-image-9.webp">
+								</div>
+							</div>
+							<button class="register__item-button button">Подать заявку</button>
+						</div>
+						<div class="register__image-wrapper">
+							<img src="img/content/register/register-1.webp" class="register__image-1 hasAnimation animate__animated hidden" data-animate="animate__fadeInLeft">
+							<img src="img/content/register/register-2.webp" class="register__image-2 hasAnimation animate__animated hidden" data-animate="animate__fadeInRight">
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__wrapper">
+					<div class="footer__socials">
+						<a href="" class="footer__socials-link _twch">
+							<img src="img/icons/twch.svg">
+						</a>
+						<a href="" class="footer__socials-link _tg">
+							<img src="img/icons/tg.svg">
+						</a>
+						<a href="" class="footer__socials-link _vk">
+							<img src="img/icons/vk.svg">
+						</a>
+					</div>
+					<div class="footer__logo">
+						<a href="" class="footer__logo-link">
+							<img src="img/logos/footer.svg" class="footer__logo-src">
+						</a>
+					</div>
+					<div class="footer__text">
+						<div class="footer__text-left">© OIJO FZCO, 2024</div>
+						<div class="footer__text-middle">All rights reserved. All trademarks referenced herein are the properties of their respective owners. <a href="">Privacy Policy</a></div>
+						<div class="footer__text-right"><a href="mail:contact@oijo.com">contact@oijo.com</a></div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20240822183936"></script>
+</body>
+
+</html>

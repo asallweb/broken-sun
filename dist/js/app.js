@@ -3835,7 +3835,7 @@
             const rect = heroArrow.getBoundingClientRect();
             if (rect.top <= 0) header.classList.add("_active"); else header.classList.remove("_active");
         }
-        window.addEventListener("scroll", checkPosition);
+        if (heroArrow && header) window.addEventListener("scroll", checkPosition);
     }));
     const godsItems = document.querySelectorAll(".gods__item");
     godsItems.forEach((item => {

@@ -4223,7 +4223,8 @@ body {
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
   width: 100%;
-  max-width: 524px
+  max-width: 524px;
+  z-index: 2
 }
 .hero__logo-src {
   width: 100%;
@@ -4246,7 +4247,8 @@ body {
   position: absolute;
   left: 0;
   bottom: 100px;
-  width: 100%
+  width: 100%;
+  z-index: 2
 }
 .hero__register {
   margin-bottom: 32px;
@@ -4267,6 +4269,9 @@ body {
   position: absolute;
   right: -16px;
   bottom: 110px;
+  z-index: 2
+}
+.hero__folowus-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4305,6 +4310,22 @@ body {
   width: 100%;
   height: auto
 }
+.hero .intro-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0
+}
+.hero .intro-video._video-active {
+  opacity: 1;
+  visibility: visible
+}
 .world {
   position: relative
 }
@@ -4316,6 +4337,7 @@ body {
 }
 .world__content {
   position: absolute;
+  z-index: 1;
   top: 40.3%;
   max-width: 504px;
   width: 100%;
@@ -4375,14 +4397,16 @@ body {
   margin: 0 auto 24px;
   max-width: 446px
 }
+.gods__wrapper {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto
+}
 .gods__list {
   background: url(../img/background/gods.webp) 0 0 no-repeat;
   background-size: 100% 100%;
   display: flex;
-  position: relative;
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto
+  position: relative
 }
 .gods__list::before {
   content: "";
@@ -4434,7 +4458,9 @@ body {
   background: linear-gradient(rgba(0,0,0,0) 0,rgba(0,0,0,.8) 89.86%)
 }
 .gods__item:hover {
-  cursor: pointer;
+  cursor: pointer
+}
+.gods__item._active {
   flex: 0 0 51.5%
 }
 .gods__image {
@@ -4444,7 +4470,7 @@ body {
   object-fit: cover;
   transition: all .4s ease-in-out
 }
-.gods__item:hover .gods__image {
+.gods__item._active .gods__image {
   -webkit-transform: scale(1.1);
   transform: scale(1.1)
 }
@@ -4468,7 +4494,7 @@ body {
   width: 100%;
   height: auto
 }
-.gods__item:hover .gods__item-icon {
+.gods__item._active .gods__item-icon {
   left: 7.5%;
   -webkit-transform: translate(0,-50%);
   transform: translate(0,-50%)
@@ -4480,7 +4506,7 @@ body {
   text-shadow: 0 2px 5px rgba(0,0,0,.65);
   text-align: center
 }
-.gods__item:hover .gods__item-title {
+.gods__item._active .gods__item-title {
   display: none
 }
 .gods__item-text {
@@ -4494,7 +4520,7 @@ body {
   transition-delay: 0s;
   min-height: 70px
 }
-.gods__item:hover .gods__item-text {
+.gods__item._active .gods__item-text {
   font-size: 22px;
   opacity: 1;
   transition-delay: .4s
@@ -4742,7 +4768,8 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
-  position: absolute
+  position: absolute;
+  z-index: 1
 }
 .pvp__content {
   position: relative;
@@ -5216,23 +5243,6 @@ body {
     transform: rotate(0)
   }
 }
-.intro-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  -o-object-fit: cover;
-  object-fit: cover;
-  z-index: 9998;
-  visibility: hidden;
-  opacity: 0;
-  transition: all .3s ease-in-out
-}
-._video-active {
-  opacity: 1;
-  visibility: visible
-}
 .swiper {
   overflow: hidden
 }
@@ -5429,7 +5439,7 @@ body {
   .gods__item-text {
     min-height: 35px
   }
-  .gods__item:hover .gods__item-text {
+  .gods__item._active .gods__item-text {
     font-size: 18px
   }
   .class {
@@ -5921,9 +5931,9 @@ body {
     margin: 0 auto 13px
   }
   .gods__list {
-    height: 495px;
     background: url(../img/background/gods.webp) left top no-repeat;
     background-size: cover;
+    height: 495px;
     flex-direction: column
   }
   .gods__list::before {
@@ -5962,7 +5972,7 @@ body {
     object-fit: cover;
     transition: all .4s ease-in-out
   }
-  .gods__item:hover .gods__image {
+  .gods__item._active .gods__image {
     -webkit-transform: scale(1.1);
     transform: scale(1.1)
   }
@@ -5976,7 +5986,7 @@ body {
     -webkit-transform: translate(0,-100%);
     transform: translate(0,-100%)
   }
-  .gods__item:hover .gods__item-icon {
+  .gods__item._active .gods__item-icon {
     left: auto;
     top: -80px
   }
@@ -5989,7 +5999,7 @@ body {
     -webkit-transform: translate(0,-100%);
     transform: translate(0,-100%)
   }
-  .gods__item:hover .gods__item-title {
+  .gods__item._active .gods__item-title {
     display: block;
     top: -30px
   }
@@ -5998,7 +6008,7 @@ body {
     line-height: 1.28;
     min-height: 0
   }
-  .gods__item:hover .gods__item-text {
+  .gods__item._active .gods__item-text {
     font-size: 14px
   }
   .gods__item-text p {
@@ -6140,7 +6150,8 @@ body {
   }
   .class__content {
     height: 100%;
-    max-width: 360px;
+    max-width: 100%;
+    padding-right: 10px;
     margin-top: 60px
   }
   .class__name {

@@ -3783,14 +3783,15 @@
             var elements = document.querySelectorAll(".hasAnimation");
             elements.forEach((function(element) {
                 var animateName = element.getAttribute("data-animate");
+                var delay = element.getAttribute("data-delay") || 100;
                 element.classList.add("hidden");
                 var observer = new IntersectionObserver((function(entries) {
                     entries.forEach((function(entry) {
-                        if (entry.isIntersecting) {
+                        if (entry.isIntersecting) setTimeout((function() {
                             entry.target.classList.remove("hidden");
                             entry.target.classList.add("visible", "animate__animated", animateName);
                             observer.unobserve(entry.target);
-                        }
+                        }), delay);
                     }));
                 }), {
                     rootMargin: "0px 0px -50px 0px"
@@ -3835,6 +3836,14 @@
             if (rect.top <= 0) header.classList.add("_active"); else header.classList.remove("_active");
         }
         window.addEventListener("scroll", checkPosition);
+    }));
+    const godsItems = document.querySelectorAll(".gods__item");
+    godsItems.forEach((item => {
+        item.addEventListener("click", (function() {
+            const isActive = this.classList.contains("_active");
+            godsItems.forEach((i => i.classList.remove("_active")));
+            if (!isActive) this.classList.add("_active");
+        }));
     }));
     window["FLS"] = false;
     menuInit();

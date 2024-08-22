@@ -92,22 +92,18 @@
 	</div>
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
-			// Прокрутка страницы к началу при загрузке
-			window.scrollTo(0, 0);
-			document.documentElement.classList.add('lock'); // Добавляем класс .lock на <html>
-
 			const startTime = new Date().getTime();
 			const video = document.getElementById("introVideo");
 
-			function setVideoSource() {
-				if (window.matchMedia("(max-width: 767px)").matches) {
-					video.src = "img/video/hd.mp4";
-				} else if (window.matchMedia("(min-width: 768px) and (max-width: 1440px)").matches) {
-					video.src = "img/video/fhd.mp4";
-				} else {
-					video.src = "img/video/2k.mp4";
-				}
-			}
+			// function setVideoSource() {
+			// 		if (window.matchMedia("(max-width: 767px)").matches) {
+			// 				video.src = "img/video/hd.mp4";
+			// 		} else if (window.matchMedia("(min-width: 768px) and (max-width: 1440px)").matches) {
+			// 				video.src = "img/video/fhd.mp4";
+			// 		} else {
+			// 				video.src = "img/video/2k.mp4";
+			// 		}
+			// }
 
 			function hidePreloader() {
 				const currentTime = new Date().getTime();
@@ -118,19 +114,20 @@
 				} else {
 					document.getElementById("preloader").classList.add('_preloader-nonactive');
 
-					video.classList.add('_video-active');
+					// video.classList.add('_video-active');
+					// document.documentElement.classList.add('lock'); // Добавляем класс .lock на <html>
 
-					video.play();
+					// video.play();
 					document.getElementById("wrapper").classList.add('_wrapper-active');
 
-					video.addEventListener('ended', function() {
-						video.classList.remove('_video-active');
-						document.documentElement.classList.remove('lock'); // Убираем класс .lock с <html>
-					});
+					// video.addEventListener('ended', function() {
+					// 		video.classList.remove('_video-active');
+					// 		document.documentElement.classList.remove('lock'); // Убираем класс .lock с <html>
+					// });
 				}
 			}
 
-			setVideoSource(); // Устанавливаем исходный файл видео
+			// setVideoSource(); // Устанавливаем исходный файл видео
 			window.onload = hidePreloader;
 		});
 	</script>

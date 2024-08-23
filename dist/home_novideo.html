@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240823103448">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240823165942">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -301,7 +301,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="gods__item">
+							<div class="gods__item _data-active-god">
 								<picture>
 									<source srcset="img/content/odin_1440.webp" media="(min-width: 751px)">
 									<source srcset="img/content/odin_1440_mobile.webp" media="(min-width: 320px)">
@@ -315,6 +315,11 @@
 									<div class="gods__item-text">
 										<p>Асгард – холодный и жестокий дом для сильных и храбрых. Смертные здесь – соратники, боевые товарищи, а не слуги Богов. Каждый асгардец волен сам выбирать свой путь.</p>
 										<p>Вещий Бог Один правит сурово, но справедливо. Волей своей он приведёт Асгард к процветанию!</p>
+									</div>
+								</div>
+								<div class="click-hand _gods" data-active="._data-active-god">
+									<div class="click-hand__wrapper hidden">
+										<img src="img/icons/click-hand.svg">
 									</div>
 								</div>
 							</div>
@@ -373,11 +378,16 @@
 											</div>
 											Стрелок
 										</div>
-										<div class="class-icon _violet" data-showclass="mage">
+										<div class="class-icon _violet _data-active-class" data-showclass="mage">
 											<div class="class-icon__wrapper">
 												<img src="img/icons/classes/mage.webp">
 											</div>
 											Маг
+										</div>
+										<div class="click-hand _classes" data-active="._data-active-class">
+											<div class="click-hand__wrapper hidden _classes">
+												<img src="img/icons/click-hand.svg">
+											</div>
 										</div>
 									</div>
 									<div class="class__title">Воин</div>
@@ -886,7 +896,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240823103448"></script>
+	<script src="js/app.min.js?_v=20240823165942"></script>
 </body>
 
 </html>

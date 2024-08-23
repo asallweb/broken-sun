@@ -4295,6 +4295,28 @@ body {
   position: relative;
   z-index: 1
 }
+.click-hand {
+  position: absolute;
+  z-index: 9
+}
+.click-hand._gods {
+  left: 50%;
+  bottom: 200px;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%)
+}
+.click-hand._classes {
+  left: 58.5%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  top: 32px;
+  width: 44px;
+  height: 44px
+}
+.click-hand img {
+  width: 100%;
+  height: auto
+}
 .hero {
   position: relative;
   margin-bottom: 10px
@@ -4769,6 +4791,7 @@ body {
   margin-bottom: 24px
 }
 .class__list {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 56px;
@@ -5675,11 +5698,11 @@ textarea {
   height: 80px;
   padding: 8px 16px
 }
-ul {
+.page ul {
   padding-left: 15px;
   margin-bottom: 10px
 }
-ul li {
+.page ul li {
   padding-left: 5px;
   list-style: disc
 }
@@ -6484,7 +6507,7 @@ ul li {
   .gods__item:not(:hover)::after {
     display: none
   }
-  .gods__item:hover {
+  .gods__item._active {
     flex: 0 0 60%
   }
   .gods__image {
@@ -6992,6 +7015,9 @@ ul li {
   }
   .header__socials {
     margin-right: 0!important
+  }
+  .click-hand._gods {
+    bottom: 50px
   }
   .register__image-wrapper {
     position: relative;

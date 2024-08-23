@@ -4109,6 +4109,62 @@
             }));
         }));
     }));
+    window.addEventListener("load", (function() {
+        const clickHands = document.querySelectorAll(".click-hand");
+        clickHands.forEach((clickHand => {
+            const element = clickHand;
+            const wrapper = element.querySelector(".click-hand__wrapper");
+            const image = wrapper.querySelector("img");
+            const activeSelector = element.dataset.active;
+            const targetElement = document.querySelector(activeSelector);
+            let animationPlayed = false;
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+            }
+            function isElementCentered(el) {
+                const rect = el.getBoundingClientRect();
+                const elementCenterY = rect.top + rect.height / 2;
+                const screenCenterY = window.innerHeight / 2;
+                return Math.abs(screenCenterY - elementCenterY) <= 150;
+            }
+            function checkVisibilityAndCenter() {
+                if (animationPlayed) return;
+                wrapper.classList.remove("visible", "animate__animated", "animate__fadeInRightBig", "animate__fadeOutRightBig");
+                wrapper.classList.add("hidden");
+                if (isElementInViewport(element) && isElementCentered(element)) {
+                    console.log("Element is visible and centered");
+                    wrapper.classList.remove("hidden");
+                    wrapper.classList.add("visible", "animate__fadeInRightBig", "animate__animated");
+                    setTimeout((() => {
+                        image.style.transition = "transform 0.6s ease";
+                        image.style.transform = "scale(1.2)";
+                        if (targetElement) targetElement.classList.add("_active");
+                        setTimeout((() => {
+                            image.style.transform = "scale(1)";
+                            if (targetElement) targetElement.classList.remove("_active");
+                        }), 600);
+                    }), 1e3);
+                    setTimeout((() => {
+                        wrapper.classList.remove("animate__fadeInRightBig");
+                        wrapper.classList.add("animate__fadeOutRightBig");
+                    }), 2500);
+                    setTimeout((() => {
+                        wrapper.classList.remove("visible", "animate__fadeInRightBig", "animate__fadeOutRightBig");
+                        wrapper.classList.add("hidden");
+                    }), 4e3);
+                    animationPlayed = true;
+                } else {
+                    console.log("Element is not visible or not centered");
+                    wrapper.classList.remove("visible", "animate__animated", "animate__fadeInRightBig", "animate__fadeOutRightBig");
+                    wrapper.classList.add("hidden");
+                }
+            }
+            setTimeout(checkVisibilityAndCenter, 100);
+            window.addEventListener("scroll", checkVisibilityAndCenter);
+            window.addEventListener("resize", checkVisibilityAndCenter);
+        }));
+    }));
     window["FLS"] = false;
     menuInit();
 })();

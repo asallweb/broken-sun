@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240822183936">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240823103448">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -666,19 +666,19 @@
 									<div class="media__images media__swiper _active">
 										<div class="media__slider swiper mainSwiper mainSwiper__images">
 											<div class="media__wrapper swiper-wrapper">
-												<div class="media__main-slide swiper-slide">
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__1-full.webp">
 													<img src="img/content/media/media__1.webp" alt="">
 												</div>
-												<div class="media__main-slide swiper-slide">
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__2-full.webp">
 													<img src="img/content/media/media__2.webp" alt="">
 												</div>
-												<div class="media__main-slide swiper-slide">
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__3-full.webp">
 													<img src="img/content/media/media__3.webp" alt="">
 												</div>
-												<div class="media__main-slide swiper-slide">
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__1-full.webp">
 													<img src="img/content/media/media__1.webp" alt="">
 												</div>
-												<div class="media__main-slide swiper-slide">
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__2-full.webp">
 													<img src="img/content/media/media__2.webp" alt="">
 												</div>
 											</div>
@@ -721,19 +721,19 @@
 									<div class="media__video media__swiper">
 										<div class="media__slider swiper mainSwiper mainSwiper__video">
 											<div class="media__wrapper swiper-wrapper">
-												<div class="media__main-slide swiper-slide">
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-video="img/video/fhd.mp4">
 													<img src="img/content/media/media__3.webp" alt="">
 												</div>
-												<div class="media__main-slide swiper-slide">
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-video="img/video/fhd.mp4">
 													<img src="img/content/media/media__2.webp" alt="">
 												</div>
-												<div class="media__main-slide swiper-slide">
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-video="img/video/fhd.mp4">
 													<img src="img/content/media/media__1.webp" alt="">
 												</div>
-												<div class="media__main-slide swiper-slide">
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-video="img/video/fhd.mp4">
 													<img src="img/content/media/media__3.webp" alt="">
 												</div>
-												<div class="media__main-slide swiper-slide">
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-video="img/video/fhd.mp4">
 													<img src="img/content/media/media__2.webp" alt="">
 												</div>
 											</div>
@@ -875,7 +875,21 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240822183936"></script>
+	<div id="media" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+						<path d="M27 7.21571L24.7843 5L16 13.7843L7.21571 5L5 7.21571L13.7843 16L5 24.7843L7.21571 27L16 18.2157L24.7843 27L27 24.7843L18.2157 16L27 7.21571Z" fill="#B19F63" />
+					</svg>
+				</button>
+				<div class="popup__text">
+					Popup content
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20240823103448"></script>
 </body>
 
 </html>

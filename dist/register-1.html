@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240823165942">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240913090703">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,13 +127,19 @@
 					</a>
 					<div class="header__socials">
 						<a href="" class="header__socials-link _twch">
-							<img src="img/icons/twch.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#twch"></use>
+							</svg>
 						</a>
 						<a href="" class="header__socials-link _tg">
-							<img src="img/icons/tg.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#tg"></use>
+							</svg>
 						</a>
 						<a href="" class="header__socials-link _vk">
-							<img src="img/icons/vk.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#vk"></use>
+							</svg>
 						</a>
 					</div>
 					<div class="header__lang">
@@ -196,6 +202,65 @@
 						</div>
 					</div>
 				</div>
+				<div class="separator _bottom-26">
+					<picture>
+						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
+						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
+						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
+						<img src="img/background/separator/separator_390.webp" class="separator__background">
+					</picture>
+				</div>
+			</section>
+			<section class="faq">
+				<div class="__container">
+					<div class="faq__title">FAQ вопросы:</div>
+					<div class="faq__wrapper">
+						<div data-spollers class="spollers">
+							<details class="spollers__item">
+								<summary class="spollers__title">Когда начнется ЗБТ и сколько будет длиться?</summary>
+								<div class="spollers__body">Планируемая дата запуска ЗБТ - 1 декабря. Точное время будет сообщено ближе к дате открытия ЗБТ. Закрытие ЗБТ планируется на 26 января.</div>
+							</details>
+							<details class="spollers__item">
+								<summary class="spollers__title">Какие этапы ЗБТ будут (итерации) ?</summary>
+								<div class="spollers__body">
+									Будет 4 этапа тестирования:
+									<ul>
+										<li>знакомство с игровым миром</li>
+										<li>тестирование персонажей, механик</li>
+										<li>отсмотр баланса</li>
+										<li>оценка серверной стабильности</li>
+									</ul>
+								</div>
+							</details>
+							<details class="spollers__item">
+								<summary class="spollers__title">Что будет на ЗБТ? Что необходимо тестировать?</summary>
+								<div class="spollers__body">Особое внимание на ЗБТ будет уделено выявлению багов, проверке стабильности серверов, оптимизации устройств.</div>
+							</details>
+							<details class="spollers__item">
+								<summary class="spollers__title">Если нет опыта, я могу пройти отбор?</summary>
+								<div class="spollers__body">Пройти отбор можно всем, независимо от опыта. Важен энтузиазм и готовность сообщать об ошибках и предложениях по улучшению. Каждая анкета рассматривается индивидуально.</div>
+							</details>
+							<details class="spollers__item">
+								<summary class="spollers__title">Есть ли награды за активное участие?</summary>
+								<div class="spollers__body">Активные участники получат внутриигровые награды, а также могут быть приглашены на следующие этапы тестирования. Для настоящих багханетеров предусмотрены реальные призы.</div>
+							</details>
+							<details class="spollers__item">
+								<summary class="spollers__title">Можно ли стримить\делиться материалами с игры с третьими лицами?</summary>
+								<div class="spollers__body">Активные участники получат внутриигровые награды, а также могут быть приглашены на следующие этапы тестирования. Для настоящих багханетеров предусмотрены реальные призы.</div>
+							</details>
+						</div>
+					</div>
+				</div>
+				<div class="separator _bottom-26">
+					<picture>
+						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
+						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
+						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
+						<img src="img/background/separator/separator_390.webp" class="separator__background">
+					</picture>
+				</div>
 			</section>
 		</main>
 		<footer class="footer">
@@ -203,13 +268,19 @@
 				<div class="footer__wrapper">
 					<div class="footer__socials">
 						<a href="" class="footer__socials-link _twch">
-							<img src="img/icons/twch.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#twch"></use>
+							</svg>
 						</a>
 						<a href="" class="footer__socials-link _tg">
-							<img src="img/icons/tg.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#tg"></use>
+							</svg>
 						</a>
 						<a href="" class="footer__socials-link _vk">
-							<img src="img/icons/vk.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#vk"></use>
+							</svg>
 						</a>
 					</div>
 					<div class="footer__logo">
@@ -219,14 +290,14 @@
 					</div>
 					<div class="footer__text">
 						<div class="footer__text-left">© OIJO FZCO, 2024</div>
-						<div class="footer__text-middle">All rights reserved. All trademarks referenced herein are the properties of their respective owners. <a href="">Privacy Policy</a></div>
+						<div class="footer__text-middle">Мы собираем файлы cookie. Чтобы узнать подробности, ознакомьтесь с <a href="">Политикой конфиденциальности.</a></div>
 						<div class="footer__text-right"><a href="mail:contact@oijo.com">contact@oijo.com</a></div>
 					</div>
 				</div>
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240823165942"></script>
+	<script src="js/app.min.js?_v=20240913090703"></script>
 </body>
 
 </html>

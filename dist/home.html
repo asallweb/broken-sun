@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240823165942">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240913090703">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,6 +125,7 @@
 
 					video.addEventListener('ended', function() {
 						video.classList.remove('_video-active');
+						document.getElementById("header").classList.add('_active');
 						document.documentElement.classList.remove('lock'); // Убираем класс .lock с <html>
 					});
 				}
@@ -136,7 +137,7 @@
 	</script>
 
 	<div class="wrapper" id="wrapper">
-		<header class="header">
+		<header class="header" id="header">
 			<div class="header__container">
 				<div class="header__wrapper">
 					<a href="" class="header__logo">
@@ -153,10 +154,10 @@
 								<img src="img/logos/menu__logo.svg" alt="Broken Sun">
 							</a>
 							<ul class="menu__list">
-								<li class="menu__item"><a href="" class="menu__link _active">Главная</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Мир</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Классы</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Об игре</a></li>
+								<li class="menu__item"><a href="" class="menu__link" data-goto=".hero">Главная</a></li>
+								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".world">Мир</a></li>
+								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".classes">Классы</a></li>
+								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".pvp__navigator">Об игре</a></li>
 								<li class="menu__item"><a href="" class="menu__link">Новости</a></li>
 							</ul>
 							<div class="menu__lang">
@@ -169,13 +170,19 @@
 							</div>
 							<div class="menu__folowus">
 								<a href="" class="menu__folowus-link _twch">
-									<img src="img/icons/twch.svg">
+									<svg>
+										<use xlink:href="img/icons/social_networks.svg#twch"></use>
+									</svg>
 								</a>
 								<a href="" class="menu__folowus-link _tg">
-									<img src="img/icons/tg.svg">
+									<svg>
+										<use xlink:href="img/icons/social_networks.svg#tg"></use>
+									</svg>
 								</a>
 								<a href="" class="menu__folowus-link _vk">
-									<img src="img/icons/vk.svg">
+									<svg>
+										<use xlink:href="img/icons/social_networks.svg#vk"></use>
+									</svg>
 								</a>
 							</div>
 							<div class="menu__copyrights">© Pearl Abyss Corp. All Rights Reserved.</div>
@@ -194,7 +201,7 @@
 			</div>
 		</header>
 		<main class="page">
-			<section class="hero" id="hero">
+			<section class="hero" id="hero" data-watch="navigator">
 				<div class="hero__wrapper">
 					<div class="__container">
 						<div class="hero__logo">
@@ -229,13 +236,19 @@
 									<div class="hero__folowus-text">FOLLOW US</div>
 									<div class="hero__folowus-list">
 										<a href="" class="hero__folowus-link _twch">
-											<img src="img/icons/twch.svg">
+											<svg>
+												<use xlink:href="img/icons/social_networks.svg#twch"></use>
+											</svg>
 										</a>
 										<a href="" class="hero__folowus-link _tg">
-											<img src="img/icons/tg.svg">
+											<svg>
+												<use xlink:href="img/icons/social_networks.svg#tg"></use>
+											</svg>
 										</a>
 										<a href="" class="hero__folowus-link _vk">
-											<img src="img/icons/vk.svg">
+											<svg>
+												<use xlink:href="img/icons/social_networks.svg#vk"></use>
+											</svg>
 										</a>
 									</div>
 								</div>
@@ -251,16 +264,34 @@
 						<img src="img/background/hero/hero_390.webp" class="hero__background">
 					</picture>
 					<video id="introVideo" class="intro-video" autoplay muted playsinline></video>
-					<img src="img/background/hero/hero__arrow.webp" class="hero__arrow">
+					<img src="img/background/hero/hero__arrow.webp" class="hero__arrow" data-goto-header data-goto=".world">
+				</div>
+				<div class="separator">
+					<picture>
+						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
+						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
+						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
+						<img src="img/background/separator/separator_390.webp" class="separator__background">
+					</picture>
 				</div>
 			</section>
-			<section class="world">
+			<section class="world" data-watch="navigator" data-watch-threshold="0.3">
 				<div class="world__wrapper">
 					<div class="__container">
 						<div class="world__content">
 							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInLeft">
-								<div class="world__title">Мир-лотос</div>
-								<div class="world__text">Под лучами Расколотого Солнца застыл мир на краю гибели. Три альянса Богов и смертных борются за власть на его руинах. Решить судьбу этих земель предстоит вам: выберите сторону, найдите соратников и вершите историю в новой захватывающей MMORPG!</div>
+								<div class="world__title">
+									<span class="world__title-wrapper">
+										Мир-лотос
+									</span>
+								</div>
+								<div class="world__text">
+									<span class="world__text-wrapper">
+										<b>Спасите мир или сокрушите его!</b><br />
+										Под лучами Расколотого Солнца застыл мир на краю гибели. Три альянса Богов и смертных борются за власть на его руинах. Решить судьбу этих земель предстоит вам: выберите сторону, найдите соратников и вершите историю в новой захватывающей MMORPG!
+									</span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -276,12 +307,21 @@
 						</picture>
 					</div>
 				</div>
+				<div class="separator">
+					<picture>
+						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
+						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
+						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
+						<img src="img/background/separator/separator_390.webp" class="separator__background">
+					</picture>
+				</div>
 			</section>
 			<section class="gods">
 				<div class="__container">
 					<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInDown">
 						<div class="gods__title">Боги и Пантеоны</div>
-						<div class="gods__subtitle">Мы пешки в их руках, стань верным оружием в их манипулятивных сражениях</div>
+						<div class="gods__subtitle">Миром управляют три Пантеона, каждый со своими богами, законами и ценностями. Они прибыли со своих материков, чтобы установить новые порядки и подчинить своей воле осколки Империума.</div>
 					</div>
 				</div>
 				<div class="gods__wrapper">
@@ -289,9 +329,9 @@
 						<div class="gods__list">
 							<div class="gods__item">
 								<picture>
-									<source srcset="img/content/zeus_1440.webp" media="(min-width: 751px)">
-									<source srcset="img/content/zeus_1440_mobile.webp" media="(min-width: 320px)">
-									<img src="img/content/zeus_1440.webp" class="gods__image">
+									<source srcset="img/content/gods/zeus_1440.webp" media="(min-width: 751px)">
+									<source srcset="img/content/gods/zeus_1440_mobile.webp" media="(min-width: 320px)">
+									<img src="img/content/gods/zeus_1440.webp" class="gods__image">
 								</picture>
 								<div class="gods__item-content">
 									<div class="gods__item-icon">
@@ -300,15 +340,14 @@
 									<div class="gods__item-title">Зевс</div>
 									<div class="gods__item-text">
 										<p>Олимп – край богатства и изобилия, прогресса и гедонизма. У каждого есть шанс проявить себя – общество найдет достойное применение любой личности, любому таланту.</p>
-										<p>Зевс, избранный владыка Пантеона – искусный политик, готовый на всё ради благополучия Олимпа… и своей власти.</p>
 									</div>
 								</div>
 							</div>
 							<div class="gods__item _data-active-god">
 								<picture>
-									<source srcset="img/content/odin_1440.webp" media="(min-width: 751px)">
-									<source srcset="img/content/odin_1440_mobile.webp" media="(min-width: 320px)">
-									<img src="img/content/odin_1440.webp" class="gods__image">
+									<source srcset="img/content/gods/odin_1440.webp" media="(min-width: 751px)">
+									<source srcset="img/content/gods/odin_1440_mobile.webp" media="(min-width: 320px)">
+									<img src="img/content/gods/odin_1440.webp" class="gods__image">
 								</picture>
 								<div class="gods__item-content">
 									<div class="gods__item-icon">
@@ -317,7 +356,6 @@
 									<div class="gods__item-title">Один</div>
 									<div class="gods__item-text">
 										<p>Асгард – холодный и жестокий дом для сильных и храбрых. Смертные здесь – соратники, боевые товарищи, а не слуги Богов. Каждый асгардец волен сам выбирать свой путь.</p>
-										<p>Вещий Бог Один правит сурово, но справедливо. Волей своей он приведёт Асгард к процветанию!</p>
 									</div>
 								</div>
 								<div class="click-hand _gods" data-active="._data-active-god">
@@ -328,9 +366,9 @@
 							</div>
 							<div class="gods__item">
 								<picture>
-									<source srcset="img/content/ra_1440.webp" media="(min-width: 751px)">
-									<source srcset="img/content/ra_1440_mobile.webp" media="(min-width: 320px)">
-									<img src="img/content/ra_1440.webp" class="gods__image">
+									<source srcset="img/content/gods/ra_1440.webp" media="(min-width: 751px)">
+									<source srcset="img/content/gods/ra_1440_mobile.webp" media="(min-width: 320px)">
+									<img src="img/content/gods/ra_1440.webp" class="gods__image">
 								</picture>
 								<div class="gods__item-content">
 									<div class="gods__item-icon">
@@ -339,15 +377,23 @@
 									<div class="gods__item-title">Ра</div>
 									<div class="gods__item-text">
 										<p>Величие Богов, преданность своему делу и тонкие интриги – вот путь Нефара. Упорством и хитростью любой может достичь высшей цели: встать у подножия трона Верховного Бога.</p>
-										<p>Ра, величайший из бессмертных, несет миру свет истины Нефара. И горе тем, кто встанет на пути его воли!</p>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<div class="separator _bottom-20">
+					<picture>
+						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
+						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
+						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
+						<img src="img/background/separator/separator_390.webp" class="separator__background">
+					</picture>
+				</div>
 			</section>
-			<section class="classes">
+			<section class="classes" data-watch="navigator">
 				<div class="class _active _bg-warrior" data-class="warrior">
 					<div class="class__runes">
 						<div class="class__runes-circle-1">
@@ -395,7 +441,7 @@
 									</div>
 									<div class="class__title">Воин</div>
 									<div class="class__text">
-										Бойцы ближнего боя, первая линия обороны любой армии. Великолепно обращаютсяс любым оружием и носят серьезную броню. Воины просты в освоении, наносят сильные удары и хорошо держатся против атак противника
+										Использует оружие ближнего боя: меч, щит, рапиру, кинжал и тд. Броня делает воина особым классом, который поддерживает менее защищенных союзников. У воинов несколько путей развития в зависимости от особенности, которую они будут развивать: ловкость, сила удара, оборона.
 									</div>
 									<div class="class__roles">
 										<div class="class__roles-title">Роли</div>
@@ -472,7 +518,7 @@
 									</div>
 									<div class="class__title">Лучник</div>
 									<div class="class__text">
-										Любой стрелок скажет, что лучшее сражение — это не то, которое не произошло, а то,в котором противник до вас не смог добраться. Они обрушивают на головы врагов шквал стрел, от которого невероятно сложно укрыться
+										Использует оружие дальнего боя: лук или арбалет. Ключевая особенность класса — боеприпасы. Каждое из орудий может быть усилено ядовитой стрелой или огненным болтом. Стрелки — очень устойчивый класс, в котором можно как пойти по пути высокого урона или изнурения противника множественными ДОТами, так и по пути поддержки союзников. Броня стрелка так же весьма устойчива к входящему урону.
 									</div>
 									<div class="class__roles">
 										<div class="class__roles-title">Роли</div>
@@ -545,7 +591,7 @@
 									</div>
 									<div class="class__title">Маг</div>
 									<div class="class__text">
-										Магическая энергия есть в каждом жителе Мира-Лотоса. Кто-то пользуется маной бессознательно, а кто-то, как маги — искусно владеет ей. Они способны подчинять реальность вокруг своим желаниям и незаменимы на поле боя
+										Специализируется на нанесении положительных и отрицательных эффектов. Может ставить непроницаемые для ударов других классов барьеры. Маги — ударная сила любой команды, у них самая сильная атака среди классов, но при этом мало защиты, им очень нужна поддержка чтобы выжить. Еще одна особенность магов — нанесение урона по группе противников одной атакой.
 									</div>
 									<div class="class__roles">
 										<div class="class__roles-title">Роли</div>
@@ -584,88 +630,113 @@
 						</div>
 					</div>
 				</div>
-			</section>
-			<section class="pvp">
-				<div class="pvp__wrapper">
-					<div class="__container">
-						<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInLeft">
-							<div class="pvp__content">
-								<div class="pvp__title">PvE-режимы</div>
-								<div class="pvp__text">Исследуйте открытый мир в режиме PvE! Покиньте безопасные города и бейтесь с мародерами, мутантами и жуткими призраками на осколках Империума и Лепестках божественных Пантеонов.</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<picture>
-					<source srcset="img/content/pvp/pvp__1-1440.webp" media="(min-width: 1200px)">
-					<source srcset="img/content/pvp/pvp__1-920.webp" media="(min-width: 920px)">
-					<source srcset="img/content/pvp/pvp__1-768.webp" media="(min-width: 551px)">
-					<source srcset="img/content/pvp/pvp__1-390.webp" media="(min-width: 320px)">
-					<img src="img/content/pvp/pvp__1-768.webp" class="pvp__background">
-				</picture>
-				<div class="border-bottom"></div>
-			</section>
-			<section class="pvp _text-right">
-				<div class="pvp__wrapper">
-					<div class="__container">
-						<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInRight">
-							<div class="pvp__content">
-								<div class="pvp__title">PvP-режимы</div>
-								<div class="pvp__text">Испытайте себя в жестоких PvP-битвах на уникальных аренах! Окунитесь в великие сражения с тысячами игроков и получайте награды за каждую победу.</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<picture>
-					<source srcset="img/content/pvp/pvp__2-1440.webp" media="(min-width: 1200px)">
-					<source srcset="img/content/pvp/pvp__2-920.webp" media="(min-width: 920px)">
-					<source srcset="img/content/pvp/pvp__2-768.webp" media="(min-width: 501px)">
-					<source srcset="img/content/pvp/pvp__2-390.webp" media="(min-width: 320px)">
-					<img src="img/content/pvp/pvp__2-768.webp" class="pvp__background">
-				</picture>
-			</section>
-			<section class="awards">
-				<div class="__container">
-					<div class="awards__content">
-						<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInDown">
-							<div class="awards__title">Награды</div>
-							<div class="awards__text">Получайте за сражения экипировку, ингредиентыи редкие расходники, которые не добыть иным способом. Становитесь сильнее самиили продавайте и обменивайте трофеи.</div>
-							<button class="awards__button button">Предрегистрация</button>
-						</div>
-					</div>
-				</div>
-				<div class="awards__ornament">
-					<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeIn">
-						<img src="img/background/awards__ornament.webp" class="awards__ornament-src">
-					</div>
-				</div>
-				<div class="awards__image">
+				<div class="separator _bottom-26">
 					<picture>
-						<source srcset="img/content/awards/awards_1440.webp" media="(min-width: 1200px)">
-						<source srcset="img/content/awards/awards_920.webp" media="(min-width: 920px)">
-						<source srcset="img/content/awards/awards_768.webp" media="(min-width: 501px)">
-						<source srcset="img/content/awards/awards_390.webp" media="(min-width: 320px)">
-						<img src="img/content/awards/awards_768.webp" class="awards__image-src">
+						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
+						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
+						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
+						<img src="img/background/separator/separator_390.webp" class="separator__background">
+					</picture>
+				</div>
+			</section>
+			<div class="pvp__navigator" data-watch="navigator">
+				<section class="pvp">
+					<div class="pvp__wrapper">
+						<div class="__container">
+							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInLeft">
+								<div class="pvp__content">
+									<div class="pvp__title">PvE-режимы</div>
+									<div class="pvp__text">Исследуйте открытый мир в режиме PvE! Покиньте безопасные города и бейтесь с мародерами, мутантами и жуткими призраками на осколках Империума и Лепестках божественных Пантеонов.</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<picture>
+						<source srcset="img/content/pvp/pvp__1-1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/content/pvp/pvp__1-920.webp" media="(min-width: 920px)">
+						<source srcset="img/content/pvp/pvp__1-768.webp" media="(min-width: 551px)">
+						<source srcset="img/content/pvp/pvp__1-390.webp" media="(min-width: 320px)">
+						<img src="img/content/pvp/pvp__1-768.webp" class="pvp__background">
+					</picture>
+					<div class="border-bottom"></div>
+				</section>
+				<section class="pvp _text-right">
+					<div class="pvp__wrapper">
+						<div class="__container">
+							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInRight">
+								<div class="pvp__content">
+									<div class="pvp__title">PvP-режимы</div>
+									<div class="pvp__text">Испытайте себя в жестоких PvP-битвах на уникальных аренах! Окунитесь в великие сражения с тысячами игроков и получайте награды за каждую победу.</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<picture>
+						<source srcset="img/content/pvp/pvp__2-2k.webp" media="(min-width: 1921px)">
+						<source srcset="img/content/pvp/pvp__2-1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/content/pvp/pvp__2-920.webp" media="(min-width: 920px)">
+						<source srcset="img/content/pvp/pvp__2-768.webp" media="(min-width: 501px)">
+						<source srcset="img/content/pvp/pvp__2-390.webp" media="(min-width: 320px)">
+						<img src="img/content/pvp/pvp__2-768.webp" class="pvp__background">
+					</picture>
+					<div class="separator _bottom-26">
+						<picture>
+							<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
+							<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
+							<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
+							<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
+							<img src="img/background/separator/separator_390.webp" class="separator__background">
+						</picture>
+					</div>
+				</section>
+			</div>
+			<section class="awards">
+				<div class="awards__wrapper">
+					<div class="__container">
+						<div class="awards__content">
+							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInDown">
+								<div class="awards__title">Награды</div>
+								<div class="awards__text">Получайте за сражения экипировку, ингредиенты и редкие расходники, которые не добыть иным способом. Становитесь сильнее сами или продавайте и обменивайте трофеи.</div>
+								<button class="awards__button button">Предрегистрация</button>
+							</div>
+						</div>
+					</div>
+					<div class="awards__ornament">
+						<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeIn">
+							<img src="img/background/awards__ornament.webp" class="awards__ornament-src">
+						</div>
+					</div>
+					<div class="awards__image">
+						<picture>
+							<source srcset="img/content/awards/awards_1440.webp" media="(min-width: 1200px)">
+							<source srcset="img/content/awards/awards_920.webp" media="(min-width: 920px)">
+							<source srcset="img/content/awards/awards_768.webp" media="(min-width: 501px)">
+							<source srcset="img/content/awards/awards_390.webp" media="(min-width: 320px)">
+							<img src="img/content/awards/awards_768.webp" class="awards__image-src">
+						</picture>
+					</div>
+				</div>
+				<div class="separator _bottom-26">
+					<picture>
+						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
+						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
+						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
+						<img src="img/background/separator/separator_390.webp" class="separator__background">
 					</picture>
 				</div>
 			</section>
 			<section class="media">
 				<div class="__container">
 					<div class="media__outer">
-						<div class="media__title hasAnimation animate__animated hidden" data-animate="animate__fadeInLeft">Медиа</div>
+						<div class="media__title hasAnimation animate__animated hidden" data-animate="animate__fadeInLeft">Галерея</div>
 						<div class="media__inner">
 							<div class="media__data">
 								<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInLeft">
-									<div class="media__toggler">
-										<button class="media__toggler-btn _active">Галерея</button>
-										<button class="media__toggler-btn">Видео</button>
-									</div>
 									<div class="media__content">
 										<div class="media__text _active">
 											Наслаждайтесь современной графикой, уникальными анимациями и проработанными моделями на смартфоне или в браузере компьютера.
-										</div>
-										<div class="media__text">
-											MMORPG с ультра-графикой MMORPG с ультра-графикой MMORPG с ультра-графикой MMORPG с ультра-графикой MMORPG с ультра-графикой MMORPG с ультра-графикой MMORPG с ультра-графикой MMORPG с ультра-графикой MMORPG с ультра-графикой MMORPG с ультра-графикой MMORPG с ультра-графикой MMORPG с ультра-графикой
 										</div>
 										<button class="media__button button" data-da=".media__gallery, 760">ПРЕДРЕГИСТРАЦИЯ</button>
 									</div>
@@ -673,17 +744,23 @@
 							</div>
 							<div class="media__gallery">
 								<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInRight">
-									<div class="media__images media__swiper _active">
+									<div class="media__images media__swiper">
 										<div class="media__slider swiper mainSwiper mainSwiper__images">
 											<div class="media__wrapper swiper-wrapper">
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__4-full.webp">
+													<img src="img/content/media/media__4.webp" alt="">
+												</div>
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__5-full.webp">
+													<img src="img/content/media/media__5.webp" alt="">
+												</div>
+												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__3-full.webp">
+													<img src="img/content/media/media__3.webp" alt="">
+												</div>
 												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__1-full.webp">
 													<img src="img/content/media/media__1.webp" alt="">
 												</div>
 												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__2-full.webp">
 													<img src="img/content/media/media__2.webp" alt="">
-												</div>
-												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-													<img src="img/content/media/media__3.webp" alt="">
 												</div>
 												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__1-full.webp">
 													<img src="img/content/media/media__1.webp" alt="">
@@ -697,17 +774,27 @@
 											<div class="swiper-wrapper">
 												<div class="media__thumb-slide swiper-slide">
 													<div class="media__thumb-slide-inner">
+														<img src="img/content/media/media__4-preview.webp" alt="">
+													</div>
+												</div>
+												<div class="media__thumb-slide swiper-slide">
+													<div class="media__thumb-slide-inner">
+														<img src="img/content/media/media__5-preview.webp" alt="">
+													</div>
+												</div>
+												<div class="media__thumb-slide swiper-slide">
+													<div class="media__thumb-slide-inner">
+														<img src="img/content/media/media__3-preview.webp" alt="">
+													</div>
+												</div>
+												<div class="media__thumb-slide swiper-slide">
+													<div class="media__thumb-slide-inner">
 														<img src="img/content/media/media__1-preview.webp" alt="">
 													</div>
 												</div>
 												<div class="media__thumb-slide swiper-slide">
 													<div class="media__thumb-slide-inner">
 														<img src="img/content/media/media__2-preview.webp" alt="">
-													</div>
-												</div>
-												<div class="media__thumb-slide swiper-slide">
-													<div class="media__thumb-slide-inner">
-														<img src="img/content/media/media__3-preview.webp" alt="">
 													</div>
 												</div>
 												<div class="media__thumb-slide swiper-slide">
@@ -728,96 +815,59 @@
 											<button type="button" class="media__controls-btn _next swiper-button-next swiper-button-next__images"></button>
 										</div>
 									</div>
-									<div class="media__video media__swiper">
-										<div class="media__slider swiper mainSwiper mainSwiper__video">
-											<div class="media__wrapper swiper-wrapper">
-												<div class="media__main-slide swiper-slide" data-popup="#media" data-video="img/video/fhd.mp4">
-													<img src="img/content/media/media__3.webp" alt="">
-												</div>
-												<div class="media__main-slide swiper-slide" data-popup="#media" data-video="img/video/fhd.mp4">
-													<img src="img/content/media/media__2.webp" alt="">
-												</div>
-												<div class="media__main-slide swiper-slide" data-popup="#media" data-video="img/video/fhd.mp4">
-													<img src="img/content/media/media__1.webp" alt="">
-												</div>
-												<div class="media__main-slide swiper-slide" data-popup="#media" data-video="img/video/fhd.mp4">
-													<img src="img/content/media/media__3.webp" alt="">
-												</div>
-												<div class="media__main-slide swiper-slide" data-popup="#media" data-video="img/video/fhd.mp4">
-													<img src="img/content/media/media__2.webp" alt="">
-												</div>
-											</div>
-										</div>
-										<div thumbsSlider="" class="swiper thumbSwiper thumbSwiper__video ">
-											<div class="swiper-wrapper">
-												<div class="media__thumb-slide swiper-slide">
-													<div class="media__thumb-slide-inner">
-														<img src="img/content/media/media__3-preview.webp" alt="">
-													</div>
-												</div>
-												<div class="media__thumb-slide swiper-slide">
-													<div class="media__thumb-slide-inner">
-														<img src="img/content/media/media__2-preview.webp" alt="">
-													</div>
-												</div>
-												<div class="media__thumb-slide swiper-slide">
-													<div class="media__thumb-slide-inner">
-														<img src="img/content/media/media__1-preview.webp" alt="">
-													</div>
-												</div>
-												<div class="media__thumb-slide swiper-slide">
-													<div class="media__thumb-slide-inner">
-														<img src="img/content/media/media__3-preview.webp" alt="">
-													</div>
-												</div>
-												<div class="media__thumb-slide swiper-slide">
-													<div class="media__thumb-slide-inner">
-														<img src="img/content/media/media__2-preview.webp" alt="">
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="media__controls media__controls__video">
-											<button type="button" class="media__controls-btn _prev swiper-button-prev swiper-button-prev__video"></button>
-											<div class="media__controls-pagination swiper-pagination swiper-pagination__video"></div>
-											<button type="button" class="media__controls-btn _next swiper-button-next swiper-button-next__video"></button>
-										</div>
-									</div>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="separator _bottom-26">
+					<picture>
+						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
+						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
+						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
+						<img src="img/background/separator/separator_390.webp" class="separator__background">
+					</picture>
 				</div>
 			</section>
 
 			<section class="platform">
 				<div class="__container">
 					<div class="platform__wrapper">
-						<div class="platform__title">Платформы</div>
-						<div class="platform__text">Присоединяйтесь бесплатно! Запускайте игру в браузере или скачивайте приложение с AppStote, GooglePlay и RuStore. Не важно где вы играете, прогресс сохраняется для всех платформ. Отправляйтесь в увлекательное приключение где угодно: из дома, в дороге или на отдыхе!</div>
-						<div class="hero__platforms">
-							<a href="" class="hero__platform-link">
-								<img src="img/logos/appstore.webp">
-							</a>
-							<a href="" class="hero__platform-link _gplay">
-								<img src="img/logos/google-play.webp">
-							</a>
-							<a href="" class="hero__platform-link">
-								<img src="img/logos/web.webp">
-							</a>
+						<div class="platform__content">
+							<div class="platform__title">Платформы</div>
+							<div class="platform__text">Присоединяйтесь бесплатно! Запускайте игру в браузере или скачивайте приложение с AppStote, GooglePlay и RuStore. Не важно где вы играете, прогресс сохраняется для всех платформ. Отправляйтесь в увлекательное приключение где угодно: из дома, в дороге или на отдыхе!</div>
 						</div>
-						<div class="platform__image">
-							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInRight">
-								<picture>
-									<source srcset="img/content/platform/platform_1440.webp" media="(min-width: 1200px)">
-									<source srcset="img/content/platform/platform_920.webp" media="(min-width: 920px)">
-									<source srcset="img/content/platform/platform_768.webp" media="(min-width: 400px)">
-									<source srcset="img/content/platform/platform_390.webp" media="(min-width: 320px)">
-									<img src="img/content/platform/platform_390.webp" class="platform__image-src">
-								</picture>
-							</div>
+						<div class="hasAnimation animate__animated hidden" data-animate="animate__zoomInDown" data-delay="1000">
+							<picture>
+								<source srcset="img/content/platform/platform_1440.webp" media="(min-width: 1200px)">
+								<source srcset="img/content/platform/platform_920.webp" media="(min-width: 920px)">
+								<source srcset="img/content/platform/platform_768.webp" media="(min-width: 450px)">
+								<source srcset="img/content/platform/platform_390.webp" media="(min-width: 320px)">
+								<img src="img/content/platform/platform_390.webp" class="platform__image-src">
+							</picture>
 						</div>
 					</div>
+					<div class="hero__platforms">
+						<a href="" class="hero__platform-link">
+							<img src="img/logos/appstore.webp">
+						</a>
+						<a href="" class="hero__platform-link _gplay">
+							<img src="img/logos/google-play.webp">
+						</a>
+						<a href="" class="hero__platform-link">
+							<img src="img/logos/web.webp">
+						</a>
+					</div>
+				</div>
+				<div class="separator _bottom-26">
+					<picture>
+						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
+						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
+						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
+						<img src="img/background/separator/separator_390.webp" class="separator__background">
+					</picture>
 				</div>
 			</section>
 			<section class="counter">
@@ -852,7 +902,28 @@
 								</picture>
 							</div>
 						</div>
-						<img src="img/background/counter/counter__arrow.webp" class="counter__arrow">
+						<img src="img/background/counter/counter__arrow.webp" class="counter__arrow" data-goto=".hero">
+					</div>
+				</div>
+				<div class="separator _bottom-26">
+					<picture>
+						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
+						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
+						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
+						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
+						<img src="img/background/separator/separator_390.webp" class="separator__background">
+					</picture>
+				</div>
+			</section>
+			<section class="cookies">
+				<div class="cookies__wrapper hasAnimation animate__animated hidden" data-animate="animate__fadeInUp" data-delay="9000">
+					<div class="cookies__inner">
+						<div class="cookies__content">
+							Мы собираем файлы cookie. Чтобы узнать подробности, ознакомьтесь с <a href="">Политикой конфиденциальности.</a>
+						</div>
+						<div class="cookies__button-wrapper">
+							<button class="cookies__button">Понятно</button>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -862,13 +933,19 @@
 				<div class="footer__wrapper">
 					<div class="footer__socials">
 						<a href="" class="footer__socials-link _twch">
-							<img src="img/icons/twch.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#twch"></use>
+							</svg>
 						</a>
 						<a href="" class="footer__socials-link _tg">
-							<img src="img/icons/tg.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#tg"></use>
+							</svg>
 						</a>
 						<a href="" class="footer__socials-link _vk">
-							<img src="img/icons/vk.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#vk"></use>
+							</svg>
 						</a>
 					</div>
 					<div class="footer__logo">
@@ -878,7 +955,7 @@
 					</div>
 					<div class="footer__text">
 						<div class="footer__text-left">© OIJO FZCO, 2024</div>
-						<div class="footer__text-middle">All rights reserved. All trademarks referenced herein are the properties of their respective owners. <a href="">Privacy Policy</a></div>
+						<div class="footer__text-middle">Мы собираем файлы cookie. Чтобы узнать подробности, ознакомьтесь с <a href="">Политикой конфиденциальности.</a></div>
 						<div class="footer__text-right"><a href="mail:contact@oijo.com">contact@oijo.com</a></div>
 					</div>
 				</div>
@@ -899,7 +976,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240823165942"></script>
+	<script src="js/app.min.js?_v=20240913090703"></script>
 </body>
 
 </html>

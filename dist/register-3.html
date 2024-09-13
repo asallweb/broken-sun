@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240823165942">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240913090703">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,13 +127,19 @@
 					</a>
 					<div class="header__socials">
 						<a href="" class="header__socials-link _twch">
-							<img src="img/icons/twch.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#twch"></use>
+							</svg>
 						</a>
 						<a href="" class="header__socials-link _tg">
-							<img src="img/icons/tg.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#tg"></use>
+							</svg>
 						</a>
 						<a href="" class="header__socials-link _vk">
-							<img src="img/icons/vk.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#vk"></use>
+							</svg>
 						</a>
 					</div>
 					<div class="header__lang">
@@ -152,91 +158,363 @@
 						<div class="form__wrapper-inner">
 							<div class="form__inner">
 								<div class="form__title">Заполните анкету участника ЗБТ</div>
+								<div class="form__subtitle">Основная информация</div>
 								<div class="field-wrapper">
-									<label for=""><span>*</span>Как к Вам можно обращаться?</label>
-									<input type="text" placeholder="Ваше фамилия и имя" value="">
+									<label for=""><span>*</span>Ваш никнейм или имя в играх (если есть):</label>
+									<input type="text" placeholder="Шалапай_333" value="">
 								</div>
 								<div class="field-wrapper">
-									<label for=""><span>*</span>Укажите e-mail</label>
-									<input type="email" placeholder="E-mail" value="">
+									<label for=""><span>*</span>Ваш возраст:</label>
+									<input type="text" placeholder="Ваш возраст" value="">
+								</div>
+								<div class="field-wrapper">
+									<label for=""><span>*</span>Ваша страна и часовой пояс:</label>
+									<input type="text" placeholder="Ваша страна и часовой пояс" value="">
+								</div>
+								<div class="form__subtitle">Опыт в MMORPG</div>
+								<div class="field-title">
+									<span>*</span>Какой у вас общий опыт игры в MMORPG:
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="experience">
+									<label for="">Менее 1 года</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="experience">
+									<label for="">1-3 года</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="experience">
+									<label for="">3-5 лет</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="experience">
+									<label for="">Более 5 лет</label>
 								</div>
 								<div class="field-title">
-									<span>*</span>В какой социальной сети с Вами можно связаться? Укажите адрес своего аккаунта
+									<span>*</span>Во сколько различных MMORPG вы играли?
 								</div>
-								<div class="field-checkbox-input">
-									<div class="field-checkbox-input__checkbox">
-										<input type="checkbox">
-										<label for="">ВКонтакте</label>
+								<div class="radio-wrapper">
+									<input type="radio" name="count-games">
+									<label for="">Менее 3</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="count-games">
+									<label for="">3-5</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="count-games">
+									<label for="">5-10</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="count-games">
+									<label for="">Более 10</label>
+								</div>
+								<div class="field-wrapper _mt-40">
+									<label for=""><span>*</span>Укажите названия MMORPG, в которые вы играли дольше всего, и кратко опишите ваш опыт в них:</label>
+									<div class="field-wrapper__sublabel">Например рейды, PvP, крафт и т.д.</div>
+									<input type="text" placeholder="Смешарики онлайн (PvP)" value="">
+								</div>
+								<div class="form__subtitle">Роль в играх</div>
+								<div class="field-title">
+									<span>*</span>Какую игровую роль вы обычно предпочитаете?
+								</div>
+								<div class="field-wrapper__sublabel">Можно выбрать несколько вариантов</div>
+								<div class="field-wrapper__grid-2cols">
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Танковать</label>
+										</div>
 									</div>
-									<input type="text" placeholder="Ссылка" value="">
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Поддержка (баффы/дебаффы)</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Лечить</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Ремесла/Крафт</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Наносить урон в ближнем бою</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">PvP</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Наносить урон на дистанции</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Лидерство (вожак гильдии, капитан рейдов)</label>
+										</div>
+									</div>
 								</div>
+								<div class="field-title">
+									<span>*</span>Готовы ли вы активно участвовать в PvE или PvP тестировании?
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="ready">
+									<label for="">Да, в PvE</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="ready">
+									<label for="">Да, в PvP</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="ready">
+									<label for="">Да, в обоих</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="ready">
+									<label for="">Нет, предпочитаю другие аспекты</label>
+								</div>
+								<div class="form__subtitle _mt-32">Технический опыт</div>
+								<div class="field-title _mt-8">
+									<span>*</span>Были ли у вас опыт участия в бета-тестировании других игр?
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="beta-exp">
+									<label for="">Да, принимал участие в ЗБТ/ОБТ</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="beta-exp">
+									<label for="">Нет, не участвовал</label>
+								</div>
+								<div class="field-wrapper">
+									<input type="text" placeholder="Если ДА, то каких? (укажите название игр)" value="">
+								</div>
+								<div class="field-title _mt-40">
+									<span>*</span>Готовы ли вы сообщать о багах, проблемах с балансом и предлагать улучшения?
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="bug-report">
+									<label for="">Да, регулярно</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="bug-report">
+									<label for="">Да, если найду баг</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="bug-report">
+									<label for="">Нет, я предпочитаю просто играть</label>
+								</div>
+								<div class="field-title">
+									<span>*</span>Умеете ли вы записывать видео игрового процесса для демонстрации багов?
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="video-report">
+									<label for="">Да</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="video-report">
+									<label for="">Нет</label>
+								</div>
+								<div class="field-title">
+									<span>*</span>Есть ли у вас опыт использования стороннего ПО для тестирования или логирования проблем в играх?
+								</div>
+								<div class="field-wrapper__sublabel _mb-5">Например, программ для отслеживания FPS, записи логов и т.д.</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="test-exp">
+									<label for="">Да</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="test-exp">
+									<label for="">Нет</label>
+								</div>
+								<div class="field-wrapper">
+									<input type="text" placeholder="Если ДА, то какие? (укажите какие программы)" value="">
+								</div>
+								<div class="form__subtitle _mt-32">График и активность</div>
+								<div class="field-title">
+									<span>*</span>Сколько времени вы готовы посвящать тестированию игры?
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="count-time">
+									<label for="">Менее 5 часов в неделю</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="count-time">
+									<label for="">5-10 часов в неделю</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="count-time">
+									<label for="">10-20 часов в неделю</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="count-time">
+									<label for="">Более 20 часов в неделю</label>
+								</div>
+								<div class="field-title">
+									<span>*</span>В какое время дня вы обычно играете?
+								</div>
+								<div class="field-wrapper__sublabel _mb-5">По вашему часовому поясу</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="day-time">
+									<label for="">Утро</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="day-time">
+									<label for="">День</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="day-time">
+									<label for="">Вечер</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="day-time">
+									<label for="">Ночь</label>
+								</div>
+								<div class="form__subtitle _mt-32">Обратная связь</div>
+								<div class="field-title">
+									<span>*</span>Какую часть игры вы бы хотели протестировать в первую очередь?
+								</div>
+								<div class="field-wrapper__sublabel _mb-5">Выберите наиболее интересные аспекты</div>
+								<div class="field-wrapper__grid-2cols">
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Основные механики геймплея (боевые системы, квесты, прокачка)</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Экономика игры (торговля, крафт, сбор ресурсов)</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">PvP-система</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Рейды и групповые активности</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Лор и сюжет</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Графика и оптимизация</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Социальные функции (гильдии, система друзей, чаты)</label>
+										</div>
+									</div>
+								</div>
+								<div class="field-wrapper _mt-32">
+									<label for=""><span>*</span>Какой тип багов и проблем вы чаще всего замечаете в играх?</label>
+									<div class="field-wrapper__sublabel">Например, графические баги, баги с балансом, ошибки в UI и т.д.</div>
+									<input type="text" placeholder="Опишите примеры, если возможно" value="">
+								</div>
+								<div class="form__subtitle _mt-32">Дополнительные вопросы</div>
+								<div class="field-title">
+									<span>*</span>Есть ли у вас желание стать постоянным тестером проекта с регулярными обратными связями?
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="regular-feedback">
+									<label for="">Да, я готов участвовать в тестировании на постоянной основе</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="regular-feedback">
+									<label for="">Нет, планирую участвовать только в ЗБТ</label>
+								</div>
+								<div class="field-wrapper _mt-32">
+									<label for=""><span>*</span>Какие улучшения или изменения, по вашему мнению, можно было бы внести в жанр MMORPG на основе вашего опыта?</label>
+									<input type="text" placeholder="Опишите ваши предложения" value="">
+								</div>
+								<div class="form__subtitle _mt-32">Технические параметры</div>
+								<div class="field-title">
+									<span>*</span>Ваше основное игровое устройство:
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="type-device">
+									<label for="">ПК</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="type-device">
+									<label for="">Консоль</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="type-device">
+									<label for="">Мобильное устройство</label>
+								</div>
+								<div class="field-title">
+									<span>*</span>Характеристики вашего ПК:
+								</div>
+								<div class="field-wrapper__sublabel _mb-5">Если применимо</div>
+								<div class="field-wrapper _mb-12">
+									<input type="text" placeholder="Процессор" value="">
+								</div>
+								<div class="field-wrapper _mb-12">
+									<input type="text" placeholder="Видеокарта" value="">
+								</div>
+								<div class="field-wrapper _mb-12">
+									<input type="text" placeholder="Оперативная память" value="">
+								</div>
+								<div class="field-wrapper _mb-12">
+									<input type="text" placeholder="Интернет-соединение" value="">
+								</div>
+								<div class="form__subtitle _mt-32">Контактные данные</div>
+								<div class="field-wrapper">
+									<label for=""><span>*</span>Ваш контактный email:</label>
+									<input type="email" placeholder="email@email.com" value="">
+								</div>
+								<div class="field-title">
+									<span>*</span>Ваш Telegram/Discord:
+								</div>
+								<div class="field-wrapper__sublabel _mb-5">Если есть</div>
 								<div class="field-checkbox-input">
 									<div class="field-checkbox-input__checkbox">
 										<input type="checkbox">
 										<label for="">Telegram</label>
 									</div>
-									<input type="text" placeholder="Ссылка" value="">
+									<input type="text" placeholder="@Your_name" value="">
 								</div>
 								<div class="field-checkbox-input">
 									<div class="field-checkbox-input__checkbox">
 										<input type="checkbox">
 										<label for="">Discord</label>
 									</div>
-									<input type="text" placeholder="Ссылка" value="">
+									<input type="text" placeholder="Nick#000000" value="">
 								</div>
+								<div class="form__subtitle _mt-32">Финальные вопросы</div>
 								<div class="field-title">
-									<span>*</span>Какой у Вас опыт в MMORPG играх? <br>
-									В какие проекты играли и какого уровня достигли?
+									<span>*</span>Почему вы считаете себя подходящим кандидатом для участия в закрытом бета-тестировании?
 								</div>
-								<textarea placeholder="“Смешарики Онлайн” считаются?)"></textarea>
-								<div class="field-title">
-									<span>*</span>Есть ли у Вас уже опыт участия в игровых тестированиях?<br>
-									Если да, то какой и в каких проектах?
-								</div>
-								<textarea placeholder="“Смешарики Онлайн” считаются?)"></textarea>
-								<div class="field-title">
-									<span>*</span>Сколько времени вы готовы уделять игре в день?
-								</div>
-								<div class="radio-wrapper">
-									<input type="radio" name="hours">
-									<label for="">1 час</label>
-								</div>
-								<div class="radio-wrapper">
-									<input type="radio" name="hours">
-									<label for="">1-2 час</label>
-								</div>
-								<div class="radio-wrapper">
-									<input type="radio" name="hours">
-									<label for="">Больше 2 часов</label>
-								</div>
-								<div class="field-title">
-									<span>*</span>Каким устройством вы пользуетесь?
-								</div>
-								<div class="field-checkbox-input">
-									<div class="field-checkbox-input__checkbox">
-										<input type="checkbox">
-										<label for="">Android</label>
-									</div>
-									<input type="text" placeholder="Ссылка" value="">
-								</div>
-								<div class="field-checkbox-input">
-									<div class="field-checkbox-input__checkbox">
-										<input type="checkbox">
-										<label for="">iOS</label>
-									</div>
-									<input type="text" placeholder="Ссылка" value="">
-								</div>
-								<div class="field-checkbox-input">
-									<div class="field-checkbox-input__checkbox">
-										<input type="checkbox">
-										<label for="">PC</label>
-									</div>
-									<input type="text" placeholder="Ссылка" value="">
-								</div>
-								<div class="field-title">
-									<span>*</span>Почему Вы хотите принять участие в тестировании Broken Sun?
-								</div>
-								<textarea placeholder="Text"></textarea>
+								<textarea placeholder="Опишите ваш опыт и мотивацию в свободной форме"></textarea>
 								<div class="checkbox-wrapper">
 									<input type="checkbox">
 									<label for="">Я соглашаюсь на обработку моих персональных данных и принимаю <a href="">Privacy Policy</a></label>
@@ -259,13 +537,19 @@
 				<div class="footer__wrapper">
 					<div class="footer__socials">
 						<a href="" class="footer__socials-link _twch">
-							<img src="img/icons/twch.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#twch"></use>
+							</svg>
 						</a>
 						<a href="" class="footer__socials-link _tg">
-							<img src="img/icons/tg.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#tg"></use>
+							</svg>
 						</a>
 						<a href="" class="footer__socials-link _vk">
-							<img src="img/icons/vk.svg">
+							<svg>
+								<use xlink:href="img/icons/social_networks.svg#vk"></use>
+							</svg>
 						</a>
 					</div>
 					<div class="footer__logo">
@@ -275,14 +559,14 @@
 					</div>
 					<div class="footer__text">
 						<div class="footer__text-left">© OIJO FZCO, 2024</div>
-						<div class="footer__text-middle">All rights reserved. All trademarks referenced herein are the properties of their respective owners. <a href="">Privacy Policy</a></div>
+						<div class="footer__text-middle">Мы собираем файлы cookie. Чтобы узнать подробности, ознакомьтесь с <a href="">Политикой конфиденциальности.</a></div>
 						<div class="footer__text-right"><a href="mail:contact@oijo.com">contact@oijo.com</a></div>
 					</div>
 				</div>
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240823165942"></script>
+	<script src="js/app.min.js?_v=20240913090703"></script>
 </body>
 
 </html>

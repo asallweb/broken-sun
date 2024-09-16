@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240913130157">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240916195918">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,11 +98,12 @@
 
 			const startTime = new Date().getTime();
 			const video = document.getElementById("introVideo");
+			const hero__background = document.getElementById("hero__background");
 
 			function setVideoSource() {
 				if (window.matchMedia("(max-width: 767px)").matches) {
 					video.src = "img/video/hd.mp4";
-				} else if (window.matchMedia("(min-width: 768px) and (max-width: 1440px)").matches) {
+				} else if (window.matchMedia("(min-width: 768px) and (max-width: 1920px)").matches) {
 					video.src = "img/video/fhd.mp4";
 				} else {
 					video.src = "img/video/2k.mp4";
@@ -125,6 +126,7 @@
 
 					video.addEventListener('ended', function() {
 						video.classList.remove('_video-active');
+						hero__background.classList.add('_active');
 						document.getElementById("header").classList.add('_active');
 						document.documentElement.classList.remove('lock'); // Убираем класс .lock с <html>
 					});
@@ -256,17 +258,15 @@
 						</div>
 					</div>
 					<picture>
-						<source srcset="img/background/hero/hero_2k.webp" media="(min-width: 1921px)">
-						<source srcset="img/background/hero/hero_1440.webp" media="(min-width: 1200px)">
-						<source srcset="img/background/hero/hero_920.webp" media="(min-width: 920px)">
-						<source srcset="img/background/hero/hero_768.webp" media="(min-width: 400px)">
-						<source srcset="img/background/hero/hero_390.webp" media="(min-width: 320px)">
-						<img src="img/background/hero/hero_390.webp" class="hero__background">
+						<source srcset="img/background/hero/hero_2k.webp" media="(min-width: 1920px)">
+						<source srcset="img/background/hero/fhd.webp" media="(min-width: 768px)">
+						<source srcset="img/background/hero/hd.webp" media="(min-width: 320px)">
+						<img src="img/background/hero/hd.webp" class="hero__background" id="hero__background">
 					</picture>
 					<video id="introVideo" class="intro-video" autoplay muted playsinline></video>
 					<img src="img/background/hero/hero__arrow.webp" class="hero__arrow" data-goto-header data-goto=".world">
 				</div>
-				<div class="separator">
+				<div class="separator _bottom-20">
 					<picture>
 						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
 						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
@@ -976,7 +976,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240913130157"></script>
+	<script src="js/app.min.js?_v=20240916195918"></script>
 </body>
 
 </html>

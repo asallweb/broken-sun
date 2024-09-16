@@ -4621,7 +4621,13 @@ textarea {
   height: 100vh;
   display: block;
   -o-object-fit: cover;
-  object-fit: cover
+  object-fit: cover;
+  opacity: 0;
+  visibility: hidden
+}
+.hero__background._active {
+  opacity: 1;
+  visibility: visible
 }
 .hero__arrow {
   position: absolute;
@@ -4738,7 +4744,8 @@ textarea {
   object-fit: cover;
   z-index: 3;
   visibility: hidden;
-  opacity: 0
+  opacity: 0;
+  transition: all .3s ease-in-out
 }
 .hero .intro-video._video-active {
   opacity: 1;

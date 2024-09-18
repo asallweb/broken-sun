@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240916200235">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240918134512">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -524,7 +524,7 @@
 									<label for="">Я соглашаюсь и принимаю <a href="">Правила участия в ЗБТ</a></label>
 								</div>
 								<div class="submit-wrapper">
-									<button class="button" disabled>Подать заявку</button>
+									<button class="button" disabled><span class="button__text">Подать заявку</span></button>
 								</div>
 							</div>
 						</div>
@@ -535,26 +535,40 @@
 		<footer class="footer">
 			<div class="footer__container">
 				<div class="footer__wrapper">
-					<div class="footer__socials">
-						<a href="" class="footer__socials-link _twch">
-							<svg>
-								<use xlink:href="img/icons/social_networks.svg#twch"></use>
-							</svg>
-						</a>
-						<a href="" class="footer__socials-link _tg">
-							<svg>
-								<use xlink:href="img/icons/social_networks.svg#tg"></use>
-							</svg>
-						</a>
-						<a href="" class="footer__socials-link _vk">
-							<svg>
-								<use xlink:href="img/icons/social_networks.svg#vk"></use>
-							</svg>
-						</a>
-					</div>
+					<!-- <div class="footer__socials">
+				<a href="" class="footer__socials-link _twch">
+					<svg class="non-hovered" width="32" height="32">
+						<use xlink:href="img/icons/social_networks.svg#twch"></use>
+					</svg>
+					<svg class="hovered" width="42" height="36">
+						<use xlink:href="img/icons/social_networks.svg#twch-hovered"></use>
+					</svg>
+				</a>
+				<a href="" class="footer__socials-link _tg">
+					<svg class="non-hovered" width="32" height="32">
+						<use xlink:href="img/icons/social_networks.svg#tg"></use>
+					</svg>
+					<svg class="hovered" width="42" height="39">
+						<use xlink:href="img/icons/social_networks.svg#tg-hovered"></use>
+					</svg>
+				</a>
+				<a href="" class="footer__socials-link _vk">
+					<svg class="non-hovered" width="32" height="32">
+						<use xlink:href="img/icons/social_networks.svg#vk"></use>
+					</svg>
+					<svg class="hovered" width="42" height="32">
+						<use xlink:href="img/icons/social_networks.svg#vk-hovered"></use>
+					</svg>
+				</a>
+			</div> -->
 					<div class="footer__logo">
-						<a href="" class="footer__logo-link">
-							<img src="img/logos/footer.svg" class="footer__logo-src">
+						<a href="https://oijo.com/" target="_blank" class="footer__logo-link">
+							<svg width="190" height="79" class="footer__logo-src">
+								<use xlink:href="img/logos/footer.svg#footer"></use>
+							</svg>
+							<svg width="192" height="82" class="footer__logo-src _hovered">
+								<use xlink:href="img/logos/footer.svg#footer-hovered"></use>
+							</svg>
 						</a>
 					</div>
 					<div class="footer__text">
@@ -566,7 +580,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240916200235"></script>
+	<script src="js/app.min.js?_v=20240918134512"></script>
 </body>
 
 </html>

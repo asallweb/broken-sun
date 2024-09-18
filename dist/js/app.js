@@ -4589,7 +4589,7 @@
     function initParallaxEffect() {
         const backgrounds = document.querySelectorAll(".pvp__background");
         backgrounds.forEach((background => {
-            const initialOffset = -.35 * background.clientHeight;
+            const initialOffset = -.4 * background.clientHeight;
             background.style.transform = `translateY(${initialOffset}px)`;
             background.dataset.initialOffset = initialOffset;
         }));
@@ -4599,7 +4599,7 @@
                 const rect = background.getBoundingClientRect();
                 const offset = window.innerHeight - rect.top;
                 if (offset > 0 && offset < window.innerHeight + rect.height) {
-                    const speed = .15;
+                    const speed = .25;
                     const translateY = parseFloat(background.dataset.initialOffset) + offset * speed;
                     background.style.transform = `translateY(${translateY}px)`;
                 }
@@ -4613,6 +4613,9 @@
         if (cookies) button.addEventListener("click", (function() {
             cookies.style.display = "none";
         }));
+    }));
+    document.querySelector(".header__lang-current").addEventListener("click", (function() {
+        this.closest(".header__lang").classList.toggle("_opened");
     }));
     window["FLS"] = false;
     menuInit();

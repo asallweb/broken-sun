@@ -1,0 +1,13 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M1.64645 9.64645L1.29289 10L1.64645 10.3536L9.64645 18.3536L10 18.7071L10.3536 18.3536L18.3536 10.3536L18.7071 10L18.3536 9.64645L10.3536 1.64645L10 1.29289L9.64645 1.64645L1.64645 9.64645Z" fill="url(#paint0_linear_950_6137)"/>
+<path d="M1.64645 9.64645L1.29289 10L1.64645 10.3536L9.64645 18.3536L10 18.7071L10.3536 18.3536L18.3536 10.3536L18.7071 10L18.3536 9.64645L10.3536 1.64645L10 1.29289L9.64645 1.64645L1.64645 9.64645Z" fill="url(#pattern0_950_6137)" fill-opacity="0.45" style="mix-blend-mode:overlay"/>
+<path d="M1.64645 9.64645L1.29289 10L1.64645 10.3536L9.64645 18.3536L10 18.7071L10.3536 18.3536L18.3536 10.3536L18.7071 10L18.3536 9.64645L10.3536 1.64645L10 1.29289L9.64645 1.64645L1.64645 9.64645Z" stroke="#F9DF94" stroke-miterlimit="3.8637"/>
+<defs>
+<pattern id="pattern0_950_6137" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0_950_6137" transform="matrix(0.00130654 0 0 0.0061231 -0.505929 -3.9006)"/>
+</pattern>
+<linearGradient id="paint0_linear_950_6137" x1="9.27273" y1="2" x2="9.27273" y2="18" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFD57B"/>
+<stop offset="1" stop-color="#BD820D"/>
+</linearGradient></defs>
+</svg>

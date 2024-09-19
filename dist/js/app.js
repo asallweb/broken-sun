@@ -4143,7 +4143,7 @@
         if (document.querySelector(".mainSwiper__images") && document.querySelector(".thumbSwiper__images")) {
             var thumbSwiper = new Swiper(".thumbSwiper__images", {
                 modules: [ Navigation, Thumb, Pagination ],
-                loop: true,
+                loop: false,
                 spaceBetween: 12,
                 slidesPerView: "auto",
                 freeMode: true,
@@ -4158,32 +4158,6 @@
                 }
             });
             new Swiper(".mainSwiper__images", {
-                modules: [ Navigation, Thumb ],
-                loop: true,
-                spaceBetween: 8,
-                thumbs: {
-                    swiper: thumbSwiper
-                }
-            });
-        }
-        if (document.querySelector(".mainSwiper__video") && document.querySelector(".thumbSwiper__video")) {
-            thumbSwiper = new Swiper(".thumbSwiper__video", {
-                modules: [ Navigation, Thumb, Pagination ],
-                loop: true,
-                spaceBetween: 12,
-                slidesPerView: "auto",
-                freeMode: true,
-                watchSlidesProgress: true,
-                navigation: {
-                    nextEl: ".swiper-button-next__video",
-                    prevEl: ".swiper-button-prev__video"
-                },
-                pagination: {
-                    el: ".swiper-pagination__video",
-                    clickable: true
-                }
-            });
-            new Swiper(".mainSwiper__video", {
                 modules: [ Navigation, Thumb ],
                 loop: true,
                 spaceBetween: 8,

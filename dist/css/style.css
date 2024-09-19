@@ -4221,6 +4221,12 @@ body {
 .button:disabled:before {
   opacity: 0
 }
+.button:disabled:before:hover {
+  background-image: url(../img/background/button/button_disabled.svg)
+}
+.button:disabled:active:after {
+  background-image: url(../img/background/button/button_disabled.svg)
+}
 .button._big-size {
   width: 390px;
   height: 72px;
@@ -4461,10 +4467,10 @@ input[type=checkbox] {
 input[type=checkbox]::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
-  width: 10px;
-  height: 5px;
+  width: 15px;
+  height: 8px;
   border-left: 2px solid transparent;
   border-bottom: 2px solid transparent;
   -webkit-transform: translate(-50%,-50%) rotate(-45deg);
@@ -4896,7 +4902,7 @@ textarea {
 .hero__bottom {
   position: absolute;
   left: 0;
-  bottom: 100px;
+  bottom: 120px;
   width: 100%;
   z-index: 4
 }
@@ -5290,12 +5296,12 @@ textarea {
 .class__runes {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 0;
   width: 100%;
-  height: 100%;
+  height: 64vw;
   max-width: 1440px;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%)
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
 }
 .class__runes-center {
   position: absolute;
@@ -5306,9 +5312,11 @@ textarea {
 }
 .class__runes-center img {
   width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-  object-fit: cover
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  max-height: 300px;
+  max-width: 300px
 }
 .class__runes-circle-1 {
   position: absolute;
@@ -5671,6 +5679,7 @@ textarea {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: 1;
   pointer-events: none;
   display: block;
   width: 100%;
@@ -5682,7 +5691,8 @@ textarea {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
-  object-fit: cover
+  object-fit: cover;
+  clip-path: polygon(1.6% 0,98.4% 0,100% 2.9%,100% 97.6%,98.4% 100%,1.4% 100%,0 97.6%,0 2.9%)
 }
 .media__thumb-slide {
   padding: 6px 4px 14px 4px;
@@ -5726,14 +5736,15 @@ textarea {
   padding: 0 8px
 }
 .media__controls-pagination .swiper-pagination-bullet {
-  height: 6px;
+  height: 16px;
   width: 100%;
   border-radius: 11px;
   flex-shrink: 1;
   cursor: pointer
 }
 .media__controls-pagination .swiper-pagination-bullet-active {
-  background: #b19f63
+  background: #b19f63;
+  height: 6px
 }
 .platform {
   background: url(../img/background/dark__blue.webp) center top repeat-y;
@@ -6423,6 +6434,9 @@ textarea {
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%)
   }
+  .awards__content {
+    margin-top: 10vh
+  }
 }
 @media (max-width:1600px) {
   .class._bg-warrior {
@@ -6547,7 +6561,7 @@ textarea {
     font-size: 22px
   }
   .hero__bottom {
-    bottom: 68px
+    bottom: 85px
   }
   .hero__register {
     margin-bottom: 12px
@@ -6604,6 +6618,10 @@ textarea {
   }
   .class__runes-center {
     width: 156px
+  }
+  .class__runes-center img {
+    max-height: 150px;
+    max-width: 150px
   }
   .class__runes-circle-1 {
     width: 494px;
@@ -6906,7 +6924,8 @@ textarea {
     height: 530px
   }
   .class__runes {
-    max-width: 768px
+    max-width: 768px;
+    height: 90vw
   }
   .class__runes-circle-2 {
     left: 1%;
@@ -7331,7 +7350,8 @@ textarea {
     left: 0;
     top: 0;
     -webkit-transform: translate(0,0);
-    transform: translate(0,0)
+    transform: translate(0,0);
+    height: 100%
   }
   .class__runes-center {
     width: 112px;

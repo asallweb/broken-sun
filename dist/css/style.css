@@ -4449,7 +4449,7 @@ textarea._invalid {
 input:not([type=checkbox]):not([type=radio]) {
   height: 44px;
   border-bottom: 1px solid #b19f63;
-  padding: 0 16px
+  padding: 0 17px
 }
 input[type=checkbox] {
   -webkit-appearance: none;
@@ -5664,6 +5664,12 @@ textarea {
   flex: 0 0 auto;
   width: 784px
 }
+.media__gallery-group {
+  display: none
+}
+.media__gallery-group._active {
+  display: block
+}
 .media__slider {
   margin-top: -5px;
   margin-bottom: 21px;
@@ -5745,6 +5751,31 @@ textarea {
 .media__controls-pagination .swiper-pagination-bullet-active {
   background: #b19f63;
   height: 6px
+}
+.media__video-wrapper {
+  position: relative;
+  padding: 2px
+}
+.media__video-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../img/background/media__border.svg) 0 0 no-repeat;
+  background-size: 100% 100%
+}
+.media__video-wrapper img,
+.media__video-wrapper video {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  clip-path: polygon(1.6% 0,98.4% 0,100% 2.9%,100% 97.6%,98.4% 100%,1.4% 100%,0 97.6%,0 2.9%)
 }
 .platform {
   background: url(../img/background/dark__blue.webp) center top repeat-y;
@@ -6000,7 +6031,7 @@ textarea {
 }
 .form__wrapper {
   border: 1px solid #776030;
-  background-color: #132336;
+  background: url(../img/background/form__wrapper.webp) 0 0 repeat;
   max-width: 1132px;
   width: 100%;
   margin: 0 auto;
@@ -6057,16 +6088,26 @@ textarea {
   color: #f9df94;
   line-height: 2.38;
   text-align: center;
-  margin-bottom: 32px
+  margin-bottom: 15px;
+  margin-top: 11px
 }
 .form__subtitle {
   color: #f9df94;
   line-height: 1.2;
   text-align: center;
-  margin-bottom: 8px
+  margin-bottom: 12px
+}
+.form__subtitle._mb-15 {
+  margin-bottom: 15px
+}
+.form__subtitle._mt-15 {
+  margin-top: 15px
 }
 .form__subtitle._mt-32 {
   margin-top: 32px
+}
+.form__subtitle._mt-60 {
+  margin-top: 60px
 }
 .form a {
   color: #f9df94
@@ -6076,28 +6117,46 @@ textarea {
 }
 .form .field-wrapper {
   position: relative;
-  margin: 0 0 32px 0;
+  margin: 0 0 29px 0;
   padding: 8px
 }
 .form .field-wrapper._mb-12 {
   margin-bottom: 12px
 }
+.form .field-wrapper._mb-50 {
+  margin-bottom: 50px
+}
 .form .field-wrapper label {
   color: #fafafa;
   line-height: 1.23;
-  margin-bottom: 12px
+  margin-bottom: 15px;
+  padding-left: 17px;
+  position: relative
 }
 .form .field-wrapper label span {
-  color: #e54555
+  color: #e54555;
+  position: absolute;
+  left: 0;
+  top: 0
 }
 .form .field-wrapper__sublabel {
   color: #ccc;
   font-weight: 300;
   line-height: 1.3;
-  margin-top: -12px
+  margin-top: -12px;
+  padding-left: 17px
 }
 .form .field-wrapper__sublabel._mb-5 {
   margin-bottom: 5px
+}
+.form .field-wrapper__sublabel._mb-10 {
+  margin-bottom: 10px
+}
+.form .field-wrapper__sublabel._mb-15 {
+  margin-bottom: 15px
+}
+.form .field-wrapper__sublabel._mb-25 {
+  margin-bottom: 25px
 }
 .form .field-wrapper__error {
   color: #e54555;
@@ -6132,13 +6191,21 @@ textarea {
   color: #fafafa;
   line-height: 1.23;
   margin-top: 32px;
-  margin-bottom: 12px
+  margin-bottom: 12px;
+  padding-left: 17px;
+  position: relative
 }
 .form .field-title._mt-8 {
   margin-top: 8px
 }
+.form .field-title._mb-15 {
+  margin-bottom: 15px
+}
 .form .field-title span {
-  color: #e54555
+  color: #e54555;
+  position: absolute;
+  left: 0;
+  top: 0
 }
 .form .field-checkbox {
   display: flex;
@@ -6146,7 +6213,11 @@ textarea {
   gap: 8px;
   color: #e6e6e6;
   font-size: 18px;
-  line-height: 1.22
+  line-height: 1.22;
+  padding-left: 10px
+}
+.form .field-checkbox label {
+  cursor: pointer
 }
 .form .field-checkbox-input {
   display: flex;
@@ -6167,13 +6238,20 @@ textarea {
   align-items: center;
   gap: 10px;
   color: #e6e6e6;
-  margin-bottom: 8px
+  padding-left: 11px;
+  margin-bottom: 11px
+}
+.form .radio-wrapper label {
+  cursor: pointer
 }
 .form .field-wrapper__grid-2cols {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  gap: 15px;
+  gap: 32px 0;
   margin: 12px 0 40px
+}
+.form .field-wrapper__grid-2cols._mb-55 {
+  margin-bottom: 55px
 }
 .success__wrapper {
   max-width: 1132px;
@@ -6359,8 +6437,14 @@ textarea {
   .form .field-title {
     font-size: 1.625rem
   }
+  .form .field-title._mt-20 {
+    margin-top: 1.25rem
+  }
   .form .field-title._mt-40 {
     margin-top: 2.5rem
+  }
+  .form .field-title._mt-45 {
+    margin-top: 2.8125rem
   }
   .form .radio-wrapper {
     font-size: 1.125rem
@@ -7536,8 +7620,14 @@ textarea {
   .form .field-title {
     font-size: 1rem
   }
+  .form .field-title._mt-20 {
+    margin-top: .625rem
+  }
   .form .field-title._mt-40 {
     margin-top: 1.25rem
+  }
+  .form .field-title._mt-45 {
+    margin-top: 1.5625rem
   }
   .form .radio-wrapper {
     font-size: .875rem
@@ -7864,8 +7954,14 @@ textarea {
   .form .field-title {
     font-size: clamp(1rem ,.8214285714rem + .8928571429vw ,1.625rem)
   }
+  .form .field-title._mt-20 {
+    margin-top: clamp(.625rem ,.4464285714rem + .8928571429vw ,1.25rem)
+  }
   .form .field-title._mt-40 {
     margin-top: clamp(1.25rem ,.8928571429rem + 1.7857142857vw ,2.5rem)
+  }
+  .form .field-title._mt-45 {
+    margin-top: clamp(1.5625rem ,1.2053571429rem + 1.7857142857vw ,2.8125rem)
   }
   .form .radio-wrapper {
     font-size: clamp(.875rem ,.8035714286rem + .3571428571vw ,1.125rem)

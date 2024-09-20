@@ -4465,6 +4465,21 @@
     }
     addClassOnVisible('[data-class="warrior"]', "_start-rotate", 100, "-150px");
     document.addEventListener("DOMContentLoaded", (function() {
+        const togglerButtons = document.querySelectorAll(".media__toggler-btn");
+        const textBlocks = document.querySelectorAll(".media__text");
+        const swiperBlocks = document.querySelectorAll(".media__gallery-group");
+        togglerButtons.forEach(((button, index) => {
+            button.addEventListener("click", (function() {
+                togglerButtons.forEach((btn => btn.classList.remove("_active")));
+                textBlocks.forEach((text => text.classList.remove("_active")));
+                swiperBlocks.forEach((swiper => swiper.classList.remove("_active")));
+                button.classList.add("_active");
+                textBlocks[index].classList.add("_active");
+                swiperBlocks[index].classList.add("_active");
+            }));
+        }));
+    }));
+    document.addEventListener("DOMContentLoaded", (function() {
         const header__register = document.querySelector(".header__register");
         const heroArrow = document.querySelector(".hero__arrow");
         function checkPosition() {

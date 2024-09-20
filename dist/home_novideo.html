@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240919120454">
+	<link rel="stylesheet" href="css/style.min.css?_v=20240920141553">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -120,7 +120,6 @@
 								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".world">Мир</a></li>
 								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".classes">Классы</a></li>
 								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".pvp__navigator">Об игре</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Новости</a></li>
 							</ul>
 							<div class="menu__lang">
 								<a href="" class="menu__lang-link _active">RU</a>
@@ -195,24 +194,24 @@
 									</button>
 								</div>
 								<div class="hero__platforms">
-									<a href="" class="hero__platform-link">
+									<div class="hero__platform-link">
 										<picture>
 											<source srcset="img/logos/appstore_2k.webp" media="(min-width: 1920px)">
 											<img src="img/logos/appstore.webp">
 										</picture>
-									</a>
-									<a href="" class="hero__platform-link _gplay">
+									</div>
+									<div class="hero__platform-link _gplay">
 										<picture>
 											<source srcset="img/logos/google-play_2k.webp" media="(min-width: 1920px)">
 											<img src="img/logos/google-play.webp">
 										</picture>
-									</a>
-									<a href="" class="hero__platform-link">
+									</div>
+									<div class="hero__platform-link">
 										<picture>
 											<source srcset="img/logos/web_2k.webp" media="(min-width: 1920px)">
 											<img src="img/logos/web.webp">
 										</picture>
-									</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -729,13 +728,20 @@
 			<section class="media">
 				<div class="__container">
 					<div class="media__outer">
-						<div class="media__title hasAnimation animate__animated hidden" data-animate="animate__fadeInLeft">Галерея</div>
+						<div class="media__title hasAnimation animate__animated hidden" data-animate="animate__fadeInLeft">Медиа</div>
 						<div class="media__inner">
 							<div class="media__data">
 								<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInLeft">
+									<div class="media__toggler">
+										<button class="media__toggler-btn _active">Галерея</button>
+										<button class="media__toggler-btn">Видео</button>
+									</div>
 									<div class="media__content">
 										<div class="media__text _active">
 											Наслаждайтесь современной графикой, уникальными анимациями и проработанными моделями на смартфоне или в браузере компьютера.
+										</div>
+										<div class="media__text">
+											Полюбуйтесь Миром Расколотого Солнца ещё до запуска игры: посмотрите геймплейный трейлер и другие наши видео.
 										</div>
 										<button class="media__button button" data-da=".media__gallery, 760"><span class="button__text">Предрегистрация</span></button>
 									</div>
@@ -743,7 +749,7 @@
 							</div>
 							<div class="media__gallery">
 								<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInRight">
-									<div class="media__images media__swiper">
+									<div class="media__swiper media__gallery-group _active">
 										<div class="media__slider swiper mainSwiper mainSwiper__images">
 											<div class="media__wrapper swiper-wrapper">
 												<div class="media__main-slide swiper-slide" data-popup="#media" data-image="img/content/media/media__3-full.webp">
@@ -790,6 +796,11 @@
 											<button type="button" class="media__controls-btn _next swiper-button-next swiper-button-next__images"></button>
 										</div>
 									</div>
+									<div class="media__gallery-group">
+										<div class="media__video-wrapper">
+											<img src="img/content/media/media__3.webp" alt="">
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -824,15 +835,15 @@
 						</div>
 					</div>
 					<div class="hero__platforms">
-						<a href="" class="hero__platform-link">
+						<div class="hero__platform-link">
 							<img src="img/logos/appstore.webp">
-						</a>
-						<a href="" class="hero__platform-link _gplay">
+						</div>
+						<div class="hero__platform-link _gplay">
 							<img src="img/logos/google-play.webp">
-						</a>
-						<a href="" class="hero__platform-link">
+						</div>
+						<div class="hero__platform-link">
 							<img src="img/logos/web.webp">
-						</a>
+						</div>
 					</div>
 				</div>
 				<div class="separator _bottom-26">
@@ -965,7 +976,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240919120454"></script>
+	<script src="js/app.min.js?_v=20240920141553"></script>
 </body>
 
 </html>

@@ -4829,8 +4829,11 @@ textarea {
 }
 .footer__logo-link {
   position: relative;
-  width: 192px;
-  height: 82px
+  width: 63px;
+  height: 34px
+}
+.footer__logo-link:hover svg {
+  display: none
 }
 .footer__logo-link:hover ._hovered {
   display: block
@@ -4844,7 +4847,8 @@ textarea {
   transform: translate(-50%,-50%)
 }
 .footer__logo-src._hovered {
-  display: none
+  display: none;
+  margin-left: -1px
 }
 .hero {
   position: relative;
@@ -7053,10 +7057,6 @@ textarea {
   .footer__wrapper {
     gap: 33px
   }
-  .footer__logo-link {
-    width: 120px;
-    height: 51px
-  }
   .platform {
     padding-top: 40px;
     padding-bottom: 26px
@@ -7198,10 +7198,6 @@ textarea {
   .footer__socials-link svg.hovered {
     width: 21px;
     height: auto
-  }
-  .footer__logo-link {
-    width: 88px;
-    height: 39px
   }
   .footer__text {
     font-size: 8px;

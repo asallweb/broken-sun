@@ -4407,18 +4407,58 @@ body {
 }
 .separator {
   position: absolute;
-  bottom: -14px;
+  bottom: -23px;
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
-  z-index: 2;
-  pointer-events: none
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%
 }
-.separator._bottom-20 {
-  bottom: -20px
+.separator__left,
+.separator__right {
+  width: 100%;
+  height: 8px;
+  flex: 1 1 auto;
+  position: relative
 }
-.separator._bottom-26 {
-  bottom: -26px
+.separator__left::after,
+.separator__left::before,
+.separator__right::after,
+.separator__right::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  position: absolute
+}
+.separator__left::after {
+  background: linear-gradient(to left,#776030 0,rgba(119,96,48,.7) 60%,rgba(119,96,48,0) 90%);
+  right: 0;
+  bottom: 0
+}
+.separator__left::before {
+  background: linear-gradient(to left,#776030 0,rgba(119,96,48,.7) 60%,rgba(119,96,48,0) 90%);
+  right: 0;
+  top: 0
+}
+.separator__right::after {
+  background: linear-gradient(to right,#776030 0,rgba(119,96,48,.7) 60%,rgba(119,96,48,0) 90%);
+  left: 0;
+  bottom: 0
+}
+.separator__right::before {
+  background: linear-gradient(to right,#776030 0,rgba(119,96,48,.7) 60%,rgba(119,96,48,0) 90%);
+  left: 0;
+  top: 0
+}
+.separator__middle {
+  flex: 0 0 auto;
+  height: 20px;
+  width: 14px
 }
 input,
 textarea {
@@ -4659,7 +4699,7 @@ textarea {
 }
 .header {
   position: fixed;
-  z-index: 5;
+  z-index: 7;
   left: 0;
   width: 100%;
   border-bottom: 1px solid rgba(30,37,51,.7);
@@ -4855,7 +4895,7 @@ textarea {
   margin-bottom: 10px
 }
 .hero__background {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: block;
   -o-object-fit: cover;
@@ -4884,7 +4924,7 @@ textarea {
   transform: translate(-50%,0);
   width: 100%;
   max-width: 524px;
-  z-index: 4
+  z-index: 6
 }
 .hero__logo-src {
   width: 100%;
@@ -4908,7 +4948,7 @@ textarea {
   left: 0;
   bottom: 120px;
   width: 100%;
-  z-index: 4
+  z-index: 6
 }
 .hero__register {
   margin-bottom: 32px;
@@ -4929,7 +4969,7 @@ textarea {
   position: fixed;
   right: -110px;
   top: 65vh;
-  z-index: 4
+  z-index: 6
 }
 .hero__folowus-wrapper {
   display: flex;
@@ -4982,14 +5022,14 @@ textarea {
   display: none
 }
 .hero .intro-video {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   -o-object-fit: cover;
   object-fit: cover;
-  z-index: 3;
+  z-index: 5;
   visibility: hidden;
   opacity: 0;
   transition: all .3s ease-in-out
@@ -5081,6 +5121,11 @@ textarea {
 .gods {
   position: relative
 }
+.gods__heading {
+  position: relative;
+  padding-bottom: 24px;
+  margin-bottom: 6px
+}
 .gods__title {
   color: #f9df94;
   font-size: 42px;
@@ -5111,8 +5156,7 @@ textarea {
   line-height: 1.36;
   text-align: center;
   width: 100%;
-  margin: 0 auto 24px;
-  max-width: 685px
+  margin: 0 auto
 }
 .gods__wrapper {
   max-width: 1440px;
@@ -5125,61 +5169,34 @@ textarea {
   display: flex;
   position: relative
 }
+.gods__list::after,
 .gods__list::before {
   content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: -2px;
   display: block;
+  position: absolute;
+  top: 0;
+  background: url(../img/background/shadow__vertical-gods.webp) 0 0 repeat-y;
+  width: 100px;
   height: 100%;
-  width: 2px;
-  background: linear-gradient(rgba(249,223,148,0) 4.63%,#f9df94 50%,rgba(249,223,148,0) 95.26%)
+  z-index: 1
+}
+.gods__list::before {
+  left: 0;
+  -webkit-transform: scale(-1,1);
+  transform: scale(-1,1)
 }
 .gods__list::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: -2px;
-  display: block;
-  height: 100%;
-  width: 2px;
-  background: linear-gradient(rgba(249,223,148,0) 4.63%,#f9df94 50%,rgba(249,223,148,0) 95.26%)
+  right: 0
 }
 .gods__item {
   flex: 1;
   transition: all .4s ease-in-out;
   position: relative;
   overflow: hidden;
-  height: 844px
-}
-.gods__item:not(:last-child)::before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  display: block;
-  height: 100%;
-  width: 2px;
-  background: linear-gradient(rgba(249,223,148,0) 4.63%,#f9df94 50%,rgba(249,223,148,0) 95.26%)
-}
-.gods__item::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 35%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background: linear-gradient(rgba(0,0,0,0) 0,rgba(0,0,0,.8) 89.86%)
+  height: 823px
 }
 .gods__item:hover {
   cursor: pointer
-}
-.gods__item._active {
-  flex: 0 0 51.5%
 }
 .gods__image {
   width: 100%;
@@ -5190,9 +5207,10 @@ textarea {
   -webkit-transform: scale(1);
   transform: scale(1)
 }
-.gods__item._active .gods__image {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1)
+.gods__item._active .gods__image,
+.gods__item:hover .gods__image {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2)
 }
 .gods__item-content {
   position: absolute;
@@ -5200,53 +5218,48 @@ textarea {
   width: 100%;
   bottom: 0;
   left: 0;
-  padding: 7.5%
+  padding: 36px 60px;
+  transition: all .6s ease-in-out
 }
 .gods__item-icon {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  transition: all .4s ease-in-out
-}
-.gods__item-icon img {
-  width: 100%;
-  height: auto
-}
-.gods__item._active .gods__item-icon {
-  left: 7.5%;
-  -webkit-transform: translate(0,-50%);
-  transform: translate(0,-50%)
+  text-align: center
 }
 .gods__item-title {
   color: #f9df94;
   font-size: 26px;
-  line-height: 1.23;
+  line-height: 1.2;
   text-shadow: 0 2px 5px rgba(0,0,0,.65);
-  text-align: center
-}
-.gods__item._active .gods__item-title {
-  display: none
+  text-align: center;
+  margin-bottom: 25px
 }
 .gods__item-text {
-  opacity: 0;
   color: #fafafa;
   text-shadow: 0 2px 5px rgba(0,0,0,.65);
-  font-size: 0;
-  font-weight: 300;
-  line-height: 1.36;
-  transition: all .6s ease-in-out;
-  transition-delay: 0s;
-  min-height: 70px
-}
-.gods__item._active .gods__item-text {
   font-size: 22px;
-  opacity: 1;
-  transition-delay: .4s
+  font-weight: 300;
+  line-height: 1.27;
+  position: relative;
+  padding: 12px 0;
+  text-align: center;
+  width: 366px;
+  margin: 0 auto
 }
-.gods__item-text p {
-  margin-bottom: 15px
+.gods__item-text::after,
+.gods__item-text::before {
+  content: "";
+  display: block;
+  background: linear-gradient(90deg,rgba(119,96,48,.09) 0,#ffebb2 50%,#776030 80%,rgba(119,96,48,0) 100%);
+  height: 2px;
+  width: 331px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
+}
+.gods__item-text::after {
+  top: auto;
+  bottom: 0
 }
 .classes {
   position: relative
@@ -5462,6 +5475,9 @@ textarea {
 }
 .pvp .__container {
   width: 100%
+}
+.pvp__navigator {
+  position: relative
 }
 .pvp__wrapper {
   width: 100%;
@@ -5835,8 +5851,7 @@ textarea {
   position: relative;
   height: 1024px;
   background: url(../img/background/dark__blue.webp) center top repeat-y;
-  background-size: 100% auto;
-  overflow: hidden
+  background-size: 100% auto
 }
 .counter::before {
   content: "";
@@ -5857,7 +5872,8 @@ textarea {
   display: flex;
   align-items: center;
   position: relative;
-  height: 100%
+  height: 100%;
+  overflow: hidden
 }
 .counter__content {
   max-width: 617px;
@@ -5994,8 +6010,6 @@ textarea {
 .register__item-title {
   color: #fafafa;
   line-height: 1.26;
-  leading-trim: both;
-  text-edge: cap;
   margin-bottom: 28px;
   text-align: center
 }
@@ -6295,7 +6309,7 @@ textarea {
   width: 100%;
   max-width: 704px;
   padding: 20px;
-  z-index: 4
+  z-index: 6
 }
 .cookies__wrapper {
   padding: 18px 16px;
@@ -6500,6 +6514,10 @@ textarea {
   }
 }
 @media (min-width:1440px) {
+  .gods__background {
+    background: url(../img/background/gods-2k.webp) center center no-repeat;
+    background-size: cover
+  }
   .counter::before {
     background: url(../img/background/counter/counter_2k.webp) 0 0 no-repeat
   }
@@ -6688,18 +6706,15 @@ textarea {
   .gods__item {
     height: 700px
   }
-  .gods__item-icon {
-    width: 48px
+  .gods__item-content {
+    padding: 35px 5px
   }
   .gods__item-title {
-    font-size: 18px;
-    text-shadow: 0 1.917px 1.917px rgba(0,0,0,.25)
+    font-size: 22px
   }
   .gods__item-text {
-    min-height: 35px
-  }
-  .gods__item._active .gods__item-text {
-    font-size: 18px
+    font-size: 18px;
+    width: 100%
   }
   .class__runes {
     max-width: 920px
@@ -7011,6 +7026,9 @@ textarea {
   .gods__item {
     height: 530px
   }
+  ._active .gods__item-content {
+    bottom: 0!important
+  }
   .class__runes {
     max-width: 768px;
     height: 90vw
@@ -7220,24 +7238,11 @@ textarea {
   .gods__list {
     background: url(../img/background/gods-mobile.webp) center center no-repeat;
     background-size: cover;
-    height: 495px;
+    height: 530px;
     flex-direction: column
   }
-  .gods__list::before {
-    left: 0;
-    height: 1px;
-    width: 100%;
-    background: linear-gradient(#776030 0,#776030 100%)
-  }
-  .gods__list::after {
-    top: auto;
-    bottom: 0;
-    right: 0;
-    height: 1px;
-    width: 100%;
-    background: linear-gradient(#776030 0,#776030 100%)
-  }
-  .gods__item:not(:last-child)::before {
+  .gods__item:not(:first-child)::before {
+    content: "";
     top: auto;
     bottom: 0;
     right: 0;
@@ -7245,61 +7250,35 @@ textarea {
     height: 1px;
     width: 100%;
     background: linear-gradient(#776030 0,#776030 100%)
-  }
-  .gods__item:not(:hover)::after {
-    display: none
   }
   .gods__item._active {
     flex: 0 0 60%
   }
   .gods__image {
     width: auto;
-    height: auto;
-    -o-object-fit: cover;
-    object-fit: cover;
-    transition: all .4s ease-in-out
-  }
-  .gods__item._active .gods__image {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1)
+    height: auto
   }
   .gods__item-content {
-    padding: 15px
+    padding: 15px;
+    position: absolute;
+    width: 60%;
+    right: 0;
+    left: auto;
+    transition: all .4s ease-in-out
   }
   .gods__item-icon {
-    left: auto;
-    right: 30px;
-    top: -20px;
-    -webkit-transform: translate(0,-100%);
-    transform: translate(0,-100%)
-  }
-  .gods__item._active .gods__item-icon {
-    left: auto;
-    top: -80px
+    display: block
   }
   .gods__item-title {
     font-size: 18px;
-    position: absolute;
-    top: 0;
-    right: 30px;
-    width: 48px;
-    -webkit-transform: translate(0,-100%);
-    transform: translate(0,-100%)
-  }
-  .gods__item._active .gods__item-title {
-    display: block;
-    top: -30px
+    margin-bottom: 10px
   }
   .gods__item-text {
-    font-size: 0;
-    line-height: 1.28;
-    min-height: 0
-  }
-  .gods__item._active .gods__item-text {
     font-size: 14px
   }
-  .gods__item-text p {
-    margin-bottom: 10px
+  .gods__item-text::after,
+  .gods__item-text::before {
+    display: none
   }
   .pvp::after,
   .pvp::before {

@@ -6,79 +6,15 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240921092017">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20240924165347">
+	<script src="files/js/preloader.js?_v=20240924165347"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20240924165347">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-	<style>
-		#preloader {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			width: 100vw;
-			height: 100vh;
-			transition: all 0.3s ease-in-out;
-		}
-
-		.preloader__background {
-			width: 100vw;
-			height: 100vh;
-			object-fit: cover;
-		}
-
-		.loader {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
-
-		.loader-image {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
-
-		.loader-image-src {
-			animation: spin 5s linear infinite;
-		}
-
-		.loader__spinner img {
-			animation: spin 1s linear infinite;
-		}
-
-		._preloader-nonactive {
-			visibility: hidden;
-			opacity: 0;
-		}
-
-		@keyframes spin {
-			0% {
-				transform: rotate(0deg);
-			}
-
-			100% {
-				transform: rotate(360deg);
-			}
-		}
-
-		.wrapper {
-			visibility: hidden;
-			opacity: 0;
-			transition: all 0.3s ease-in-out;
-		}
-
-		._wrapper-active {
-			visibility: visible;
-			opacity: 1;
-		}
-	</style>
 	<div id="preloader">
 		<img src="img/background/preloader/background.webp" class="preloader__background">
 		<div class="loader">
@@ -90,30 +26,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Прокрутка страницы к началу при загрузке
-			window.scrollTo(0, 0);
-			document.documentElement.classList.add('lock'); // Добавляем класс .lock на <html>
-
-			const startTime = new Date().getTime();
-
-			function hidePreloader() {
-				const currentTime = new Date().getTime();
-				const elapsedTime = currentTime - startTime;
-
-				if (elapsedTime < 1000) {
-					setTimeout(hidePreloader, 1000 - elapsedTime);
-				} else {
-					document.getElementById("preloader").classList.add('_preloader-nonactive');
-					document.getElementById("wrapper").classList.add('_wrapper-active');
-					document.documentElement.classList.remove('lock'); // Убираем класс .lock с <html>
-				}
-			}
-			window.onload = hidePreloader;
-		});
-	</script>
-
 	<div class="wrapper" id="wrapper">
 		<header class="header _active _relative">
 			<div class="header__container">
@@ -230,7 +142,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20240921092017"></script>
+	<script src="js/app.min.js?_v=20240924165347"></script>
 </body>
 
 </html>

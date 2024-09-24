@@ -6,79 +6,15 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240921092017">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20240924165347">
+	<script src="files/js/preloader.js?_v=20240924165347"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20240924165347">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-	<style>
-		#preloader {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			width: 100vw;
-			height: 100vh;
-			transition: all 0.3s ease-in-out;
-		}
-
-		.preloader__background {
-			width: 100vw;
-			height: 100vh;
-			object-fit: cover;
-		}
-
-		.loader {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
-
-		.loader-image {
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-		}
-
-		.loader-image-src {
-			animation: spin 5s linear infinite;
-		}
-
-		.loader__spinner img {
-			animation: spin 1s linear infinite;
-		}
-
-		._preloader-nonactive {
-			visibility: hidden;
-			opacity: 0;
-		}
-
-		@keyframes spin {
-			0% {
-				transform: rotate(0deg);
-			}
-
-			100% {
-				transform: rotate(360deg);
-			}
-		}
-
-		.wrapper {
-			visibility: hidden;
-			opacity: 0;
-			transition: all 0.3s ease-in-out;
-		}
-
-		._wrapper-active {
-			visibility: visible;
-			opacity: 1;
-		}
-	</style>
 	<div id="preloader">
 		<img src="img/background/preloader/background.webp" class="preloader__background">
 		<div class="loader">
@@ -90,54 +26,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Прокрутка страницы к началу при загрузке
-			window.scrollTo(0, 0);
-			document.documentElement.classList.add('lock'); // Добавляем класс .lock на <html>
-
-			const startTime = new Date().getTime();
-			const video = document.getElementById("introVideo");
-			const hero__background = document.getElementById("hero__background");
-
-			function setVideoSource() {
-				if (window.matchMedia("(max-width: 767px)").matches) {
-					video.src = "img/video/hd.mp4";
-				} else if (window.matchMedia("(min-width: 768px) and (max-width: 1920px)").matches) {
-					video.src = "img/video/fhd.mp4";
-				} else {
-					video.src = "img/video/2k.mp4";
-				}
-			}
-
-			function hidePreloader() {
-				const currentTime = new Date().getTime();
-				const elapsedTime = currentTime - startTime;
-
-				if (elapsedTime < 1000) {
-					setTimeout(hidePreloader, 1000 - elapsedTime);
-				} else {
-					document.getElementById("preloader").classList.add('_preloader-nonactive');
-
-					video.classList.add('_video-active');
-
-					video.play();
-					document.getElementById("wrapper").classList.add('_wrapper-active');
-
-					video.addEventListener('ended', function() {
-						video.classList.remove('_video-active');
-						hero__background.classList.add('_active');
-						document.getElementById("header").classList.add('_active');
-						document.documentElement.classList.remove('lock'); // Убираем класс .lock с <html>
-					});
-				}
-			}
-
-			setVideoSource(); // Устанавливаем исходный файл видео
-			window.onload = hidePreloader;
-		});
-	</script>
-
 	<div class="wrapper" id="wrapper">
 		<header class="header" id="header">
 			<div class="header__container">
@@ -158,6 +46,7 @@
 							<ul class="menu__list">
 								<li class="menu__item"><a href="" class="menu__link" data-goto=".hero">Главная</a></li>
 								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".world">Мир</a></li>
+								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".gods">Фракции</a></li>
 								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".classes">Классы</a></li>
 								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".pvp__navigator">Об игре</a></li>
 							</ul>
@@ -289,23 +178,14 @@
 				</div>
 			</div> -->
 					</div>
-					<picture>
-						<source srcset="img/background/hero/2k.webp" media="(min-width: 1920px)">
-						<source srcset="img/background/hero/fhd.webp" media="(min-width: 768px)">
-						<source srcset="img/background/hero/hd.webp" media="(min-width: 320px)">
-						<img src="img/background/hero/hd.webp" class="hero__background" id="hero__background">
-					</picture>
+					<video id="hero__background" class="hero__background" autoplay muted playsinline loop></video>
 					<video id="introVideo" class="intro-video" autoplay muted playsinline></video>
 					<img src="img/background/hero/hero__arrow.webp" class="hero__arrow" data-goto-header data-goto=".world">
 				</div>
-				<div class="separator _bottom-20">
-					<picture>
-						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
-						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
-						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
-						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
-						<img src="img/background/separator/separator_390.webp" class="separator__background">
-					</picture>
+				<div class="separator">
+					<div class="separator__left"></div>
+					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
+					<div class="separator__right"></div>
 				</div>
 			</section>
 			<section class="world" data-watch="navigator" data-watch-threshold="0.3">
@@ -339,90 +219,86 @@
 						</picture>
 					</div>
 				</div>
-				<div class="separator">
-					<picture>
-						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
-						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
-						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
-						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
-						<img src="img/background/separator/separator_390.webp" class="separator__background">
-					</picture>
-				</div>
 			</section>
-			<section class="gods">
-				<div class="__container">
-					<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInDown">
-						<div class="gods__title">Боги и Пантеоны</div>
-						<div class="gods__subtitle">Миром управляют три Пантеона, каждый со своими богами, законами и ценностями. Они прибыли со своих материков, чтобы установить новые порядки и подчинить своей воле осколки Империума.</div>
+			<section class="gods" data-watch="navigator" data-watch-threshold="0.3">
+				<div class="gods__heading">
+					<div class="__container">
+						<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInDown">
+							<div class="gods__title">Боги и Пантеоны</div>
+							<div class="gods__subtitle">Миром управляют три Пантеона, каждый со своими богами, законами и ценностями. Они прибыли со своих материков, чтобы установить новые порядки и подчинить своей воле осколки Империума.</div>
+						</div>
+						<div class="separator">
+							<div class="separator__left"></div>
+							<img src="img/background/separator/separator-middle.svg" class="separator__middle">
+							<div class="separator__right"></div>
+						</div>
 					</div>
 				</div>
-				<div class="gods__wrapper">
-					<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInUp">
-						<div class="gods__list">
-							<div class="gods__item">
-								<picture>
-									<source srcset="img/content/gods/zeus_1440.webp" media="(min-width: 751px)">
-									<source srcset="img/content/gods/zeus_1440_mobile.webp" media="(min-width: 320px)">
-									<img src="img/content/gods/zeus_1440.webp" class="gods__image">
-								</picture>
-								<div class="gods__item-content">
-									<div class="gods__item-icon">
-										<img src="img/icons/zeus.webp">
-									</div>
-									<div class="gods__item-title">Зевс</div>
-									<div class="gods__item-text">
-										<p>Олимп – край богатства и изобилия, прогресса и гедонизма. У каждого есть шанс проявить себя – общество найдет достойное применение любой личности, любому таланту.</p>
-									</div>
-								</div>
-							</div>
-							<div class="gods__item _data-active-god">
-								<picture>
-									<source srcset="img/content/gods/odin_1440.webp" media="(min-width: 751px)">
-									<source srcset="img/content/gods/odin_1440_mobile.webp" media="(min-width: 320px)">
-									<img src="img/content/gods/odin_1440.webp" class="gods__image">
-								</picture>
-								<div class="gods__item-content">
-									<div class="gods__item-icon">
-										<img src="img/icons/odin.webp">
-									</div>
-									<div class="gods__item-title">Один</div>
-									<div class="gods__item-text">
-										<p>Асгард – холодный и жестокий дом для сильных и храбрых. Смертные здесь – соратники, боевые товарищи, а не слуги Богов. Каждый асгардец волен сам выбирать свой путь.</p>
+				<div class="gods__background">
+					<div class="gods__wrapper">
+						<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInUp">
+							<div class="gods__list">
+								<div class="gods__item">
+									<picture>
+										<source srcset="img/content/gods/zeus_1440.webp" media="(min-width: 751px)">
+										<source srcset="img/content/gods/zeus_1440_mobile.webp" media="(min-width: 320px)">
+										<img src="img/content/gods/zeus_1440.webp" class="gods__image">
+									</picture>
+									<div class="gods__item-content">
+										<div class="gods__item-icon">
+											<img src="img/icons/zeus.webp">
+										</div>
+										<div class="gods__item-title">Зевс</div>
+										<div class="gods__item-text">
+											Олимпом правит умелый манипулятор Зевс. Он поддерживает легенду о демократии, сосредоточив реальную власть в своих руках.
+										</div>
 									</div>
 								</div>
-								<div class="click-hand _gods" data-active="._data-active-god">
-									<div class="click-hand__wrapper hidden">
-										<img src="img/icons/click-hand.svg">
+								<div class="gods__item _data-active-god">
+									<picture>
+										<source srcset="img/content/gods/odin_1440.webp" media="(min-width: 751px)">
+										<source srcset="img/content/gods/odin_1440_mobile.webp" media="(min-width: 320px)">
+										<img src="img/content/gods/odin_1440.webp" class="gods__image">
+									</picture>
+									<div class="gods__item-content">
+										<div class="gods__item-icon">
+											<img src="img/icons/odin.webp">
+										</div>
+										<div class="gods__item-title">Один</div>
+										<div class="gods__item-text">
+											Один суров, справедлив и уважаем всеми — и Богами, и смертными.
+										</div>
+									</div>
+									<div class="click-hand _gods" data-active="._data-active-god">
+										<div class="click-hand__wrapper hidden">
+											<img src="img/icons/click-hand.svg">
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="gods__item">
-								<picture>
-									<source srcset="img/content/gods/ra_1440.webp" media="(min-width: 751px)">
-									<source srcset="img/content/gods/ra_1440_mobile.webp" media="(min-width: 320px)">
-									<img src="img/content/gods/ra_1440.webp" class="gods__image">
-								</picture>
-								<div class="gods__item-content">
-									<div class="gods__item-icon">
-										<img src="img/icons/ra.webp">
-									</div>
-									<div class="gods__item-title">Ра</div>
-									<div class="gods__item-text">
-										<p>Величие Богов, преданность своему делу и тонкие интриги – вот путь Нефара. Упорством и хитростью любой может достичь высшей цели: встать у подножия трона Верховного Бога.</p>
+								<div class="gods__item">
+									<picture>
+										<source srcset="img/content/gods/ra_1440.webp" media="(min-width: 751px)">
+										<source srcset="img/content/gods/ra_1440_mobile.webp" media="(min-width: 320px)">
+										<img src="img/content/gods/ra_1440.webp" class="gods__image">
+									</picture>
+									<div class="gods__item-content">
+										<div class="gods__item-icon">
+											<img src="img/icons/ra.webp">
+										</div>
+										<div class="gods__item-title">Ра</div>
+										<div class="gods__item-text">
+											Ра — это Бог Солнца и Царь Царей Нефара. Он считает, что его власть незыблема.
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="separator _bottom-20">
-					<picture>
-						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
-						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
-						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
-						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
-						<img src="img/background/separator/separator_390.webp" class="separator__background">
-					</picture>
+				<div class="separator">
+					<div class="separator__left"></div>
+					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
+					<div class="separator__right"></div>
 				</div>
 			</section>
 			<section class="classes" data-watch="navigator">
@@ -668,14 +544,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="separator _bottom-26">
-					<picture>
-						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
-						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
-						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
-						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
-						<img src="img/background/separator/separator_390.webp" class="separator__background">
-					</picture>
+				<div class="separator">
+					<div class="separator__left"></div>
+					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
+					<div class="separator__right"></div>
 				</div>
 			</section>
 			<div class="pvp__navigator" data-watch="navigator">
@@ -718,16 +590,12 @@
 						<source srcset="img/content/pvp/pvp__2-390.webp" media="(min-width: 320px)">
 						<img src="img/content/pvp/pvp__2-768.webp" class="pvp__background">
 					</picture>
-					<div class="separator _bottom-26">
-						<picture>
-							<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
-							<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
-							<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
-							<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
-							<img src="img/background/separator/separator_390.webp" class="separator__background">
-						</picture>
-					</div>
 				</section>
+				<div class="separator">
+					<div class="separator__left"></div>
+					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
+					<div class="separator__right"></div>
+				</div>
 			</div>
 			<section class="awards">
 				<div class="awards__wrapper">
@@ -755,14 +623,10 @@
 						</picture>
 					</div>
 				</div>
-				<div class="separator _bottom-26">
-					<picture>
-						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
-						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
-						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
-						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
-						<img src="img/background/separator/separator_390.webp" class="separator__background">
-					</picture>
+				<div class="separator">
+					<div class="separator__left"></div>
+					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
+					<div class="separator__right"></div>
 				</div>
 			</section>
 			<section class="media">
@@ -846,14 +710,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="separator _bottom-26">
-					<picture>
-						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
-						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
-						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
-						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
-						<img src="img/background/separator/separator_390.webp" class="separator__background">
-					</picture>
+				<div class="separator">
+					<div class="separator__left"></div>
+					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
+					<div class="separator__right"></div>
 				</div>
 			</section>
 
@@ -886,14 +746,10 @@
 						</div>
 					</div>
 				</div>
-				<div class="separator _bottom-26">
-					<picture>
-						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
-						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
-						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
-						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
-						<img src="img/background/separator/separator_390.webp" class="separator__background">
-					</picture>
+				<div class="separator">
+					<div class="separator__left"></div>
+					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
+					<div class="separator__right"></div>
 				</div>
 			</section>
 			<section class="counter">
@@ -931,14 +787,10 @@
 						<img src="img/background/counter/counter__arrow.webp" class="counter__arrow" data-goto=".hero">
 					</div>
 				</div>
-				<div class="separator _bottom-26">
-					<picture>
-						<source srcset="img/background/separator/separator_1440.webp" media="(min-width: 1200px)">
-						<source srcset="img/background/separator/separator_920.webp" media="(min-width: 920px)">
-						<source srcset="img/background/separator/separator_768.webp" media="(min-width: 501px)">
-						<source srcset="img/background/separator/separator_390.webp" media="(min-width: 320px)">
-						<img src="img/background/separator/separator_390.webp" class="separator__background">
-					</picture>
+				<div class="separator">
+					<div class="separator__left"></div>
+					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
+					<div class="separator__right"></div>
 				</div>
 			</section>
 			<section class="cookies">
@@ -1016,7 +868,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20240921092017"></script>
+	<script src="js/app.min.js?_v=20240924165347"></script>
 </body>
 
 </html>

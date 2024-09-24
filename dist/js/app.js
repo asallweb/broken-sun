@@ -4234,7 +4234,6 @@
             return configWatcher;
         }
         scrollWatcherCreate(configWatcher) {
-            console.log(configWatcher);
             this.observer = new IntersectionObserver(((entries, observer) => {
                 entries.forEach((entry => {
                     this.scrollWatcherCallback(entry, observer);
@@ -4488,14 +4487,16 @@
         }
         if (heroArrow && header__register) window.addEventListener("scroll", checkPosition);
     }));
-    const godsItems = document.querySelectorAll(".gods__item");
-    godsItems.forEach((item => {
-        item.addEventListener("click", (function() {
-            const isActive = this.classList.contains("_active");
-            godsItems.forEach((i => i.classList.remove("_active")));
-            if (!isActive) this.classList.add("_active");
+    if (window.innerWidth < 919) {
+        const godsItems = document.querySelectorAll(".gods__item");
+        godsItems.forEach((item => {
+            item.addEventListener("click", (function() {
+                const isActive = this.classList.contains("_active");
+                godsItems.forEach((i => i.classList.remove("_active")));
+                if (!isActive) this.classList.add("_active");
+            }));
         }));
-    }));
+    }
     document.addEventListener("DOMContentLoaded", (function() {
         const popupTriggers = document.querySelectorAll('[data-popup="#media"]');
         popupTriggers.forEach((trigger => {
@@ -4543,7 +4544,6 @@
                 wrapper.classList.remove("visible", "animate__animated", "animate__fadeInRightBig", "animate__fadeOutRightBig");
                 wrapper.classList.add("hidden");
                 if (isElementInViewport(element) && isElementCentered(element)) {
-                    console.log("Element is visible and centered");
                     wrapper.classList.remove("hidden");
                     wrapper.classList.add("visible", "animate__fadeInRightBig", "animate__animated");
                     setTimeout((() => {
@@ -4565,7 +4565,6 @@
                     }), 4e3);
                     animationPlayed = true;
                 } else {
-                    console.log("Element is not visible or not centered");
                     wrapper.classList.remove("visible", "animate__animated", "animate__fadeInRightBig", "animate__fadeOutRightBig");
                     wrapper.classList.add("hidden");
                 }
@@ -4603,8 +4602,43 @@
             cookies.style.display = "none";
         }));
     }));
-    document.querySelector(".header__lang-current").addEventListener("click", (function() {
-        this.closest(".header__lang").classList.toggle("_opened");
+    function initLangSwitcher() {
+        const langSwitcher = document.querySelector(".header__lang-current");
+        if (!langSwitcher) return;
+        const langMenu = langSwitcher.closest(".header__lang");
+        langSwitcher.addEventListener("click", (() => {
+            langMenu?.classList.toggle("_opened");
+        }));
+    }
+    initLangSwitcher();
+    function setVideoSource() {
+        const video = document.getElementById("hero__background");
+        if (!video) return;
+        if (window.matchMedia("(max-width: 767px)").matches) video.src = "files/video/gateSun_hd.mp4"; else if (window.matchMedia("(min-width: 768px) and (max-width: 1920px)").matches) video.src = "files/video/gateSun_fhd.mp4"; else video.src = "files/video/gateSun_2k.mp4";
+    }
+    setVideoSource();
+    document.addEventListener("DOMContentLoaded", (function() {
+        function handleGodsItems() {
+            const godsItems = document.querySelectorAll(".gods__item");
+            if (godsItems.length > 0) godsItems.forEach((item => {
+                const content = item.querySelector(".gods__item-content");
+                const text = item.querySelector(".gods__item-text");
+                if (content && text) {
+                    let extraSpace = 35;
+                    if (window.innerWidth < 768) extraSpace = 15;
+                    const textHeight = text.offsetHeight + extraSpace;
+                    content.style.bottom = `-${textHeight}px`;
+                    item.addEventListener("mouseenter", (function() {
+                        content.style.bottom = "0";
+                    }));
+                    item.addEventListener("mouseleave", (function() {
+                        content.style.bottom = `-${textHeight}px`;
+                    }));
+                }
+            }));
+        }
+        handleGodsItems();
+        window.addEventListener("resize", handleGodsItems);
     }));
     window["FLS"] = false;
     menuInit();

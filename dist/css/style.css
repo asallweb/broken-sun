@@ -4897,6 +4897,7 @@ textarea {
 .hero__background {
   width: 100vw;
   height: 100vh;
+  min-height: 410px;
   display: block;
   -o-object-fit: cover;
   object-fit: cover;
@@ -4942,6 +4943,9 @@ textarea {
   text-align: center;
   text-transform: uppercase;
   text-shadow: 0 2px 5px rgba(0,0,0,.65)
+}
+._eng .hero__logo-title {
+  font-size: 21px
 }
 .hero__bottom {
   position: absolute;
@@ -5027,6 +5031,7 @@ textarea {
   left: 0;
   width: 100vw;
   height: 100vh;
+  min-height: 410px;
   -o-object-fit: cover;
   object-fit: cover;
   z-index: 5;
@@ -5315,7 +5320,7 @@ textarea {
   left: 50%;
   top: 0;
   width: 100%;
-  height: 64vw;
+  height: 100%;
   max-width: 1440px;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0)
@@ -5383,15 +5388,15 @@ textarea {
   position: relative;
   z-index: 1;
   height: 100%;
-  display: flex
+  display: flex;
+  height: 1440px
 }
 .class__content {
   position: relative;
   z-index: 1;
   max-width: 490px;
   margin-left: 8.5%;
-  padding-top: 11vw;
-  padding-bottom: 11vw
+  margin-top: 28.5%
 }
 .class__name {
   color: #f9df94;
@@ -6544,6 +6549,14 @@ textarea {
     margin-top: 10vh
   }
 }
+@media (max-width:1920px) {
+  .class__body {
+    height: 1024px
+  }
+  .class__content {
+    margin-top: 12%
+  }
+}
 @media (max-width:1600px) {
   .class._bg-warrior {
     background-image: url(../img/background/classes/class__warrior.webp)
@@ -6666,6 +6679,9 @@ textarea {
   .hero__logo-title {
     font-size: 22px
   }
+  ._eng .hero__logo-title {
+    font-size: 17px
+  }
   .hero__bottom {
     bottom: 85px
   }
@@ -6742,9 +6758,13 @@ textarea {
     width: 244px;
     height: 244px
   }
+  .class__body {
+    height: 710px
+  }
   .class__content {
     max-width: 360px;
-    margin-left: 8.5%
+    margin-left: 8.5%;
+    margin-top: 50px
   }
   .class__name {
     font-size: 26px;
@@ -6981,6 +7001,9 @@ textarea {
   .hero__logo-title {
     font-size: 14px
   }
+  ._eng .hero__logo-title {
+    font-size: 12px
+  }
   .hero__bottom {
     bottom: 82px
   }
@@ -7030,8 +7053,7 @@ textarea {
     bottom: 0!important
   }
   .class__runes {
-    max-width: 768px;
-    height: 90vw
+    max-width: 768px
   }
   .class__runes-circle-2 {
     left: 1%;
@@ -7138,6 +7160,9 @@ textarea {
   }
   .hero__logo-title {
     font-size: 14px
+  }
+  ._eng .hero__logo-title {
+    font-size: 11px
   }
   .hero__bottom {
     bottom: 82px
@@ -7308,6 +7333,9 @@ textarea {
     font-size: 14px;
     line-height: 1.28
   }
+  .pvp__background {
+    height: 125%
+  }
   .platform {
     padding-top: 50px
   }
@@ -7401,16 +7429,12 @@ textarea {
     left: 90.5%;
     top: 25px
   }
-  .class {
-    height: 650px
-  }
   .class__runes {
     max-width: 390px;
     left: 0;
     top: 0;
     -webkit-transform: translate(0,0);
-    transform: translate(0,0);
-    height: 100%
+    transform: translate(0,0)
   }
   .class__runes-center {
     width: 112px;
@@ -7455,7 +7479,7 @@ textarea {
   .class__list {
     margin-bottom: 0;
     position: absolute;
-    bottom: 28px;
+    bottom: 70px;
     left: 50%;
     -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0);
@@ -7532,6 +7556,9 @@ textarea {
   .hero__logo-title {
     font-size: 13px;
     top: 64.5%
+  }
+  ._eng .hero__logo-title {
+    font-size: 11px
   }
   .hero__bottom {
     bottom: 77px
@@ -7665,7 +7692,9 @@ textarea {
     transition: left .3s;
     z-index: 2;
     background: url(../img/background/menu__bg.webp) 0 0 repeat;
-    height: 100vh
+    height: 100vh;
+    display: flex;
+    flex-direction: column
   }
   .menu__body::before {
     content: "";
@@ -7745,7 +7774,7 @@ textarea {
     font-size: 10px;
     font-weight: 300;
     line-height: 1.2;
-    position: absolute;
+    margin-top: auto;
     bottom: 10px;
     width: 100%
   }
@@ -7811,6 +7840,19 @@ textarea {
   .header__socials svg {
     width: 24px;
     height: 24px
+  }
+  .header__register {
+    position: absolute;
+    width: 175px;
+    top: -100%;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    display: flex;
+    justify-content: center
+  }
+  .header__register._active {
+    top: 5px
   }
   .register__image-wrapper {
     position: relative;

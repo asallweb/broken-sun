@@ -4560,7 +4560,7 @@
     function setVideoSource() {
         const video = document.getElementById("hero__background");
         if (!video) return;
-        if (window.matchMedia("(max-width: 767px)").matches) video.src = "files/video/gateSun_hd.mp4"; else if (window.matchMedia("(min-width: 768px) and (max-width: 1920px)").matches) video.src = "files/video/gateSun_fhd.mp4"; else video.src = "files/video/gateSun_2k.mp4";
+        if (window.matchMedia("(max-width: 767px)").matches) video.src = "files/video/gateSun_hd.mp4"; else if (window.matchMedia("(min-width: 768px) and (max-width: 1920px)").matches) video.src = "files/video/gateSun_fhd.mp4"; else video.src = "files/video/gateSun_fhd.mp4";
     }
     setVideoSource();
     document.addEventListener("DOMContentLoaded", (function() {

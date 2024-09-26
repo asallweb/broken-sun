@@ -5779,7 +5779,9 @@ textarea {
 }
 .media__video-wrapper {
   position: relative;
-  padding: 2px
+  padding: 2px;
+  max-height: 445px;
+  overflow: hidden
 }
 .media__video-wrapper::before {
   content: "";

@@ -7421,9 +7421,6 @@ textarea {
   .counter__image-src {
     max-width: 330px
   }
-  .counter .separator {
-    display: none
-  }
 }
 @media (max-width:600px) {
   .world__content {

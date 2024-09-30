@@ -4523,6 +4523,9 @@
     function initParallaxEffect() {
         const backgrounds = document.querySelectorAll(".pvp__background");
         backgrounds.forEach((background => {
+            background.style.backgroundSize = "cover";
+            background.style.backgroundPosition = "center center";
+            background.style.backgroundRepeat = "no-repeat";
             const initialOffset = -.4 * background.clientHeight;
             background.style.transform = `translateY(${initialOffset}px)`;
             background.dataset.initialOffset = initialOffset;

@@ -5950,6 +5950,11 @@ textarea {
   right: 57px;
   z-index: 0
 }
+.counter__image-src {
+  max-width: 732px;
+  width: 100%;
+  height: auto
+}
 .counter__arrow {
   position: absolute;
   bottom: 62px;
@@ -6943,6 +6948,9 @@ textarea {
   .counter__image {
     right: 0
   }
+  .counter__image-src {
+    max-width: 485px
+  }
 }
 @media (max-width:1080px) {
   .register__item {
@@ -7133,6 +7141,9 @@ textarea {
   .counter__counter-title {
     font-size: 18px;
     line-height: 1.22
+  }
+  .counter__image-src {
+    max-width: 410px
   }
 }
 @media (max-width:850px) {
@@ -7399,6 +7410,9 @@ textarea {
     right: 0;
     z-index: 0;
     margin-top: 8px
+  }
+  .counter__image-src {
+    max-width: 330px
   }
   .counter .separator {
     display: none

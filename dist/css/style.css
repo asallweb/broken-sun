@@ -5849,7 +5849,8 @@ textarea {
   transform: translate(-50%,0)
 }
 .platform__image-src {
-  max-width: 100%;
+  max-width: 607px;
+  width: 100%;
   height: auto;
   -o-object-fit: cover;
   object-fit: cover
@@ -6919,6 +6920,9 @@ textarea {
   .platform__image-wrapper {
     bottom: 30px
   }
+  .platform__image-src {
+    max-width: 350px
+  }
   .counter {
     height: 690px
   }
@@ -7117,6 +7121,9 @@ textarea {
   }
   .platform__text {
     margin-bottom: 13px
+  }
+  .platform__image-src {
+    max-width: 300px
   }
   .counter {
     height: 576px

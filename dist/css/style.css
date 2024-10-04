@@ -4060,15 +4060,13 @@ body::after {
   -o-object-fit: cover;
   object-fit: cover
 }
-.spollers {
-  display: grid;
-  gap: 15px
+.spollers__item {
+  border-bottom: 1px solid #776030
 }
 .spollers__title {
   width: 100%;
   cursor: default;
   text-align: left;
-  border-bottom: 1px solid #776030;
   padding: .5rem 3rem .5rem 1rem;
   min-height: 40px;
   position: relative;
@@ -4080,7 +4078,8 @@ body::after {
   display: none
 }
 .spollers__title._spoller-active {
-  color: #f9df94
+  color: #f9df94;
+  border-bottom: 1px solid transparent
 }
 ._spoller-init .spollers__title {
   cursor: pointer
@@ -4104,7 +4103,8 @@ body::after {
 }
 .spollers__body {
   padding: 1.25rem 1rem;
-  font-weight: 300
+  font-weight: 300;
+  color: #fafafa
 }
 .ibg {
   width: 100%;

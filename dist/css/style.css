@@ -4071,7 +4071,8 @@ body::after {
   min-height: 40px;
   position: relative;
   list-style: none;
-  color: #b19f63
+  color: #b19f63;
+  line-height: 1.07
 }
 .spollers__title::-webkit-details-marker,
 .spollers__title::marker {
@@ -4104,7 +4105,8 @@ body::after {
 .spollers__body {
   padding: 1.25rem 1rem;
   font-weight: 300;
-  color: #fafafa
+  color: #fafafa;
+  line-height: 1.23
 }
 .ibg {
   width: 100%;

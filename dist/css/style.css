@@ -4072,11 +4072,15 @@ body::after {
   padding: .5rem 3rem .5rem 1rem;
   min-height: 40px;
   position: relative;
-  list-style: none
+  list-style: none;
+  color: #b19f63
 }
 .spollers__title::-webkit-details-marker,
 .spollers__title::marker {
   display: none
+}
+.spollers__title._spoller-active {
+  color: #f9df94
 }
 ._spoller-init .spollers__title {
   cursor: pointer
@@ -4203,6 +4207,9 @@ body {
   opacity: 0;
   transition: opacity .3s ease-in-out;
   z-index: 1
+}
+.button:hover {
+  text-decoration: none
 }
 .button:hover:before {
   opacity: 1
@@ -4589,13 +4596,70 @@ textarea {
   height: 80px;
   padding: 8px 16px
 }
+.custom-select {
+  position: relative;
+  font-size: 22px;
+  font-weight: 300;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+.custom-select select {
+  display: none
+}
+.custom-select .select-selected {
+  background-color: transparent;
+  color: #666;
+  padding-left: 17px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #b19f63;
+  cursor: pointer
+}
+.custom-select .select-selected:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  background: url(../img/icons/select-arrow.svg) 0 0 no-repeat;
+  width: 26px;
+  height: 26px;
+  transition: all .3s ease-in-out;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
+.custom-select .select-selected.select-arrow-active:after {
+  -webkit-transform: rotate(0);
+  transform: rotate(0)
+}
+.custom-select .select-items div {
+  color: #ccc;
+  padding: 4px 9px;
+  border-bottom: 1px solid #1e2533
+}
+.custom-select .select-items {
+  position: absolute;
+  background: #28344a;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99
+}
+.custom-select .select-hide {
+  display: none
+}
+.custom-select .same-as-selected,
+.custom-select .select-items div:hover {
+  background-color: rgba(0,0,0,.1);
+  cursor: pointer
+}
 .page ul {
   padding-left: 15px;
   margin-bottom: 10px
 }
 .page ul li {
   padding-left: 5px;
-  list-style: disc
+  list-style: disc;
+  margin-bottom: 10px
 }
 @-webkit-keyframes rotate {
   from {
@@ -6034,6 +6098,9 @@ textarea {
   flex-wrap: wrap;
   width: 340px
 }
+.register__item-list._jcc {
+  justify-content: center
+}
 .register__image-wrapper {
   position: absolute;
   bottom: 0;
@@ -6053,6 +6120,23 @@ textarea {
   bottom: 0;
   -webkit-animation-delay: 1s;
   animation-delay: 1s
+}
+.register__check-btn {
+  background: url(../img/background/button/button__check-status.webp) center center no-repeat;
+  width: 228px;
+  height: 44px;
+  color: #b19f63;
+  text-align: center;
+  font-size: 18px;
+  margin: 16px auto;
+  transition: all .3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.register__check-btn:hover {
+  background: url(../img/background/button/button__check-status-hover.webp) center center no-repeat;
+  color: #f9df94
 }
 .form {
   color: #fafafa;
@@ -6120,7 +6204,8 @@ textarea {
   line-height: 2.38;
   text-align: center;
   margin-bottom: 15px;
-  margin-top: 11px
+  margin-top: 11px;
+  font-weight: 500
 }
 .form__subtitle {
   color: #f9df94;
@@ -6140,10 +6225,10 @@ textarea {
 .form__subtitle._mt-60 {
   margin-top: 60px
 }
-.form a {
+.form a:not(.button) {
   color: #f9df94
 }
-.form a:hover {
+.form a:not(.button):hover {
   text-decoration: underline
 }
 .form .field-wrapper {
@@ -6278,11 +6363,15 @@ textarea {
 .form .field-wrapper__grid-2cols {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  gap: 32px 0;
-  margin: 12px 0 40px
+  gap: 32px;
+  margin: 12px 0 40px;
+  padding: 8px
 }
 .form .field-wrapper__grid-2cols._mb-55 {
   margin-bottom: 55px
+}
+.form .field-wrapper__grid-2cols._mb-12 {
+  margin-bottom: 12px
 }
 .success__wrapper {
   max-width: 1132px;
@@ -6443,6 +6532,9 @@ textarea {
   }
   .form {
     font-size: 1.375rem
+  }
+  .form._mt-100 {
+    margin-top: 6.25rem
   }
   .form__title {
     font-size: 2.625rem
@@ -7618,6 +7710,9 @@ textarea {
   .form {
     font-size: .875rem
   }
+  .form._mt-100 {
+    margin-top: 3.125rem
+  }
   .form__title {
     font-size: 1.25rem
   }
@@ -7966,6 +8061,9 @@ textarea {
   }
   .form {
     font-size: clamp(.875rem ,.7321428571rem + .7142857143vw ,1.375rem)
+  }
+  .form._mt-100 {
+    margin-top: clamp(3.125rem ,2.2321428571rem + 4.4642857143vw ,6.25rem)
   }
   .form__title {
     font-size: clamp(1.25rem ,.8571428571rem + 1.9642857143vw ,2.625rem)

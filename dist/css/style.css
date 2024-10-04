@@ -4108,6 +4108,9 @@ body::after {
   color: #fafafa;
   line-height: 1.23
 }
+.spollers__body p {
+  margin-bottom: 5px
+}
 .ibg {
   width: 100%;
   height: 100%;

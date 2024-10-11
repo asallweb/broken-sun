@@ -4166,6 +4166,32 @@
                 }
             });
         }
+        if (document.querySelector(".mainSwiper__video") && document.querySelector(".thumbSwiper__video")) {
+            thumbSwiper = new Swiper(".thumbSwiper__video", {
+                modules: [ Navigation, Thumb, Pagination ],
+                loop: false,
+                spaceBetween: 12,
+                slidesPerView: "auto",
+                freeMode: true,
+                watchSlidesProgress: true,
+                navigation: {
+                    nextEl: ".swiper-button-next__video",
+                    prevEl: ".swiper-button-prev__video"
+                },
+                pagination: {
+                    el: ".swiper-pagination__video",
+                    clickable: true
+                }
+            });
+            new Swiper(".mainSwiper__video", {
+                modules: [ Navigation, Thumb ],
+                loop: true,
+                spaceBetween: 8,
+                thumbs: {
+                    swiper: thumbSwiper
+                }
+            });
+        }
     }
     window.addEventListener("load", (function(e) {
         initSliders();

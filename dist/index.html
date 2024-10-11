@@ -11,23 +11,30 @@
 	<div class="rootpage">
 		<h1>Верстка «Broken Sun»</h1>
 		<div class="rootpage__info">
-
+			<div>
+				<h2>Готовые страницы ЗБТ:</h2>
+				<ol class="rootpage__list">
+					<li><a target="_blank" href="home.html">Главная</a></li>
+					<li><a target="_blank" href="404.html">404</a></li>
+					<li><a target="_blank" href="register-1.html">Предрегистрация №1 - Открой мир, FAQ</a></li>
+					<li><a target="_blank" href="register-2.html">Предрегистрация №2 - Один шаг</a></li>
+					<li><a target="_blank" href="register-3.html">Предрегистрация №3 - Анкета ЗБТ</a></li>
+					<li><a target="_blank" href="register-4.html">Предрегистрация №4 - УСПЕХ</a></li>
+					<li><a target="_blank" href="register-5.html">Предрегистрация №5 - Проверка статуса регистрации</a></li>
+					<li><a target="_blank" href="register-6.html">Предрегистрация №6 - Избранный Богами</a></li>
+					<li><a target="_blank" href="register-7.html">Предрегистрация №7 - Время избранного</a></li>
+					<li><a target="_blank" href="register-8.html">Предрегистрация №8 - Боги не знают о Вас</a></li>
+					<li><a target="_blank" href="ui-kit.html">UI KIT</a></li>
+					<li><a target="_blank" href="home-eng.html">Главная ENG ( только для проблемных мест связанных с ENG )</a></li>
+				</ol>
+			</div>
+			<div>
+				<h2>Страницы портала:</h2>
+				<ol class="rootpage__list">
+					<li><a target="_blank" href="home-portal.html">Главная</a></li>
+				</ol>
+			</div>
 		</div>
-		<h2>Готовые страницы:</h2>
-		<ol class="rootpage__list">
-			<li><a target="_blank" href="home.html">Главная</a></li>
-			<li><a target="_blank" href="404.html">404</a></li>
-			<li><a target="_blank" href="register-1.html">Предрегистрация №1 - Открой мир, FAQ</a></li>
-			<li><a target="_blank" href="register-2.html">Предрегистрация №2 - Один шаг</a></li>
-			<li><a target="_blank" href="register-3.html">Предрегистрация №3 - Анкета ЗБТ</a></li>
-			<li><a target="_blank" href="register-4.html">Предрегистрация №4 - УСПЕХ</a></li>
-			<li><a target="_blank" href="register-5.html">Предрегистрация №5 - Проверка статуса регистрации</a></li>
-			<li><a target="_blank" href="register-6.html">Предрегистрация №6 - Избранный Богами</a></li>
-			<li><a target="_blank" href="register-7.html">Предрегистрация №7 - Время избранного</a></li>
-			<li><a target="_blank" href="register-8.html">Предрегистрация №8 - Боги не знают о Вас</a></li>
-			<li><a target="_blank" href="ui-kit.html">UI KIT</a></li>
-			<li><a target="_blank" href="home-eng.html">Главная ENG ( только для проблемных мест связанных с ENG )</a></li>
-		</ol>
 		<div class="rootpage__tnx">
 			<h2>Спасибо за заказ!</h2>
 			<p>Буду рад хорошему отзыву.</p>
@@ -108,7 +115,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		max-width: 580px;
+		max-width: 1080px;
 		width: 100%;
 		margin: 0 auto;
 	}
@@ -152,6 +159,9 @@
 	.rootpage__info {
 		line-height: 140%;
 		margin: 0px 0px 1.5rem 0px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 60px;
 	}
 
 	.rootpage__list {
@@ -167,6 +177,8 @@
 		border-radius: 10px;
 		padding: 20px 65px;
 		line-height: 140%;
+		max-width: 580px;
+		margin: 20px auto;
 	}
 
 	@media (max-width: 767px) {
@@ -189,7 +201,6 @@
 
 	.rootpage__tnx {
 		background: #c22d63;
-		margin: 0px 0px 1rem 0px;
 	}
 </style>
 

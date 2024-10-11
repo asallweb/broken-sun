@@ -6234,6 +6234,11 @@ textarea {
 .register__item-list._jcc {
   justify-content: center
 }
+.register__item-image img {
+  width: 100%;
+  height: auto;
+  max-width: 192px
+}
 .register__image-wrapper {
   position: absolute;
   bottom: 0;

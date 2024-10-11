@@ -6234,10 +6234,13 @@ textarea {
 .register__item-list._jcc {
   justify-content: center
 }
-.register__item-image img {
+.register__item-img {
   width: 100%;
   height: auto;
-  max-width: 192px
+  max-width: 170px
+}
+.register__item-img._big {
+  max-width: 200px
 }
 .register__image-wrapper {
   position: absolute;

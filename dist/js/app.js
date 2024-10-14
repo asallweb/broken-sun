@@ -4531,25 +4531,49 @@
     }
     document.addEventListener("DOMContentLoaded", (function() {
         const popupTriggers = document.querySelectorAll('[data-popup="#media"]');
-        popupTriggers.forEach((trigger => {
-            trigger.addEventListener("click", (function() {
-                const imageUrl = this.getAttribute("data-image");
-                const videoUrl = this.getAttribute("data-video");
+        const mediaItems = Array.from(popupTriggers).filter((trigger => trigger.hasAttribute("data-image") || trigger.hasAttribute("data-video")));
+        let currentIndex = -1;
+        function showMediaByIndex(index) {
+            if (index >= 0 && index < mediaItems.length) {
+                const currentItem = mediaItems[index];
+                const imageUrl = currentItem.getAttribute("data-image");
+                const videoUrl = currentItem.getAttribute("data-video");
                 const mediaContainer = document.querySelector("#media .popup__text");
-                mediaContainer.innerHTML = "";
+                const existingMedia = mediaContainer.querySelectorAll("img, video");
+                existingMedia.forEach((media => {
+                    media.classList.remove("_active");
+                    setTimeout((() => media.remove()), 500);
+                }));
+                let newMedia;
                 if (imageUrl) {
-                    const img = document.createElement("img");
-                    img.src = imageUrl;
-                    img.alt = "Popup image";
-                    mediaContainer.appendChild(img);
+                    newMedia = document.createElement("img");
+                    newMedia.src = imageUrl;
+                    newMedia.alt = "Popup image";
                 }
                 if (videoUrl) {
-                    const video = document.createElement("video");
-                    video.src = videoUrl;
-                    video.controls = true;
-                    mediaContainer.appendChild(video);
+                    newMedia = document.createElement("video");
+                    newMedia.src = videoUrl;
+                    newMedia.controls = true;
                 }
+                if (newMedia) {
+                    mediaContainer.appendChild(newMedia);
+                    setTimeout((() => newMedia.classList.add("_active")), 50);
+                }
+            }
+        }
+        popupTriggers.forEach(((trigger, index) => {
+            trigger.addEventListener("click", (function() {
+                currentIndex = index;
+                showMediaByIndex(currentIndex);
             }));
+        }));
+        document.querySelector(".popup__nav._prev").addEventListener("click", (function() {
+            if (currentIndex > 0) currentIndex--; else currentIndex = mediaItems.length - 1;
+            showMediaByIndex(currentIndex);
+        }));
+        document.querySelector(".popup__nav._next").addEventListener("click", (function() {
+            if (currentIndex < mediaItems.length - 1) currentIndex++; else currentIndex = 0;
+            showMediaByIndex(currentIndex);
         }));
     }));
     function initParallaxEffect() {

@@ -4531,35 +4531,49 @@
     }
     document.addEventListener("DOMContentLoaded", (function() {
         const popupTriggers = document.querySelectorAll('[data-popup="#media"]');
+        if (!popupTriggers.length) return;
         const mediaItems = Array.from(popupTriggers).filter((trigger => trigger.hasAttribute("data-image") || trigger.hasAttribute("data-video")));
+        if (!mediaItems.length) return;
         let currentIndex = -1;
+        const prevButton = document.querySelector(".popup__nav._prev");
+        const nextButton = document.querySelector(".popup__nav._next");
+        if (!prevButton || !nextButton) {
+            console.error("Не найдены кнопки переключения (prev, next)");
+            return;
+        }
         function showMediaByIndex(index) {
-            if (index >= 0 && index < mediaItems.length) {
-                const currentItem = mediaItems[index];
-                const imageUrl = currentItem.getAttribute("data-image");
-                const videoUrl = currentItem.getAttribute("data-video");
-                const mediaContainer = document.querySelector("#media .popup__text");
-                const existingMedia = mediaContainer.querySelectorAll("img, video");
-                existingMedia.forEach((media => {
-                    media.classList.remove("_active");
-                    setTimeout((() => media.remove()), 500);
-                }));
-                let newMedia;
-                if (imageUrl) {
-                    newMedia = document.createElement("img");
-                    newMedia.src = imageUrl;
-                    newMedia.alt = "Popup image";
-                }
-                if (videoUrl) {
-                    newMedia = document.createElement("video");
-                    newMedia.src = videoUrl;
-                    newMedia.controls = true;
-                }
-                if (newMedia) {
-                    mediaContainer.appendChild(newMedia);
-                    setTimeout((() => newMedia.classList.add("_active")), 50);
-                }
+            if (index < 0 || index >= mediaItems.length) {
+                console.error("Индекс выходит за пределы диапазона");
+                return;
             }
+            const currentItem = mediaItems[index];
+            const imageUrl = currentItem.getAttribute("data-image");
+            const videoUrl = currentItem.getAttribute("data-video");
+            const mediaContainer = document.querySelector("#media .popup__text");
+            if (!mediaContainer) {
+                console.error("Не найден контейнер для медиа");
+                return;
+            }
+            const existingMedia = mediaContainer.querySelectorAll("img, video");
+            existingMedia.forEach((media => {
+                media.classList.remove("_active");
+                setTimeout((() => media.remove()), 500);
+            }));
+            let newMedia = null;
+            if (imageUrl) {
+                newMedia = document.createElement("img");
+                newMedia.src = imageUrl;
+                newMedia.alt = "Popup image";
+            }
+            if (videoUrl) {
+                newMedia = document.createElement("video");
+                newMedia.src = videoUrl;
+                newMedia.controls = true;
+            }
+            if (newMedia) {
+                mediaContainer.appendChild(newMedia);
+                setTimeout((() => newMedia.classList.add("_active")), 50);
+            } else console.error("Нет данных для изображения или видео");
         }
         popupTriggers.forEach(((trigger, index) => {
             trigger.addEventListener("click", (function() {
@@ -4567,11 +4581,11 @@
                 showMediaByIndex(currentIndex);
             }));
         }));
-        document.querySelector(".popup__nav._prev").addEventListener("click", (function() {
+        prevButton.addEventListener("click", (function() {
             if (currentIndex > 0) currentIndex--; else currentIndex = mediaItems.length - 1;
             showMediaByIndex(currentIndex);
         }));
-        document.querySelector(".popup__nav._next").addEventListener("click", (function() {
+        nextButton.addEventListener("click", (function() {
             if (currentIndex < mediaItems.length - 1) currentIndex++; else currentIndex = 0;
             showMediaByIndex(currentIndex);
         }));
@@ -4630,14 +4644,18 @@
                 const text = item.querySelector(".gods__item-text");
                 if (content && text) {
                     let extraSpace = 35;
-                    if (window.innerWidth < 768) extraSpace = 15;
+                    if (window.innerWidth < 768) extraSpace = 20;
                     const textHeight = text.offsetHeight + extraSpace;
                     content.style.bottom = `-${textHeight}px`;
-                    item.addEventListener("mouseenter", (function() {
-                        content.style.bottom = "0";
-                    }));
-                    item.addEventListener("mouseleave", (function() {
-                        content.style.bottom = `-${textHeight}px`;
+                    if (window.innerWidth > 919) {
+                        item.addEventListener("mouseenter", (function() {
+                            content.style.bottom = "0";
+                        }));
+                        item.addEventListener("mouseleave", (function() {
+                            content.style.bottom = `-${textHeight}px`;
+                        }));
+                    } else item.addEventListener("click", (function() {
+                        if (content.style.bottom === "0px") content.style.bottom = `-${textHeight}px`; else content.style.bottom = "0";
                     }));
                 }
             }));

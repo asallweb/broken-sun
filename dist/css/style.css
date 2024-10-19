@@ -4290,7 +4290,7 @@ body {
 .button._medium-size {
   width: 184px;
   height: 48px;
-  font-size: 22px
+  font-size: 20px
 }
 .button svg._tg {
   width: 28px;
@@ -4303,9 +4303,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  font-weight: 500;
-  line-height: 1.22;
   position: relative
 }
 .button__text::after,
@@ -4349,6 +4346,53 @@ body {
 ._big-size .button__text::before {
   width: 22px;
   height: 22px
+}
+.button__text-inner {
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-weight: 500;
+  line-height: 1.22;
+  position: relative
+}
+.button__text-inner::after,
+.button__text-inner::before {
+  content: "";
+  position: absolute;
+  width: 31px;
+  height: 42px;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  background-image: url(../img/background/button/button_ornament.webp);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transition: all .3s ease-in-out
+}
+.button__text-inner::before {
+  left: 5px;
+  -webkit-transform: translate(0,-50%) rotate(180deg);
+  transform: translate(0,-50%) rotate(180deg)
+}
+.button__text-inner::after {
+  right: 5px
+}
+.button__text-inner:hover::before {
+  background-image: url(../img/background/button/button_ornament-hover.webp)
+}
+.button__text-inner:hover::after {
+  background-image: url(../img/background/button/button_ornament-hover.webp)
+}
+.button__text-inner:active::before {
+  background-image: url(../img/background/button/button_ornament-active.webp)
+}
+.button__text-inner:active::after {
+  background-image: url(../img/background/button/button_ornament-active.webp)
 }
 .button:disabled .button__text::before {
   background-image: url(../img/background/button/rhombus_disabled.svg);
@@ -4549,7 +4593,8 @@ textarea._invalid {
 input:not([type=checkbox]):not([type=radio]) {
   height: 44px;
   border-bottom: 1px solid #b19f63;
-  padding: 0 17px
+  padding: 0 17px;
+  border-radius: 0
 }
 input[type=checkbox] {
   -webkit-appearance: none;
@@ -5402,7 +5447,8 @@ textarea {
   background: url(../img/background/shadow__vertical-gods.webp) 0 0 repeat-y;
   width: 100px;
   height: 100%;
-  z-index: 1
+  z-index: 1;
+  pointer-events: none
 }
 .gods__list::before {
   left: 0;
@@ -6663,6 +6709,12 @@ textarea {
   position: absolute;
   top: 0
 }
+.character._height-640 .character__item {
+  height: 640px
+}
+.character._height-640 .character__name {
+  bottom: 32px
+}
 .character__wrapper {
   display: flex;
   justify-content: center
@@ -6782,8 +6834,341 @@ textarea {
   text-transform: capitalize;
   transition: all .3s ease-in-out
 }
-.lg-container .lg-backdrop {
-  background-color: rgba(0,0,0,.8)
+.hero-class {
+  overflow: hidden;
+  position: relative;
+  background: url(../img/background/classes/hero__warrior.webp) center center no-repeat;
+  background-size: cover
+}
+.hero-class._archer {
+  background: url(../img/background/classes/hero__archer.webp) center center no-repeat;
+  background-size: cover
+}
+.hero-class._archer .hero-class__container {
+  background: url(../img/background/classes/hero__archer-ornament.webp) top 80px center no-repeat
+}
+.hero-class._archer .hero-class__content {
+  left: auto;
+  right: 0;
+  padding-left: 0;
+  padding-right: 40px
+}
+.hero-class._archer .hero-class__image {
+  bottom: -135px;
+  left: -10px;
+  -webkit-transform: translate(0,0);
+  transform: translate(0,0)
+}
+.hero-class._archer .hero-class__title-wrapper {
+  background: url(../img/background/classes/hero__title-archer.webp) 0 0 no-repeat
+}
+.hero-class._mage {
+  background: url(../img/background/classes/hero__mage.webp) center center no-repeat;
+  background-size: cover
+}
+.hero-class._mage .hero-class__container {
+  background: url(../img/background/classes/hero__mage-ornament.webp) top 0 center no-repeat
+}
+.hero-class._mage .hero-class__image {
+  bottom: -130px;
+  left: calc(50% + 150px)
+}
+.hero-class._mage .hero-class__title-wrapper {
+  background: url(../img/background/classes/hero__title-mage.webp) 0 0 no-repeat
+}
+.hero-class__container {
+  position: relative;
+  height: 815px;
+  background: url(../img/background/classes/hero__warrior-ornament.webp) top -60px left -280px no-repeat
+}
+.hero-class__content {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  color: #e6e6e6;
+  font-weight: 300;
+  line-height: 1.27;
+  width: 100%;
+  max-width: 440px;
+  padding-left: 40px
+}
+.hero-class__image {
+  position: absolute;
+  bottom: -110px;
+  left: calc(50% + 200px);
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
+}
+.hero-class__list {
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 56px
+}
+.hero-class__title-wrapper {
+  background: url(../img/background/classes/hero__title.webp) 0 0 no-repeat;
+  background-size: cover;
+  height: 133px;
+  position: relative
+}
+.hero-class__title-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  background: url(../img/background/classes/hero__title-line.webp) 0 0 no-repeat;
+  display: block;
+  height: 29px;
+  width: 100%;
+  max-width: 1920px
+}
+.hero-class__title {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  color: #f9df94;
+  font-size: 50px
+}
+.hero-class__title-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px
+}
+.hero-class__title-inner::after,
+.hero-class__title-inner::before {
+  content: "";
+  display: block;
+  width: 199px;
+  height: 68px;
+  position: absolute;
+  top: 50%;
+  background: url(../img/background/classes/hero__title-wraper.webp) 0 0 no-repeat
+}
+.hero-class__title-inner::before {
+  left: -83px;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%)
+}
+.hero-class__title-inner::after {
+  right: -83px;
+  -webkit-transform: translate(0,-50%) rotate(180deg);
+  transform: translate(0,-50%) rotate(180deg)
+}
+.hero-class__title-img {
+  position: relative;
+  z-index: 1
+}
+.class-section {
+  position: relative;
+  background: url(../img/background/classes/strength__warrior.webp) center center no-repeat;
+  background-size: cover
+}
+.class-section._angry {
+  background: url(../img/background/classes/angry__warrior.webp) center center no-repeat;
+  background-size: cover
+}
+.class-section._angry .class-section__container {
+  background: url(../img/background/classes/angry__warrior-ornament.webp) center center no-repeat
+}
+.class-section._angry .class-section__image {
+  left: 0;
+  -webkit-transform: translate(-18%,0);
+  transform: translate(-18%,0)
+}
+.class-section._trick {
+  background: url(../img/background/classes/trick__warrior.webp) center center no-repeat;
+  background-size: cover
+}
+.class-section._trick .class-section__container {
+  background: url(../img/background/classes/trick__warrior-ornament.webp) center center no-repeat
+}
+.class-section._trick .class-section__image {
+  left: calc(50% + 365px)
+}
+.class-section._agility {
+  background: url(../img/background/classes/agility__archer.webp) center center no-repeat;
+  background-size: cover
+}
+.class-section._agility .class-section__container {
+  background: url(../img/background/classes/agility__archer-ornament.webp) center bottom no-repeat
+}
+.class-section._agility .class-section__image {
+  left: calc(50% + 330px)
+}
+.class-section._push {
+  background: url(../img/background/classes/push__archer.webp) center center no-repeat;
+  background-size: cover
+}
+.class-section._push .class-section__container {
+  background: url(../img/background/classes/push__archer-ornament.webp) center bottom no-repeat
+}
+.class-section._push .class-section__image {
+  left: 0;
+  -webkit-transform: translate(-18%,0);
+  transform: translate(-18%,0)
+}
+.class-section._air-mage {
+  background: url(../img/background/classes/air__mage.webp) center center no-repeat;
+  background-size: cover
+}
+.class-section._air-mage .class-section__container {
+  background: url(../img/background/classes/air__mage-ornament.webp) center bottom no-repeat
+}
+.class-section._air-mage .class-section__image {
+  left: calc(50% + 330px)
+}
+.class-section._fire-mage {
+  background: url(../img/background/classes/fire__mage.webp) center center no-repeat;
+  background-size: cover
+}
+.class-section._fire-mage .class-section__container {
+  background: url(../img/background/classes/fire__mage-ornament.webp) center bottom no-repeat
+}
+.class-section._fire-mage .class-section__image {
+  left: 0;
+  -webkit-transform: translate(-12%,0);
+  transform: translate(-12%,0)
+}
+.class-section._water-mage {
+  background: url(../img/background/classes/water__mage.webp) center center no-repeat;
+  background-size: cover
+}
+.class-section._water-mage .class-section__container {
+  background: url(../img/background/classes/water__mage-ornament.webp) center bottom no-repeat
+}
+.class-section._water-mage .class-section__image {
+  left: calc(50% + 330px)
+}
+.class-section._earth-mage {
+  background: url(../img/background/classes/earth__mage.webp) center center no-repeat;
+  background-size: cover
+}
+.class-section._earth-mage .class-section__container {
+  background: url(../img/background/classes/earth__mage-ornament.webp) center bottom no-repeat
+}
+.class-section._earth-mage .class-section__image {
+  left: 0;
+  -webkit-transform: translate(-12%,0);
+  transform: translate(-12%,0)
+}
+.class-section._content-right .class-section__content {
+  right: 0;
+  left: auto;
+  color: #fff;
+  padding-left: 0;
+  padding-right: 40px
+}
+.class-section._content-right .class-section__title {
+  color: #f9df94
+}
+.class-section__container {
+  position: relative;
+  height: 940px;
+  background: url(../img/background/classes/strength__warrior-ornament.webp) center center no-repeat
+}
+.class-section__content {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  color: #000;
+  font-weight: 300;
+  line-height: 1.27;
+  width: 100%;
+  max-width: 460px;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px
+}
+.class-section__title {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 38px;
+  line-height: 1.31
+}
+.class-section__title-img {
+  position: relative
+}
+.class-section__text {
+  font-weight: 300;
+  line-height: 1.27
+}
+.class-section__video {
+  width: 100%;
+  max-width: 442px;
+  position: relative;
+  overflow: hidden
+}
+.class-section__video::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../img/background/media/media__border.svg) top -3px left no-repeat;
+  background-size: 100% 100%
+}
+.class-section__video img,
+.class-section__video video {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  clip-path: polygon(1.6% 0,98.4% 0,100% 2.9%,100% 97.6%,98.4% 100%,1.4% 100%,0 97.6%,0 2.9%)
+}
+.class-section__links {
+  display: flex;
+  gap: 20px;
+  align-items: center
+}
+.class-section__button-wrapper {
+  display: flex;
+  justify-content: center
+}
+.class-section__image {
+  position: absolute;
+  left: calc(50% + 270px);
+  bottom: 0;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
+}
+.class-section__image._strength-light::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 7.3%;
+  width: 100%;
+  height: 264px;
+  background: url(../img/background/classes/strength__warrior-light.webp) 0 0 no-repeat
+}
+.hero-fraction {
+  position: relative
+}
+.hero-fraction__container {
+  position: absolute;
+  bottom: 0
+}
+.worlds-names__list {
+  display: flex
 }
 .swiper {
   overflow: hidden

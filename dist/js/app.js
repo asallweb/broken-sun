@@ -4508,6 +4508,7 @@
         const header__register = document.querySelector(".header__register");
         const header__buttonWrapper = document.querySelector(".header__button-inner");
         const heroArrow = document.querySelector(".hero__arrow");
+        const presskitHero = document.querySelector(".presskit-hero__content");
         function checkPosition() {
             const rect = heroArrow.getBoundingClientRect();
             if (rect.top <= 0) header__register.classList.add("_active"); else header__register.classList.remove("_active");
@@ -4516,8 +4517,13 @@
             const rect = heroArrow.getBoundingClientRect();
             if (rect.top <= 0) header__buttonWrapper.classList.add("_active"); else header__buttonWrapper.classList.remove("_active");
         }
+        function checkPositionPresskit() {
+            const rect = presskitHero.getBoundingClientRect();
+            if (rect.top <= 0) header__register.classList.add("_active"); else header__register.classList.remove("_active");
+        }
         if (heroArrow && header__register) window.addEventListener("scroll", checkPosition);
         if (heroArrow && header__buttonWrapper) window.addEventListener("scroll", checkPositionPortal);
+        if (presskitHero && header__register) window.addEventListener("scroll", checkPositionPresskit);
     }));
     if (window.innerWidth < 919) {
         const godsItems = document.querySelectorAll(".gods__item");

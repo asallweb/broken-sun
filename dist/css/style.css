@@ -3898,7 +3898,7 @@ h6 {
   height: 46px
 }
 .menu__link {
-  width: 100px;
+  width: 115px;
   color: #b19f63;
   font-size: 22px;
   line-height: 1.36;
@@ -5004,6 +5004,7 @@ textarea {
   height: 32px
 }
 .footer {
+  position: relative;
   box-shadow: 0 -125px 35px 0 rgba(0,0,0,.01),0 -80px 32px 0 rgba(0,0,0,.03),0 -45px 27px 0 rgba(0,0,0,.1),0 -20px 20px 0 rgba(0,0,0,.17),0 -5px 11px 0 rgba(0,0,0,.2);
   padding: 32px 0;
   background: url(../img/background/footer/footer_1440.webp) center top no-repeat;
@@ -7170,6 +7171,310 @@ textarea {
 .worlds-names__list {
   display: flex
 }
+.presskit-bg-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100vh
+}
+.presskit-bg-wrapper__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.presskit-hero {
+  height: 940px;
+  overflow: hidden
+}
+.presskit-hero__wrapper {
+  height: 100%;
+  position: relative
+}
+.presskit-hero__super-title {
+  position: relative;
+  z-index: 1;
+  top: 134px;
+  color: #f9df94;
+  text-shadow: 0 3px 3px rgba(0,0,0,.25);
+  font-size: 48px;
+  line-height: 1.04;
+  text-transform: uppercase
+}
+.presskit-hero__content {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  background: linear-gradient(0deg,rgba(7,10,14,.8) 0,rgba(7,10,14,.4) 92.74%,rgba(7,10,14,0) 124.56%);
+  color: #e6e6e6;
+  font-weight: 300;
+  line-height: 1.27;
+  padding: 25px 0 30px
+}
+.presskit-hero__content::after,
+.presskit-hero__content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  display: block;
+  height: 18px;
+  width: 100%;
+  background: url(../img/background/presskit/content-ornament.svg) 0 0 repeat-x
+}
+.presskit-hero__content::before {
+  top: 5px
+}
+.presskit-hero__content::after {
+  bottom: 5px
+}
+.presskit-hero__title {
+  margin-bottom: 15px;
+  color: #f9df94;
+  text-shadow: 0 3px 3px rgba(0,0,0,.25);
+  font-size: 42px;
+  line-height: 1.19
+}
+.presskit-hero__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 940px
+}
+.presskit-hero__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.presskit-mechanics {
+  position: relative;
+  color: #e6e6e6;
+  font-weight: 300;
+  line-height: 1.36;
+  padding: 45px 0
+}
+.presskit-mechanics__title {
+  color: #f9df94;
+  text-shadow: 0 3px 3px rgba(0,0,0,.25);
+  font-size: 42px;
+  line-height: 1.19;
+  margin-bottom: 38px
+}
+.presskit-mechanics__row {
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  margin-bottom: 60px
+}
+.presskit-mechanics__col:nth-child(1) {
+  max-width: 570px
+}
+.presskit-mechanics__col:nth-child(2) {
+  max-width: 690px
+}
+.presskit-mechanics__subtitle {
+  color: #f9df94;
+  font-weight: 500;
+  line-height: 1.27;
+  margin-bottom: 10px
+}
+.presskit-mechanics li {
+  position: relative
+}
+.presskit-mechanics li:before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 12px;
+  left: -15px
+}
+.presskit-gameplay {
+  position: relative;
+  margin-bottom: 70px
+}
+.presskit-gameplay__title {
+  color: #f9df94;
+  text-shadow: 0 3px 3px rgba(0,0,0,.25);
+  font-size: 42px;
+  line-height: 1.19;
+  margin-bottom: 25px
+}
+.presskit-gameplay__video {
+  margin: 15px auto;
+  width: 100%;
+  max-width: 720px;
+  position: relative;
+  overflow: hidden
+}
+.presskit-gameplay__video::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../img/background/media/media__border.svg) top -3px left no-repeat;
+  background-size: 100% 100%
+}
+.presskit-gameplay__video img,
+.presskit-gameplay__video video {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  clip-path: polygon(1.6% 0,98.4% 0,100% 2.9%,100% 97.6%,98.4% 100%,1.4% 100%,0 97.6%,0 2.9%)
+}
+.presskit-gameplay__button-wrapper {
+  display: flex;
+  justify-content: center
+}
+.presskit-media {
+  position: relative;
+  margin-top: 70px;
+  margin-bottom: 70px
+}
+.presskit-media__title {
+  color: #f9df94;
+  text-align: center;
+  text-shadow: 0 3px 3px rgba(0,0,0,.25);
+  font-size: 48px;
+  line-height: 1.04;
+  text-transform: uppercase;
+  margin-bottom: 30px
+}
+.presskit-media__main {
+  display: flex;
+  gap: 80px
+}
+.presskit-media__sidebar {
+  width: 135px;
+  flex: 0 0 auto
+}
+.presskit-media__sidebar-wrapper {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+.presskit-media__sidebar-item {
+  color: #b19f63;
+  font-size: 24px;
+  line-height: 1.25
+}
+.presskit-media__sidebar-item:hover {
+  text-decoration: underline
+}
+.presskit-media__subtitle {
+  color: #f9df94;
+  text-shadow: 0 3px 3px rgba(0,0,0,.25);
+  font-size: 42px;
+  line-height: 1.19;
+  margin-bottom: 40px
+}
+.presskit-media__grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 48px;
+  margin-bottom: 50px
+}
+.presskit-media__image {
+  width: 100%
+}
+.presskit-media__img {
+  width: 100%;
+  height: auto
+}
+.presskit-media__grid-item {
+  position: relative
+}
+.presskit-media__wrapper-bordered {
+  position: relative
+}
+.presskit-media__wrapper-bordered::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../img/background/presskit/border.webp) 100% 100% no-repeat;
+  background-size: 100% 100%;
+  pointer-events: none
+}
+.presskit-media__video {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  clip-path: polygon(2.76% -.27%,97.43% -.28%,99.71% 2.9%,100% 98%,98.4% 100%,1.4% 100%,0 97.6%,.57% 3.38%)
+}
+.presskit-media__download-link {
+  color: #1969ad;
+  text-align: center;
+  font-size: 22px;
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url(../img/background/presskit/download-link.webp) top left no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  top: -12px;
+  padding-top: 3px
+}
+.presskit-media__logos-row {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 50px
+}
+.presskit-media__logos-col {
+  display: flex;
+  flex-direction: column
+}
+.presskit-media__logos-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 22px
+}
+.presskit-media__logos-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.presskit-media__logos-item._mt-a {
+  margin-top: auto
+}
+.presskit-media__logos-img {
+  max-width: 100%
+}
+.presskit-media__logos-img._mb-30 {
+  margin-bottom: 30px
+}
+.presskit-media__download-img {
+  width: 36px;
+  height: 36px;
+  color: #1b5585
+}
+.presskit-media__download-img:hover {
+  color: #f9df94
+}
 .swiper {
   overflow: hidden
 }
@@ -7437,10 +7742,55 @@ textarea {
     left: 44.7%;
     top: 12%
   }
+  .presskit-media {
+    margin-top: 40px;
+    margin-bottom: 40px
+  }
+  .presskit-media__title {
+    font-size: 32px
+  }
+  .presskit-media__main {
+    gap: 10px
+  }
+  .presskit-media__sidebar-item {
+    font-size: 16px
+  }
+  .presskit-media__subtitle {
+    font-size: 28px;
+    margin-bottom: 30px
+  }
+  .presskit-media__grid {
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-bottom: 40px
+  }
+  .presskit-media__download-link {
+    font-size: 18px;
+    padding-top: 0;
+    height: 35px
+  }
+  .presskit-media__logos-row {
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px
+  }
+  .presskit-media__logos-horizontal {
+    gap: 20px
+  }
 }
 @media (max-width:1360px) {
   ._portal .menu__link {
     width: auto
+  }
+}
+@media (max-width:1280px) {
+  .presskit-media__main {
+    gap: 10px
+  }
+  .presskit-media__grid {
+    grid-template-columns: repeat(2,1fr)
+  }
+  .presskit-media__logos-horizontal {
+    flex-wrap: wrap
   }
 }
 @media (max-width:1200px) {
@@ -7506,6 +7856,11 @@ textarea {
     width: 16px;
     height: 16px
   }
+  .button__text-inner::after,
+  .button__text-inner::before {
+    width: 18px;
+    height: 28px
+  }
   .class-icon {
     font-size: 18px;
     line-height: 1.22
@@ -7518,7 +7873,7 @@ textarea {
   }
   .header__menu {
     width: 100%;
-    max-width: 532px
+    max-width: 100%
   }
   .header__register._active {
     width: 175px
@@ -7889,7 +8244,6 @@ textarea {
     padding: 2px 0
   }
   .header__menu {
-    max-width: 420px;
     padding-right: 17px;
     margin-left: auto;
     margin-right: 0
@@ -8939,6 +9293,68 @@ textarea {
   }
   .character__title {
     display: none
+  }
+  .presskit-hero {
+    height: 100vh
+  }
+  .presskit-hero__super-title {
+    top: 100px;
+    font-size: 32px
+  }
+  .presskit-hero__content {
+    font-size: 16px
+  }
+  .presskit-hero__title {
+    margin-bottom: 15px;
+    font-size: 28px
+  }
+  .presskit-hero__image {
+    height: 100vh
+  }
+  .presskit-mechanics {
+    padding: 25px 15px;
+    font-size: 16px
+  }
+  .presskit-mechanics__title {
+    font-size: 28px;
+    margin-bottom: 25px
+  }
+  .presskit-mechanics__row {
+    gap: 30px;
+    margin-bottom: 40px;
+    flex-direction: column
+  }
+  .presskit-gameplay {
+    margin-bottom: 40px
+  }
+  .presskit-gameplay__title {
+    font-size: 28px
+  }
+  .presskit-media__main {
+    flex-direction: column;
+    gap: 40px
+  }
+  .presskit-media__title {
+    font-size: 25px
+  }
+  .presskit-media__subtitle {
+    font-size: 22px
+  }
+  .presskit-media__grid {
+    gap: 10px
+  }
+  .presskit-media__download-link {
+    white-space: initial;
+    font-size: 12px;
+    height: auto;
+    top: 0
+  }
+  .presskit-media__logos-row {
+    grid-template-columns: repeat(1,1fr)
+  }
+  .presskit-media__download-img {
+    width: 22px;
+    height: 22px
   }
 }
 @media (max-width:47.99875em) and (any-hover:none) {

@@ -6835,54 +6835,57 @@ textarea {
   text-transform: capitalize;
   transition: all .3s ease-in-out
 }
-.hero-class {
+.class-hero {
   overflow: hidden;
   position: relative;
-  background: url(../img/background/classes/hero__warrior.webp) center center no-repeat;
-  background-size: cover
+  background-size: cover;
+  height: 100vh
 }
-.hero-class._archer {
-  background: url(../img/background/classes/hero__archer.webp) center center no-repeat;
-  background-size: cover
+.class-hero._warrior {
+  background: url(../img/background/classes/hero__warrior.webp) center center/cover no-repeat
 }
-.hero-class._archer .hero-class__container {
+.class-hero._warrior .class-hero__container {
+  background: url(../img/background/classes/hero__warrior-ornament.webp) top -60px left -280px no-repeat
+}
+.class-hero._warrior .class-hero__title-wrapper {
+  background: url(../img/background/classes/hero__title.webp) 0 0/cover no-repeat
+}
+.class-hero._archer {
+  background: url(../img/background/classes/hero__archer.webp) center center/cover no-repeat
+}
+.class-hero._archer .class-hero__container {
   background: url(../img/background/classes/hero__archer-ornament.webp) top 80px center no-repeat
 }
-.hero-class._archer .hero-class__content {
+.class-hero._archer .class-hero__content {
   left: auto;
   right: 0;
   padding-left: 0;
   padding-right: 40px
 }
-.hero-class._archer .hero-class__image {
-  bottom: -135px;
-  left: -10px;
-  -webkit-transform: translate(0,0);
-  transform: translate(0,0)
+.class-hero._archer .class-hero__image {
+  left: calc(50% - 340px)
 }
-.hero-class._archer .hero-class__title-wrapper {
-  background: url(../img/background/classes/hero__title-archer.webp) 0 0 no-repeat
-}
-.hero-class._mage {
-  background: url(../img/background/classes/hero__mage.webp) center center no-repeat;
+.class-hero._archer .class-hero__title-wrapper {
+  background: url(../img/background/classes/hero__title-archer.webp) 0 0 no-repeat;
   background-size: cover
 }
-.hero-class._mage .hero-class__container {
+.class-hero._mage {
+  background: url(../img/background/classes/hero__mage.webp) center center/cover no-repeat
+}
+.class-hero._mage .class-hero__container {
   background: url(../img/background/classes/hero__mage-ornament.webp) top 0 center no-repeat
 }
-.hero-class._mage .hero-class__image {
-  bottom: -130px;
+.class-hero._mage .class-hero__image {
   left: calc(50% + 150px)
 }
-.hero-class._mage .hero-class__title-wrapper {
-  background: url(../img/background/classes/hero__title-mage.webp) 0 0 no-repeat
+.class-hero._mage .class-hero__title-wrapper {
+  background: url(../img/background/classes/hero__title-mage.webp) 0 0/cover no-repeat
 }
-.hero-class__container {
+.class-hero__container {
   position: relative;
-  height: 815px;
-  background: url(../img/background/classes/hero__warrior-ornament.webp) top -60px left -280px no-repeat
+  height: 100%
 }
-.hero-class__content {
+.class-hero__content {
   z-index: 1;
   position: absolute;
   left: 0;
@@ -6896,77 +6899,77 @@ textarea {
   max-width: 440px;
   padding-left: 40px
 }
-.hero-class__image {
+.class-hero__image {
   position: absolute;
-  bottom: -110px;
+  bottom: 0;
   left: calc(50% + 200px);
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0)
 }
-.hero-class__list {
+.class-hero__list {
   position: absolute;
   top: 50%;
-  right: -100px;
+  right: 30px;
   -webkit-transform: translate(0,-50%);
   transform: translate(0,-50%);
   display: flex;
   flex-direction: column;
   gap: 56px
 }
-.hero-class__title-wrapper {
-  background: url(../img/background/classes/hero__title.webp) 0 0 no-repeat;
-  background-size: cover;
-  height: 133px;
-  position: relative
+.class-hero__title-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 133px
 }
-.hero-class__title-wrapper::before {
+.class-hero__title-wrapper::before {
   content: "";
   position: absolute;
   top: 0;
   left: 50%;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  background: url(../img/background/classes/hero__title-line.webp) 0 0 no-repeat;
+  background: url(../img/background/classes/hero__title-line.webp) center center/cover no-repeat;
   display: block;
   height: 29px;
   width: 100%;
   max-width: 1920px
 }
-.hero-class__title {
+.class-hero__title {
   display: flex;
   justify-content: center;
   height: 100%;
   color: #f9df94;
   font-size: 50px
 }
-.hero-class__title-inner {
+.class-hero__title-inner {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px
 }
-.hero-class__title-inner::after,
-.hero-class__title-inner::before {
+.class-hero__title-inner::after,
+.class-hero__title-inner::before {
   content: "";
   display: block;
   width: 199px;
   height: 68px;
   position: absolute;
   top: 50%;
-  background: url(../img/background/classes/hero__title-wraper.webp) 0 0 no-repeat
+  background: url(../img/background/classes/hero__title-wraper.webp) 0 0/cover no-repeat
 }
-.hero-class__title-inner::before {
+.class-hero__title-inner::before {
   left: -83px;
   -webkit-transform: translate(0,-50%);
   transform: translate(0,-50%)
 }
-.hero-class__title-inner::after {
+.class-hero__title-inner::after {
   right: -83px;
   -webkit-transform: translate(0,-50%) rotate(180deg);
   transform: translate(0,-50%) rotate(180deg)
 }
-.hero-class__title-img {
+.class-hero__title-img {
   position: relative;
   z-index: 1
 }
@@ -7161,16 +7164,6 @@ textarea {
   height: 264px;
   background: url(../img/background/classes/strength__warrior-light.webp) 0 0 no-repeat
 }
-.hero-fraction {
-  position: relative
-}
-.hero-fraction__container {
-  position: absolute;
-  bottom: 0
-}
-.worlds-names__list {
-  display: flex
-}
 .presskit-bg-wrapper {
   position: fixed;
   width: 100%;
@@ -7278,20 +7271,6 @@ textarea {
   font-weight: 500;
   line-height: 1.27;
   margin-bottom: 10px
-}
-.presskit-mechanics li {
-  position: relative
-}
-.presskit-mechanics li:before {
-  content: "";
-  display: block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #fff;
-  position: absolute;
-  top: 12px;
-  left: -15px
 }
 .presskit-gameplay {
   position: relative;
@@ -7458,35 +7437,40 @@ textarea {
 .presskit-media__item-name:hover .presskit-media__item-title {
   display: none
 }
-.presskit-media__logos-row {
+.presskit-media__logos-grid {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  gap: 50px
-}
-.presskit-media__logos-col {
-  display: flex;
-  flex-direction: column
-}
-.presskit-media__logos-horizontal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-  margin-bottom: 22px
+  gap: 40px
 }
 .presskit-media__logos-item {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
+  justify-content: center;
+  gap: 31px;
+  border-radius: 10px;
+  background: rgba(0,0,0,.1);
+  border: 1px solid transparent;
+  padding: 15px 15px 52px 15px
 }
-.presskit-media__logos-item._mt-a {
-  margin-top: auto
+.presskit-media__logos-item:hover {
+  border: 1px solid #314d69
+}
+.presskit-media__logos-item._horizontal {
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 5px
 }
 .presskit-media__logos-img {
   max-width: 100%
 }
-.presskit-media__logos-img._mb-30 {
-  margin-bottom: 30px
+._horizontal .presskit-media__logos-img {
+  max-width: 30%
+}
+.presskit-media__logos-download {
+  position: absolute;
+  bottom: 15px
 }
 .presskit-media__download-img {
   width: 36px;
@@ -7496,10 +7480,239 @@ textarea {
 .presskit-media__download-img:hover {
   color: #f9df94
 }
+.presskit-media__logos-item:hover .presskit-media__download-img {
+  color: #f9df94
+}
 .presskit-media__download-img._w23 {
   width: 23px;
   height: 23px;
   color: #f9df94
+}
+.fraction-hero {
+  position: relative;
+  height: 49vw
+}
+.fraction-hero__wrapper {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%
+}
+.fraction-hero__content {
+  color: #e6e6e6;
+  font-weight: 300;
+  line-height: 1.36;
+  border-radius: 10px 10px 0 0;
+  background: linear-gradient(0deg,rgba(7,10,14,.7) 0,rgba(7,10,14,.4) 92.74%,rgba(7,10,14,0) 124.56%);
+  padding: 10px 10px 60px
+}
+.fraction-hero__worlds {
+  background: rgba(0,0,0,.6)
+}
+.fraction-hero__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%
+}
+.fraction-hero__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.fraction-hero .worlds-names__list {
+  display: flex
+}
+.fraction-hero .worlds-names__item {
+  position: relative;
+  height: 107px;
+  flex: 1
+}
+.fraction-hero .worlds-names__item-wrapper {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  width: 100%
+}
+.fraction-hero .worlds-names__item-icon {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  transition: all .3s ease-in-out;
+  width: 73px
+}
+.fraction-hero .worlds-names__item-title {
+  margin-top: 45px;
+  color: #ccc;
+  font-size: 40px
+}
+.fraction-hero .worlds-names__item-image {
+  position: relative
+}
+.fraction-hero .worlds-names__item-img {
+  transition: all .3s ease-in-out;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.fraction-hero .worlds-names__item-img._hovered {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: 0
+}
+.fraction-hero .worlds-names__item:hover .worlds-names__item-title {
+  color: #f9df94
+}
+.fraction-hero .worlds-names__item:hover .worlds-names__item-icon {
+  -webkit-transform: translate(-50%,0) scale(1.315);
+  transform: translate(-50%,0) scale(1.315)
+}
+.fraction-hero .worlds-names__item:hover .worlds-names__item-img {
+  opacity: 0;
+  visibility: hidden
+}
+.fraction-hero .worlds-names__item:hover .worlds-names__item-img._hovered {
+  opacity: 1;
+  visibility: visible
+}
+.fraction-main {
+  position: relative;
+  height: 49vw
+}
+.fraction-main__title-wrapper {
+  height: 86px;
+  width: 100%;
+  position: absolute;
+  top: 0
+}
+.fraction-main__title-wrapper._olimp {
+  background: url(../img/background/fraction/fraction-title__olimp.webp) center center no-repeat
+}
+.fraction-main__title-wrapper._asgard {
+  background: url(../img/background/fraction/fraction-title__asgard.webp) center center no-repeat
+}
+.fraction-main__title-wrapper._nefar {
+  background: url(../img/background/fraction/fraction-title__nefar.webp) center center no-repeat
+}
+.fraction-main__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+  color: #f9df94;
+  font-size: 50px
+}
+._olimp .fraction-main__title {
+  background: url(../img/background/fraction/fraction-ornament__olimp.webp) center center no-repeat
+}
+._asgard .fraction-main__title {
+  background: url(../img/background/fraction/fraction-ornament__asgard.webp) center center no-repeat
+}
+._nefar .fraction-main__title {
+  background: url(../img/background/fraction/fraction-ornament__nefar.webp) center center no-repeat
+}
+.fraction-main__title-icon {
+  width: 52px;
+  height: auto
+}
+.fraction-main__content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(0deg,rgba(7,10,14,.7) 0,rgba(7,10,14,.4) 92.74%,rgba(7,10,14,0) 124.56%);
+  padding: 25px 0 35px
+}
+.fraction-main__content::after,
+.fraction-main__content::before {
+  content: "";
+  background: url(../img/background/fraction/content-ornament.svg) 0 0 no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 22px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
+}
+.fraction-main__content::before {
+  top: 2px
+}
+.fraction-main__content::after {
+  bottom: 2px
+}
+.fraction-main__content-wrapper {
+  max-width: 738px;
+  width: 100%;
+  margin: 0 auto
+}
+.fraction-main__content-text {
+  color: #e6e6e6;
+  font-weight: 300;
+  line-height: 1.27
+}
+.fraction-section {
+  position: relative;
+  height: 49vw
+}
+.fraction-section .__container {
+  height: 100%
+}
+.fraction-section__wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 100px 40px 80px 20px;
+  height: 100%
+}
+._content-left .fraction-section__wrapper {
+  justify-content: flex-start
+}
+._content-bottom .fraction-section__wrapper {
+  align-items: flex-end
+}
+.fraction-section__content {
+  max-width: 498px;
+  width: 100%
+}
+.fraction-section__title {
+  color: #f9df94;
+  font-size: 40px;
+  margin-bottom: 18px
+}
+.fraction-section__text {
+  color: #e6e6e6;
+  text-shadow: 0 2px 3px rgba(0,0,0,.8);
+  font-weight: 300;
+  line-height: 1.27
+}
+._content-shadowed .fraction-section__text {
+  border-radius: 10px;
+  background: linear-gradient(0deg,rgba(7,10,14,.42) 0,rgba(7,10,14,.24) 92.74%,rgba(7,10,14,0) 124.56%);
+  padding: 12px 9px 14px 21px
+}
+.fraction-section__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 49vw
+}
+.fraction-section__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
 }
 .swiper {
   overflow: hidden
@@ -7697,9 +7910,17 @@ textarea {
     background-size: cover
   }
 }
+@media (min-width:1700px) {
+  .class-hero__list {
+    right: -100px
+  }
+}
 @media (min-width:1920px) {
   .hero__platforms {
     gap: 52px
+  }
+  .class-hero__img {
+    max-height: 98vh
   }
 }
 @media (min-width:1921px) {
@@ -7768,6 +7989,43 @@ textarea {
     left: 44.7%;
     top: 12%
   }
+  .class-hero__content {
+    font-size: 18px;
+    line-height: 1.22
+  }
+  .class-hero__image {
+    left: calc(50% + 150px)
+  }
+  .class-hero__list {
+    right: 20px
+  }
+  .class-hero__img {
+    height: 80vh
+  }
+  .class-hero__title-wrapper {
+    height: 80px
+  }
+  .class-hero__title-wrapper::before {
+    height: 20px
+  }
+  .class-hero__title {
+    font-size: 34px
+  }
+  .class-hero__title-inner::after,
+  .class-hero__title-inner::before {
+    width: 108px;
+    height: 36px
+  }
+  .class-hero__title-inner::before {
+    left: -43px
+  }
+  .class-hero__title-inner::after {
+    right: -43px
+  }
+  .class-hero__title-img {
+    width: 29px;
+    height: auto
+  }
   .presskit-media {
     margin-top: 40px;
     margin-bottom: 40px
@@ -7806,9 +8064,6 @@ textarea {
     grid-template-columns: repeat(2,1fr);
     gap: 20px
   }
-  .presskit-media__logos-horizontal {
-    gap: 20px
-  }
 }
 @media (max-width:1400px) {
   .presskit-hero {
@@ -7831,8 +8086,8 @@ textarea {
   .presskit-media__grid {
     grid-template-columns: repeat(2,1fr)
   }
-  .presskit-media__logos-horizontal {
-    flex-wrap: wrap
+  .presskit-media__logos-grid {
+    gap: 20px
   }
 }
 @media (max-width:1200px) {
@@ -8277,6 +8532,19 @@ textarea {
   .register__image-wrapper {
     right: -160px
   }
+  .class-hero {
+    height: 630px
+  }
+  .class-hero__image {
+    height: 80%
+  }
+  .class-hero__image div {
+    height: 100%
+  }
+  .class-hero__img {
+    height: 100%;
+    width: auto
+  }
 }
 @media (max-width:919px) {
   .menu__link {
@@ -8517,6 +8785,12 @@ textarea {
   .awards__ornament {
     max-width: 380px;
     top: 100px
+  }
+  .class-hero {
+    height: 578px
+  }
+  .class-hero__content {
+    max-width: 330px
   }
 }
 @media (max-width:760px) {
@@ -8788,6 +9062,48 @@ textarea {
     height: 22%;
     left: 38.5%;
     top: 4%
+  }
+  .class-hero {
+    height: auto;
+    padding-top: 50px
+  }
+  .class-hero__container {
+    display: flex;
+    flex-direction: column
+  }
+  .class-hero__content {
+    position: relative;
+    max-width: 100%;
+    padding: 0 15px;
+    order: 2;
+    left: auto;
+    top: auto;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    font-size: 14px
+  }
+  .class-hero__list {
+    order: 1;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: 320px;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 16px auto
+  }
+  .class-hero__image {
+    order: 3;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    text-align: center
   }
 }
 @media (max-width:550px) {

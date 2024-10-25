@@ -3964,6 +3964,9 @@ h6 {
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%)
 }
+.menu__folowus-link._rutube {
+  margin-top: -3px
+}
 .menu__folowus-link .non-hovered,
 .menu__folowus-link:hover .hovered {
   display: block
@@ -4029,7 +4032,6 @@ body::after {
   visibility: hidden;
   -webkit-transform: scale(0);
   transform: scale(0);
-  background-color: #eee;
   max-width: calc(100vw - 210px);
   transition: -webkit-transform .2s ease 0s;
   transition: transform .2s ease 0s;
@@ -4048,7 +4050,6 @@ body::after {
   height: auto
 }
 #media .popup__text {
-  border: 2px solid #f9df94;
   line-height: 0;
   position: relative;
   overflow: hidden;
@@ -5034,6 +5035,9 @@ textarea {
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%)
 }
+.footer__socials-link._rutube svg {
+  margin-top: -3px
+}
 .footer__socials-link .non-hovered,
 .footer__socials-link:hover .hovered {
   display: block
@@ -5166,7 +5170,7 @@ textarea {
 .hero__folowus {
   position: fixed;
   right: -110px;
-  top: 65vh;
+  top: 60vh;
   z-index: 6
 }
 .hero__folowus-wrapper {
@@ -6411,7 +6415,8 @@ textarea {
   bottom: 10px;
   width: 149px;
   height: 149px;
-  background: url(../img/background/form__corner.webp) 0 0 no-repeat
+  background: url(../img/background/form__corner.webp) 0 0 no-repeat;
+  pointer-events: none
 }
 .form__wrapper-inner::before {
   left: 10px;
@@ -6429,7 +6434,7 @@ textarea {
 }
 .form__title {
   color: #f9df94;
-  line-height: 2.38;
+  line-height: 2.18;
   text-align: center;
   margin-bottom: 15px;
   margin-top: 11px;
@@ -6464,8 +6469,26 @@ textarea {
   margin: 0 0 29px 0;
   padding: 8px
 }
+.form .field-wrapper._mt-0 {
+  margin-top: 0
+}
+.form .field-wrapper._mb-0 {
+  margin-bottom: 0
+}
+.form .field-wrapper._mb-10 {
+  margin-bottom: 10px
+}
 .form .field-wrapper._mb-12 {
   margin-bottom: 12px
+}
+.form .field-wrapper._mb-20 {
+  margin-bottom: 20px
+}
+.form .field-wrapper._mb-30 {
+  margin-bottom: 26px
+}
+.form .field-wrapper._mb-40 {
+  margin-bottom: 40px
 }
 .form .field-wrapper._mb-50 {
   margin-bottom: 50px
@@ -6473,7 +6496,7 @@ textarea {
 .form .field-wrapper label {
   color: #fafafa;
   line-height: 1.23;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding-left: 17px;
   position: relative
 }
@@ -6510,13 +6533,27 @@ textarea {
   bottom: -10px;
   left: 25px
 }
+.form .field-wrapper__required-message {
+  color: #666;
+  font-size: 12px;
+  line-height: 16px;
+  padding-left: 16px;
+  margin-top: 3px
+}
+.form .field-wrapper__required-message span {
+  color: #7e222b
+}
 .form .checkbox-wrapper {
   display: flex;
   align-items: center;
   gap: 16px;
   margin: 32px 0;
   color: #fafafa;
-  line-height: 1.36
+  line-height: 1.36;
+  padding-left: 8px
+}
+.form .checkbox-wrapper._pl-10 {
+  padding-left: 10px
 }
 .form .checkbox-wrapper a {
   color: #1969ad;
@@ -6536,7 +6573,7 @@ textarea {
   line-height: 1.23;
   margin-top: 32px;
   margin-bottom: 12px;
-  padding-left: 17px;
+  padding-left: 26px;
   position: relative
 }
 .form .field-title._mt-8 {
@@ -6545,10 +6582,13 @@ textarea {
 .form .field-title._mb-15 {
   margin-bottom: 15px
 }
+.form .field-title._mb-20 {
+  margin-bottom: 20px
+}
 .form .field-title span {
   color: #e54555;
   position: absolute;
-  left: 0;
+  left: 9px;
   top: 0
 }
 .form .field-checkbox {
@@ -6558,7 +6598,7 @@ textarea {
   color: #e6e6e6;
   font-size: 18px;
   line-height: 1.22;
-  padding-left: 10px
+  padding-left: 8px
 }
 .form .field-checkbox label {
   cursor: pointer
@@ -6591,15 +6631,98 @@ textarea {
 .form .field-wrapper__grid-2cols {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  gap: 32px;
+  gap: 30px 15px;
   margin: 12px 0 40px;
   padding: 8px
+}
+.form .field-wrapper__grid-2cols._mt-0 {
+  margin-top: 0
 }
 .form .field-wrapper__grid-2cols._mb-55 {
   margin-bottom: 55px
 }
 .form .field-wrapper__grid-2cols._mb-12 {
   margin-bottom: 12px
+}
+.form .form__navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-top: 60px
+}
+.form .form__navigation-next._empty {
+  width: 116px
+}
+.form__navigation-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff
+}
+.form__navigation-button:disabled {
+  color: #666
+}
+.form__navigation-button-icon {
+  background: url(../img/icons/form/arrow.svg) center center no-repeat;
+  width: 48px;
+  height: 48px
+}
+.form__navigation-button-icon._rotated {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
+.form__navigation-button:hover .form__navigation-button-icon {
+  background-image: url(../img/icons/form/arrow_hovered.svg)
+}
+.form__navigation-button:disabled .form__navigation-button-icon {
+  background-image: url(../img/icons/form/arrow_disabled.svg)
+}
+.form-pagination__title {
+  text-align: center;
+  line-height: 1.36
+}
+.form-pagination__speps {
+  display: flex;
+  justify-content: center;
+  gap: 12px
+}
+.form-pagination__spep {
+  border-radius: 2px;
+  background: #0d3251;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,.08);
+  width: 38px;
+  height: 10px;
+  flex: 0 0 auto;
+  margin: 12px auto
+}
+.form-pagination__spep._active {
+  background: linear-gradient(270deg,#eac370 0,#865b06 100%);
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,.08)
+}
+.form-pagination__required-message {
+  color: #666;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center
+}
+.form-pagination__required-message span {
+  color: #7e222b
+}
+.form__mainpage-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ccc;
+  font-size: 20px;
+  font-weight: 300;
+  width: 124px;
+  position: absolute;
+  left: 40px;
+  top: 38px
+}
+.form__mainpage-link:hover {
+  text-decoration: none!important
 }
 .success__wrapper {
   max-width: 1132px;
@@ -7366,7 +7489,9 @@ textarea {
   margin-bottom: 50px
 }
 .presskit-media__image {
-  width: 100%
+  width: 100%;
+  position: relative;
+  z-index: 1
 }
 .presskit-media__img {
   width: 100%;
@@ -7405,7 +7530,7 @@ textarea {
   justify-content: center;
   text-align: center;
   font-size: 22px;
-  line-height: 1.45;
+  line-height: 1.4;
   width: 100%;
   height: 40px;
   white-space: nowrap;
@@ -7413,7 +7538,7 @@ textarea {
   background: url(../img/background/presskit/download-link.webp) top left no-repeat;
   background-size: 100% 100%;
   position: relative;
-  top: -12px;
+  top: -10px;
   padding-top: 3px
 }
 .presskit-media__download-link {
@@ -8509,6 +8634,12 @@ textarea {
   }
   .form__wrapper-inner {
     padding-top: 20px
+  }
+  .form__mainpage-link {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 15px 0 0 10px
   }
 }
 @media (max-width:920px) {
@@ -9648,6 +9779,37 @@ textarea {
   }
   .form .field-wrapper__grid-2cols {
     grid-template-columns: repeat(1,1fr)
+  }
+  .form .form__navigation {
+    gap: 15px;
+    margin-top: 30px
+  }
+  .form .form__navigation-next._empty {
+    width: 68px
+  }
+  .form__navigation-button {
+    gap: 5px;
+    font-size: 15px
+  }
+  .form__navigation-button-icon {
+    width: 22px;
+    height: 22px;
+    background-size: cover
+  }
+  .form-pagination__title {
+    font-size: 15px
+  }
+  .form-pagination__speps {
+    gap: 8px
+  }
+  .form-pagination__spep {
+    width: 22px;
+    height: 8px;
+    margin: 8px 0
+  }
+  .form-pagination__required-message {
+    font-size: 10px;
+    line-height: 14px
   }
   .character__title {
     display: none

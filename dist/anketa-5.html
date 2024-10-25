@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>HomePage</title>
+	<title>Анкета №5</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -26,30 +26,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Прокрутка страницы к началу при загрузке
-			window.scrollTo(0, 0);
-			document.documentElement.classList.add('lock'); // Добавляем класс .lock на <html>
-
-			const startTime = new Date().getTime();
-
-			function hidePreloader() {
-				const currentTime = new Date().getTime();
-				const elapsedTime = currentTime - startTime;
-
-				if (elapsedTime < 1000) {
-					setTimeout(hidePreloader, 1000 - elapsedTime);
-				} else {
-					document.getElementById("preloader").classList.add('_preloader-nonactive');
-					document.getElementById("wrapper").classList.add('_wrapper-active');
-					document.documentElement.classList.remove('lock'); // Убираем класс .lock с <html>
-				}
-			}
-			window.onload = hidePreloader;
-		});
-	</script>
-
 	<div class="wrapper" id="wrapper">
 		<header class="header _active _relative">
 			<div class="header__container">
@@ -92,78 +68,26 @@
 				<div class="__container">
 					<div class="form__wrapper">
 						<div class="form__wrapper-inner">
+							<a href="#" class="form__mainpage-link">
+								<img src="img/icons/form/mainpage.svg">
+								На главную
+							</a>
 							<div class="form__inner">
 								<div class="form__title">Заполните анкету участника ЗБТ</div>
-								<div class="form__subtitle">Основная информация</div>
-								<div class="field-wrapper">
+								<div class="field-wrapper _mb-12">
 									<label for="">
-										<span>*</span>Ваш никнейм или имя в играх (если есть):
+										<span>*</span>Ваше основное игровое устройство:
 									</label>
-									<input type="text" placeholder="Шалапай_333" value="">
+								</div>
+								<div class="field-checkbox" id="PC">
+									<input type="checkbox" checked="">
+									<label for="tank2">ПК</label>
 								</div>
 								<br>
-								<div class="field-wrapper">
-									<label for="">
-										<span>*</span>Ваш никнейм или имя в играх (если есть):
-									</label>
-									<input type="text" placeholder="" value="Шалапай_333" class="_invalid">
-									<span class="field-wrapper__error">Supporting text</span>
+								<div class="field-checkbox" id="console">
+									<input type="checkbox" checked="">
+									<label for="tank2">Мобильное устройство</label>
 								</div>
-								<br>
-								<div class="field-wrapper">
-									<label for="">
-										<span>*</span>Ваш никнейм или имя в играх (если есть):
-									</label>
-									<input type="text" placeholder="" value="Шалапай_333">
-								</div>
-								<br>
-								<div class="field-wrapper">
-									<label for=""><span>*</span>Ваш контактный email:</label>
-									<input type="email" placeholder="email@email.com" value="">
-								</div>
-								<br>
-								<div class="field-wrapper__grid-2cols">
-									<div class="field-wrapper__grid-2cols__column">
-										<div class="field-checkbox">
-											<input type="checkbox" id="tank">
-											<label for="tank">Танковать</label>
-										</div>
-										<br>
-										<div class="field-checkbox" id="tank2">
-											<input type="checkbox" checked>
-											<label for="tank2">Танковать</label>
-										</div>
-										<br>
-										<div class="field-checkbox" id="tank3">
-											<input type="checkbox" disabled>
-											<label for="tank3">Танковать</label>
-										</div>
-										<br>
-										<div class="field-checkbox" id="tank4">
-											<input type="checkbox" disabled checked>
-											<label for="tank4">Танковать</label>
-										</div>
-									</div>
-									<div class="field-wrapper__grid-2cols__column">
-										<div class="radio-wrapper">
-											<input type="radio" name="srok1" id="srok1">
-											<label for="srok1">Менее 1 года</label>
-										</div>
-										<div class="radio-wrapper">
-											<input type="radio" name="" id="srok2" checked>
-											<label for="srok2">Менее 1 года</label>
-										</div>
-										<div class="radio-wrapper">
-											<input type="radio" name="" id="srok3" disabled>
-											<label for="srok3">Менее 1 года</label>
-										</div>
-										<div class="radio-wrapper">
-											<input type="radio" name="" id="srok4" disabled checked>
-											<label for="srok4">Менее 1 года</label>
-										</div>
-									</div>
-								</div>
-
 								<div class="field-wrapper _mb-12 _mt-32">
 									<label for="">
 										<span>*</span>Характеристики вашего ПК:
@@ -177,47 +101,142 @@
 											<option value="Intel">Intel</option>
 											<option value="AMD">AMD</option>
 											<option value="Apple">Apple</option>
+											<option value="Apple">Я не знаю</option>
 										</select>
 									</div>
 								</div>
 								<div class="field-wrapper__grid-2cols _mb-12">
 									<div class="field-wrapper__grid-2cols__column">
 										<div class="custom-select">
-											<select name="CPU">
-												<option value="" checked>CPU</option>
-												<option value="Intel">Intel</option>
-												<option value="AMD">AMD</option>
-												<option value="Apple">Apple</option>
+											<select name="seria">
+												<option value="" checked>Серия</option>
+												<option value="1">Название серии 1</option>
+												<option value="2">Название серии 1</option>
+												<option value="3">Название серии 1</option>
 											</select>
 										</div>
 									</div>
 									<div class="field-wrapper__grid-2cols__column">
 										<div class="custom-select">
-											<select name="CPU">
-												<option value="" checked>CPU</option>
-												<option value="Intel">Intel</option>
-												<option value="AMD">AMD</option>
-												<option value="Apple">Apple</option>
+											<select name="pokolenie">
+												<option value="" checked>Поколение</option>
+												<option value="1">Название поколения 1</option>
+												<option value="2">Название поколения 2</option>
+												<option value="3">Название поколения 3</option>
 											</select>
 										</div>
 									</div>
 								</div>
 								<div class="field-wrapper _mb-12">
 									<div class="custom-select">
-										<select name="CPU">
-											<option value="" checked>CPU</option>
-											<option value="Intel">Intel</option>
-											<option value="AMD">AMD</option>
-											<option value="Apple">Apple</option>
+										<select name="gc">
+											<option value="" checked>Graphic Card</option>
+											<option value="Intel">Nvidia</option>
+											<option value="AMD">AMD Radeon</option>
+											<option value="Apple">Я не знаю</option>
 										</select>
 									</div>
+								</div>
+								<div class="field-wrapper__grid-2cols _mb-12">
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="custom-select">
+											<select name="seria">
+												<option value="" checked>Серия</option>
+												<option value="1">Название серии 1</option>
+												<option value="2">Название серии 1</option>
+												<option value="3">Название серии 1</option>
+											</select>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="custom-select">
+											<select name="number">
+												<option value="" checked>Номер</option>
+												<option value="1">Название номер 1</option>
+												<option value="2">Название номер 2</option>
+												<option value="3">Название номер 3</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="field-wrapper _mb-12">
+									<div class="custom-select">
+										<select name="ram">
+											<option value="" checked>RAM</option>
+											<option value="8">8gb</option>
+											<option value="16">16gb</option>
+											<option value="32">32gb и больше</option>
+											<option value="nn">Я не знаю</option>
+										</select>
+									</div>
+								</div>
+								<div class="field-wrapper _mb-12">
+									<div class="custom-select">
+										<select name="CPU">
+											<option value="" checked>Notebook</option>
+											<option value="y">Yes</option>
+											<option value="n">No</option>
+										</select>
+									</div>
+								</div>
+								<div class="field-wrapper _mb-12 _mt-32">
+									<label for="">
+										<span>*</span>Характеристики вашего Мобильного устройства:
+									</label>
+									<div class="field-wrapper__sublabel">Если применимо</div>
+								</div>
+								<div class="field-wrapper _mb-12">
+									<div class="custom-select">
+										<select name="platform">
+											<option value="" checked>Платформа</option>
+											<option value="ios">iOS</option>
+											<option value="android">Android</option>
+										</select>
+									</div>
+								</div>
+								<div class="field-wrapper _mb-12">
+									<div class="custom-select">
+										<select name="model">
+											<option value="" checked>Модель</option>
+											<option value="13">13 и новее</option>
+											<option value="12">12</option>
+											<option value="11">11 и младше </option>
+										</select>
+									</div>
+								</div>
+								<div class="checkbox-wrapper">
+									<input type="checkbox">
+									<label for="">Я согласен получать новости и рекламные рассылки</label>
+								</div>
+								<div class="submit-wrapper">
+									<button class="button" disabled><span class="button__text">Подать заявку</span></button>
 								</div>
 
 
 
-
-
-
+								<div class="form__navigation">
+									<div class="form__navigation-prev">
+										<button class="form__navigation-button">
+											<div class="form__navigation-button-icon"></div>
+											Назад
+										</button>
+									</div>
+									<div class="form__navigation-pagination form-pagination">
+										<div class="form-pagination__title">
+											Шаг 5/5
+										</div>
+										<div class="form-pagination__speps">
+											<div class="form-pagination__spep _active"></div>
+											<div class="form-pagination__spep _active"></div>
+											<div class="form-pagination__spep _active"></div>
+											<div class="form-pagination__spep _active"></div>
+											<div class="form-pagination__spep _active"></div>
+										</div>
+										<div class="form-pagination__required-message"><span>*</span>поле обязательное для заполнения</div>
+									</div>
+									<div class="form__navigation-next _empty">
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>HomePage</title>
+	<title>Анкета №4</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -26,30 +26,6 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Прокрутка страницы к началу при загрузке
-			window.scrollTo(0, 0);
-			document.documentElement.classList.add('lock'); // Добавляем класс .lock на <html>
-
-			const startTime = new Date().getTime();
-
-			function hidePreloader() {
-				const currentTime = new Date().getTime();
-				const elapsedTime = currentTime - startTime;
-
-				if (elapsedTime < 1000) {
-					setTimeout(hidePreloader, 1000 - elapsedTime);
-				} else {
-					document.getElementById("preloader").classList.add('_preloader-nonactive');
-					document.getElementById("wrapper").classList.add('_wrapper-active');
-					document.documentElement.classList.remove('lock'); // Убираем класс .lock с <html>
-				}
-			}
-			window.onload = hidePreloader;
-		});
-	</script>
-
 	<div class="wrapper" id="wrapper">
 		<header class="header _active _relative">
 			<div class="header__container">
@@ -92,132 +68,113 @@
 				<div class="__container">
 					<div class="form__wrapper">
 						<div class="form__wrapper-inner">
+							<a href="#" class="form__mainpage-link">
+								<img src="img/icons/form/mainpage.svg">
+								На главную
+							</a>
 							<div class="form__inner">
 								<div class="form__title">Заполните анкету участника ЗБТ</div>
-								<div class="form__subtitle">Основная информация</div>
-								<div class="field-wrapper">
-									<label for="">
-										<span>*</span>Ваш никнейм или имя в играх (если есть):
-									</label>
-									<input type="text" placeholder="Шалапай_333" value="">
+								<div class="field-wrapper _mb-0">
+									<label for=""><span>*</span>Какую часть игры вы бы хотели протестировать в первую очередь?</label>
+									<div class="field-wrapper__sublabel">Выберите наиболее интересные аспекты</div>
 								</div>
-								<br>
-								<div class="field-wrapper">
-									<label for="">
-										<span>*</span>Ваш никнейм или имя в играх (если есть):
-									</label>
-									<input type="text" placeholder="" value="Шалапай_333" class="_invalid">
-									<span class="field-wrapper__error">Supporting text</span>
-								</div>
-								<br>
-								<div class="field-wrapper">
-									<label for="">
-										<span>*</span>Ваш никнейм или имя в играх (если есть):
-									</label>
-									<input type="text" placeholder="" value="Шалапай_333">
-								</div>
-								<br>
-								<div class="field-wrapper">
-									<label for=""><span>*</span>Ваш контактный email:</label>
-									<input type="email" placeholder="email@email.com" value="">
-								</div>
-								<br>
-								<div class="field-wrapper__grid-2cols">
+								<div class="field-wrapper__grid-2cols _mt-0">
 									<div class="field-wrapper__grid-2cols__column">
 										<div class="field-checkbox">
-											<input type="checkbox" id="tank">
-											<label for="tank">Танковать</label>
-										</div>
-										<br>
-										<div class="field-checkbox" id="tank2">
-											<input type="checkbox" checked>
-											<label for="tank2">Танковать</label>
-										</div>
-										<br>
-										<div class="field-checkbox" id="tank3">
-											<input type="checkbox" disabled>
-											<label for="tank3">Танковать</label>
-										</div>
-										<br>
-										<div class="field-checkbox" id="tank4">
-											<input type="checkbox" disabled checked>
-											<label for="tank4">Танковать</label>
+											<input type="checkbox">
+											<label for="">Основные механики геймплея (боевые системы, квесты, прокачка)</label>
 										</div>
 									</div>
 									<div class="field-wrapper__grid-2cols__column">
-										<div class="radio-wrapper">
-											<input type="radio" name="srok1" id="srok1">
-											<label for="srok1">Менее 1 года</label>
-										</div>
-										<div class="radio-wrapper">
-											<input type="radio" name="" id="srok2" checked>
-											<label for="srok2">Менее 1 года</label>
-										</div>
-										<div class="radio-wrapper">
-											<input type="radio" name="" id="srok3" disabled>
-											<label for="srok3">Менее 1 года</label>
-										</div>
-										<div class="radio-wrapper">
-											<input type="radio" name="" id="srok4" disabled checked>
-											<label for="srok4">Менее 1 года</label>
-										</div>
-									</div>
-								</div>
-
-								<div class="field-wrapper _mb-12 _mt-32">
-									<label for="">
-										<span>*</span>Характеристики вашего ПК:
-									</label>
-									<div class="field-wrapper__sublabel">Если применимо</div>
-								</div>
-								<div class="field-wrapper _mb-12">
-									<div class="custom-select">
-										<select name="CPU">
-											<option value="" checked>CPU</option>
-											<option value="Intel">Intel</option>
-											<option value="AMD">AMD</option>
-											<option value="Apple">Apple</option>
-										</select>
-									</div>
-								</div>
-								<div class="field-wrapper__grid-2cols _mb-12">
-									<div class="field-wrapper__grid-2cols__column">
-										<div class="custom-select">
-											<select name="CPU">
-												<option value="" checked>CPU</option>
-												<option value="Intel">Intel</option>
-												<option value="AMD">AMD</option>
-												<option value="Apple">Apple</option>
-											</select>
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Экономика игры (торговля, крафт, сбор ресурсов)</label>
 										</div>
 									</div>
 									<div class="field-wrapper__grid-2cols__column">
-										<div class="custom-select">
-											<select name="CPU">
-												<option value="" checked>CPU</option>
-												<option value="Intel">Intel</option>
-												<option value="AMD">AMD</option>
-												<option value="Apple">Apple</option>
-											</select>
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">PvP-система</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Рейды и групповые активности</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Лор и сюжет</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Графика и оптимизация</label>
+										</div>
+									</div>
+									<div class="field-wrapper__grid-2cols__column">
+										<div class="field-checkbox">
+											<input type="checkbox">
+											<label for="">Социальные функции (гильдии, система друзей, чаты)</label>
 										</div>
 									</div>
 								</div>
-								<div class="field-wrapper _mb-12">
-									<div class="custom-select">
-										<select name="CPU">
-											<option value="" checked>CPU</option>
-											<option value="Intel">Intel</option>
-											<option value="AMD">AMD</option>
-											<option value="Apple">Apple</option>
-										</select>
+								<div class="field-wrapper _mt-32">
+									<label for=""><span>*</span>Какой тип багов и проблем вы чаще всего замечаете в играх?</label>
+									<div class="field-wrapper__sublabel">Например, графические баги, баги с балансом, ошибки в UI и т.д.</div>
+									<input type="text" placeholder="Опишите примеры, если возможно" value="">
+								</div>
+								<div class="field-title">
+									<span>*</span>Есть ли у вас желание стать постоянным тестером проекта с регулярными обратными связями?
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="regular-feedback">
+									<label for="">Да, я готов участвовать в тестировании на постоянной основе</label>
+								</div>
+								<div class="radio-wrapper">
+									<input type="radio" name="regular-feedback">
+									<label for="">Нет, планирую участвовать только в ЗБТ</label>
+								</div>
+								<div class="field-wrapper _mt-32">
+									<label for=""><span>*</span>Какие улучшения или изменения, по вашему мнению, можно было бы внести в жанр MMORPG на основе вашего опыта?</label>
+									<input type="text" placeholder="Опишите ваши предложения" value="">
+								</div>
+								<div class="field-title">
+									<span>*</span>Почему вы считаете себя подходящим кандидатом для участия в закрытом бета-тестировании?
+								</div>
+								<div class="field-wrapper">
+									<textarea placeholder="Опишите ваш опыт и мотивацию в свободной форме"></textarea>
+								</div>
+								<div class="form__navigation">
+									<div class="form__navigation-prev">
+										<button class="form__navigation-button">
+											<div class="form__navigation-button-icon"></div>
+											Назад
+										</button>
+									</div>
+									<div class="form__navigation-pagination form-pagination">
+										<div class="form-pagination__title">
+											Шаг 4/5
+										</div>
+										<div class="form-pagination__speps">
+											<div class="form-pagination__spep _active"></div>
+											<div class="form-pagination__spep _active"></div>
+											<div class="form-pagination__spep _active"></div>
+											<div class="form-pagination__spep _active"></div>
+											<div class="form-pagination__spep"></div>
+										</div>
+										<div class="form-pagination__required-message"><span>*</span>поле обязательное для заполнения</div>
+									</div>
+									<div class="form__navigation-next">
+										<button class="form__navigation-button">
+											Далее
+											<div class="form__navigation-button-icon _rotated"></div>
+										</button>
 									</div>
 								</div>
-
-
-
-
-
-
 							</div>
 						</div>
 					</div>

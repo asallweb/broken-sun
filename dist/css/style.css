@@ -6542,7 +6542,7 @@ textarea {
 }
 .form .field-wrapper__required-message._big {
   font-size: 14px;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-bottom: 40px;
   color: #999
 }

@@ -6540,6 +6540,12 @@ textarea {
   padding-left: 16px;
   margin-top: 3px
 }
+.form .field-wrapper__required-message._big {
+  font-size: 14px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: #999
+}
 .form .field-wrapper__required-message span {
   color: #7e222b
 }

@@ -6725,35 +6725,76 @@ textarea {
   text-decoration: none!important
 }
 .success__wrapper {
-  max-width: 1132px;
-  width: 100%;
-  margin: 0 auto
+  text-align: center
 }
 .success__title {
   color: #f9df94;
   font-weight: 500;
-  line-height: 2.38;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center
+  line-height: 1.1;
+  margin-bottom: 8px
+}
+.success__subtitle {
+  color: #f9df94;
+  line-height: 1.23;
+  margin-bottom: 16px
+}
+.success__text {
+  font-weight: 300;
+  line-height: 1.18
 }
 .success__message {
-  border: 1px solid #776030;
-  background-color: #132336
-}
-.success__message-wrapper {
-  max-width: 792px;
+  position: relative;
   width: 100%;
+  max-width: 972px;
   margin: 0 auto;
-  font-weight: 300;
-  line-height: 1.36
+  overflow: hidden
 }
-.success__button-wrapper {
-  margin-top: 32px;
+.success__message-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  font-weight: 300;
+  line-height: 1.18;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 15px;
+  text-align: center
+}
+.success__socials {
+  display: flex;
   justify-content: center
+}
+.success__socials-link {
+  position: relative;
+  width: 32px;
+  height: 32px
+}
+.success__socials-link img,
+.success__socials-link svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%)
+}
+.success__socials-link._rutube {
+  margin-top: -3px
+}
+.success__socials-link .non-hovered,
+.success__socials-link:hover .hovered {
+  display: block
+}
+.success__socials-link .hovered,
+.success__socials-link:hover .non-hovered {
+  display: none
+}
+.success__message-img {
+  width: 100%;
+  height: auto;
+  min-height: 130px
 }
 .cookies {
   position: fixed;
@@ -7980,17 +8021,29 @@ textarea {
   .success {
     padding-bottom: 4rem
   }
+  .success__image {
+    margin-bottom: 3.125rem
+  }
   .success__title {
     font-size: 2.625rem
   }
-  .success__title {
-    margin-bottom: 2.5rem
+  .success__subtitle {
+    font-size: 1.625rem
   }
-  .success__message {
-    padding: 2.5rem
-  }
-  .success__message-wrapper {
+  .success__text {
     font-size: 1.375rem
+  }
+  .success__text {
+    margin-bottom: 3.125rem
+  }
+  .success__message-text {
+    gap: 2rem
+  }
+  .success__message-text {
+    font-size: 1.375rem
+  }
+  .success__socials {
+    gap: 3.5625rem
   }
   .cookies__inner {
     gap: .875rem
@@ -9466,17 +9519,29 @@ textarea {
   .success {
     padding-bottom: 2rem
   }
+  .success__image {
+    margin-bottom: 1.875rem
+  }
   .success__title {
     font-size: 1.25rem
   }
-  .success__title {
-    margin-bottom: 1.25rem
+  .success__subtitle {
+    font-size: 1.125rem
   }
-  .success__message {
-    padding: 1.25rem
-  }
-  .success__message-wrapper {
+  .success__text {
     font-size: .875rem
+  }
+  .success__text {
+    margin-bottom: 1.875rem
+  }
+  .success__message-text {
+    gap: .9375rem
+  }
+  .success__message-text {
+    font-size: .875rem
+  }
+  .success__socials {
+    gap: .9375rem
   }
   .cookies__inner {
     gap: .625rem
@@ -9978,17 +10043,29 @@ textarea {
   .success {
     padding-bottom: clamp(2rem ,1.4285714286rem + 2.8571428571vw ,4rem)
   }
+  .success__image {
+    margin-bottom: clamp(1.875rem ,1.5178571429rem + 1.7857142857vw ,3.125rem)
+  }
   .success__title {
     font-size: clamp(1.25rem ,.8571428571rem + 1.9642857143vw ,2.625rem)
   }
-  .success__title {
-    margin-bottom: clamp(1.25rem ,.8928571429rem + 1.7857142857vw ,2.5rem)
+  .success__subtitle {
+    font-size: clamp(1.125rem ,.9821428571rem + .7142857143vw ,1.625rem)
   }
-  .success__message {
-    padding: clamp(1.25rem ,.8928571429rem + 1.7857142857vw ,2.5rem)
-  }
-  .success__message-wrapper {
+  .success__text {
     font-size: clamp(.875rem ,.7321428571rem + .7142857143vw ,1.375rem)
+  }
+  .success__text {
+    margin-bottom: clamp(1.875rem ,1.5178571429rem + 1.7857142857vw ,3.125rem)
+  }
+  .success__message-text {
+    gap: clamp(.9375rem ,.6339285714rem + 1.5178571429vw ,2rem)
+  }
+  .success__message-text {
+    font-size: clamp(.875rem ,.7321428571rem + .7142857143vw ,1.375rem)
+  }
+  .success__socials {
+    gap: clamp(.9375rem ,.1875rem + 3.75vw ,3.5625rem)
   }
   .cookies__inner {
     gap: clamp(.625rem ,.5535714286rem + .3571428571vw ,.875rem)

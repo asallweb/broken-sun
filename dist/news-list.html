@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Анкета №5</title>
+	<title>NEWS PAGE</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -26,8 +26,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="wrapper" id="wrapper">
-		<header class="header _active _relative">
+	<div class="wrapper _portal" id="wrapper">
+		<header class="header" id="header">
 			<div class="header__container">
 				<div class="header__wrapper">
 					<a href="" class="header__logo">
@@ -37,63 +37,39 @@
 							<img src="img/logos/logo-mini.svg" alt="Broken Sun">
 						</picture>
 					</a>
-					<div class="header__socials">
-						<a href="" class="header__socials-link _youtube">
-							<svg>
-								<use xlink:href="img/icons/social_networks.svg#youtube"></use>
-							</svg>
-						</a>
-						<a href="" class="header__socials-link _tg">
-							<svg>
-								<use xlink:href="img/icons/social_networks.svg#tg"></use>
-							</svg>
-						</a>
-						<a href="" class="header__socials-link _vk">
-							<svg>
-								<use xlink:href="img/icons/social_networks.svg#vk"></use>
-							</svg>
-						</a>
-					</div>
-					<div class="header__lang">
-						<div class="header__lang-current">
-							RU
-							<img src="img/icons/lang.svg">
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
-		<main class="page">
-			<section class="success">
-				<div class="__container">
-					<div class="success__wrapper">
-						<div class="success__image">
-							<img src="img/content/success.webp" class="success__img">
-						</div>
-						<div class="success__title">
-							Поздравляем, ваша анкета принята!
-						</div>
-						<div class="success__subtitle">
-							Боги мира Broken Sun благословляют вас на путешествие.
-						</div>
-						<div class="success__text">
-							Перед его началом подтвердите ваш адрес электронной почты. <br>
-							Мы уже отправили письмо с инструкциями на указанный вами email.
-						</div>
-					</div>
-					<div class="success__message">
-						<div class="success__message-text">
-							Для получения самых свежих новостей о проекте подписывайтесь на наши соцсети
-							<div class="success__socials">
-								<!-- <a href="" class="success__socials-link _twch">
-						<svg class="non-hovered" width="32" height="32">
-							<use xlink:href="img/icons/social_networks.svg#twch"></use>
-						</svg>
-						<svg class="hovered" width="42" height="36">
-							<use xlink:href="img/icons/social_networks.svg#twch-hovered"></use>
-						</svg>
-					</a> -->
-								<a href="" class="success__socials-link _tg">
+					<div class="header__menu menu">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<nav class="menu__body">
+							<a href="/" class="menu__logo">
+								<img src="img/logos/menu__logo.svg" alt="Broken Sun">
+							</a>
+							<ul class="menu__list">
+								<li class="menu__item"><a href="" class="menu__link">Новости</a></li>
+								<li class="menu__item"><a href="" class="menu__link">Игра</a></li>
+								<li class="menu__item"><a href="" class="menu__link">Знания</a></li>
+								<li class="menu__item"><a href="" class="menu__link">Сообщество</a></li>
+								<li class="menu__item"><a href="" class="menu__link">Помощь</a></li>
+							</ul>
+							<div class="menu__lang">
+								<a href="" class="menu__lang-link _active">RU</a>
+								<div></div>
+								<a href="" class="menu__lang-link">EN</a>
+							</div>
+							<div class="menu__register">
+								<button class="menu__button button _big-size">
+									<span class="button__text">Играть</span>
+								</button>
+							</div>
+							<div class="menu__folowus">
+								<a href="" class="menu__folowus-link _youtube">
+									<svg class="non-hovered" width="32" height="32">
+										<use xlink:href="img/icons/social_networks.svg#youtube"></use>
+									</svg>
+									<svg class="hovered" width="42" height="32">
+										<use xlink:href="img/icons/social_networks.svg#youtube-hovered"></use>
+									</svg>
+								</a>
+								<a href="" class="menu__folowus-link _tg">
 									<svg class="non-hovered" width="32" height="32">
 										<use xlink:href="img/icons/social_networks.svg#tg"></use>
 									</svg>
@@ -101,7 +77,7 @@
 										<use xlink:href="img/icons/social_networks.svg#tg-hovered"></use>
 									</svg>
 								</a>
-								<a href="" class="success__socials-link _vk">
+								<a href="" class="menu__folowus-link _vk">
 									<svg class="non-hovered" width="32" height="32">
 										<use xlink:href="img/icons/social_networks.svg#vk"></use>
 									</svg>
@@ -109,15 +85,7 @@
 										<use xlink:href="img/icons/social_networks.svg#vk-hovered"></use>
 									</svg>
 								</a>
-								<a href="" class="success__socials-link _youtube">
-									<svg class="non-hovered" width="32" height="32">
-										<use xlink:href="img/icons/social_networks.svg#youtube"></use>
-									</svg>
-									<svg class="hovered" width="42" height="38">
-										<use xlink:href="img/icons/social_networks.svg#youtube-hovered"></use>
-									</svg>
-								</a>
-								<a href="" class="success__socials-link _rutube">
+								<a href="" class="menu__folowus-link _rutube">
 									<svg class="non-hovered" width="32" height="32">
 										<use xlink:href="img/icons/social_networks.svg#rutube"></use>
 									</svg>
@@ -126,11 +94,30 @@
 									</svg>
 								</a>
 							</div>
+							<div class="menu__copyrights">© Pearl Abyss Corp. All Rights Reserved.</div>
+						</nav>
+					</div>
+					<div class="header__button-wrapper">
+						<div class="header__button-inner">
+							<button class="header__button button _medium-size">
+								<span class="button__text">Играть</span>
+							</button>
 						</div>
-						<img src="img/background/anketa/success__message.webp" class="success__message-img">
+					</div>
+					<div class="header__lang">
+						<div class="header__lang-current">
+							RU
+							<img src="img/icons/lang.svg" class="header__lang-icon">
+						</div>
+						<div class="header__lang-dropdown">
+							<a href="">RU</a>
+							<a href="">EN</a>
+						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</header>
+		<main class="page">
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
@@ -187,6 +174,22 @@
 				</div>
 			</div>
 		</footer>
+	</div>
+	<div id="media" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button class="popup__nav _prev">prev</button>
+				<button data-close type="button" class="popup__close">
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+						<path d="M27 7.21571L24.7843 5L16 13.7843L7.21571 5L5 7.21571L13.7843 16L5 24.7843L7.21571 27L16 18.2157L24.7843 27L27 24.7843L18.2157 16L27 7.21571Z" fill="#B19F63" />
+					</svg>
+				</button>
+				<div class="popup__text">
+					Popup content
+				</div>
+				<button class="popup__nav _next">next</button>
+			</div>
+		</div>
 	</div>
 	<script src="js/app.min.js?_v=20241028183837"></script>
 </body>

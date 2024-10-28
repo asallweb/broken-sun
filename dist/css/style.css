@@ -8001,7 +8001,9 @@ textarea {
 .teaser__content {
   max-width: 642px;
   width: 100%;
-  flex: 0 0 auto
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 3
 }
 .teaser__title {
   color: #f9df94;
@@ -8443,6 +8445,48 @@ textarea {
   }
   .teaser__img {
     bottom: -100px
+  }
+  .teaser__title {
+    color: #f9df94;
+    text-shadow: 0 2px 5px rgba(0,0,0,.65);
+    line-height: 1
+  }
+  .teaser__subtitle {
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0,0,0,.65);
+    line-height: 1.5
+  }
+  .teaser__text {
+    background: linear-gradient(90deg,rgba(0,0,0,.45) 69.67%,rgba(0,0,0,0) 100%);
+    color: #fff;
+    text-shadow: 0 0 2px rgba(0,0,0,.8);
+    line-height: 1.07;
+    margin-bottom: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px
+  }
+}
+@media (max-width:1500px) and (max-width:20em) {
+  .teaser__title {
+    font-size: 1.5rem
+  }
+  .teaser__title {
+    margin-bottom: .75rem
+  }
+  .teaser__subtitle {
+    font-size: .875rem
+  }
+  .teaser__subtitle {
+    margin-bottom: .75rem
+  }
+  .teaser__text {
+    font-size: .875rem
+  }
+  .teaser__text {
+    padding-left: .5rem
+  }
+  .teaser__text {
+    padding-right: .5rem
   }
 }
 @media (max-width:1440px) {
@@ -10591,6 +10635,52 @@ textarea {
   .faq__title {
     font-size: clamp(1.75rem ,1.5rem + 1.25vw ,2.625rem)
   }
+  .teaser__title {
+    font-size: clamp(1.5rem ,1.0357142857rem + 2.3214285714vw ,3.125rem)
+  }
+  .teaser__title {
+    margin-bottom: clamp(.75rem ,.6071428571rem + .7142857143vw ,1.25rem)
+  }
+  .teaser__subtitle {
+    font-size: clamp(.875rem ,.625rem + 1.25vw ,1.75rem)
+  }
+  .teaser__subtitle {
+    margin-bottom: clamp(.75rem ,.4285714286rem + 1.6071428571vw ,1.875rem)
+  }
+  .teaser__text {
+    font-size: clamp(.875rem ,.625rem + 1.25vw ,1.75rem)
+  }
+  .teaser__text {
+    padding-left: clamp(.5rem ,.375rem + .625vw ,.9375rem)
+  }
+  .teaser__text {
+    padding-right: clamp(.5rem ,.375rem + .625vw ,.9375rem)
+  }
+}
+@media (max-width:1500px) and (min-width:90em) {
+  .teaser__title {
+    font-size: 3.125rem
+  }
+  .teaser__title {
+    margin-bottom: 1.25rem
+  }
+  .teaser__subtitle {
+    font-size: 1.75rem
+  }
+  .teaser__subtitle {
+    margin-bottom: 1.875rem
+  }
+  .teaser__text {
+    font-size: 1.75rem
+  }
+  .teaser__text {
+    padding-left: .9375rem
+  }
+  .teaser__text {
+    padding-right: .9375rem
+  }
+}
+@media (max-width:1500px) and (min-width:20em) and (max-width:90em) {
   .teaser__title {
     font-size: clamp(1.5rem ,1.0357142857rem + 2.3214285714vw ,3.125rem)
   }

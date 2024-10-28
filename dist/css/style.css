@@ -9828,6 +9828,43 @@ textarea {
     display: none
   }
 }
+@media (max-width:390px) {
+  .teaser__grid {
+    max-width: 340px
+  }
+  .teaser .item:hover .item__img {
+    width: 80px;
+    height: 80px
+  }
+  .teaser .item:hover .item__img._width-x2 {
+    width: 160px
+  }
+  .teaser .item__image,
+  .teaser .item__img {
+    width: 60px;
+    height: 60px
+  }
+  .teaser .item__image._width-x2,
+  .teaser .item__img._width-x2 {
+    width: 130px
+  }
+  .teaser .item__tooltip._to-left,
+  .teaser .item__tooltip._to-right {
+    width: 220px;
+    height: 90px
+  }
+  .teaser .item__tooltip._to-left::after,
+  .teaser .item__tooltip._to-right::after {
+    width: 220px;
+    height: 90px
+  }
+  .teaser .item__tooltip-title {
+    font-size: 14px
+  }
+  .teaser .item__tooltip-text {
+    font-size: 11px
+  }
+}
 @media (max-width:20em) {
   .spollers__item {
     font-size: 1rem

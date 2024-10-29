@@ -9064,7 +9064,7 @@ textarea {
   .teaser .item__tooltip._to-right::after {
     width: 232px;
     height: 89px;
-    background-size: contain
+    background-size: 100% 100%
   }
   .teaser .item__tooltip._to-right {
     padding-right: 35px
@@ -9894,13 +9894,13 @@ textarea {
   }
   .teaser .item__tooltip._to-left,
   .teaser .item__tooltip._to-right {
-    width: 220px;
-    height: 90px
+    width: 230px;
+    height: 100px
   }
   .teaser .item__tooltip._to-left::after,
   .teaser .item__tooltip._to-right::after {
-    width: 220px;
-    height: 90px
+    width: 230px;
+    height: 100px
   }
   .teaser .item__tooltip-title {
     font-size: 14px

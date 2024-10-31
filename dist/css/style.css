@@ -4308,14 +4308,14 @@ body {
   background-image: url(../img/background/button/button_disabled.svg)
 }
 .button._big-size {
-  width: 390px;
+  width: 380px;
   height: 72px;
   font-size: 27px
 }
 .button._medium-size {
   width: 184px;
-  height: 48px;
-  font-size: 20px
+  height: 34px;
+  font-size: 18px
 }
 .button svg._tg {
   width: 28px;
@@ -4371,6 +4371,12 @@ body {
 ._big-size .button__text::before {
   width: 22px;
   height: 22px
+}
+._big-size .button__text:hover::before {
+  left: -10px
+}
+._big-size .button__text:hover::after {
+  right: -10px
 }
 .button__text-inner {
   z-index: 3;
@@ -7148,15 +7154,6 @@ textarea {
   flex: 0 1 auto;
   transition: all .3s ease-in-out
 }
-.character__item::after {
-  content: "";
-  background: linear-gradient(rgba(0,0,0,0) 62.86%,rgba(0,0,0,.3) 81.45%,rgba(0,0,0,.8) 100%);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0
-}
 .character__item::before {
   content: "";
   background: linear-gradient(rgba(169,137,80,.09) 0,#e4cb94 50%,#776030 80%,rgba(169,137,80,0) 100%);
@@ -7167,6 +7164,15 @@ textarea {
   display: block;
   width: 2px;
   height: 100%
+}
+.character__item::after {
+  content: "";
+  background: linear-gradient(rgba(0,0,0,0) 62.86%,rgba(0,0,0,.3) 81.45%,rgba(0,0,0,.8) 100%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0
 }
 .character__item._red {
   background: linear-gradient(#5a1614 0,#290901 100%)
@@ -7262,12 +7268,13 @@ textarea {
 }
 .class-hero._archer .class-hero__content {
   left: auto;
-  right: 0;
+  right: 70px;
   padding-left: 0;
   padding-right: 40px
 }
 .class-hero._archer .class-hero__image {
-  left: calc(50% - 340px)
+  left: calc(50% - 340px);
+  bottom: 30px
 }
 .class-hero._archer .class-hero__title-wrapper {
   background: url(../img/background/classes/hero__title-archer.webp) 0 0 no-repeat;
@@ -7280,7 +7287,11 @@ textarea {
   background: url(../img/background/classes/hero__mage-ornament.webp) top 0 center no-repeat
 }
 .class-hero._mage .class-hero__image {
-  left: calc(50% + 150px)
+  left: calc(50% + 50px)
+}
+.class-hero._mage .class-hero__img {
+  width: auto;
+  height: calc(100dvh - 110px)
 }
 .class-hero._mage .class-hero__title-wrapper {
   background: url(../img/background/classes/hero__title-mage.webp) 0 0/cover no-repeat
@@ -7436,7 +7447,9 @@ textarea {
   background: url(../img/background/classes/agility__archer-ornament.webp) center bottom no-repeat
 }
 .class-section._agility .class-section__image {
-  left: calc(50% + 330px)
+  left: calc(50% + 330px);
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
 }
 .class-section._push {
   background: url(../img/background/classes/push__archer.webp) center center/cover no-repeat
@@ -7456,7 +7469,9 @@ textarea {
   background: url(../img/background/classes/air__mage-ornament.webp) center bottom no-repeat
 }
 .class-section._air-mage .class-section__image {
-  left: calc(50% + 330px)
+  left: calc(50% + 330px);
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
 }
 .class-section._fire-mage {
   background: url(../img/background/classes/fire__mage.webp) center center/cover no-repeat
@@ -7476,7 +7491,9 @@ textarea {
   background: url(../img/background/classes/water__mage-ornament.webp) center bottom no-repeat
 }
 .class-section._water-mage .class-section__image {
-  left: calc(50% + 330px)
+  left: calc(50% + 330px);
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
 }
 .class-section._earth-mage {
   background: url(../img/background/classes/earth__mage.webp) center center/cover no-repeat
@@ -8754,7 +8771,7 @@ textarea {
 }
 @media (min-width:1700px) {
   .class-hero__list {
-    right: -100px
+    right: -200px
   }
 }
 @media (min-width:1920px) {
@@ -8994,8 +9011,8 @@ textarea {
   }
   .button {
     font-size: 14px;
-    width: 153px;
-    height: 36px
+    width: 177px;
+    height: 34px
   }
   .button._success {
     width: 253px;
@@ -9003,31 +9020,31 @@ textarea {
     font-size: 18px
   }
   .button._big-size {
-    width: 253px;
-    height: 48px;
-    font-size: 18px
+    width: 266px;
+    height: 50px;
+    font-size: 19px
   }
   .button._medium-size {
-    width: 130px;
-    height: 44px;
+    width: 129px;
+    height: 24px;
     font-size: 14px
   }
   .button__text::after,
   .button__text::before {
-    width: 12px;
-    height: 12px
+    width: 11px;
+    height: 11px
   }
   .button__text::before {
-    left: -11px
+    left: -9px
   }
   .button__text::after {
-    right: -11px
+    right: -9px
   }
   .button__text:hover::before {
-    left: -8px
+    left: -7px
   }
   .button__text:hover::after {
-    right: -8px
+    right: -7px
   }
   .button__text:active::before {
     left: -8px
@@ -9039,6 +9056,12 @@ textarea {
   ._big-size .button__text::before {
     width: 16px;
     height: 16px
+  }
+  ._big-size .button__text:hover::before {
+    left: -8px
+  }
+  ._big-size .button__text:hover::after {
+    right: -8px
   }
   .button__text-inner::after,
   .button__text-inner::before {
@@ -9464,12 +9487,83 @@ textarea {
     left: auto;
     margin: 15px 0 0 10px
   }
+  .character._height-640 .character__item {
+    height: 338px
+  }
+  .character._height-640 .character__item:hover .character__image {
+    -webkit-transform: translate(-50%,-40%) scale(1.2);
+    transform: translate(-50%,-40%) scale(1.2)
+  }
+  .character._height-640 .character__image {
+    position: absolute;
+    -webkit-transform: translate(-50%,-40%);
+    transform: translate(-50%,-40%);
+    top: 50%;
+    left: 50%
+  }
+  .character._height-640 .character__name {
+    bottom: 16px
+  }
+  .class-hero._archer {
+    background: url(../img/background/classes/hero__archer-invert-horizont.webp) center center/cover no-repeat
+  }
+  .class-hero._archer .class-hero__content {
+    left: 0;
+    right: auto;
+    padding-left: 40px;
+    padding-right: 0
+  }
+  .class-hero._archer .class-hero__image {
+    right: -20%;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    left: auto;
+    bottom: 130px
+  }
+  .class-hero._mage .class-hero__image {
+    bottom: 20vh
+  }
   .class-hero__image {
     display: block
   }
   .class-hero__img {
     height: 100%;
     width: auto
+  }
+  .class-section._trick .class-section__image {
+    left: calc(50% + 200px);
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0)
+  }
+  .class-section__container {
+    height: 690px
+  }
+  .class-section__content {
+    line-height: 1.22;
+    max-width: 360px;
+    padding-left: 15px;
+    gap: 15px
+  }
+  .class-section__title {
+    font-size: 26px;
+    line-height: 1.31
+  }
+  .class-section__title-img {
+    width: 32px;
+    height: auto
+  }
+  .class-section__text {
+    font-size: 18px;
+    line-height: 1.22
+  }
+  .class-section__video {
+    max-width: 286px
+  }
+  .class-section__button-wrapper {
+    justify-content: flex-start
+  }
+  .class-section__img {
+    height: 650px
   }
 }
 @media (max-width:920px) {
@@ -9683,6 +9777,43 @@ textarea {
     max-width: 410px
   }
 }
+@media (max-width:900px) {
+  .class-section._angry .class-section__image {
+    left: 0;
+    -webkit-transform: translate(-40%,0);
+    transform: translate(-40%,0)
+  }
+  .class-section._agility .class-section__image {
+    left: calc(50% + 250px)
+  }
+  .class-section._push .class-section__image {
+    left: 0;
+    -webkit-transform: translate(-30%,0);
+    transform: translate(-30%,0)
+  }
+  .class-section._air-mage .class-section__image {
+    left: calc(50% + 150px)
+  }
+  .class-section._fire-mage .class-section__image {
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0)
+  }
+  .class-section._fire-mage .class-section__img {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1)
+  }
+  .class-section._water-mage .class-section__image {
+    left: calc(50% + 250px)
+  }
+  .class-section._earth-mage .class-section__image {
+    -webkit-transform: translate(-25%,0);
+    transform: translate(-25%,0)
+  }
+  .class-section._earth-mage .class-section__img {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1)
+  }
+}
 @media (max-width:850px) {
   .media {
     min-height: 576px
@@ -9733,6 +9864,13 @@ textarea {
   .awards__ornament {
     max-width: 380px;
     top: 100px
+  }
+  .class-hero._archer .class-hero__image {
+    right: -30%;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    left: auto;
+    bottom: 130px
   }
   .class-hero__content {
     max-width: 330px
@@ -10023,6 +10161,20 @@ textarea {
     left: 38.5%;
     top: 4%
   }
+  .class-hero._archer .class-hero__image {
+    right: auto;
+    left: 0;
+    bottom: -115px
+  }
+  .class-hero._mage .class-hero__image {
+    right: auto;
+    left: calc(-50% + 50px);
+    bottom: 0
+  }
+  .class-hero._mage .class-hero__img {
+    height: 100%;
+    width: auto
+  }
   .class-hero__container {
     padding-top: 65px;
     background-position: top 15dvh left -25dvh!important
@@ -10049,6 +10201,76 @@ textarea {
     left: 0;
     -webkit-transform: none;
     transform: none
+  }
+  .class-section._strenght .class-section__image {
+    left: auto;
+    right: -100px;
+    -webkit-transform: none;
+    transform: none
+  }
+  .class-section._angry .class-section__image {
+    left: 0;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
+  }
+  .class-section._trick .class-section__image {
+    left: calc(50% + 100px);
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0)
+  }
+  .class-section._agility .class-section__image {
+    left: calc(50% + 30px)
+  }
+  .class-section._agility .class-section__img {
+    height: 519px
+  }
+  .class-section._push .class-section__image {
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
+  }
+  .class-section._air-mage .class-section__image {
+    left: calc(50% + 50px)
+  }
+  .class-section._fire-mage .class-section__image {
+    -webkit-transform: translate(-5%,0);
+    transform: translate(-5%,0)
+  }
+  .class-section._water-mage .class-section__image {
+    left: calc(50% + 100px)
+  }
+  .class-section._earth-mage .class-section__image {
+    -webkit-transform: translate(15%,0);
+    transform: translate(15%,0)
+  }
+  .class-section._content-right .class-section__content {
+    right: auto;
+    left: 0;
+    padding-left: 15px;
+    padding-right: 0
+  }
+  .class-section__container {
+    height: 650px
+  }
+  .class-section__content {
+    max-width: 100%;
+    height: 80%
+  }
+  .class-section__title {
+    font-size: 22px
+  }
+  .class-section__text {
+    font-size: 14px;
+    max-width: 290px
+  }
+  .class-section__video {
+    margin-top: auto;
+    max-width: 180px
+  }
+  .class-section__button-wrapper {
+    justify-content: center
+  }
+  .class-section__img {
+    height: 340px
   }
 }
 @media (max-width:550px) {
@@ -10703,6 +10925,45 @@ textarea {
   }
   .character__title {
     display: none
+  }
+  .character._height-640 .character__list {
+    flex-direction: column
+  }
+  .character._height-640 .character__item {
+    height: 78px;
+    width: 100%
+  }
+  .character._height-640 .character__item:first-child::before {
+    display: none
+  }
+  .character._height-640 .character__item:not(:first-child)::before {
+    background: linear-gradient(rgba(169,137,80,.09) 0,#e4cb94 50%,#776030 80%,rgba(169,137,80,0) 100%);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px
+  }
+  .character._height-640 .character__item:hover {
+    height: 110px
+  }
+  .character._height-640 .character__item:hover .character__image {
+    -webkit-transform: translate(0,-40%) scale(.9);
+    transform: translate(0,-40%) scale(.9)
+  }
+  .character._height-640 .character__image {
+    -webkit-transform: translate(0,-40%) scale(.8);
+    transform: translate(0,-40%) scale(.8);
+    top: 50%;
+    left: -25px
+  }
+  .character._height-640 .character__name {
+    bottom: 8px;
+    width: 100px;
+    right: 20%
+  }
+  .character._height-640 .character__title {
+    display: block;
+    font-size: 20px
   }
   .presskit-hero {
     height: 100vh

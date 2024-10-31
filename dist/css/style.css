@@ -7920,7 +7920,7 @@ textarea {
 }
 .fraction-hero {
   position: relative;
-  height: 49vw
+  height: calc(100dvh - 86px)
 }
 .fraction-hero__wrapper {
   position: absolute;
@@ -7933,7 +7933,7 @@ textarea {
   font-weight: 300;
   line-height: 1.36;
   border-radius: 10px 10px 0 0;
-  background: linear-gradient(0deg,rgba(7,10,14,.7) 0,rgba(7,10,14,.4) 92.74%,rgba(7,10,14,0) 124.56%);
+  background: linear-gradient(0deg,rgba(7,10,14,.7) 0,rgba(7,10,14,.3) 92.74%,rgba(7,10,14,0) 124.56%);
   padding: 10px 10px 60px
 }
 .fraction-hero__worlds {
@@ -7943,7 +7943,8 @@ textarea {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%
+  width: 100%;
+  height: 100%
 }
 .fraction-hero__img {
   width: 100%;
@@ -7984,7 +7985,8 @@ textarea {
   font-size: 40px
 }
 .fraction-hero .worlds-names__item-image {
-  position: relative
+  position: relative;
+  height: 100%
 }
 .fraction-hero .worlds-names__item-img {
   transition: all .3s ease-in-out;
@@ -8026,13 +8028,13 @@ textarea {
   top: 0
 }
 .fraction-main__title-wrapper._olimp {
-  background: url(../img/background/fraction/fraction-title__olimp.webp) center center no-repeat
+  background: url(../img/background/fraction/fraction-title__olimp.webp) center center/100% auto repeat
 }
 .fraction-main__title-wrapper._asgard {
-  background: url(../img/background/fraction/fraction-title__asgard.webp) center center no-repeat
+  background: url(../img/background/fraction/fraction-title__asgard.webp) center center/100% auto repeat
 }
 .fraction-main__title-wrapper._nefar {
-  background: url(../img/background/fraction/fraction-title__nefar.webp) center center no-repeat
+  background: url(../img/background/fraction/fraction-title__nefar.webp) center center/100% auto repeat
 }
 .fraction-main__title {
   display: flex;
@@ -8044,13 +8046,13 @@ textarea {
   font-size: 50px
 }
 ._olimp .fraction-main__title {
-  background: url(../img/background/fraction/fraction-ornament__olimp.webp) center center no-repeat
+  background: url(../img/background/fraction/fraction-ornament__olimp.webp) center center/auto 100% no-repeat
 }
 ._asgard .fraction-main__title {
-  background: url(../img/background/fraction/fraction-ornament__asgard.webp) center center no-repeat
+  background: url(../img/background/fraction/fraction-ornament__asgard.webp) center center/auto 100% no-repeat
 }
 ._nefar .fraction-main__title {
-  background: url(../img/background/fraction/fraction-ornament__nefar.webp) center center no-repeat
+  background: url(../img/background/fraction/fraction-ornament__nefar.webp) center center/auto 100% no-repeat
 }
 .fraction-main__title-icon {
   width: 52px;
@@ -8066,7 +8068,7 @@ textarea {
 .fraction-main__content::after,
 .fraction-main__content::before {
   content: "";
-  background: url(../img/background/fraction/content-ornament.svg) 0 0 no-repeat;
+  background: url(../img/background/fraction/content-ornament.svg) 0 0/100% auto no-repeat;
   position: absolute;
   width: 100%;
   height: 22px;
@@ -8089,6 +8091,15 @@ textarea {
   color: #e6e6e6;
   font-weight: 300;
   line-height: 1.27
+}
+.fraction-main__image {
+  height: 100%
+}
+.fraction-main__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
 }
 .fraction-section {
   position: relative;
@@ -8993,6 +9004,62 @@ textarea {
   .presskit-media__logos-grid {
     gap: 20px
   }
+  .fraction-hero {
+    height: calc(100dvh - 61px)
+  }
+  .fraction-hero__content {
+    font-size: 18px;
+    padding: 10px 10px 40px
+  }
+  .fraction-hero .worlds-names {
+    padding: 0
+  }
+  .fraction-hero .worlds-names__item {
+    height: 100px
+  }
+  .fraction-hero .worlds-names__item-icon {
+    top: -25px;
+    width: 55px
+  }
+  .fraction-hero .worlds-names__item-title {
+    margin-top: 35px;
+    font-size: 32px
+  }
+  .fraction-main {
+    height: 690px
+  }
+  .fraction-main__title-wrapper {
+    height: 61px
+  }
+  .fraction-main__title {
+    font-size: 40px
+  }
+  .fraction-main__title-icon {
+    width: 37px;
+    margin-top: 7px
+  }
+  .fraction-main__content {
+    padding: 44px 15px
+  }
+  .fraction-main__content-text {
+    font-size: 18px
+  }
+  .fraction-section {
+    height: 690px
+  }
+  .fraction-section__content {
+    max-width: 360px
+  }
+  .fraction-section__title {
+    font-size: 26px;
+    margin-bottom: 12px
+  }
+  .fraction-section__text {
+    font-size: 18px
+  }
+  .fraction-section__image {
+    height: 690px
+  }
 }
 @media (max-width:1200px) {
   .menu__list {
@@ -9586,6 +9653,45 @@ textarea {
   }
   .register__image-wrapper {
     right: -160px
+  }
+  .fraction-hero {
+    height: calc(100dvh - 48px)
+  }
+  .fraction-hero__content {
+    font-size: 16px
+  }
+  .fraction-hero .worlds-names__item {
+    height: 89px
+  }
+  .fraction-main {
+    height: 578px
+  }
+  .fraction-main__title-wrapper {
+    height: 48px
+  }
+  .fraction-main__title {
+    font-size: 32px
+  }
+  .fraction-main__content {
+    padding: 50px 15px
+  }
+  .fraction-main__content-text {
+    font-size: 16px
+  }
+  .fraction-section {
+    height: 578px
+  }
+  .fraction-section__wrapper {
+    padding: 50px 20px 40px 20px
+  }
+  .fraction-section__title {
+    font-size: 24px
+  }
+  .fraction-section__text {
+    font-size: 16px
+  }
+  .fraction-section__image {
+    height: 578px
   }
 }
 @media (max-width:919px) {
@@ -10271,6 +10377,21 @@ textarea {
   }
   .class-section__img {
     height: 340px
+  }
+  .fraction-section {
+    height: 650px
+  }
+  .fraction-section__content {
+    max-width: 100%
+  }
+  .fraction-section__title {
+    font-size: 22px
+  }
+  .fraction-section__text {
+    font-size: 14px
+  }
+  .fraction-section__image {
+    height: 650px
   }
 }
 @media (max-width:550px) {
@@ -11033,6 +11154,19 @@ textarea {
     height: 12px;
     left: -16px;
     top: 2px
+  }
+  .fraction-hero__content {
+    font-size: 14px
+  }
+  .fraction-hero .worlds-names__item-title {
+    margin-top: 35px;
+    font-size: 24px
+  }
+  .fraction-main__content {
+    padding: 40px 15px
+  }
+  .fraction-main__content-text {
+    font-size: 14px
   }
   .teaser::after {
     height: 120px;

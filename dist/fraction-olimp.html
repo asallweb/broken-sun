@@ -6,9 +6,9 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241031090521">
-	<script src="files/js/preloader.js?_v=20241031090521"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241031090521">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241031152451">
+	<script src="files/js/preloader.js?_v=20241031152451"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241031152451">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -120,8 +120,8 @@
 		<main class="page">
 			<section class="fraction-hero">
 				<div class="fraction-hero__wrapper">
-					<div class="__container">
-						<div class="fraction-hero__content ">
+					<div class="fraction-hero__content ">
+						<div class="__container">
 							Три могущественные фракции ведут борьбу за абсолютное господство над Миром-Лотосом. Лишь достойные смогут войти в их ряды, доказав свою силу и верность на полях сражений. Помоги фракциям достичь новых вершин, и Верховные Боги откроют перед тобой двери к величию. Выбирай тщательно. Каждая фракция предлагает участникам уникальные награды и свой неповторимый путь.
 						</div>
 					</div>
@@ -163,7 +163,12 @@
 					</div>
 				</div>
 				<div class="fraction-hero__image">
-					<img src="img/background/fraction/hero-1.webp" class="fraction-hero__img">
+					<picture>
+						<source srcset="img/background/fraction/hero-1-2k.webp" media="(min-width:1921px)">
+						<source srcset="img/background/fraction/hero-1-1440.webp" media="(min-width:768px)">
+						<source srcset="img/background/fraction/hero-1-768.webp" media="(min-width:320px)">
+						<img src="img/background/fraction/hero-1-1440.webp" class="fraction-hero__img">
+					</picture>
 				</div>
 				<div class="separator">
 					<div class="separator__left"></div>
@@ -204,7 +209,12 @@
 					</div>
 				</div>
 				<div class="fraction-section__image">
-					<img src="img/background/fraction/fraction-section__zeus.webp" class="fraction-section__img">
+					<picture>
+						<source srcset="img/background/fraction/fraction-section__zeus-2k.webp" media="(min-width:1921px)">
+						<source srcset="img/background/fraction/fraction-section__zeus-1440.webp" media="(min-width:600px)">
+						<source srcset="img/background/fraction/fraction-section__zeus-768.webp" media="(min-width:320px)">
+						<img src="img/background/fraction/fraction-section__zeus-1440.webp" class="fraction-section__img">
+					</picture>
 				</div>
 				<div class="separator">
 					<div class="separator__left"></div>
@@ -303,7 +313,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20241031090521"></script>
+	<script src="js/app.min.js?_v=20241031152451"></script>
 </body>
 
 </html>

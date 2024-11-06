@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>LOTOS WORLD</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241106214012">
+	<script src="files/js/preloader.js?_v=20241106214012"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241106214012">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div id="preloader">
+		<img src="img/background/preloader/background.webp" class="preloader__background">
+		<div class="loader">
+			<div class="loader-image">
+				<img src="img/background/preloader/star.svg" class="loader-image-src">
+			</div>
+			<div class="loader__spinner">
+				<img src="img/background/preloader/spinner.webp">
+			</div>
+		</div>
+	</div>
+	<div class="wrapper _portal" id="wrapper">
+		<header class="header _type-2 _active" id="header">
+			<div class="header__container">
+				<div class="header__wrapper">
+					<a href="" class="header__logo">
+						<picture>
+							<source srcset="img/logos/logo.svg" media="(min-width: 601px)">
+							<img src="img/logos/logo-mini.svg" alt="Broken Sun">
+						</picture>
+					</a>
+					<div class="header__menu menu">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<nav class="menu__body">
+							<a href="/" class="menu__logo">
+								<img src="img/logos/menu__logo.svg" alt="Broken Sun">
+							</a>
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Новости
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Игра
+										<svg class="menu__link-dropdown">
+											<use xlink:href="img/icons/icons.svg#mobile-submenu"></use>
+										</svg>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Об игре</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Классы</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Фракции</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Мир-Лотос</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Легенда мира</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Правила</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Знания
+										<svg class="menu__link-dropdown">
+											<use xlink:href="img/icons/icons.svg#mobile-submenu"></use>
+										</svg>
+										<svg width="16" height="16" class="menu__external-icon">
+											<use xlink:href="img/icons/icons.svg#external-link"></use>
+										</svg>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Вопросы и ответы
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Вики
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Соглашение
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Сообщество
+										<svg class="menu__link-dropdown">
+											<use xlink:href="img/icons/icons.svg#mobile-submenu"></use>
+										</svg>
+										<svg width="16" height="16" class="menu__external-icon">
+											<use xlink:href="img/icons/icons.svg#external-link"></use>
+										</svg>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Форум
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Предложения
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Блог разработчиков
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Помощь
+										<svg class="menu__link-dropdown">
+											<use xlink:href="img/icons/icons.svg#mobile-submenu"></use>
+										</svg>
+										<svg width="16" height="16" class="menu__external-icon">
+											<use xlink:href="img/icons/icons.svg#external-link"></use>
+										</svg>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Новичкам
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Карта сайта
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Ошибки
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Написать нам
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<div class="menu__lang">
+								<a href="" class="menu__lang-link _active">RU</a>
+								<div></div>
+								<a href="" class="menu__lang-link">EN</a>
+							</div>
+							<div class="menu__button-wrapper">
+								<button class="header__button button _size-l _fz-18">
+									<span class="button__text">
+										<span class="button__text-inner">
+											ИГРАТЬ
+										</span>
+									</span>
+								</button>
+							</div>
+							<div class="menu__copyrights">© Pearl Abyss Corp. All Rights Reserved.</div>
+						</nav>
+					</div>
+					<a href="" class="header__pre-register">
+						Предрегистрация
+					</a>
+					<div class="header__button-inner _active">
+						<button class="header__button button _size-m _fz-18">
+							<span class="button__text">
+								<span class="button__text-inner">
+									ИГРАТЬ
+								</span>
+							</span>
+						</button>
+					</div>
+					<div class="header__lang language-select">
+						<div class="language-select__current">
+							RU
+							<svg width="9" height="6" class="language-select__icon">
+								<use xlink:href="img/icons/icons.svg#dropdown-lang"></use>
+							</svg>
+						</div>
+						<div class="language-select__dropdown">
+							<a href="">RU</a>
+							<a href="">EN</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<div class="presskit-bg-wrapper">
+				<img src="img/background/presskit/main.webp" class="presskit-bg-wrapper__img">
+			</div>
+			<div class="__container">
+				<section class="lotos-world">
+					<aside class="lotos-world__sidebar lotos-sidebar">
+						<div class="lotos-world__sidebar-wrapper">
+							<div class="lotos-sidebar__title">Мир-Лотос</div>
+							<div class="lotos-sidebar__list">
+								<div class="lotos-sidebar__item" data-scrollto="lotos-content__continents">
+									<div class="lotos-sidebar__item-scrollbar">
+										<div class="lotos-sidebar__item-scrollbar-scroll"></div>
+									</div>
+									<div class="lotos-sidebar__image">
+										<div class="lotos-sidebar__name">Материки</div>
+										<img src="img/content/lotos-world/image-1.webp" class="lotos-sidebar__img">
+									</div>
+								</div>
+								<div class="lotos-sidebar__item" data-scrollto="lotos-content__jericho">
+									<div class="lotos-sidebar__item-scrollbar">
+										<div class="lotos-sidebar__item-scrollbar-scroll"></div>
+									</div>
+									<div class="lotos-sidebar__image">
+										<div class="lotos-sidebar__name">Иерихон</div>
+										<img src="img/content/lotos-world/image-2.webp" class="lotos-sidebar__img">
+									</div>
+								</div>
+								<div class="lotos-sidebar__item" data-scrollto="lotos-content__regions">
+									<div class="lotos-sidebar__item-scrollbar">
+										<div class="lotos-sidebar__item-scrollbar-scroll"></div>
+									</div>
+									<div class="lotos-sidebar__image">
+										<div class="lotos-sidebar__name">Регионы Полюса</div>
+										<img src="img/content/lotos-world/image-3.webp" class="lotos-sidebar__img">
+									</div>
+								</div>
+								<div class="lotos-sidebar__item" data-scrollto="lotos-content__population">
+									<div class="lotos-sidebar__item-scrollbar">
+										<div class="lotos-sidebar__item-scrollbar-scroll"></div>
+									</div>
+									<div class="lotos-sidebar__image">
+										<div class="lotos-sidebar__name">Население Полюса</div>
+										<img src="img/content/lotos-world/image-4.webp" class="lotos-sidebar__img">
+									</div>
+								</div>
+								<div class="lotos-sidebar__item" data-scrollto="lotos-content__monsters">
+									<div class="lotos-sidebar__item-scrollbar">
+										<div class="lotos-sidebar__item-scrollbar-scroll"></div>
+									</div>
+									<div class="lotos-sidebar__image">
+										<div class="lotos-sidebar__name">Монстры</div>
+										<img src="img/content/lotos-world/image-5.webp" class="lotos-sidebar__img">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="lotos-world__progressbar progressbar _mobile-view">
+							<div class="progressbar__inner">
+								<div class="progressbar__progress-list">
+									<div class="progressbar__progress-item" data-progress="lotos-content__continents">
+										<div class="progressbar__progress-line"></div>
+									</div>
+									<div class="progressbar__progress-item" data-progress="lotos-content__jericho">
+										<div class="progressbar__progress-line"></div>
+									</div>
+									<div class="progressbar__progress-item" data-progress="lotos-content__regions">
+										<div class="progressbar__progress-line"></div>
+									</div>
+									<div class="progressbar__progress-item" data-progress="lotos-content__population">
+										<div class="progressbar__progress-line"></div>
+									</div>
+									<div class="progressbar__progress-item" data-progress="lotos-content__monsters">
+										<div class="progressbar__progress-line"></div>
+									</div>
+								</div>
+								<div class="progressbar__toggler">
+									<div class="progressbar__toggler-show">Смотреть раздел</div>
+									<div class="progressbar__toggler-hide _hidden">Обратно</div>
+									<svg width="16" height="16" style="color: #F9DF94;">
+										<use xlink:href="img/icons/icons.svg#progressbar-toggler"></use>
+									</svg>
+								</div>
+								<div class="progressbar__menu">
+									<div class="progressbar__menu-title">
+										Мир-Лотос
+										<img src="img/icons/separator-small.svg" class="">
+									</div>
+									<div class="progressbar__menu-item _active" data-scrolltoprogress="lotos-content__continents">Материки</div>
+									<div class="progressbar__menu-item" data-scrolltoprogress="lotos-content__jericho">Иерихон</div>
+									<div class="progressbar__menu-item" data-scrolltoprogress="lotos-content__regions">Регионы Полюса</div>
+									<div class="progressbar__menu-item" data-scrolltoprogress="lotos-content__population">Население Полюса</div>
+									<div class="progressbar__menu-item" data-scrolltoprogress="lotos-content__monsters">Монстры</div>
+								</div>
+							</div>
+						</div>
+					</aside>
+					<section class="lotos-world__content lotos-content">
+						<div class="lotos-content__wrapper" id="lotos-content__continents">
+							<div class="lotos-content__title">Материки</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Полюс</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-1.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Центральный материк Мира-Лотоса, оправляющийся после Великой войны. Основу его ландшафта составляют каменистые равнины и каньоны, над которыми возвышается огромный вулкан. Западную часть материка покрывает Красный мох – враждебный организм, поглощающий все на своем пути.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Асгард</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-2.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Самый холодный материк. Из суровых климатических условий вытекает отсутствие мелкой растительности и низкая плодородность почвы. В то же время территория Асгарда изобилует лесами. Вместе с фьордами и горными грядами, они формируют неповторимый облик материка.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Олимп</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-3.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Умеренно-теплый климат и благоприятные природные условия обеспечивают богатство флоры и фауны на этом Лепестке. Основную площадь Олимпа занимают равнины, покрытые высокой травой, а оставшиеся территории заняты лесами, изобилующими фруктовыми деревьями и кустарниками.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Нефар</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-4.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Большая часть Нефара представляет собой пустыню, где невыносимая дневная жара сменяется ночным холодом, не позволяя растительности выживать на большей части материка. Настоящим спасением для Нефара являются реки и оазисы, которые обеспечивают его живительной влагой и продовольствием.
+								</div>
+							</div>
+						</div>
+						<div class="lotos-content__wrapper" id="lotos-content__jericho">
+							<div class="lotos-content__title ">Иерихон</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title"></div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-5.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									<p>Возвышаясь над просторами Полюса, Вавилонская башня веками притягивала к себе переселенцев. С течением времени жители материка вместе с беженцами, покинувшими Лепестки, обжили территории вокруг башни. Так в самом центре Мира-Лотоса возник город, названный Иерихоном. В его стенах смертные, лишенные надзора Богов, создали свое собственное государство – Империум.</p>
+									<p>Именно из Иерихона его последний император Кассиус Деорум управлял своими армиями, направляя их против Пантеонов. Здесь же он попытался подчинить мощь Солнца через особый ритуал, но потерпел неудачу. Последовавший за этим катаклизм, названный «Воздаянием», расколол светило. Осознание последствий ритуала сломило Кассиуса, а вместе с ним и Империум.</p>
+									<p>Когда Великая война, последовавшая за падением Империума, закончилась, Боги вошли в Иерихон как его хозяева. Стремясь обрести полный контроль над материком, Пантеоны основали здесь свои резиденции и прислали наместников. Теперь они правят Иерихоном и всем Полюсом.</p>
+								</div>
+							</div>
+						</div>
+						<div class="lotos-content__wrapper" id="lotos-content__regions">
+							<div class="lotos-content__title ">Регионы Полюса</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Пояс Цивилизации</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-6.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Плодородные земли, окружающие Иерихон – главный город Полюса. Остаются относительно безопасными, благодаря войскам Пантеонов. Располагающиеся в трех крепостях – Оплоте Олимпа, Цитадели Нефара и Бастионе Асгарда – они поддерживают порядок на Поясе Цивилизации.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Ветренная пустошь</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-7.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Слабо заселенные территории, расположенные южнее Пояса Цивилизации. Изобилуют трещинами с газом, добыча которого производится в специальном комплексе. С недавних пор восточная часть пустоши находится в руках мародерских племен. Западная, в свою очередь, контролируется бандой безжалостных головорезов Намера.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Ардорская долина</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-8.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Окрестности активного вулкана Ардориус. Некогда эти земли были одним из главных научно-промышленных центров Империума. После его падения немногочисленные жители долины покинули ее, а на смену им пришли ратлины. Здесь они обнаружили источник наиболее ценной и питательной для себя пищи – грибов.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Терминус</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-9.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Земли, окружающие город Терминус. Когда-то он был важным торговым центром, но после войны Богов так и не смог восстановиться. Сейчас и город, и весь регион балансируют на грани, выживая за счет скотоводства, производства алкоголя и торговли. На юго-западе Предместий Терминуса находится небольшое поселение ратлинов. Его жители настроены на сосуществование с горожанами.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Пустошь мародеров</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-10.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Когда Империум еще процветал, в этих местах добывали газ, который затем переправлялся в другие части Полюса по крупному торговому тракту. С наступлением войны Богов территория была оккупирована войсками Нефара. Покинув ее после заключения перемирия между Пантеонами, солдаты открыли дорогу Мародерам. Заняв пустошь, они стали совершать из нее набеги на весь остальной Полюс.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Рубеж</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-11.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Во времена правления Кассиуса на этих территориях велась активная добыча камня наравне с испытаниями магических технологий. После смерти императора второе назначение Рубежа оказалось забыто, но каменоломни по прежнему используются. С недавних пор контроль над территорией перешел в руки реваншистов. Отсюда они планируют распространять свое влияние на Полюсе, восстановив остатки технологий Империума.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Линия Ветеранов</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-12.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Грандиозная система укреплений, защищавших Империум от вторжения Пантеонов. После раскола Солнца, случившегося во время Воздаяния, войска императора оставили стены, позволив Нефару занять их. Но надолго воины Пантеона не задержались. Быстрое наступление Асгарда на Поле Вечной Битвы вынудило их оставить Линию Ветеранов. Ратлины, воспользовавшись моментом, заняли огромные укрепления, выполняя ролю своего задаочного предводителя.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Поле Вечной Битвы</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-13.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Когда-то здесь находился процветающий торговый город Меркат. Его благосостояние обеспечивалось за счет торговли с Лепестками и добычи магических камней. Во время войны Богов в этих землях развернулся конфликт между Пантеонами. Войска Асгарда быстро заняли Меркат, но были взяты в осаду силами Нефара. Не видя иного способа уничтожить врагов, асгардские маги пожертвовали собой и наложили проклятие на земли вокруг города. Из-за него всякий, кто окажется на Поле Вечной Битвы, будет жаждать лишь одного – убивать. Спустя десятки лет непрекращающихся сражений в этих землях остались лишь безумцы и призраки.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Гибельный край</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-14.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Земли, которыми не пожелал обладать ни Империум, ни Пантеоны. Они являются главным пристанищем мародеров на Полюсе. Именно отсюда они пришли на Пустошь, из которой впоследствии начали совершать набеги. Гибельный Край – чрезвычайно опасное место. Любой, кто решит посетить его, рискует умереть от клинка мародера или стать безвольным рабом.
+								</div>
+							</div>
+						</div>
+						<div class="lotos-content__wrapper" id="lotos-content__population">
+							<div class="lotos-content__title ">Население Полюса</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Расы</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-15.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Под лучами расколотого Солнца несколько смертных рас ведут борьбу за существование. Представленные на всех Лепестках, они имеют разные корни и историю. В заснеженных горах Асгарда низкорослые гномы куют превосходное оружие и броню. Их творения используют лучшие из воителей, среди которых встречаются и сами гномы. Живя на плодородных просторах Олимпа, эльфы верно служат Богам. Полностью отдаваясь любимому делу, они неизменно становятся в нём мастерами на радость своим хозяевам. Собакоголовые хорги, известные своей силой и свирепостью, несут стражу в храмах и дворцах Нефара. В то же время похожие на кошек кушисы ведут торговые караваны от одного оазиса к другому. Люди, являясь самой многочисленной расой, выступают связующим звеном между всеми народами Мира-Лотоса. Представителей пяти рас также можно встретить и на Полюсе. Кто-то бежал сюда с Лепестков, скрываясь от гнева Богов или ища лучшей жизни. Другие последовали за своими Богами во время Великой войны, чтобы покорить земли Полюса.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Реваншисты</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-16.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Так себя называют радикально настроенные смертные, жаждущие возрождения Империума на Полюсе. Жизнь под властью наместников Пантеонов устраивает далеко не всех. Многим жителям центрального материка приходится сводить концы с концами. Пользуясь этим, реваншисты разжигают пламя общественного недовольства по отношению к Богам и их сторонникам. Особенно ярые противники власти бессмертных пополняют ряды реваншистов. Оставаясь вне закона, они подрывают текущий порядок руками организованных и многочисленных агентов, проникших во все слои иерихонского общества.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Мародеры</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-17.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Мародеры – собирательное название дикарей Полюса. Столетия назад их предки ушли в отдаленные земли Полюса, отказавшись от участия в жестоких ритуалах Культа Солнца, господствовавшего в Империуме. Столетиями ведя кочевой образ жизни и ведя борьбу за существования, эти люди сформировали новый племенной строй. Мародерство и содержание рабов стали для них естественными способами выживания. Отринув традиции солнцепоклонников, мародеры создали культ Праматерьи Глубин – божества Эфира. С недавних пор они начали совершать набеги на жителей Полюса не только ради наживы, но и во имя своей веры.
+								</div>
+							</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-title">Ратлины</div>
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-18.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Раса разумных крысолюдей. Меньше века назад они были простыми хищниками, обитающими в пещерах на северо-западе Полюса. Когда Солнце раскололось, в зоне обитания крыс упала часть его осколков. Подвергнутые излучению, исходящему от них, обитатели пещер изменились и обрели разум, став ратлинами. Освоившись в новом для себя мире, представители новой расы начали активно наращивать силы. Уже совсем скоро ратлины будут готовы присоединиться к битве за место под расколотым Солнцем.
+								</div>
+							</div>
+						</div>
+						<div class="lotos-content__wrapper _pb-0" id="lotos-content__monsters">
+							<div class="lotos-content__title ">Монстры</div>
+							<div class="lotos-content__item">
+								<div class="lotos-content__item-image">
+									<img src="img/content/lotos-world/art-19.webp" class="lotos-content__item-img">
+								</div>
+								<div class="lotos-content__item-content">
+									Множество тварей ждет возможности напасть на одинокого путника. В странствиях часто можно наткнуться на обычных монстров, не являющихся угрозой для умелого бойца. Реже удается встретить элитных врагов. Битва с ними – настоящее испытание, пройти которое будет под силу только слажанной команде. И лишь самые отважные, объединившись, смогут противостоять боссам – могущественным созданиям, обладающим огромной силой. Смельчаков, добившихся успеха в битвах с обитателями Мира-Лотоса, ждут щедрые награды.
+								</div>
+							</div>
+						</div>
+						<div class="lotos-content__final final-star">
+							<img src="img/elements/final-star/star.webp" class="final-star__final-img">
+							<img src="img/elements/final-star/flash.webp" class="final-star__flash-img">
+							<button class="final-star__button button _size-s _fz-18">
+								<span class="button__text">
+									<span class="button__text-inner">
+										ИГРАТЬ
+									</span>
+								</span>
+							</button>
+						</div>
+					</section>
+				</section>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__wrapper">
+					<div class="footer__socials">
+						<a href="" class="footer__socials-link _twch">
+							<svg class="non-hovered" width="32" height="32">
+								<use xlink:href="img/icons/social_networks.svg#twch"></use>
+							</svg>
+							<svg class="hovered" width="42" height="36">
+								<use xlink:href="img/icons/social_networks.svg#twch-hovered"></use>
+							</svg>
+						</a>
+						<a href="" class="footer__socials-link _tg">
+							<svg class="non-hovered" width="32" height="32">
+								<use xlink:href="img/icons/social_networks.svg#tg"></use>
+							</svg>
+							<svg class="hovered" width="42" height="39">
+								<use xlink:href="img/icons/social_networks.svg#tg-hovered"></use>
+							</svg>
+						</a>
+						<a href="" class="footer__socials-link _vk">
+							<svg class="non-hovered" width="32" height="32">
+								<use xlink:href="img/icons/social_networks.svg#vk"></use>
+							</svg>
+							<svg class="hovered" width="42" height="32">
+								<use xlink:href="img/icons/social_networks.svg#vk-hovered"></use>
+							</svg>
+						</a>
+						<a href="" class="footer__socials-link _rutube">
+							<svg class="non-hovered" width="32" height="32">
+								<use xlink:href="img/icons/social_networks.svg#rutube"></use>
+							</svg>
+							<svg class="hovered" width="42" height="38">
+								<use xlink:href="img/icons/social_networks.svg#rutube-hovered"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="footer__logo">
+						<a href="https://redneckstudio.com/ru/" target="_blank" class="footer__logo-link">
+							<svg width="63" height="34" class="footer__logo-src">
+								<use xlink:href="img/logos/footer_new.svg#footer"></use>
+							</svg>
+							<svg width="66" height="37" class="footer__logo-src _hovered">
+								<use xlink:href="img/logos/footer_new.svg#footer-hovered"></use>
+							</svg>
+						</a>
+					</div>
+					<div class="footer__text">
+						<div class="footer__text-left">REDNECK STUDIO, 2024</div>
+						<div class="footer__text-middle">Мы собираем файлы cookie. Чтобы узнать подробности, ознакомьтесь с <a href="">Политикой конфиденциальности.</a></div>
+						<div class="footer__text-right"><a href="mail:contact@redneckstudio.com">contact@redneckstudio.com</a></div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script src="js/app.min.js?_v=20241106214012"></script>
+</body>
+
+</html>

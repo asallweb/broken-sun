@@ -4508,25 +4508,24 @@
         }));
     }));
     document.addEventListener("DOMContentLoaded", (function() {
-        const header__register = document.querySelector(".header__register");
-        const header__buttonWrapper = document.querySelector(".header__button-inner");
-        const heroArrow = document.querySelector(".hero__arrow");
-        const presskitHero = document.querySelector(".presskit-hero__content");
-        function checkPosition() {
-            const rect = heroArrow.getBoundingClientRect();
-            if (rect.top <= 0) header__register.classList.add("_active"); else header__register.classList.remove("_active");
+        const elementsToWatch = [ {
+            trigger: ".hero__arrow",
+            target: ".header__button-inner"
+        }, {
+            trigger: ".presskit-hero__content",
+            target: ".header__button-inner"
+        } ];
+        function checkPositions() {
+            elementsToWatch.forEach((({trigger, target}) => {
+                const triggerElement = document.querySelector(trigger);
+                const targetElement = document.querySelector(target);
+                if (triggerElement && targetElement) {
+                    const rect = triggerElement.getBoundingClientRect();
+                    if (rect.top <= 0) targetElement.classList.add("_active"); else targetElement.classList.remove("_active");
+                }
+            }));
         }
-        function checkPositionPortal() {
-            const rect = heroArrow.getBoundingClientRect();
-            if (rect.top <= 0) header__buttonWrapper.classList.add("_active"); else header__buttonWrapper.classList.remove("_active");
-        }
-        function checkPositionPresskit() {
-            const rect = presskitHero.getBoundingClientRect();
-            if (rect.top <= 0) header__register.classList.add("_active"); else header__register.classList.remove("_active");
-        }
-        if (heroArrow && header__register) window.addEventListener("scroll", checkPosition);
-        if (heroArrow && header__buttonWrapper) window.addEventListener("scroll", checkPositionPortal);
-        if (presskitHero && header__register) window.addEventListener("scroll", checkPositionPresskit);
+        window.addEventListener("scroll", checkPositions);
     }));
     if (window.innerWidth < 919) {
         const godsItems = document.querySelectorAll(".gods__item");
@@ -4631,9 +4630,9 @@
         }));
     }));
     function initLangSwitcher() {
-        const langSwitcher = document.querySelector(".header__lang-current");
+        const langSwitcher = document.querySelector(".language-select__current");
         if (!langSwitcher) return;
-        const langMenu = langSwitcher.closest(".header__lang");
+        const langMenu = langSwitcher.closest(".language-select");
         langSwitcher.addEventListener("click", (() => {
             langMenu?.classList.toggle("_opened");
         }));
@@ -4671,6 +4670,20 @@
         }
         handleGodsItems();
         window.addEventListener("resize", handleGodsItems);
+    }));
+    document.addEventListener("DOMContentLoaded", (() => {
+        document.querySelectorAll("._portal .menu__link").forEach((link => {
+            link.addEventListener("click", (event => {
+                event.preventDefault();
+                const parentItem = link.closest("._portal .menu__item");
+                if (parentItem.classList.contains("_active")) parentItem.classList.remove("_active"); else {
+                    document.querySelectorAll("._portal .menu__item").forEach((item => {
+                        item.classList.remove("_active");
+                    }));
+                    parentItem.classList.add("_active");
+                }
+            }));
+        }));
     }));
     var x, i, j, l, ll, selElmnt, a, b, c;
     x = document.getElementsByClassName("custom-select");
@@ -4723,6 +4736,149 @@
         for (i = 0; i < xl; i++) if (arrNo.indexOf(i)) x[i].classList.add("select-hide");
     }
     document.addEventListener("click", closeAllSelect);
+    document.addEventListener("DOMContentLoaded", (function() {
+        const scrollLinks = document.querySelectorAll("[data-scrollto]");
+        if (!scrollLinks.length) return;
+        const observerOptions = {
+            root: null,
+            threshold: .1
+        };
+        const setActiveLink = activeLink => {
+            scrollLinks.forEach((link => link.classList.remove("_active")));
+            if (activeLink) activeLink.classList.add("_active");
+        };
+        const observer = new IntersectionObserver((entries => {
+            entries.forEach((entry => {
+                const targetId = entry.target.id;
+                const scrollLink = document.querySelector(`[data-scrollto="${targetId}"]`);
+                if (entry.isIntersecting && scrollLink) setActiveLink(scrollLink);
+            }));
+        }), observerOptions);
+        scrollLinks.forEach((link => {
+            link.addEventListener("click", (function(event) {
+                event.preventDefault();
+                const targetId = link.getAttribute("data-scrollto");
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 25,
+                        behavior: "smooth"
+                    });
+                    setActiveLink(link);
+                } else console.warn(`Элемент с id="${targetId}" не найден`);
+            }));
+            const targetId = link.getAttribute("data-scrollto");
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) observer.observe(targetElement);
+        }));
+        const updateScrollbarHeights = () => {
+            const activeItem = document.querySelector(".lotos-sidebar__item._active");
+            if (activeItem) {
+                const allItems = document.querySelectorAll(".lotos-sidebar__item");
+                const activeIndex = Array.from(allItems).indexOf(activeItem);
+                allItems.forEach(((item, index) => {
+                    const scrollbar = item.querySelector(".lotos-sidebar__item-scrollbar-scroll");
+                    if (scrollbar) if (index < activeIndex) scrollbar.style.height = "100%"; else if (index > activeIndex) scrollbar.style.height = "0%"; else {
+                        const targetId = item.getAttribute("data-scrollto");
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            const targetRect = targetElement.getBoundingClientRect();
+                            const windowHeight = window.innerHeight;
+                            const windowCenter = windowHeight / 2;
+                            const scrolledDistance = windowCenter - targetRect.top;
+                            const totalHeight = targetRect.height;
+                            let scrollPercent = 0;
+                            if (targetRect.top >= windowHeight) scrollPercent = 0; else if (targetRect.bottom <= 0) scrollPercent = 100; else scrollPercent = scrolledDistance / totalHeight * 100;
+                            scrollbar.style.height = `${Math.min(Math.max(scrollPercent, 0), 100)}%`;
+                        }
+                    }
+                }));
+            }
+        };
+        window.addEventListener("scroll", updateScrollbarHeights);
+        document.addEventListener("DOMContentLoaded", updateScrollbarHeights);
+    }));
+    document.addEventListener("DOMContentLoaded", (function() {
+        const progressItems = document.querySelectorAll("[data-scrolltoprogress]");
+        if (!progressItems.length) return;
+        const observerOptions = {
+            root: null,
+            threshold: .1
+        };
+        const setActiveLink = activeLink => {
+            progressItems.forEach((item => item.classList.remove("_active")));
+            if (activeLink) activeLink.classList.add("_active");
+        };
+        const observer = new IntersectionObserver((entries => {
+            entries.forEach((entry => {
+                const targetId = entry.target.id;
+                const progressLink = document.querySelector(`[data-scrolltoprogress="${targetId}"]`);
+                if (entry.isIntersecting && progressLink) setActiveLink(progressLink);
+            }));
+        }), observerOptions);
+        progressItems.forEach((item => {
+            item.addEventListener("click", (function(event) {
+                event.preventDefault();
+                const progressMenu = document.querySelector(".progressbar__menu");
+                if (progressMenu) progressMenu.classList.remove("_active");
+                const targetId = item.getAttribute("data-scrolltoprogress");
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 75,
+                        behavior: "smooth"
+                    });
+                    setActiveLink(item);
+                } else console.warn(`Элемент с id="${targetId}" не найден`);
+            }));
+            const targetId = item.getAttribute("data-scrolltoprogress");
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) observer.observe(targetElement);
+        }));
+        const updateProgressBars = () => {
+            const activeItem = document.querySelector(".progressbar__menu-item._active");
+            if (activeItem) {
+                const allItems = document.querySelectorAll(".progressbar__menu-item");
+                const activeIndex = Array.from(allItems).indexOf(activeItem);
+                allItems.forEach(((item, index) => {
+                    const progressItem = document.querySelector(`.progressbar__progress-item[data-progress="${item.getAttribute("data-scrolltoprogress")}"]`);
+                    if (progressItem) {
+                        const progressBar = progressItem.querySelector(".progressbar__progress-line");
+                        if (progressBar) {
+                            console.log(`progressBar найден для: ${item.textContent}`);
+                            if (index < activeIndex) progressBar.style.width = "100%"; else if (index > activeIndex) progressBar.style.width = "0%"; else {
+                                const targetId = item.getAttribute("data-scrolltoprogress");
+                                const targetElement = document.getElementById(targetId);
+                                if (targetElement) {
+                                    const targetRect = targetElement.getBoundingClientRect();
+                                    const windowHeight = window.innerHeight;
+                                    const windowCenter = windowHeight / 2;
+                                    const scrolledDistance = windowCenter - targetRect.top;
+                                    const totalHeight = targetRect.height;
+                                    let scrollPercent = 0;
+                                    if (targetRect.top >= windowHeight) scrollPercent = 0; else if (targetRect.bottom <= 0) scrollPercent = 100; else scrollPercent = scrolledDistance / totalHeight * 100;
+                                    progressBar.style.width = `${Math.min(Math.max(scrollPercent, 0), 100)}%`;
+                                }
+                            }
+                        } else console.warn(`progressBar не найден внутри progressItem для: ${item.textContent}`);
+                    } else console.warn(`progressItem не найден для: ${item.textContent}`);
+                }));
+            }
+        };
+        window.addEventListener("scroll", updateProgressBars);
+        document.addEventListener("DOMContentLoaded", updateProgressBars);
+    }));
+    document.addEventListener("DOMContentLoaded", (function() {
+        const toggler = document.querySelector(".progressbar__toggler");
+        const showBlock = document.querySelector(".progressbar__toggler-show");
+        const hideBlock = document.querySelector(".progressbar__toggler-hide");
+        const menu = document.querySelector(".progressbar__menu");
+        if (toggler) toggler.addEventListener("click", (function() {
+            showBlock.classList.toggle("_hidden");
+            hideBlock.classList.toggle("_hidden");
+            menu.classList.toggle("_active");
+        }));
+    }));
     window["FLS"] = false;
     menuInit();
     spollers();

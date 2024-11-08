@@ -5677,6 +5677,11 @@ textarea {
   gap: 15px;
   width: 100%
 }
+._type-2 .footer__text-left,
+._type-2 .footer__text-middle,
+._type-2 .footer__text-right {
+  width: 100%
+}
 ._type-2 .footer__logo-link {
   width: 88px;
   height: 51px
@@ -7473,6 +7478,7 @@ textarea {
 .faq {
   position: relative
 }
+.faq::after,
 .faq::before {
   content: "";
   display: block;
@@ -7480,9 +7486,20 @@ textarea {
   height: 152px;
   pointer-events: none;
   position: absolute;
-  left: 0;
+  z-index: 1;
+  left: 0
+}
+.faq::before {
   top: 0;
   background: linear-gradient(180deg,rgba(7,10,14,.2) 0,rgba(7,10,14,0) 70%)
+}
+.faq::after {
+  bottom: 0;
+  background: linear-gradient(0deg,rgba(7,10,14,.2) 0,rgba(7,10,14,0) 70%)
+}
+.faq__inner {
+  position: relative;
+  background: url(../img/elements/faq/bg.webp) center center/100% 100% no-repeat
 }
 .faq__title {
   color: #f9df94;
@@ -8623,6 +8640,9 @@ textarea {
   position: relative;
   z-index: 1
 }
+.teaser__buttons-wrapper._center {
+  justify-content: center
+}
 .teaser .inventory {
   margin-bottom: 50px;
   max-width: 640px
@@ -9195,10 +9215,10 @@ textarea {
   .cookies__button {
     padding-right: 1.875rem
   }
-  .faq {
+  .faq__inner {
     padding-top: 4.375rem
   }
-  .faq {
+  .faq__inner {
     padding-bottom: 11.875rem
   }
   .faq__title {
@@ -11343,10 +11363,10 @@ textarea {
   .cookies__button {
     padding-right: .9375rem
   }
-  .faq {
+  .faq__inner {
     padding-top: 2.5rem
   }
-  .faq {
+  .faq__inner {
     padding-bottom: 6.875rem
   }
   .faq__title {
@@ -11419,6 +11439,11 @@ textarea {
   }
   .header__wrapper {
     height: 50px
+  }
+  ._type-2 .footer__text-left,
+  ._type-2 .footer__text-middle,
+  ._type-2 .footer__text-right {
+    width: auto
   }
   .register__item-image {
     text-align: center
@@ -11883,14 +11908,24 @@ textarea {
   .cookies__button {
     padding-right: clamp(.9375rem ,.6696428571rem + 1.3392857143vw ,1.875rem)
   }
-  .faq {
+  .faq__inner {
     padding-top: clamp(2.5rem ,1.9642857143rem + 2.6785714286vw ,4.375rem)
   }
-  .faq {
+  .faq__inner {
     padding-bottom: clamp(6.875rem ,5.4464285714rem + 7.1428571429vw ,11.875rem)
   }
   .faq__title {
     font-size: clamp(1.75rem ,1.5rem + 1.25vw ,2.625rem)
+  }
+}
+@media (max-width:1000px) and (min-width:850px) {
+  .teaser__img {
+    max-height: 75vh
+  }
+}
+@media (max-width:850px) and (min-width:768px) {
+  .teaser__img {
+    max-height: 60vh
   }
 }
 @media (prefers-reduced-motion:reduce),

@@ -4012,9 +4012,6 @@ h6 {
 ._type-2 .menu__item {
   width: 100%
 }
-._type-2 .menu__item:hover .menu__link {
-  background: url(../img/elements/header/bg.webp) center bottom/100% 100% no-repeat
-}
 ._type-2 .menu__item:hover .menu__link::after {
   content: "";
   position: absolute;
@@ -4024,8 +4021,23 @@ h6 {
   transform: translate(-50%,0);
   display: block;
   height: 2px;
-  width: 100%;
+  max-width: 100%;
+  min-width: 110px;
+  width: 224px;
   background: linear-gradient(90deg,rgba(119,96,48,0) 0,#776030 10%,#ffebb2 50%,#776030 90%,rgba(119,96,48,0) 100%)
+}
+._type-2 .menu__item:hover .menu__link::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  display: block;
+  height: 74px;
+  width: 222px;
+  background: url(../img/elements/header/bg.webp) center bottom/100% 100% no-repeat
 }
 body::after {
   content: "";

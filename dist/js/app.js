@@ -4741,7 +4741,7 @@
         if (!scrollLinks.length) return;
         const observerOptions = {
             root: null,
-            threshold: .1
+            threshold: .11
         };
         const setActiveLink = activeLink => {
             scrollLinks.forEach((link => link.classList.remove("_active")));
@@ -4761,7 +4761,7 @@
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 25,
+                        top: targetElement.offsetTop - 20,
                         behavior: "smooth"
                     });
                     setActiveLink(link);

@@ -1,0 +1,17 @@
+<svg width="57" height="17" viewBox="0 0 57 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame" clip-path="url(#clip0_6268_53016)">
+<rect id="Rectangle 873" x="7" y="3" width="7" height="7" transform="rotate(45 7 3)" fill="#2B3E4D"/>
+<g id="Vector">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M57 11H13L8 17L0 9L8 0L14 7H57V11ZM8 5L4 8L8 12L11 8L8 5Z" fill="url(#paint0_linear_6268_53016)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_6268_53016" x1="57.4313" y1="8.5" x2="13.6014" y2="8.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#88A2B6" stop-opacity="0"/>
+<stop offset="1" stop-color="#A1B8CA"/>
+</linearGradient>
+<clipPath id="clip0_6268_53016">
+<rect width="57" height="17" fill="white"/>
+</clipPath>
+</defs>
+</svg>

@@ -4648,7 +4648,15 @@ textarea {
 }
 .page ul li {
   padding-left: 5px;
-  list-style: disc;
+  margin-bottom: 10px;
+  list-style: disc
+}
+.page ol {
+  padding-left: 15px;
+  margin-bottom: 10px
+}
+.page ol li {
+  padding-left: 5px;
   margin-bottom: 10px
 }
 @-webkit-keyframes rotate {
@@ -5264,7 +5272,8 @@ textarea {
   visibility: visible
 }
 .progressbar {
-  position: relative
+  position: relative;
+  z-index: 2
 }
 .progressbar__inner {
   background: linear-gradient(180deg,#0d1119 0,rgba(10,13,19,.8) 70%,rgba(13,17,25,0) 100%);
@@ -5463,6 +5472,177 @@ textarea {
   color: #fff;
   font-size: 18px;
   line-height: 1.16
+}
+.custom-scrollbar {
+  position: relative
+}
+.custom-scrollbar._sidebar {
+  height: 602px
+}
+.custom-scrollbar__content {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none
+}
+.custom-scrollbar__content::-webkit-scrollbar {
+  display: none
+}
+.custom-scrollbar__track {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 27px;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center
+}
+.custom-scrollbar._sidebar .custom-scrollbar__track {
+  position: absolute;
+  right: -40px;
+  height: calc(100% + 30px);
+  top: -15px
+}
+.custom-scrollbar__thumb-outer {
+  position: relative;
+  height: 100%;
+  width: 5px;
+  margin: 10px 0
+}
+.custom-scrollbar__thumb-outer::after,
+.custom-scrollbar__thumb-outer::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 6px;
+  position: absolute;
+  background: url(../img/elements/custom-scrollbar/track-icon.svg) center center no-repeat
+}
+.custom-scrollbar__thumb-outer::before {
+  top: -5px
+}
+.custom-scrollbar__thumb-outer::after {
+  bottom: -5px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
+.custom-scrollbar__thumb-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%
+}
+.custom-scrollbar__thumb-wrapper::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: #776030;
+  position: absolute;
+  left: 2px;
+  top: 0
+}
+.custom-scrollbar__thumb {
+  width: 5px;
+  background-color: #b19f63;
+  border-radius: 11px;
+  cursor: pointer;
+  height: 22px;
+  position: absolute;
+  left: 0;
+  z-index: 1
+}
+.custom-scrollbar__down-arrow,
+.custom-scrollbar__up-arrow {
+  cursor: pointer;
+  width: 28px;
+  height: 28px
+}
+.custom-scrollbar._sidebar .custom-scrollbar__down-arrow,
+.custom-scrollbar._sidebar .custom-scrollbar__up-arrow {
+  width: 18px;
+  height: 18px
+}
+.chronology {
+  max-width: 917px;
+  width: 100%;
+  margin: 0 auto
+}
+.chronology__list-wrapper {
+  padding-left: 47px;
+  padding-top: 77px;
+  position: relative
+}
+.chronology__list-wrapper::after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: calc(100% - var(--last-item-height,0px));
+  background-color: #596e7e;
+  position: absolute;
+  left: -4px;
+  top: 95px
+}
+.chronology__list-wrapper::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 82px;
+  background: url(../img/elements/chronology/side-line.webp) 0 0 no-repeat;
+  position: absolute;
+  left: -4px;
+  top: 12px
+}
+.chronology__list {
+  display: flex;
+  flex-direction: column;
+  gap: 122px
+}
+.chronology__item {
+  background: url(../img/elements/chronology/item.webp) 0 0/100% 100% no-repeat;
+  padding: 0 4px;
+  position: relative
+}
+.chronology__item::after,
+.chronology__item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1
+}
+.chronology__item::before {
+  background: url(../img/elements/chronology/side-icon.svg) 0 0/100% 100% no-repeat;
+  width: 57px;
+  height: 17px;
+  left: -57px;
+  top: 14px
+}
+.chronology__item::after {
+  width: 100%;
+  background: url(../img/elements/chronology/item-bottom.webp) 0 0/100% 100% no-repeat;
+  left: 0;
+  bottom: -13px;
+  height: 13px
+}
+.chronology__title {
+  background: url(../img/elements/chronology/title.webp) 0 0/100% 100% no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 21px;
+  height: 42px;
+  color: #f9df94;
+  font-size: 24px;
+  position: relative;
+  top: -6px;
+  z-index: 1
+}
+.chronology__text {
+  padding: 20px;
+  color: #2b1e16;
+  font-weight: 300;
+  line-height: 1.27
 }
 .header {
   position: fixed;
@@ -5681,6 +5861,9 @@ textarea {
 ._type-2 .footer__text-middle,
 ._type-2 .footer__text-right {
   width: 100%
+}
+._type-2 .footer__text-right {
+  text-align: right
 }
 ._type-2 .footer__logo-link {
   width: 88px;
@@ -8844,7 +9027,7 @@ textarea {
 .news-detail p {
   margin: 15px 0 25px
 }
-.lotos-world {
+.sidepage {
   position: relative;
   display: flex;
   gap: 78px;
@@ -8852,14 +9035,14 @@ textarea {
   padding-bottom: 64px;
   margin-top: 75px
 }
-.lotos-world__sidebar {
+.sidepage__sidebar {
   flex: 0 0 236px
 }
-.lotos-world__sidebar-wrapper {
+.sidepage-sidebar__wrapper {
   position: sticky;
   top: 15%
 }
-.lotos-sidebar__title {
+.sidepage-sidebar__title {
   color: #f9df94;
   text-align: center;
   text-shadow: 0 3px 3px rgba(0,0,0,.25);
@@ -8869,7 +9052,7 @@ textarea {
   margin-bottom: 12px;
   position: relative
 }
-.lotos-sidebar__title::after {
+.sidepage-sidebar__title::after {
   content: "";
   display: block;
   position: absolute;
@@ -8881,17 +9064,17 @@ textarea {
   width: 100%;
   height: 14px
 }
-.lotos-sidebar__list {
+.sidepage-sidebar__list {
   display: flex;
   flex-direction: column;
   gap: 28px
 }
-.lotos-sidebar__item {
+.sidepage-sidebar__item {
   position: relative;
   width: 100%
 }
-.lotos-sidebar__item::after,
-.lotos-sidebar__item::before {
+.sidepage-sidebar__item::after,
+.sidepage-sidebar__item::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -8900,21 +9083,21 @@ textarea {
   top: 0;
   transition: all .3s ease-in-out
 }
-.lotos-sidebar__item::before {
+.sidepage-sidebar__item::before {
   background: #000;
   mix-blend-mode: saturation
 }
-.lotos-sidebar__item::after {
+.sidepage-sidebar__item::after {
   background: #8cc4ff;
   mix-blend-mode: multiply
 }
-.lotos-sidebar__item._active::after,
-.lotos-sidebar__item._active::before,
-.lotos-sidebar__item:hover::after,
-.lotos-sidebar__item:hover::before {
+.sidepage-sidebar__item._active::after,
+.sidepage-sidebar__item._active::before,
+.sidepage-sidebar__item:hover::after,
+.sidepage-sidebar__item:hover::before {
   opacity: 0
 }
-.lotos-sidebar__name {
+.sidepage-sidebar__name {
   position: absolute;
   z-index: 1;
   left: 0;
@@ -8925,7 +9108,7 @@ textarea {
   font-size: 20px;
   line-height: 1.5
 }
-.lotos-sidebar__item-scrollbar {
+.sidepage-sidebar__item-scrollbar {
   background-color: #404040;
   width: 4px;
   height: 83%;
@@ -8937,65 +9120,179 @@ textarea {
   transform: translate(0,-50%);
   display: none
 }
-.lotos-sidebar__item-scrollbar-scroll {
+.sidepage-sidebar__item-scrollbar-scroll {
   transition: width .3s ease-in-out;
   background-color: #f2d993;
   display: block;
   width: 100%
 }
-.lotos-sidebar__item._active .lotos-sidebar__item-scrollbar,
-.lotos-sidebar__item:hover .lotos-sidebar__item-scrollbar {
+.sidepage-sidebar__item._active .sidepage-sidebar__item-scrollbar,
+.sidepage-sidebar__item:hover .sidepage-sidebar__item-scrollbar {
   display: block
 }
-.lotos-sidebar__item._active .lotos-sidebar__name,
-.lotos-sidebar__item:hover .lotos-sidebar__name {
+.sidepage-sidebar__item._active .sidepage-sidebar__name,
+.sidepage-sidebar__item:hover .sidepage-sidebar__name {
   color: #f9df94;
   text-shadow: 0 0 6px rgba(0,0,0,.9)
 }
-.lotos-sidebar__img {
+.sidepage-sidebar__img {
   width: 100%;
   height: auto
 }
-.lotos-content__title {
+.sidepage-content__title {
   color: #f9df94;
   text-shadow: 0 3px 3px rgba(0,0,0,.25);
   font-size: 42px;
   line-height: 1.19;
   margin-bottom: 16px
 }
-.lotos-content__wrapper {
+.sidepage-content__wrapper {
   padding-bottom: 128px
 }
-.lotos-content__wrapper._pb-0 {
+.sidepage-content__wrapper._pb-0 {
   padding-bottom: 0
 }
-.lotos-content__item {
+.sidepage-content__item {
   padding-bottom: 64px
 }
-.lotos-content__item:last-child {
+.sidepage-content__item:last-child {
   padding-bottom: 0
 }
-.lotos-content__item-title {
+.sidepage-content__item-title {
   color: #b19f63;
   font-size: 32px;
   line-height: 1.31;
   margin-bottom: 16px
 }
-.lotos-content__item-image {
+.sidepage-content__item-image {
   margin-bottom: 16px
 }
-.lotos-content__item-img {
+.sidepage-content__item-img {
   width: 100%;
   height: auto
 }
-.lotos-content__item-content {
+.sidepage-content__item-content {
   color: #e6e6e6;
   font-size: 22px;
   font-weight: 300;
   line-height: 1.27
 }
-.lotos-content__item-content p {
+.sidepage-content__item-content p {
+  margin-bottom: 10px
+}
+.rules {
+  padding-top: 130px;
+  padding-bottom: 30px
+}
+.rules__head {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 60px
+}
+.rules__link {
+  position: relative;
+  display: block;
+  color: #143f63;
+  text-align: center;
+  text-shadow: 0 3px 3px rgba(0,0,0,.25);
+  font-size: 42px;
+  line-height: 1.19
+}
+.rules__link._active {
+  color: #f9df94
+}
+.rules__link._active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 14px;
+  background: url(../img/elements/rules/head-icon.svg) center center no-repeat;
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
+}
+.rules__body {
+  height: calc(100vh - 280px);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.333
+}
+.rules__body b {
+  font-weight: 700
+}
+.rules__body p {
+  margin-bottom: 15px
+}
+.rules__body ol,
+.rules__body ul {
+  margin-bottom: 20px
+}
+.rules__body ol li,
+.rules__body ul li {
   margin-bottom: 0
+}
+.rules__body ol li ol li,
+.rules__body ol li ul li,
+.rules__body ul li ol li,
+.rules__body ul li ul li {
+  list-style: inherit
+}
+.rules__body-content {
+  padding: 23px 34px 10px 11px
+}
+.sitemap {
+  padding-top: 98px;
+  padding-bottom: 30px
+}
+.sitemap__title {
+  color: #f9df94;
+  text-shadow: 0 3px 3px rgba(0,0,0,.25);
+  font-size: 42px;
+  line-height: 1.19;
+  margin-bottom: 60px
+}
+.sitemap__grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1044px;
+  width: 100%;
+  margin: 0 auto
+}
+.sitemap__column {
+  flex: 0 0 234px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 45px
+}
+.sitemap__group-title {
+  color: #98885c;
+  font-size: 34px;
+  line-height: 1.23;
+  display: block;
+  margin-bottom: 10px
+}
+.sitemap__group-link-wrapper {
+  padding: 16px 0;
+  margin-bottom: 10px
+}
+.sitemap__group-link {
+  display: block;
+  color: #4a76a7;
+  font-size: 23px;
+  line-height: 1.22;
+  transition: all .3s ease-in-out
+}
+.sitemap__group-link:hover {
+  color: #98885c
+}
+.sitemap__group-link:active {
+  color: #fff
 }
 .swiper {
   overflow: hidden
@@ -9509,6 +9806,28 @@ textarea {
   .final-star__flash-img {
     width: 320px
   }
+  .custom-scrollbar._sidebar .custom-scrollbar__track {
+    right: -30px
+  }
+  .chronology {
+    max-width: 506px
+  }
+  .chronology__list-wrapper {
+    padding-left: 44px
+  }
+  .chronology__list-wrapper::after {
+    left: -7px
+  }
+  .chronology__list-wrapper::before {
+    left: -7px
+  }
+  .chronology__item {
+    padding: 0 1px
+  }
+  .chronology__text {
+    font-size: 18px;
+    padding: 10px
+  }
   .header__wrapper {
     height: 60px
   }
@@ -9628,45 +9947,82 @@ textarea {
     grid-template-columns: repeat(2,1fr);
     gap: 20px
   }
-  .lotos-world {
-    gap: 15px;
+  .sidepage {
+    gap: 40px;
     padding-top: 90px;
     margin-top: 50px
   }
-  .lotos-world__sidebar {
+  .sidepage__sidebar {
     flex: 0 0 209px
   }
-  .lotos-world__sidebar-wrapper {
+  .sidepage-sidebar__wrapper {
     top: 80px
   }
-  .lotos-sidebar__title {
+  .sidepage-sidebar__title {
     font-size: 26px;
     padding-bottom: 22px;
     margin-bottom: 12px
   }
-  .lotos-sidebar__title::after {
+  .sidepage-sidebar__title::after {
     width: 177px;
     height: 10px
   }
-  .lotos-sidebar__list {
+  .sidepage-sidebar__list {
     gap: 16px
   }
-  .lotos-sidebar__name {
+  .sidepage-sidebar__name {
     font-size: 18px
   }
-  .lotos-content__title {
+  .sidepage-content__title {
     font-size: 26px
   }
-  .lotos-content__wrapper {
+  .sidepage-content__wrapper {
     padding-bottom: 64px
   }
-  .lotos-content__item {
+  .sidepage-content__item {
     padding-bottom: 32px
   }
-  .lotos-content__item-title {
+  .sidepage-content__item-title {
     font-size: 22px
   }
-  .lotos-content__item-content {
+  .sidepage-content__item-content {
+    font-size: 18px
+  }
+  .rules {
+    padding-top: 105px
+  }
+  .rules__head {
+    gap: 24px;
+    margin-bottom: 32px
+  }
+  .rules__link {
+    font-size: 34px
+  }
+  .rules__body {
+    height: calc(100vh - 200px);
+    font-size: 16px
+  }
+  .rules__body-content {
+    padding: 23px 34px 10px 0
+  }
+  .sitemap {
+    padding-top: 105px
+  }
+  .sitemap__title {
+    font-size: 34px;
+    margin-bottom: 40px
+  }
+  .sitemap__column {
+    flex: 0 0 205px
+  }
+  .sitemap__group-title {
+    font-size: 26px
+  }
+  .sitemap__group-link-wrapper {
+    padding: 12px 0;
+    margin-bottom: 8px
+  }
+  .sitemap__group-link {
     font-size: 18px
   }
 }
@@ -10293,6 +10649,9 @@ textarea {
     left: 62.5%;
     top: 22px
   }
+  .chronology__text {
+    font-size: 16px
+  }
   .register__image-wrapper {
     right: -160px
   }
@@ -10335,19 +10694,34 @@ textarea {
   .fraction-section__image {
     height: 578px
   }
-  .lotos-sidebar__title {
+  .sidepage-sidebar__title {
     font-size: 22px;
     padding-bottom: 18px;
     margin-bottom: 8px
   }
-  .lotos-sidebar__list {
+  .sidepage-sidebar__list {
     gap: 8px
   }
-  .lotos-sidebar__name {
+  .sidepage-sidebar__name {
     font-size: 16px
   }
-  .lotos-content__title {
+  .sidepage-content__title {
     font-size: 24px
+  }
+  .rules__link {
+    font-size: 32px
+  }
+  .sitemap {
+    padding-top: 75px
+  }
+  .sitemap__title {
+    font-size: 32px
+  }
+  .sitemap__group-title {
+    font-size: 24px
+  }
+  .sitemap__group-link {
+    font-size: 16px
   }
 }
 @media (max-width:919px) {
@@ -11434,6 +11808,25 @@ textarea {
   .inventory .item__tooltip-text {
     font-size: 11px
   }
+  .chronology {
+    max-width: 354px
+  }
+  .chronology__list-wrapper {
+    padding-left: 14px
+  }
+  .chronology__list-wrapper::before {
+    top: 14px
+  }
+  .chronology__item {
+    padding: 0 1px
+  }
+  .chronology__item::before {
+    left: -27px;
+    top: 6px
+  }
+  .chronology__text {
+    font-size: 14px
+  }
   .header._mobile-center-logo .header__wrapper {
     justify-content: center
   }
@@ -11718,26 +12111,71 @@ textarea {
     text-align: center;
     font-size: 14px
   }
-  .lotos-world {
+  .sidepage {
     flex-direction: column;
     gap: 0;
     padding-top: 0
   }
-  .lotos-world__sidebar {
+  .sidepage__sidebar {
     flex: 0 0 100%
   }
-  .lotos-world__sidebar-wrapper {
+  .sidepage__content {
+    padding-top: 70px
+  }
+  .sidepage-sidebar__wrapper {
     position: relative;
     top: auto;
     display: none
   }
-  .lotos-world__content {
-    padding-top: 70px
-  }
-  .lotos-content__title {
+  .sidepage-content__title {
     font-size: 22px
   }
-  .lotos-content__item-content {
+  .sidepage-content__item-content {
+    font-size: 14px
+  }
+  .rules {
+    padding-top: 82px
+  }
+  .rules__head {
+    justify-content: center
+  }
+  .rules__link {
+    font-size: 30px
+  }
+  .rules__body {
+    height: calc(100vh - 180px);
+    font-size: 14px
+  }
+  .rules__body-content {
+    padding: 0 34px 10px 0
+  }
+  .sitemap {
+    padding-top: 85px
+  }
+  .sitemap__title {
+    font-size: 30px;
+    margin-bottom: 24px;
+    text-align: center
+  }
+  .sitemap__grid {
+    flex-wrap: wrap;
+    padding: 0 30px
+  }
+  .sitemap__column {
+    flex: 0 0 130px;
+    justify-content: flex-start;
+    gap: 30px
+  }
+  .sitemap__column:nth-child(2) {
+    order: 2
+  }
+  .sitemap__group-title {
+    font-size: 22px
+  }
+  .sitemap__group-link-wrapper {
+    padding: 8px 0
+  }
+  .sitemap__group-link {
     font-size: 14px
   }
 }

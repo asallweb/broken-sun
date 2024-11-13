@@ -4736,137 +4736,116 @@
         for (i = 0; i < xl; i++) if (arrNo.indexOf(i)) x[i].classList.add("select-hide");
     }
     document.addEventListener("click", closeAllSelect);
-    document.addEventListener("DOMContentLoaded", (function() {
+    window.addEventListener("load", (function() {
         const scrollLinks = document.querySelectorAll("[data-scrollto]");
         if (!scrollLinks.length) return;
-        const observerOptions = {
-            root: null,
-            threshold: .11
-        };
-        const setActiveLink = activeLink => {
-            scrollLinks.forEach((link => link.classList.remove("_active")));
-            if (activeLink) activeLink.classList.add("_active");
-        };
-        const observer = new IntersectionObserver((entries => {
-            entries.forEach((entry => {
-                const targetId = entry.target.id;
-                const scrollLink = document.querySelector(`[data-scrollto="${targetId}"]`);
-                if (entry.isIntersecting && scrollLink) setActiveLink(scrollLink);
+        const headerHeight = document.querySelector(".header")?.offsetHeight || 0;
+        const footerHeight = document.querySelector(".footer")?.offsetHeight || 0;
+        const pageContentHeight = document.body.scrollHeight - headerHeight - footerHeight;
+        const blocks = Array.from(scrollLinks).map((link => {
+            const targetId = link.getAttribute("data-scrollto");
+            const targetElement = document.getElementById(targetId);
+            const height = targetElement ? targetElement.offsetHeight : 0;
+            const top = targetElement ? targetElement.offsetTop - headerHeight : 0;
+            return {
+                link,
+                element: targetElement,
+                relativeHeight: height / pageContentHeight * 100,
+                top,
+                height
+            };
+        }));
+        const updateActiveLinkAndScrollbars = () => {
+            const scrollY = window.scrollY + headerHeight;
+            let cumulativeHeight = 0;
+            blocks.forEach(((block, index) => {
+                const scrollbar = block.link.querySelector(".sidepage-sidebar__item-scrollbar-scroll");
+                if (scrollY >= block.top && scrollY < block.top + block.height) {
+                    blocks.forEach((b => b.link.classList.remove("_active")));
+                    block.link.classList.add("_active");
+                    const scrolledWithinBlock = scrollY - block.top;
+                    const progressWithinBlock = scrolledWithinBlock / block.height * 100;
+                    if (scrollbar) scrollbar.style.height = `${progressWithinBlock}%`;
+                } else if (scrollY >= block.top + block.height) {
+                    if (scrollbar) scrollbar.style.height = "100%";
+                } else if (scrollbar) scrollbar.style.height = "0%";
+                cumulativeHeight += block.height;
             }));
-        }), observerOptions);
-        scrollLinks.forEach((link => {
+        };
+        window.addEventListener("scroll", updateActiveLinkAndScrollbars);
+        updateActiveLinkAndScrollbars();
+        scrollLinks.forEach(((link, index) => {
             link.addEventListener("click", (function(event) {
                 event.preventDefault();
                 const targetId = link.getAttribute("data-scrollto");
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 20,
+                        top: targetElement.offsetTop - headerHeight,
                         behavior: "smooth"
                     });
-                    setActiveLink(link);
+                    scrollLinks.forEach((lnk => lnk.classList.remove("_active")));
+                    link.classList.add("_active");
                 } else console.warn(`Элемент с id="${targetId}" не найден`);
             }));
-            const targetId = link.getAttribute("data-scrollto");
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) observer.observe(targetElement);
         }));
-        const updateScrollbarHeights = () => {
-            const activeItem = document.querySelector(".lotos-sidebar__item._active");
-            if (activeItem) {
-                const allItems = document.querySelectorAll(".lotos-sidebar__item");
-                const activeIndex = Array.from(allItems).indexOf(activeItem);
-                allItems.forEach(((item, index) => {
-                    const scrollbar = item.querySelector(".lotos-sidebar__item-scrollbar-scroll");
-                    if (scrollbar) if (index < activeIndex) scrollbar.style.height = "100%"; else if (index > activeIndex) scrollbar.style.height = "0%"; else {
-                        const targetId = item.getAttribute("data-scrollto");
-                        const targetElement = document.getElementById(targetId);
-                        if (targetElement) {
-                            const targetRect = targetElement.getBoundingClientRect();
-                            const windowHeight = window.innerHeight;
-                            const windowCenter = windowHeight / 2;
-                            const scrolledDistance = windowCenter - targetRect.top;
-                            const totalHeight = targetRect.height;
-                            let scrollPercent = 0;
-                            if (targetRect.top >= windowHeight) scrollPercent = 0; else if (targetRect.bottom <= 0) scrollPercent = 100; else scrollPercent = scrolledDistance / totalHeight * 100;
-                            scrollbar.style.height = `${Math.min(Math.max(scrollPercent, 0), 100)}%`;
-                        }
-                    }
-                }));
-            }
-        };
-        window.addEventListener("scroll", updateScrollbarHeights);
-        document.addEventListener("DOMContentLoaded", updateScrollbarHeights);
     }));
-    document.addEventListener("DOMContentLoaded", (function() {
-        const progressItems = document.querySelectorAll("[data-scrolltoprogress]");
+    window.addEventListener("load", (function() {
+        const progressItems = document.querySelectorAll("[data-progress]");
+        const progressItemsMenu = document.querySelectorAll("[data-scrolltoprogress]");
         if (!progressItems.length) return;
-        const observerOptions = {
-            root: null,
-            threshold: .1
-        };
-        const setActiveLink = activeLink => {
-            progressItems.forEach((item => item.classList.remove("_active")));
-            if (activeLink) activeLink.classList.add("_active");
-        };
-        const observer = new IntersectionObserver((entries => {
-            entries.forEach((entry => {
-                const targetId = entry.target.id;
-                const progressLink = document.querySelector(`[data-scrolltoprogress="${targetId}"]`);
-                if (entry.isIntersecting && progressLink) setActiveLink(progressLink);
+        const headerHeight = document.querySelector(".header")?.offsetHeight || 0;
+        const footerHeight = document.querySelector(".footer")?.offsetHeight || 0;
+        const pageContentHeight = document.body.scrollHeight - headerHeight - footerHeight;
+        const blocks = Array.from(progressItems).map((item => {
+            const targetId = item.getAttribute("data-progress");
+            const targetElement = document.getElementById(targetId);
+            const height = targetElement ? targetElement.scrollHeight : 0;
+            console.log(height);
+            const top = targetElement ? targetElement.offsetTop - headerHeight : 0;
+            return {
+                item,
+                element: targetElement,
+                relativeHeight: height / pageContentHeight * 100,
+                top,
+                height
+            };
+        }));
+        const updateActiveLinkAndScrollbars = () => {
+            const scrollY = window.scrollY + headerHeight;
+            let cumulativeHeight = 0;
+            blocks.forEach((block => {
+                const progressLine = block.item.querySelector(".progressbar__progress-line");
+                if (scrollY >= block.top && scrollY < block.top + block.height) {
+                    progressItemsMenu.forEach((menuItem => menuItem.classList.remove("_active")));
+                    const menuItem = document.querySelector(`[data-scrolltoprogress="${block.item.getAttribute("data-progress")}"]`);
+                    if (menuItem) menuItem.classList.add("_active");
+                    const scrolledWithinBlock = scrollY - block.top;
+                    const progressWithinBlock = scrolledWithinBlock / block.height * 100;
+                    if (progressLine) progressLine.style.width = `${progressWithinBlock}%`;
+                } else if (scrollY >= block.top + block.height) {
+                    if (progressLine) progressLine.style.width = "100%";
+                } else if (progressLine) progressLine.style.width = "0%";
+                cumulativeHeight += block.height;
             }));
-        }), observerOptions);
-        progressItems.forEach((item => {
+        };
+        window.addEventListener("scroll", updateActiveLinkAndScrollbars);
+        updateActiveLinkAndScrollbars();
+        progressItemsMenu.forEach((item => {
             item.addEventListener("click", (function(event) {
                 event.preventDefault();
-                const progressMenu = document.querySelector(".progressbar__menu");
-                if (progressMenu) progressMenu.classList.remove("_active");
                 const targetId = item.getAttribute("data-scrolltoprogress");
                 const targetElement = document.getElementById(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 75,
+                        top: targetElement.offsetTop - headerHeight,
                         behavior: "smooth"
                     });
-                    setActiveLink(item);
+                    progressItemsMenu.forEach((lnk => lnk.classList.remove("_active")));
+                    item.classList.add("_active");
                 } else console.warn(`Элемент с id="${targetId}" не найден`);
             }));
-            const targetId = item.getAttribute("data-scrolltoprogress");
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) observer.observe(targetElement);
         }));
-        const updateProgressBars = () => {
-            const activeItem = document.querySelector(".progressbar__menu-item._active");
-            if (activeItem) {
-                const allItems = document.querySelectorAll(".progressbar__menu-item");
-                const activeIndex = Array.from(allItems).indexOf(activeItem);
-                allItems.forEach(((item, index) => {
-                    const progressItem = document.querySelector(`.progressbar__progress-item[data-progress="${item.getAttribute("data-scrolltoprogress")}"]`);
-                    if (progressItem) {
-                        const progressBar = progressItem.querySelector(".progressbar__progress-line");
-                        if (progressBar) {
-                            console.log(`progressBar найден для: ${item.textContent}`);
-                            if (index < activeIndex) progressBar.style.width = "100%"; else if (index > activeIndex) progressBar.style.width = "0%"; else {
-                                const targetId = item.getAttribute("data-scrolltoprogress");
-                                const targetElement = document.getElementById(targetId);
-                                if (targetElement) {
-                                    const targetRect = targetElement.getBoundingClientRect();
-                                    const windowHeight = window.innerHeight;
-                                    const windowCenter = windowHeight / 2;
-                                    const scrolledDistance = windowCenter - targetRect.top;
-                                    const totalHeight = targetRect.height;
-                                    let scrollPercent = 0;
-                                    if (targetRect.top >= windowHeight) scrollPercent = 0; else if (targetRect.bottom <= 0) scrollPercent = 100; else scrollPercent = scrolledDistance / totalHeight * 100;
-                                    progressBar.style.width = `${Math.min(Math.max(scrollPercent, 0), 100)}%`;
-                                }
-                            }
-                        } else console.warn(`progressBar не найден внутри progressItem для: ${item.textContent}`);
-                    } else console.warn(`progressItem не найден для: ${item.textContent}`);
-                }));
-            }
-        };
-        window.addEventListener("scroll", updateProgressBars);
-        document.addEventListener("DOMContentLoaded", updateProgressBars);
     }));
     document.addEventListener("DOMContentLoaded", (function() {
         const toggler = document.querySelector(".progressbar__toggler");
@@ -4879,6 +4858,64 @@
             menu.classList.toggle("_active");
         }));
     }));
+    document.addEventListener("DOMContentLoaded", (function() {
+        const content = document.querySelector(".custom-scrollbar__content");
+        const thumb = document.querySelector(".custom-scrollbar__thumb");
+        const thumbWrapper = document.querySelector(".custom-scrollbar__thumb-wrapper");
+        const upArrow = document.querySelector(".custom-scrollbar__up-arrow");
+        const downArrow = document.querySelector(".custom-scrollbar__down-arrow");
+        if (!content || !thumb || !thumbWrapper || !upArrow || !downArrow) {
+            console.warn("Одно или несколько элементов для кастомного скроллбара не найдены.");
+            return;
+        }
+        function updateThumbPosition() {
+            const scrollPercentage = content.scrollTop / (content.scrollHeight - content.clientHeight);
+            const thumbPosition = scrollPercentage * (thumbWrapper.clientHeight - thumb.clientHeight);
+            thumb.style.top = `${thumbPosition}px`;
+        }
+        thumb.addEventListener("mousedown", (function(e) {
+            e.preventDefault();
+            const initialY = e.clientY;
+            const initialTop = parseFloat(window.getComputedStyle(thumb).top);
+            function onMouseMove(event) {
+                const deltaY = event.clientY - initialY;
+                let newTop = initialTop + deltaY;
+                newTop = Math.max(0, Math.min(newTop, thumbWrapper.clientHeight - thumb.clientHeight));
+                thumb.style.top = `${newTop}px`;
+                const scrollPercentage = newTop / (thumbWrapper.clientHeight - thumb.clientHeight);
+                content.scrollTop = scrollPercentage * (content.scrollHeight - content.clientHeight);
+            }
+            function onMouseUp() {
+                document.removeEventListener("mousemove", onMouseMove);
+                document.removeEventListener("mouseup", onMouseUp);
+            }
+            document.addEventListener("mousemove", onMouseMove);
+            document.addEventListener("mouseup", onMouseUp);
+        }));
+        function scrollContent(delta) {
+            content.scrollTop += delta;
+            updateThumbPosition();
+        }
+        upArrow.addEventListener("click", (function() {
+            scrollContent(-20);
+        }));
+        downArrow.addEventListener("click", (function() {
+            scrollContent(20);
+        }));
+        content.addEventListener("scroll", updateThumbPosition);
+        updateThumbPosition();
+    }));
+    function adjustAfterHeight() {
+        const chronologyWrapper = document.querySelector(".chronology__list-wrapper");
+        if (chronologyWrapper) {
+            const chronologyList = document.querySelector(".chronology__list");
+            const lastItem = chronologyList.lastElementChild;
+            const lastItemHeight = lastItem.offsetHeight + 75;
+            chronologyWrapper.style.setProperty("--last-item-height", `${lastItemHeight}px`);
+        }
+    }
+    window.addEventListener("load", adjustAfterHeight);
+    window.addEventListener("resize", adjustAfterHeight);
     window["FLS"] = false;
     menuInit();
     spollers();

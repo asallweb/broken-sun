@@ -4407,6 +4407,12 @@ body {
   justify-content: center;
   width: 100%
 }
+.separator__left {
+  margin-right: -2px
+}
+.separator__right {
+  margin-left: -2px
+}
 .separator__left,
 .separator__right {
   width: 100%;
@@ -7847,7 +7853,7 @@ textarea {
   background: url(../img/background/classes/hero__warrior.webp) center center/cover no-repeat
 }
 .class-hero._warrior .class-hero__container {
-  background: url(../img/background/classes/hero__warrior-ornament.webp) top -60px left -280px no-repeat
+  background: url(../img/background/classes/hero__warrior-ornament.webp) top left -280px no-repeat
 }
 .class-hero._warrior .class-hero__title-wrapper {
   background: url(../img/background/classes/hero__title.webp) 0 0/cover no-repeat
@@ -7993,7 +7999,7 @@ textarea {
 .class-section._strenght {
   background: url(../img/background/classes/strength__warrior.webp) center center/cover no-repeat
 }
-.class-section._strenght .class-section__container {
+.class-section._strenght .class-section__inner {
   background: url(../img/background/classes/strength__warrior-ornament.webp) center center no-repeat
 }
 .class-section._strenght .class-section__image {
@@ -8013,7 +8019,7 @@ textarea {
 .class-section._angry {
   background: url(../img/background/classes/angry__warrior.webp) center center/cover no-repeat
 }
-.class-section._angry .class-section__container {
+.class-section._angry .class-section__inner {
   background: url(../img/background/classes/angry__warrior-ornament.webp) center center no-repeat
 }
 .class-section._angry .class-section__image {
@@ -8024,7 +8030,7 @@ textarea {
 .class-section._trick {
   background: url(../img/background/classes/trick__warrior.webp) center center/cover no-repeat
 }
-.class-section._trick .class-section__container {
+.class-section._trick .class-section__inner {
   background: url(../img/background/classes/trick__warrior-ornament.webp) center center no-repeat
 }
 .class-section._trick .class-section__image {
@@ -8035,7 +8041,7 @@ textarea {
 .class-section._agility {
   background: url(../img/background/classes/agility__archer.webp) center center/cover no-repeat
 }
-.class-section._agility .class-section__container {
+.class-section._agility .class-section__inner {
   background: url(../img/background/classes/agility__archer-ornament.webp) center bottom no-repeat
 }
 .class-section._agility .class-section__image {
@@ -8046,7 +8052,7 @@ textarea {
 .class-section._push {
   background: url(../img/background/classes/push__archer.webp) center center/cover no-repeat
 }
-.class-section._push .class-section__container {
+.class-section._push .class-section__inner {
   background: url(../img/background/classes/push__archer-ornament.webp) center bottom no-repeat
 }
 .class-section._push .class-section__image {
@@ -8057,7 +8063,7 @@ textarea {
 .class-section._air-mage {
   background: url(../img/background/classes/air__mage.webp) center center/cover no-repeat
 }
-.class-section._air-mage .class-section__container {
+.class-section._air-mage .class-section__inner {
   background: url(../img/background/classes/air__mage-ornament.webp) center bottom no-repeat
 }
 .class-section._air-mage .class-section__image {
@@ -8068,7 +8074,7 @@ textarea {
 .class-section._fire-mage {
   background: url(../img/background/classes/fire__mage.webp) center center/cover no-repeat
 }
-.class-section._fire-mage .class-section__container {
+.class-section._fire-mage .class-section__inner {
   background: url(../img/background/classes/fire__mage-ornament.webp) center bottom no-repeat
 }
 .class-section._fire-mage .class-section__image {
@@ -8079,7 +8085,7 @@ textarea {
 .class-section._water-mage {
   background: url(../img/background/classes/water__mage.webp) center center/cover no-repeat
 }
-.class-section._water-mage .class-section__container {
+.class-section._water-mage .class-section__inner {
   background: url(../img/background/classes/water__mage-ornament.webp) center bottom no-repeat
 }
 .class-section._water-mage .class-section__image {
@@ -8090,7 +8096,7 @@ textarea {
 .class-section._earth-mage {
   background: url(../img/background/classes/earth__mage.webp) center center/cover no-repeat
 }
-.class-section._earth-mage .class-section__container {
+.class-section._earth-mage .class-section__inner {
   background: url(../img/background/classes/earth__mage-ornament.webp) center bottom no-repeat
 }
 .class-section._earth-mage .class-section__image {
@@ -8110,7 +8116,8 @@ textarea {
 }
 .class-section__container {
   position: relative;
-  height: 940px
+  height: 940px;
+  z-index: 1
 }
 .class-section__content {
   z-index: 1;
@@ -8660,7 +8667,6 @@ textarea {
 .fraction-main__content::after,
 .fraction-main__content::before {
   content: "";
-  background: url(../img/background/fraction/content-ornament.svg) 0 0/100% auto no-repeat;
   position: absolute;
   width: 100%;
   height: 22px;
@@ -8673,6 +8679,18 @@ textarea {
 }
 .fraction-main__content::after {
   bottom: 2px
+}
+.fraction-main__content._olimp::after,
+.fraction-main__content._olimp::before {
+  background: url(../img/background/fraction/content-ornament-olimp.webp) center center/100% auto repeat-x
+}
+.fraction-main__content._asgard::after,
+.fraction-main__content._asgard::before {
+  background: url(../img/background/fraction/content-ornament-asgard.webp) center center/100% auto repeat-x
+}
+.fraction-main__content._nefar::after,
+.fraction-main__content._nefar::before {
+  background: url(../img/background/fraction/content-ornament-nefar.webp) center center/100% auto repeat-x
 }
 .fraction-main__content-wrapper {
   max-width: 738px;
@@ -8729,10 +8747,16 @@ textarea {
   font-weight: 300;
   line-height: 1.27
 }
+.fraction-section__text p {
+  margin-bottom: 15px
+}
 ._content-shadowed .fraction-section__text {
   border-radius: 10px;
   background: linear-gradient(0deg,rgba(7,10,14,.42) 0,rgba(7,10,14,.24) 92.74%,rgba(7,10,14,0) 124.56%);
   padding: 12px 9px 14px 21px
+}
+.fraction-section__text._no-shadow {
+  text-shadow: none
 }
 .fraction-section__image {
   position: absolute;
@@ -9294,6 +9318,91 @@ textarea {
 .sitemap__group-link:active {
   color: #fff
 }
+.landing-hero {
+  position: relative;
+  height: 100dvh
+}
+.landing-hero .__container {
+  position: relative;
+  height: 100%
+}
+.landing-hero__head {
+  color: #dfc16a;
+  font-family: "Albertus Nova";
+  line-height: 1.2;
+  letter-spacing: .72px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 16px;
+  margin: 0 auto;
+  max-width: 940px;
+  padding-top: 18px;
+  position: relative;
+  z-index: 1
+}
+.landing-hero__head-uptitle {
+  font-size: 36px
+}
+.landing-hero__head-subtitle {
+  width: 100%;
+  font-size: 38px;
+  letter-spacing: .76px
+}
+.landing-hero__body {
+  position: absolute;
+  z-index: 1;
+  width: 670px;
+  height: 340px;
+  padding: 35px 55px;
+  top: 50%;
+  -webkit-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  background: url(../img/content/landing/body-bg.webp) 0 0 no-repeat
+}
+.landing-hero__body-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 35px
+}
+.landing-hero__body-title {
+  color: #fff;
+  text-align: center;
+  font-family: "Albertus Nova";
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 1.23;
+  letter-spacing: .68px
+}
+.landing-hero__body-button-wrapper {
+  display: flex;
+  justify-content: center
+}
+.landing-hero__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+.landing-hero__bg::after {
+  content: "";
+  background: url(../img/content/landing/video-bg.webp) 0 0/100% 100% no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0
+}
+.landing-hero__bg-src {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  margin-left: 0
+}
 .swiper {
   overflow: hidden
 }
@@ -9765,15 +9874,13 @@ textarea {
     gap: 0
   }
   ._type-2 .menu__item._active .menu__link,
-  ._type-2 .menu__item._active .menu__link,
-  ._type-2 .menu__item:hover .menu__link,
   ._type-2 .menu__item:hover .menu__link {
     background: url(../img/elements/header/bg_mobile.webp) center bottom/100% 100% no-repeat
   }
   ._type-2 .menu__item._active .menu__link::after,
-  ._type-2 .menu__item._active .menu__link::after,
+  ._type-2 .menu__item._active .menu__link::before,
   ._type-2 .menu__item:hover .menu__link::after,
-  ._type-2 .menu__item:hover .menu__link::after {
+  ._type-2 .menu__item:hover .menu__link::before {
     display: none
   }
   ._type-2 .menu__item._active .menu__link-dropdown,
@@ -11362,7 +11469,7 @@ textarea {
     -webkit-transform: none;
     transform: none
   }
-  .class-section._angry .class-section__image {
+  .class-section._angry d .class-section__image {
     left: 0;
     -webkit-transform: translate(0,0);
     transform: translate(0,0)

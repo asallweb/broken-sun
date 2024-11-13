@@ -4672,7 +4672,7 @@
         window.addEventListener("resize", handleGodsItems);
     }));
     document.addEventListener("DOMContentLoaded", (() => {
-        document.querySelectorAll("._portal .menu__link").forEach((link => {
+        if (window.innerWidth < 1440) document.querySelectorAll("._portal .menu__link").forEach((link => {
             link.addEventListener("click", (event => {
                 event.preventDefault();
                 const parentItem = link.closest("._portal .menu__item");
@@ -4739,46 +4739,54 @@
     window.addEventListener("load", (function() {
         const scrollLinks = document.querySelectorAll("[data-scrollto]");
         if (!scrollLinks.length) return;
-        const headerHeight = document.querySelector(".header")?.offsetHeight || 0;
-        const footerHeight = document.querySelector(".footer")?.offsetHeight || 0;
-        const pageContentHeight = document.body.scrollHeight - headerHeight - footerHeight;
-        const blocks = Array.from(scrollLinks).map((link => {
-            const targetId = link.getAttribute("data-scrollto");
-            const targetElement = document.getElementById(targetId);
-            const height = targetElement ? targetElement.offsetHeight : 0;
-            const top = targetElement ? targetElement.offsetTop - headerHeight : 0;
-            return {
-                link,
-                element: targetElement,
-                relativeHeight: height / pageContentHeight * 100,
-                top,
-                height
-            };
-        }));
+        let headerHeight = document.querySelector(".header")?.offsetHeight || 0;
+        let footerHeight = document.querySelector(".footer")?.offsetHeight || 0;
+        let pageContentHeight = document.body.scrollHeight - headerHeight - footerHeight;
+        const sidebarItems = document.querySelectorAll(".sidepage-sidebar__item");
+        const customScrollbarContent = document.querySelector(".custom-scrollbar__content");
+        const itemHeight = sidebarItems[0]?.offsetHeight || 0;
+        const itemGap = 28;
+        const calculateBlocks = () => {
+            headerHeight = document.querySelector(".header")?.offsetHeight || 0;
+            footerHeight = document.querySelector(".footer")?.offsetHeight || 0;
+            pageContentHeight = document.body.scrollHeight - headerHeight - footerHeight;
+            return Array.from(scrollLinks).map((link => {
+                const targetElement = document.getElementById(link.getAttribute("data-scrollto"));
+                return {
+                    link,
+                    element: targetElement,
+                    top: targetElement ? targetElement.offsetTop - headerHeight : 0,
+                    height: targetElement ? targetElement.offsetHeight : 0
+                };
+            }));
+        };
+        let blocks = calculateBlocks();
         const updateActiveLinkAndScrollbars = () => {
             const scrollY = window.scrollY + headerHeight;
-            let cumulativeHeight = 0;
             blocks.forEach(((block, index) => {
                 const scrollbar = block.link.querySelector(".sidepage-sidebar__item-scrollbar-scroll");
-                if (scrollY >= block.top && scrollY < block.top + block.height) {
-                    blocks.forEach((b => b.link.classList.remove("_active")));
-                    block.link.classList.add("_active");
-                    const scrolledWithinBlock = scrollY - block.top;
-                    const progressWithinBlock = scrolledWithinBlock / block.height * 100;
-                    if (scrollbar) scrollbar.style.height = `${progressWithinBlock}%`;
-                } else if (scrollY >= block.top + block.height) {
-                    if (scrollbar) scrollbar.style.height = "100%";
-                } else if (scrollbar) scrollbar.style.height = "0%";
-                cumulativeHeight += block.height;
+                const isActive = scrollY >= block.top && scrollY < block.top + block.height;
+                block.link.classList.toggle("_active", isActive);
+                if (scrollbar) scrollbar.style.height = isActive ? `${(scrollY - block.top) / block.height * 100}%` : scrollY >= block.top + block.height ? "100%" : "0%";
+                if (isActive && customScrollbarContent) {
+                    const scrollPosition = Math.max(0, (index - 2) * (itemHeight + itemGap));
+                    customScrollbarContent.scrollTo({
+                        top: scrollPosition,
+                        behavior: "smooth"
+                    });
+                }
             }));
         };
         window.addEventListener("scroll", updateActiveLinkAndScrollbars);
+        window.addEventListener("resize", (() => {
+            blocks = calculateBlocks();
+            updateActiveLinkAndScrollbars();
+        }));
         updateActiveLinkAndScrollbars();
-        scrollLinks.forEach(((link, index) => {
-            link.addEventListener("click", (function(event) {
+        scrollLinks.forEach((link => {
+            link.addEventListener("click", (event => {
                 event.preventDefault();
-                const targetId = link.getAttribute("data-scrollto");
-                const targetElement = document.getElementById(targetId);
+                const targetElement = document.getElementById(link.getAttribute("data-scrollto"));
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - headerHeight,
@@ -4786,7 +4794,7 @@
                     });
                     scrollLinks.forEach((lnk => lnk.classList.remove("_active")));
                     link.classList.add("_active");
-                } else console.warn(`Элемент с id="${targetId}" не найден`);
+                } else console.warn(`Элемент с id="${link.getAttribute("data-scrollto")}" не найден`);
             }));
         }));
     }));
@@ -4801,7 +4809,6 @@
             const targetId = item.getAttribute("data-progress");
             const targetElement = document.getElementById(targetId);
             const height = targetElement ? targetElement.scrollHeight : 0;
-            console.log(height);
             const top = targetElement ? targetElement.offsetTop - headerHeight : 0;
             return {
                 item,

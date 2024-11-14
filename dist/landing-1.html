@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-	<title>LENDING 1</title>
+	<title>LANDING 1</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241113215505">
-	<script src="files/js/preloader.js?_v=20241113215505"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241113215505">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241114220603">
+	<script src="files/js/preloader.js?_v=20241114220603"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241114220603">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,7 @@
 					<div class="landing-hero__head">
 						<div class="landing-hero__head-uptitle">Присоединяйся к старту игры</div>
 						<div class="landing-hero__head-logo">
-							<img src="img/content/landing/logo.webp" class="landing-hero__head-logo-src">
+							<img src="img/pages/landing/logo.webp" class="landing-hero__head-logo-src">
 						</div>
 						<div class="landing-hero__head-subtitle">Уникальные награды только для первых игроков!</div>
 					</div>
@@ -42,34 +42,22 @@
 							<div class="landing-hero__body-title">
 								Пошаговая MMORPG с графикой ААА-класса, доступная на PC, iOS, Android и в браузере.
 							</div>
-							<div class="hero__platforms">
-								<div class="hero__platform-link">
-									<picture>
-										<source srcset="img/logos/appstore_2k.webp" media="(min-width: 1920px)">
-										<img src="img/logos/appstore.webp">
-									</picture>
+							<div class="landing-hero__platforms">
+								<div class="landing-hero__platform-link">
+									<img src="img/logos/landing-appstore.svg">
 								</div>
-								<div class="hero__platform-link _gplay">
-									<picture>
-										<source srcset="img/logos/google-play_2k.webp" media="(min-width: 1920px)">
-										<img src="img/logos/google-play.webp">
-									</picture>
+								<div class="landing-hero__platform-link _gplay">
+									<img src="img/logos/landing-googleplay.svg">
 								</div>
-								<div class="hero__platform-link">
-									<picture>
-										<source srcset="img/logos/web_2k.webp" media="(min-width: 1920px)">
-										<img src="img/logos/web.webp">
-									</picture>
+								<div class="landing-hero__platform-link">
+									<img src="img/logos/landing-web.svg">
 								</div>
-								<div class="hero__platform-link">
-									<picture>
-										<source srcset="img/logos/steam_2k.webp" media="(min-width: 1920px)">
-										<img src="img/logos/steam.webp">
-									</picture>
+								<div class="landing-hero__platform-link">
+									<img src="img/logos/landing-steam.svg">
 								</div>
 							</div>
 							<div class="landing-hero__body-button-wrapper">
-								<button class="button _size-m _fz-18">
+								<button class="landing-hero__button button _size-m _fz-18">
 									<span class="button__text">
 										<span class="button__text-inner">
 											СКАЧАТЬ
@@ -81,7 +69,34 @@
 					</div>
 				</div>
 				<div class="landing-hero__bg">
-					<video class="landing-hero__bg-src" src="files/video/landing/bs_landing_wdd_1920x1080.mp4" autoplay muted playsinline loop></video>
+					<video id="landing-hero__bg-src" class="landing-hero__bg-src" autoplay muted playsinline loop></video>
+					<script>
+						function setVideoSource() {
+							const video = document.getElementById('landing-hero__bg-src');
+							if (!video) return; // Проверяем, есть ли элемент видео на странице
+
+							let newVideoSrc = ''; // Переменная для нового пути к видео
+
+							// Определяем новый путь к видео в зависимости от ширины экрана
+							if (window.matchMedia('(max-width: 767px)').matches) {
+								newVideoSrc = 'files/video/landing-1/bs_landing_wdd_432x768.mp4';
+							} else if (window.matchMedia('(min-width: 768px) and (max-width: 1439px)').matches) {
+								newVideoSrc = 'files/video/landing-1/bs_landing_wdd_1440x810.mp4';
+							} else if (window.matchMedia('(min-width: 1439px) and (max-width: 1920px)').matches) {
+								newVideoSrc = 'files/video/landing-1/bs_landing_wdd_1920x1080.mp4';
+							} else if (window.matchMedia('(min-width: 1921px)').matches) {
+								newVideoSrc = 'files/video/landing-1/bs_landing_wdd_2560x1440.mp4';
+							} else {
+								newVideoSrc = 'files/video/landing-1/bs_landing_wdd_1440x810.mp4';
+							}
+
+							// Устанавливаем новый src, только если он отличается от текущего
+							if (video.src !== newVideoSrc) {
+								video.src = newVideoSrc;
+							}
+						}
+						window.addEventListener('load', setVideoSource);
+					</script>
 				</div>
 				<div class="separator">
 					<div class="separator__left"></div>
@@ -89,7 +104,7 @@
 					<div class="separator__right"></div>
 				</div>
 			</section>
-			<section class="gods" data-watch="navigator" data-watch-threshold="0.3">
+			<section class="gods _landing">
 				<div class="gods__heading">
 					<div class="__container">
 						<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInDown">
@@ -160,6 +175,52 @@
 					<div class="separator__right"></div>
 				</div>
 			</section>
+			<section class="landing-section">
+				<div class="landing-section__content">
+					<div class="landing-section__title">PvP и клановые сражения</div>
+					<div class="landing-section__text">Побеждай на уникальных аренах и веди свой клан к славе</div>
+					<div class="landing-section__button-wrapper" data-da=".landing-section__mobile-layout, 767">
+						<button class="landing-section__button button _size-m _fz-18">
+							<span class="button__text">
+								<span class="button__text-inner">
+									СКАЧАТЬ
+								</span>
+							</span>
+						</button>
+					</div>
+				</div>
+				<div class="landing-section__bg">
+					<video id="landing-section__bg-src" class="landing-section__bg-src" autoplay muted playsinline loop></video>
+					<script>
+						function setVideoSource() {
+							const video = document.getElementById('landing-section__bg-src');
+							if (!video) return; // Проверяем, есть ли элемент видео на странице
+
+							let newVideoSrc = ''; // Переменная для нового пути к видео
+
+							// Определяем новый путь к видео в зависимости от ширины экрана
+							if (window.matchMedia('(max-width: 767px)').matches) {
+								newVideoSrc = 'files/video/landing-1/bs_landing_fight_432x768.mp4';
+							} else if (window.matchMedia('(min-width: 768px) and (max-width: 1439px)').matches) {
+								newVideoSrc = 'files/video/landing-1/bs_landing_fight_1440x810.mp4';
+							} else if (window.matchMedia('(min-width: 1439px) and (max-width: 1920px)').matches) {
+								newVideoSrc = 'files/video/landing-1/bs_landing_fight_1920x1080.mp4';
+							} else if (window.matchMedia('(min-width: 1921px)').matches) {
+								newVideoSrc = 'files/video/landing-1/bs_landing_fight_2560x1440.mp4';
+							} else {
+								newVideoSrc = 'files/video/landing-1/bs_landing_fight_1440x810.mp4';
+							}
+
+							// Устанавливаем новый src, только если он отличается от текущего
+							if (video.src !== newVideoSrc) {
+								video.src = newVideoSrc;
+							}
+						}
+						window.addEventListener('load', setVideoSource);
+					</script>
+				</div>
+				<div class="landing-section__mobile-layout"></div>
+			</section>
 		</main>
 		<footer class="footer _type-2">
 			<div class="footer__container">
@@ -223,7 +284,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241113215505"></script>
+	<script src="js/app.min.js?_v=20241114220603"></script>
 </body>
 
 </html>

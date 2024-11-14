@@ -3783,6 +3783,20 @@
   font-weight: 100;
   font-style: italic
 }
+@font-face {
+  font-family: "Albertus Nova";
+  font-display: swap;
+  src: url(../fonts/albertusnova-Light.woff2) format("woff2");
+  font-weight: 300;
+  font-style: normal
+}
+@font-face {
+  font-family: "Albertus Nova";
+  font-display: swap;
+  src: url(../fonts/albertusnova-Regular.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal
+}
 * {
   padding: 0;
   margin: 0;
@@ -5118,7 +5132,6 @@ textarea {
   justify-content: center;
   gap: 6px;
   font-weight: 500;
-  line-height: 1.22;
   position: relative
 }
 .button__text-inner::after,
@@ -6328,6 +6341,16 @@ textarea {
 }
 ._portal .gods__item {
   height: 703px
+}
+.gods._landing {
+  background: url(../img/background/gods-2k.webp) center center/100% 100% no-repeat;
+  font-family: "Albertus Nova"
+}
+.gods._landing .gods__title {
+  margin-top: 0!important
+}
+.gods._landing .gods__item-text {
+  font-size: 21px
 }
 .classes {
   position: relative
@@ -9320,7 +9343,8 @@ textarea {
 }
 .landing-hero {
   position: relative;
-  height: 100dvh
+  height: calc(100dvh - 12px);
+  transition: all .3s ease-in-out
 }
 .landing-hero .__container {
   position: relative;
@@ -9330,13 +9354,13 @@ textarea {
   color: #dfc16a;
   font-family: "Albertus Nova";
   line-height: 1.2;
-  letter-spacing: .72px;
+  letter-spacing: .64px;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 0 16px;
   margin: 0 auto;
-  max-width: 940px;
   padding-top: 18px;
   position: relative;
   z-index: 1
@@ -9344,10 +9368,16 @@ textarea {
 .landing-hero__head-uptitle {
   font-size: 36px
 }
-.landing-hero__head-subtitle {
+.landing-hero__head-logo {
+  position: relative;
+  top: 4px
+}
+.landing-hero__head-logo-src {
   width: 100%;
-  font-size: 38px;
-  letter-spacing: .76px
+  height: auto
+}
+.landing-hero__head-subtitle {
+  font-size: 38px
 }
 .landing-hero__body {
   position: absolute;
@@ -9358,7 +9388,7 @@ textarea {
   top: 50%;
   -webkit-transform: translate(0,-50%);
   transform: translate(0,-50%);
-  background: url(../img/content/landing/body-bg.webp) 0 0 no-repeat
+  background: url(../img/pages/landing/body-bg.webp) 0 0/100% 100% no-repeat
 }
 .landing-hero__body-inner {
   position: relative;
@@ -9376,6 +9406,16 @@ textarea {
   line-height: 1.23;
   letter-spacing: .68px
 }
+.landing-hero__platforms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px
+}
+.landing-hero__platform-link img {
+  width: 100%;
+  height: auto
+}
 .landing-hero__body-button-wrapper {
   display: flex;
   justify-content: center
@@ -9389,7 +9429,7 @@ textarea {
 }
 .landing-hero__bg::after {
   content: "";
-  background: url(../img/content/landing/video-bg.webp) 0 0/100% 100% no-repeat;
+  background: url(../img/pages/landing/video-bg.webp) 0 0/100% 100% no-repeat;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -9400,8 +9440,69 @@ textarea {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
-  margin-left: 0
+  object-fit: cover
+}
+.landing-section {
+  position: relative;
+  height: calc(100dvh - 12px);
+  transition: all .3s ease-in-out
+}
+.landing-section__content {
+  background: url(../img/pages/landing/section-content-bg.webp) center center/100% 100% no-repeat;
+  position: absolute;
+  z-index: 1;
+  width: 938px;
+  height: 301px;
+  bottom: 64px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  padding: 45px 30px 40px;
+  text-align: center
+}
+.landing-section__title {
+  color: #dfc16a;
+  font-family: "Albertus Nova";
+  font-size: 44px;
+  line-height: 1.13;
+  letter-spacing: .88px;
+  margin-bottom: 16px
+}
+.landing-section__text {
+  color: #fff;
+  font-family: "Albertus Nova";
+  font-size: 29px;
+  font-weight: 300;
+  line-height: 1.37;
+  letter-spacing: .58px;
+  margin-bottom: 42px
+}
+.landing-section__button-wrapper {
+  display: flex;
+  justify-content: center
+}
+.landing-section__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+.landing-section__bg::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(../img/pages/landing/video-bg-2.webp) 0 0/100% 100% no-repeat
+}
+.landing-section__bg-src {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover
 }
 .swiper {
   overflow: hidden
@@ -9515,6 +9616,9 @@ textarea {
   }
   ._type-2 .footer__logo {
     margin-bottom: 2.25rem
+  }
+  .gods._landing {
+    padding-top: 4.6875rem
   }
   .error404 {
     font-size: 6.875rem
@@ -10737,6 +10841,43 @@ textarea {
   .class-section__img {
     height: 650px
   }
+  .landing-hero__head-uptitle {
+    font-size: 27px
+  }
+  .landing-hero__head-logo {
+    max-width: 300px
+  }
+  .landing-hero__head-subtitle {
+    font-size: 29px
+  }
+  .landing-hero__body {
+    width: 485px;
+    height: 246px;
+    padding: 20px 30px
+  }
+  .landing-hero__body-inner {
+    gap: 20px
+  }
+  .landing-hero__body-title {
+    font-size: 25px
+  }
+  .landing-hero__platforms {
+    gap: 8px
+  }
+  .landing-section__content {
+    width: 656px;
+    height: 211px;
+    bottom: 45px;
+    padding: 30px 15px 20px
+  }
+  .landing-section__title {
+    font-size: 31px;
+    margin-bottom: 12px
+  }
+  .landing-section__text {
+    font-size: 20px;
+    margin-bottom: 29px
+  }
 }
 @media (max-width:920px) {
   .class-icon__wrapper {
@@ -11240,7 +11381,7 @@ textarea {
   .gods__item-content {
     padding: 15px;
     position: absolute;
-    width: 60%;
+    width: 62%;
     right: 0;
     left: auto;
     transition: all .4s ease-in-out
@@ -11738,6 +11879,9 @@ textarea {
   }
   ._type-2 .footer__logo {
     margin-bottom: .75rem
+  }
+  .gods._landing {
+    padding-top: 1.875rem
   }
   .error404 {
     font-size: 2.875rem
@@ -12285,6 +12429,136 @@ textarea {
   .sitemap__group-link {
     font-size: 14px
   }
+  .landing-hero__head-uptitle {
+    font-size: 20px;
+    width: 100%;
+    text-align: center
+  }
+  .landing-hero__head-logo {
+    max-width: 100%;
+    width: 100%;
+    text-align: center
+  }
+  .landing-hero__head-logo-src {
+    max-width: 305px
+  }
+  .landing-hero__head-subtitle {
+    font-size: 22px;
+    max-width: 320px;
+    text-align: center
+  }
+  .landing-hero__body {
+    width: 100%;
+    height: 230px;
+    padding: 0 5px;
+    top: auto;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    bottom: 0;
+    left: 0;
+    background: 0 0
+  }
+  .landing-hero__body-inner {
+    gap: 12px
+  }
+  .landing-hero__body-title {
+    font-size: 20px;
+    font-weight: 300;
+    color: #dfc16a;
+    letter-spacing: .4px;
+    text-align: center;
+    order: 3;
+    padding: 20px 0 25px;
+    max-width: 340px;
+    margin: 0 auto
+  }
+  .landing-hero__platforms {
+    gap: 8px;
+    order: 2
+  }
+  .landing-hero__button {
+    width: 192px!important;
+    height: 42px!important;
+    font-size: 22px!important
+  }
+  .landing-hero__button .button__text::after,
+  .landing-hero__button .button__text::before {
+    width: 14px;
+    height: 14px
+  }
+  .landing-hero__bg::after {
+    content: "";
+    background: url(../img/pages/landing/video-bg-mobile.webp) 0 0/100% 100% no-repeat;
+    width: 100%;
+    height: 153px;
+    pointer-events: none
+  }
+  .landing-hero__bg::before {
+    content: "";
+    background: url(../img/pages/landing/video-bg-mobile.webp) 0 0/100% 100% no-repeat;
+    display: block;
+    width: 100%;
+    height: 153px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg)
+  }
+  .landing-section {
+    height: auto
+  }
+  .landing-section__content {
+    background: 0 0;
+    background: url(../img/pages/landing/mobile-top-bg.webp) center bottom -12px/100% 100% no-repeat;
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    bottom: auto;
+    padding: 39px 0 20px;
+    margin-top: -12px
+  }
+  .landing-section__title {
+    font-size: 22px;
+    margin-bottom: 0
+  }
+  .landing-section__text {
+    font-size: 22px;
+    max-width: 362px;
+    margin: 0 auto
+  }
+  .landing-section__bg {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: 432px;
+    box-shadow: 0 4px 8px 0 rgba(11,15,24,.4)
+  }
+  .landing-section__bg::after {
+    display: none
+  }
+  .landing-section__mobile-layout {
+    background: url(../img/pages/landing/mobile-bottom-bg.webp) bottom center/100% 100% no-repeat;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: -15px
+  }
+  .landing-section__button {
+    width: 192px!important;
+    height: 42px!important;
+    font-size: 22px!important
+  }
+  .landing-section__button .button__text::after,
+  .landing-section__button .button__text::before {
+    width: 14px;
+    height: 14px
+  }
 }
 @media (max-width:24.375em) {
   [class*=__container] {
@@ -12347,6 +12621,9 @@ textarea {
   }
   ._type-2 .footer__logo {
     margin-bottom: clamp(.75rem ,.3214285714rem + 2.1428571429vw ,2.25rem)
+  }
+  .gods._landing {
+    padding-top: clamp(1.875rem ,1.0714285714rem + 4.0178571429vw ,4.6875rem)
   }
   .error404 {
     font-size: clamp(2.875rem ,1.7321428571rem + 5.7142857143vw ,6.875rem)

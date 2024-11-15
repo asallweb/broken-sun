@@ -4644,7 +4644,7 @@
         if (window.matchMedia("(max-width: 767px)").matches) video.src = "files/video/gateSun_hd.mp4"; else if (window.matchMedia("(min-width: 768px) and (max-width: 1920px)").matches) video.src = "files/video/gateSun_fhd.mp4"; else video.src = "files/video/gateSun_fhd.mp4";
     }
     setVideoSource();
-    document.addEventListener("DOMContentLoaded", (function() {
+    window.addEventListener("load", (function() {
         function handleGodsItems() {
             const godsItems = document.querySelectorAll(".gods__item");
             if (godsItems.length > 0) godsItems.forEach((item => {

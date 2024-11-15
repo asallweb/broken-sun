@@ -6352,6 +6352,20 @@ textarea {
 .gods._landing .gods__item-text {
   font-size: 21px
 }
+.gods._landing .gods__background {
+  position: relative
+}
+.gods._landing .gods__background::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(180deg,rgba(0,0,0,.4) 0,rgba(0,0,0,0) 100%)
+}
 .classes {
   position: relative
 }
@@ -9617,8 +9631,11 @@ textarea {
   ._type-2 .footer__logo {
     margin-bottom: 2.25rem
   }
-  .gods._landing {
-    padding-top: 4.6875rem
+  .gods._landing .gods__heading {
+    padding-top: 4.5rem
+  }
+  .gods._landing .gods__heading {
+    padding-bottom: 4.6875rem
   }
   .error404 {
     font-size: 6.875rem
@@ -10513,6 +10530,9 @@ textarea {
     font-size: 18px;
     width: 100%
   }
+  .gods._landing .gods__item-text {
+    font-size: 18px
+  }
   .class__runes {
     max-width: 920px
   }
@@ -10746,6 +10766,63 @@ textarea {
   .counter__image-src {
     max-width: 485px
   }
+  .landing-hero__head-uptitle {
+    font-size: 27px
+  }
+  .landing-hero__head-logo {
+    max-width: 300px
+  }
+  .landing-hero__head-subtitle {
+    font-size: 29px
+  }
+  .landing-hero__body {
+    width: 485px;
+    height: 246px;
+    padding: 20px 30px
+  }
+  .landing-hero__body-inner {
+    gap: 20px
+  }
+  .landing-hero__body-title {
+    font-size: 25px
+  }
+  .landing-hero__platforms {
+    gap: 8px
+  }
+  .landing-hero__button {
+    width: 192px!important;
+    height: 42px!important;
+    font-size: 22px!important
+  }
+  .landing-hero__button .button__text::after,
+  .landing-hero__button .button__text::before {
+    width: 14px;
+    height: 14px
+  }
+  .landing-section__content {
+    width: 656px;
+    height: 211px;
+    bottom: 45px;
+    padding: 30px 15px 20px
+  }
+  .landing-section__title {
+    font-size: 31px;
+    margin-bottom: 12px
+  }
+  .landing-section__text {
+    font-size: 20px;
+    margin-bottom: 29px
+  }
+  .landing-section__button {
+    width: 192px!important;
+    height: 42px!important;
+    font-size: 22px!important
+  }
+  .landing-section__button .button__text::after,
+  .landing-section__button .button__text::before {
+    width: 14px;
+    height: 14px
+  }
 }
 @media (max-width:1080px) {
   .register__item {
@@ -10840,43 +10917,6 @@ textarea {
   }
   .class-section__img {
     height: 650px
-  }
-  .landing-hero__head-uptitle {
-    font-size: 27px
-  }
-  .landing-hero__head-logo {
-    max-width: 300px
-  }
-  .landing-hero__head-subtitle {
-    font-size: 29px
-  }
-  .landing-hero__body {
-    width: 485px;
-    height: 246px;
-    padding: 20px 30px
-  }
-  .landing-hero__body-inner {
-    gap: 20px
-  }
-  .landing-hero__body-title {
-    font-size: 25px
-  }
-  .landing-hero__platforms {
-    gap: 8px
-  }
-  .landing-section__content {
-    width: 656px;
-    height: 211px;
-    bottom: 45px;
-    padding: 30px 15px 20px
-  }
-  .landing-section__title {
-    font-size: 31px;
-    margin-bottom: 12px
-  }
-  .landing-section__text {
-    font-size: 20px;
-    margin-bottom: 29px
   }
 }
 @media (max-width:920px) {
@@ -11381,7 +11421,7 @@ textarea {
   .gods__item-content {
     padding: 15px;
     position: absolute;
-    width: 62%;
+    width: 60%;
     right: 0;
     left: auto;
     transition: all .4s ease-in-out
@@ -11399,6 +11439,9 @@ textarea {
   .gods__item-text::after,
   .gods__item-text::before {
     display: none
+  }
+  .gods._landing .gods__item-text {
+    font-size: 14px
   }
   .pvp::after,
   .pvp::before {
@@ -11880,8 +11923,11 @@ textarea {
   ._type-2 .footer__logo {
     margin-bottom: .75rem
   }
-  .gods._landing {
+  .gods._landing .gods__heading {
     padding-top: 1.875rem
+  }
+  .gods._landing .gods__heading {
+    padding-bottom: 1.875rem
   }
   .error404 {
     font-size: 2.875rem
@@ -12476,16 +12522,6 @@ textarea {
     gap: 8px;
     order: 2
   }
-  .landing-hero__button {
-    width: 192px!important;
-    height: 42px!important;
-    font-size: 22px!important
-  }
-  .landing-hero__button .button__text::after,
-  .landing-hero__button .button__text::before {
-    width: 14px;
-    height: 14px
-  }
   .landing-hero__bg::after {
     content: "";
     background: url(../img/pages/landing/video-bg-mobile.webp) 0 0/100% 100% no-repeat;
@@ -12548,16 +12584,6 @@ textarea {
     justify-content: center;
     position: relative;
     margin-top: -15px
-  }
-  .landing-section__button {
-    width: 192px!important;
-    height: 42px!important;
-    font-size: 22px!important
-  }
-  .landing-section__button .button__text::after,
-  .landing-section__button .button__text::before {
-    width: 14px;
-    height: 14px
   }
 }
 @media (max-width:24.375em) {
@@ -12622,8 +12648,11 @@ textarea {
   ._type-2 .footer__logo {
     margin-bottom: clamp(.75rem ,.3214285714rem + 2.1428571429vw ,2.25rem)
   }
-  .gods._landing {
-    padding-top: clamp(1.875rem ,1.0714285714rem + 4.0178571429vw ,4.6875rem)
+  .gods._landing .gods__heading {
+    padding-top: clamp(1.875rem ,1.125rem + 3.75vw ,4.5rem)
+  }
+  .gods._landing .gods__heading {
+    padding-bottom: clamp(1.875rem ,1.0714285714rem + 4.0178571429vw ,4.6875rem)
   }
   .error404 {
     font-size: clamp(2.875rem ,1.7321428571rem + 5.7142857143vw ,6.875rem)

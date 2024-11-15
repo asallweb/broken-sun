@@ -6347,7 +6347,14 @@ textarea {
   font-family: "Albertus Nova"
 }
 .gods._landing .gods__title {
-  margin-top: 0!important
+  margin-top: 0!important;
+  margin-bottom: 18px
+}
+.gods._landing .gods__title::after {
+  bottom: -10px
+}
+.gods._landing .gods__subtitle {
+  margin-bottom: 0
 }
 .gods._landing .gods__item-text {
   font-size: 21px
@@ -9471,7 +9478,7 @@ textarea {
   left: 50%;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  padding: 45px 30px 40px;
+  padding: 65px 30px 40px;
   text-align: center
 }
 .landing-section__title {
@@ -9480,7 +9487,7 @@ textarea {
   font-size: 44px;
   line-height: 1.13;
   letter-spacing: .88px;
-  margin-bottom: 16px
+  margin-bottom: 5px
 }
 .landing-section__text {
   color: #fff;
@@ -9489,7 +9496,7 @@ textarea {
   font-weight: 300;
   line-height: 1.37;
   letter-spacing: .58px;
-  margin-bottom: 42px
+  margin-bottom: 35px
 }
 .landing-section__button-wrapper {
   display: flex;
@@ -9636,6 +9643,12 @@ textarea {
   }
   .gods._landing .gods__heading {
     padding-bottom: 4.6875rem
+  }
+  .gods._landing .gods__title {
+    font-size: 2.75rem
+  }
+  .gods._landing .gods__subtitle {
+    font-size: 2.125rem
   }
   .error404 {
     font-size: 6.875rem
@@ -10803,15 +10816,14 @@ textarea {
     width: 656px;
     height: 211px;
     bottom: 45px;
-    padding: 30px 15px 20px
+    padding: 40px 15px 20px
   }
   .landing-section__title {
-    font-size: 31px;
-    margin-bottom: 12px
+    font-size: 31px
   }
   .landing-section__text {
     font-size: 20px;
-    margin-bottom: 29px
+    margin-bottom: 22px
   }
   .landing-section__button {
     width: 192px!important;
@@ -11929,6 +11941,12 @@ textarea {
   .gods._landing .gods__heading {
     padding-bottom: 1.875rem
   }
+  .gods._landing .gods__title {
+    font-size: 1.375rem
+  }
+  .gods._landing .gods__subtitle {
+    font-size: 1.25rem
+  }
   .error404 {
     font-size: 2.875rem
   }
@@ -12561,8 +12579,8 @@ textarea {
     margin-bottom: 0
   }
   .landing-section__text {
-    font-size: 22px;
-    max-width: 362px;
+    font-size: 20px;
+    max-width: 345px;
     margin: 0 auto
   }
   .landing-section__bg {
@@ -12653,6 +12671,12 @@ textarea {
   }
   .gods._landing .gods__heading {
     padding-bottom: clamp(1.875rem ,1.0714285714rem + 4.0178571429vw ,4.6875rem)
+  }
+  .gods._landing .gods__title {
+    font-size: clamp(1.375rem ,.9821428571rem + 1.9642857143vw ,2.75rem)
+  }
+  .gods._landing .gods__subtitle {
+    font-size: clamp(1.25rem ,1rem + 1.25vw ,2.125rem)
   }
   .error404 {
     font-size: clamp(2.875rem ,1.7321428571rem + 5.7142857143vw ,6.875rem)

@@ -1,0 +1,16 @@
+<svg width="118" height="118" viewBox="0 0 118 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="&#209;&#131;&#208;&#183;&#208;&#190;&#209;&#128;_&#208;&#155;">
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M2 118H0V18H8V10H0V7.03335e-06H10V8.00001H18V7.03335e-06H118V2.00001H20V10H10V20H2V118ZM8 2.00001V8.00001H2V2.00001H8Z" fill="url(#paint0_linear_6346_27630)"/>
+<path id="Union_2" fill-rule="evenodd" clip-rule="evenodd" d="M10 118H8V26H16V18H8V8.00001H18V16H26V8.00001H118V10H28V18H18V28H10V118ZM16 10V16H10V10H16Z" fill="url(#paint1_linear_6346_27630)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_6346_27630" x1="59.0009" y1="59" x2="0.000927756" y2="-4.62657e-05" gradientUnits="userSpaceOnUse">
+<stop offset="0.162853" stop-color="#433421" stop-opacity="0"/>
+<stop offset="1" stop-color="#433421"/>
+</linearGradient>
+<linearGradient id="paint1_linear_6346_27630" x1="55.001" y1="54.9998" x2="8.00102" y2="7.9998" gradientUnits="userSpaceOnUse">
+<stop stop-color="#776030" stop-opacity="0"/>
+<stop offset="1" stop-color="#776030"/>
+</linearGradient>
+</defs>
+</svg>

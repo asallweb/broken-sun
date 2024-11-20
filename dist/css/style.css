@@ -9904,8 +9904,7 @@ textarea {
 }
 .about-features__switcher-item._active,
 .about-features__switcher-item:hover {
-  color: #f9df94;
-  background: url(../img/pages/about-game/animated-bg.webp) center center/cover no-repeat
+  color: #f9df94
 }
 .about-features__switcher-item._active::after,
 .about-features__switcher-item:hover::after {

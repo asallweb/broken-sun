@@ -5670,7 +5670,6 @@ textarea {
   text-align: right;
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.5;
   width: 154px;
   height: 40px;
   padding-right: 30px;
@@ -6102,8 +6101,7 @@ textarea {
   margin-left: 0
 }
 .hero {
-  position: relative;
-  margin-bottom: 10px
+  position: relative
 }
 .hero__background {
   width: 100vw;
@@ -6130,7 +6128,7 @@ textarea {
 }
 .hero__logo {
   position: absolute;
-  top: 44px;
+  top: 47px;
   left: 50%;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
@@ -6253,6 +6251,24 @@ textarea {
 .hero .intro-video._video-active {
   opacity: 1;
   visibility: visible
+}
+._portal .hero__logo-title {
+  top: 76%;
+  color: #ffc260;
+  text-shadow: 0 3px 6px rgba(0,0,0,.8)
+}
+._portal .hero__logo-title::before {
+  content: "";
+  background: radial-gradient(42.58% 50% at 50% 50%,rgba(0,0,0,.6) 27.24%,rgba(0,0,0,0) 64.69%);
+  position: absolute;
+  width: 597px;
+  height: 88px;
+  display: block;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: -1
 }
 .world {
   position: relative
@@ -6410,8 +6426,7 @@ textarea {
 }
 .gods__heading {
   position: relative;
-  padding-bottom: 24px;
-  margin-bottom: 6px
+  padding-bottom: 24px
 }
 .gods__title {
   color: #f9df94;
@@ -6421,7 +6436,6 @@ textarea {
   text-shadow: 0 3px 3px rgba(0,0,0,.25);
   padding-bottom: 6px;
   margin-bottom: 16px;
-  margin-top: 86px;
   position: relative
 }
 .gods__title::after {
@@ -6443,7 +6457,23 @@ textarea {
   line-height: 1.36;
   text-align: center;
   width: 100%;
+  max-width: 1140px;
   margin: 0 auto
+}
+.gods__background {
+  position: relative;
+  background: url(../img/background/gods/gods-2k.webp) center center/100% 100% no-repeat
+}
+.gods__background::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(180deg,rgba(0,0,0,.4) 0,rgba(0,0,0,0) 100%)
 }
 .gods__wrapper {
   max-width: 1440px;
@@ -6451,7 +6481,7 @@ textarea {
   margin: 0 auto
 }
 .gods__list {
-  background: url(../img/background/gods.webp) 0 0 no-repeat;
+  background: url(../img/background/gods/gods.webp) 0 0 no-repeat;
   background-size: 100% 100%;
   display: flex;
   position: relative
@@ -6549,15 +6579,16 @@ textarea {
   top: auto;
   bottom: 0
 }
+._portal .gods__heading {
+  background: url(../img/background/gods/gods-heading.webp) 0 0/100% 100% no-repeat
+}
 ._portal .gods__item {
   height: 703px
 }
 .gods._landing {
-  background: url(../img/background/gods-2k.webp) center center/100% 100% no-repeat;
   font-family: "Albertus Nova"
 }
 .gods._landing .gods__title {
-  margin-top: 0!important;
   margin-bottom: 18px
 }
 .gods._landing .gods__title::after {
@@ -6568,20 +6599,6 @@ textarea {
 }
 .gods._landing .gods__item-text {
   font-size: 21px
-}
-.gods._landing .gods__background {
-  position: relative
-}
-.gods._landing .gods__background::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  background: linear-gradient(180deg,rgba(0,0,0,.4) 0,rgba(0,0,0,0) 100%)
 }
 .classes {
   position: relative
@@ -6711,8 +6728,7 @@ textarea {
 .class__content {
   position: relative;
   z-index: 1;
-  max-width: 490px;
-  margin-left: 8.5%;
+  max-width: 555px;
   margin-top: 28.5%
 }
 .class__name {
@@ -6727,7 +6743,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 56px;
-  margin-bottom: 55px
+  margin-bottom: 45px
 }
 .class__title {
   color: #f9df94;
@@ -6784,21 +6800,22 @@ textarea {
 ._bg-mage .class__image {
   right: -10%
 }
-._portal .class__body {
-  height: 730px
-}
-._portal .class__content {
-  margin-top: 80px
-}
-._portal .class__image {
-  bottom: -200px;
-  right: -14%
-}
 .class__image-src {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
   object-fit: cover
+}
+.class._type-2 .class__body {
+  height: 730px
+}
+.class._type-2 .class__content {
+  margin-top: 0;
+  padding-top: 70px
+}
+.class._type-2 .class__image {
+  bottom: -200px;
+  right: -14%
 }
 .pvp {
   height: calc(50vh - 38px);
@@ -6897,7 +6914,7 @@ textarea {
   margin: 0 auto;
   max-width: 510px;
   width: 100%;
-  margin-top: 16vh;
+  margin-top: 13vh;
   left: 50%;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0)
@@ -7048,8 +7065,7 @@ textarea {
   display: block;
   width: 100%;
   height: 100%;
-  background: url(../img/background/media/media__border.svg) 0 0 no-repeat;
-  background-size: 100% 100%
+  background: url(../img/background/media/media__border.svg) 0 0/100% 100% no-repeat
 }
 .media__main-slide img,
 .media__main-slide video {
@@ -7058,6 +7074,9 @@ textarea {
   -o-object-fit: cover;
   object-fit: cover;
   clip-path: polygon(1.6% 0,98.4% 0,100% 2.9%,100% 97.6%,98.4% 100%,1.4% 100%,0 97.6%,0 2.9%)
+}
+._portal .media__main-slide::before {
+  background: url(../img/background/media/media__border.webp) 0 0/100% 100% no-repeat
 }
 .media__thumb-slide {
   padding: 6px 4px 14px 4px;
@@ -7169,7 +7188,7 @@ textarea {
   transform: translate(-50%,0)
 }
 .platform__image-src {
-  max-width: 607px;
+  max-width: 752px;
   width: 100%;
   height: auto;
   -o-object-fit: cover;
@@ -9988,6 +10007,43 @@ textarea {
   width: 100%;
   height: auto
 }
+.portal-news {
+  position: relative;
+  background: url(../img/background/portal-news/back.webp) center center/100% 100% no-repeat
+}
+.portal-news__wrapper {
+  background: url(../img/background/portal-news/ornament.webp) center center no-repeat;
+  padding: 37px 0
+}
+.portal-news__list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 33px
+}
+.portal-news__item {
+  color: #000;
+  font-weight: 300;
+  line-height: 1.27
+}
+.portal-news__image {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin-bottom: 16px
+}
+.portal-news__img {
+  width: 100%;
+  height: auto;
+  transition: all .3s ease-in-out
+}
+.portal-news__item:hover .portal-news__img {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2)
+}
+.portal-news__title {
+  text-align: center
+}
 .swiper {
   overflow: hidden
 }
@@ -10033,9 +10089,6 @@ textarea {
   ._portal .platform {
     padding-top: 95px;
     padding-bottom: 35px
-  }
-  ._portal .platform__image-src {
-    max-width: 544px
   }
 }
 @media (min-width:1201px) {
@@ -10101,8 +10154,8 @@ textarea {
   ._type-2 .footer__logo {
     margin-bottom: 2.25rem
   }
-  .gods._landing .gods__heading {
-    padding-top: 4.5rem
+  .gods__heading {
+    padding-top: 4.6875rem
   }
   .gods._landing .gods__heading {
     padding-bottom: 4.6875rem
@@ -10232,10 +10285,6 @@ textarea {
   }
 }
 @media (min-width:1440px) {
-  .gods__background {
-    background: url(../img/background/gods-2k.webp) center center no-repeat;
-    background-size: cover
-  }
   .counter::before {
     background: url(../img/background/counter/counter_2k.webp) 0 0 no-repeat
   }
@@ -10596,6 +10645,83 @@ textarea {
     left: 44.7%;
     top: 12%
   }
+  .class__runes {
+    max-width: 920px
+  }
+  .class__runes-center {
+    width: 156px
+  }
+  .class__runes-center img {
+    max-height: 150px;
+    max-width: 150px
+  }
+  .class__runes-circle-1 {
+    width: 494px;
+    height: 494px
+  }
+  .class__runes-circle-2 {
+    left: 5%;
+    bottom: 5%;
+    width: 250px;
+    height: 250px
+  }
+  .class__runes-circle-3 {
+    right: 8%;
+    bottom: 1%;
+    width: 244px;
+    height: 244px
+  }
+  .class__body {
+    height: 710px
+  }
+  .class__content {
+    max-width: 420px;
+    margin-top: 50px
+  }
+  .class__name {
+    font-size: 26px;
+    line-height: 1.23;
+    text-shadow: 0 3px 3px rgba(0,0,0,.25);
+    margin-bottom: 24px
+  }
+  .class__list {
+    margin-bottom: 50px
+  }
+  .class__title {
+    font-size: 22px;
+    line-height: 1.36
+  }
+  .class__text {
+    font-size: 18px;
+    line-height: 1.22;
+    margin-bottom: 32px
+  }
+  .class__roles-title {
+    line-height: 1.36
+  }
+  .class__roles-item {
+    font-size: 18px;
+    line-height: 1.22
+  }
+  .class__roles-item img {
+    width: 48px;
+    height: auto;
+    -o-object-fit: cover;
+    object-fit: cover
+  }
+  .class__image {
+    right: -3%
+  }
+  .class._type-2 .class__body {
+    height: 600px
+  }
+  .class._type-2 .class__content {
+    padding-top: 50px
+  }
+  .class._type-2 .class__image {
+    bottom: -100px;
+    right: -4%
+  }
   .class-hero__content {
     font-size: 18px;
     line-height: 1.22
@@ -10742,6 +10868,15 @@ textarea {
   }
   .sitemap__group-link {
     font-size: 18px
+  }
+  .portal-news__list {
+    gap: 20px
+  }
+  .portal-news__item {
+    font-size: 18px
+  }
+  .portal-news__image {
+    margin-bottom: 8px
   }
 }
 @media (max-width:1440px) and (any-hover:none) {
@@ -10924,8 +11059,8 @@ textarea {
     height: 34px
   }
   .button._size-l {
-    width: 147px;
-    height: 34px
+    width: 155px;
+    height: 36px
   }
   .button._size-m {
     width: 130px;
@@ -11098,84 +11233,6 @@ textarea {
   }
   .gods._landing .gods__item-text {
     font-size: 18px
-  }
-  .class__runes {
-    max-width: 920px
-  }
-  .class__runes-center {
-    width: 156px
-  }
-  .class__runes-center img {
-    max-height: 150px;
-    max-width: 150px
-  }
-  .class__runes-circle-1 {
-    width: 494px;
-    height: 494px
-  }
-  .class__runes-circle-2 {
-    left: 5%;
-    bottom: 5%;
-    width: 250px;
-    height: 250px
-  }
-  .class__runes-circle-3 {
-    right: 8%;
-    bottom: 1%;
-    width: 244px;
-    height: 244px
-  }
-  .class__body {
-    height: 710px
-  }
-  .class__content {
-    max-width: 360px;
-    margin-left: 8.5%;
-    margin-top: 50px
-  }
-  .class__name {
-    font-size: 26px;
-    line-height: 1.23;
-    text-shadow: 0 3px 3px rgba(0,0,0,.25);
-    margin-bottom: 24px
-  }
-  .class__list {
-    margin-bottom: 50px
-  }
-  .class__title {
-    font-size: 22px;
-    line-height: 1.36
-  }
-  .class__text {
-    font-size: 18px;
-    line-height: 1.22;
-    margin-bottom: 32px
-  }
-  .class__roles-title {
-    line-height: 1.36
-  }
-  .class__roles-item {
-    font-size: 18px;
-    line-height: 1.22
-  }
-  .class__roles-item img {
-    width: 48px;
-    height: auto;
-    -o-object-fit: cover;
-    object-fit: cover
-  }
-  .class__image {
-    right: -3%
-  }
-  ._portal .class__body {
-    height: 600px
-  }
-  ._portal .class__content {
-    margin-top: 50px
-  }
-  ._portal .class__image {
-    bottom: -100px;
-    right: -4%
   }
   .pvp__content {
     max-width: 357px;
@@ -11503,6 +11560,80 @@ textarea {
   .scroll-up {
     display: none
   }
+  .hero__logo {
+    top: 58px;
+    max-width: 288px
+  }
+  .hero__logo-title {
+    font-size: 14px
+  }
+  ._eng .hero__logo-title {
+    font-size: 12px
+  }
+  .hero__bottom {
+    bottom: 82px
+  }
+  .hero__folowus {
+    right: -70px
+  }
+  .hero__folowus-text {
+    font-size: 18px;
+    padding-right: 14px
+  }
+  .hero__folowus-text::after {
+    top: -4px
+  }
+  .hero__folowus-list {
+    gap: 10px;
+    padding-left: 14px
+  }
+  .hero__folowus-link {
+    width: 16px;
+    height: 16px
+  }
+  .hero__folowus-link svg.non-hovered {
+    width: 16px;
+    height: auto
+  }
+  .hero__folowus-link svg.hovered {
+    width: 21px;
+    height: auto
+  }
+  .class__runes {
+    max-width: 768px
+  }
+  .class__runes-circle-2 {
+    left: 1%;
+    bottom: 5%;
+    width: 208px;
+    height: 208px
+  }
+  .class__runes-circle-3 {
+    right: 3%;
+    width: 202px;
+    height: 202px
+  }
+  .class__content {
+    max-width: 360px
+  }
+  .class__name {
+    margin-bottom: 24px
+  }
+  .class__list {
+    gap: 44px;
+    margin-bottom: 25px
+  }
+  .class__title {
+    margin-bottom: 5px
+  }
+  .class__text {
+    font-size: 16px;
+    margin-bottom: 18px
+  }
+  .class__roles-item {
+    font-size: 16px;
+    line-height: 1.25
+  }
   .register__image-wrapper {
     right: -160px
   }
@@ -11593,47 +11724,17 @@ textarea {
   .about-hero__text-image {
     width: 280px
   }
+  .portal-news__list {
+    gap: 18px
+  }
+  .portal-news__item {
+    font-size: 16px
+  }
+  .portal-news__image {
+    margin-bottom: 6px
+  }
 }
 @media (max-width:919px) {
-  .hero__logo {
-    top: 58px;
-    max-width: 288px
-  }
-  .hero__logo-title {
-    font-size: 14px
-  }
-  ._eng .hero__logo-title {
-    font-size: 12px
-  }
-  .hero__bottom {
-    bottom: 82px
-  }
-  .hero__folowus {
-    right: -70px
-  }
-  .hero__folowus-text {
-    font-size: 18px;
-    padding-right: 14px
-  }
-  .hero__folowus-text::after {
-    top: -4px
-  }
-  .hero__folowus-list {
-    gap: 10px;
-    padding-left: 14px
-  }
-  .hero__folowus-link {
-    width: 16px;
-    height: 16px
-  }
-  .hero__folowus-link svg.non-hovered {
-    width: 16px;
-    height: auto
-  }
-  .hero__folowus-link svg.hovered {
-    width: 21px;
-    height: auto
-  }
   .world__content {
     left: 20px;
     -webkit-transform: translate(0,-50%);
@@ -11681,40 +11782,6 @@ textarea {
   }
   ._active .gods__item-content {
     bottom: 0!important
-  }
-  .class__runes {
-    max-width: 768px
-  }
-  .class__runes-circle-2 {
-    left: 1%;
-    bottom: 5%;
-    width: 208px;
-    height: 208px
-  }
-  .class__runes-circle-3 {
-    right: 3%;
-    width: 202px;
-    height: 202px
-  }
-  .class__content {
-    margin-left: 0
-  }
-  .class__name {
-    margin-bottom: 24px
-  }
-  .class__list {
-    gap: 44px;
-    margin-bottom: 25px
-  }
-  .class__title {
-    margin-bottom: 5px
-  }
-  .class__text {
-    margin-bottom: 18px
-  }
-  .class__roles-item {
-    font-size: 16px;
-    line-height: 1.25
   }
   .pvp__content {
     margin-left: 0
@@ -11987,7 +12054,7 @@ textarea {
     margin: 0 auto 13px
   }
   .gods__list {
-    background: url(../img/background/gods-mobile.webp) center center no-repeat;
+    background: url(../img/background/gods/gods-mobile.webp) center center no-repeat;
     background-size: cover;
     height: 530px;
     flex-direction: column
@@ -12079,8 +12146,7 @@ textarea {
     max-width: 340px;
     margin: 0 auto 62px;
     font-size: 14px;
-    line-height: 1.28;
-    text-align: left
+    line-height: 1.28
   }
   .counter {
     height: auto
@@ -12329,103 +12395,6 @@ textarea {
     left: 90.5%;
     top: 25px
   }
-  .class__runes {
-    max-width: 390px;
-    left: 0;
-    top: 0;
-    -webkit-transform: translate(0,0);
-    transform: translate(0,0)
-  }
-  .class__runes-center {
-    width: 112px;
-    left: 70px;
-    top: 50%;
-    -webkit-transform: translate(0,-50%);
-    transform: translate(0,-50%)
-  }
-  .class__runes-circle-1 {
-    width: 350px;
-    height: 350px;
-    left: -50px;
-    top: 50%;
-    -webkit-transform: translate(0,-50%);
-    transform: translate(0,-50%)
-  }
-  .class__runes-circle-2 {
-    left: auto;
-    bottom: auto;
-    right: 0;
-    top: 5%;
-    width: 160px
-  }
-  .class__runes-circle-3 {
-    right: -14%;
-    bottom: 10%;
-    width: 160px
-  }
-  .class__body {
-    align-items: flex-start
-  }
-  .class__content {
-    height: 100%;
-    max-width: 100%;
-    padding-right: 10px
-  }
-  .class__name {
-    font-size: 22px;
-    line-height: 1.36;
-    margin-bottom: 16px
-  }
-  .class__list {
-    margin-bottom: 0;
-    position: absolute;
-    bottom: 70px;
-    left: 50%;
-    -webkit-transform: translate(-50%,0);
-    transform: translate(-50%,0);
-    gap: 54px
-  }
-  .class__title {
-    font-size: 18px;
-    line-height: 1.22
-  }
-  .class__text {
-    font-size: 14px;
-    line-height: 1.28;
-    margin-bottom: 16px
-  }
-  .class__content-button {
-    margin-left: 0
-  }
-  .class__roles-list {
-    flex-direction: column-reverse;
-    gap: 16px
-  }
-  .class__roles-title {
-    font-size: 18px;
-    line-height: 1.22;
-    padding-bottom: 2px;
-    margin-bottom: 16px
-  }
-  .class__roles-title::after {
-    width: 86px
-  }
-  .class__roles-item {
-    width: 64px;
-    font-size: 14px;
-    line-height: 1.28;
-    gap: 2px
-  }
-  .class__roles-item img {
-    width: 32px
-  }
-  ._portal .class__image {
-    bottom: -40px;
-    right: -10%
-  }
-  ._portal .class._bg-mage .class__image {
-    right: -20%
-  }
 }
 @media (max-width:500px) {
   .awards {
@@ -12455,11 +12424,17 @@ textarea {
   }
 }
 @media (max-width:450px) {
+  .platform .__container {
+    padding: 0
+  }
   .platform__wrapper {
     background-size: 550px auto
   }
   .platform__image-wrapper {
     width: 100%
+  }
+  .platform .hero__platforms {
+    padding: 0 10px
   }
 }
 @media (max-width:400px) {
@@ -12514,7 +12489,7 @@ textarea {
   ._type-2 .footer__logo {
     margin-bottom: .75rem
   }
-  .gods._landing .gods__heading {
+  .gods__heading {
     padding-top: 1.875rem
   }
   .gods._landing .gods__heading {
@@ -12745,6 +12720,117 @@ textarea {
   ._type-2 .footer__text-right {
     width: auto
   }
+  .class__runes {
+    max-width: 390px;
+    left: 0;
+    top: 0;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
+  }
+  .class__runes-center {
+    width: 112px;
+    left: 70px;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%)
+  }
+  .class__runes-circle-1 {
+    width: 350px;
+    height: 350px;
+    left: -50px;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%)
+  }
+  .class__runes-circle-2 {
+    left: auto;
+    bottom: auto;
+    right: 0;
+    top: 5%;
+    width: 160px
+  }
+  .class__runes-circle-3 {
+    right: -14%;
+    bottom: 10%;
+    width: 160px
+  }
+  .class__body {
+    align-items: flex-start
+  }
+  .class__content {
+    height: 100%;
+    max-width: 100%;
+    padding-right: 10px
+  }
+  .class__name {
+    font-size: 22px;
+    line-height: 1.36;
+    margin-bottom: 16px
+  }
+  .class__list {
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    gap: 54px
+  }
+  .class__title {
+    font-size: 18px;
+    line-height: 1.22
+  }
+  .class__text {
+    font-size: 14px;
+    line-height: 1.28;
+    margin-bottom: 8px
+  }
+  .class__content-button {
+    margin-left: 0
+  }
+  .class__roles-list {
+    flex-direction: column-reverse;
+    gap: 16px
+  }
+  .class__roles-title {
+    font-size: 18px;
+    line-height: 1.22;
+    padding-bottom: 2px;
+    margin-bottom: 16px
+  }
+  .class__roles-title::after {
+    width: 86px
+  }
+  .class__roles-item {
+    width: 64px;
+    font-size: 14px;
+    line-height: 1.28;
+    gap: 2px
+  }
+  .class__roles-item img {
+    width: 32px
+  }
+  .class._type-2 .class__body {
+    height: 650px
+  }
+  .class._type-2 .class__content {
+    max-width: 240px
+  }
+  .class._type-2 .class__list {
+    bottom: 40px;
+    left: 0;
+    -webkit-transform: none;
+    transform: none;
+    gap: 32px
+  }
+  .class._type-2 .class__image {
+    bottom: 0;
+    right: auto;
+    left: -15px
+  }
+  .class._type-2 .class__content-button {
+    display: none
+  }
   .register__item-image {
     text-align: center
   }
@@ -12874,6 +12960,49 @@ textarea {
   .character._height-640 .character__title {
     display: block;
     font-size: 20px
+  }
+  .character._type-2 {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 0;
+    width: 120px
+  }
+  .character._type-2 .character__list {
+    flex-direction: column
+  }
+  .character._type-2 .character__item {
+    width: 100%;
+    height: 66px
+  }
+  .character._type-2 .character__item::before {
+    left: 0;
+    top: 0;
+    height: 2px;
+    width: 100%
+  }
+  .character._type-2 .character__item::after {
+    content: "";
+    display: none
+  }
+  .character._type-2 .character__image {
+    display: none
+  }
+  .character._type-2 .character__name {
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    padding: 8px
+  }
+  .character._type-2 .character__icon {
+    -webkit-transform: scale(.7);
+    transform: scale(.7);
+    margin-top: -12px
+  }
+  .character._type-2 .character__title {
+    display: block;
+    font-size: 20px;
+    margin-top: -8px
   }
   .presskit-hero {
     height: 100vh
@@ -13276,6 +13405,14 @@ textarea {
     -webkit-transform: scale(.7);
     transform: scale(.7)
   }
+  .portal-news__wrapper {
+    background: url(../img/background/portal-news/ornament-mobile.webp) center center/100% auto no-repeat;
+    padding: 37px 25px
+  }
+  .portal-news__list {
+    flex-direction: column;
+    align-items: center
+  }
 }
 @media (max-width:24.375em) {
   [class*=__container] {
@@ -13339,8 +13476,8 @@ textarea {
   ._type-2 .footer__logo {
     margin-bottom: clamp(.75rem ,.3214285714rem + 2.1428571429vw ,2.25rem)
   }
-  .gods._landing .gods__heading {
-    padding-top: clamp(1.875rem ,1.125rem + 3.75vw ,4.5rem)
+  .gods__heading {
+    padding-top: clamp(1.875rem ,1.0714285714rem + 4.0178571429vw ,4.6875rem)
   }
   .gods._landing .gods__heading {
     padding-bottom: clamp(1.875rem ,1.0714285714rem + 4.0178571429vw ,4.6875rem)

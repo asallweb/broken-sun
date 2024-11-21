@@ -6,9 +6,9 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241120194105">
-	<script src="files/js/preloader.js?_v=20241120194105"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241120194105">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241121103309">
+	<script src="files/js/preloader.js?_v=20241121103309"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241121103309">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -241,7 +241,18 @@
 			</div>
 		</header>
 		<main class="page">
-			<section class="about-hero">
+			<div class="section-pagination">
+				<button class="section-pagination__item" data-goto="#about-hero">1</button>
+				<button class="section-pagination__item" data-goto="#about-1">2</button>
+				<button class="section-pagination__item" data-goto=".classes">3</button>
+				<button class="section-pagination__item" data-goto="#about-2">4</button>
+			</div>
+			<button class="scroll-up" data-goto="#about-hero">
+				<svg>
+					<use xlink:href="img/icons/icons.svg#scroll-down"></use>
+				</svg>
+			</button>
+			<section class="about-hero" id="about-hero" data-watch="navigator">
 				<div class="about-hero__wrapper __container">
 					<div class="about-hero__content">
 						<div class="about-hero__title">История мира</div>
@@ -265,7 +276,7 @@
 					<img src="img/pages/about-game/hero-bg.webp" class="about-hero__back-img">
 				</div>
 			</section>
-			<section class="about-features">
+			<section class="about-features" id="about-1" data-watch="navigator">
 				<div class="about-features__item _active" id="pvp">
 					<div class="about-features__back">
 						<img src="img/pages/about-game/about-features__back-1.webp" class="about-features__back-img">
@@ -276,12 +287,12 @@
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper">
-								<div class="about-features__content-inner _with-video">
+								<div class="about-features__content-inner _with-media">
 									<div class="about-features__title">PvP арена</div>
 									<div class="about-features__subtitle">до 500 игроков в бою</div>
 									<div class="about-features__text">Опробуйте уникальную боевую систему, которая позволяет настроить персонажа под любой стиль игры. Используйте сильные стороны игровых классов, чтобы побеждать в эпических сражениях.</div>
 								</div>
-								<div class="about-features__content-video">
+								<div class="about-features__content-media about-features__content-video">
 									<video src="files/video/gateSun_fhd.mp4" poster="img/pages/about-game/video-poster.webp"></video>
 									<button class="video-wrapper__play-btn" aria-label="Play"></button>
 								</div>
@@ -343,11 +354,11 @@
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper">
-								<div class="about-features__content-inner _with-video">
+								<div class="about-features__content-inner _with-media">
 									<div class="about-features__subtitle">В Broken Sun вас ожидают 200 часов увлекательных квестов, распределенных по зонам открытого мира</div>
 									<div class="about-features__text">Исследуя их, вы также сможете найти уникальные подземелья, внутри которых вам встретятся опасные противники, уникальные враги и щедрые награды.</div>
 								</div>
-								<div class="about-features__content-video">
+								<div class="about-features__content-media about-features__content-video">
 									<video src="files/video/gateSun_fhd.mp4" poster="img/pages/about-game/video-poster.webp"></video>
 									<button class="video-wrapper__play-btn" aria-label="Play"></button>
 								</div>
@@ -409,13 +420,12 @@
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper _coming-soon">
-								<div class="about-features__content-inner _with-video">
+								<div class="about-features__content-inner _with-media">
 									<div class="about-features__subtitle">Экономика, которую формируют игроки</div>
 									<div class="about-features__text">Изготавливайте предметы при помощи специальных профессий, чтобы продавать их на аукционе, обмениваться или передавать участникам своего клана. В Broken Sun экономику определяют сами игроки!</div>
 								</div>
-								<div class="about-features__content-video">
-									<video src="files/video/gateSun_fhd.mp4" poster="img/pages/about-game/video-poster.webp"></video>
-									<button class="video-wrapper__play-btn" aria-label="Play"></button>
+								<div class="about-features__content-media">
+									<img src="img/pages/about-game/about-features__content-1.webp" class="about-features__content-media-img">
 								</div>
 								<div class="about-features__content-coming-soon">
 									coming soon
@@ -478,19 +488,19 @@
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper _coming-soon">
-								<div class="about-features__content-inner _with-video">
+								<div class="about-features__content-inner _with-media">
 									<div class="about-features__subtitle">Жить в мире или в сражении?</div>
 									<div class="about-features__text">
 										Создавай кланы, сражайся, торгуй, договаривайся
 										<ul>
 											<li>Создайте клан с уникальным гербом или вступайте в уже существующий. Развивайте клан, чтобы к нему могли присоединиться 50 и даже 100 человек!</li>
 											<li>Участвуйте в особых клановых событиях и объединяйтесь с товарищами для групповых походов в подземелья.</li>
+											<li>Социальные взаимодействия в Broken Sun не ограничиваются кланами.</li>
 										</ul>
 									</div>
 								</div>
-								<div class="about-features__content-video">
-									<video src="files/video/gateSun_fhd.mp4" poster="img/pages/about-game/video-poster.webp"></video>
-									<button class="video-wrapper__play-btn" aria-label="Play"></button>
+								<div class="about-features__content-media">
+									<img src="img/pages/about-game/about-features__content-2.webp" class="about-features__content-media-img">
 								</div>
 								<div class="about-features__content-coming-soon">
 									coming soon
@@ -553,7 +563,7 @@
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper _coming-soon">
-								<div class="about-features__content-inner _with-video">
+								<div class="about-features__content-inner _with-media">
 									<div class="about-features__subtitle">Создавай предметы и бери их в сражения или продавай</div>
 									<div class="about-features__text">
 										<ul>
@@ -562,9 +572,8 @@
 										</ul>
 									</div>
 								</div>
-								<div class="about-features__content-video">
-									<video src="files/video/gateSun_fhd.mp4" poster="img/pages/about-game/video-poster.webp"></video>
-									<button class="video-wrapper__play-btn" aria-label="Play"></button>
+								<div class="about-features__content-media">
+									<img src="img/pages/about-game/about-features__content-3.webp" class="about-features__content-media-img">
 								</div>
 								<div class="about-features__content-coming-soon">
 									coming soon
@@ -940,7 +949,7 @@
 					<div class="separator__right"></div>
 				</div>
 			</section>
-			<section class="about-features">
+			<section class="about-features" id="about-2" data-watch="navigator">
 				<div class="about-features__item _active" id="platforms">
 					<div class="about-features__back">
 						<img src="img/pages/about-game/about-features__back-6.webp" class="about-features__back-img">
@@ -1208,7 +1217,7 @@
 						});
 					});
 
-					document.querySelectorAll('.about-features__content-video').forEach((block) => {
+					document.querySelectorAll('about-features__content-video').forEach((block) => {
 						const video = block.querySelector('video');
 						const playButton = block.querySelector('.video-wrapper__play-btn');
 
@@ -1295,7 +1304,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241120194105"></script>
+	<script src="js/app.min.js?_v=20241121103309"></script>
 </body>
 
 </html>

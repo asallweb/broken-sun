@@ -5665,7 +5665,7 @@ textarea {
 }
 .arrow-link-detail {
   display: block;
-  background: url(../img/elements/arrow-link-detail/arrow.svg) 0 0 no-repeat;
+  background: url(../img/elements/arrow-link-detail/arrow.svg) 0 0/cover no-repeat;
   color: #e6e6e6;
   text-align: right;
   font-size: 18px;
@@ -6363,8 +6363,8 @@ textarea {
 .world__item._olympus {
   width: 7.3%;
   height: 14.9%;
-  left: 24.8%;
-  top: 30.5%
+  left: 31%;
+  top: 31%
 }
 .world__item._ierihon {
   width: 5.521%;
@@ -10722,6 +10722,12 @@ textarea {
     bottom: -100px;
     right: -4%
   }
+  .class._type-2 .class__content-button {
+    font-size: 14px;
+    width: 122px;
+    height: 30px;
+    padding-right: 24px
+  }
   .class-hero__content {
     font-size: 18px;
     line-height: 1.22
@@ -12783,7 +12789,7 @@ textarea {
   .class__text {
     font-size: 14px;
     line-height: 1.28;
-    margin-bottom: 8px
+    margin-bottom: 18px
   }
   .class__content-button {
     margin-left: 0
@@ -12826,10 +12832,7 @@ textarea {
   .class._type-2 .class__image {
     bottom: 0;
     right: auto;
-    left: -15px
-  }
-  .class._type-2 .class__content-button {
-    display: none
+    left: 15px
   }
   .register__item-image {
     text-align: center

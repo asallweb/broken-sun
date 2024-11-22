@@ -4511,9 +4511,6 @@
         const elementsToWatch = [ {
             trigger: ".hero__arrow",
             target: ".header__button-inner"
-        }, {
-            trigger: ".presskit-hero__content",
-            target: ".header__button-inner"
         } ];
         function checkPositions() {
             elementsToWatch.forEach((({trigger, target}) => {

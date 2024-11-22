@@ -5670,9 +5670,9 @@ textarea {
   text-align: right;
   font-size: 18px;
   font-weight: 300;
-  width: 154px;
+  width: 162px;
   height: 40px;
-  padding-right: 30px;
+  padding-right: 34px;
   margin-left: auto
 }
 .video-wrapper {
@@ -9893,6 +9893,9 @@ textarea {
   font-weight: 300;
   line-height: 1.25
 }
+.about-features__text._fz-22 {
+  font-size: 22px
+}
 .about-features__content-media {
   position: relative;
   width: 410px;
@@ -11017,6 +11020,9 @@ textarea {
   }
   .about-features__text {
     line-height: 1.05
+  }
+  .about-features__text._fz-22 {
+    font-size: 22px
   }
   .about-features__content-media {
     width: 265px;
@@ -13392,6 +13398,9 @@ textarea {
   }
   .about-features__text {
     text-align: center;
+    font-size: 14px
+  }
+  .about-features__text._fz-22 {
     font-size: 14px
   }
   .about-features__switcher-inner {

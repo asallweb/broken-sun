@@ -6,9 +6,9 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241122100717">
-	<script src="files/js/preloader.js?_v=20241122100717"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241122100717">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241122110522">
+	<script src="files/js/preloader.js?_v=20241122110522"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241122110522">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
 		</div>
 	</div>
 	<div class="wrapper" id="wrapper">
-		<header class="header _type-1" id="header">
+		<header class="header _type-2 _active" id="header">
 			<div class="header__container">
 				<div class="header__wrapper">
 					<a href="" class="header__logo">
@@ -43,14 +43,158 @@
 								<img src="img/logos/menu__logo.svg" alt="Broken Sun">
 							</a>
 							<ul class="menu__list">
-								<li class="menu__item"><a href="" class="menu__link" data-goto=".hero">Главная</a></li>
-								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".world">Мир</a></li>
-								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".gods">Фракции</a></li>
-								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".classes">Классы</a></li>
-								<li class="menu__item"><a href="" class="menu__link" data-goto-header data-goto=".pvp__navigator">Об игре</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Новости</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Пресс-Кит</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Пресс-Релиз</a></li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Новости
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Игра
+										<svg class="menu__link-dropdown">
+											<use xlink:href="img/icons/icons.svg#mobile-submenu"></use>
+										</svg>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Об игре</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Классы</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Фракции</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Мир-Лотос</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Легенда мира</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Правила</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Знания
+										<svg class="menu__link-dropdown">
+											<use xlink:href="img/icons/icons.svg#mobile-submenu"></use>
+										</svg>
+										<svg width="16" height="16" class="menu__external-icon">
+											<use xlink:href="img/icons/icons.svg#external-link"></use>
+										</svg>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Вопросы и ответы
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Вики
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Соглашение
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Сообщество
+										<svg class="menu__link-dropdown">
+											<use xlink:href="img/icons/icons.svg#mobile-submenu"></use>
+										</svg>
+										<svg width="16" height="16" class="menu__external-icon">
+											<use xlink:href="img/icons/icons.svg#external-link"></use>
+										</svg>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Форум
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Предложения
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Блог разработчиков
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Помощь
+										<svg class="menu__link-dropdown">
+											<use xlink:href="img/icons/icons.svg#mobile-submenu"></use>
+										</svg>
+										<svg width="16" height="16" class="menu__external-icon">
+											<use xlink:href="img/icons/icons.svg#external-link"></use>
+										</svg>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Новичкам
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Карта сайта
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Ошибки
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Написать нам
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</li>
 							</ul>
 							<div class="menu__lang">
 								<a href="" class="menu__lang-link _active">RU</a>
@@ -58,17 +202,52 @@
 								<a href="" class="menu__lang-link">EN</a>
 							</div>
 							<div class="menu__button-wrapper">
-								<button class="menu__button button _size-xxl _fz-27">
-									<span class="button__text">Предрегистрация</span>
+								<button class="header__button button _size-l _fz-18">
+									<span class="button__text">
+										<span class="button__text-inner">
+											ИГРАТЬ
+										</span>
+									</span>
 								</button>
 							</div>
 							<div class="menu__copyrights">© Pearl Abyss Corp. All Rights Reserved.</div>
 						</nav>
 					</div>
+					<div class="account">
+						<div class="account__item">
+							<a href="" class="account__link _profile">
+								Регистрация
+							</a>
+							<div class="account__tooltip">
+								<div class="account__tooltip-content">
+									<div class="account__tooltip-item">E-mail: Andyrichi@me.com</div>
+									<div class="account__tooltip-item">Nickname: Andyrichi</div>
+									<div class="account__tooltip-item">участник ЗБТ</div>
+									<a href="#" class="account__tooltip-link">Сменить пароль</a>
+									<div class="account__tooltip-button-wrapper">
+										<button class="account__button button _size-m _fz-20">
+											<span class="button__text">
+												<span class="button__text-inner">
+													LOGOUT
+												</span>
+											</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="account__item">
+							<a href="" class="account__link _login">
+								Вход
+							</a>
+						</div>
+					</div>
 					<div class="header__button-inner _active">
-						<button class="header__button button _size-m _fz-16 _height-36">
+						<button class="header__button button _size-m _fz-18">
 							<span class="button__text">
-								Предрегистрация
+								<span class="button__text-inner">
+									ИГРАТЬ
+								</span>
 							</span>
 						</button>
 					</div>
@@ -888,7 +1067,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20241122100717"></script>
+	<script src="js/app.min.js?_v=20241122110522"></script>
 </body>
 
 </html>

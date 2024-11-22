@@ -9979,6 +9979,18 @@ textarea {
   -webkit-transform: translate(0,-50%);
   transform: translate(0,-50%)
 }
+.about-features__switcher-item::before {
+  content: "";
+  display: none;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  background: linear-gradient(90deg,rgba(119,96,48,0) 0,#776030 9.99%,#ffebb2 49.94%,#776030 89.9%,rgba(119,96,48,0) 99.89%)
+}
 .about-features__switcher-item._active,
 .about-features__switcher-item:hover {
   color: #f9df94
@@ -9986,6 +9998,10 @@ textarea {
 .about-features__switcher-item._active::after,
 .about-features__switcher-item:hover::after {
   display: none
+}
+.about-features__switcher-item._active::before,
+.about-features__switcher-item:hover::before {
+  display: block
 }
 .about-features__switcher-image {
   position: relative;

@@ -4507,7 +4507,6 @@
             }));
         }));
     }));
-    document.addEventListener("DOMContentLoaded", (function() {}));
     if (window.innerWidth < 919) {
         const godsItems = document.querySelectorAll(".gods__item");
         godsItems.forEach((item => {
@@ -4655,13 +4654,16 @@
     document.addEventListener("DOMContentLoaded", (() => {
         if (window.innerWidth < 1440) document.querySelectorAll("._portal .menu__link").forEach((link => {
             link.addEventListener("click", (event => {
-                event.preventDefault();
                 const parentItem = link.closest("._portal .menu__item");
-                if (parentItem.classList.contains("_active")) parentItem.classList.remove("_active"); else {
-                    document.querySelectorAll("._portal .menu__item").forEach((item => {
-                        item.classList.remove("_active");
-                    }));
-                    parentItem.classList.add("_active");
+                const hasSubmenu = parentItem.querySelector(".menu__submenu");
+                if (hasSubmenu) {
+                    event.preventDefault();
+                    if (parentItem.classList.contains("_active")) parentItem.classList.remove("_active"); else {
+                        document.querySelectorAll("._portal .menu__item").forEach((item => {
+                            item.classList.remove("_active");
+                        }));
+                        parentItem.classList.add("_active");
+                    }
                 }
             }));
         }));

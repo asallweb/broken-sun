@@ -5800,18 +5800,27 @@ textarea {
   visibility: hidden;
   opacity: 0
 }
+.account__tooltip._w280 {
+  width: 278px;
+  height: 320px
+}
 .account__tooltip-content {
   color: #fff;
   font-size: 17px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
   height: 100%
 }
 .account__tooltip-item {
+  position: relative;
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden
+  overflow: hidden;
+  line-height: 1.2
+}
+.account__tooltip-item._tac {
+  text-align: center
 }
 .account__tooltip-link {
   color: #1381df;
@@ -5824,6 +5833,29 @@ textarea {
   display: flex;
   justify-content: center;
   margin-top: auto
+}
+.account__button {
+  width: 184px!important;
+  height: 42px!important
+}
+.account__tooltip-input:not([type=checkbox]):not([type=radio]):not(.search-widget__input) {
+  background: url(../img/elements/account/input.webp) 0 0/100% 100% no-repeat;
+  width: 100%;
+  height: 32px;
+  color: rgba(255,255,255,.5);
+  font-size: 12px;
+  letter-spacing: .907px;
+  border: none;
+  padding-left: 10px
+}
+.account__tooltip-show-pass {
+  background: url(../img/elements/account/input-eye.webp) center center/100% 100% no-repeat;
+  display: block;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  right: 10px
 }
 .section-pagination {
   position: fixed;
@@ -5873,12 +5905,6 @@ textarea {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover
-}
-video::-webkit-media-controls-play-button {
-  -webkit-transform: scale(.3)!important;
-  transform: scale(.3)!important;
-  width: 20px!important;
-  height: 20px!important
 }
 .header {
   position: fixed;

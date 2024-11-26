@@ -4507,23 +4507,7 @@
             }));
         }));
     }));
-    document.addEventListener("DOMContentLoaded", (function() {
-        const elementsToWatch = [ {
-            trigger: ".hero__arrow",
-            target: ".header__button-inner"
-        } ];
-        function checkPositions() {
-            elementsToWatch.forEach((({trigger, target}) => {
-                const triggerElement = document.querySelector(trigger);
-                const targetElement = document.querySelector(target);
-                if (triggerElement && targetElement) {
-                    const rect = triggerElement.getBoundingClientRect();
-                    if (rect.top <= 0) targetElement.classList.add("_active"); else targetElement.classList.remove("_active");
-                }
-            }));
-        }
-        window.addEventListener("scroll", checkPositions);
-    }));
+    document.addEventListener("DOMContentLoaded", (function() {}));
     if (window.innerWidth < 919) {
         const godsItems = document.querySelectorAll(".gods__item");
         godsItems.forEach((item => {

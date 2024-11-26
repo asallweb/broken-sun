@@ -5795,8 +5795,8 @@ textarea {
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
   padding: 42px 20px 36px 19px;
-  width: 245px;
-  height: 278px;
+  width: 248px;
+  height: 307px;
   visibility: hidden;
   opacity: 0
 }
@@ -5809,7 +5809,9 @@ textarea {
   height: 100%
 }
 .account__tooltip-item {
-  white-space: nowrap
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden
 }
 .account__tooltip-link {
   color: #1381df;
@@ -5871,6 +5873,12 @@ textarea {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover
+}
+video::-webkit-media-controls-play-button {
+  -webkit-transform: scale(.3)!important;
+  transform: scale(.3)!important;
+  width: 20px!important;
+  height: 20px!important
 }
 .header {
   position: fixed;
@@ -5938,7 +5946,7 @@ textarea {
   visibility: hidden
 }
 .header__button-inner._active {
-  width: 206px;
+  width: 234px;
   visibility: visible
 }
 .header__pre-register {
@@ -7122,6 +7130,9 @@ textarea {
 .media__controls-btn._next {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg)
+}
+.media__controls-pagination.swiper-pagination-lock {
+  display: none
 }
 .media__controls-pagination {
   background: url(../img/icons/swiper-pagination.svg) center center no-repeat;
@@ -11087,7 +11098,7 @@ textarea {
     height: 34px
   }
   .button._size-l {
-    width: 155px;
+    width: 165px;
     height: 36px
   }
   .button._size-m {
@@ -11170,9 +11181,6 @@ textarea {
   }
   .inventory .item__tooltip-text {
     font-size: 12px
-  }
-  .header__button-inner._active {
-    width: 145px
   }
   .header__menu {
     width: 145px
@@ -12129,6 +12137,9 @@ textarea {
   .gods._landing .gods__item-text {
     font-size: 14px
   }
+  .pvp {
+    height: 325px
+  }
   .pvp::after,
   .pvp::before {
     display: none
@@ -12338,10 +12349,11 @@ textarea {
     -webkit-transform: none;
     transform: none
   }
-  .class-section._angry d .class-section__image {
-    left: 0;
-    -webkit-transform: translate(0,0);
-    transform: translate(0,0)
+  .class-section._angry .class-section__image {
+    right: -70px;
+    left: auto;
+    -webkit-transform: none;
+    transform: none
   }
   .class-section._trick .class-section__image {
     left: calc(50% + 100px);
@@ -12394,7 +12406,8 @@ textarea {
   }
   .class-section__video {
     margin-top: auto;
-    max-width: 180px
+    margin-bottom: 20px;
+    max-width: 210px
   }
   .class-section__button-wrapper {
     justify-content: center
@@ -12440,8 +12453,7 @@ textarea {
   .awards__text {
     font-size: 14px;
     line-height: 1.28;
-    margin-bottom: 24px;
-    text-align: left
+    margin-bottom: 24px
   }
   .awards__image {
     max-width: 100%
@@ -12792,8 +12804,8 @@ textarea {
   }
   .class__name {
     font-size: 22px;
-    line-height: 1.36;
-    margin-bottom: 16px
+    line-height: 1;
+    margin-bottom: 12px
   }
   .class__list {
     margin-bottom: 0;
@@ -12806,7 +12818,8 @@ textarea {
   }
   .class__title {
     font-size: 18px;
-    line-height: 1.22
+    line-height: 1;
+    margin-bottom: 12px
   }
   .class__text {
     font-size: 14px;
@@ -12842,14 +12855,12 @@ textarea {
     height: 650px
   }
   .class._type-2 .class__content {
-    max-width: 240px
+    max-width: 240px;
+    padding-right: 0
   }
   .class._type-2 .class__list {
     bottom: 40px;
-    left: 0;
-    -webkit-transform: none;
-    transform: none;
-    gap: 32px
+    gap: 24px
   }
   .class._type-2 .class__image {
     bottom: 0;

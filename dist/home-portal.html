@@ -6,9 +6,9 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241126210345">
-	<script src="files/js/preloader.js?_v=20241126210345"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241126210345">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241127123907">
+	<script src="files/js/preloader.js?_v=20241127123907"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241127123907">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -353,6 +353,29 @@
 					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
 					<div class="separator__right"></div>
 				</div>
+				<script>
+					function updateLogoPosition() {
+						const baseTop = 150; // top для FullHD
+						const baseHeight = 1080; // базовая высота экрана
+						const scaleFactor = 0.388; // коэффициент
+
+						// Получаем высоту экрана
+						const screenHeight = window.innerHeight;
+
+						// Рассчитываем top
+						const computedTop = baseTop + (screenHeight - baseHeight) * scaleFactor;
+
+						// Применяем значение
+						const logo = document.querySelector('.hero__logo'); // замените на реальный селектор вашего логотипа
+						if (logo) {
+							logo.style.top = `${computedTop}px`;
+						}
+					}
+
+					// Вызываем функцию при загрузке страницы и изменении размеров экрана
+					window.addEventListener('load', updateLogoPosition);
+					window.addEventListener('resize', updateLogoPosition);
+				</script>
 			</section>
 			<section class="portal-news">
 				<div class="portal-news__wrapper">
@@ -465,7 +488,7 @@
 					<div class="gods__wrapper">
 						<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInUp">
 							<div class="gods__list">
-								<div class="gods__item">
+								<a href="#" class="gods__item">
 									<picture>
 										<source srcset="img/content/gods/zeus_portal_1440.webp" media="(min-width: 751px)">
 										<source srcset="img/content/gods/zeus_1440_mobile.webp" media="(min-width: 320px)">
@@ -480,8 +503,8 @@
 											Олимпом правит умелый манипулятор Зевс. Он поддерживает легенду о демократии, сосредоточив реальную власть в своих руках.
 										</div>
 									</div>
-								</div>
-								<div class="gods__item">
+								</a>
+								<a href="#" class="gods__item">
 									<picture>
 										<source srcset="img/content/gods/odin_portal_1440.webp" media="(min-width: 751px)">
 										<source srcset="img/content/gods/odin_1440_mobile.webp" media="(min-width: 320px)">
@@ -496,8 +519,8 @@
 											Один суров, справедлив и уважаем всеми — и Богами, и смертными.
 										</div>
 									</div>
-								</div>
-								<div class="gods__item">
+								</a>
+								<a href="#" class="gods__item">
 									<picture>
 										<source srcset="img/content/gods/ra_portal_1440.webp" media="(min-width: 751px)">
 										<source srcset="img/content/gods/ra_1440_mobile.webp" media="(min-width: 320px)">
@@ -512,7 +535,7 @@
 											Ра — это Бог Солнца и Царь Царей Нефара. Он считает, что его власть незыблема.
 										</div>
 									</div>
-								</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -1072,7 +1095,7 @@
 					<div class="platform__wrapper">
 						<div class="platform__content">
 							<div class="platform__title">Платформы</div>
-							<div class="platform__text">Присоединяйтесь бесплатно! Запускайте игру в браузере или скачивайте приложение с AppStote, GooglePlay и RuStore. Не важно где вы играете, прогресс сохраняется для всех платформ. Отправляйтесь в увлекательное приключение где угодно: из дома, в дороге или на отдыхе!</div>
+							<div class="platform__text">Присоединяйтесь бесплатно! Игра уже доступна в браузере! Приложения в AppStore, GooglePlay и RuStore появятся в ближайшее время! Следите за анонсами!</div>
 						</div>
 						<div class="platform__image-wrapper">
 							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInDown" data-delay="500">
@@ -1233,7 +1256,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20241126210345"></script>
+	<script src="js/app.min.js?_v=20241127123907"></script>
 </body>
 
 </html>

@@ -5891,8 +5891,8 @@ textarea {
   height: 40px;
   position: fixed;
   z-index: 2;
-  right: 39px;
-  bottom: 44px;
+  right: 40px;
+  bottom: 80px;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
   transition: all .3s ease-in-out
@@ -6162,7 +6162,7 @@ textarea {
 }
 .hero__logo {
   position: absolute;
-  top: 47px;
+  top: 50px;
   left: 50%;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
@@ -7225,11 +7225,7 @@ textarea {
   transform: translate(-50%,0)
 }
 .platform__image-src {
-  max-width: 752px;
-  width: 100%;
-  height: auto;
-  -o-object-fit: cover;
-  object-fit: cover
+  max-width: 850px
 }
 .counter {
   position: relative;
@@ -8899,17 +8895,21 @@ textarea {
   left: 0;
   top: 0
 }
+.fraction-hero .worlds-names__item._active .worlds-names__item-title,
 .fraction-hero .worlds-names__item:hover .worlds-names__item-title {
   color: #f9df94
 }
+.fraction-hero .worlds-names__item._active .worlds-names__item-icon,
 .fraction-hero .worlds-names__item:hover .worlds-names__item-icon {
   -webkit-transform: translate(-50%,0) scale(1.315);
   transform: translate(-50%,0) scale(1.315)
 }
+.fraction-hero .worlds-names__item._active .worlds-names__item-img,
 .fraction-hero .worlds-names__item:hover .worlds-names__item-img {
   opacity: 0;
   visibility: hidden
 }
+.fraction-hero .worlds-names__item._active .worlds-names__item-img._hovered,
 .fraction-hero .worlds-names__item:hover .worlds-names__item-img._hovered {
   opacity: 1;
   visibility: visible
@@ -9033,6 +9033,9 @@ textarea {
 .fraction-section__content {
   max-width: 498px;
   width: 100%
+}
+.fraction-section__content._w455 {
+  max-width: 455px
 }
 .fraction-section__title {
   color: #f9df94;
@@ -9883,14 +9886,14 @@ textarea {
   flex: 1 1 60%;
   background: linear-gradient(180deg,#111d2c 0,#0a151e 100%);
   display: flex;
-  flex-direction: column;
-  justify-content: space-between
+  flex-direction: column
 }
 .about-features__content-wrapper {
   position: relative;
   padding: 57px 0 57px 47px;
   display: flex;
-  gap: 52px
+  gap: 52px;
+  margin-top: auto
 }
 .about-features__content-inner {
   display: flex;
@@ -9929,6 +9932,9 @@ textarea {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.25
+}
+.about-features__text p {
+  margin-bottom: 15px
 }
 .about-features__text._fz-22 {
   font-size: 22px
@@ -9982,6 +9988,9 @@ textarea {
   text-align: center;
   font-weight: 700;
   text-transform: uppercase
+}
+.about-features__switcher {
+  margin-top: auto
 }
 .about-features__switcher-inner {
   display: flex;
@@ -11239,7 +11248,6 @@ textarea {
     width: 100%
   }
   .hero__logo {
-    top: 31px;
     max-width: 432px
   }
   .hero__logo-title {
@@ -11409,7 +11417,7 @@ textarea {
     bottom: 30px
   }
   .platform__image-src {
-    max-width: 350px
+    max-width: 444px
   }
   .counter {
     height: 690px
@@ -11623,7 +11631,6 @@ textarea {
     display: none
   }
   .hero__logo {
-    top: 58px;
     max-width: 288px
   }
   .hero__logo-title {
@@ -11877,7 +11884,7 @@ textarea {
     margin-bottom: 13px
   }
   .platform__image-src {
-    max-width: 300px
+    max-width: 406px
   }
   .counter {
     height: 576px
@@ -11966,7 +11973,6 @@ textarea {
 }
 @media (max-width:768px) {
   .hero__logo {
-    top: 58px;
     max-width: 288px
   }
   .hero__logo-title {
@@ -12212,6 +12218,9 @@ textarea {
     margin: 0 auto 62px;
     font-size: 14px;
     line-height: 1.28
+  }
+  .platform__image-src {
+    max-width: 336px
   }
   .counter {
     height: auto

@@ -5636,7 +5636,7 @@ textarea {
   width: 57px;
   height: 17px;
   left: -57px;
-  top: 14px
+  top: 7px
 }
 .chronology__item::after {
   width: 100%;
@@ -5773,38 +5773,47 @@ textarea {
   background: url(../img/elements/account/login.webp) left center no-repeat;
   padding-left: 28px
 }
-.account__item:hover .account__link {
+.account__item._active .account__link {
   color: #f9df94
 }
-.account__item:hover .account__link._profile {
+.account__item._active .account__link._profile {
   background: url(../img/elements/account/profile_hover.webp) left center no-repeat
 }
-.account__item:hover .account__link._login {
+.account__item._active .account__link._login {
   background: url(../img/elements/account/login_hover.webp) left center no-repeat
 }
-.account__item:hover .account__tooltip {
+.account__item._active .account__tooltip {
   opacity: 1;
   visibility: visible;
   transition: all .3s ease-in-out
 }
 .account__tooltip {
-  background: url(../img/elements/account/tooltip-back.webp) 0 0/100% 100% no-repeat;
   position: absolute;
   top: 30px;
   left: 50%;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  padding: 42px 20px 36px 19px;
-  width: 248px;
-  height: 307px;
+  width: 288px;
   visibility: hidden;
   opacity: 0
 }
-.account__tooltip._w280 {
-  width: 278px;
-  height: 320px
+.account__tooltip::after,
+.account__tooltip::before {
+  content: "";
+  display: block;
+  width: 100%
+}
+.account__tooltip::before {
+  background: url(../img/elements/account/tooltip-back-top.webp) 0 0/100% 100% no-repeat;
+  height: 27px
+}
+.account__tooltip::after {
+  background: url(../img/elements/account/tooltip-back-bottom.webp) 0 0/100% 100% no-repeat;
+  height: 7px
 }
 .account__tooltip-content {
+  background: url(../img/elements/account/tooltip-back-middle.webp) 0 0/100% 100% no-repeat;
+  padding: 16px 22px 30px 22px;
   color: #fff;
   font-size: 17px;
   display: flex;
@@ -5812,12 +5821,33 @@ textarea {
   gap: 16px;
   height: 100%
 }
+.account__tooltip-content::after,
+.account__tooltip-content::before {
+  content: "";
+  display: block;
+  width: 118px;
+  height: 118px;
+  position: absolute;
+  bottom: 8px
+}
+.account__tooltip-content::before {
+  background: url(../img/elements/account/pattern.webp) 0 0/100% 100% no-repeat;
+  left: 8px
+}
+.account__tooltip-content::after {
+  background: url(../img/elements/account/pattern.webp) 0 0/100% 100% no-repeat;
+  right: 8px;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg)
+}
 .account__tooltip-item {
   position: relative;
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
   line-height: 1.2
+}
+.account__tooltip-item._overflowed {
+  overflow: hidden
 }
 .account__tooltip-item._tac {
   text-align: center
@@ -5856,6 +5886,52 @@ textarea {
   position: absolute;
   top: 0;
   right: 10px
+}
+.account__pass-req-title {
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+  font-size: 12px;
+  letter-spacing: .907px;
+  text-decoration: underline;
+  position: relative;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2px;
+  margin-top: -10px
+}
+.account__pass-req-title::before {
+  content: "";
+  background: url(../img/elements/account/pass-req-title.webp) center center/100% 100% no-repeat;
+  display: block;
+  width: 250px;
+  height: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: 0
+}
+.account__pass-req-title span {
+  position: relative;
+  z-index: 1
+}
+.account__pass-req-body {
+  background: url(../img/elements/account/pass-req-body.webp) 0 0/100% 100% no-repeat;
+  color: #f9df94;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: .907px;
+  padding: 10px 13px
+}
+.account__pass-req-body li {
+  position: relative;
+  margin-left: 15px;
+  list-style: disc
 }
 .section-pagination {
   position: fixed;
@@ -8221,14 +8297,15 @@ textarea {
   width: 42vw
 }
 .class-hero__list {
-  position: absolute;
+  position: fixed;
   top: 50%;
   right: 20px;
   -webkit-transform: translate(0,-50%);
   transform: translate(0,-50%);
   display: flex;
   flex-direction: column;
-  gap: 56px
+  gap: 56px;
+  z-index: 1
 }
 .class-hero__title-wrapper {
   position: absolute;
@@ -8410,8 +8487,7 @@ textarea {
 }
 .class-section__container {
   position: relative;
-  height: 940px;
-  z-index: 1
+  height: 940px
 }
 .class-section__content {
   z-index: 1;
@@ -8475,6 +8551,13 @@ textarea {
   display: flex;
   gap: 20px;
   align-items: center
+}
+.class-section__link {
+  transition: all .3s ease-in-out
+}
+.class-section__link:hover {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2)
 }
 .class-section__button-wrapper {
   display: flex;
@@ -10358,11 +10441,6 @@ textarea {
   .footer {
     background: url(../img/background/footer/footer_2k.webp) center top no-repeat;
     background-size: cover
-  }
-}
-@media (min-width:1700px) {
-  .class-hero__list {
-    right: -200px
   }
 }
 @media (min-width:1919px) {

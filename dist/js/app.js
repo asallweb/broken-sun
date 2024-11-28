@@ -4341,9 +4341,9 @@
         if (getHash()) {
             let goToHash;
             if (document.querySelector(`#${getHash()}`)) goToHash = `#${getHash()}`; else if (document.querySelector(`.${getHash()}`)) goToHash = `.${getHash()}`;
-            goToHash ? gotoblock_gotoBlock(goToHash, true, 500, 20) : null;
+            goToHash ? gotoblock_gotoBlock(goToHash, true, 500, 0) : null;
             document.addEventListener("preloaderNonActive", (() => {
-                gotoblock_gotoBlock(goToHash, true, 500, 20);
+                gotoblock_gotoBlock(goToHash, true, 500, 0);
             }));
         }
     }

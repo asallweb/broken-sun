@@ -5796,7 +5796,7 @@ textarea {
   left: 50%;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  width: 288px;
+  width: 320px;
   visibility: hidden;
   opacity: 0
 }
@@ -5847,12 +5847,14 @@ textarea {
 }
 .account__tooltip-item {
   position: relative;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   line-height: 1.2
 }
 .account__tooltip-item._overflowed {
   overflow: hidden
+}
+.account__tooltip-item._text-overflow {
+  white-space: nowrap;
+  text-overflow: ellipsis
 }
 .account__tooltip-item._tac {
   text-align: center
@@ -5926,7 +5928,7 @@ textarea {
 .account__pass-req-body {
   background: url(../img/elements/account/pass-req-body.webp) 0 0/100% 100% no-repeat;
   color: #f9df94;
-  font-size: 8px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -5936,7 +5938,8 @@ textarea {
 .account__pass-req-body li {
   position: relative;
   margin-left: 15px;
-  list-style: disc
+  list-style: disc;
+  white-space: normal
 }
 .section-pagination {
   position: fixed;
@@ -5986,6 +5989,28 @@ textarea {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px
+}
+.pagination__link {
+  background: rgba(0,0,0,.2);
+  width: 29px;
+  height: 29px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b19f63;
+  font-size: 16px
+}
+.pagination__link._active {
+  background: linear-gradient(180deg,#09385d 0,#053052 31%,#032137 100%)
+}
+.pagination__link:hover {
+  background: rgba(0,0,0,.4)
 }
 .header {
   position: fixed;
@@ -6149,8 +6174,8 @@ textarea {
 }
 .footer__logo-link {
   position: relative;
-  width: 63px;
-  height: 34px
+  width: 85px;
+  height: 42px
 }
 .footer__logo-link:hover svg {
   display: none
@@ -6167,8 +6192,7 @@ textarea {
   transform: translate(-50%,-50%)
 }
 .footer__logo-src._hovered {
-  display: none;
-  margin-left: -1px
+  display: none
 }
 .footer._teaser {
   background: 0 0;
@@ -6209,8 +6233,8 @@ textarea {
   text-align: right
 }
 ._type-2 .footer__logo-link {
-  width: 88px;
-  height: 51px
+  width: 100px;
+  height: 54px
 }
 ._type-2 .footer__logo-src._hovered {
   margin-left: 0
@@ -9269,7 +9293,10 @@ textarea {
   gap: 18px 21px
 }
 .news__wrapper-body {
-  width: 660px
+  width: 660px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
 }
 .news__wrapper-sidebar {
   width: 322px
@@ -9278,12 +9305,29 @@ textarea {
   background: url(../img/background/news/article-bg.webp) center bottom repeat,linear-gradient(0deg,#9ea1a6 0,#b3babd 100%);
   background-blend-mode: overlay;
   box-shadow: 0 4px 4px rgba(0,0,0,.5);
-  margin-bottom: 18px;
-  padding: 11px 15px;
   min-height: 79px
 }
+.article__category {
+  background: #384a6b;
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px
+}
+.article__wrapper {
+  padding: 11px 10px;
+  display: flex;
+  gap: 16px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.33
+}
+.article__wrapper._fld-column {
+  flex-direction: column
+}
 .article__title {
-  margin-bottom: 13px;
   color: #1a2f47;
   font-size: 18px;
   line-height: 1.33
@@ -9292,28 +9336,8 @@ textarea {
   color: #000;
   font-weight: 300
 }
-.article__wrapper {
-  display: flex;
-  gap: 10px
-}
-.article__wrapper._fld-column {
-  flex-direction: column
-}
 .article__image {
   position: relative
-}
-.article__image::after {
-  content: "";
-  position: absolute;
-  background: linear-gradient(rgba(0,0,0,.2) 0,rgba(0,0,0,.2) 100%);
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  transition: all .3s ease-in-out
-}
-.article__image:hover::after {
-  opacity: 0
 }
 .article__image._small {
   flex: 0 0 202px
@@ -9322,27 +9346,27 @@ textarea {
   width: 100%;
   height: auto
 }
-.article__content {
-  position: relative;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.33
-}
 .article__date {
-  color: #bd2e3d
+  color: #595c67
 }
 .article__text {
-  color: #000;
-  font-size: 16px
+  color: #000
 }
 .article__detail {
   color: #25201b;
   display: block;
   text-align: right;
-  transition: all .3s ease-in-out
+  transition: all .3s ease-in-out;
+  text-decoration: underline
 }
 .article__detail:hover {
-  color: #fff
+  text-decoration: none
+}
+.article__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px
 }
 .last-posts {
   margin-bottom: 50px
@@ -10606,12 +10630,6 @@ textarea {
     width: 100%;
     height: auto
   }
-  .menu__lang {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4px
-  }
   .menu__button-wrapper {
     display: flex;
     justify-content: center;
@@ -10676,7 +10694,8 @@ textarea {
     justify-content: center
   }
   ._type-2 .menu__list {
-    gap: 0
+    gap: 0;
+    margin-bottom: 15px
   }
   ._type-2 .menu__item._active .menu__link,
   ._type-2 .menu__item:hover .menu__link {
@@ -12166,19 +12185,8 @@ textarea {
     gap: 24px
   }
   .footer__socials-link {
-    width: 16px;
-    height: 16px
-  }
-  .footer__socials-link._rutube svg {
-    margin-top: 0
-  }
-  .footer__socials-link svg.non-hovered {
-    width: 16px;
-    height: auto
-  }
-  .footer__socials-link svg.hovered {
-    width: 21px;
-    height: auto
+    width: 32px;
+    height: 32px
   }
   .footer__text {
     font-size: 8px;
@@ -12802,6 +12810,12 @@ textarea {
   }
 }
 @media (max-width:47.99875em) {
+  .menu__lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px
+  }
   .popup__content {
     max-width: calc(100vw - 44px)
   }
@@ -13811,5 +13825,13 @@ print {
   }
   .animate__animated[class*=Out] {
     opacity: 0
+  }
+}
+@media not all and (-webkit-min-device-pixel-ratio:0) and (-webkit-min-device-pixel-ratio:0),
+not all and (min-resolution:0.001dpcm) and (min-resolution:0.001dpcm) {
+  @supports (-webkit-appearance:none) {
+    .menu__submenu-external-icon {
+      margin-top: -5px
+    }
   }
 }

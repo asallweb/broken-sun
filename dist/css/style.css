@@ -3925,7 +3925,8 @@ h6 {
   text-align: center;
   text-transform: uppercase;
   transition: color .3s ease-in-out;
-  height: 100%
+  height: 100%;
+  cursor: pointer
 }
 .menu__link:hover {
   color: #f9df94
@@ -5763,7 +5764,8 @@ textarea {
 .account__link {
   color: #b19f63;
   font-size: 16px;
-  line-height: 1.25
+  line-height: 1.25;
+  cursor: pointer
 }
 .account__link._profile {
   background: url(../img/elements/account/profile.webp) left center no-repeat;
@@ -5789,6 +5791,7 @@ textarea {
 }
 .account__tooltip {
   position: absolute;
+  z-index: 3;
   top: 30px;
   left: 50%;
   -webkit-transform: translate(-50%,0);
@@ -5801,7 +5804,8 @@ textarea {
 .account__tooltip::before {
   content: "";
   display: block;
-  width: 100%
+  width: 100%;
+  pointer-events: none
 }
 .account__tooltip::before {
   background: url(../img/elements/account/tooltip-back-top.webp) 0 0/100% 100% no-repeat;
@@ -5828,7 +5832,8 @@ textarea {
   width: 118px;
   height: 118px;
   position: absolute;
-  bottom: 8px
+  bottom: 8px;
+  pointer-events: none
 }
 .account__tooltip-content::before {
   background: url(../img/elements/account/pattern.webp) 0 0/100% 100% no-repeat;
@@ -8298,8 +8303,8 @@ textarea {
 }
 .class-hero__list {
   position: fixed;
-  top: 50%;
-  right: 20px;
+  top: 45%;
+  right: 6.5vw;
   -webkit-transform: translate(0,-50%);
   transform: translate(0,-50%);
   display: flex;
@@ -10605,14 +10610,13 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;
-    margin: 16px 0 32px
+    gap: 4px
   }
   .menu__button-wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 32px 0
+    margin: 16px 0
   }
   .menu__copyrights {
     display: flex;
@@ -10622,7 +10626,8 @@ textarea {
     font-size: 10px;
     font-weight: 300;
     line-height: 1.2;
-    width: 100%
+    width: 100%;
+    margin-top: auto
   }
   .icon-menu {
     display: block;
@@ -10736,27 +10741,40 @@ textarea {
     padding: 10px
   }
   .account {
-    display: none
+    justify-content: center
+  }
+  .account__tooltip {
+    width: 248px
+  }
+  .account__tooltip-content {
+    padding: 16px 16px 30px 16px
   }
   .header__wrapper {
     height: 60px
   }
-  .header__lang,
   .header__pre-register {
     display: none
   }
   .header__menu {
     order: 0;
     margin-right: 0;
-    width: 230px
+    width: 280px
   }
   .header__logo {
-    order: 1
+    order: 1;
+    margin-left: auto
   }
   .header__button-inner {
     order: 2;
-    width: 206px;
-    visibility: visible
+    width: 236px;
+    visibility: visible;
+    margin-left: auto
+  }
+  .header__button-inner._active {
+    width: 236px
+  }
+  .header__lang {
+    order: 3
   }
   .world__item._olympus {
     width: 9%;
@@ -11296,7 +11314,13 @@ textarea {
     font-size: 12px
   }
   .header__menu {
-    width: 145px
+    width: 240px
+  }
+  .header__button-inner {
+    width: 186px
+  }
+  .header__button-inner._active {
+    width: 186px
   }
   .footer__wrapper {
     gap: 52px
@@ -11644,6 +11668,9 @@ textarea {
   .class-hero__img {
     height: 100%;
     width: auto
+  }
+  .class-hero__list {
+    right: 20px
   }
   .class-section._trick .class-section__image {
     left: calc(50% + 200px);
@@ -12354,10 +12381,12 @@ textarea {
     max-width: 100%
   }
   .header__logo {
-    order: 1
+    order: 1;
+    margin-left: 0
   }
   .header__button-inner {
-    order: 2
+    order: 2;
+    margin-right: auto
   }
   .header__menu {
     order: 3;
@@ -12867,6 +12896,9 @@ textarea {
   }
   .header__wrapper {
     height: 50px
+  }
+  .header__lang {
+    display: none
   }
   ._type-2 .footer__text-left,
   ._type-2 .footer__text-middle,

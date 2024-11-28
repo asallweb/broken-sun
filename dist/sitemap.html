@@ -6,9 +6,9 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241127213050">
-	<script src="files/js/preloader.js?_v=20241127213050"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241127213050">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241128154742">
+	<script src="files/js/preloader.js?_v=20241128154742"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241128154742">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -185,6 +185,7 @@
 								<div></div>
 								<a href="" class="menu__lang-link">EN</a>
 							</div>
+							<div class="mobile-profile-placeholder"></div>
 							<div class="menu__button-wrapper">
 								<button class="header__button button _size-l _fz-18">
 									<span class="button__text">
@@ -194,11 +195,16 @@
 									</span>
 								</button>
 							</div>
+							<div class="menu__lang">
+								<a href="" class="menu__lang-link _active">RU</a>
+								<div></div>
+								<a href="" class="menu__lang-link">EN</a>
+							</div>
 							<div class="menu__copyrights">© Pearl Abyss Corp. All Rights Reserved.</div>
 						</nav>
 					</div>
-					<div class="account">
-						<div class="account__item">
+					<div class="account" data-da=".mobile-profile-placeholder, 1440">
+						<div class="account__item"> <!-- Добавить класс _active для тултипа -->
 							<a href="" class="account__link _profile">
 								Регистрация
 							</a>
@@ -250,14 +256,19 @@
 					</div>
 				</div>
 			</div>
+			<style>
+				._type-2 .menu__item:hover .menu__link::before {
+					background: url('./files/gif/menu__link.png') center bottom / 100% 100% no-repeat;
+				}
+			</style>
 		</header>
 		<main class="page">
 			<div class="presskit-bg-wrapper">
-				<img src="img/background/presskit/main.webp" class="presskit-bg-wrapper__img">
+				<img src="img/background/presskit/main.png" class="presskit-bg-wrapper__img">
 			</div>
 			<div class="__container">
 				<section class="sitemap">
-					<div class="sitemap__title">Карта сайта</div>
+					<div class="sitemap__title">&nbsp;</div>
 					<div class="sitemap__grid">
 						<div class="sitemap__column mobcol-2">
 							<div class="sitemap__group">
@@ -360,7 +371,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241127213050"></script>
+	<script src="js/app.min.js?_v=20241128154742"></script>
 </body>
 
 </html>

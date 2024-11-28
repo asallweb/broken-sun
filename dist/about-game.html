@@ -6,9 +6,9 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241127213050">
-	<script src="files/js/preloader.js?_v=20241127213050"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241127213050">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241128154742">
+	<script src="files/js/preloader.js?_v=20241128154742"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241128154742">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -185,6 +185,7 @@
 								<div></div>
 								<a href="" class="menu__lang-link">EN</a>
 							</div>
+							<div class="mobile-profile-placeholder"></div>
 							<div class="menu__button-wrapper">
 								<button class="header__button button _size-l _fz-18">
 									<span class="button__text">
@@ -194,11 +195,16 @@
 									</span>
 								</button>
 							</div>
+							<div class="menu__lang">
+								<a href="" class="menu__lang-link _active">RU</a>
+								<div></div>
+								<a href="" class="menu__lang-link">EN</a>
+							</div>
 							<div class="menu__copyrights">© Pearl Abyss Corp. All Rights Reserved.</div>
 						</nav>
 					</div>
-					<div class="account">
-						<div class="account__item">
+					<div class="account" data-da=".mobile-profile-placeholder, 1440">
+						<div class="account__item"> <!-- Добавить класс _active для тултипа -->
 							<a href="" class="account__link _profile">
 								Регистрация
 							</a>
@@ -250,6 +256,11 @@
 					</div>
 				</div>
 			</div>
+			<style>
+				._type-2 .menu__item:hover .menu__link::before {
+					background: url('./files/gif/menu__link.png') center bottom / 100% 100% no-repeat;
+				}
+			</style>
 		</header>
 		<main class="page">
 			<div class="section-pagination">
@@ -273,28 +284,28 @@
 							<a href="#" class="about-hero__detail-btn arrow-link-detail">Узнать больше</a>
 						</div>
 						<div class="about-hero__text-image">
-							<img src="img/pages/about-game/text-image.webp" class="about-hero__text-img">
+							<img src="img/pages/about-game/text-image.png" class="about-hero__text-img">
 						</div>
 					</div>
 					<div class="about-hero__image">
 						<picture>
-							<source srcset="img/pages/about-game/hero-1_2k.webp" media="(min-width: 1921px)">
-							<img src="img/pages/about-game/hero-1.webp" class="about-hero__img">
+							<source srcset="img/pages/about-game/hero-1_2k.png" media="(min-width: 1921px)">
+							<img src="img/pages/about-game/hero-1.png" class="about-hero__img">
 						</picture>
 					</div>
 				</div>
 				<div class="about-hero__back">
-					<img src="img/pages/about-game/hero-bg.webp" class="about-hero__back-img">
+					<img src="img/pages/about-game/hero-bg.png" class="about-hero__back-img">
 				</div>
 			</section>
 			<section class="about-features" id="about-1" data-watch="navigator">
 				<div class="about-features__item _active" id="pvp">
 					<div class="about-features__back">
-						<img src="img/pages/about-game/about-features__back-1.webp" class="about-features__back-img">
+						<img src="img/pages/about-game/about-features__back-1.png" class="about-features__back-img">
 					</div>
 					<div class="about-features__wrapper">
 						<div class="about-features__media">
-							<img src="img/pages/about-game/about-features__media-1.webp" class="about-features__media-img">
+							<img src="img/pages/about-game/about-features__media-1.png" class="about-features__media-img">
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper">
@@ -304,7 +315,7 @@
 									<div class="about-features__text">Опробуйте уникальную боевую систему, которая позволяет настроить персонажа под любой стиль игры. Используйте сильные стороны игровых классов, чтобы побеждать в эпических сражениях.</div>
 								</div>
 								<div class="about-features__content-media about-features__content-video">
-									<video src="files/video/gateSun_fhd.mp4" poster="img/pages/about-game/video-poster.webp"></video>
+									<video src="files/video/gateSun_fhd.mp4" poster="img/pages/about-game/video-poster.png"></video>
 									<button class="video-wrapper__play-btn" aria-label="Play"></button>
 								</div>
 							</div>
@@ -357,11 +368,11 @@
 				</div>
 				<div class="about-features__item" id="pve">
 					<div class="about-features__back">
-						<img src="img/pages/about-game/about-features__back-2.webp" class="about-features__back-img">
+						<img src="img/pages/about-game/about-features__back-2.png" class="about-features__back-img">
 					</div>
 					<div class="about-features__wrapper">
 						<div class="about-features__media">
-							<img src="img/pages/about-game/about-features__media-2.webp" class="about-features__media-img">
+							<img src="img/pages/about-game/about-features__media-2.png" class="about-features__media-img">
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper">
@@ -370,7 +381,7 @@
 									<div class="about-features__text">Исследуя их, вы также сможете найти уникальные подземелья, внутри которых вам встретятся опасные противники, уникальные враги и щедрые награды.</div>
 								</div>
 								<div class="about-features__content-media about-features__content-video">
-									<video src="files/video/gateSun_fhd.mp4" poster="img/pages/about-game/video-poster.webp"></video>
+									<video src="files/video/gateSun_fhd.mp4" poster="img/pages/about-game/video-poster.png"></video>
 									<button class="video-wrapper__play-btn" aria-label="Play"></button>
 								</div>
 							</div>
@@ -423,11 +434,11 @@
 				</div>
 				<div class="about-features__item" id="trade">
 					<div class="about-features__back">
-						<img src="img/pages/about-game/about-features__back-3.webp" class="about-features__back-img">
+						<img src="img/pages/about-game/about-features__back-3.png" class="about-features__back-img">
 					</div>
 					<div class="about-features__wrapper">
 						<div class="about-features__media">
-							<img src="img/pages/about-game/about-features__media-3.webp" class="about-features__media-img">
+							<img src="img/pages/about-game/about-features__media-3.png" class="about-features__media-img">
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper _coming-soon">
@@ -436,7 +447,7 @@
 									<div class="about-features__text">Изготавливайте предметы при помощи специальных профессий, чтобы продавать их на аукционе, обмениваться или передавать участникам своего клана. В Broken Sun экономику определяют сами игроки!</div>
 								</div>
 								<div class="about-features__content-media">
-									<img src="img/pages/about-game/about-features__content-1.webp" class="about-features__content-media-img">
+									<img src="img/pages/about-game/about-features__content-1.png" class="about-features__content-media-img">
 								</div>
 								<div class="about-features__content-coming-soon">
 									coming soon
@@ -491,11 +502,11 @@
 				</div>
 				<div class="about-features__item" id="clans">
 					<div class="about-features__back">
-						<img src="img/pages/about-game/about-features__back-4.webp" class="about-features__back-img">
+						<img src="img/pages/about-game/about-features__back-4.png" class="about-features__back-img">
 					</div>
 					<div class="about-features__wrapper">
 						<div class="about-features__media">
-							<img src="img/pages/about-game/about-features__media-4.webp" class="about-features__media-img">
+							<img src="img/pages/about-game/about-features__media-4.png" class="about-features__media-img">
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper _coming-soon">
@@ -511,7 +522,7 @@
 									</div>
 								</div>
 								<div class="about-features__content-media">
-									<img src="img/pages/about-game/about-features__content-2.webp" class="about-features__content-media-img">
+									<img src="img/pages/about-game/about-features__content-2.png" class="about-features__content-media-img">
 								</div>
 								<div class="about-features__content-coming-soon">
 									coming soon
@@ -566,11 +577,11 @@
 				</div>
 				<div class="about-features__item" id="proffesion">
 					<div class="about-features__back">
-						<img src="img/pages/about-game/about-features__back-5.webp" class="about-features__back-img">
+						<img src="img/pages/about-game/about-features__back-5.png" class="about-features__back-img">
 					</div>
 					<div class="about-features__wrapper">
 						<div class="about-features__media">
-							<img src="img/pages/about-game/about-features__media-5.webp" class="about-features__media-img">
+							<img src="img/pages/about-game/about-features__media-5.png" class="about-features__media-img">
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper _coming-soon">
@@ -584,7 +595,7 @@
 									</div>
 								</div>
 								<div class="about-features__content-media">
-									<img src="img/pages/about-game/about-features__content-3.webp" class="about-features__content-media-img">
+									<img src="img/pages/about-game/about-features__content-3.png" class="about-features__content-media-img">
 								</div>
 								<div class="about-features__content-coming-soon">
 									coming soon
@@ -958,11 +969,11 @@
 			<section class="about-features" id="about-2" data-watch="navigator">
 				<div class="about-features__item _active" id="platforms">
 					<div class="about-features__back">
-						<img src="img/pages/about-game/about-features__back-6.webp" class="about-features__back-img">
+						<img src="img/pages/about-game/about-features__back-6.png" class="about-features__back-img">
 					</div>
 					<div class="about-features__wrapper">
 						<div class="about-features__media">
-							<img src="img/pages/about-game/about-features__media-6.webp" class="about-features__media-img">
+							<img src="img/pages/about-game/about-features__media-6.png" class="about-features__media-img">
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper">
@@ -1024,11 +1035,11 @@
 				</div>
 				<div class="about-features__item" id="grafic">
 					<div class="about-features__back">
-						<img src="img/pages/about-game/about-features__back-6.webp" class="about-features__back-img">
+						<img src="img/pages/about-game/about-features__back-6.png" class="about-features__back-img">
 					</div>
 					<div class="about-features__wrapper">
 						<div class="about-features__media">
-							<img src="img/pages/about-game/about-features__media-7.webp" class="about-features__media-img">
+							<img src="img/pages/about-game/about-features__media-7.png" class="about-features__media-img">
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper">
@@ -1080,11 +1091,11 @@
 				</div>
 				<div class="about-features__item" id="world">
 					<div class="about-features__back">
-						<img src="img/pages/about-game/about-features__back-6.webp" class="about-features__back-img">
+						<img src="img/pages/about-game/about-features__back-6.png" class="about-features__back-img">
 					</div>
 					<div class="about-features__wrapper">
 						<div class="about-features__media">
-							<img src="img/pages/about-game/about-features__media-8.webp" class="about-features__media-img">
+							<img src="img/pages/about-game/about-features__media-8.png" class="about-features__media-img">
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper">
@@ -1139,11 +1150,11 @@
 				</div>
 				<div class="about-features__item" id="story">
 					<div class="about-features__back">
-						<img src="img/pages/about-game/about-features__back-6.webp" class="about-features__back-img">
+						<img src="img/pages/about-game/about-features__back-6.png" class="about-features__back-img">
 					</div>
 					<div class="about-features__wrapper">
 						<div class="about-features__media">
-							<img src="img/pages/about-game/about-features__media-9.webp" class="about-features__media-img">
+							<img src="img/pages/about-game/about-features__media-9.png" class="about-features__media-img">
 						</div>
 						<div class="about-features__content">
 							<div class="about-features__content-wrapper">
@@ -1242,9 +1253,12 @@
 			</script>
 			<style>
 				/* Небольшой костыль от сбоя в работе WebPack с GIF */
-				.about-features__switcher-item._active,
-				.about-features__switcher-item:hover {
+				.about-features__switcher-item._active {
 					background: url(files/gif/animated-bg.gif) center center/cover no-repeat;
+				}
+
+				.about-features__switcher-item:hover {
+					background: url(files/gif/animated-bg-hover.gif) center center/cover no-repeat;
 				}
 			</style>
 		</main>
@@ -1310,7 +1324,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241127213050"></script>
+	<script src="js/app.min.js?_v=20241128154742"></script>
 </body>
 
 </html>

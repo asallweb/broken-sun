@@ -6,9 +6,9 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241128185935">
-	<script src="files/js/preloader.js?_v=20241128185935"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241128185935">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241128212731">
+	<script src="files/js/preloader.js?_v=20241128212731"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241128212731">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -257,8 +257,10 @@
 				</div>
 			</div>
 			<style>
-				._type-2 .menu__item:hover .menu__link::before {
-					background: url('./files/gif/menu__link.png') center bottom / 100% 100% no-repeat;
+				@media (min-width: 768px) {
+					._type-2 .menu__item:hover .menu__link::before {
+						background: url('./files/gif/menu__link.png') center bottom / 100% 100% no-repeat;
+					}
 				}
 			</style>
 		</header>
@@ -366,24 +368,25 @@
 				</div>
 				<script>
 					function updateLogoPosition() {
-						const baseTop = 150; // top для FullHD
-						const baseHeight = 1080; // базовая высота экрана
-						const scaleFactor = 0.388; // коэффициент
-
-						// Получаем высоту экрана
+						const baseTop = 150;
+						const baseHeight = 1080;
+						const scaleFactor = 0.388;
+						const screenWidth = window.innerWidth;
 						const screenHeight = window.innerHeight;
 
-						// Рассчитываем top
-						const computedTop = baseTop + (screenHeight - baseHeight) * scaleFactor;
-
-						// Применяем значение
-						const logo = document.querySelector('.hero__logo'); // замените на реальный селектор вашего логотипа
-						if (logo) {
-							logo.style.top = `${computedTop}px`;
+						if (screenWidth > 1200) {
+							const computedTop = baseTop + (screenHeight - baseHeight) * scaleFactor;
+							const logo = document.querySelector('.hero__logo');
+							if (logo) {
+								logo.style.top = `${computedTop}px`;
+							}
+						} else {
+							const logo = document.querySelector('.hero__logo');
+							if (logo) {
+								logo.style.top = '';
+							}
 						}
 					}
-
-					// Вызываем функцию при загрузке страницы и изменении размеров экрана
 					window.addEventListener('load', updateLogoPosition);
 					window.addEventListener('resize', updateLogoPosition);
 				</script>
@@ -750,9 +753,7 @@
 								</div>
 								<div class="character__name">
 									<div class="character__icon">
-										<svg class="character__icon-img _active">
-											<use xlink:href="img/content/character/subclass.svg#subclass-1"></use>
-										</svg>
+										<img src="img/content/character/subclass-1.svg" class="character__icon-img _active">
 										<img src="img/content/character/subclass-1_hovered.svg" class="character__icon-img">
 									</div>
 									<div class="character__title">Стойкость</div>
@@ -764,9 +765,7 @@
 								</div>
 								<div class="character__name">
 									<div class="character__icon">
-										<svg class="character__icon-img _active">
-											<use xlink:href="img/content/character/subclass.svg#subclass-2"></use>
-										</svg>
+										<img src="img/content/character/subclass-2.svg" class="character__icon-img _active">
 										<img src="img/content/character/subclass-2_hovered.svg" class="character__icon-img">
 									</div>
 									<div class="character__title">Гнев</div>
@@ -778,9 +777,7 @@
 								</div>
 								<div class="character__name">
 									<div class="character__icon">
-										<svg class="character__icon-img _active">
-											<use xlink:href="img/content/character/subclass.svg#subclass-3"></use>
-										</svg>
+										<img src="img/content/character/subclass-3.svg" class="character__icon-img _active">
 										<img src="img/content/character/subclass-3_hovered.svg" class="character__icon-img">
 									</div>
 									<div class="character__title">Хитрость</div>
@@ -792,9 +789,7 @@
 								</div>
 								<div class="character__name">
 									<div class="character__icon">
-										<svg class="character__icon-img _active">
-											<use xlink:href="img/content/character/subclass.svg#subclass-4"></use>
-										</svg>
+										<img src="img/content/character/subclass-4.svg" class="character__icon-img _active">
 										<img src="img/content/character/subclass-4_hovered.svg" class="character__icon-img">
 									</div>
 									<div class="character__title">Ловкость</div>
@@ -806,9 +801,7 @@
 								</div>
 								<div class="character__name">
 									<div class="character__icon">
-										<svg class="character__icon-img _active">
-											<use xlink:href="img/content/character/subclass.svg#subclass-5"></use>
-										</svg>
+										<img src="img/content/character/subclass-5.svg" class="character__icon-img _active">
 										<img src="img/content/character/subclass-5_hovered.svg" class="character__icon-img">
 									</div>
 									<div class="character__title">Натиск</div>
@@ -820,9 +813,7 @@
 								</div>
 								<div class="character__name">
 									<div class="character__icon">
-										<svg class="character__icon-img _active">
-											<use xlink:href="img/content/character/subclass.svg#subclass-6"></use>
-										</svg>
+										<img src="img/content/character/subclass-6.svg" class="character__icon-img _active">
 										<img src="img/content/character/subclass-6_hovered.svg" class="character__icon-img">
 									</div>
 									<div class="character__title">Воздух</div>
@@ -834,9 +825,7 @@
 								</div>
 								<div class="character__name">
 									<div class="character__icon">
-										<svg class="character__icon-img _active">
-											<use xlink:href="img/content/character/subclass.svg#subclass-8"></use>
-										</svg>
+										<img src="img/content/character/subclass-7.svg" class="character__icon-img _active">
 										<img src="img/content/character/subclass-8_hovered.svg" class="character__icon-img">
 									</div>
 									<div class="character__title">Вода</div>
@@ -848,9 +837,7 @@
 								</div>
 								<div class="character__name">
 									<div class="character__icon">
-										<svg class="character__icon-img _active">
-											<use xlink:href="img/content/character/subclass.svg#subclass-7"></use>
-										</svg>
+										<img src="img/content/character/subclass-8.svg" class="character__icon-img _active">
 										<img src="img/content/character/subclass-7_hovered.svg" class="character__icon-img">
 									</div>
 									<div class="character__title">Огонь</div>
@@ -862,9 +849,7 @@
 								</div>
 								<div class="character__name">
 									<div class="character__icon">
-										<svg class="character__icon-img _active">
-											<use xlink:href="img/content/character/subclass.svg#subclass-9"></use>
-										</svg>
+										<img src="img/content/character/subclass-9.svg" class="character__icon-img _active">
 										<img src="img/content/character/subclass-9_hovered.svg" class="character__icon-img">
 									</div>
 									<div class="character__title">Земля</div>
@@ -1247,7 +1232,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20241128185935"></script>
+	<script src="js/app.min.js?_v=20241128212731"></script>
 </body>
 
 </html>

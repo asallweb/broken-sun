@@ -6,10 +6,10 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241129194923">
-	<script src="files/js/preloader.js?_v=20241129194923"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241129194923">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241129194923">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241130095505">
+	<script src="files/js/preloader.js?_v=20241130095505"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241130095505">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241130095505">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -263,7 +263,7 @@
 				<div class="hero__wrapper">
 					<div class="__container">
 						<div class="hero__logo">
-							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInDown" data-delay="6000">
+							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInDown" data-delay="700">
 								<img src="img/logos/hero__logo-2.webp" alt="BROKEN SUN" class="hero__logo-src">
 								<div class="hero__logo-title">
 									Учавствуй в битвах богов и героев
@@ -271,7 +271,7 @@
 							</div>
 						</div>
 						<div class="hero__bottom">
-							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInUp" data-delay="7000">
+							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInUp" data-delay="1000">
 								<div class="hero__register">
 									<button class="hero__button button _size-l _fz-22">
 										<span class="button__text">
@@ -310,7 +310,7 @@
 							</div>
 						</div>
 						<div class="hero__folowus">
-							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInRight" data-delay="8000">
+							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInRight" data-delay="1500">
 								<div class="hero__folowus-wrapper">
 									<div class="hero__folowus-text">FOLLOW US</div>
 									<div class="hero__folowus-list">
@@ -351,8 +351,12 @@
 							</div>
 						</div>
 					</div>
-					<video id="hero__background" class="hero__background" autoplay muted playsinline loop></video>
-					<video id="introVideo" class="intro-video" autoplay muted playsinline></video>
+					<picture>
+						<source srcset="img/background/hero/hero-static-bg__1440p.webp" media="(min-width: 1921px)">
+						<source srcset="img/background/hero/hero-static-bg__1080p.webp" media="(min-width: 1281px)">
+						<source srcset="img/background/hero/hero-static-bg__720p.webp" media="(min-width: 768px)">
+						<img src="img/background/hero/hero-static-bg__mobile.webp" class="hero__static-bg">
+					</picture>
 					<img src="img/background/hero/hero__arrow.webp" class="hero__arrow" data-goto-header data-goto=".world">
 				</div>
 				<div class="separator">
@@ -1226,7 +1230,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20241129194923"></script>
+	<script src="js/app.min.js?_v=20241130095505"></script>
 </body>
 
 </html>

@@ -6391,6 +6391,13 @@ textarea {
   opacity: 1;
   visibility: visible
 }
+.hero__static-bg {
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+  min-height: 410px
+}
 ._portal .hero__logo-title {
   top: 76%;
   color: #ffc260;

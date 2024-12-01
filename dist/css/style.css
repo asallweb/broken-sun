@@ -9383,7 +9383,7 @@ textarea {
   flex: 0 0 auto
 }
 .news {
-  width: 1002px
+  width: 100%
 }
 .news__h1-title {
   color: #f9df94;
@@ -9407,11 +9407,13 @@ textarea {
 }
 .news__wrapper-body {
   width: 660px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px
 }
 .news__wrapper-sidebar {
+  flex: 0 0 auto;
   width: 322px;
   display: flex;
   flex-direction: column;
@@ -11220,11 +11222,11 @@ textarea {
     gap: 15px
   }
   .news__wrapper-body {
-    width: 50%;
+    width: 65%;
     gap: 15px
   }
   .news__wrapper-sidebar {
-    width: 50%;
+    width: 35%;
     gap: 15px
   }
   .article__inventory._main-article {

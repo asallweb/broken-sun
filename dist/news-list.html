@@ -6,10 +6,10 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241201105119">
-	<script src="files/js/preloader.js?_v=20241201105119"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241201105119">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241201105119">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241201183113">
+	<script src="files/js/preloader.js?_v=20241201183113"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241201183113">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241201183113">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -265,7 +265,7 @@
 			<div class="__container">
 				<section class="news-wrapper">
 					<section class="news">
-						<h1 class="news__h1-title" data-da=".sidebar-news, 920, 0">Новости</h1>
+						<h1 class="news__h1-title">Новости</h1>
 						<div class="news__wrapper">
 							<div class="news__wrapper-body">
 								<article class="article">
@@ -369,13 +369,13 @@
 										</div>
 									</div>
 								</article>
-								<section class="pagination">
-									<a href="" class="pagination__link _active">1</a>
-									<a href="" class="pagination__link">2</a>
-									<a href="" class="pagination__link">3</a>
-									<a href="" class="pagination__link">-></a>
-									<a href="" class="pagination__link">250</a>
-								</section>
+								<!-- <section class="pagination">
+				<a href="" class="pagination__link _active">1</a>
+				<a href="" class="pagination__link">2</a>
+				<a href="" class="pagination__link">3</a>
+				<a href="" class="pagination__link">-></a>
+				<a href="" class="pagination__link">250</a>
+			</section> -->
 								<article class="article">
 									<div class="article__wrapper">
 										<div class="article__meta">
@@ -497,13 +497,13 @@
 										</div>
 									</div>
 								</article>
-								<section class="pagination">
-									<a href="" class="pagination__link _active">1</a>
-									<a href="" class="pagination__link">2</a>
-									<a href="" class="pagination__link">3</a>
-									<a href="" class="pagination__link">-></a>
-									<a href="" class="pagination__link">250</a>
-								</section>
+								<!-- <section class="pagination">
+				<a href="" class="pagination__link _active">1</a>
+				<a href="" class="pagination__link">2</a>
+				<a href="" class="pagination__link">3</a>
+				<a href="" class="pagination__link">-></a>
+				<a href="" class="pagination__link">250</a>
+			</section> -->
 								<div class="load-more">
 									<div class="load-more__separator">
 										<img src="img/elements/load-more/separator-middle.svg" class="load-more__separator-icon">
@@ -550,82 +550,6 @@
 							</div>
 						</div>
 					</section>
-					<aside class="sidebar-news">
-						<div class="search-widget _mb-30">
-							<input type="text" placeholder="Введите поисковой запрос" class="search-widget__input">
-							<button type="submit" class="search-widget__submit"></button>
-						</div>
-						<section class="last-posts">
-							<div class="last-posts__title">
-								Последние записи
-							</div>
-							<div class="load-more _show-920">
-								<button class="load-more__button _active" onclick="hideSection('.last-posts__toggle-wrapper', this)">
-									<span class="load-more__button-text">Свернуть</span>
-								</button>
-							</div>
-							<div class="last-posts__toggle-wrapper _active">
-								<div class="post _mb-25">
-									<a href="" class="post__name">Upcoming Changes to Crafting Fee Limit</a>
-									<div class="post__info">29 МАРТА 2024 Г., 07:18 | Tretyakov</div>
-								</div>
-								<div class="post _mb-25">
-									<a href="" class="post__name">Video: Dev Talk Feedback Response</a>
-									<div class="post__info">29 МАРТА 2024 Г., 07:18 | Tretyakov</div>
-								</div>
-								<div class="post _mb-25">
-									<a href="" class="post__name">Dev Talk: Fortifications</a>
-									<div class="post__info">29 МАРТА 2024 Г., 07:18 | Tretyakov</div>
-								</div>
-							</div>
-						</section>
-						<section class="last-posts _video">
-							<div class="last-posts__title">
-								Последние видео
-							</div>
-							<div class="load-more _show-920">
-								<button class="load-more__button _active" onclick="hideSection('.last-posts__toggle-wrapper', this)">
-									<span class="load-more__button-text">Свернуть</span>
-								</button>
-							</div>
-							<div class="last-posts__toggle-wrapper _active">
-								<div class="last-posts__wrapper">
-									<div class="post">
-										<a href="" class="post__media">
-											<img src="img/content/news/article-8.webp" class="">
-										</a>
-										<a href="" class="post__name">Ожидайте в Европе</a>
-										<div class="post__info">12 МАРТА 2024 Г., 15:06</div>
-									</div>
-									<div class="post">
-										<a href="" class="post__media">
-											<img src="img/content/news/article-9.webp" class="">
-										</a>
-										<a href="" class="post__name">Что такое ретаргет</a>
-										<div class="post__info">12 МАРТА 2024 Г., 15:06</div>
-									</div>
-								</div>
-							</div>
-						</section>
-						<script>
-							function hideSection(selector, button) {
-								const lastPosts = button.closest('.last-posts');
-								const toggleWrapper = lastPosts.querySelector(selector);
-
-								if (toggleWrapper) {
-									toggleWrapper.classList.toggle('_active');
-									button.classList.toggle('_active');
-
-									const buttonText = button.querySelector('.load-more__button-text');
-									if (toggleWrapper.classList.contains('_active')) {
-										buttonText.textContent = 'Свернуть';
-									} else {
-										buttonText.textContent = 'Развернуть';
-									}
-								}
-							}
-						</script>
-					</aside>
 				</section>
 			</div>
 		</main>
@@ -671,7 +595,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241201105119"></script>
+	<script src="js/app.min.js?_v=20241201183113"></script>
 </body>
 
 </html>

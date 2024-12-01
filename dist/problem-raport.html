@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Анкета №5</title>
+	<title>Описание проблемы</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
@@ -52,47 +52,68 @@
 				</div>
 			</div>
 		</header>
-		<main class="page">
-			<section class="success">
+		<main class="page _dark-bg">
+			<section class="form">
 				<div class="__container">
-					<div class="success__wrapper">
-						<div class="success__image">
-							<img src="img/content/success.webp" class="success__img">
-						</div>
-						<div class="success__title">
-							Congratulations, your application has been submitted!
-						</div>
-						<div class="success__subtitle">
-							The Gods of the Broken Sun world bless you on your journey.
-						</div>
-						<div class="success__text">
-							Before you begin, please confirm your email address. <br>
-							We have sent instructions to the email you provided.
-						</div>
-					</div>
-					<div class="success__message">
-						<div class="success__message-text">
-							Get the latest news about the project first! Follow us on social media
-							<div class="success__socials">
-								<a href="" class="success__socials-link _tg">
-									<svg class="non-hovered" width="32" height="32">
-										<use xlink:href="img/icons/social_networks.svg#tg"></use>
-									</svg>
-									<svg class="hovered" width="42" height="39">
-										<use xlink:href="img/icons/social_networks.svg#tg-hovered"></use>
-									</svg>
-								</a>
-								<a href="" class="success__socials-link _youtube">
-									<svg class="non-hovered" width="32" height="32">
-										<use xlink:href="img/icons/social_networks.svg#youtube"></use>
-									</svg>
-									<svg class="hovered" width="42" height="38">
-										<use xlink:href="img/icons/social_networks.svg#youtube-hovered"></use>
-									</svg>
-								</a>
+					<div class="form__wrapper">
+						<div class="form__wrapper-inner">
+							<a href="#" class="form__mainpage-link">
+								<img src="img/icons/form/mainpage.svg">
+								На главную
+							</a>
+							<div class="form__inner">
+								<div class="form__title">Описание проблемы</div>
+								<div class="field-wrapper">
+									<label for=""><span>*</span>Ваш контактный email:</label>
+									<input type="text" placeholder="email@email.com" value="">
+								</div>
+								<div class="field-wrapper">
+									<label for="">Ваш Telegram:</label>
+									<input type="text" placeholder="@tgme_" value="">
+								</div>
+								<div class="field-wrapper _mb-10">
+									<label for=""><span>*</span>Краткое описание бага</label>
+									<input type="text" placeholder="Не могу создать персонажа" value="">
+								</div>
+								<div class="field-wrapper">
+									<label for=""><span>*</span>Описание бага:</label>
+									<div class="bug-description-example">
+										<div class="bug-description-example__title">Пример заполнения:</div>
+										<div class="bug-description-example__subtitle">Операционная система, браузер, общие характеристики устройства.</div>
+										<ol>
+											<li>Запустить игру</li>
+											<li>Выполнить регистрацию/авторизацию</li>
+											<li>Выбрать скин персонажа</li>
+											<li>Нажать контрол "Создать"</li>
+										</ol>
+									</div>
+									<textarea placeholder="Описание"></textarea>
+								</div>
+								<div class="field-wrapper">
+									<label for="">Прикрепите скриншот и видео</label>
+									<div class="dragndrop">
+										<button class="dragndrop__add-button">+ Прикрепить файл</button>
+										<div class="dragndrop__list-files">
+											<div class="dragndrop__item">
+												<button class="dragndrop__item-delete-file">
+													<img src="img/elements/dragndrop/close.svg" class="dragndrop__item-delete-icon">
+												</button>
+												<img src="img/elements/dragndrop/image-1.webp" class="dragndrop__item-img">
+											</div>
+											<div class="dragndrop__item _video-file">
+												<button class="dragndrop__item-delete-file">
+													<img src="img/elements/dragndrop/close.svg" class="dragndrop__item-delete-icon">
+												</button>
+												<img src="img/elements/dragndrop/image-1.webp" class="dragndrop__item-img">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="submit-wrapper">
+									<button class="button _size-xl _fz-26" disabled><span class="button__text">Отправить</span></button>
+								</div>
 							</div>
 						</div>
-						<img src="img/background/anketa/success__message.webp" class="success__message-img">
 					</div>
 				</div>
 			</section>

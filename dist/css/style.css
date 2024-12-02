@@ -6642,11 +6642,11 @@ textarea {
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%)
 }
-.world__item:hover .world__img:nth-child(1) {
+.world__item:not(._ierihon):hover .world__img:nth-child(1) {
   opacity: 0;
   visibility: hidden
 }
-.world__item:hover .world__img:nth-child(2) {
+.world__item:not(._ierihon):hover .world__img:nth-child(2) {
   opacity: 1;
   visibility: visible
 }
@@ -9391,7 +9391,7 @@ textarea {
   font-size: 34px;
   font-weight: 500;
   line-height: 1;
-  margin-bottom: 20px
+  margin-bottom: 22px
 }
 .news__title {
   background: #384a6b;
@@ -11233,7 +11233,6 @@ textarea {
     gap: 15px
   }
   .news__wrapper-body {
-    width: 65%;
     gap: 15px
   }
   .news__wrapper-sidebar {

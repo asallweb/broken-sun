@@ -10083,7 +10083,7 @@ textarea {
 .about-hero {
   position: relative;
   height: 100dvh;
-  min-height: 780px;
+  min-height: 820px;
   overflow: hidden
 }
 .about-hero__wrapper {

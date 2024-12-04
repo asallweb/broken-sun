@@ -6368,15 +6368,15 @@ textarea {
   position: absolute;
   top: 63.5%;
   width: 100%;
-  color: #c67b36;
+  color: #ffd66f;
   font-size: 26px;
   line-height: 1.23;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 0 2px 5px rgba(0,0,0,.65)
+  text-shadow: 0 0 1px rgba(0,0,0,.9)
 }
 ._eng .hero__logo-title {
-  font-size: 21px
+  font-size: 23px
 }
 .hero__bottom {
   position: absolute;
@@ -6482,16 +6482,14 @@ textarea {
   min-height: 410px
 }
 ._portal .hero__logo-title {
-  top: 76%;
-  color: #ffc260;
-  text-shadow: 0 3px 6px rgba(0,0,0,.8)
+  top: 65%
 }
 ._portal .hero__logo-title::before {
   content: "";
-  background: radial-gradient(42.58% 50% at 50% 50%,rgba(0,0,0,.6) 27.24%,rgba(0,0,0,0) 64.69%);
+  background: radial-gradient(42.58% 50% at 50% 50%,rgba(0,0,0,.6) 27.24%,rgba(0,0,0,0) 100%);
   position: absolute;
   width: 597px;
-  height: 88px;
+  height: 104px;
   display: block;
   left: 50%;
   top: 50%;
@@ -7751,6 +7749,12 @@ textarea {
 .form__subtitle._mt-60 {
   margin-top: 60px
 }
+.form__subtitle._mb-25 {
+  margin-bottom: 25px
+}
+.form__subtitle._ta-l {
+  text-align: left
+}
 .form a:not(.button) {
   color: #f9df94
 }
@@ -7855,6 +7859,15 @@ textarea {
   position: relative;
   padding-left: 15px
 }
+.form .checkbox-wrapper label._mb-0 {
+  margin-bottom: 0
+}
+.form .checkbox-wrapper label.pl-0 {
+  padding-left: 0
+}
+.form .checkbox-wrapper label._w-30 {
+  width: 30px
+}
 .form .checkbox-wrapper span {
   color: #e54555;
   position: absolute;
@@ -7863,6 +7876,12 @@ textarea {
 }
 .form .checkbox-wrapper._pl-10 {
   padding-left: 10px
+}
+.form .checkbox-wrapper._gap-6 {
+  gap: 6px
+}
+.form .checkbox-wrapper._m-0 {
+  margin: 0
 }
 .form .checkbox-wrapper a {
   color: #1969ad;
@@ -8032,6 +8051,12 @@ textarea {
 }
 .form__mainpage-link:hover {
   text-decoration: none!important
+}
+.form__points-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px
 }
 .success__wrapper {
   text-align: center
@@ -9489,6 +9514,12 @@ textarea {
   font-size: 16px;
   font-weight: 300;
   line-height: 1.33
+}
+.article__text a {
+  color: #f9df94
+}
+.article__text a:hover {
+  text-decoration: underline
 }
 .article__detail {
   color: #25201b;
@@ -11663,7 +11694,7 @@ textarea {
     font-size: 22px
   }
   ._eng .hero__logo-title {
-    font-size: 17px
+    font-size: 18px
   }
   .hero__bottom {
     bottom: 85px
@@ -11933,6 +11964,11 @@ textarea {
     left: auto;
     margin: 15px 0 0 10px
   }
+  .form__points-wrapper {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 5px
+  }
   .character._height-640 .character__item {
     height: 338px
   }
@@ -12057,7 +12093,7 @@ textarea {
     font-size: 14px
   }
   ._eng .hero__logo-title {
-    font-size: 12px
+    font-size: 13px
   }
   .hero__bottom {
     bottom: 82px
@@ -12462,9 +12498,6 @@ textarea {
   }
   .hero__logo-title {
     font-size: 14px
-  }
-  ._eng .hero__logo-title {
-    font-size: 11px
   }
   .hero__bottom {
     bottom: 82px
@@ -13001,7 +13034,7 @@ textarea {
     top: 64.5%
   }
   ._eng .hero__logo-title {
-    font-size: 11px
+    font-size: 12px
   }
   .hero__bottom {
     bottom: 77px

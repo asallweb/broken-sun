@@ -8055,7 +8055,8 @@ textarea {
 .form__points-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 22px;
   margin-bottom: 25px
 }
 .success__wrapper {
@@ -11965,9 +11966,7 @@ textarea {
     margin: 15px 0 0 10px
   }
   .form__points-wrapper {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 5px
+    gap: 0
   }
   .character._height-640 .character__item {
     height: 338px

@@ -13532,6 +13532,13 @@ textarea {
     font-size: 10px;
     line-height: 14px
   }
+  .form__points-wrapper {
+    flex-wrap: wrap;
+    gap: 10px 0
+  }
+  .form__points-wrapper div {
+    width: 20%
+  }
   .character__title {
     display: none
   }

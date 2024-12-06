@@ -8204,6 +8204,12 @@ textarea {
   position: relative;
   background: url(../img/elements/faq/bg.webp) center center/100% 100% no-repeat
 }
+.faq__inner._no-bg {
+  background: 0 0
+}
+.faq__inner._height-100 {
+  min-height: calc(100vh - 400px)
+}
 .faq__title {
   color: #f9df94;
   text-align: center;

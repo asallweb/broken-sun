@@ -7883,6 +7883,12 @@ textarea {
 .form .checkbox-wrapper._m-0 {
   margin: 0
 }
+.form .checkbox-wrapper._w-33p {
+  width: 33%
+}
+.form .checkbox-wrapper._jc-c {
+  justify-content: center
+}
 .form .checkbox-wrapper a {
   color: #1969ad;
   text-decoration: underline
@@ -8058,6 +8064,15 @@ textarea {
   justify-content: center;
   gap: 22px;
   margin-bottom: 25px
+}
+.form__points-wrapper._jc-sa {
+  justify-content: space-around
+}
+.form__points-wrapper._jc-sb {
+  justify-content: space-between
+}
+.form__points-wrapper._jc-с {
+  justify-content: center
 }
 .success__wrapper {
   text-align: center

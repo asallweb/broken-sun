@@ -6,10 +6,10 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241212101639">
-	<script src="files/js/preloader.js?_v=20241212101639"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241212101639">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241212101639">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241212163127">
+	<script src="files/js/preloader.js?_v=20241212163127"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241212163127">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241212163127">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -347,6 +347,7 @@
 						<source srcset="img/background/hero/hero-static-bg__720p.webp" media="(min-width: 768px)">
 						<img src="img/background/hero/hero-static-bg__mobile.webp" class="hero__static-bg">
 					</picture>
+					<video id="hero__background" class="hero__background" autoplay muted playsinline loop></video>
 					<img src="img/background/hero/hero__arrow.webp" class="hero__arrow" data-goto-header data-goto=".world">
 				</div>
 				<div class="separator">
@@ -377,6 +378,36 @@
 					}
 					window.addEventListener('load', updateLogoPosition);
 					window.addEventListener('resize', updateLogoPosition);
+				</script>
+
+				<script>
+					window.addEventListener('load', () => {
+						setVideoSource();
+						const video = document.getElementById('hero__background');
+						const staticBg = document.querySelector('.hero__static-bg');
+						if (video) {
+							video.addEventListener('loadeddata', () => {
+								video.classList.add('_active');
+								if (staticBg) {
+									staticBg.style.display = 'none';
+								}
+							});
+							video.load();
+						}
+					});
+
+					function setVideoSource() {
+						const video = document.getElementById('hero__background');
+						if (!video) return;
+
+						if (window.matchMedia('(max-width: 767px)').matches) {
+							video.src = 'files/video/gateSun_hd.mp4';
+						} else if (window.matchMedia('(min-width: 768px) and (max-width: 1920px)').matches) {
+							video.src = 'files/video/gateSun_fhd.mp4';
+						} else {
+							video.src = 'files/video/gateSun_2k.mp4';
+						}
+					}
 				</script>
 			</section>
 			<section class="portal-news">
@@ -918,7 +949,7 @@
 					</div>
 					<div class="awards__ornament">
 						<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeIn">
-							<img src="img/background/awards__ornament.webp" class="awards__ornament-src">
+							<img data-src="img/background/awards__ornament.webp" class="awards__ornament-src lazy-loading">
 						</div>
 					</div>
 					<div class="awards__image">
@@ -1082,7 +1113,7 @@
 						</div>
 						<div class="platform__image-wrapper">
 							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInDown" data-delay="500">
-								<img src="img/content/platform/platform-2_2k.webp" class="platform__image-src">
+								<img data-src="img/content/platform/platform-2_2k.webp" class="platform__image-src  lazy-loading">
 							</div>
 						</div>
 					</div>
@@ -1136,7 +1167,7 @@
 						</div>
 						<div class="counter__image">
 							<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInUp">
-								<img src="img/content/counter/counter_1440.webp" class="counter__image-src">
+								<img data-src="img/content/counter/counter_1440.webp" class="counter__image-src lazy-loading">
 							</div>
 						</div>
 						<img src="img/background/counter/counter__arrow.webp" class="counter__arrow" data-goto=".hero">
@@ -1219,7 +1250,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20241212101639"></script>
+	<script src="js/app.min.js?_v=20241212163127"></script>
 </body>
 
 </html>

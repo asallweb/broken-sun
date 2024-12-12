@@ -4906,6 +4906,16 @@
     }
     window.addEventListener("load", adjustAfterHeight);
     window.addEventListener("resize", adjustAfterHeight);
+    window.addEventListener("load", (() => {
+        const lazyImages = document.querySelectorAll(".lazy-loading");
+        lazyImages.forEach((img => {
+            const dataSrc = img.getAttribute("data-src");
+            if (dataSrc) {
+                img.setAttribute("src", dataSrc);
+                img.removeAttribute("data-src");
+            }
+        }));
+    }));
     window["FLS"] = false;
     menuInit();
     spollers();

@@ -8071,9 +8071,6 @@ textarea {
 .form__points-wrapper._jc-sb {
   justify-content: space-between
 }
-.form__points-wrapper._jc-с {
-  justify-content: center
-}
 .success__wrapper {
   text-align: center
 }
@@ -10893,8 +10890,7 @@ textarea {
     width: 32px;
     height: 32px
   }
-  .menu__external-icon,
-  .menu__submenu-external-icon {
+  .menu__external-icon {
     display: none
   }
   .menu__submenu {

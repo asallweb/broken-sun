@@ -10400,10 +10400,6 @@ textarea {
 .about-features__switcher-item:hover {
   color: #f9df94
 }
-.about-features__switcher-item._active::after,
-.about-features__switcher-item:hover::after {
-  display: none
-}
 .about-features__switcher-item._active::before,
 .about-features__switcher-item:hover::before {
   display: block

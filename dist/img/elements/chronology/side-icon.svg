@@ -1,17 +1,10 @@
-<svg width="57" height="17" viewBox="0 0 57 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Frame" clip-path="url(#clip0_6268_53016)">
-<rect id="Rectangle 873" x="7" y="3" width="7" height="7" transform="rotate(45 7 3)" fill="#2B3E4D"/>
-<g id="Vector">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M57 11H13L8 17L0 9L8 0L14 7H57V11ZM8 5L4 8L8 12L11 8L8 5Z" fill="url(#paint0_linear_6268_53016)"/>
-</g>
-</g>
+<svg width="56" height="17" viewBox="0 0 56 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.0962 6L8.09619 0L0 8.09619L8.09619 16.1924L14.2886 10H56.0005V6H14.0962Z" fill="url(#paint0_linear_7766_12799)"/>
+<rect x="8.0957" y="4.85742" width="4.5799" height="4.5799" transform="rotate(45 8.0957 4.85742)" fill="#2B3E4D"/>
 <defs>
-<linearGradient id="paint0_linear_6268_53016" x1="57.4313" y1="8.5" x2="13.6014" y2="8.5" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_7766_12799" x1="56.4242" y1="8.09619" x2="13.3629" y2="8.09619" gradientUnits="userSpaceOnUse">
 <stop stop-color="#88A2B6" stop-opacity="0"/>
 <stop offset="1" stop-color="#A1B8CA"/>
 </linearGradient>
-<clipPath id="clip0_6268_53016">
-<rect width="57" height="17" fill="white"/>
-</clipPath>
 </defs>
 </svg>

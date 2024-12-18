@@ -6,10 +6,10 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241213085508">
-	<script src="files/js/preloader.js?_v=20241213085508"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241213085508">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241213085508">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241218110057">
+	<script src="files/js/preloader.js?_v=20241218110057"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241218110057">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241218110057">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -347,7 +347,7 @@
 						<source srcset="img/background/hero/hero-static-bg__720p.webp" media="(min-width: 768px)">
 						<img src="img/background/hero/hero-static-bg__mobile.webp" class="hero__static-bg">
 					</picture>
-					<video id="hero__background" class="hero__background" autoplay muted playsinline loop></video>
+					<!-- <video id="hero__background" class="hero__background" autoplay muted playsinline loop></video> -->
 					<img src="img/background/hero/hero__arrow.webp" class="hero__arrow" data-goto-header data-goto=".world">
 				</div>
 				<div class="separator">
@@ -381,33 +381,33 @@
 				</script>
 
 				<script>
-					window.addEventListener('load', () => {
-						setVideoSource();
-						const video = document.getElementById('hero__background');
-						const staticBg = document.querySelector('.hero__static-bg');
-						if (video) {
-							video.addEventListener('loadeddata', () => {
-								video.classList.add('_active');
-								if (staticBg) {
-									staticBg.style.display = 'none';
-								}
-							});
-							video.load();
-						}
-					});
+					// window.addEventListener('load', () => {
+					// 	setVideoSource();
+					// 	const video = document.getElementById('hero__background');
+					// 	const staticBg = document.querySelector('.hero__static-bg');
+					// 	if (video) {
+					// 		video.addEventListener('loadeddata', () => {
+					// 			video.classList.add('_active');
+					// 			if (staticBg) {
+					// 				staticBg.style.display = 'none';
+					// 			}
+					// 		});
+					// 		video.load();
+					// 	}
+					// });
 
-					function setVideoSource() {
-						const video = document.getElementById('hero__background');
-						if (!video) return;
+					// function setVideoSource() {
+					// 	const video = document.getElementById('hero__background');
+					// 	if (!video) return;
 
-						if (window.matchMedia('(max-width: 767px)').matches) {
-							video.src = 'files/video/gateSun_hd.mp4';
-						} else if (window.matchMedia('(min-width: 768px) and (max-width: 1920px)').matches) {
-							video.src = 'files/video/gateSun_fhd.mp4';
-						} else {
-							video.src = 'files/video/gateSun_2k.mp4';
-						}
-					}
+					// 	if (window.matchMedia('(max-width: 767px)').matches) {
+					// 		video.src = 'files/video/gateSun_hd.mp4';
+					// 	} else if (window.matchMedia('(min-width: 768px) and (max-width: 1920px)').matches) {
+					// 		video.src = 'files/video/gateSun_fhd.mp4';
+					// 	} else {
+					// 		video.src = 'files/video/gateSun_2k.mp4';
+					// 	}
+					// }
 				</script>
 			</section>
 			<section class="portal-news">
@@ -418,7 +418,7 @@
 								<div class="portal-news__image">
 									<img src="img/content/portal-news/1.webp" class="portal-news__img">
 								</div>
-								<div class="portal-news__title">Сражайся в дуэлях с другими игроками!</div>
+								<div class="portal-news__title">Сражайся в дуэлях с другими игроками! Тест на две строки</div>
 							</a>
 							<a href="" class="portal-news__item">
 								<div class="portal-news__image">
@@ -1250,7 +1250,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20241213085508"></script>
+	<script src="js/app.min.js?_v=20241218110057"></script>
 </body>
 
 </html>

@@ -10436,10 +10436,9 @@ textarea {
   padding: 37px 0
 }
 .portal-news__list {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 33px
+  gap: 33px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr)
 }
 .portal-news__item {
   color: #000;
@@ -14097,8 +14096,7 @@ textarea {
     padding: 37px 25px
   }
   .portal-news__list {
-    flex-direction: column;
-    align-items: center
+    grid-template-columns: repeat(1,1fr)
   }
 }
 @media (max-width:24.375em) {

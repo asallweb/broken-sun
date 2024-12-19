@@ -7886,6 +7886,9 @@ textarea {
 .form .checkbox-wrapper._w-33p {
   width: 33%
 }
+.form .checkbox-wrapper._w-25p {
+  width: 25%
+}
 .form .checkbox-wrapper._jc-c {
   justify-content: center
 }
@@ -7918,6 +7921,12 @@ textarea {
 }
 .form .field-title._mb-20 {
   margin-bottom: 20px
+}
+.form .field-title._yellow {
+  color: #f9df94
+}
+.form .field-title b {
+  font-weight: 500
 }
 .form .field-title span {
   color: #e54555;
@@ -13770,12 +13779,14 @@ textarea {
     font-size: 15px
   }
   .form-pagination__speps {
-    gap: 8px
+    gap: 8px;
+    width: 150px
   }
   .form-pagination__spep {
     width: 22px;
     height: 8px;
-    margin: 8px 0
+    margin: 8px 0;
+    flex: 1 1 auto
   }
   .form-pagination__required-message {
     font-size: 10px;

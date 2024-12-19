@@ -10085,7 +10085,8 @@ textarea {
   transition: all .3s ease-in-out;
   background: url(../img/background/dark__blue-2.webp) 0 0/100% 100% no-repeat;
   overflow: hidden;
-  height: 890px
+  height: 940px;
+  padding-top: 50px
 }
 .landing-hero-2__ornament {
   display: flex;

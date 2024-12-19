@@ -6,10 +6,10 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241219155141">
-	<script src="files/js/preloader.js?_v=20241219155141"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241219155141">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241219155141">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241219160612">
+	<script src="files/js/preloader.js?_v=20241219160612"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241219160612">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241219160612">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,15 +79,8 @@
 				</div>
 				<script>
 					window.addEventListener('load', function() {
-						const videoElement = document.getElementById('landing-hero-2__video');
-						if (videoElement) {
-							videoElement.addEventListener('play', function() {
-								setTimeout(function() {
-									document.querySelector('.landing-hero-2__video').classList.add('_moveright');
-									document.querySelector('.landing-hero-2__content').classList.add('_moveleft');
-								}, 1000);
-							});
-						}
+						document.querySelector('.landing-hero-2__content').classList.add('_moveleft');
+						document.querySelector('.landing-hero-2__video').classList.add('_moveright');
 					});
 				</script>
 			</section>
@@ -229,7 +222,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241219155141"></script>
+	<script src="js/app.min.js?_v=20241219160612"></script>
 </body>
 
 </html>

@@ -6,10 +6,10 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241219140225">
-	<script src="files/js/preloader.js?_v=20241219140225"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241219140225">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241219140225">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241219150912">
+	<script src="files/js/preloader.js?_v=20241219150912"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241219150912">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241219150912">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +49,7 @@
 						<img src="img/pages/landing/landing-hero-2__ornament.webp" class="landing-hero-2__ornament-src">
 					</div>
 					<div class="__container">
-						<div class="landing-hero-2__content _moveleft">
+						<div class="landing-hero-2__content">
 							<div class="landing-hero-2__title">Пошаговая MMORPG с графикой ААА-класса, доступная в браузере</div>
 							<div class="landing-hero-2__subtitle">Получи доступ к игре, и играй из дома или в офисе без каких-либо скачиваний</div>
 							<div class="landing-hero-2__browsers">
@@ -68,7 +68,7 @@
 							</button>
 						</div>
 						<div class="landing-hero-2__video-wrapper">
-							<video id="landing-hero-2__video" class="landing-hero-2__video _moveright" autoplay muted playsinline src="files/video/landing-2/landing-2__fhd.webm" poster="img/pages/landing/landing-2__fhd.webp"></video>
+							<video id="landing-hero-2__video" class="landing-hero-2__video" autoplay muted playsinline src="files/video/landing-2/landing-2__fhd.webm" poster="img/pages/landing/landing-2__fhd.webp"></video>
 						</div>
 					</div>
 				</div>
@@ -77,6 +77,14 @@
 					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
 					<div class="separator__right"></div>
 				</div>
+				<script>
+					window.addEventListener('load', function() {
+						setTimeout(function() {
+							document.querySelector('.landing-hero-2__content').classList.add('_moveleft');
+							document.querySelector('.landing-hero-2__video').classList.add('_moveright');
+						}, 1000);
+					});
+				</script>
 			</section>
 			<section class="gods _landing">
 				<div class="gods__heading">
@@ -216,7 +224,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241219140225"></script>
+	<script src="js/app.min.js?_v=20241219150912"></script>
 </body>
 
 </html>

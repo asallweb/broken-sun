@@ -6,10 +6,10 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241219153920">
-	<script src="files/js/preloader.js?_v=20241219153920"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241219153920">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241219153920">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241219155141">
+	<script src="files/js/preloader.js?_v=20241219155141"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241219155141">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241219155141">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
 <body>
 
 	<div class="wrapper _portal" id="wrapper">
-		<header class="header _active _relative">
+		<header class="header _active">
 			<div class="header__container">
 				<div class="header__wrapper">
 					<a href="">
@@ -81,10 +81,10 @@
 					window.addEventListener('load', function() {
 						const videoElement = document.getElementById('landing-hero-2__video');
 						if (videoElement) {
-							videoElement.addEventListener('canplay', function() {
+							videoElement.addEventListener('play', function() {
 								setTimeout(function() {
-									document.querySelector('.landing-hero-2__content').classList.add('_moveleft');
 									document.querySelector('.landing-hero-2__video').classList.add('_moveright');
+									document.querySelector('.landing-hero-2__content').classList.add('_moveleft');
 								}, 1000);
 							});
 						}
@@ -229,7 +229,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241219153920"></script>
+	<script src="js/app.min.js?_v=20241219155141"></script>
 </body>
 
 </html>

@@ -6,10 +6,10 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20241219160612">
-	<script src="files/js/preloader.js?_v=20241219160612"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241219160612">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241219160612">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20241220092233">
+	<script src="files/js/preloader.js?_v=20241220092233"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20241220092233">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20241220092233">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,7 +68,7 @@
 							</button>
 						</div>
 						<div class="landing-hero-2__video-wrapper">
-							<video id="landing-hero-2__video" class="landing-hero-2__video" autoplay muted playsinline src="files/video/landing-2/landing-2__fhd.webm" poster="img/pages/landing/landing-2__fhd.webp"></video>
+							<video id="landing-hero-2__video" class="landing-hero-2__video" muted playsinline src="files/video/landing-2/landing-2__fhd.webm" poster="img/pages/landing/landing-2__fhd.webp"></video>
 						</div>
 					</div>
 				</div>
@@ -79,8 +79,12 @@
 				</div>
 				<script>
 					window.addEventListener('load', function() {
-						document.querySelector('.landing-hero-2__content').classList.add('_moveleft');
-						document.querySelector('.landing-hero-2__video').classList.add('_moveright');
+						const videoElement = document.getElementById('landing-hero-2__video');
+						setTimeout(function() {
+							document.querySelector('.landing-hero-2__content').classList.add('_moveleft');
+							document.querySelector('.landing-hero-2__video').classList.add('_moveright');
+							videoElement.play();
+						}, 1000);
 					});
 				</script>
 			</section>
@@ -222,7 +226,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241219160612"></script>
+	<script src="js/app.min.js?_v=20241220092233"></script>
 </body>
 
 </html>

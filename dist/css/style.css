@@ -10133,7 +10133,7 @@ textarea {
   top: 0
 }
 .landing-hero-2__content._moveleft {
-  transition: all 1s ease-in-out;
+  transition: all 1s cubic-bezier(.4,0,0,1);
   -webkit-transform: translate(0,0);
   transform: translate(0,0);
   left: 50px;
@@ -10191,7 +10191,7 @@ textarea {
   bottom: 0
 }
 .landing-hero-2__video._moveright {
-  transition: all 1s ease-in-out;
+  transition: all 1s cubic-bezier(.4,0,0,1);
   width: 1920px;
   -webkit-transform: translate(-20%,0);
   transform: translate(-20%,0);
@@ -11714,6 +11714,12 @@ textarea {
   }
 }
 @media (max-width:1279px) {
+  .landing-hero-2__wrapper {
+    height: 810px
+  }
+  .landing-hero-2__content {
+    height: 760px
+  }
   .landing-hero-2__content._moveleft {
     position: relative;
     left: 50%;
@@ -11721,6 +11727,15 @@ textarea {
     -webkit-transform: translate(-50%,0);
     transform: translate(-50%,0);
     transition: none
+  }
+  .landing-hero-2__button {
+    position: absolute;
+    bottom: 44px;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    width: 220px!important;
+    height: 41px!important
   }
   .landing-hero-2__video._moveright {
     width: 1162px;
@@ -12198,6 +12213,16 @@ textarea {
     width: 14px;
     height: 14px
   }
+  .landing-section-2__button {
+    width: 270px!important;
+    height: 52px!important;
+    font-size: 20px!important
+  }
+  .landing-section-2__button .button__text::after,
+  .landing-section-2__button .button__text::before {
+    width: 16px;
+    height: 16px
+  }
 }
 @media (max-width:1080px) {
   .register__item {
@@ -12312,9 +12337,9 @@ textarea {
     bottom: 260px
   }
   .landing-section-2__content {
-    width: 656px;
-    height: 211px;
-    bottom: 45px;
+    width: 754px;
+    height: 242px;
+    bottom: 20px;
     padding: 40px 15px 20px
   }
   .landing-section-2__title {
@@ -12327,16 +12352,6 @@ textarea {
   }
   .landing-section-2__bg::after {
     background-size: 1170px auto
-  }
-  .landing-section-2__button {
-    width: 270px!important;
-    height: 52px!important;
-    font-size: 20px!important
-  }
-  .landing-section-2__button .button__text::after,
-  .landing-section-2__button .button__text::before {
-    width: 16px;
-    height: 16px
   }
 }
 @media (max-width:920px) {
@@ -13788,14 +13803,15 @@ textarea {
   }
   .form .form__navigation {
     gap: 15px;
-    margin-top: 30px
+    margin-top: 30px;
+    padding: 0 10px
   }
   .form .form__navigation-next._empty {
     width: 68px
   }
   .form__navigation-button {
     gap: 5px;
-    font-size: 15px
+    font-size: 0
   }
   .form__navigation-button-icon {
     width: 22px;
@@ -14233,7 +14249,7 @@ textarea {
     transform: rotate(180deg)
   }
   .landing-hero-2__wrapper {
-    height: 560px
+    height: 610px
   }
   .landing-hero-2__content {
     padding-top: 24px;
@@ -14255,15 +14271,6 @@ textarea {
   .landing-hero-2__browsers {
     margin-bottom: 0
   }
-  .landing-hero-2__button {
-    position: absolute;
-    bottom: 44px;
-    left: 50%;
-    -webkit-transform: translate(-50%,0);
-    transform: translate(-50%,0);
-    width: 200px!important;
-    height: 37px!important
-  }
   .landing-hero-2__video-wrapper {
     width: 100%;
     overflow: hidden;
@@ -14273,9 +14280,7 @@ textarea {
   .landing-hero-2__video {
     height: 337px;
     width: 100%;
-    position: absolute;
-    -o-object-fit: cover;
-    object-fit: cover
+    position: absolute
   }
   .landing-hero-2__video._moveright {
     transition: none;
@@ -14356,6 +14361,7 @@ textarea {
   }
   .landing-section-2__bg::after {
     background: url(../img/pages/landing/landing-section-2__bg-mobile.webp) center top no-repeat;
+    background-size: 722px auto;
     top: 170px;
     left: 50%;
     -webkit-transform: translate(-50%,0);

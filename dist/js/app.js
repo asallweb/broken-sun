@@ -4846,6 +4846,7 @@
             showBlock.classList.toggle("_hidden");
             hideBlock.classList.toggle("_hidden");
             menu.classList.toggle("_active");
+            toggler.classList.toggle("_active");
         }));
     }));
     document.addEventListener("DOMContentLoaded", (function() {

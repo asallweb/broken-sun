@@ -5302,7 +5302,7 @@ textarea {
 .progressbar__progress-list {
   display: flex;
   gap: 8px;
-  margin-bottom: 4px
+  margin-bottom: 12px
 }
 .progressbar__progress-item {
   background-color: #5a5a5a;
@@ -5320,22 +5320,36 @@ textarea {
   justify-content: flex-end;
   gap: 6px;
   color: #fff;
-  font-size: 14px;
-  height: 32px
+  font-size: 16px;
+  height: 32px;
+  border: 1px solid #b19f63;
+  background: #171e2c;
+  margin-left: auto;
+  width: 210px;
+  padding: 6px 8px
 }
 .progressbar__toggler ._hidden {
   display: none
 }
+.progressbar__toggler svg {
+  transition: -webkit-transform .5s ease 0s;
+  transition: transform .5s ease 0s;
+  transition: transform .5s ease 0s,-webkit-transform .5s ease 0s
+}
+.progressbar__toggler._active svg {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
 .progressbar__menu {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
-  padding-top: 15px;
   transition: all .3s ease-in-out;
   visibility: hidden;
   opacity: 0;
-  height: 0
+  height: 0;
+  background: rgba(30,37,51,.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  margin-left: auto;
+  width: 210px
 }
 .progressbar__menu._active {
   visibility: visible;
@@ -5345,12 +5359,26 @@ textarea {
 .progressbar__menu-title {
   color: #f9df94;
   text-shadow: 0 2.25px 2.25px rgba(0,0,0,.25);
-  font-size: 26px;
-  line-height: 1.15;
-  text-align: right;
+  font-size: 24px;
+  line-height: .73;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 4px
+  gap: 4px;
+  position: relative;
+  padding: 18px 0
+}
+.progressbar__menu-title::after {
+  content: "";
+  display: block;
+  width: 90%;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
+  background: linear-gradient(90deg,rgba(119,96,48,0) 0,#776030 10%,#ffebb2 50%,#776030 90%,rgba(119,96,48,0) 100%)
 }
 .progressbar__menu-item {
   color: #d4e8ff;
@@ -5358,7 +5386,13 @@ textarea {
   -webkit-text-stroke-width: 1;
   -webkit-text-stroke-color: rgba(0,0,0,.6);
   font-size: 20px;
-  line-height: 1.5
+  line-height: .73;
+  padding: 11px 8px;
+  width: 100%;
+  text-align: right
+}
+.progressbar__menu-item:not(:last-child) {
+  border-bottom: 1px solid rgba(255,255,255,.03)
 }
 .progressbar__menu-item._active {
   color: #f9df94
@@ -6228,7 +6262,8 @@ textarea {
   color: #b19f63;
   line-height: 1.25;
   text-transform: uppercase;
-  white-space: nowrap
+  white-space: nowrap;
+  padding: 13px 0
 }
 .footer__menu-item:hover {
   color: #f9df94
@@ -6341,7 +6376,7 @@ textarea {
 }
 .hero__arrow {
   position: absolute;
-  bottom: 3.5vh;
+  bottom: 2.5vh;
   left: 50%;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
@@ -7376,8 +7411,8 @@ textarea {
   background: url(../img/background/dark__blue.webp) center top repeat-y;
   background-size: 100% auto;
   position: relative;
-  padding-top: 100px;
-  padding-bottom: 90px
+  padding-top: 95px;
+  padding-bottom: 56px
 }
 .platform__wrapper {
   position: relative;
@@ -7402,8 +7437,8 @@ textarea {
   text-align: center
 }
 .platform__text {
-  max-width: 674px;
-  margin: 0 auto 65px;
+  max-width: 630px;
+  margin: 0 auto;
   color: #fafafa;
   font-weight: 300;
   line-height: 1.36;
@@ -7418,6 +7453,16 @@ textarea {
 }
 .platform__image-src {
   max-width: 850px
+}
+.platform__platforms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 52.5px
+}
+.platform__platform-link img {
+  width: 100%;
+  height: auto
 }
 .counter {
   position: relative;
@@ -8304,23 +8349,14 @@ textarea {
   width: 2px;
   height: 100%
 }
-.character__item::after {
-  content: "";
-  background: linear-gradient(rgba(0,0,0,0) 62.86%,rgba(0,0,0,.3) 81.45%,rgba(0,0,0,.8) 100%);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0
-}
 .character__item._red {
-  background: linear-gradient(#5a1614 0,#290901 100%)
+  background: linear-gradient(180deg,rgba(0,0,0,0) 62.86%,rgba(0,0,0,.1) 100%),linear-gradient(180deg,#4a0606 0,#3a0404 100%)
 }
 .character__item._green {
-  background: linear-gradient(180deg,#265c2c 0,#00230e 100%)
+  background: linear-gradient(180deg,rgba(0,0,0,0) 62.86%,rgba(0,0,0,.1) 100%),linear-gradient(180deg,#033d1a 0,#033316 100%)
 }
 .character__item._violet {
-  background: linear-gradient(180deg,#4c2f63 0,#17142d 100%)
+  background: linear-gradient(180deg,rgba(0,0,0,0) 62.86%,rgba(0,0,0,.1) 100%),linear-gradient(180deg,#322047 0,#2a1a3d 100%)
 }
 .character__item:hover {
   width: 210px
@@ -9474,7 +9510,7 @@ textarea {
   gap: 20px
 }
 .article {
-  background: url(../img/background/news/article-bg.webp) center bottom repeat,linear-gradient(0deg,#9ea1a6 0,#b3babd 100%);
+  background: url(../img/background/news/article-bg.webp) center bottom repeat,linear-gradient(0deg,#a7a9b0 0,#cdced4 100%);
   background-blend-mode: overlay;
   box-shadow: 0 4px 4px rgba(0,0,0,.5);
   min-height: 79px
@@ -10477,7 +10513,7 @@ textarea {
   color: #f9df94;
   font-size: 20px;
   font-weight: 700;
-  line-height: 1.2
+  line-height: 15px
 }
 .about-features__subtitle {
   color: #b19f63;
@@ -10714,12 +10750,6 @@ textarea {
     display: none
   }
 }
-@media (min-width:1200px) {
-  ._portal .platform {
-    padding-top: 95px;
-    padding-bottom: 35px
-  }
-}
 @media (min-width:1201px) {
   ._portal .awards {
     height: 940px
@@ -10762,17 +10792,11 @@ textarea {
   .footer__menu {
     margin-bottom: 1.125rem
   }
-  .footer__menu {
-    padding-top: .625rem
-  }
-  .footer__menu {
-    padding-bottom: .625rem
-  }
   .footer__menu-item {
     font-size: 1rem
   }
   ._type-2 .footer__socials {
-    margin-bottom: 3.125rem
+    margin-bottom: 2.5rem
   }
   ._type-2 .footer__text {
     font-size: 1.125rem
@@ -11806,6 +11830,9 @@ textarea {
   .about-features__switcher-name {
     font-size: 9px
   }
+  .about-features__platforms {
+    justify-content: center
+  }
 }
 @media (max-width:1200px) {
   .popup__close {
@@ -11930,8 +11957,7 @@ textarea {
     gap: 52px
   }
   .footer__socials {
-    gap: 19px;
-    padding-top: 10px
+    gap: 19px
   }
   .footer__text {
     gap: 30px;
@@ -11948,10 +11974,6 @@ textarea {
   .hero__background {
     -o-object-fit: cover;
     object-fit: cover
-  }
-  .hero__arrow {
-    max-width: 340px;
-    width: 100%
   }
   .hero__logo {
     max-width: 432px
@@ -12098,12 +12120,12 @@ textarea {
     height: 18px
   }
   .platform {
-    padding-top: 90px;
-    padding-bottom: 66px
+    padding-top: 65px;
+    padding-bottom: 80px
   }
   .platform__wrapper {
-    background-size: 690px auto;
-    height: 490px
+    background-size: 735px auto;
+    height: 510px
   }
   .platform__content {
     max-width: 560px
@@ -12115,7 +12137,6 @@ textarea {
     margin-bottom: 16px
   }
   .platform__text {
-    margin: 0 auto 32px;
     font-size: 18px;
     line-height: 1.22
   }
@@ -12124,6 +12145,12 @@ textarea {
   }
   .platform__image-src {
     max-width: 444px
+  }
+  .platform__platforms {
+    gap: 15px
+  }
+  .platform__platform-link img {
+    height: 31px
   }
   .counter {
     height: 690px
@@ -12693,15 +12720,15 @@ textarea {
     gap: 33px
   }
   .platform {
-    padding-top: 40px;
-    padding-bottom: 26px
+    padding-top: 50px;
+    padding-bottom: 65px
   }
   .platform__wrapper {
     background-size: 576px 100%;
-    height: 400px
+    height: 430px
   }
   .platform__text {
-    margin-bottom: 13px
+    max-width: 540px
   }
   .platform__image-src {
     max-width: 406px
@@ -12799,7 +12826,15 @@ textarea {
     font-size: 14px
   }
   .hero__bottom {
-    bottom: 82px
+    bottom: 78px
+  }
+  .hero__arrow {
+    width: 230px;
+    bottom: 18px
+  }
+  .hero__folowus {
+    display: none;
+    right: -90px
   }
   .awards {
     height: 576px
@@ -12876,7 +12911,7 @@ textarea {
 }
 @media (max-width:750px) {
   .footer {
-    padding: 10px 0
+    padding: 16px 0
   }
   .footer__wrapper {
     gap: 24px
@@ -12887,6 +12922,19 @@ textarea {
   }
   .footer__socials-link img {
     width: 36px!important
+  }
+  .footer__menu {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px 25px!important
+  }
+  .footer__menu-item {
+    padding: 7px 0;
+    flex: 0 0 calc(50% - 25px);
+    text-align: right
+  }
+  .footer__menu-item:nth-child(2n) {
+    text-align: left
   }
   .footer__text {
     font-size: 8px;
@@ -13017,23 +13065,45 @@ textarea {
     height: 125%
   }
   .platform {
-    padding-top: 50px
+    padding-top: 0;
+    padding-bottom: 35px
+  }
+  .platform__wrapper {
+    background-size: 620px auto;
+    height: 450px;
+    margin-bottom: 25px
+  }
+  .platform .__container {
+    padding: 0!important
   }
   .platform__content {
-    margin-bottom: 50px
+    top: 50px
   }
   .platform__title {
     font-size: 22px;
     margin-bottom: 6px
   }
   .platform__text {
-    max-width: 340px;
-    margin: 0 auto 62px;
+    max-width: 380px;
+    margin: 0 auto;
     font-size: 14px;
     line-height: 1.28
   }
   .platform__image-src {
     max-width: 336px
+  }
+  .platform__platforms {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 323px;
+    margin: 0 auto
+  }
+  .platform__platform-link img {
+    width: 144px;
+    height: auto
+  }
+  .platform__platform-link._gplay img {
+    width: 163px
   }
   .counter {
     height: auto
@@ -13184,8 +13254,8 @@ textarea {
     z-index: 1;
     right: 15px;
     gap: 24px;
-    -webkit-transform: translate(0,-60%);
-    transform: translate(0,-60%)
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%)
   }
   .class-hero__image {
     height: 60dvh;
@@ -13245,7 +13315,9 @@ textarea {
   }
   .class-section__content {
     max-width: 100%;
-    height: 80%
+    height: 100%;
+    gap: 10px;
+    padding: 80px 0 45px 15px
   }
   .class-section__title {
     font-size: 22px
@@ -13256,8 +13328,11 @@ textarea {
   }
   .class-section__video {
     margin-top: auto;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     max-width: 210px
+  }
+  .class-section__links {
+    margin-bottom: 14px
   }
   .class-section__button-wrapper {
     justify-content: center
@@ -13313,20 +13388,6 @@ textarea {
     top: 100px
   }
 }
-@media (max-width:450px) {
-  .platform .__container {
-    padding: 0
-  }
-  .platform__wrapper {
-    background-size: 550px auto
-  }
-  .platform__image-wrapper {
-    width: 100%
-  }
-  .platform .hero__platforms {
-    padding: 0 10px
-  }
-}
 @media (max-width:400px) {
   .hero__logo-title {
     font-size: 13px;
@@ -13335,14 +13396,8 @@ textarea {
   ._eng .hero__logo-title {
     font-size: 12px
   }
-  .hero__bottom {
-    bottom: 77px
-  }
   .hero__register {
     margin-bottom: 16px
-  }
-  .hero__folowus {
-    display: none
   }
 }
 @media (max-width:20em) {
@@ -13358,17 +13413,11 @@ textarea {
   .footer__menu {
     margin-bottom: .625rem
   }
-  .footer__menu {
-    padding-top: .25rem
-  }
-  .footer__menu {
-    padding-bottom: .25rem
-  }
   .footer__menu-item {
     font-size: .5rem
   }
   ._type-2 .footer__socials {
-    margin-bottom: 1.375rem
+    margin-bottom: .125rem
   }
   ._type-2 .footer__text {
     font-size: .625rem
@@ -13597,6 +13646,11 @@ textarea {
   }
   .chronology__text {
     font-size: 14px
+  }
+  .arrow-link-detail._center-mobile {
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    margin-left: 50%
   }
   .video-wrapper::after,
   .video-wrapper::before {
@@ -13870,10 +13924,13 @@ textarea {
     transform: translate(0,-40%) scale(.9)
   }
   .character._height-640 .character__image {
-    -webkit-transform: translate(0,-40%) scale(.8);
-    transform: translate(0,-40%) scale(.8);
+    -webkit-transform: translate(0,-50%) scale(.8);
+    transform: translate(0,-50%) scale(.8);
     top: 50%;
-    left: -25px
+    left: -225px
+  }
+  .character._height-640 .character__img {
+    width: 650px
   }
   .character._height-640 .character__name {
     bottom: 8px;
@@ -13882,7 +13939,8 @@ textarea {
   }
   .character._height-640 .character__title {
     display: block;
-    font-size: 20px
+    font-size: 20px;
+    text-shadow: 0 0 3px rgba(0,0,0,.8)
   }
   .character._type-2 {
     position: absolute;
@@ -14006,6 +14064,12 @@ textarea {
   .fraction-hero .worlds-names__item-title {
     margin-top: 35px;
     font-size: 24px
+  }
+  .fraction-main__title {
+    margin-top: 5px
+  }
+  .fraction-main__title-icon {
+    margin-top: -3px
   }
   .fraction-main__content {
     padding: 40px 15px
@@ -14378,20 +14442,18 @@ textarea {
     bottom: 0
   }
   .about-hero {
-    min-height: 390px
-  }
-  .about-hero__content {
-    position: relative;
-    max-width: 100%;
-    bottom: auto;
-    top: 70px
+    min-height: 650px
   }
   .about-hero__h1-title {
     font-size: 28px;
     text-align: center;
     top: auto;
-    margin-top: 80px;
-    margin-bottom: -40px
+    margin-top: 65px
+  }
+  .about-hero__content {
+    position: relative;
+    max-width: 100%;
+    bottom: auto
   }
   .about-hero__title {
     font-size: 30px;
@@ -14409,10 +14471,13 @@ textarea {
   }
   .about-hero__img {
     max-height: 70vh;
-    min-height: 400px
+    min-height: 500px
   }
   .about-hero__text-image {
     width: calc(50vw - 15px)
+  }
+  .about-hero__back-img {
+    width: 145%
   }
   .about-features__back {
     display: none
@@ -14435,7 +14500,8 @@ textarea {
     justify-content: flex-start
   }
   .about-features__content-inner {
-    gap: 10px
+    gap: 10px;
+    min-height: 0
   }
   .about-features__content-inner._with-media {
     flex: 0 0 auto
@@ -14449,7 +14515,11 @@ textarea {
   }
   .about-features__text {
     text-align: center;
-    font-size: 14px
+    font-size: 14px;
+    margin-bottom: 10px
+  }
+  .about-features__text li {
+    text-align: left
   }
   .about-features__text._fz-22 {
     font-size: 14px
@@ -14535,17 +14605,11 @@ textarea {
   .footer__menu {
     margin-bottom: clamp(.625rem ,.4821428571rem + .7142857143vw ,1.125rem)
   }
-  .footer__menu {
-    padding-top: clamp(.25rem ,.1428571429rem + .5357142857vw ,.625rem)
-  }
-  .footer__menu {
-    padding-bottom: clamp(.25rem ,.1428571429rem + .5357142857vw ,.625rem)
-  }
   .footer__menu-item {
     font-size: clamp(.5rem ,.3571428571rem + .7142857143vw ,1rem)
   }
   ._type-2 .footer__socials {
-    margin-bottom: clamp(1.375rem ,.875rem + 2.5vw ,3.125rem)
+    margin-bottom: clamp(.125rem ,-.5535714286rem + 3.3928571429vw ,2.5rem)
   }
   ._type-2 .footer__text {
     font-size: clamp(.625rem ,.4821428571rem + .7142857143vw ,1.125rem)

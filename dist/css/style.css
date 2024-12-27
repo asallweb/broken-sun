@@ -5801,7 +5801,7 @@ textarea {
 }
 .account__link {
   color: #b19f63;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.25;
   cursor: pointer
 }
@@ -11340,6 +11340,9 @@ textarea {
   .account {
     justify-content: center
   }
+  .account__link {
+    font-size: 16px
+  }
   .account__tooltip {
     width: 248px
   }
@@ -11368,13 +11371,20 @@ textarea {
     order: 2;
     width: 236px;
     visibility: visible;
-    margin-left: auto
+    margin-left: auto;
+    display: none
   }
   .header__button-inner._active {
     width: 236px
   }
   .header__lang {
     order: 3
+  }
+  .header .account {
+    order: 2;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: -5px
   }
   .world__item._olympus {
     width: 9%;

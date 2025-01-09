@@ -7,9 +7,3 @@
 	background: url('../gif/animated-bg-hover.gif') center center/cover no-repeat;
 }
 
-
-@media (min-width: 768px) {
-	._type-2 .menu__item:hover .menu__link::before{
-		background: url('../gif/menu__link.png') center bottom / 100% 100% no-repeat ;
-	}
-}

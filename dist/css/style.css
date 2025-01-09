@@ -6132,9 +6132,7 @@ textarea {
   left: 0;
   width: 100%;
   border-bottom: 1px solid rgba(30,37,51,.7);
-  background: rgba(30,37,51,.7);
-  -webkit-backdrop-filter: blur(7.5px);
-  backdrop-filter: blur(7.5px);
+  background: #1e2533;
   top: 0;
   visibility: hidden;
   top: -100%;
@@ -11020,7 +11018,8 @@ textarea {
     transform: translate(-50%,0);
     display: block;
     height: 74px;
-    width: 222px
+    width: 222px;
+    background: url(../img/elements/header/bg.webp) center bottom/100% 100% no-repeat
   }
   .counter::before {
     background: url(../img/background/counter/counter_2k.webp) 0 0 no-repeat
@@ -13240,6 +13239,9 @@ textarea {
   .header__menu {
     order: 3;
     width: auto
+  }
+  .header .account {
+    margin-left: 0
   }
   .world__content {
     top: auto;

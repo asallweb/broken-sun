@@ -7,3 +7,8 @@
 	background: url('../gif/animated-bg-hover.gif') center center/cover no-repeat;
 }
 
+
+.menu__item:hover .menu__link::before {
+	background: url('../gif/animated-bg-hover.gif') center center/cover no-repeat !important;
+}
+

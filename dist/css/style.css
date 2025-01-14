@@ -3936,6 +3936,7 @@ h6 {
   color: #fafafa;
   text-shadow: 0 0 5px rgba(255,223,136,.8)
 }
+.menu__link-arrow,
 .menu__link-dropdown {
   display: none
 }
@@ -9464,7 +9465,9 @@ textarea {
   gap: 30px;
   padding-top: 20px;
   margin-top: 76px;
-  padding-bottom: 30px
+  padding-bottom: 30px;
+  position: relative;
+  z-index: 2
 }
 .sidebar-news {
   width: 335px;
@@ -9511,7 +9514,9 @@ textarea {
   background: url(../img/background/news/article-bg.webp) center bottom repeat,linear-gradient(0deg,#a7a9b0 0,#cdced4 100%);
   background-blend-mode: overlay;
   box-shadow: 0 4px 4px rgba(0,0,0,.5);
-  min-height: 79px
+  min-height: 79px;
+  position: relative;
+  z-index: 0
 }
 .article__category {
   background: #384a6b;
@@ -9562,7 +9567,8 @@ textarea {
   color: #b63d3d;
   font-size: 16px;
   font-weight: 300;
-  line-height: 1.33
+  line-height: 1.33;
+  font-style: italic
 }
 .article__text-media {
   display: flex;
@@ -9667,7 +9673,8 @@ textarea {
 .last-posts .post__info {
   color: #c7c7c7;
   font-size: 16px;
-  line-height: 1.75
+  line-height: 1.75;
+  font-style: italic
 }
 .news-detail {
   color: #fff;
@@ -9702,7 +9709,8 @@ textarea {
 }
 .news-detail__date {
   color: #b63d3d;
-  margin: 2px 0 20px
+  margin: 2px 0 20px;
+  font-style: italic
 }
 .news-detail__inventory-wrapper {
   position: relative
@@ -11185,6 +11193,40 @@ textarea {
     display: block;
     width: 32px;
     height: 32px
+  }
+  .menu__link-arrow {
+    display: block;
+    position: relative
+  }
+  .menu__link-arrow::after,
+  .menu__link-arrow::before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    background-color: #b19f63;
+    height: 4px;
+    width: 15px;
+    transition: -webkit-transform .3s ease 0s;
+    transition: transform .3s ease 0s;
+    transition: transform .3s ease 0s,-webkit-transform .3s ease 0s
+  }
+  .menu__link-arrow::before {
+    -webkit-transform: translate(-65%,-50%) rotate(40deg);
+    transform: translate(-65%,-50%) rotate(40deg)
+  }
+  .menu__link-arrow::after {
+    -webkit-transform: translate(0,-50%) rotate(-40deg);
+    transform: translate(0,-50%) rotate(-40deg)
+  }
+  .menu__item._active .menu__link-arrow::before {
+    -webkit-transform: translate(-65%,-50%) rotate(-40deg);
+    transform: translate(-65%,-50%) rotate(-40deg)
+  }
+  .menu__item._active .menu__link-arrow::after {
+    -webkit-transform: translate(0,-50%) rotate(40deg);
+    transform: translate(0,-50%) rotate(40deg)
   }
   .menu__external-icon {
     display: none

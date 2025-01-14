@@ -5293,7 +5293,7 @@ textarea {
   z-index: 2
 }
 .progressbar__inner {
-  background: linear-gradient(180deg,#0d1119 0,rgba(10,13,19,.8) 70%,rgba(13,17,25,0) 100%);
+  background: linear-gradient(180deg,rgba(13,17,25,.5) 0,rgba(10,13,19,.35) 30.29%,rgba(13,17,25,0) 69.5%);
   position: fixed;
   width: 100%;
   top: 51px;
@@ -9747,6 +9747,7 @@ textarea {
 }
 .sidepage {
   position: relative;
+  z-index: 2;
   display: flex;
   gap: 78px;
   padding-top: 90px;
@@ -14309,7 +14310,7 @@ textarea {
     display: none
   }
   .sidepage-content__title {
-    font-size: 22px
+    font-size: 20px
   }
   .sidepage-content__item-content {
     font-size: 14px

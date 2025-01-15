@@ -4655,14 +4655,20 @@
         if (window.innerWidth < 1440) document.querySelectorAll("._portal .menu__link").forEach((link => {
             link.addEventListener("click", (event => {
                 const parentItem = link.closest("._portal .menu__item");
-                const hasSubmenu = parentItem.querySelector(".menu__submenu");
-                if (hasSubmenu) {
+                const submenu = parentItem.querySelector(".menu__submenu");
+                if (submenu) {
                     event.preventDefault();
-                    if (parentItem.classList.contains("_active")) parentItem.classList.remove("_active"); else {
+                    if (parentItem.classList.contains("_active")) {
+                        parentItem.classList.remove("_active");
+                        submenu.style.height = "0";
+                    } else {
                         document.querySelectorAll("._portal .menu__item").forEach((item => {
                             item.classList.remove("_active");
+                            const itemSubmenu = item.querySelector(".menu__submenu");
+                            if (itemSubmenu) itemSubmenu.style.height = "0";
                         }));
                         parentItem.classList.add("_active");
+                        submenu.style.height = `${submenu.scrollHeight}px`;
                     }
                 }
             }));

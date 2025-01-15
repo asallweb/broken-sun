@@ -11235,7 +11235,7 @@ textarea {
   .menu__submenu {
     background: #121823;
     position: relative;
-    transition: none
+    transition: height .3s ease-in-out
   }
   .menu__submenu-item {
     height: 46px;
@@ -11318,6 +11318,13 @@ textarea {
     gap: 0;
     margin-bottom: 15px
   }
+  ._type-2 .menu__item {
+    overflow: hidden;
+    transition: height .3s ease-in-out
+  }
+  ._type-2 .menu__item._active {
+    height: auto
+  }
   ._type-2 .menu__item._active .menu__link {
     background: url(../img/elements/header/bg_mobile.webp) center bottom/100% 100% no-repeat
   }
@@ -11330,9 +11337,9 @@ textarea {
     transform: rotate(180deg)
   }
   ._type-2 .menu__item._active .menu__submenu {
-    height: auto;
     opacity: 1;
-    visibility: visible
+    visibility: visible;
+    height: 300px
   }
   ._type-2 .menu__link {
     justify-content: space-between

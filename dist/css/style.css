@@ -11235,7 +11235,9 @@ textarea {
   .menu__submenu {
     background: #121823;
     position: relative;
-    transition: height .3s ease-in-out
+    transition: height .3s ease-in-out;
+    visibility: visible;
+    opacity: 1
   }
   .menu__submenu-item {
     height: 46px;
@@ -11335,11 +11337,6 @@ textarea {
   ._type-2 .menu__item._active .menu__link-dropdown {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg)
-  }
-  ._type-2 .menu__item._active .menu__submenu {
-    opacity: 1;
-    visibility: visible;
-    height: 300px
   }
   ._type-2 .menu__link {
     justify-content: space-between

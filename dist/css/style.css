@@ -10840,7 +10840,8 @@ textarea {
 }
 .download-faq .spollers__body img {
   display: block;
-  margin: 16px 0
+  margin: 16px 0;
+  max-width: 100%
 }
 .download-faq .spollers__body li {
   margin-bottom: 0

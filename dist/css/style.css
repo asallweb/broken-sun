@@ -4164,6 +4164,9 @@ body::after {
 .spollers__title::marker {
   display: none
 }
+.spollers__title._pl-0 {
+  padding-left: 0
+}
 .spollers__title._spoller-active {
   color: #f9df94;
   border-bottom: 1px solid transparent
@@ -8267,7 +8270,7 @@ textarea {
 }
 .faq__inner {
   position: relative;
-  background: url(../img/elements/faq/bg.webp) center center/100% 100% no-repeat
+  background: url(../img/elements/faq/bg.webp) center center/100% auto repeat-y
 }
 .faq__inner._no-bg {
   background: 0 0
@@ -8280,6 +8283,13 @@ textarea {
   text-align: center;
   line-height: 1.2;
   margin-bottom: 20px
+}
+.faq__title._ta-left {
+  text-align: left
+}
+.faq__title._width-900 {
+  max-width: 900px;
+  margin: 0 auto 20px
 }
 .faq__wrapper {
   max-width: 900px;
@@ -10764,6 +10774,132 @@ textarea {
 .portal-news__title {
   text-align: center
 }
+.download__bg {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  max-height: 545px;
+  -o-object-fit: cover;
+  object-fit: cover
+}
+.download__inner {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative
+}
+.download__content {
+  position: absolute;
+  bottom: 40px;
+  width: 100%
+}
+.download__title {
+  color: #f9df94;
+  text-shadow: 0 100px 28px rgba(0,0,0,.01),0 64px 26px rgba(0,0,0,.03),0 36px 22px rgba(0,0,0,.1),0 16px 16px rgba(0,0,0,.17),0 4px 9px rgba(0,0,0,.2);
+  font-size: 68px;
+  font-weight: 700;
+  line-height: 100%;
+  margin-bottom: 40px
+}
+.download__buttons {
+  position: relative;
+  display: flex;
+  gap: 10px
+}
+.download__button {
+  background: url(../img/pages/download/button__bg.webp) center center/105% 125% no-repeat;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f9df94;
+  text-shadow: 0 100px 28px rgba(0,0,0,.01),0 64px 26px rgba(0,0,0,.03),0 36px 22px rgba(0,0,0,.1),0 16px 16px rgba(0,0,0,.17),0 4px 9px rgba(0,0,0,.2);
+  font-size: 22px;
+  line-height: 1;
+  transition: all .3s ease-in-out
+}
+.download__button:focus {
+  background-image: url(../img/pages/download/button__bg-click.webp);
+  color: #fafafa
+}
+.download__button._ml-auto {
+  margin-left: 72px
+}
+.download__button-src {
+  flex: 0
+}
+.download__qr {
+  display: flex;
+  align-items: center
+}
+.download-faq {
+  z-index: 1
+}
+.download-faq .spollers__body a {
+  color: #b19f63
+}
+.download-faq .spollers__body img {
+  display: block;
+  margin: 16px 0
+}
+.download-faq .spollers__body li {
+  margin-bottom: 0
+}
+.download-faq .spollers__body li::marker {
+  font-size: 22px
+}
+.download-links {
+  margin-top: 80px
+}
+.download-links__title {
+  color: #f9df94;
+  font-size: 26px;
+  line-height: 123%;
+  margin-bottom: 18px
+}
+.download-links__link {
+  display: block;
+  padding: 10px 0;
+  margin-bottom: 8px;
+  color: #b19f63;
+  text-decoration: underline;
+  line-height: 1.4
+}
+.download-links__link:hover {
+  text-decoration: none
+}
+.popup-qr {
+  background: rgba(0,0,0,.7);
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease-in-out;
+  visibility: hidden;
+  opacity: 0
+}
+.popup-qr._active {
+  visibility: visible;
+  opacity: 1
+}
+.popup-qr__inner {
+  position: relative;
+  padding: 35px
+}
+.popup-qr__close {
+  position: absolute;
+  right: 0;
+  top: 0
+}
+.popup-qr__content img {
+  width: 100%;
+  height: auto
+}
 .swiper {
   overflow: hidden
 }
@@ -12363,6 +12499,25 @@ textarea {
     width: 16px;
     height: 16px
   }
+  .download__inner {
+    max-width: 880px
+  }
+  .download__title {
+    font-size: 42px;
+    margin-bottom: 32px
+  }
+  .download__button {
+    padding: 15px
+  }
+  .download__button._ml-auto {
+    margin-left: 38px
+  }
+  .download__button-src._pc {
+    width: 36px
+  }
+  .download__button-src._android {
+    width: 47px
+  }
 }
 @media (max-width:1080px) {
   .register__item {
@@ -12764,6 +12919,23 @@ textarea {
   }
   .portal-news__image {
     margin-bottom: 6px
+  }
+  .download__bg {
+    min-height: 350px
+  }
+  .download__content {
+    bottom: 24px
+  }
+  .download__title {
+    font-size: 40px;
+    margin-bottom: 24px
+  }
+  .download__button {
+    padding: 10px;
+    font-size: 18px
+  }
+  .download__qr img {
+    width: 34px
   }
 }
 @media (max-width:919px) {
@@ -14682,6 +14854,33 @@ textarea {
     height: 128px;
     -o-object-fit: cover;
     object-fit: cover
+  }
+  .download__bg {
+    min-height: 365px
+  }
+  .download__content {
+    padding: 0 15px;
+    max-width: 390px
+  }
+  .download__buttons {
+    flex-direction: column;
+    gap: 16px
+  }
+  .download__button {
+    padding: 12px;
+    height: 56px
+  }
+  .download__button._ml-auto {
+    margin-left: 0
+  }
+  .download__button-src._pc {
+    width: 32px
+  }
+  .download__button-src._android {
+    width: 34px
+  }
+  .download__qr {
+    display: none
   }
 }
 @media (max-width:24.375em) {

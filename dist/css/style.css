@@ -4146,9 +4146,6 @@ body::after {
 .popup__nav:hover {
   background-image: url(../img/icons/swiper-btn_hovered.svg)
 }
-.spollers__item {
-  border-bottom: 1px solid #776030
-}
 .spollers__title {
   width: 100%;
   cursor: default;
@@ -4158,7 +4155,8 @@ body::after {
   position: relative;
   list-style: none;
   color: #b19f63;
-  line-height: 1.07
+  line-height: 1.07;
+  border-bottom: 1px solid #776030
 }
 .spollers__title::-webkit-details-marker,
 .spollers__title::marker {
@@ -4168,8 +4166,7 @@ body::after {
   padding-left: 0
 }
 .spollers__title._spoller-active {
-  color: #f9df94;
-  border-bottom: 1px solid transparent
+  color: #f9df94
 }
 ._spoller-init .spollers__title {
   cursor: pointer
@@ -10815,8 +10812,7 @@ textarea {
   color: #f9df94;
   text-shadow: 0 100px 28px rgba(0,0,0,.01),0 64px 26px rgba(0,0,0,.03),0 36px 22px rgba(0,0,0,.1),0 16px 16px rgba(0,0,0,.17),0 4px 9px rgba(0,0,0,.2);
   font-size: 22px;
-  line-height: 1;
-  transition: all .3s ease-in-out
+  line-height: 1
 }
 .download__button:focus {
   background-image: url(../img/pages/download/button__bg-click.webp);
@@ -10833,7 +10829,17 @@ textarea {
   align-items: center
 }
 .download-faq {
-  z-index: 1
+  z-index: 1;
+  position: relative
+}
+.download-faq::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,.1)
 }
 .download-faq .spollers__body a {
   color: #b19f63
@@ -10864,10 +10870,12 @@ textarea {
   margin-bottom: 8px;
   color: #b19f63;
   text-decoration: underline;
-  line-height: 1.4
+  line-height: 1.4;
+  transition: all .3s ease-in-out
 }
 .download-links__link:hover {
-  text-decoration: none
+  text-decoration: none;
+  color: #f9df94
 }
 .popup-qr {
   background: rgba(0,0,0,.7);

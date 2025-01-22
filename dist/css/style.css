@@ -10839,7 +10839,7 @@ textarea {
   left: 0;
   width: 100%;
   height: 1px;
-  background: rgba(255,255,255,.1)
+  background: linear-gradient(90deg,rgba(255,255,255,.04) 0,rgba(255,255,255,.08) 50%,rgba(255,255,255,.04) 100%)
 }
 .download-faq .spollers__body a {
   color: #b19f63

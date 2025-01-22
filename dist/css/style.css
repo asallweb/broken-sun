@@ -8267,7 +8267,8 @@ textarea {
 }
 .faq__inner {
   position: relative;
-  background: url(../img/elements/faq/bg_new.webp) 0 0 repeat
+  background: url(../img/elements/faq/bg_new.webp) 0 0 repeat;
+  background-size: 720px auto
 }
 .faq__inner._no-bg {
   background: 0 0

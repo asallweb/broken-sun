@@ -10014,8 +10014,7 @@ textarea {
   flex: 0 0 234px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 45px
+  gap: 30px
 }
 .sitemap__group-title {
   color: #98885c;

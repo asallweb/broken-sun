@@ -1,14 +1,1 @@
-document.addEventListener("DOMContentLoaded", (function() {
-    document.documentElement.classList.add("lock");
-    const wrapper = document.getElementById("wrapper");
-    const header = document.getElementById("header");
-    const heroImage = document.querySelector(".hero__static-bg");
-    function hidePreloader() {
-        document.documentElement.classList.remove("lock");
-        if (wrapper) wrapper.classList.add("_wrapper-active");
-        if (header) header.classList.add("_active");
-    }
-    if (heroImage) if (heroImage.complete) setTimeout(hidePreloader, 100); else heroImage.addEventListener("load", (function() {
-        setTimeout(hidePreloader, 100);
-    })); else setTimeout(hidePreloader, 100);
-}));
+document.addEventListener("DOMContentLoaded",(function(){document.documentElement.classList.add("lock");const e=document.getElementById("wrapper"),t=document.getElementById("header"),n=document.querySelector(".hero__static-bg");function d(){document.documentElement.classList.remove("lock"),e&&e.classList.add("_wrapper-active"),t&&t.classList.add("_active")}n?n.complete?setTimeout(d,100):n.addEventListener("load",(function(){setTimeout(d,100)})):setTimeout(d,100)}));

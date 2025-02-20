@@ -5,10 +5,10 @@
 	<title>HomePage</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250204092146">
-	<script src="files/js/preloader.js?_v=20250204092146"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250204092146">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250204092146">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250220090012">
+	<script src="files/js/preloader.js?_v=20250220090012"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250220090012">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250220090012">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -172,7 +172,10 @@
 					</div>
 					<video id="hero__background" class="hero__background" autoplay muted playsinline loop></video>
 					<video id="introVideo" class="intro-video" autoplay muted playsinline></video>
-					<img src="img/background/hero/hero__arrow.webp" class="hero__arrow" data-goto-header data-goto=".world">
+					<picture>
+						<source srcset="img/background/hero/hero__arrow-mobile.webp" media="(max-width: 768px)">
+						<img src="img/background/hero/hero__arrow-desktop.webp" class="hero__arrow" data-goto-header data-goto=".world">
+					</picture>
 				</div>
 				<div class="separator">
 					<div class="separator__left"></div>
@@ -874,7 +877,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250204092146"></script>
+	<script src="js/app.min.js?_v=20250220090012"></script>
 </body>
 
 </html>

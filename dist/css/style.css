@@ -11363,10 +11363,10 @@ textarea {
   background: url(../img/pages/landing-3/input-bg.webp) 0 0/cover no-repeat;
   background-size: 100% 100%;
   border: none!important;
-  height: 48px;
+  height: 48px!important;
   color: rgba(255,255,255,.5);
   font-size: 18px;
-  padding: 0 12px
+  padding: 0 12px!important
 }
 .landing-registration__form-eye {
   position: absolute;
@@ -11412,23 +11412,45 @@ textarea {
   text-decoration: none
 }
 .landing-registration__register-btn {
-  color: #f2d993;
+  background: url(../img/pages/landing-3/register-btn.webp) 0 0 no-repeat;
+  color: #7491ae;
   font-family: "Albertus Nova";
   font-size: 20px;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto
+  margin: 0 auto;
+  width: 219px;
+  height: 48px;
+  box-shadow: 0 4px 7.212px 0 rgba(0,0,0,.5);
+  transition: all .3s ease-in-out
+}
+.landing-registration__register-btn:hover {
+  background: url(../img/pages/landing-3/register-btn-hover.webp) 0 0 no-repeat;
+  box-shadow: 0 4px 7.212px 0 rgba(0,0,0,.5);
+  color: #f2d993
+}
+.landing-registration__register-btn:focus {
+  background: url(../img/pages/landing-3/register-btn-focus.webp) 0 0 no-repeat;
+  box-shadow: 0 0 7.212px 0 #ffeaaf,0 0 4px 0 #c19a5f;
+  color: #f2d993
 }
 .landing-registration__form-bottom {
-  border-top: 1px solid rgba(30,37,51,.6);
-  padding: 15px 0;
+  padding: 0 0 15px 0;
   color: #fff;
   text-shadow: 0 0 2px #000;
   font-size: 14px;
   line-height: normal;
   letter-spacing: .907px
+}
+.landing-registration__form-bottom::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(270deg,rgba(30,37,51,0) 0,#143f63 100%);
+  margin-bottom: 15px
 }
 .landing-registration__form-bottom a {
   color: #7ccefe;
@@ -13249,8 +13271,8 @@ textarea {
     text-align: center
   }
   .landing-registration__body-bg img {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05)
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15)
   }
   .landing-registration__body-column._form {
     padding: 20px
@@ -13262,11 +13284,7 @@ textarea {
     margin-bottom: 15px
   }
   .landing-registration__register-btn {
-    width: 150px
-  }
-  .landing-registration__register-btn img {
-    width: 100%;
-    height: auto
+    margin-bottom: 10px
   }
 }
 @media (max-width:980px) {
@@ -13806,7 +13824,7 @@ textarea {
 }
 @media (max-width:48em) {
   .landing-registration {
-    height: 37.5rem
+    height: 40.625rem
   }
   .landing-registration__logo {
     margin-top: .3125rem
@@ -15163,6 +15181,11 @@ textarea {
     transition: none;
     bottom: 0
   }
+  .landing-hero-3__logo {
+    display: block;
+    width: 100%;
+    max-width: 410px
+  }
   .landing-hero-3__content {
     bottom: 0;
     width: 100%
@@ -15488,8 +15511,56 @@ textarea {
   .landing-vslider__blur-overlay {
     max-width: 100%
   }
+  .landing-registration__body {
+    top: 10px
+  }
+  .landing-registration__body-bg {
+    margin: 0 auto;
+    width: 333px
+  }
+  .landing-registration__body-bg img {
+    -webkit-transform: scale(1);
+    transform: scale(1)
+  }
+  .landing-registration__body-container {
+    width: 284px;
+    height: 90%
+  }
+  .landing-registration__body-column {
+    width: 100%
+  }
   .landing-registration__body-column:first-child {
     display: none
+  }
+  .landing-registration__body-column._form {
+    padding: 80px 25px 10px;
+    height: 100%
+  }
+  .landing-registration__form-title {
+    text-align: center
+  }
+  .landing-registration__form-field {
+    margin-bottom: 15px
+  }
+  .landing-registration__form-field input {
+    font-size: 14px;
+    height: 40px!important
+  }
+  .landing-registration__form-eye {
+    right: 8px
+  }
+  .landing-registration__form-reqpass {
+    font-size: 12px;
+    margin-bottom: 25px;
+    text-align: center;
+    display: block
+  }
+  .landing-registration__field-checkbox {
+    font-size: 13px
+  }
+  .landing-registration__form-bottom {
+    padding: 0 0 10px 0;
+    font-size: 13px
   }
 }
 @media (max-width:24.375em) {
@@ -15902,7 +15973,7 @@ textarea {
 }
 @media (min-width:48em) and (max-width:90em) {
   .landing-registration {
-    height: clamp(37.5rem ,13.2142857143rem + 50.5952380952vw ,58.75rem)
+    height: clamp(40.625rem ,19.9107142857rem + 43.1547619048vw ,58.75rem)
   }
   .landing-registration__logo {
     margin-top: clamp(.3125rem ,-.4017857143rem + 1.4880952381vw ,.9375rem)

@@ -6224,6 +6224,14 @@ textarea {
 .header__pre-register:hover {
   color: #f9df94
 }
+.header__sound-btn {
+  background: url(../img/icons/sound-off.svg) 0 0 no-repeat;
+  width: 32px;
+  height: 32px
+}
+.header__sound-btn._active {
+  background: url(../img/icons/sound.svg) 0 0 no-repeat
+}
 .footer {
   position: relative;
   box-shadow: 0 -125px 35px 0 rgba(0,0,0,.01),0 -80px 32px 0 rgba(0,0,0,.03),0 -45px 27px 0 rgba(0,0,0,.1),0 -20px 20px 0 rgba(0,0,0,.17),0 -5px 11px 0 rgba(0,0,0,.2);
@@ -10325,16 +10333,6 @@ textarea {
   border-left: 1px solid #847445;
   padding: 0 6px 22px
 }
-.landing-hero-3__popup-wrapper::after {
-  content: "";
-  background: url(../img/pages/landing-3/popup-arrow.webp) 0 0 no-repeat;
-  display: block;
-  width: 68px;
-  height: 30px;
-  position: absolute;
-  left: 17px;
-  bottom: -22px
-}
 .landing-hero-3__popup-title {
   background: url(../img/pages/landing-3/popup-title-bg.webp) 0 0/cover no-repeat;
   color: #ffe9ae;
@@ -10361,6 +10359,33 @@ textarea {
 }
 .landing-hero-3__popup-button {
   margin: 0 auto
+}
+.landing-hero-3__popup-arrow {
+  background: url(../img/pages/landing-3/popup-arrow.webp) 0 0/cover no-repeat;
+  display: block;
+  width: 68px;
+  height: 30px;
+  position: absolute;
+  left: 17px;
+  bottom: -22px
+}
+.landing-hero-3__popup-arrow._top-right {
+  left: 185px;
+  bottom: auto;
+  top: -22px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
+.landing-hero-3__popup-arrow._right {
+  left: 185px;
+  bottom: -22px
+}
+.landing-hero-3__popup-arrow._top {
+  left: 17px;
+  bottom: auto;
+  top: -22px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
 }
 .landing-hero-3__content {
   position: absolute;
@@ -11186,9 +11211,9 @@ textarea {
 .landing-vslider__content-slide-image img {
   width: 100%;
   height: auto;
-  transition: opacity .8s ease-in-out,-webkit-transform .8s ease-in-out;
-  transition: transform .8s ease-in-out,opacity .8s ease-in-out;
-  transition: transform .8s ease-in-out,opacity .8s ease-in-out,-webkit-transform .8s ease-in-out;
+  transition: opacity .8s cubic-bezier(0,.25,0,1),-webkit-transform .8s cubic-bezier(0,.25,0,1);
+  transition: transform .8s cubic-bezier(0,.25,0,1),opacity .8s cubic-bezier(0,.25,0,1);
+  transition: transform .8s cubic-bezier(0,.25,0,1),opacity .8s cubic-bezier(0,.25,0,1),-webkit-transform .8s cubic-bezier(0,.25,0,1);
   -webkit-transform: scale(0);
   transform: scale(0);
   -webkit-transform-origin: center left;
@@ -11203,9 +11228,9 @@ textarea {
 .landing-vslider__content-slide-text {
   color: #999;
   line-height: 1.23;
-  transition: -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out;
-  transition: transform 1s ease-in-out,-webkit-transform 1s ease-in-out;
+  transition: -webkit-transform .8s cubic-bezier(0,.25,0,1);
+  transition: transform .8s cubic-bezier(0,.25,0,1);
+  transition: transform .8s cubic-bezier(0,.25,0,1),-webkit-transform .8s cubic-bezier(0,.25,0,1);
   -webkit-transform: scale(.7);
   transform: scale(.7);
   -webkit-transform-origin: top left;
@@ -11360,13 +11385,23 @@ textarea {
   position: relative
 }
 .landing-registration__form-field input {
-  background: url(../img/pages/landing-3/input-bg.webp) 0 0/cover no-repeat;
-  background-size: 100% 100%;
-  border: none!important;
   height: 48px!important;
   color: rgba(255,255,255,.5);
   font-size: 18px;
-  padding: 0 12px!important
+  padding: 0 12px!important;
+  background: #0f1826;
+  -o-border-image: url(../img/elements/input/border-image-input.svg) 10/10px!important;
+  border-image: url(../img/elements/input/border-image-input.svg) 10/10px!important;
+  border-style: solid;
+  transition: all .3s ease-in-out
+}
+.landing-registration__form-field input:focus {
+  box-shadow: 0 0 10px rgba(0,216,255,.54)
+}
+.landing-registration__form-field input._error {
+  -o-border-image: url(../img/elements/input/border-image-input-error.svg) 10/10px!important;
+  border-image: url(../img/elements/input/border-image-input-error.svg) 10/10px!important;
+  box-shadow: 0 0 10px rgba(255,89,89,.54)
 }
 .landing-registration__form-eye {
   position: absolute;
@@ -11801,6 +11836,11 @@ textarea {
   }
   .awards__content {
     margin-top: 10vh
+  }
+}
+@media (min-width:2360px) {
+  .landing-registration {
+    height: 1080px
   }
 }
 @media (max-width:1920px) {

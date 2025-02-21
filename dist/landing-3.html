@@ -5,10 +5,10 @@
 	<title>LANDING 3</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250220101138">
-	<script src="files/js/preloader.js?_v=20250220101138"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250220101138">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250220101138">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250221133243">
+	<script src="files/js/preloader.js?_v=20250221133243"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250221133243">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250221133243">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -39,7 +39,7 @@
 						</picture>
 					</a>
 					<div class="header__button-landing3 _active">
-						<button class="header__button _size-l button _fz-18">
+						<button class="header__button _size-l button _fz-18" data-goto=".landing-registration">
 							<span class="button__text">
 								<span class="button__text-inner">
 									РЕГИСТРАЦИЯ
@@ -47,28 +47,77 @@
 							</span>
 						</button>
 					</div>
-					<div class="header__language-landing3 language-select">
-						<div class="language-select__current">
-							RU
-							<svg width="9" height="6" class="language-select__icon">
-								<use xlink:href="img/icons/icons.svg#dropdown-lang"></use>
-							</svg>
-						</div>
-						<div class="language-select__dropdown">
-							<a href="">RU</a>
-							<a href="">EN</a>
-						</div>
-					</div>
-					<div class="header__language-mobile-landing3 menu__lang">
-						<a href="" class="menu__lang-link _active">RU</a>
-						<div></div>
-						<a href="" class="menu__lang-link">EN</a>
-					</div>
+					<!-- <div class="header__language-landing3 language-select">
+							<div class="language-select__current">
+								RU
+								<svg width="9" height="6" class="language-select__icon">
+									<use xlink:href="img/icons/icons.svg#dropdown-lang"></use>
+								</svg>
+							</div>
+							<div class="language-select__dropdown">
+								<a href="">RU</a>
+								<a href="">EN</a>
+							</div>
+						</div> -->
+					<!-- <div class="header__language-mobile-landing3 menu__lang">
+							<a href="" class="menu__lang-link _active">RU</a>
+							<div></div>
+							<a href="" class="menu__lang-link">EN</a>
+						</div> -->
 					<div class="header__sound-wrapper">
 						<button class="header__sound-btn">
-							<img src="img/icons/sound.svg">
+
 						</button>
+						<audio autoplay loop>
+							<source src="files/audio/TempleComplexNightAmb_loop.mp3" type="audio/mpeg">
+							<source src="files/audio/TempleComplexNightAmb_loop.ogg" type="audio/ogg">
+							Ваш браузер не поддерживает аудио.
+						</audio>
 					</div>
+
+					<script>
+						document.addEventListener("DOMContentLoaded", function() {
+							const audio = document.querySelector("audio");
+							const soundBtn = document.querySelector(".header__sound-btn");
+							let audioStarted = false;
+
+							// Функция для запуска аудио, если оно ещё не запущено
+							function initAudio() {
+								if (!audioStarted) {
+									audio.play().then(() => {
+										audioStarted = true;
+										soundBtn.classList.add("_active");
+										// Убираем обработчики после первого запуска аудио
+										document.removeEventListener("mousemove", initAudio);
+										document.removeEventListener("scroll", initAudio);
+									}).catch(err => {
+										console.error("Ошибка воспроизведения аудио:", err);
+									});
+								}
+							}
+
+							// Добавляем обработчики на любое движение мыши и скролл страницы
+							document.addEventListener("click", initAudio);
+
+							// Обработчик для кнопки переключения состояния аудио
+							soundBtn.addEventListener("click", function() {
+								if (audio.paused) {
+									audio.play().then(() => {
+										soundBtn.classList.add("_active");
+									}).catch(err => {
+										console.error("Ошибка воспроизведения аудио:", err);
+									});
+								} else {
+									audio.pause();
+									soundBtn.classList.remove("_active");
+								}
+							});
+
+							audio.volume = 0.3;
+						});
+					</script>
+
+
 				</div>
 			</div>
 		</header>
@@ -81,20 +130,74 @@
 					<div class="landing-hero-3__popup-wrapper">
 						<div class="landing-hero-3__popup-title">Твой первый квест</div>
 						<div class="landing-hero-3__popup-text">Зарегистрируйся на ЗБТ Broken Sun и получи призы на релизе игры</div>
-						<button class="landing-hero-3__popup-button _size-l button _fz-18">
+						<button class="landing-hero-3__popup-button _size-l button _fz-18" data-goto=".landing-registration">
 							<span class="button__text">
 								<span class="button__text-inner">
 									РЕГИСТРАЦИЯ
 								</span>
 							</span>
 						</button>
+						<div class="landing-hero-3__popup-arrow"></div>
 					</div>
 				</div>
+				<script>
+					document.addEventListener("DOMContentLoaded", function() {
+						const popup = document.querySelector(".landing-hero-3__popup");
+						const bg = document.querySelector(".landing-hero-3__bg");
+						const arrow = popup.querySelector(".landing-hero-3__popup-arrow");
+
+						if (!popup || !bg || !arrow) return;
+
+						const popupWidth = 270;
+						const popupHeight = 215;
+
+						bg.addEventListener("click", function(event) {
+							const {
+								clientX: x,
+								clientY: y
+							} = event;
+							const {
+								innerWidth: windowWidth,
+								innerHeight: windowHeight
+							} = window;
+
+							let posX = x - 50;
+							let posY = y - 235;
+							let arrowClass = "";
+
+							const fitsRight = posX + popupWidth <= windowWidth;
+							const fitsLeft = posX >= 0;
+							const fitsTop = posY >= 0;
+							const fitsBottom = posY + popupHeight <= windowHeight;
+
+							if (!fitsRight && !fitsTop) {
+								posX = x - popupWidth + 52;
+								posY = y + 40;
+								arrowClass = "_top-right";
+							} else if (!fitsRight) {
+								posX = x - popupWidth + 52;
+								arrowClass = "_right";
+							} else if (!fitsTop) {
+								posY = y + 40;
+								arrowClass = "_top";
+							} else {
+								arrowClass = "_left";
+							}
+
+							popup.style.position = "absolute";
+							popup.style.left = `${posX}px`;
+							popup.style.top = `${posY}px`;
+							popup.classList.toggle("_active");
+
+							arrow.className = "landing-hero-3__popup-arrow " + arrowClass;
+						});
+					});
+				</script>
 				<div class="landing-hero-3__content">
 					<div class="landing-hero-3__content-wrapper">
 						<div class="landing-hero-3__content-title">Ударь по ностальгии в новой браузерной игре Broken Sun</div>
 						<div class="landing-hero-3__content-text">Окунись в атмосферу ожесточенных битв за контроль над древними землями!</div>
-						<button class="landing-hero-3__content-button _size-l button _fz-18">
+						<button class="landing-hero-3__content-button _size-l button _fz-18" data-goto=".landing-registration">
 							<span class="button__text">
 								<span class="button__text-inner">
 									РЕГИСТРАЦИЯ
@@ -139,51 +242,6 @@
 					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
 					<div class="separator__right"></div>
 				</div>
-				<script>
-					document.addEventListener("DOMContentLoaded", function() {
-						const popup = document.querySelector(".landing-hero-3__popup");
-						const bg = document.querySelector(".landing-hero-3__bg");
-
-						if (!popup || !bg) return;
-
-						bg.addEventListener("click", function(event) {
-							const {
-								clientX: x,
-								clientY: y
-							} = event;
-							const {
-								clientWidth: popupWidth,
-								clientHeight: popupHeight
-							} = popup;
-							const {
-								innerWidth: windowWidth,
-								innerHeight: windowHeight
-							} = window;
-
-							let posX = x;
-							let posY = y;
-
-							if (posX + popupWidth > windowWidth - 300) {
-								posX = windowWidth - popupWidth - 300;
-							}
-							if (posY + popupHeight > windowHeight - 300) {
-								posY = windowHeight - popupHeight - 300;
-							}
-
-							if (posX < 10) {
-								posX = 10;
-							}
-							if (posY < 10) {
-								posY = 10;
-							}
-
-							popup.style.position = "absolute";
-							popup.style.left = `${posX}px`;
-							popup.style.top = `${posY}px`;
-							popup.classList.toggle("_active");
-						});
-					});
-				</script>
 			</section>
 			<section class="landing-vslider">
 				<div class="landing-vslider__wrapper">
@@ -341,7 +399,7 @@
 									<div class="landing-registration__form-eye"></div>
 								</div>
 								<div class="landing-registration__form-field">
-									<input type="password" placeholder="Введите пароль повторно">
+									<input type="password" placeholder="Введите пароль повторно" class="_error">
 									<div class="landing-registration__form-eye"></div>
 								</div>
 								<a href="" class="landing-registration__form-reqpass">Требования к паролю</a>
@@ -431,7 +489,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20250220101138"></script>
+	<script src="js/app.min.js?_v=20250221133243"></script>
 </body>
 
 </html>

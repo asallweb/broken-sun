@@ -4348,8 +4348,8 @@
                 slideToClickedSlide: true,
                 allowTouchMove: true,
                 navigation: {
-                    nextEl: ".landing-vslider-prev",
-                    prevEl: ".landing-vslider-next"
+                    prevEl: ".landing-vslider-prev",
+                    nextEl: ".landing-vslider-next"
                 }
             });
             mainSwiper = new Swiper(".landing-vslider__main", {

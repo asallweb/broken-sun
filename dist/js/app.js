@@ -4283,6 +4283,7 @@
             })
         });
     }
+    let featuredNewsSlider = null;
     function initSliders() {
         if (document.querySelector(".mainSwiper__images") && document.querySelector(".thumbSwiper__images")) {
             var thumbSwiper = new Swiper(".thumbSwiper__images", {
@@ -4377,6 +4378,42 @@
             }
             thumbSwiper.on("slideChange", updateThumbClasses);
             updateThumbClasses();
+        }
+        const featuredNewsSliderElement = document.querySelector(".featured-news__slider");
+        if (featuredNewsSliderElement) {
+            const initFeaturedNewsSlider = () => {
+                if (window.innerWidth < 1381 && !featuredNewsSlider) featuredNewsSlider = new Swiper(featuredNewsSliderElement, {
+                    modules: [ Navigation, Pagination ],
+                    observer: true,
+                    observeParents: true,
+                    slidesPerView: "auto",
+                    speed: 800,
+                    loop: false,
+                    pagination: {
+                        el: ".featured-news__swiper-scrollbar",
+                        clickable: true
+                    },
+                    navigation: {
+                        prevEl: ".featured-news__prev",
+                        nextEl: ".featured-news__next"
+                    },
+                    breakpoints: {
+                        350: {
+                            spaceBetween: 15,
+                            centeredSlides: false
+                        },
+                        768: {
+                            spaceBetween: 30,
+                            centeredSlides: false
+                        }
+                    }
+                }); else if (window.innerWidth >= 1381 && featuredNewsSlider) {
+                    featuredNewsSlider.destroy();
+                    featuredNewsSlider = null;
+                }
+            };
+            initFeaturedNewsSlider();
+            window.addEventListener("resize", initFeaturedNewsSlider);
         }
     }
     window.addEventListener("load", (function(e) {

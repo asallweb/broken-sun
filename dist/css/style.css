@@ -11544,8 +11544,8 @@ textarea {
 }
 .featured-news {
   background: url(../img/background/news/featured-news-bg.webp) center center/cover no-repeat;
-  padding-top: 16%;
-  padding-bottom: 12%;
+  padding-top: 10%;
+  padding-bottom: 4.5%;
   min-height: 41vw
 }
 .featured-news__title {
@@ -11717,16 +11717,43 @@ textarea {
   width: 100%;
   height: auto
 }
-.featured-article__content {
+.featured-article__content-wrapper {
+  position: relative;
+  height: 100%
+}
+.featured-article__content-wrapper::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: 100%;
-  padding: 20px;
-  border: 1px solid rgba(43,50,59,0);
-  background: rgba(17,22,34,.8);
   -webkit-backdrop-filter: blur(25px);
   backdrop-filter: blur(25px);
+  border: 1px solid rgba(43,50,59,0);
+  background: rgba(17,22,34,.8)
+}
+._high-img .featured-article__content-wrapper::before {
+  display: none
+}
+._high-img .featured-article__content-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none
+}
+.featured-article__content {
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  position: relative
 }
 ._high-img .featured-article__content {
   background: radial-gradient(50% 100% at 50% 100%,rgba(5,14,36,.7) 0,rgba(7,20,54,.7) 100%);
@@ -12118,27 +12145,46 @@ textarea {
   -o-object-fit: cover;
   object-fit: cover
 }
-.fresh-article__content {
-  padding: 20px;
-  border: 1px solid rgba(43,50,59,0);
-  background: rgba(17,22,34,.8);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%
+.fresh-article__content-wrapper {
+  position: relative
 }
-._long-img .fresh-article__content {
+.fresh-article__content-wrapper::before {
+  content: "";
+  display: block;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(43,50,59,0);
+  background: rgba(17,22,34,.3)
+}
+._long-img .fresh-article__content-wrapper::before {
+  display: none
+}
+._long-img .fresh-article__content-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none
+}
+.fresh-article__content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
+  position: relative
+}
+._long-img .fresh-article__content {
   border: none;
   background: 0 0;
-  -webkit-backdrop-filter: blur(0);
-  backdrop-filter: blur(0);
   padding: 0
 }
 .fresh-article__date {
@@ -12148,9 +12194,6 @@ textarea {
   gap: 15px
 }
 ._long-img .fresh-article__date {
-  position: absolute;
-  top: 0;
-  width: 100%;
   background: linear-gradient(180deg,rgba(0,0,0,.6) 0,rgba(0,0,0,.5) 50%,rgba(0,0,0,0) 100%);
   padding: 10px
 }
@@ -12274,6 +12317,137 @@ textarea {
   bottom: 3px;
   right: 41px;
   background: linear-gradient(90deg,rgba(125,110,67,0) 0,#7d6e43 100%)
+}
+.article-detail {
+  padding-top: 142px;
+  padding-bottom: 64px
+}
+.article-detail__wrapper {
+  max-width: 960px;
+  margin: 0 auto
+}
+.article-detail__head {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px
+}
+.article-detail__logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #b19f63;
+  font-family: "Albertus Nova";
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2
+}
+.article-detail__logo-src {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto
+}
+.article-detail__title {
+  display: flex;
+  gap: 10px;
+  color: #f9df94;
+  font-family: "Albertus Nova";
+  font-size: 44px;
+  line-height: .88;
+  font-weight: 700;
+  letter-spacing: 2.64px;
+  text-transform: uppercase
+}
+.article-detail__back-link {
+  background: url(../img/icons/swiper-btn.svg) 0 0/100% 100% no-repeat;
+  display: block;
+  width: 38px;
+  height: 38px;
+  margin-top: 5px;
+  flex: 0 0 auto
+}
+.article-detail__back-link:hover {
+  background: url(../img/icons/swiper-btn_hovered.svg) 0 0/100% 100% no-repeat
+}
+.article-detail__date {
+  color: #e6e6e6;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1
+}
+.article-detail__main-img {
+  margin-bottom: 32px
+}
+.article-detail__main-img img {
+  width: 100%;
+  height: auto
+}
+.article-detail__body {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.33;
+  letter-spacing: .72px
+}
+.article-detail__body p {
+  margin-bottom: 15px
+}
+.article-detail__inventory {
+  max-width: 634px;
+  margin: 0 auto 15px
+}
+.article-detail__toc {
+  position: relative;
+  margin: 30px auto
+}
+.article-detail__toc-title {
+  margin: 25px 0;
+  text-align: center;
+  color: #f9df94;
+  font-family: "Albertus Nova";
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 1.04px
+}
+.article-detail__toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 25px
+}
+.article-detail__toc-link {
+  color: #1ea9ff;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: .8px
+}
+.article-detail__toc-separator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.article-detail__toc-separator::after,
+.article-detail__toc-separator::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px
+}
+.article-detail__toc-separator::before {
+  background: linear-gradient(to left,#776030 0,rgba(119,96,48,.7) 60%,rgba(119,96,48,0) 90%);
+  margin-right: -1px
+}
+.article-detail__toc-separator::after {
+  background: linear-gradient(to right,#776030 0,rgba(119,96,48,.7) 60%,rgba(119,96,48,0) 90%);
+  margin-left: -1px
+}
+.article-detail__toc-separator-icon {
+  flex: 0 0 auto
 }
 .swiper {
   overflow: hidden
@@ -16473,6 +16647,9 @@ textarea {
   .fresh-article {
     flex-direction: column
   }
+  ._long-img .fresh-article__content-wrapper {
+    z-index: 1
+  }
   .fresh-article__content {
     gap: 15px
   }
@@ -16489,7 +16666,8 @@ textarea {
   }
   .fresh-article__image {
     width: 100%;
-    height: 140px
+    height: 140px;
+    z-index: 1
   }
   ._long-img .fresh-article__image {
     height: 400px

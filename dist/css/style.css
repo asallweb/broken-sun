@@ -11544,9 +11544,9 @@ textarea {
 }
 .featured-news {
   background: url(../img/background/news/featured-news-bg.webp) center center/cover no-repeat;
-  padding-top: 10%;
-  padding-bottom: 4.5%;
-  min-height: 41vw
+  padding-top: 5.95%;
+  height: 74vh;
+  min-height: 700px
 }
 .featured-news__title {
   text-align: center;
@@ -11772,6 +11772,7 @@ textarea {
 }
 ._high-img .featured-article__date {
   position: absolute;
+  z-index: 1;
   top: 0;
   width: 100%;
   background: linear-gradient(180deg,rgba(0,0,0,.6) 0,rgba(0,0,0,.5) 50%,rgba(0,0,0,0) 100%);
@@ -11784,7 +11785,7 @@ textarea {
   color: #b19f63;
   font-family: "Albertus Nova";
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.2
 }
 .featured-article__date-logo-src {
@@ -11808,7 +11809,8 @@ textarea {
   font-family: "Albertus Nova";
   font-size: 21px;
   line-height: 1.33;
-  letter-spacing: .63px
+  letter-spacing: .63px;
+  margin-top: -8px
 }
 .featured-article__text {
   color: #fff;
@@ -11821,7 +11823,12 @@ textarea {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 87.68px
+  max-height: 87.68px;
+  margin-top: -9px
+}
+.featured-article__text._show-lines-1 {
+  max-height: 21.92px;
+  -webkit-line-clamp: 1
 }
 ._high-img .featured-article__text {
   height: auto
@@ -11890,7 +11897,8 @@ textarea {
   padding: 7px 15px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between
+  justify-content: space-between;
+  gap: 4px 0
 }
 .article-inventory._relative {
   position: relative;
@@ -12741,7 +12749,7 @@ textarea {
     font-size: 1.625rem
   }
   .featured-news__title {
-    margin-bottom: 3rem
+    margin-bottom: 2.75rem
   }
   .featured-news__title span {
     font-size: 2.75rem
@@ -17079,7 +17087,7 @@ textarea {
     font-size: clamp(1rem ,.7678571429rem + .9523809524vw ,1.625rem)
   }
   .featured-news__title {
-    margin-bottom: clamp(1.5rem ,.9428571429rem + 2.2857142857vw ,3rem)
+    margin-bottom: clamp(1.5rem ,1.0357142857rem + 1.9047619048vw ,2.75rem)
   }
   .featured-news__title span {
     font-size: clamp(2.25rem ,2.0642857143rem + .7619047619vw ,2.75rem)

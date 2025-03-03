@@ -6325,12 +6325,12 @@ textarea {
 .footer__menu {
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  margin-bottom: 18px
 }
 .footer__menu-item {
   color: #b19f63;
   line-height: 1.25;
-  text-transform: uppercase;
   white-space: nowrap;
   padding: 13px 0
 }
@@ -11906,16 +11906,6 @@ textarea {
   margin-left: auto;
   position: relative
 }
-.featured-article__detail-link::after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 2px;
-  width: 60px;
-  bottom: 3px;
-  right: 41px;
-  background: linear-gradient(90deg,rgba(125,110,67,0) 0,#7d6e43 100%)
-}
 .article-inventory {
   position: absolute;
   left: 0;
@@ -12619,9 +12609,6 @@ textarea {
   }
   .footer__menu {
     gap: 1.6875rem
-  }
-  .footer__menu {
-    margin-bottom: 1.125rem
   }
   .footer__menu-item {
     font-size: 1rem
@@ -15017,27 +15004,29 @@ textarea {
 }
 @media (max-width:750px) {
   .footer {
-    padding: 16px 0
+    padding: 23px 0 26px;
+    background-position: left -45px bottom
   }
   .footer__wrapper {
     gap: 24px
   }
   .footer__socials-link {
-    width: 32px;
-    height: 32px
+    width: 40px;
+    height: 40px
   }
   .footer__socials-link img {
-    width: 36px!important
+    width: 44px!important
   }
   .footer__menu {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 4px 25px!important
+    gap: 4px 10px!important
   }
   .footer__menu-item {
-    padding: 7px 0;
-    flex: 0 0 calc(50% - 25px);
-    text-align: right
+    padding: 0;
+    flex: 0 0 calc(50% - 5px);
+    text-align: right;
+    text-transform: uppercase
   }
   .footer__menu-item:nth-child(2n) {
     text-align: left
@@ -16773,14 +16762,11 @@ textarea {
   .footer__menu {
     gap: .9375rem
   }
-  .footer__menu {
-    margin-bottom: .625rem
-  }
   .footer__menu-item {
-    font-size: .5rem
+    font-size: .625rem
   }
   ._type-2 .footer__socials {
-    margin-bottom: .125rem
+    margin-bottom: 1.125rem
   }
   ._type-2 .footer__text {
     font-size: .625rem
@@ -16985,14 +16971,11 @@ textarea {
   .footer__menu {
     gap: clamp(.9375rem ,.6589285714rem + 1.1428571429vw ,1.6875rem)
   }
-  .footer__menu {
-    margin-bottom: clamp(.625rem ,.4392857143rem + .7619047619vw ,1.125rem)
-  }
   .footer__menu-item {
-    font-size: clamp(.5rem ,.3142857143rem + .7619047619vw ,1rem)
+    font-size: clamp(.625rem ,.4857142857rem + .5714285714vw ,1rem)
   }
   ._type-2 .footer__socials {
-    margin-bottom: clamp(.125rem ,-.7571428571rem + 3.619047619vw ,2.5rem)
+    margin-bottom: clamp(1.125rem ,.6142857143rem + 2.0952380952vw ,2.5rem)
   }
   ._type-2 .footer__text {
     font-size: clamp(.625rem ,.4392857143rem + .7619047619vw ,1.125rem)

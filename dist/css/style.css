@@ -6146,11 +6146,15 @@ textarea {
   display: block;
   width: 100%;
   height: 2px;
-  background: url(../img/icons/news/more-button-line.svg) 0 0/100% 100% no-repeat
+  background: linear-gradient(90deg,rgba(59,49,28,0) 0,#3b311c 40%,#a1874c 100%)
+}
+.more-button-wrapper::before {
+  margin-right: -3px
 }
 .more-button-wrapper::after {
   -webkit-transform: rotate(180deg);
-  transform: rotate(180deg)
+  transform: rotate(180deg);
+  margin-left: -3px
 }
 .more-button-wrapper .more-button {
   position: relative;
@@ -11559,6 +11563,9 @@ textarea {
   flex-direction: column;
   justify-content: center
 }
+.featured-news .__container {
+  width: 100vw
+}
 .featured-news__title {
   text-align: center;
   position: relative;
@@ -11684,7 +11691,8 @@ textarea {
   padding: 2px;
   -o-border-image: url(../img/background/news/featured-article-border.webp) 2/2px;
   border-image: url(../img/background/news/featured-article-border.webp) 2/2px;
-  border-style: solid
+  border-style: solid;
+  transition: all .2s ease-in-out
 }
 .featured-article::before {
   content: "";
@@ -11698,6 +11706,9 @@ textarea {
   background: #f9df94;
   opacity: 0;
   transition: all .3s ease-in-out
+}
+.featured-article:hover:not(._high-img) {
+  padding-top: 5px
 }
 .featured-article:hover::before {
   opacity: 1
@@ -12062,7 +12073,8 @@ textarea {
   background: url(../img/background/news/fresh-news-wrapper.webp) center top repeat,radial-gradient(59.09% 50.04% at 50% 0,#1f314c 0,#1a2233 100%);
   background-blend-mode: overlay;
   height: 100%;
-  padding-bottom: 64px
+  padding-bottom: 64px;
+  border-top: 1px solid rgba(255,255,255,.2)
 }
 .fresh-news {
   position: relative;
@@ -12084,13 +12096,14 @@ textarea {
 }
 .fresh-news__tabs {
   display: flex;
-  flex-wrap: wrap;
   margin-bottom: 20px
 }
 .fresh-news__tabs-item {
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,.25)
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.25);
+  width: 100%;
+  white-space: nowrap
 }
 .fresh-news__tabs-item div {
   -o-border-image: url(../img/background/news/tabs-item.webp) 15 fill/15px;
@@ -12125,7 +12138,11 @@ textarea {
   padding: 2px;
   -o-border-image: url(../img/background/news/fresh-article-border.webp) 2/2px;
   border-image: url(../img/background/news/fresh-article-border.webp) 2/2px;
-  border-style: solid
+  border-style: solid;
+  transition: all .2s ease-in-out
+}
+.fresh-article:hover {
+  padding-left: 5px
 }
 .fresh-article::before {
   content: "";
@@ -12376,16 +12393,6 @@ textarea {
   padding-right: 32px;
   margin-left: auto;
   position: relative
-}
-.fresh-article__detail-link::after {
-  content: "";
-  display: block;
-  position: absolute;
-  height: 2px;
-  width: 70px;
-  bottom: 3px;
-  right: 41px;
-  background: linear-gradient(90deg,rgba(125,110,67,0) 0,#7d6e43 100%)
 }
 .article-detail {
   padding-top: 142px;
@@ -16694,7 +16701,8 @@ textarea {
     background: linear-gradient(270deg,rgba(30,37,51,0) 0,#143f63 40%,#143f63 60%,rgba(30,37,51,0) 100%)
   }
   .featured-news {
-    min-height: 650px
+    min-height: 650px;
+    height: 100vh
   }
   .featured-news .__container {
     padding-right: 0!important
@@ -16707,7 +16715,8 @@ textarea {
     height: 60px
   }
   .fresh-news__tabs {
-    justify-content: center
+    justify-content: center;
+    flex-wrap: wrap
   }
   .fresh-news__tabs-item {
     width: calc(50% - 7.5px)

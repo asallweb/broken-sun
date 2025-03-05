@@ -12214,7 +12214,8 @@ textarea {
   object-fit: cover
 }
 .fresh-article__content-wrapper {
-  position: relative
+  position: relative;
+  width: 100%
 }
 .fresh-article__content-wrapper::before {
   content: "";

@@ -11699,7 +11699,8 @@ textarea {
 }
 .featured-article:hover {
   -webkit-transform: translateY(3px);
-  transform: translateY(3px)
+  transform: translateY(3px);
+  z-index: 2
 }
 .featured-article::before {
   content: "";
@@ -12153,7 +12154,8 @@ textarea {
 }
 .fresh-article:hover {
   -webkit-transform: translateX(3px);
-  transform: translateX(3px)
+  transform: translateX(3px);
+  z-index: 2
 }
 .fresh-article::before {
   content: "";

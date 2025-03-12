@@ -5,10 +5,10 @@
 	<title>LANDING 3</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250306184052">
-	<script src="files/js/preloader.js?_v=20250306184052"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250306184052">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250306184052">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250312092622">
+	<script src="files/js/preloader.js?_v=20250312092622"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250312092622">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250312092622">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -47,34 +47,16 @@
 							</span>
 						</button>
 					</div>
-					<!-- <div class="header__language-landing3 language-select">
-							<div class="language-select__current">
-								RU
-								<svg width="9" height="6" class="language-select__icon">
-									<use xlink:href="img/icons/icons.svg#dropdown-lang"></use>
-								</svg>
-							</div>
-							<div class="language-select__dropdown">
-								<a href="">RU</a>
-								<a href="">EN</a>
-							</div>
-						</div> -->
-					<!-- <div class="header__language-mobile-landing3 menu__lang">
-							<a href="" class="menu__lang-link _active">RU</a>
-							<div></div>
-							<a href="" class="menu__lang-link">EN</a>
-						</div> -->
 					<div class="header__sound-wrapper">
 						<button class="header__sound-btn">
 
 						</button>
 						<audio autoplay loop>
-							<source src="files/audio/TempleComplexNightAmb_loop.mp3" type="audio/mpeg">
-							<source src="files/audio/TempleComplexNightAmb_loop.ogg" type="audio/ogg">
+							<source src="files/audio/TempleComplexNightAmb_fade.mp3" type="audio/mpeg">
+							<source src="files/audio/TempleComplexNightAmb_fade.ogg" type="audio/ogg">
 							Ваш браузер не поддерживает аудио.
 						</audio>
 					</div>
-
 					<script>
 						document.addEventListener("DOMContentLoaded", function() {
 							const audio = document.querySelector("audio");
@@ -116,8 +98,6 @@
 							audio.volume = 0.3;
 						});
 					</script>
-
-
 				</div>
 			</div>
 		</header>
@@ -218,15 +198,15 @@
 
 							// Определяем новый путь к видео в зависимости от ширины экрана
 							if (window.matchMedia('(max-width: 767px)').matches) {
-								newVideoSrc = 'files/video/landing-3/bs_vid032_landingDwarNight_en_bis_500x867.webm';
+								newVideoSrc = 'files/video/landing-3/bs_vid032_landingDwar_en_bis_500x867.webm';
 							} else if (window.matchMedia('(min-width: 768px) and (max-width: 1439px)').matches) {
-								newVideoSrc = 'files/video/landing-3/bs_vid032_landingDwarNight_en_bis_1280x720.webm';
+								newVideoSrc = 'files/video/landing-3/bs_vid032_landingDwar_en_bis_1280x720.webm';
 							} else if (window.matchMedia('(min-width: 1439px) and (max-width: 1920px)').matches) {
-								newVideoSrc = 'files/video/landing-3/bs_vid032_landingDwarNight_en_bis_1920x1080.webm';
+								newVideoSrc = 'files/video/landing-3/bs_vid032_landingDwar_en_bis_1920x1080.webm';
 							} else if (window.matchMedia('(min-width: 1921px)').matches) {
-								newVideoSrc = 'files/video/landing-3/bs_vid032_landingDwarNight_en_bis_2560x1440.webm';
+								newVideoSrc = 'files/video/landing-3/bs_vid032_landingDwar_en_bis_2560x1440.webm';
 							} else {
-								newVideoSrc = 'files/video/landing-3/bs_vid032_landingDwarNight_en_bis_1280x720.webm';
+								newVideoSrc = 'files/video/landing-3/bs_vid032_landingDwar_en_bis_1280x720.webm';
 							}
 
 							// Устанавливаем новый src, только если он отличается от текущего
@@ -489,7 +469,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20250306184052"></script>
+	<script src="js/app.min.js?_v=20250312092622"></script>
 </body>
 
 </html>

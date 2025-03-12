@@ -6968,11 +6968,17 @@ textarea {
 .gods._landing .gods__item-text {
   font-size: 21px
 }
-._bg-dark-blue .gods__heading {
+.gods._landing._bg-dark-blue .gods__heading {
   background: url(../img/background/news/fresh-news-wrapper.webp) center center repeat,linear-gradient(270deg,#111722 0,#161e2c 50%,#111722 100%);
   background-blend-mode: overlay,normal
 }
-._bg-dark-blue .gods__background {
+.gods._landing._bg-dark-blue .gods__title {
+  padding-bottom: 0
+}
+.gods._landing._bg-dark-blue .gods__title::after {
+  display: none
+}
+.gods._landing._bg-dark-blue .gods__background {
   background: url(../img/background/news/fresh-news-wrapper.webp) center center repeat,linear-gradient(270deg,#111722 0,#161e2c 50%,#111722 100%);
   background-blend-mode: overlay,normal
 }
@@ -12610,6 +12616,12 @@ textarea {
   display: flex;
   justify-content: center
 }
+.landing-section-3 .br-mobile {
+  display: none
+}
+.landing-section-3 .br-desktop {
+  display: inline
+}
 .landing-section-4 {
   position: relative;
   background: url(../img/background/news/fresh-news-wrapper.webp) center center repeat,linear-gradient(270deg,#111722 0,#161e2c 50%,#111722 100%);
@@ -12770,7 +12782,7 @@ textarea {
     padding-top: 4.6875rem
   }
   .gods._landing .gods__heading {
-    padding-bottom: 4.6875rem
+    padding-bottom: 4.375rem
   }
   .gods._landing .gods__title {
     font-size: 2.875rem
@@ -12780,6 +12792,9 @@ textarea {
   }
   .gods._landing .gods__subtitle {
     font-size: 1.625rem
+  }
+  .gods._landing._bg-dark-blue .gods__title {
+    margin-bottom: .9375rem
   }
   .error404 {
     font-size: 6.875rem
@@ -15314,11 +15329,16 @@ textarea {
     margin-bottom: 10px
   }
   .gods__item-text {
-    font-size: 14px
+    font-size: 14px;
+    opacity: 0;
+    transition: all .3s ease-in-out
   }
   .gods__item-text::after,
   .gods__item-text::before {
     display: none
+  }
+  ._active .gods__item-text {
+    opacity: 1
   }
   .gods._landing .gods__title {
     letter-spacing: .96px
@@ -16961,6 +16981,7 @@ textarea {
     bottom: 0
   }
   .landing-section-3 {
+    padding: 0 5px;
     background: url(../img/background/news/fresh-news-wrapper.webp) center center repeat,radial-gradient(67.82% 100.87% at 50% 0,#161e2c 0,#131925 83.18%)
   }
   .landing-section-3__wrapper {
@@ -16975,6 +16996,12 @@ textarea {
   .landing-section-3 .button__text::before {
     width: 15px;
     height: 15px
+  }
+  .landing-section-3 .br-mobile {
+    display: inline
+  }
+  .landing-section-3 .br-desktop {
+    display: none
   }
   .landing-section-4::before {
     background: url(../img/pages/landing-4/landing-section-4__light-mobile.webp) center top/cover -35px no-repeat
@@ -17055,6 +17082,9 @@ textarea {
   }
   .gods._landing .gods__subtitle {
     font-size: 1.25rem
+  }
+  .gods._landing._bg-dark-blue .gods__title {
+    margin-bottom: .5rem
   }
   .error404 {
     font-size: 2.875rem
@@ -17311,7 +17341,7 @@ textarea {
     padding-top: clamp(1.875rem ,.8303571429rem + 4.2857142857vw ,4.6875rem)
   }
   .gods._landing .gods__heading {
-    padding-bottom: clamp(1.875rem ,.8303571429rem + 4.2857142857vw ,4.6875rem)
+    padding-bottom: clamp(1.875rem ,.9464285714rem + 3.8095238095vw ,4.375rem)
   }
   .gods._landing .gods__title {
     font-size: clamp(1.5rem ,.9892857143rem + 2.0952380952vw ,2.875rem)
@@ -17321,6 +17351,9 @@ textarea {
   }
   .gods._landing .gods__subtitle {
     font-size: clamp(1.25rem ,1.1107142857rem + .5714285714vw ,1.625rem)
+  }
+  .gods._landing._bg-dark-blue .gods__title {
+    margin-bottom: clamp(.5rem ,.3375rem + .6666666667vw ,.9375rem)
   }
   .error404 {
     font-size: clamp(2.875rem ,1.3892857143rem + 6.0952380952vw ,6.875rem)

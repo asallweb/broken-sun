@@ -4855,7 +4855,7 @@
                 const text = item.querySelector(".gods__item-text");
                 if (content && text) {
                     let extraSpace = 35;
-                    if (window.innerWidth < 768) extraSpace = 20;
+                    if (window.innerWidth < 768) extraSpace = 0;
                     const textHeight = text.offsetHeight + extraSpace;
                     content.style.bottom = `-${textHeight}px`;
                     if (window.innerWidth > 919) {

@@ -5,10 +5,10 @@
 	<title>LANDING 4</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250312140215">
-	<script src="files/js/preloader.js?_v=20250312140215"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250312140215">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250312140215">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250313182807">
+	<script src="files/js/preloader.js?_v=20250313182807"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250313182807">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250313182807">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -63,7 +63,21 @@
 						</div>
 						<div class="landing-section-3__subtitle">Получи доступ к игре и играй<span class="br-mobile"><br></span> на своей мобильном устройстве</div>
 						<div class="landing-section-3__video-wrapper">
-							<img src="img/pages/landing-4/landing-section-3__video.webp" class="landing-section-3__video">
+							<video src="files/video/landing-4/start.webm" class="landing-section-3__video" autoplay muted playsinline></video>
+							<video src="files/video/landing-4/cycle.webm" class="landing-section-3__video-cycle" muted playsinline loop style="opacity: 0;"></video>
+							<script>
+								document.addEventListener("DOMContentLoaded", () => {
+									const startVideo = document.querySelector(".landing-section-3__video");
+									const cycleVideo = document.querySelector(".landing-section-3__video-cycle");
+
+									if (startVideo && cycleVideo) {
+										startVideo.addEventListener("ended", () => {
+											cycleVideo.style.opacity = "1";
+											cycleVideo.play();
+										});
+									}
+								});
+							</script>
 						</div>
 						<div class="landing-section-3__button-wrapper">
 							<button class="landing-section-3__button _size-xl button _fz-18">
@@ -224,7 +238,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20250312140215"></script>
+	<script src="js/app.min.js?_v=20250313182807"></script>
 </body>
 
 </html>

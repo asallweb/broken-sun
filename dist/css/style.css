@@ -12603,12 +12603,20 @@ textarea {
   margin: 0 auto
 }
 .landing-section-3__video-wrapper {
+  position: relative;
   display: flex;
   justify-content: center;
   max-width: 850px;
   margin: 0 auto
 }
 .landing-section-3__video {
+  width: 100%;
+  height: auto
+}
+.landing-section-3__video-cycle {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: auto
 }
@@ -16986,6 +16994,11 @@ textarea {
   }
   .landing-section-3__wrapper {
     background: url(../img/pages/landing-4/ornament-mobile.webp) center center/contain no-repeat
+  }
+  .landing-section-3__video,
+  .landing-section-3__video-cycle {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3)
   }
   .landing-section-3 .button._size-xl {
     width: 320px;

@@ -12581,10 +12581,14 @@ textarea {
 .landing-section-3 {
   position: relative;
   background: url(../img/background/news/fresh-news-wrapper.webp) center center repeat,linear-gradient(270deg,#111722 0,#161e2c 50%,#111722 100%);
-  background-blend-mode: overlay,normal
+  background-blend-mode: overlay,normal;
+  max-height: calc(100vh - 85px)
 }
 .landing-section-3__wrapper {
   background: url(../img/pages/landing-4/ornament.webp) center center/contain no-repeat
+}
+.landing-section-3__wrapper._pd-bottom {
+  padding-bottom: 60px
 }
 .landing-section-3__title {
   color: #f4d57b;
@@ -12606,8 +12610,8 @@ textarea {
   position: relative;
   display: flex;
   justify-content: center;
-  max-width: 850px;
-  margin: 0 auto
+  max-width: 1200px;
+  margin: -60px auto
 }
 .landing-section-3__video {
   width: 100%;
@@ -12621,6 +12625,11 @@ textarea {
   height: auto
 }
 .landing-section-3__button-wrapper {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
   display: flex;
   justify-content: center
 }
@@ -12987,11 +12996,8 @@ textarea {
   .landing-hero-3__content-text {
     font-size: 1.25rem
   }
-  .landing-section-3__wrapper {
+  .landing-section-3__wrapper._pd-top {
     padding-top: 4rem
-  }
-  .landing-section-3__wrapper {
-    padding-bottom: 4rem
   }
   .landing-section-3__title {
     font-size: 2.875rem
@@ -13007,12 +13013,6 @@ textarea {
   }
   .landing-section-3__subtitle {
     letter-spacing: .0325rem
-  }
-  .landing-section-3__subtitle {
-    margin-bottom: 2.3125rem
-  }
-  .landing-section-3__video-wrapper {
-    margin-bottom: 2.5rem
   }
   .landing-section-4__wrapper {
     padding-top: 6.25rem
@@ -16989,16 +16989,32 @@ textarea {
     bottom: 0
   }
   .landing-section-3 {
+    max-height: calc(100vh - 60px);
     padding: 0 5px;
     background: url(../img/background/news/fresh-news-wrapper.webp) center center repeat,radial-gradient(67.82% 100.87% at 50% 0,#161e2c 0,#131925 83.18%)
   }
   .landing-section-3__wrapper {
     background: url(../img/pages/landing-4/ornament-mobile.webp) center center/contain no-repeat
   }
+  .landing-section-3__wrapper._pd-bottom {
+    padding-bottom: 50px
+  }
+  .landing-section-3__video-wrapper {
+    position: relative;
+    margin: 40px auto
+  }
   .landing-section-3__video,
   .landing-section-3__video-cycle {
     -webkit-transform: scale(1.3);
     transform: scale(1.3)
+  }
+  .landing-section-3__button-wrapper {
+    position: relative;
+    -webkit-transform: none;
+    transform: none;
+    left: auto;
+    top: auto;
+    bottom: auto
   }
   .landing-section-3 .button._size-xl {
     width: 320px;
@@ -17255,11 +17271,8 @@ textarea {
   .landing-hero-3__content-text {
     font-size: 1.125rem
   }
-  .landing-section-3__wrapper {
+  .landing-section-3__wrapper._pd-top {
     padding-top: 3.125rem
-  }
-  .landing-section-3__wrapper {
-    padding-bottom: 3.125rem
   }
   .landing-section-3__title {
     font-size: 1.5rem
@@ -17275,12 +17288,6 @@ textarea {
   }
   .landing-section-3__subtitle {
     letter-spacing: .025rem
-  }
-  .landing-section-3__subtitle {
-    margin-bottom: 4.375rem
-  }
-  .landing-section-3__video-wrapper {
-    margin-bottom: 4.375rem
   }
   .landing-section-4__wrapper {
     padding-top: 3.5rem
@@ -17524,11 +17531,8 @@ textarea {
   .landing-hero-3__content-text {
     font-size: clamp(1.125rem ,1.0785714286rem + .1904761905vw ,1.25rem)
   }
-  .landing-section-3__wrapper {
+  .landing-section-3__wrapper._pd-top {
     padding-top: clamp(3.125rem ,2.8rem + 1.3333333333vw ,4rem)
-  }
-  .landing-section-3__wrapper {
-    padding-bottom: clamp(3.125rem ,2.8rem + 1.3333333333vw ,4rem)
   }
   .landing-section-3__title {
     font-size: clamp(1.5rem ,.9892857143rem + 2.0952380952vw ,2.875rem)
@@ -17544,12 +17548,6 @@ textarea {
   }
   .landing-section-3__subtitle {
     letter-spacing: clamp(.025rem ,.0222142857rem + .0114285714vw ,.0325rem)
-  }
-  .landing-section-3__subtitle {
-    margin-bottom: clamp(2.3125rem ,5.1410714286rem + -3.1428571429vw ,4.375rem)
-  }
-  .landing-section-3__video-wrapper {
-    margin-bottom: clamp(2.5rem ,5.0714285714rem + -2.8571428571vw ,4.375rem)
   }
   .landing-section-4__wrapper {
     padding-top: clamp(3.5rem ,2.4785714286rem + 4.1904761905vw ,6.25rem)

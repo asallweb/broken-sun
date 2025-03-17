@@ -12036,6 +12036,71 @@ textarea {
 .landing-registration__form-bottom a:hover {
   text-decoration: none
 }
+.landing-registration__complete {
+  padding: 94px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%
+}
+.landing-registration__complete-title {
+  color: var(--Main-Colors-accent_1_100,#f9df94);
+  text-align: center;
+  font-family: "Albertus Nova";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.26;
+  padding: 0 30px
+}
+.landing-registration__complete-text {
+  position: relative;
+  padding: 24px 30px;
+  color: #fafafa;
+  text-align: center;
+  font-size: 21px;
+  line-height: 1.33;
+  background: linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,.35) 50%,rgba(0,0,0,0) 100%)
+}
+.landing-registration__complete-text div {
+  color: #c9cccf;
+  font-size: 17px;
+  line-height: 1.64;
+  margin-top: 20px
+}
+.landing-registration__complete-text::after,
+.landing-registration__complete-text::before {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0
+}
+.landing-registration__complete-text::before {
+  content: "";
+  background: linear-gradient(90deg,#41341d .52%,#776030 50%,#41341d 99.48%);
+  height: 1px;
+  top: 0
+}
+.landing-registration__complete-text::after {
+  content: "";
+  background: url(../img/pages/landing-3/complete-line.svg) center center no-repeat;
+  height: 30px;
+  bottom: -30px
+}
+.landing-registration__complete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../img/pages/landing-3/complete-button.webp) 0 0 no-repeat;
+  width: 141px;
+  height: 48px;
+  color: #f2d993;
+  font-family: "Albertus Nova";
+  font-size: 24px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 7.212px 0 rgba(0,0,0,.5)
+}
 .landing-hero {
   position: relative;
   height: calc(100dvh - 12px);
@@ -14405,6 +14470,28 @@ textarea {
   .download__button-src._android {
     width: 47px
   }
+  .landing-registration__complete {
+    padding: 20px 0
+  }
+  .landing-registration__complete-title {
+    font-size: 22px;
+    padding: 0 20px
+  }
+  .landing-registration__complete-text {
+    padding: 24px 20px;
+    font-size: 15px
+  }
+  .landing-registration__complete-text div {
+    font-size: 13px;
+    margin-top: 20px
+  }
+  .landing-registration__complete-text::after {
+    height: 30px;
+    bottom: -30px
+  }
+  .landing-registration__complete-button {
+    font-size: 20px
+  }
   .landing-hero__head-uptitle {
     font-size: 27px
   }
@@ -14607,6 +14694,9 @@ textarea {
   }
   .landing-registration__body-column._form {
     padding: 20px
+  }
+  .landing-registration__body-container {
+    width: 93.15%
   }
   .landing-registration__form-field {
     margin-bottom: 5px
@@ -16731,7 +16821,7 @@ textarea {
     transform: scale(1)
   }
   .landing-registration__body-container {
-    width: 284px;
+    width: 264px;
     height: 90%
   }
   .landing-registration__body-column {
@@ -16772,6 +16862,9 @@ textarea {
   }
   .landing-registration__form-bottom::before {
     background: linear-gradient(270deg,rgba(30,37,51,0) 0,#143f63 40%,#143f63 60%,rgba(30,37,51,0) 100%)
+  }
+  .landing-registration__complete {
+    padding: 50px 0 40px
   }
   .landing-hero__head-uptitle {
     font-size: 20px;

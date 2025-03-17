@@ -12078,13 +12078,13 @@ textarea {
 }
 .landing-registration__complete-text::before {
   content: "";
-  background: url(../img/pages/landing-3/complete-line-top.svg) center center no-repeat;
+  background: url(../img/pages/landing-3/complete-line-top.svg) center center/cover no-repeat;
   height: 1px;
   top: 0
 }
 .landing-registration__complete-text::after {
   content: "";
-  background: url(../img/pages/landing-3/complete-line.svg) center center no-repeat;
+  background: url(../img/pages/landing-3/complete-line.svg) center center/cover no-repeat;
   height: 30px;
   bottom: -30px
 }
@@ -16864,7 +16864,10 @@ textarea {
     background: linear-gradient(270deg,rgba(30,37,51,0) 0,#143f63 40%,#143f63 60%,rgba(30,37,51,0) 100%)
   }
   .landing-registration__complete {
-    padding: 50px 0 40px
+    padding: 60px 0 30px
+  }
+  .landing-registration__complete-text {
+    margin-bottom: 30px
   }
   .landing-hero__head-uptitle {
     font-size: 20px;

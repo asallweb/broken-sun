@@ -12060,7 +12060,7 @@ textarea {
   text-align: center;
   font-size: 21px;
   line-height: 1.33;
-  background: linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,.35) 50%,rgba(0,0,0,0) 100%)
+  background: linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,.15) 50%,rgba(0,0,0,0) 100%)
 }
 .landing-registration__complete-text div {
   color: #c9cccf;
@@ -12078,7 +12078,7 @@ textarea {
 }
 .landing-registration__complete-text::before {
   content: "";
-  background: linear-gradient(90deg,#41341d .52%,#776030 50%,#41341d 99.48%);
+  background: url(../img/pages/landing-3/complete-line-top.svg) center center no-repeat;
   height: 1px;
   top: 0
 }

@@ -11732,11 +11732,17 @@ textarea {
   max-width: 468px
 }
 .landing-vslider__content .swiper-slide {
-  transition: opacity .3s;
-  opacity: .3
+  transition: opacity 1s;
+  opacity: 0
 }
 .landing-vslider__content .thumb-active {
   opacity: 1
+}
+.landing-vslider__content .swiper-slide-prev {
+  opacity: 0
+}
+.landing-vslider__content .swiper-slide-next {
+  opacity: .3
 }
 .landing-vslider__content-slide {
   width: 100%
@@ -16766,8 +16772,13 @@ textarea {
   .landing-vslider__content .swiper-wrapper {
     max-width: 100%
   }
+  .landing-vslider__content .swiper-slide-prev {
+    opacity: .3;
+    padding-bottom: 20px
+  }
   .landing-vslider__content-slide-wrapper {
     display: flex;
+    align-items: center;
     gap: 10px;
     padding-bottom: 5px
   }
@@ -16783,8 +16794,11 @@ textarea {
     -webkit-transform: scale(.6);
     transform: scale(.6);
     opacity: 1;
-    -webkit-transform-origin: top left;
-    transform-origin: top left
+    -webkit-transform-origin: center left;
+    transform-origin: center left
+  }
+  .swiper-slide-active .landing-vslider__content-slide-wrapper {
+    align-items: flex-start
   }
   .landing-vslider__content-slide-text {
     transition: margin-left 1s cubic-bezier(0,.25,0,1),-webkit-transform 1s cubic-bezier(0,.25,0,1);
@@ -16802,7 +16816,7 @@ textarea {
   .landing-vslider__controls {
     right: 15px;
     top: auto;
-    bottom: 140px;
+    bottom: 125px;
     -webkit-transform: translate(0,0);
     transform: translate(0,0)
   }

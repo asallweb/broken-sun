@@ -12652,8 +12652,7 @@ textarea {
 .landing-section-3 {
   position: relative;
   background: url(../img/background/news/fresh-news-wrapper.webp) center center repeat,linear-gradient(270deg,#111722 0,#161e2c 50%,#111722 100%);
-  background-blend-mode: overlay,normal;
-  max-height: calc(100vh - 85px)
+  background-blend-mode: overlay,normal
 }
 .landing-section-3__wrapper {
   background: url(../img/pages/landing-4/ornament.webp) center center/contain no-repeat
@@ -17099,7 +17098,6 @@ textarea {
     bottom: 0
   }
   .landing-section-3 {
-    max-height: calc(100vh - 60px);
     padding: 0 5px;
     background: url(../img/background/news/fresh-news-wrapper.webp) center center repeat,radial-gradient(67.82% 100.87% at 50% 0,#161e2c 0,#131925 83.18%)
   }

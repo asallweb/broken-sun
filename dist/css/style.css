@@ -13077,11 +13077,18 @@ textarea {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0);
   display: block;
   height: 1px;
   width: 100%;
-  background: linear-gradient(90deg,rgba(77,101,124,0) 0,#4d657c 25%,#4d657c 50%,#4d657c 75%,rgba(77,101,124,0) 100%)
+  background: linear-gradient(90deg,rgba(77,101,124,0) 0,#4d657c 25%,#4d657c 50%,#4d657c 75%,rgba(77,101,124,0) 100%);
+  opacity: .7;
+  transition: all .3s ease-in-out
+}
+.support-tiles__item:hover .support-tiles__item-title::before {
+  width: 0
 }
 .swiper {
   overflow: hidden

@@ -13,7 +13,7 @@
 }
 
 
-.support-tiles__item:hover::before {
+.support-tiles__item::before {
 	background: url('../gif/animated-bg-hover.gif') center center/cover no-repeat !important;
 }
 

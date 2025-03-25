@@ -13030,7 +13030,12 @@ textarea {
   left: 2px;
   display: block;
   height: calc(100% - 56px);
-  width: calc(100% - 4px)
+  width: calc(100% - 4px);
+  opacity: 0;
+  transition: all .3s ease-in-out
+}
+.support-tiles__item:hover::before {
+  opacity: 1
 }
 .support-tiles__item::after {
   content: "";

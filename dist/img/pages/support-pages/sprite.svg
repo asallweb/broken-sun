@@ -1,0 +1,8 @@
+<svg>
+	<symbol id="support-grid-item-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M-0.000183105 6L6.00009 -9.15758e-05L12.0001 5.99991L6 11.9998L-0.000183105 6ZM6 9.17143L9.17162 5.99991L6.00005 2.82834L2.82833 5.99996L6 9.17143Z" fill="currentColor"/>
+	</symbol>
+	<symbol id="show-more-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M8.03932 0L3.78431 4.27022L8.03932 8.54045L12.2943 4.27022L8.03932 0ZM14.4386 6.42591L16 7.99285L9.52387 14.4921L8.05546 16L8.03823 15.9831L8.02906 15.9923L7.2299 15.1903L0 8.09908L1.54204 6.51561L8.01911 12.8684L14.4386 6.42591Z" fill="currentColor"/>
+	</symbol>
+</svg>

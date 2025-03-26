@@ -13028,8 +13028,8 @@ textarea {
 }
 .support-tiles__item {
   width: calc(33.333% - 10.67px);
-  -o-border-image: url(../img/pages/support-pages/tile-bg.webp) 5 fill/5px;
-  border-image: url(../img/pages/support-pages/tile-bg.webp) 5 fill/5px;
+  -o-border-image: url(../img/pages/support-pages/tile-bg.webp) 0 fill/0;
+  border-image: url(../img/pages/support-pages/tile-bg.webp) 0 fill/0;
   position: relative;
   overflow: hidden
 }
@@ -13149,6 +13149,9 @@ textarea {
   gap: 40px;
   padding: 0 10px
 }
+.support-articles__grid._dynamic-height {
+  align-items: flex-start
+}
 .support-articles__grid-block {
   padding: 16px 24px;
   -o-border-image: url(../img/pages/support-pages/grid-block-bg.webp) 2 fill/2px;
@@ -13183,6 +13186,11 @@ textarea {
 .support-articles__grid-item:hover {
   text-shadow: 0 0 3px rgba(255,223,136,.8);
   color: #f2f2f3
+}
+.support-articles__grid-item._gradient-mask {
+  -webkit-mask-image: linear-gradient(to bottom,#d9d9d9 0,rgba(115,115,115,0) 85%);
+  mask-image: linear-gradient(to bottom,#d9d9d9 0,rgba(115,115,115,0) 85%);
+  pointer-events: none
 }
 .support-articles__grid-item-icon {
   position: relative;
@@ -13263,6 +13271,33 @@ textarea {
 .support-articles__show-more svg {
   width: 16px;
   height: 16px
+}
+.support-articles__footer {
+  padding: 32px 0;
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: #fff;
+  text-align: center;
+  font-size: 20px
+}
+.support-articles__footer-button {
+  background: rgba(0,0,0,.25);
+  padding: 17px 8px;
+  color: #e4e5e8;
+  text-align: center;
+  font-family: "Noto Sans";
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: .8px;
+  min-width: 206px;
+  transition: all .3s ease-in-out
+}
+.support-articles__footer-button:hover {
+  background: rgba(0,0,0,.5)
 }
 .swiper {
   overflow: hidden

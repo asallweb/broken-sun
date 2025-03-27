@@ -12894,19 +12894,41 @@ textarea {
   background: url(../img/pages/support-pages/close-icon.svg) center center no-repeat
 }
 .support-search__form-submit {
+  position: relative;
   flex: 0 0 210px;
-  -o-border-image: url(../img/pages/support-pages/submit-bd.webp) 2 fill/2px;
-  border-image: url(../img/pages/support-pages/submit-bd.webp) 2 fill/2px;
   color: #c4b998;
   font-family: "Noto Sans";
   font-weight: 600;
   letter-spacing: .88px;
   transition: all .1s ease-in-out
 }
-.support-search__form-submit:hover {
+.support-search__form-submit::after,
+.support-search__form-submit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  transition: opacity .5s cubic-bezier(.3,0,.5,1);
+  -o-border-image: url(../img/pages/support-pages/submit-bd.webp) 2 fill/2px;
+  border-image: url(../img/pages/support-pages/submit-bd.webp) 2 fill/2px
+}
+.support-search__form-submit::after {
   -o-border-image: url(../img/pages/support-pages/submit-bd-hover.webp) 2 fill/2px;
   border-image: url(../img/pages/support-pages/submit-bd-hover.webp) 2 fill/2px;
+  opacity: 0
+}
+.support-search__form-submit:hover {
   color: #fafafa
+}
+.support-search__form-submit:hover::before {
+  opacity: 0
+}
+.support-search__form-submit:hover::after {
+  opacity: 1
+}
+.support-search__form-submit span {
+  position: relative;
+  z-index: 1
 }
 .support-search__form-dropdown {
   border-radius: 0 0 2px 2px;

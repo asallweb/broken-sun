@@ -4129,8 +4129,8 @@ body::after {
 #media .popup__text img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: contain;
   position: absolute;
   top: 0;
   left: 0;
@@ -12805,7 +12805,8 @@ textarea {
   background: url(../img/pages/support-pages/page-bg.webp) center top repeat;
   background-blend-mode: overlay,normal;
   padding-top: 75px;
-  position: relative
+  position: relative;
+  min-height: calc(100vh - 400px)
 }
 .support-page-sections::before {
   content: "";
@@ -12900,11 +12901,12 @@ textarea {
   font-family: "Noto Sans";
   font-weight: 600;
   letter-spacing: .88px;
-  transition: all .3s ease-in-out
+  transition: all .1s ease-in-out
 }
 .support-search__form-submit:hover {
-  color: #f2f2f3;
-  text-shadow: 0 0 2px rgba(255,223,136,.8)
+  -o-border-image: url(../img/pages/support-pages/submit-bd-hover.webp) 2 fill/2px;
+  border-image: url(../img/pages/support-pages/submit-bd-hover.webp) 2 fill/2px;
+  color: #fafafa
 }
 .support-search__form-dropdown {
   border-radius: 0 0 2px 2px;
@@ -13028,8 +13030,9 @@ textarea {
 }
 .support-tiles__item {
   width: calc(33.333% - 10.67px);
-  -o-border-image: url(../img/pages/support-pages/tile-bg.webp) 0 fill/0;
-  border-image: url(../img/pages/support-pages/tile-bg.webp) 0 fill/0;
+  -o-border-image: url(../img/pages/support-pages/tile-bg.webp) 1 fill/1px;
+  border-image: url(../img/pages/support-pages/tile-bg.webp) 1 fill/1px;
+  background: linear-gradient(180deg,#101a29 0,#09131b 100%);
   position: relative;
   overflow: hidden
 }

@@ -5,10 +5,10 @@
 	<title>Press Kit</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250327181242">
-	<script src="files/js/preloader.js?_v=20250327181242"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250327181242">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250327181242">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250401215145">
+	<script src="files/js/preloader.js?_v=20250401215145"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250401215145">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250401215145">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -28,8 +28,8 @@
 
 <body>
 
-	<div class="wrapper" id="wrapper">
-		<header class="header _type-2 _active" id="header">
+	<div class="wrapper _no-side-shadows" id="wrapper">
+		<header class="header _type-2 _active _blur-bg" id="header">
 			<div class="header__container">
 				<div class="header__wrapper">
 					<a href="" class="header__logo">
@@ -227,7 +227,7 @@
 							</a>
 						</div>
 					</div>
-					<!-- <div class="header__button-inner _active">
+					<!-- <div class="header__button-inner _active _blur-bg">
 				<button class="header__button _size-l button _fz-18">
 					<span class="button__text">
 						<span class="button__text-inner">
@@ -252,33 +252,56 @@
 			</div>
 		</header>
 		<main class="page">
-			<div class="presskit-bg-wrapper">
-				<img src="img/background/presskit/main.webp" class="presskit-bg-wrapper__img">
-			</div>
 			<section class="presskit-hero">
 				<div class="presskit-hero__wrapper">
-					<div class="__container">
-						<div class="presskit-hero__super-title">Пресс-Кит</div>
-					</div>
 					<div class="presskit-hero__content">
-						<div class="__container">
-							<div class="presskit-hero__title">Об игре</div>
-							<div class="presskit-hero__text">В фэнтези-MMORPG Broken Sun вы играете за Тень — смертного, чье сердце заменил осколок Солнца, наделивший его великой силой. Вступите в эпическое противостояние трех альянсов Богов и смертных. Выберите свою сторону и сражайтесь в PvE и PvP режимах, чтобы изменить судьбу Мира-Лотоса. Насладитесь его красотой в ААА-графике на платформах Android, iOS и в веб-браузере.</div>
-						</div>
+						<img src="img/background/presskit/ornament_mobile.svg" class="presskit-hero__ornament _mobile">
+						<div class="presskit-hero__super-title">Пресс-Кит</div>
+						<div class="presskit-hero__title">Об игре</div>
+						<div class="presskit-hero__text">В фэнтези-MMORPG Broken Sun вы играете за Тень — смертного, чье сердце заменил осколок Солнца, наделивший его великой силой. Вступите в эпическое противостояние трех альянсов Богов и смертных. Выберите свою сторону и сражайтесь в PvE и PvP режимах, чтобы изменить судьбу Мира-Лотоса. Насладитесь его красотой в ААА-графике на платформах Android, iOS и в веб-браузере.</div>
+						<img src="img/background/presskit/ornament_mobile.svg" class="presskit-hero__ornament _mobile">
 					</div>
+					<img src="img/background/presskit/ornament.svg" class="presskit-hero__ornament">
 				</div>
 				<div class="presskit-hero__image">
 					<picture>
 						<source srcset="img/background/presskit/hero_2k.webp" media="(min-width: 1921px)">
-						<img src="img/background/presskit/hero_1920.webp" class="presskit-hero__img">
+						<source srcset="img/background/presskit/hero_1920.webp" media="(min-width: 768px)">
+						<img src="img/background/presskit/hero_mobile.webp" class="presskit-hero__img">
 					</picture>
 				</div>
 			</section>
+			<div class="presskit-bg-wrapper">
+				<img src="img/background/presskit/main.webp" class="presskit-bg-wrapper__img">
+				<script>
+					document.addEventListener("DOMContentLoaded", function() {
+						const presskitBg = document.querySelector(".presskit-bg-wrapper");
+						const offsetTop = presskitBg.offsetTop;
+						if (window.scrollY >= offsetTop) {
+							presskitBg.style.position = "fixed";
+							presskitBg.style.top = "0";
+						} else {
+							presskitBg.style.position = "absolute";
+							presskitBg.style.top = "auto";
+						}
+
+						window.addEventListener("scroll", function() {
+							if (window.scrollY >= offsetTop) {
+								presskitBg.style.position = "fixed";
+								presskitBg.style.top = "0";
+							} else {
+								presskitBg.style.position = "absolute";
+								presskitBg.style.top = "auto";
+							}
+						});
+					});
+				</script>
+			</div>
 			<section class="presskit-mechanics">
-				<div class="presskit-mechanics__container">
-					<div class="presskit-mechanics__title">Игровые механики</div>
-					<div class="presskit-mechanics__row">
-						<div class="presskit-mechanics__col">
+				<div class="__container">
+					<div class="presskit-mechanics__wrapper">
+						<div class="presskit-mechanics__title">Игровые механики</div>
+						<div class="presskit-mechanics__block">
 							<div class="presskit-mechanics__subtitle">Уникальная боевая система Broken Sun!</div>
 							<ul>
 								<li>Захватывающие пошаговые сражения: огромное количество умений и расходников, открывающих бесчисленные тактические возможности</li>
@@ -286,7 +309,7 @@
 								<li>Реалистичные анимации и яркие эффекты сделают каждое сражение уникальным и незабываемым!</li>
 							</ul>
 						</div>
-						<div class="presskit-mechanics__col">
+						<div class="presskit-mechanics__block">
 							<div class="presskit-mechanics__subtitle">Любой игрок сможет найти себе занятие по вкусу!</div>
 							<ul>
 								<li>Сокрушайте бесчисленных врагов в масштабных PvP-сражениях до 500 человек</li>
@@ -295,253 +318,406 @@
 								<li>Включайтесь в оживлённую торговлю, основанную на системе пользовательского крафта – никаких Pay-to-Win предметов</li>
 							</ul>
 						</div>
+						<div class="presskit-mechanics__block">
+							<div class="presskit-mechanics__subtitle">Факты о Broken Sun</div>
+							<ul>
+								<li>AAA кросс-платформенная MMORPG доступная в браузере, на мобильных устройствах и ПК</li>
+								<li>Сочетание классического геймплея начала нулевых с самыми передовыми графическими технологиями</li>
+								<li>Мультивселенная, где сливаются воедино культуры, мифы и эпохи</li>
+								<li>Широкие возможности для кастомизации героя</li>
+								<li>Огромный открытый мир, полный приключений, тайн и загадок</li>
+								<li>Разнообразный выбор доступных классов и стилей игры</li>
+								<li>Анимации, созданные с использованием передовых технологий Xsens</li>
+								<li>Оригинальный саундтрек: более двух часов музыки и тысячи специально записанных аудио-эффектов.</li>
+								<li>OST доступен на всех стриминговых площадках</li>
+								<li>Простор для социальной активности между игроками: вступление во фракции, объединение в кланы и общение в чатах</li>
+								<li>Broken Sun – это 3 года разработки и сплочённая команда из более чем двухсот профессионалов</li>
+							</ul>
+						</div>
 					</div>
-					<div class="presskit-mechanics__subtitle">Факты о Broken Sun</div>
-					<ul>
-						<li>AAA кросс-платформенная MMORPG доступная в браузере, на мобильных устройствах и ПК</li>
-						<li>Сочетание классического геймплея начала нулевых с самыми передовыми графическими технологиями</li>
-						<li>Мультивселенная, где сливаются воедино культуры, мифы и эпохи</li>
-						<li>Широкие возможности для кастомизации героя</li>
-						<li>Огромный открытый мир, полный приключений, тайн и загадок</li>
-						<li>Разнообразный выбор доступных классов и стилей игры</li>
-						<li>Анимации, созданные с использованием передовых технологий Xsens</li>
-						<li>Оригинальный саундтрек: более двух часов музыки и тысячи специально записанных аудио-эффектов.</li>
-						<li>OST доступен на всех стриминговых площадках</li>
-						<li>Простор для социальной активности между игроками: вступление во фракции, объединение в кланы и общение в чатах</li>
-						<li>Broken Sun – это 3 года разработки и сплочённая команда из более чем двухсот профессионалов</li>
-					</ul>
-				</div>
-			</section>
-
-
-
-
-
-
-
-			<section class="presskit-gameplay">
-				<div class="__container">
-					<div class="presskit-gameplay__title">Геймплей видео</div>
-					<div class="presskit-gameplay__video">
-						<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/pages/about-game/video-poster.png"></video>
-					</div>
-					<div class="presskit-gameplay__button-wrapper">
-						<button class="button _size-l _fz-18">
-							<span class="button__text">
-								<span class="button__text-inner">
-									Скачать
-								</span>
-							</span>
-						</button>
+					<div class="presskit-mechanics__toc-separator">
+						<img src="img/pages/support-pages/separator-middle.svg" class="presskit-mechanics__toc-separator-icon">
 					</div>
 				</div>
 			</section>
+
+
+
+
+
+
+
 			<section class="presskit-media">
 				<div class="__container">
-					<div class="presskit-media__title">Создатели и пресс-ресурсы</div>
+					<div class="presskit-media__title">Пресс-ресурсы</div>
 					<div class="presskit-media__main">
 						<div class="presskit-media__sidebar">
 							<div class="presskit-media__sidebar-wrapper">
-								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_screenshots">Скриншоты</a>
-								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_concept-art">Концепт арт</a>
-								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_wallpapers">Обои</a>
-								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_video">Видео</a>
-								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_logos">Логотипы</a>
+								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_video">
+									<div class="presskit-media__sidebar-item-icon">
+										<svg width="20" height="20">
+											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
+										</svg>
+									</div>
+									Видео
+								</a>
+								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_screenshots">
+									<div class="presskit-media__sidebar-item-icon">
+										<svg width="20" height="20">
+											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
+										</svg>
+									</div>
+									Скриншоты
+								</a>
+								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_concept-art">
+									<div class="presskit-media__sidebar-item-icon">
+										<svg width="20" height="20">
+											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
+										</svg>
+									</div>
+									Концепт арт
+								</a>
+								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_diary">
+									<div class="presskit-media__sidebar-item-icon">
+										<svg width="20" height="20">
+											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
+										</svg>
+									</div>
+									Дневник разработки
+								</a>
+								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_music">
+									<div class="presskit-media__sidebar-item-icon">
+										<svg width="20" height="20">
+											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
+										</svg>
+									</div>
+									Музыка
+								</a>
+								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_logos">
+									<div class="presskit-media__sidebar-item-icon">
+										<svg width="20" height="20">
+											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
+										</svg>
+									</div>
+									Логотипы
+								</a>
 							</div>
 						</div>
 						<div class="presskit-media__body">
+							<div id="presskit_video" class="presskit-media__section">
+								<div class="presskit-media__subtitle">Видео</div>
+								<div class="presskit-media__grid">
+									<div class="presskit-media__grid-item">
+										<div class="presskit-media__item-media">
+											<div class="presskit-media__item-media-poster">
+												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+												<div class="presskit-media__item-media-play"></div>
+											</div>
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											</video>
+										</div>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">
+												Геймплейное Видео
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<div class="presskit-media__item-media">
+											<div class="presskit-media__item-media-poster">
+												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+												<div class="presskit-media__item-media-play"></div>
+											</div>
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											</video>
+										</div>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">
+												Broken Sun сюжетный
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<div class="presskit-media__item-media">
+											<div class="presskit-media__item-media-poster">
+												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+												<div class="presskit-media__item-media-play"></div>
+											</div>
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											</video>
+										</div>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">
+												Реваншисты
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<div class="presskit-media__item-media">
+											<div class="presskit-media__item-media-poster">
+												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+												<div class="presskit-media__item-media-play"></div>
+											</div>
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											</video>
+										</div>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">
+												Мародеры-отступники
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<div class="presskit-media__item-media">
+											<div class="presskit-media__item-media-poster">
+												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+												<div class="presskit-media__item-media-play"></div>
+											</div>
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											</video>
+										</div>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">
+												Мародеры-Макси
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<div class="presskit-media__item-media">
+											<div class="presskit-media__item-media-poster">
+												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+												<div class="presskit-media__item-media-play"></div>
+											</div>
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											</video>
+										</div>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">
+												Трущобы
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<div class="presskit-media__item-media">
+											<div class="presskit-media__item-media-poster">
+												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+												<div class="presskit-media__item-media-play"></div>
+											</div>
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											</video>
+										</div>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">
+												Тюрьма
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<div class="presskit-media__item-media">
+											<div class="presskit-media__item-media-poster">
+												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+												<div class="presskit-media__item-media-play"></div>
+											</div>
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											</video>
+										</div>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">
+												Охота
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
 							<div id="presskit_screenshots" class="presskit-media__section">
 								<div class="presskit-media__subtitle">Скриншоты</div>
 								<div class="presskit-media__grid">
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/1.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Арена Олимпа. Веб-версия</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Бой с Крысолевой
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__4-full.webp">
-											<img src="img/content/presskit/2.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Арена Олимпа. Мобильная версия</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">Хранилище банка "Солар"
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__5-full.webp">
-											<img src="img/content/presskit/3.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Трущобы. Мобильная версия</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">Фракционный магазин
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/4.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Маги. Арена Олимпа</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">Создание кланов
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__4-full.webp">
-											<img src="img/content/presskit/5.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Маги. Трущобы</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">Чат событий
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__5-full.webp">
-											<img src="img/content/presskit/6.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">PvP в Терминусе</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">Ювелирный магазин
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/7.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Стрелок против Воина</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">Бой с магом пути Огня
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/8.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Воин бьет моба</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">Бой с магом пути Воды
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/9.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Воин усиливает себя</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">Бой с камнебыком
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/10.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Сражение с мобом</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">Бой с варгом
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/11.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Инвентарь. Мобильная Версия</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">Бой в горящей деревне
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/12.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Восточный Ардор</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">Бой со стрелком пути Ловкости
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+										</a>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">Бой с рысью
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+										</a>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">Создание персонажа
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+										</a>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">Ардорская долина - Кислотные озера
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+										</a>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">Поле Вечной битвы - Меркаат
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+										</a>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">Поле Вечной битвы - Солнечное древо
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+										</a>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">Линия ветеранов - крепость Крысолевы
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
@@ -551,242 +727,200 @@
 								<div class="presskit-media__subtitle">Концепт арт</div>
 								<div class="presskit-media__grid">
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/13.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Broken Sun</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Афина
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/14.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Прибытие в Иерихон</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Битва Тора против ратлинов
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/15.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Магазин Алхимика</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Лавка Амурриши
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/16.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Храм Ра</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Храм Зевса
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/17.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Храм Зевса</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Храм Ра
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/18.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Храм Одина</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Храм Одина
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/19.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Трущобы Иерихона</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Лепесток Олимпа
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/20.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Тюрьма в Иерихоне</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Лепесток Нефара
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/21.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Пояс Цивилизации</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Лепесток Асгарда
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/22.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Ардорская Долина</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Пантеон Олимпа
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/23.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Линия ветеранов</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Пантеон Нефара
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/24.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Терминус Новус</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Пантеон Асгарда
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/25.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Магазин брони</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Сет-контрабандист
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/26.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Оружейный магазин</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Ювелирный магазин
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/27.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Восточный Ардор</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Центральная площадь, ночь
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+										</a>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">
+												Ратлины
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+										</a>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">
+												Банк "Солар"
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
+											</a>
+										</div>
+									</div>
+									<div class="presskit-media__grid-item">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
+										</a>
+										<div class="presskit-media__item-name">
+											<a href="" class="presskit-media__item-title">
+												Битва с мародерами
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
@@ -796,146 +930,75 @@
 								<div class="presskit-media__subtitle">Обои</div>
 								<div class="presskit-media__grid">
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/28.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Один. 1024 x 768</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Один. 1024 × 768
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/29.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Один. 1280 x 1024</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Один. 1280 × 1024
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/30.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Зевс.1024 x 768</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Зевс.1024 × 768
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/31.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Зевс.1280 x 1024</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Зевс.1280 × 1024
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/32.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Ра. 1024 x 768</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Ра. 1024 × 768
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 									<div class="presskit-media__grid-item">
-										<a href="" class="presskit-media__image" data-popup="#media" data-image="img/content/media/media__3-full.webp">
-											<img src="img/content/presskit/33.webp" class="presskit-media__img">
+										<a href="" class="presskit-media__item-media" data-popup="#media" data-image="img/content/presskit/1_full.webp">
+											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<div class="presskit-media__item-title">Ра. 1280 x 1024р</div>
-											<a href="" class="presskit-media__download-link">
-												<span>
-													<svg class="presskit-media__download-img _w23">
-														<use xlink:href="img/icons/icons.svg#download"></use>
-													</svg>
-													Скачать всё
-												</span>
+											<a href="" class="presskit-media__item-title">
+												Ра. 1280 × 1024
+												<img src="img/background/presskit/download-icon.svg" class="presskit-media__item-title-icon">
 											</a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<!-- <div id="presskit_video" class="presskit-media__section">
-					<div class="presskit-media__subtitle">Видео</div>
-					<div class="presskit-media__grid">
-						<div class="presskit-media__grid-item _bordered">
-							<div class="presskit-media__wrapper-bordered">
-								<div class="presskit-media__wrapper-bordered">
-								<video src="files/video/gateSun_fhd.mp4" controls="" preload="none"  class="presskit-media__video"></video>
-							</div>
-							</div>
-							<a href="" class="presskit-media__download-link">Саунд трек</a>
-						</div>
-						<div class="presskit-media__grid-item">
-							<div class="presskit-media__wrapper-bordered">
-								<video src="files/video/gateSun_fhd.mp4" controls="" preload="none"  class="presskit-media__video"></video>
-							</div>
-							<a href="" class="presskit-media__download-link">Анимации</a>
-						</div>
-						<div class="presskit-media__grid-item">
-							<div class="presskit-media__wrapper-bordered">
-								<video src="files/video/gateSun_fhd.mp4" controls="" preload="none"  class="presskit-media__video"></video>
-							</div>
-							<a href="" class="presskit-media__download-link">Квест</a>
-						</div>
-						<div class="presskit-media__grid-item">
-							<div class="presskit-media__wrapper-bordered">
-								<video src="files/video/gateSun_fhd.mp4" controls="" preload="none"  class="presskit-media__video"></video>
-							</div>
-							<a href="" class="presskit-media__download-link">Саунд дизайн</a>
-						</div>
-						<div class="presskit-media__grid-item">
-							<div class="presskit-media__wrapper-bordered">
-								<video src="files/video/gateSun_fhd.mp4" controls="" preload="none"  class="presskit-media__video"></video>
-							</div>
-							<a href="" class="presskit-media__download-link">UI</a>
-						</div>
-						<div class="presskit-media__grid-item">
-							<div class="presskit-media__wrapper-bordered">
-								<video src="files/video/gateSun_fhd.mp4" controls="" preload="none"  class="presskit-media__video"></video>
-							</div>
-							<a href="" class="presskit-media__download-link">QA</a>
-						</div>
-					</div>
-				</div> -->
+							<div id="presskit_diary" class="presskit-media__section"></div>
+							<div id="presskit_music" class="presskit-media__section"></div>
 							<div id="presskit_logos" class="presskit-media__section">
 								<div class="presskit-media__subtitle">Логотипы</div>
 								<div class="presskit-media__logos-grid">
@@ -979,6 +1042,21 @@
 						</div>
 					</div>
 				</div>
+				<script>
+					document.addEventListener("DOMContentLoaded", function() {
+						document.querySelectorAll(".presskit-media__item-media").forEach((mediaItem) => {
+							const poster = mediaItem.querySelector(".presskit-media__item-media-poster");
+							const video = mediaItem.querySelector(".presskit-media__item-media-video");
+
+							if (poster && video) {
+								poster.addEventListener("click", function(event) {
+									poster.style.display = "none";
+									video.play();
+								});
+							}
+						});
+					});
+				</script>
 			</section>
 			<footer class="footer">
 				<div class="footer__container">
@@ -1032,7 +1110,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250327181242"></script>
+	<script src="js/app.min.js?_v=20250401215145"></script>
 </body>
 
 </html>

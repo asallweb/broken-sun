@@ -8973,6 +8973,7 @@ textarea {
   bottom: 0
 }
 .presskit-bg-wrapper {
+  position: fixed;
   width: 100%;
   height: 100vh;
   z-index: -1
@@ -9226,12 +9227,24 @@ textarea {
   -o-border-image: url(../img/background/presskit/presskit-media__item-media.webp) 7/7px;
   border-image: url(../img/background/presskit/presskit-media__item-media.webp) 7/7px;
   padding: 1px;
-  transition: all .3s ease-in-out
+  transition: all .3s ease-in-out;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom
+}
+.presskit-media__item-media._square {
+  height: auto;
+  aspect-ratio: 1
 }
 .presskit-media__item-media._poster {
   position: absolute;
   left: 0;
   top: 0
+}
+.presskit-media__grid-item:hover .presskit-media__item-media {
+  -webkit-transform: scale(1.068);
+  transform: scale(1.068);
+  -o-border-image: url(../img/background/presskit/presskit-media__item-media-hover.webp) 7/7px;
+  border-image: url(../img/background/presskit/presskit-media__item-media-hover.webp) 7/7px
 }
 .presskit-media__item-media-img {
   width: 100%;
@@ -9240,11 +9253,8 @@ textarea {
   object-fit: cover;
   clip-path: polygon(3% 0,97% 0,100% 5%,100% 95%,97% 100%,3% 100%,0 95%,0 5%)
 }
-.presskit-media__grid-item:hover .presskit-media__item-media {
-  -webkit-transform: scale(1.068);
-  transform: scale(1.068);
-  -o-border-image: url(../img/background/presskit/presskit-media__item-media-hover.webp) 20/20px;
-  border-image: url(../img/background/presskit/presskit-media__item-media-hover.webp) 20/20px
+._square .presskit-media__item-media-img {
+  clip-path: polygon(3% 0,97% 0,100% 3.5%,100% 96.3%,97% 100%,2.9% 100%,0 96.3%,0 3.8%)
 }
 .presskit-media__item-media-video {
   width: 100%;
@@ -9278,6 +9288,37 @@ textarea {
 }
 .presskit-media__item-media-poster:hover .presskit-media__item-media-play {
   background: url(../img/background/presskit/play_button-hover.webp) center center/cover no-repeat
+}
+.presskit-media__item-share {
+  background: linear-gradient(180deg,rgba(7,12,18,0) 0,rgba(7,12,18,.5) 25%,rgba(7,12,18,.5) 75%,rgba(7,12,18,0) 100%);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px;
+  opacity: 0;
+  transition: all .3s ease-in-out
+}
+.presskit-media__grid-item:hover .presskit-media__item-share {
+  opacity: 1
+}
+.presskit-media__item-share img {
+  width: 32px;
+  height: 32px
+}
+.presskit-media__item-share-wrapper {
+  transition: all .5s ease-in-out;
+  position: relative;
+  right: -15px;
+  bottom: -15px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.presskit-media__grid-item:hover .presskit-media__item-share-wrapper {
+  right: 0;
+  bottom: 0
 }
 .presskit-media__item-name {
   padding: 0 8px;
@@ -9315,56 +9356,57 @@ textarea {
   opacity: 1;
   margin-left: 8px
 }
+.presskit-media__item-music-icon {
+  margin-left: 8px
+}
 .presskit-media__logos-grid {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 40px
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 23px 20px
 }
 .presskit-media__logos-item {
   position: relative;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 31px;
-  border-radius: 10px;
-  background: rgba(0,0,0,.1);
-  border: 1px solid transparent;
-  padding: 15px 15px 52px 15px
+  -o-border-image: url(../img/background/presskit/presskit-media__logos-item-v1.webp) 12 fill/12px;
+  border-image: url(../img/background/presskit/presskit-media__logos-item-v1.webp) 12 fill/12px;
+  transition: all .3s ease-in-out;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px
+}
+.presskit-media__logos-item._bg-v2 {
+  -o-border-image: url(../img/background/presskit/presskit-media__logos-item-v2.webp) 12 fill/12px;
+  border-image: url(../img/background/presskit/presskit-media__logos-item-v2.webp) 12 fill/12px
 }
 .presskit-media__logos-item:hover {
-  border: 1px solid #314d69
+  -webkit-transform: scale(1.04);
+  transform: scale(1.04)
 }
-.presskit-media__logos-item._horizontal {
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 5px
+.presskit-media__logos-item-images {
+  display: flex;
+  flex-direction: column;
+  gap: 24px
 }
 .presskit-media__logos-img {
   max-width: 100%
 }
-._horizontal .presskit-media__logos-img {
-  max-width: 30%
-}
-.presskit-media__logos-download {
-  position: absolute;
-  bottom: 15px
+.presskit-media__logos-img._mw-328 {
+  max-width: 328px
 }
 .presskit-media__download-img {
-  width: 36px;
-  height: 36px;
-  color: #1b5585
+  width: 24px;
+  height: 24px;
+  color: #b19f63
 }
 .presskit-media__download-img:hover {
-  color: #f9df94
+  color: #f1f2f3
 }
 .presskit-media__logos-item:hover .presskit-media__download-img {
-  color: #f9df94
-}
-.presskit-media__download-img._w23 {
-  width: 23px;
-  height: 23px;
-  color: #f9df94
+  color: #f1f2f3
 }
 .fraction-hero {
   position: relative;

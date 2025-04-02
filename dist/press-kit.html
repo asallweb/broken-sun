@@ -5,10 +5,10 @@
 	<title>Press Kit</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250402134320">
-	<script src="files/js/preloader.js?_v=20250402134320"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250402134320">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250402134320">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250402164928">
+	<script src="files/js/preloader.js?_v=20250402164928"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250402164928">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250402164928">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -412,7 +412,7 @@
 							</div>
 						</div>
 						<div class="presskit-media__body">
-							<div id="presskit_video" class="presskit-media__section">
+							<div id="presskit_video" class="presskit-media__section" data-watch="navigator">
 								<div class="presskit-media__subtitle">Видео</div>
 								<div class="presskit-media__grid">
 									<div class="presskit-media__grid-item">
@@ -561,7 +561,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="presskit_screenshots" class="presskit-media__section">
+							<div id="presskit_screenshots" class="presskit-media__section" data-watch="navigator">
 								<div class="presskit-media__subtitle">Скриншоты</div>
 								<div class="presskit-media__grid">
 									<div class="presskit-media__grid-item">
@@ -783,7 +783,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="presskit_concept-art" class="presskit-media__section">
+							<div id="presskit_concept-art" class="presskit-media__section" data-watch="navigator">
 								<div class="presskit-media__subtitle">Концепт арт</div>
 								<div class="presskit-media__grid">
 									<div class="presskit-media__grid-item">
@@ -1022,7 +1022,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="presskit_wallpapers" class="presskit-media__section">
+							<div id="presskit_wallpapers" class="presskit-media__section" data-watch="navigator">
 								<div class="presskit-media__subtitle">Обои</div>
 								<div class="presskit-media__grid">
 									<div class="presskit-media__grid-item">
@@ -1105,7 +1105,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="presskit_diary" class="presskit-media__section">
+							<div id="presskit_diary" class="presskit-media__section" data-watch="navigator">
 								<div class="presskit-media__subtitle">Дневник разработки</div>
 								<div class="presskit-media__grid">
 									<div class="presskit-media__grid-item">
@@ -1188,7 +1188,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="presskit_music" class="presskit-media__section">
+							<div id="presskit_music" class="presskit-media__section" data-watch="navigator">
 								<div class="presskit-media__subtitle">Музыка</div>
 								<div class="presskit-media__grid">
 									<div class="presskit-media__grid-item">
@@ -1263,7 +1263,7 @@
 									</div>
 								</div>
 							</div>
-							<div id="presskit_logos" class="presskit-media__section">
+							<div id="presskit_logos" class="presskit-media__section" data-watch="navigator">
 								<div class="presskit-media__subtitle">Логотипы</div>
 								<div class="presskit-media__logos-grid">
 									<a href="" class="presskit-media__logos-item">
@@ -1313,6 +1313,7 @@
 					</div>
 				</div>
 				<script>
+					// Видео проигрывание
 					document.addEventListener("DOMContentLoaded", function() {
 						document.querySelectorAll(".presskit-media__item-media").forEach((mediaItem) => {
 							const poster = mediaItem.querySelector(".presskit-media__item-media-poster");
@@ -1325,6 +1326,58 @@
 								});
 							}
 						});
+					});
+
+					// Мобайл Фиксирование сайдбара на мобайл сверху
+					function toggleFixedClass() {
+						const sidebar = document.querySelector(".presskit-media__sidebar");
+						const presskitMedia = document.querySelector(".presskit-media");
+						if (!sidebar || !presskitMedia) return;
+
+						if (window.innerWidth < 768) {
+							const scrollTop = window.scrollY || document.documentElement.scrollTop;
+							const sidebarOffset = sidebar.dataset.originalTop || sidebar.offsetTop;
+							const presskitMediaOffset = presskitMedia.getBoundingClientRect().top + window.scrollY;
+
+							if (scrollTop >= sidebarOffset - 51 && scrollTop >= presskitMediaOffset) {
+								sidebar.classList.add("_fixed");
+							} else {
+								sidebar.classList.remove("_fixed");
+							}
+						} else {
+							sidebar.classList.remove("_fixed");
+						}
+					}
+
+					document.addEventListener("scroll", toggleFixedClass);
+					window.addEventListener("resize", toggleFixedClass);
+					document.addEventListener("DOMContentLoaded", () => {
+						const sidebar = document.querySelector(".presskit-media__sidebar");
+						if (sidebar) {
+							sidebar.dataset.originalTop = sidebar.offsetTop;
+						}
+						toggleFixedClass();
+					});
+
+					document.addEventListener("DOMContentLoaded", function() {
+						if (window.innerWidth < 768) {
+							document.querySelectorAll(".presskit-media__sidebar-item").forEach(item => {
+								item.addEventListener("click", function(event) {
+									if (item.classList.contains("_navigator-active")) {
+										event.preventDefault();
+										document.querySelector(".presskit-media__sidebar")?.classList.add("_opened");
+									} else {
+										document.querySelector(".presskit-media__sidebar")?.classList.remove("_opened");
+									}
+								});
+							});
+							document.addEventListener("click", function(event) {
+								if (!document.querySelector(".presskit-media__sidebar").contains(event.target) &&
+									!document.querySelector(".presskit-media__sidebar-item").contains(event.target)) {
+									document.querySelector(".presskit-media__sidebar")?.classList.remove("_opened");
+								}
+							});
+						}
 					});
 				</script>
 			</section>
@@ -1380,7 +1433,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250402134320"></script>
+	<script src="js/app.min.js?_v=20250402164928"></script>
 </body>
 
 </html>

@@ -5,10 +5,10 @@
 	<title>Press Kit</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250403140055">
-	<script src="files/js/preloader.js?_v=20250403140055"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250403140055">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250403140055">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250403170356">
+	<script src="files/js/preloader.js?_v=20250403170356"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250403170356">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250403170356">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -426,7 +426,7 @@
 												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 												<div class="presskit-media__item-media-play"></div>
 											</div>
-											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" class="presskit-media__item-media-video">
 											</video>
 										</div>
 										<div class="presskit-media__item-name">
@@ -444,7 +444,7 @@
 												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 												<div class="presskit-media__item-media-play"></div>
 											</div>
-											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" class="presskit-media__item-media-video">
 											</video>
 										</div>
 										<div class="presskit-media__item-name">
@@ -462,7 +462,7 @@
 												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 												<div class="presskit-media__item-media-play"></div>
 											</div>
-											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" class="presskit-media__item-media-video">
 											</video>
 										</div>
 										<div class="presskit-media__item-name">
@@ -480,7 +480,7 @@
 												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 												<div class="presskit-media__item-media-play"></div>
 											</div>
-											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" class="presskit-media__item-media-video">
 											</video>
 										</div>
 										<div class="presskit-media__item-name">
@@ -498,7 +498,7 @@
 												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 												<div class="presskit-media__item-media-play"></div>
 											</div>
-											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" class="presskit-media__item-media-video">
 											</video>
 										</div>
 										<div class="presskit-media__item-name">
@@ -516,7 +516,7 @@
 												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 												<div class="presskit-media__item-media-play"></div>
 											</div>
-											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" class="presskit-media__item-media-video">
 											</video>
 										</div>
 										<div class="presskit-media__item-name">
@@ -534,7 +534,7 @@
 												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 												<div class="presskit-media__item-media-play"></div>
 											</div>
-											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" class="presskit-media__item-media-video">
 											</video>
 										</div>
 										<div class="presskit-media__item-name">
@@ -552,7 +552,7 @@
 												<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 												<div class="presskit-media__item-media-play"></div>
 											</div>
-											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/content/presskit/1.webp" class="presskit-media__item-media-video">
+											<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" class="presskit-media__item-media-video">
 											</video>
 										</div>
 										<div class="presskit-media__item-name">
@@ -1328,21 +1328,30 @@
 								poster.addEventListener("click", function() {
 									poster.style.display = "none";
 									video.play();
+									video.setAttribute("controls", ""); // Включаем кнопки управления
 
 									// Переключение в полноэкранный режим
 									if (video.requestFullscreen) {
 										video.requestFullscreen();
-									} else if (video.mozRequestFullScreen) { // Для Firefox
+									} else if (video.mozRequestFullScreen) { // Firefox
 										video.mozRequestFullScreen();
-									} else if (video.webkitRequestFullscreen) { // Для Chrome, Safari и Opera
+									} else if (video.webkitRequestFullscreen) { // Chrome, Safari, Opera
 										video.webkitRequestFullscreen();
-									} else if (video.msRequestFullscreen) { // Для IE/Edge
+									} else if (video.msRequestFullscreen) { // IE/Edge
 										video.msRequestFullscreen();
+									}
+								});
+
+								// Обработчик выхода из полноэкранного режима
+								document.addEventListener("fullscreenchange", function() {
+									if (!document.fullscreenElement) {
+										video.setAttribute("controls", ""); // Включаем управление после выхода из fullscreen
 									}
 								});
 							}
 						});
 					});
+
 
 					// Мобайл Фиксирование сайдбара на мобайл сверху
 					function toggleFixedClass() {
@@ -1453,7 +1462,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250403140055"></script>
+	<script src="js/app.min.js?_v=20250403170356"></script>
 </body>
 
 </html>

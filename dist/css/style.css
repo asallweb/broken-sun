@@ -9252,7 +9252,8 @@ textarea {
   inset: 0;
   transition: opacity .5s cubic-bezier(.3,0,.5,1);
   -o-border-image: url(../img/background/presskit/presskit-media__item-media.webp) 11/11px;
-  border-image: url(../img/background/presskit/presskit-media__item-media.webp) 11/11px
+  border-image: url(../img/background/presskit/presskit-media__item-media.webp) 11/11px;
+  pointer-events: none
 }
 .presskit-media__item-media::after {
   -o-border-image: url(../img/background/presskit/presskit-media__item-media-hover.webp) 11/11px;

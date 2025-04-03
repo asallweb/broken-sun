@@ -9063,7 +9063,8 @@ textarea {
   color: #f9db86;
   text-shadow: 0 3px 3px rgba(0,0,0,.25);
   line-height: 1.23;
-  font-family: "Noto Serif"
+  font-family: "Noto Serif";
+  padding-left: 23px
 }
 .presskit-mechanics__subtitle {
   color: #f9df94;
@@ -9277,6 +9278,11 @@ textarea {
   -o-object-fit: cover;
   object-fit: cover;
   clip-path: polygon(10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px),0 10px)
+}
+.presskit-media__item-media-video {
+  position: absolute;
+  height: calc(100% - 2px);
+  width: calc(100% - 2px)
 }
 .presskit-media__item-media-video:-webkit-full-screen {
   width: auto!important;
@@ -14183,9 +14189,6 @@ textarea {
     font-size: 1.125rem
   }
   .presskit-mechanics__title {
-    padding-left: 1.4375rem
-  }
-  .presskit-mechanics__title {
     letter-spacing: .1rem
   }
   .presskit-mechanics__title {
@@ -18914,9 +18917,6 @@ textarea {
     font-size: 1rem
   }
   .presskit-mechanics__title {
-    padding-left: .0000000625rem
-  }
-  .presskit-mechanics__title {
     letter-spacing: .085rem
   }
   .presskit-mechanics__title {
@@ -19388,9 +19388,6 @@ textarea {
   }
   .presskit-mechanics__wrapper {
     font-size: clamp(1rem ,.9535714286rem + .1904761905vw ,1.125rem)
-  }
-  .presskit-mechanics__title {
-    padding-left: clamp(.0000000625rem ,-.5339284857rem + 2.1904760952vw ,1.4375rem)
   }
   .presskit-mechanics__title {
     letter-spacing: clamp(.085rem ,.0794285714rem + .0228571429vw ,.1rem)

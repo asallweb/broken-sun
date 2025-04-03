@@ -17718,15 +17718,6 @@ textarea {
     -webkit-transform: none;
     transform: none
   }
-  .presskit-media__item-media-img,
-  .presskit-media__item-media-video {
-    clip-path: polygon(5% 0,95% 0,100% 8%,100% 91%,94.5% 100%,5.5% 100%,0 91%,0 8%);
-    background-color: #000
-  }
-  ._square .presskit-media__item-media-img,
-  ._square .presskit-media__item-media-video {
-    clip-path: polygon(5% 0,95% 0,100% 5%,100% 95%,95% 100%,5% 100%,0 95%,0 5%)
-  }
   .presskit-media__item-name {
     height: 60px;
     padding-top: 33px

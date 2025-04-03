@@ -5,10 +5,10 @@
 	<title>Press Kit</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250402164928">
-	<script src="files/js/preloader.js?_v=20250402164928"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250402164928">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250402164928">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250403122245">
+	<script src="files/js/preloader.js?_v=20250403122245"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250403122245">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250403122245">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -252,6 +252,11 @@
 			</div>
 		</header>
 		<main class="page">
+			<button class="scroll-up" data-goto=".page">
+				<svg>
+					<use xlink:href="img/icons/icons.svg#scroll-down"></use>
+				</svg>
+			</button>
 			<section class="presskit-hero">
 				<div class="presskit-hero__wrapper">
 					<div class="presskit-hero__content">
@@ -353,7 +358,7 @@
 					<div class="presskit-media__main">
 						<div class="presskit-media__sidebar">
 							<div class="presskit-media__sidebar-wrapper">
-								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_video">
+								<a href="" class="presskit-media__sidebar-item" data-goto-top="104" data-goto="#presskit_video">
 									<div class="presskit-media__sidebar-item-icon">
 										<svg width="20" height="20">
 											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
@@ -361,7 +366,7 @@
 									</div>
 									Видео
 								</a>
-								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_screenshots">
+								<a href="" class="presskit-media__sidebar-item" data-goto-top="104" data-goto="#presskit_screenshots">
 									<div class="presskit-media__sidebar-item-icon">
 										<svg width="20" height="20">
 											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
@@ -369,7 +374,7 @@
 									</div>
 									Скриншоты
 								</a>
-								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_concept-art">
+								<a href="" class="presskit-media__sidebar-item" data-goto-top="104" data-goto="#presskit_concept-art">
 									<div class="presskit-media__sidebar-item-icon">
 										<svg width="20" height="20">
 											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
@@ -377,7 +382,7 @@
 									</div>
 									Концепт арт
 								</a>
-								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_wallpapers">
+								<a href="" class="presskit-media__sidebar-item" data-goto-top="104" data-goto="#presskit_wallpapers">
 									<div class="presskit-media__sidebar-item-icon">
 										<svg width="20" height="20">
 											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
@@ -385,7 +390,7 @@
 									</div>
 									Обои
 								</a>
-								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_diary">
+								<a href="" class="presskit-media__sidebar-item" data-goto-top="104" data-goto="#presskit_diary">
 									<div class="presskit-media__sidebar-item-icon">
 										<svg width="20" height="20">
 											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
@@ -393,7 +398,7 @@
 									</div>
 									Дневник разработки
 								</a>
-								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_music">
+								<a href="" class="presskit-media__sidebar-item" data-goto-top="104" data-goto="#presskit_music">
 									<div class="presskit-media__sidebar-item-icon">
 										<svg width="20" height="20">
 											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
@@ -401,7 +406,7 @@
 									</div>
 									Музыка
 								</a>
-								<a href="" class="presskit-media__sidebar-item" data-goto-header data-goto="#presskit_logos">
+								<a href="" class="presskit-media__sidebar-item" data-goto-top="104" data-goto="#presskit_logos">
 									<div class="presskit-media__sidebar-item-icon">
 										<svg width="20" height="20">
 											<use xlink:href="img/pages/support-pages/sprite.svg#support-grid-item-icon"></use>
@@ -738,7 +743,7 @@
 											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<a href="" class="presskit-media__item-title">Ардорская долина - Кислотные озера
+											<a href="" class="presskit-media__item-title">Кислотные озера
 												<svg width="16" height="16" class="presskit-media__item-title-icon">
 													<use xlink:href="img/icons/presskit/download-icon.svg#download-icon"></use>
 												</svg>
@@ -762,7 +767,7 @@
 											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<a href="" class="presskit-media__item-title">Поле Вечной битвы - Солнечное древо
+											<a href="" class="presskit-media__item-title">Поле битвы - Солнечное древо
 												<svg width="16" height="16" class="presskit-media__item-title-icon">
 													<use xlink:href="img/icons/presskit/download-icon.svg#download-icon"></use>
 												</svg>
@@ -774,7 +779,7 @@
 											<img src="img/content/presskit/1.webp" class="presskit-media__item-media-img">
 										</a>
 										<div class="presskit-media__item-name">
-											<a href="" class="presskit-media__item-title">Линия ветеранов - крепость Крысолевы
+											<a href="" class="presskit-media__item-title">Линия крепость Крысолевы
 												<svg width="16" height="16" class="presskit-media__item-title-icon">
 													<use xlink:href="img/icons/presskit/download-icon.svg#download-icon"></use>
 												</svg>
@@ -1320,13 +1325,25 @@
 							const video = mediaItem.querySelector(".presskit-media__item-media-video");
 
 							if (poster && video) {
-								poster.addEventListener("click", function(event) {
+								poster.addEventListener("click", function() {
 									poster.style.display = "none";
 									video.play();
+
+									// Переключение в полноэкранный режим
+									if (video.requestFullscreen) {
+										video.requestFullscreen();
+									} else if (video.mozRequestFullScreen) { // Для Firefox
+										video.mozRequestFullScreen();
+									} else if (video.webkitRequestFullscreen) { // Для Chrome, Safari и Opera
+										video.webkitRequestFullscreen();
+									} else if (video.msRequestFullscreen) { // Для IE/Edge
+										video.msRequestFullscreen();
+									}
 								});
 							}
 						});
 					});
+
 
 					// Мобайл Фиксирование сайдбара на мобайл сверху
 					function toggleFixedClass() {
@@ -1433,7 +1450,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250402164928"></script>
+	<script src="js/app.min.js?_v=20250403122245"></script>
 </body>
 
 </html>

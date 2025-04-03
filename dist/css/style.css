@@ -9134,7 +9134,7 @@ textarea {
 }
 .presskit-media__sidebar-wrapper {
   position: sticky;
-  top: 100px;
+  top: 175px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -9262,6 +9262,21 @@ textarea {
 ._square .presskit-media__item-media-video {
   clip-path: polygon(3% 0,97% 0,100% 3.5%,100% 96.3%,97% 100%,2.9% 100%,0 96.3%,0 3.8%)
 }
+.presskit-media__item-media-video:-webkit-full-screen {
+  width: auto!important;
+  height: auto!important;
+  object-fit: contain!important;
+  clip-path: none!important
+}
+.presskit-media__item-media-video:-moz-full-screen,
+.presskit-media__item-media-video:-ms-fullscreen,
+.presskit-media__item-media-video:-webkit-full-screen,
+.presskit-media__item-media-video:fullscreen {
+  width: auto!important;
+  height: auto!important;
+  object-fit: contain!important;
+  clip-path: none!important
+}
 .presskit-media__item-media-poster {
   position: absolute;
   left: 0;
@@ -9327,8 +9342,6 @@ textarea {
   font-family: "Noto Sans";
   line-height: 1.55;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   max-width: 100%;
   transition: all .3s ease-in-out;
   display: flex;
@@ -9358,8 +9371,8 @@ textarea {
   position: relative;
   align-items: center;
   justify-content: center;
-  -o-border-image: url(../img/background/presskit/presskit-media__logos-item-v1.webp) 12 fill/12px;
-  border-image: url(../img/background/presskit/presskit-media__logos-item-v1.webp) 12 fill/12px;
+  -o-border-image: url(../img/background/presskit/presskit-media__logos-item-v1.webp) 100 fill/100px;
+  border-image: url(../img/background/presskit/presskit-media__logos-item-v1.webp) 100 fill/100px;
   transition: all .3s ease-in-out;
   -webkit-transform-origin: bottom;
   transform-origin: bottom;
@@ -9367,8 +9380,8 @@ textarea {
   flex-direction: column
 }
 .presskit-media__logos-item._bg-v2 {
-  -o-border-image: url(../img/background/presskit/presskit-media__logos-item-v2.webp) 12 fill/12px;
-  border-image: url(../img/background/presskit/presskit-media__logos-item-v2.webp) 12 fill/12px
+  -o-border-image: url(../img/background/presskit/presskit-media__logos-item-v2.webp) 100 fill/100px;
+  border-image: url(../img/background/presskit/presskit-media__logos-item-v2.webp) 100 fill/100px
 }
 .presskit-media__logos-item:hover {
   -webkit-transform: scale(1.04);
@@ -14154,6 +14167,9 @@ textarea {
     font-size: 1.125rem
   }
   .presskit-mechanics__title {
+    padding-left: 1.4375rem
+  }
+  .presskit-mechanics__title {
     letter-spacing: .1rem
   }
   .presskit-mechanics__title {
@@ -18899,6 +18915,9 @@ textarea {
     font-size: 1rem
   }
   .presskit-mechanics__title {
+    padding-left: .0000000625rem
+  }
+  .presskit-mechanics__title {
     letter-spacing: .085rem
   }
   .presskit-mechanics__title {
@@ -19370,6 +19389,9 @@ textarea {
   }
   .presskit-mechanics__wrapper {
     font-size: clamp(1rem ,.9535714286rem + .1904761905vw ,1.125rem)
+  }
+  .presskit-mechanics__title {
+    padding-left: clamp(.0000000625rem ,-.5339284857rem + 2.1904760952vw ,1.4375rem)
   }
   .presskit-mechanics__title {
     letter-spacing: clamp(.085rem ,.0794285714rem + .0228571429vw ,.1rem)

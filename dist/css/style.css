@@ -13402,7 +13402,14 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease-in-out
+}
+.support-articles__show-more-wrapper._visible {
+  opacity: 1;
+  visibility: visible
 }
 .support-articles__show-more-wrapper::after,
 .support-articles__show-more-wrapper::before {
@@ -13428,7 +13435,6 @@ textarea {
   white-space: nowrap;
   transition: all .3s ease-in-out;
   display: flex;
-  align-items: center;
   gap: 8px
 }
 .support-articles__show-more:hover {

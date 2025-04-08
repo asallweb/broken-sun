@@ -5,10 +5,10 @@
 	<title>Support 3</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250408094710">
-	<script src="files/js/preloader.js?_v=20250408094710"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250408094710">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250408094710">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250408140900">
+	<script src="files/js/preloader.js?_v=20250408140900"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250408140900">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250408140900">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -281,7 +281,10 @@
 										<a href="" class="support-page__toc-item" data-goto="#access-recovery">Восстановление доступа</a>
 										<a href="" class="support-page__toc-item" data-goto="#protect-account">Как защитить аккаунт</a>
 									</div>
-									<a href="" class="support-page__toc-more">Показать еще <span></span></a>
+									<a href="" class="support-page__toc-more">
+										<div class="support-page__toc-more-show">Показать еще <span></span></div>
+										<div class="support-page__toc-more-hide">Скрыть <span></span></div>
+									</a>
 								</div>
 								<div class="support-page__content">
 									<div class="support-page__grid _2col">
@@ -414,35 +417,49 @@
 					<script>
 						document.addEventListener("DOMContentLoaded", function() {
 							const tocList = document.querySelector(".support-page__toc-list");
-							const tocItems = tocList.querySelectorAll(".support-page__toc-item");
+							const tocItems = tocList?.querySelectorAll(".support-page__toc-item");
 							const showMoreBtn = document.querySelector(".support-page__toc-more");
-							const showMoreCount = showMoreBtn?.querySelector("span");
+							const showMoreShow = showMoreBtn?.querySelector(".support-page__toc-more-show");
+							const showMoreHide = showMoreBtn?.querySelector(".support-page__toc-more-hide");
+							const showMoreCount = showMoreShow?.querySelector("span");
 
-							if (!tocList || !tocItems.length || !showMoreBtn || !showMoreCount) return;
+							if (!tocList || !tocItems?.length || !showMoreBtn || !showMoreShow || !showMoreHide || !showMoreCount) return;
 
 							const visibleLimit = 3;
 							const totalItems = tocItems.length;
 							const hiddenCount = totalItems - visibleLimit;
 
-							// Если элементов 3 или меньше — скрываем кнопку и выходим
 							if (totalItems <= visibleLimit) {
 								showMoreBtn.style.display = "none";
 								return;
 							}
 
-							// Скрываем лишние
+							// Изначально скрываем лишние с анимацией
 							tocItems.forEach((item, index) => {
-								if (index >= visibleLimit) item.style.display = "none";
+								if (index >= visibleLimit) item.classList.add("is-hidden");
 							});
 
-							// Показываем счётчик
 							showMoreCount.textContent = `(${hiddenCount})`;
+							showMoreHide.style.display = "none";
 
-							// Раскрытие
+							let expanded = false;
+
 							showMoreBtn.addEventListener("click", function(e) {
 								e.preventDefault();
-								tocItems.forEach(item => item.style.display = "block");
-								showMoreBtn.style.display = "none";
+								expanded = !expanded;
+
+								tocItems.forEach((item, index) => {
+									if (index >= visibleLimit) {
+										if (expanded) {
+											item.classList.remove("is-hidden");
+										} else {
+											item.classList.add("is-hidden");
+										}
+									}
+								});
+
+								showMoreShow.style.display = expanded ? "none" : "block";
+								showMoreHide.style.display = expanded ? "block" : "none";
 							});
 						});
 					</script>
@@ -508,7 +525,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250408094710"></script>
+	<script src="js/app.min.js?_v=20250408140900"></script>
 </body>
 
 </html>

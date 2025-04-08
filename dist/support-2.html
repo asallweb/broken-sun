@@ -5,10 +5,10 @@
 	<title>Support 2</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250408094710">
-	<script src="files/js/preloader.js?_v=20250408094710"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250408094710">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250408094710">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250408140900">
+	<script src="files/js/preloader.js?_v=20250408140900"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250408140900">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250408140900">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -710,25 +710,47 @@
 								const hiddenCount = items.length - 10;
 
 								items.forEach((item, index) => {
-									if (index >= 10) item.style.display = 'none';
+									if (index >= 10) {
+										item.style.opacity = 0;
+										item.style.maxHeight = '0';
+										item.style.overflow = 'hidden';
+										item.style.transition = 'opacity 0.5s ease, max-height 0.5s ease';
+									}
 								});
 
 								items[9].classList.add('_gradient-mask');
 								showMoreWrapper.classList.add('_visible');
 
-								// Вставляем число в span
 								if (span) {
 									span.textContent = '(' + hiddenCount + ')';
 								}
 
 								showMoreButton.addEventListener('click', () => {
-									items.forEach(item => item.style.display = '');
+									items.forEach((item, index) => {
+										if (index >= 10) {
+											item.style.maxHeight = item.scrollHeight + 'px';
+											item.style.opacity = 1;
+										}
+									});
+
 									items[9].classList.remove('_gradient-mask');
 									showMoreWrapper.classList.remove('_visible');
+
+									// Через 500мс уберём inline-стили, чтобы вернуть контроль CSS-классам
+									setTimeout(() => {
+										items.forEach((item, index) => {
+											if (index >= 10) {
+												item.style.removeProperty('max-height');
+												item.style.removeProperty('overflow');
+												item.style.removeProperty('transition');
+											}
+										});
+									}, 500);
 								});
 							}
 						});
 					</script>
+
 				</section>
 			</div>
 		</main>
@@ -790,7 +812,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250408094710"></script>
+	<script src="js/app.min.js?_v=20250408140900"></script>
 </body>
 
 </html>

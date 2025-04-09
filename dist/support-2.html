@@ -5,10 +5,10 @@
 	<title>Support 2</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250408140900">
-	<script src="files/js/preloader.js?_v=20250408140900"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250408140900">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250408140900">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250409161232">
+	<script src="files/js/preloader.js?_v=20250409161232"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250409161232">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250409161232">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -380,7 +380,8 @@
 									</div>
 									<div class="support-articles__show-more-wrapper">
 										<button class="support-articles__show-more">
-											Показать все статьи <span></span>
+											<div class="support-articles__show-more-text">Показать все статьи</div>
+											<span class="support-articles__show-more-count">(2)</span>
 											<svg>
 												<use xlink:href="img/pages/support-pages/sprite.svg#show-more-icon"></use>
 											</svg>
@@ -515,7 +516,8 @@
 									</div>
 									<div class="support-articles__show-more-wrapper">
 										<button class="support-articles__show-more">
-											Показать все статьи <span></span>
+											<div class="support-articles__show-more-text">Показать все статьи</div>
+											<span class="support-articles__show-more-count">(2)</span>
 											<svg>
 												<use xlink:href="img/pages/support-pages/sprite.svg#show-more-icon"></use>
 											</svg>
@@ -626,7 +628,8 @@
 									</div>
 									<div class="support-articles__show-more-wrapper">
 										<button class="support-articles__show-more">
-											Показать все статьи <span></span>
+											<div class="support-articles__show-more-text">Показать все статьи</div>
+											<span class="support-articles__show-more-count">(2)</span>
 											<svg>
 												<use xlink:href="img/pages/support-pages/sprite.svg#show-more-icon"></use>
 											</svg>
@@ -689,7 +692,8 @@
 									</div>
 									<div class="support-articles__show-more-wrapper">
 										<button class="support-articles__show-more">
-											Показать все статьи <span></span>
+											<div class="support-articles__show-more-text">Показать все статьи</div>
+											<span class="support-articles__show-more-count">(2)</span>
 											<svg>
 												<use xlink:href="img/pages/support-pages/sprite.svg#show-more-icon"></use>
 											</svg>
@@ -703,51 +707,90 @@
 						document.querySelectorAll('.support-articles__grid-block').forEach(block => {
 							const items = block.querySelectorAll('.support-articles__grid-item');
 							const showMoreWrapper = block.querySelector('.support-articles__show-more-wrapper');
+							const showMoreButtonWrapper = block.querySelector('.support-articles__show-more-wrapper');
 							const showMoreButton = block.querySelector('.support-articles__show-more');
-							const span = showMoreButton?.querySelector('span');
+							const showMoreButtonText = block.querySelector('.support-articles__show-more-text');
+							const showMoreCount = block.querySelector('.support-articles__show-more-count');
 
-							if (items.length > 10) {
-								const hiddenCount = items.length - 10;
+							if (items.length <= 10) {
+								showMoreWrapper?.classList.remove('_visible');
+								return;
+							}
 
+							const hiddenCount = items.length - 10;
+							let isExpanded = false;
+
+							const hideItems = () => {
 								items.forEach((item, index) => {
 									if (index >= 10) {
-										item.style.opacity = 0;
-										item.style.maxHeight = '0';
-										item.style.overflow = 'hidden';
 										item.style.transition = 'opacity 0.5s ease, max-height 0.5s ease';
+										item.style.maxHeight = item.scrollHeight + 'px';
+										item.style.opacity = 1;
 									}
 								});
 
-								items[9].classList.add('_gradient-mask');
-								showMoreWrapper.classList.add('_visible');
-
-								if (span) {
-									span.textContent = '(' + hiddenCount + ')';
-								}
-
-								showMoreButton.addEventListener('click', () => {
+								requestAnimationFrame(() => {
 									items.forEach((item, index) => {
 										if (index >= 10) {
-											item.style.maxHeight = item.scrollHeight + 'px';
-											item.style.opacity = 1;
+											item.style.maxHeight = '0';
+											item.style.opacity = 0;
+											item.style.overflow = 'hidden';
 										}
 									});
-
-									items[9].classList.remove('_gradient-mask');
-									showMoreWrapper.classList.remove('_visible');
-
-									// Через 500мс уберём inline-стили, чтобы вернуть контроль CSS-классам
-									setTimeout(() => {
-										items.forEach((item, index) => {
-											if (index >= 10) {
-												item.style.removeProperty('max-height');
-												item.style.removeProperty('overflow');
-												item.style.removeProperty('transition');
-											}
-										});
-									}, 500);
 								});
-							}
+
+								setTimeout(() => {
+									items[9].classList.add('_gradient-mask');
+								}, 300);
+
+								showMoreButtonWrapper.classList.add('_showed');
+								showMoreButtonText.textContent = 'Показать больше';
+								if (showMoreCount) {
+									showMoreCount.textContent = `(${hiddenCount})`;
+									showMoreCount.style.display = 'inline';
+								}
+
+								isExpanded = false;
+							};
+
+							const showItems = () => {
+								items.forEach((item, index) => {
+									if (index >= 10) {
+										item.style.transition = 'opacity 0.5s ease, max-height 0.5s ease';
+										item.style.overflow = 'hidden';
+										item.style.maxHeight = item.scrollHeight + 'px';
+										item.style.opacity = 1;
+									}
+								});
+
+								items[9].classList.remove('_gradient-mask');
+
+								showMoreButtonWrapper.classList.remove('_showed');
+								showMoreButtonText.textContent = 'Показать меньше';
+								if (showMoreCount) {
+									showMoreCount.style.display = 'none';
+								}
+
+								isExpanded = true;
+
+								setTimeout(() => {
+									items.forEach((item, index) => {
+										if (index >= 10) {
+											item.style.removeProperty('max-height');
+											item.style.removeProperty('overflow');
+											item.style.removeProperty('transition');
+										}
+									});
+								}, 500);
+							};
+
+							// Инициализация
+							hideItems();
+							showMoreWrapper?.classList.add('_visible');
+
+							showMoreButton?.addEventListener('click', () => {
+								isExpanded ? hideItems() : showItems();
+							});
 						});
 					</script>
 
@@ -812,7 +855,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250408140900"></script>
+	<script src="js/app.min.js?_v=20250409161232"></script>
 </body>
 
 </html>

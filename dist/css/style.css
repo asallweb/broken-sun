@@ -11176,6 +11176,12 @@ textarea {
   margin-top: -35px;
   padding-bottom: 80px
 }
+.support-page._mt-0 {
+  margin-top: 0
+}
+.support-page._pb-0 {
+  padding-bottom: 0
+}
 .support-page__wrapper {
   display: flex;
   justify-content: center;
@@ -11185,10 +11191,16 @@ textarea {
   width: 100%;
   max-width: 900px
 }
+.support-page__main._mw-100p {
+  max-width: 100%
+}
 .support-page__side {
   max-width: 440px;
   min-width: 350px;
   padding-top: 40px
+}
+.support-page__side._flex-100p {
+  flex: 1 1 100%
 }
 .support-page__title {
   margin: 21px 0 8px;
@@ -11212,6 +11224,13 @@ textarea {
   height: 4px;
   border-radius: 50%;
   background-color: #e4e5e8
+}
+.support-page__description {
+  color: #e4e5e8;
+  font-family: "Noto Sans";
+  font-size: 22px;
+  line-height: 1.36;
+  letter-spacing: .88px
 }
 .support-page__toc-title {
   color: #e4e5e8;

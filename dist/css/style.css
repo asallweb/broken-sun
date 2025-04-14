@@ -9744,17 +9744,15 @@ textarea {
   gap: 5px;
   height: 24px
 }
-.featured-article__comments span,
-.fresh-article__comments span {
-  margin-top: -3px
-}
 .featured-article__comments-count,
 .fresh-article__comments-count {
   position: relative;
-  overflow: hidden
+  overflow: hidden;
+  top: 2px
 }
 .featured-article__comments-count span,
 .fresh-article__comments-count span {
+  height: 15px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -9763,7 +9761,8 @@ textarea {
   color: #000;
   font-family: "XXII Centar";
   font-size: 12px;
-  font-weight: 800
+  font-weight: 800;
+  margin-top: -1px
 }
 .featured-article__detail-link,
 .fresh-article__detail-link {
@@ -11640,6 +11639,7 @@ textarea {
   gap: 20px
 }
 .support-results__body {
+  width: 100%;
   -o-border-image: url(../img/pages/support-pages/support-results__body.webp) 2/2px;
   border-image: url(../img/pages/support-pages/support-results__body.webp) 2/2px;
   border-radius: 2px;

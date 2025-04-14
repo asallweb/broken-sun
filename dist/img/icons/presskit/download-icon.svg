@@ -1,6 +1,0 @@
-<svg>
-	<symbol id="download-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path fill-rule="evenodd" clip-rule="evenodd" d="M0.000732422 15.2V8H1.60073V14.4H14.4007V8H16.0007V15.2L15.2007 16H0.800732L0.000732422 15.2Z" fill="currentColor"/>
-		<path fill-rule="evenodd" clip-rule="evenodd" d="M8.87683 1V10.4532L11.7617 7.76644L13.0007 8.92034L8.62023 13H7.38124L3.00073 8.92034L4.23973 7.76644L7.12463 10.4532V1H8.87683Z" fill="currentColor"/>
-	</symbol>
-</svg>

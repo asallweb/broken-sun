@@ -38,4 +38,11 @@
 	<symbol id="comments" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path fill-rule="evenodd" clip-rule="evenodd" d="M2.86364 0H18.1364L21 2.85388V13.3181L18.1364 16.172H13.755L11.1777 18.75H9.82227L7.245 16.172H2.86364L0 13.3181V2.85388L2.86364 0Z" fill="currentColor"/>
 	</symbol>
+	<symbol id="separator" viewBox="0 0 5 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M3.53523 0.878677L4.94945 2.29289V3.7071L3.53523 5.12132H2.12102L0.706805 3.7071V2.29289L2.12102 0.878677H3.53523Z" fill="#C9CCCF"/>
+	</symbol>
+	<symbol id="more-button" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 29L31.5 13.6154L27.75 9.76923L16.5 21.3077L5.25 9.76923L1.5 13.6154L16.5 29Z" fill="currentColor"/>
+		<path d="M22.125 4L24.9375 6.88462L16.5 15.5385L8.0625 6.88462L10.875 4L16.5 9.76923L22.125 4Z" fill="currentColor"/>
+	</symbol>
 </svg>

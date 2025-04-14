@@ -10229,6 +10229,7 @@ textarea {
   padding: 20px
 }
 .article-inventory__item {
+  position: relative;
   box-shadow: 0 0 6.052px 0 rgba(0,0,0,.3);
   width: 60px;
   height: 60px
@@ -10252,7 +10253,8 @@ textarea {
   height: 250px;
   z-index: 2;
   padding: 7px;
-  display: none
+  opacity: 0;
+  visibility: hidden
 }
 .article-inventory__tooltip::after {
   content: "";
@@ -10264,19 +10266,31 @@ textarea {
   left: 17px;
   bottom: -22px
 }
+.article-inventory__tooltip._bottom {
+  bottom: -260px;
+  left: -20px
+}
 .article-inventory__tooltip._bottom::after {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
   bottom: auto;
   top: -22px
 }
+.article-inventory__tooltip._top {
+  top: -260px;
+  left: -20px
+}
+.article-inventory__tooltip._active {
+  opacity: 1;
+  visibility: visible
+}
+.article-inventory__tooltip._left {
+  left: -168px
+}
 .article-inventory__tooltip._left::after {
   left: auto;
   right: 17px;
   bottom: -22px
-}
-.article-inventory__tooltip._active {
-  display: block
 }
 .article-inventory__tooltip-head {
   display: flex;
@@ -10611,7 +10625,8 @@ textarea {
   background-blend-mode: overlay,normal;
   padding-top: 75px;
   position: relative;
-  min-height: calc(100vh - 400px)
+  min-height: calc(100vh - 400px);
+  padding-bottom: 200px
 }
 .support-page-sections::before {
   content: "";
@@ -10958,7 +10973,6 @@ textarea {
 .support-articles {
   position: relative;
   z-index: 1;
-  padding-bottom: 80px;
   margin-top: -35px
 }
 .support-articles__breadcrumb {
@@ -11191,8 +11205,7 @@ textarea {
 .support-page {
   position: relative;
   z-index: 1;
-  margin-top: -35px;
-  padding-bottom: 80px
+  margin-top: -35px
 }
 .support-page._mt-0 {
   margin-top: 0
@@ -11522,8 +11535,8 @@ textarea {
   z-index: 1
 }
 .support-page__vote {
-  padding: 32px;
-  margin: 40px auto
+  padding: 32px 32px 0;
+  margin: 40px auto 0
 }
 .support-page__vote-title {
   text-align: center;
@@ -11649,7 +11662,6 @@ textarea {
 }
 .support-results {
   margin-top: 48px;
-  margin-bottom: 200px;
   position: relative
 }
 .support-results__wrapper {
@@ -12086,8 +12098,7 @@ textarea {
   z-index: 1
 }
 .support-anketa {
-  position: relative;
-  margin-bottom: 108px
+  position: relative
 }
 .support-anketa__wrapper {
   position: relative;
@@ -12568,9 +12579,7 @@ textarea {
   color: #f9db86;
   text-shadow: 0 2px 4px rgba(5,5,5,.5);
   font-family: "Noto Serif";
-  font-size: 26px;
-  line-height: 1.23;
-  letter-spacing: 1.04px
+  line-height: 1.23
 }
 .support-requests__all {
   color: #fafafa;
@@ -14660,7 +14669,8 @@ textarea {
 }
 ._support-page .faq__inner {
   background: 0 0;
-  padding-top: 0
+  padding-top: 0;
+  padding-bottom: 0
 }
 ._support-page .faq__inner::after {
   display: none
@@ -15662,6 +15672,12 @@ textarea {
   }
   .support-anketa__form-submit {
     font-size: 1.375rem
+  }
+  .support-requests__title {
+    font-size: 1.625rem
+  }
+  .support-requests__title {
+    letter-spacing: .065rem
   }
   .gods__heading {
     padding-top: 4.6875rem
@@ -19674,6 +19690,15 @@ textarea {
   .support-anketa__body {
     gap: 48px
   }
+  .support-requests {
+    margin-top: -20px
+  }
+  .support-requests__head {
+    justify-content: center
+  }
+  .support-requests__all {
+    display: none
+  }
   .class__runes {
     max-width: 390px;
     left: 0;
@@ -20501,6 +20526,12 @@ textarea {
   .support-anketa__form-submit {
     font-size: 1.125rem
   }
+  .support-requests__title {
+    font-size: 1.25rem
+  }
+  .support-requests__title {
+    letter-spacing: .05rem
+  }
   .gods__heading {
     padding-top: 1.875rem
   }
@@ -21036,6 +21067,12 @@ textarea {
   }
   .support-anketa__form-submit {
     font-size: clamp(1.125rem ,1.0321428571rem + .380952381vw ,1.375rem)
+  }
+  .support-requests__title {
+    font-size: clamp(1.25rem ,1.1107142857rem + .5714285714vw ,1.625rem)
+  }
+  .support-requests__title {
+    letter-spacing: clamp(.05rem ,.0444285714rem + .0228571429vw ,.065rem)
   }
   .gods__heading {
     padding-top: clamp(1.875rem ,.8303571429rem + 4.2857142857vw ,4.6875rem)

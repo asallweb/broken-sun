@@ -1,0 +1,19 @@
+
+.about-features__switcher-item._active {
+	background: url('../gif/animated-bg.gif') center center/cover no-repeat;
+}
+
+.about-features__switcher-item:hover {
+	background: url('../gif/animated-bg-hover.gif') center center/cover no-repeat;
+}
+
+
+.menu__item:hover .menu__link::before {
+	background: url('../gif/animated-bg-hover.gif') center center/cover no-repeat !important;
+}
+
+
+.support-tiles__item::before {
+	background: url('../gif/animated-bg-hover.gif') center center/cover no-repeat !important;
+}
+

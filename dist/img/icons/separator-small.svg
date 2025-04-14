@@ -1,0 +1,18 @@
+<svg width="131" height="8" viewBox="0 0 131 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Razdel-Small">
+<mask id="mask0_5923_20529" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="131" height="8">
+<rect id="Razdel-Small_2" width="131" height="8" fill="url(#paint0_linear_5923_20529)"/>
+</mask>
+<g mask="url(#mask0_5923_20529)">
+<path id="Razdel-Small_3" d="M200 4.12428H129.887M129.887 4.12428L127 1.23727L124.113 4.12428M129.887 4.12428L127 7.01129L124.113 4.12428M124.113 4.12428H-2" stroke="#938254" stroke-width="1.5"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_5923_20529" x1="0" y1="4" x2="131" y2="4" gradientUnits="userSpaceOnUse">
+<stop offset="0.0492517" stop-color="#D9D9D9" stop-opacity="0"/>
+<stop offset="0.303705" stop-color="#C4C4C4"/>
+<stop offset="0.500041" stop-color="#AAAAAA"/>
+<stop offset="0.701117" stop-color="#737373"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Class: Mage</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250414153633">
+	<script src="files/js/preloader.js?_v=20250414153633"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250414153633">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250414153633">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="files/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="files/favicons/favicon-android-chrome-192x192.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="files/favicons/favicon-android-chrome-512x512.png">
+	<link rel="shortcut icon" href="files/favicons/favicon.ico">
+
+	<!-- Manifest -->
+	<link rel="manifest" href="files/favicons/site.webmanifest">
+
+	<!-- Apple Touch Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="files/favicons/favicon-android-chrome-192x192.png">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+	<div class="wrapper _portal" id="wrapper">
+		<header class="header _type-2 _active" id="header">
+			<div class="header__container">
+				<div class="header__wrapper">
+					<a href="" class="header__logo">
+						<picture>
+							<source srcset="img/logos/logo.svg" media="(min-width: 601px)">
+							<img src="img/logos/logo-mini.svg" alt="Broken Sun">
+						</picture>
+					</a>
+					<div class="header__menu menu">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<nav class="menu__body">
+							<a href="/" class="menu__logo">
+								<img src="img/logos/menu__logo.svg" alt="Broken Sun">
+							</a>
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Новости
+									</a>
+								</li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Игра
+										<div class="menu__link-arrow"></div>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Об игре</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Классы</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Фракции</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Мир-Лотос</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Легенда мира</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">Правила</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Знания
+										<div class="menu__link-arrow"></div>
+										<svg width="16" height="16" class="menu__external-icon">
+											<use xlink:href="img/icons/icons.svg#external-link"></use>
+										</svg>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Справочник
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Вопросы и ответы
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Сообщество
+										<div class="menu__link-arrow"></div>
+										<svg width="16" height="16" class="menu__external-icon">
+											<use xlink:href="img/icons/icons.svg#external-link"></use>
+										</svg>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Форум
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Предложения
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu__item">
+									<a href="" class="menu__link">
+										Помощь
+										<div class="menu__link-arrow"></div>
+										<svg width="16" height="16" class="menu__external-icon">
+											<use xlink:href="img/icons/icons.svg#external-link"></use>
+										</svg>
+									</a>
+									<ul class="menu__submenu">
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Новичкам
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Карта сайта
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Ошибки
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+										<li class="menu__submenu-item">
+											<a href="" class="menu__submenu-link">
+												Написать нам
+												<svg width="16" height="16" class="menu__submenu-external-icon">
+													<use xlink:href="img/icons/icons.svg#external-link"></use>
+												</svg>
+											</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<!-- <div class="menu__lang">
+						<a href="" class="menu__lang-link _active">RU</a>
+						<div></div>
+						<a href="" class="menu__lang-link">EN</a>
+					</div> -->
+							<div class="mobile-profile-placeholder"></div>
+							<div class="menu__button-wrapper">
+								<button class="header__button button _size-l _fz-18">
+									<span class="button__text">
+										<span class="button__text-inner">
+											ИГРАТЬ
+										</span>
+									</span>
+								</button>
+							</div>
+							<div class="menu__lang">
+								<a href="" class="menu__lang-link _active">RU</a>
+								<div></div>
+								<a href="" class="menu__lang-link">EN</a>
+							</div>
+							<div class="menu__copyrights">© Pearl Abyss Corp. All Rights Reserved.</div>
+						</nav>
+					</div>
+					<div class="account">
+						<div class="account__item"> <!-- Добавить класс _active для тултипа -->
+							<a href="" class="account__link _profile">
+								Регистрация
+							</a>
+							<div class="account__tooltip">
+								<div class="account__tooltip-content">
+									<div class="account__tooltip-item _overflowed">E-mail: Andyrichi123@blablabla.com</div>
+									<div class="account__tooltip-item">Nickname: Andyrichi</div>
+									<div class="account__tooltip-item">участник ЗБТ</div>
+									<a href="#" class="account__tooltip-link">Сменить почту</a>
+									<a href="#" class="account__tooltip-link">Сменить пароль</a>
+									<div class="account__tooltip-button-wrapper">
+										<button class="account__button button _size-m _fz-20">
+											<span class="button__text">
+												<span class="button__text-inner">
+													ВЫХОД
+												</span>
+											</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="account__item">
+							<a href="" class="account__link _login">
+								Вход
+							</a>
+						</div>
+					</div>
+					<!-- <div class="header__button-inner _active">
+				<button class="header__button _size-l button _fz-18">
+					<span class="button__text">
+						<span class="button__text-inner">
+							РЕГИСТРАЦИЯ
+						</span>
+					</span>
+				</button>
+			</div> -->
+					<div class="header__lang language-select">
+						<div class="language-select__current">
+							RU
+							<svg width="9" height="6" class="language-select__icon">
+								<use xlink:href="img/icons/icons.svg#dropdown-lang"></use>
+							</svg>
+						</div>
+						<div class="language-select__dropdown">
+							<a href="">RU</a>
+							<a href="">EN</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="class-hero _mage">
+				<div class="class-hero__container">
+					<div class="class-hero__content">
+						<h1 class="class-hero__h1-title">Классы Broken Sun</h1>
+						Вставшие на Путь Мага обретают возможность по мановению руки изменять саму ткань мироздания. Они способны усилием воли исцелять недуги или накладывать страшные проклятия. Постигая секреты стихий, маги обретают контроль над их силой. С ее помощью они обращают врагов в пыль и воздвигают стены из энергии вокруг союзников. И будь то одно чудовище или целая армия врагов, могущество последователей этого Пути сметёт их с лица Мира-Лотоса одним единственным заклинанием. Какой бы путь не избрал для себя Маг, он непременно приведет его к величию.
+					</div>
+					<div class="class-hero__image">
+						<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInRight" data-delay="500">
+							<picture>
+								<source srcset="img/content/classes/hero__mage-2k.webp" media="(min-width: 1921px)">
+								<source srcset="img/content/classes/hero__mage-1440.webp" media="(min-width:600px)">
+								<source srcset="img/content/classes/hero__mage-768.webp" media="(min-width:320px)">
+								<img src="img/content/classes/hero__mage-1440.webp" class="class-hero__img">
+							</picture>
+						</div>
+					</div>
+				</div>
+				<div class="class-hero__title-wrapper">
+					<div class="class-hero__title">
+						<div class="class-hero__title-inner">
+							<img src="img/icons/classes/hero__mage-title.svg" class="class-hero__title-img">
+							Маг
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="class-section _air-mage">
+				<div class="class-section__wrapper">
+					<div class="class-section__inner">
+						<div class="class-section__container">
+							<div class="class-section__content">
+								<div class="class-section__title">
+									<img src="img/icons/classes/air-mage.webp" class="class-section__title-img">
+									Маг Воздуха
+								</div>
+								<div class="class-section__text">
+									С легкостью ветра последователи Школы Воздуха ускользают от вражеских атак. Используя посох или жезл и регалию, они способны отражать удары обратно в противника. Еще более непредсказуемыми их делает возможность превращать урон от собственных атак в здоровье. Но главным козырем магов этой Школы является кража и искажение положительных эффектов. Под влиянием их чар то, что раньше придавало врагу сил, обернется его слабостью.
+								</div>
+								<div class="class-section__video">
+									<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/pages/about-game/video-poster.png"></video>
+								</div>
+								<div class="class-section__links">
+									<a href="" class="class-section__link">
+										<img src="img/icons/youtube.svg">
+									</a>
+									<a href="" class="class-section__link">
+										<img src="img/icons/rutube.svg">
+									</a>
+									<a href="" class="class-section__link">
+										<img src="img/icons/vk-video.svg">
+									</a>
+								</div>
+								<div class="class-section__button-wrapper">
+									<button class="class-section__button button _size-l _fz-18">
+										<span class="button__text">
+											<span class="button__text-inner">
+												ИГРАТЬ
+											</span>
+										</span>
+									</button>
+								</div>
+							</div>
+							<div class="class-section__image _strength-light">
+								<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInRight">
+									<img src="img/content/classes/air__mage-1440.webp" class="class-section__img">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="class-section _fire-mage _content-right">
+				<div class="class-section__wrapper">
+					<div class="class-section__inner">
+						<div class="class-section__container">
+							<div class="class-section__content">
+								<div class="class-section__title">
+									<img src="img/icons/classes/fire-mage.webp" class="class-section__title-img">
+									Маг Огня
+								</div>
+								<div class="class-section__text">
+									Маги Школы Огня обрушивают на врагов мощь пламени, поджигая их и нанося критический урон. Как и все последователи Пути Мага, они способны поразить несколько целей за раз. Использование посоха придает их атакам еще большую силу. А взяв в руки жезл и регалию, огненный маг может пробудить в союзниках ярость, жертвуя частью их здоровья. Вдобавок, под чарами последователя Школы Огня, враги лишаются возможности накладывать дополнительные эффекты.
+								</div>
+								<div class="class-section__video">
+									<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/pages/about-game/video-poster.png"></video>
+								</div>
+								<div class="class-section__links">
+									<a href="" class="class-section__link">
+										<img src="img/icons/youtube.svg">
+									</a>
+									<a href="" class="class-section__link">
+										<img src="img/icons/rutube.svg">
+									</a>
+									<a href="" class="class-section__link">
+										<img src="img/icons/vk-video.svg">
+									</a>
+								</div>
+								<div class="class-section__button-wrapper">
+									<button class="class-section__button button _size-l _fz-18">
+										<span class="button__text">
+											<span class="button__text-inner">
+												ИГРАТЬ
+											</span>
+										</span>
+									</button>
+								</div>
+							</div>
+							<div class="class-section__image _strength-light">
+								<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInLeft">
+									<img src="img/content/classes/fire__mage-1440.webp" class="class-section__img">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="class-section _water-mage">
+				<div class="class-section__wrapper">
+					<div class="class-section__inner">
+						<div class="class-section__container">
+							<div class="class-section__content">
+								<div class="class-section__title">
+									<img src="img/icons/classes/water-mage.webp" class="class-section__title-img">
+									Маг Воды
+								</div>
+								<div class="class-section__text">
+									Выбрав Школу Воды, маги обретают возможность самостоятельно генерировать ману — важнейший ресурс для сотворения заклинаний. Эта особенность делает Школу самодостаточной и легкой в освоении. Используя посох, ее последователи обрушивают на врагов мощь водной стихии. Выбор жезла и регалии, в свою очередь, позволяет магам Школы Воды подпитывать соратников маной. Если же их собственных сил оказывается недостаточно для победы, они могут призвать в бой магического союзника.
+								</div>
+								<div class="class-section__video">
+									<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/pages/about-game/video-poster.png"></video>
+								</div>
+								<div class="class-section__links">
+									<a href="" class="class-section__link">
+										<img src="img/icons/youtube.svg">
+									</a>
+									<a href="" class="class-section__link">
+										<img src="img/icons/rutube.svg">
+									</a>
+									<a href="" class="class-section__link">
+										<img src="img/icons/vk-video.svg">
+									</a>
+								</div>
+								<div class="class-section__button-wrapper">
+									<button class="class-section__button button _size-l _fz-18">
+										<span class="button__text">
+											<span class="button__text-inner">
+												ИГРАТЬ
+											</span>
+										</span>
+									</button>
+								</div>
+							</div>
+							<div class="class-section__image _strength-light">
+								<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInRight">
+									<img src="img/content/classes/water__mage-1440.webp" class="class-section__img">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="class-section _earth-mage _content-right">
+				<div class="class-section__wrapper">
+					<div class="class-section__inner">
+						<div class="class-section__container">
+							<div class="class-section__content">
+								<div class="class-section__title">
+									<img src="img/icons/classes/earth-mage.webp" class="class-section__title-img">
+									Маг Земли
+								</div>
+								<div class="class-section__text">
+									Последователи Школы Земли подобны каменной стене, ограждающей союзников от врагов. В их силах воскрешать мертвых, защищать соратников барьерами, непроницаемыми для физических атак, а также очищать их от негативных эффектов. Маг, выбравший эту школу — настоящая гора, устойчивая ко всем физическим и элементальным видам урона. Взяв в руки посох или жезл и регалию, он сломит любого врага.
+								</div>
+								<div class="class-section__video">
+									<video src="files/video/gateSun_fhd.mp4" controls="" preload="none" poster="img/pages/about-game/video-poster.png"></video>
+								</div>
+								<div class="class-section__links">
+									<a href="" class="class-section__link">
+										<img src="img/icons/youtube.svg">
+									</a>
+									<a href="" class="class-section__link">
+										<img src="img/icons/rutube.svg">
+									</a>
+									<a href="" class="class-section__link">
+										<img src="img/icons/vk-video.svg">
+									</a>
+								</div>
+								<div class="class-section__button-wrapper">
+									<button class="class-section__button button _size-l _fz-18">
+										<span class="button__text">
+											<span class="button__text-inner">
+												ИГРАТЬ
+											</span>
+										</span>
+									</button>
+								</div>
+							</div>
+							<div class="class-section__image _strength-light">
+								<div class="hasAnimation animate__animated hidden" data-animate="animate__fadeInLeft">
+									<img src="img/content/classes/earth__mage-1440.webp" class="class-section__img">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="separator">
+					<div class="separator__left"></div>
+					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
+					<div class="separator__right"></div>
+				</div>
+			</section>
+			<section class="character _height-640">
+				<div class="character__wrapper">
+					<div class="character__list">
+						<a href="#" class="character__item _red">
+							<div class="character__image">
+								<picture>
+									<source srcset="img/content/character/character-1-mobile.webp" media="(max-width: 767px)">
+									<img src="img/content/character/character-1-height-640.webp" class="character__img">
+								</picture>
+							</div>
+							<div class="character__name">
+								<div class="character__icon">
+									<img src="img/content/character/subclass-1.svg" class="character__icon-img _active">
+									<img src="img/content/character/subclass-1_hovered.svg" class="character__icon-img">
+								</div>
+								<div class="character__title">Стойкость</div>
+							</div>
+						</a>
+						<a href="#" class="character__item _red">
+							<div class="character__image">
+								<picture>
+									<source srcset="img/content/character/character-2-mobile.webp" media="(max-width: 767px)">
+									<img src="img/content/character/character-2-height-640.webp" class="character__img">
+								</picture>
+							</div>
+							<div class="character__name">
+								<div class="character__icon">
+									<img src="img/content/character/subclass-2.svg" class="character__icon-img _active">
+									<img src="img/content/character/subclass-2_hovered.svg" class="character__icon-img">
+								</div>
+								<div class="character__title">Гнев</div>
+							</div>
+						</a>
+						<a href="#" class="character__item _red">
+							<div class="character__image">
+								<picture>
+									<source srcset="img/content/character/character-3-mobile.webp" media="(max-width: 767px)">
+									<img src="img/content/character/character-3-height-640.webp" class="character__img">
+								</picture>
+							</div>
+							<div class="character__name">
+								<div class="character__icon">
+									<img src="img/content/character/subclass-3.svg" class="character__icon-img _active">
+									<img src="img/content/character/subclass-3_hovered.svg" class="character__icon-img">
+								</div>
+								<div class="character__title">Хитрость</div>
+							</div>
+						</a>
+						<a href="#" class="character__item _green">
+							<div class="character__image">
+								<picture>
+									<source srcset="img/content/character/character-4-mobile.webp" media="(max-width: 767px)">
+									<img src="img/content/character/character-4-height-640.webp" class="character__img">
+								</picture>
+							</div>
+							<div class="character__name">
+								<div class="character__icon">
+									<img src="img/content/character/subclass-4.svg" class="character__icon-img _active">
+									<img src="img/content/character/subclass-4_hovered.svg" class="character__icon-img">
+								</div>
+								<div class="character__title">Ловкость</div>
+							</div>
+						</a>
+						<a href="#" class="character__item _green">
+							<div class="character__image">
+								<picture>
+									<source srcset="img/content/character/character-5-mobile.webp" media="(max-width: 767px)">
+									<img src="img/content/character/character-5-height-640.webp" class="character__img">
+								</picture>
+							</div>
+							<div class="character__name">
+								<div class="character__icon">
+									<img src="img/content/character/subclass-5.svg" class="character__icon-img _active">
+									<img src="img/content/character/subclass-5_hovered.svg" class="character__icon-img">
+								</div>
+								<div class="character__title">Натиск</div>
+							</div>
+						</a>
+						<a href="#" class="character__item _violet">
+							<div class="character__image">
+								<picture>
+									<source srcset="img/content/character/character-6-mobile.webp" media="(max-width: 767px)">
+									<img src="img/content/character/character-6-height-640.webp" class="character__img">
+								</picture>
+							</div>
+							<div class="character__name">
+								<div class="character__icon">
+									<img src="img/content/character/subclass-6.svg" class="character__icon-img _active">
+									<img src="img/content/character/subclass-6_hovered.svg" class="character__icon-img">
+								</div>
+								<div class="character__title">Воздух</div>
+							</div>
+						</a>
+						<a href="#" class="character__item _violet">
+							<div class="character__image">
+								<picture>
+									<source srcset="img/content/character/character-7-mobile.webp" media="(max-width: 767px)">
+									<img src="img/content/character/character-7-height-640.webp" class="character__img">
+								</picture>
+							</div>
+							<div class="character__name">
+								<div class="character__icon">
+									<img src="img/content/character/subclass-7.svg" class="character__icon-img _active">
+									<img src="img/content/character/subclass-7_hovered.svg" class="character__icon-img">
+								</div>
+								<div class="character__title">Огонь</div>
+							</div>
+						</a>
+						<a href="#" class="character__item _violet">
+							<div class="character__image">
+								<picture>
+									<source srcset="img/content/character/character-8-mobile.webp" media="(max-width: 767px)">
+									<img src="img/content/character/character-8-height-640.webp" class="character__img">
+								</picture>
+							</div>
+							<div class="character__name">
+								<div class="character__icon">
+									<img src="img/content/character/subclass-8.svg" class="character__icon-img _active">
+									<img src="img/content/character/subclass-8_hovered.svg" class="character__icon-img">
+								</div>
+								<div class="character__title">Вода</div>
+							</div>
+						</a>
+						<a href="#" class="character__item _violet">
+							<div class="character__image">
+								<picture>
+									<source srcset="img/content/character/character-9-mobile.webp" media="(max-width: 767px)">
+									<img src="img/content/character/character-9-height-640.webp" class="character__img">
+								</picture>
+							</div>
+							<div class="character__name">
+								<div class="character__icon">
+									<img src="img/content/character/subclass-9.svg" class="character__icon-img _active">
+									<img src="img/content/character/subclass-9_hovered.svg" class="character__icon-img">
+								</div>
+								<div class="character__title">Земля</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="separator">
+					<div class="separator__left"></div>
+					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
+					<div class="separator__right"></div>
+				</div>
+			</section>
+			<div class="class-hero__list">
+				<div class="class-icon _red">
+					<div class="class-icon__wrapper">
+						<img src="img/icons/classes/warrior.webp">
+					</div>
+					Воин
+				</div>
+				<div class="class-icon _green">
+					<div class="class-icon__wrapper">
+						<img src="img/icons/classes/archer.webp">
+					</div>
+					Стрелок
+				</div>
+				<div class="class-icon _violet _active">
+					<div class="class-icon__wrapper">
+						<img src="img/icons/classes/mage.webp">
+					</div>
+					Маг
+				</div>
+			</div>
+		</main>
+		<footer class="footer _type-2">
+			<div class="footer__container">
+				<div class="footer__wrapper">
+					<div class="footer__socials">
+						<a href="" class="footer__socials-link _vk">
+							<img src="img/icons/social-networks/vk.webp" class="non-hovered" width="48">
+							<img src="img/icons/social-networks/vk_hovered.webp" class="hovered" width="48">
+						</a>
+						<a href="" class="footer__socials-link _tg">
+							<img src="img/icons/social-networks/tg.webp" class="non-hovered" width="48">
+							<img src="img/icons/social-networks/tg_hovered.webp" class="hovered" width="48">
+						</a>
+						<a href="" class="footer__socials-link _rutube">
+							<img src="img/icons/social-networks/rt.webp" class="non-hovered" width="48">
+							<img src="img/icons/social-networks/rt_hovered.webp" class="hovered" width="48">
+						</a>
+						<a href="" class="footer__socials-link _yt">
+							<img src="img/icons/social-networks/yt.webp" class="non-hovered" width="48">
+							<img src="img/icons/social-networks/yt_hovered.webp" class="hovered" width="48">
+						</a>
+					</div>
+					<div class="footer__menu">
+						<a href="" class="footer__menu-item">Пресс-кит</a>
+						<a href="" class="footer__menu-item">О компании</a>
+						<a href="" class="footer__menu-item">Политика конфиденциальности</a>
+						<a href="" class="footer__menu-item">Пользовательское соглашение</a>
+					</div>
+					<div class="footer__logo">
+						<a href="https://redneckstudio.com/ru/" target="_blank" class="footer__logo-link">
+							<img src="img/logos/footer__logo.webp" class="footer__logo-src">
+							<img src="img/logos/footer__logo-hovered.webp" class="footer__logo-src _hovered">
+						</a>
+					</div>
+					<div class="footer__text">
+						<div class="footer__text-left">REDNECK STUDIO, 2025</div>
+						<div class="footer__text-middle">18+</div>
+						<div class="footer__text-right"><a href="mail:contact@redneckstudio.com">contact@redneckstudio.com</a></div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div id="media" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button class="popup__nav _prev">prev</button>
+				<button data-close type="button" class="popup__close">
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+						<path d="M27 7.21571L24.7843 5L16 13.7843L7.21571 5L5 7.21571L13.7843 16L5 24.7843L7.21571 27L16 18.2157L24.7843 27L27 24.7843L18.2157 16L27 7.21571Z" fill="#B19F63" />
+					</svg>
+				</button>
+				<div class="popup__text">
+
+				</div>
+				<button class="popup__nav _next">next</button>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20250414153633"></script>
+</body>
+
+</html>

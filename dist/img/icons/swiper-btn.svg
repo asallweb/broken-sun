@@ -1,0 +1,17 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="32px/Icon-Arrow-Down-Small" filter="url(#filter0_d_1629_225)">
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M27.6016 16.0609L21.4299 9.8893L15.2583 16.0609L21.4299 22.2326L27.6016 16.0609ZM18.3144 25.3428L16.0497 27.6074L6.65649 18.2142L4.47723 16.0843L4.50166 16.0594L4.48836 16.0461L5.6475 14.8869L15.8962 4.40039L18.1847 6.63703L9.00322 16.0316L18.3144 25.3428Z" fill="#B19F63"/>
+</g>
+<defs>
+<filter id="filter0_d_1629_225" x="-10" y="-10" width="52" height="52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.9 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1629_225"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1629_225" result="shape"/>
+</filter>
+</defs>
+</svg>

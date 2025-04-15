@@ -12571,6 +12571,12 @@ textarea {
   position: relative;
   z-index: 1
 }
+.support-requests {
+  position: relative
+}
+.support-requests._mt-40 {
+  margin-top: 40px
+}
 .support-requests__head {
   display: flex;
   justify-content: space-between;
@@ -12597,10 +12603,38 @@ textarea {
   width: 14px;
   height: 16px
 }
+.support-requests__hide {
+  color: #fafafa;
+  text-shadow: 0 2px 4px rgba(5,5,5,.5);
+  font-family: "Noto Sans";
+  line-height: 1.55;
+  letter-spacing: .36px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer
+}
+.support-requests__hide svg {
+  transition: all .3s ease-in-out;
+  width: 16px;
+  height: 16px;
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg)
+}
+.support-requests__hide._active svg {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg)
+}
 .support-requests__list {
   display: flex;
   flex-direction: column;
-  gap: 12px
+  gap: 12px;
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+  max-height: 1000px
+}
+.support-requests__list._hidden {
+  max-height: 0
 }
 .support-requests__item {
   -o-border-image: url(../img/pages/support-pages/support-requests-bg.webp) 2/2px;
@@ -12627,6 +12661,7 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: "Noto Sans";
@@ -12653,15 +12688,36 @@ textarea {
   color: #c9cccf;
   background: rgba(157,163,175,.2)
 }
+.support-requests__item-category._green {
+  color: #009940;
+  background: rgba(0,85,35,.25)
+}
+.support-requests__item-category._yellow {
+  color: #b19f63;
+  background: rgba(116,104,62,.25)
+}
 .support-requests__item-title {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   color: #fafafa;
   font-family: "Noto Sans";
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.5;
   letter-spacing: .8px
+}
+._sidebar .support-requests__item-title {
+  font-size: 20px
+}
+.support-requests__item-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #e4e5e8;
+  font-family: "Noto Sans";
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: .36px
 }
 .support-requests__item-breadcrumb {
   display: flex;
@@ -12697,34 +12753,35 @@ textarea {
   line-height: 1.13;
   letter-spacing: .3px;
   overflow: hidden;
-  text-overflow: ellipsis
+  text-overflow: ellipsis;
+  transition: all .3s ease-in-out
 }
 .support-requests__item-status._complete {
   color: #009940;
   background: rgba(0,85,35,.25)
 }
-.support-requests__item-status._complete:hover {
-  background: rgba(0,85,35,.45)
-}
 .support-requests__item-status._closed {
   color: #e54555;
   background: rgba(189,46,61,.25)
-}
-.support-requests__item-status._closed:hover {
-  background: rgba(189,46,61,.45)
 }
 .support-requests__item-status._answer {
   color: #1381df;
   background: rgba(25,105,173,.25)
 }
-.support-requests__item-status._answer:hover {
-  background: rgba(25,105,173,.45)
-}
 .support-requests__item-status._chat {
   color: #c9cccf;
   background: rgba(157,163,175,.2)
 }
-.support-requests__item-status._chat:hover {
+.support-requests__item:hover .support-requests__item-status._complete {
+  background: rgba(0,85,35,.45)
+}
+.support-requests__item:hover .support-requests__item-status._closed {
+  background: rgba(189,46,61,.45)
+}
+.support-requests__item:hover .support-requests__item-status._answer {
+  background: rgba(25,105,173,.45)
+}
+.support-requests__item:hover .support-requests__item-status._chat {
   background: rgba(157,163,175,.45)
 }
 .page._dark-bg {
@@ -15697,6 +15754,9 @@ textarea {
   .support-requests__title {
     letter-spacing: .065rem
   }
+  .support-requests__hide {
+    font-size: 1.125rem
+  }
   .gods__heading {
     padding-top: 4.6875rem
   }
@@ -17407,12 +17467,12 @@ textarea {
   .support-requests._sidebar .support-requests__all {
     display: none
   }
-  .support-requests__list {
+  .support-requests._sidebar .support-requests__list {
     height: 0;
     overflow-y: auto;
     transition: all .5s ease-in-out
   }
-  .support-requests__list._active {
+  .support-requests._sidebar .support-requests__list._active {
     height: calc(100vh - 120px);
     padding-bottom: 8px;
     padding-top: 8px
@@ -19553,7 +19613,8 @@ textarea {
     width: auto
   }
   .support-page-sections {
-    padding-top: 20px
+    padding-top: 20px;
+    padding-bottom: 100px
   }
   .support-page-sections::before {
     aspect-ratio: 390/710;
@@ -19764,7 +19825,7 @@ textarea {
   .support-requests._sidebar {
     margin-top: -20px
   }
-  .support-requests__list._active {
+  .support-requests._sidebar .support-requests__list._active {
     height: calc(100vh - 110px)
   }
   .class__runes {
@@ -20603,6 +20664,9 @@ textarea {
   .support-requests__title {
     letter-spacing: .05rem
   }
+  .support-requests__hide {
+    font-size: 1rem
+  }
   .gods__heading {
     padding-top: 1.875rem
   }
@@ -21147,6 +21211,9 @@ textarea {
   }
   .support-requests__title {
     letter-spacing: clamp(.05rem ,.0444285714rem + .0228571429vw ,.065rem)
+  }
+  .support-requests__hide {
+    font-size: clamp(1rem ,.9535714286rem + .1904761905vw ,1.125rem)
   }
   .gods__heading {
     padding-top: clamp(1.875rem ,.8303571429rem + 4.2857142857vw ,4.6875rem)

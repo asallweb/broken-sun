@@ -10642,6 +10642,9 @@ textarea {
   display: flex;
   gap: 36px
 }
+.support-page-sections__inner._gap-21 {
+  gap: 21px
+}
 .support-page-sections__main {
   width: 100%
 }
@@ -12771,6 +12774,7 @@ textarea {
   letter-spacing: .3px;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
   transition: all .3s ease-in-out
 }
 .support-requests__item-status._complete {
@@ -12866,7 +12870,37 @@ textarea {
 }
 .support-chat__body-inner {
   height: 564px;
-  overflow-y: auto
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #61646b rgba(11,19,29,.7)
+}
+.support-chat__body-inner::-webkit-scrollbar {
+  width: 2px!important
+}
+.support-chat__body-inner::-webkit-scrollbar-track {
+  background: rgba(11,19,29,.7);
+  width: 2px!important
+}
+.support-chat__body-inner::-webkit-scrollbar-thumb {
+  background-color: #61646b;
+  min-height: 80px;
+  border-radius: 0!important;
+  width: 2px!important
+}
+.support-chat__body-inner::-webkit-scrollbar-button {
+  display: none!important;
+  width: 0!important;
+  height: 0!important;
+  background: 0 0!important
+}
+.support-chat__body-inner::-webkit-scrollbar-button:vertical:end:decrement,
+.support-chat__body-inner::-webkit-scrollbar-button:vertical:end:increment,
+.support-chat__body-inner::-webkit-scrollbar-button:vertical:start:decrement,
+.support-chat__body-inner::-webkit-scrollbar-button:vertical:start:increment {
+  display: none!important;
+  width: 0!important;
+  height: 0!important;
+  background: 0 0!important
 }
 .support-chat__message {
   margin: 16px 0;

@@ -10834,6 +10834,7 @@ textarea {
   text-shadow: 0 0 3px rgba(255,223,136,.8)
 }
 .support-info__all svg {
+  margin-top: 2px;
   width: 16px;
   height: 16px
 }
@@ -10958,7 +10959,10 @@ textarea {
   color: #f2f2f3;
   text-align: center;
   font-family: "Noto Sans";
-  font-weight: 600
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
 }
 .support-tiles__item-title::before {
   content: "";
@@ -12585,7 +12589,7 @@ textarea {
   margin-top: 40px
 }
 .support-requests._mt-15 {
-  margin-top: 15px
+  margin-top: 17px
 }
 .support-requests__head {
   display: flex;
@@ -12614,7 +12618,8 @@ textarea {
 }
 .support-requests__all svg {
   width: 14px;
-  height: 16px
+  height: 16px;
+  margin-top: 2px
 }
 .support-requests__all._jc-end {
   justify-content: flex-end;
@@ -15969,10 +15974,10 @@ textarea {
     letter-spacing: .055rem
   }
   .support-tiles__item-title {
-    letter-spacing: .065rem
+    letter-spacing: .05rem
   }
   .support-tiles__item-title {
-    font-size: 1.375rem
+    font-size: 1.1875rem
   }
   .support-articles__title {
     letter-spacing: .1rem
@@ -19069,6 +19074,11 @@ textarea {
     margin-bottom: 16px
   }
 }
+@media (max-width:67.5em) {
+  .support-tiles__item-title {
+    font-size: .875rem
+  }
+}
 @media (max-width:47.99875em) {
   .menu__lang {
     display: flex;
@@ -20928,10 +20938,7 @@ textarea {
     letter-spacing: .04375rem
   }
   .support-tiles__item-title {
-    letter-spacing: .05rem
-  }
-  .support-tiles__item-title {
-    font-size: 1.25rem
+    letter-spacing: .03125rem
   }
   .support-articles__title {
     letter-spacing: .07rem
@@ -21497,10 +21504,7 @@ textarea {
     letter-spacing: clamp(.04375rem ,.0395714286rem + .0171428571vw ,.055rem)
   }
   .support-tiles__item-title {
-    letter-spacing: clamp(.05rem ,.0444285714rem + .0228571429vw ,.065rem)
-  }
-  .support-tiles__item-title {
-    font-size: clamp(1.25rem ,1.2035714286rem + .1904761905vw ,1.375rem)
+    letter-spacing: clamp(.03125rem ,.0242857143rem + .0285714286vw ,.05rem)
   }
   .support-articles__title {
     letter-spacing: clamp(.07rem ,.0588571429rem + .0457142857vw ,.1rem)
@@ -21894,6 +21898,11 @@ textarea {
   }
   .landing-hero-3__content-text {
     font-size: 1rem
+  }
+}
+@media (min-width:67.5em) and (max-width:90em) {
+  .support-tiles__item-title {
+    font-size: clamp(.875rem ,-.0625rem + 1.3888888889vw ,1.1875rem)
   }
 }
 @media (min-width:48em) and (max-width:87.5em) {

@@ -10826,6 +10826,9 @@ textarea {
   font-weight: 500;
   transition: all .3s ease-in-out
 }
+.support-info__all._white {
+  color: #fafafa
+}
 .support-info__all:hover {
   color: #f2f2f3;
   text-shadow: 0 0 3px rgba(255,223,136,.8)
@@ -12579,6 +12582,9 @@ textarea {
 }
 .support-requests._mt-40 {
   margin-top: 40px
+}
+.support-requests._mt-15 {
+  margin-top: 15px
 }
 .support-requests__head {
   display: flex;

@@ -12414,7 +12414,8 @@ textarea {
   font-family: "Noto Sans";
   line-height: 1.5;
   padding: 8px 16px;
-  height: 82px
+  height: 82px;
+  resize: none
 }
 .support-anketa__textarea._error::-webkit-input-placeholder {
   color: #e54555

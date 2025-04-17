@@ -5,10 +5,10 @@
 	<title>Support 10 - Чат</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250416171020">
-	<script src="files/js/preloader.js?_v=20250416171020"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250416171020">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250416171020">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250417085727">
+	<script src="files/js/preloader.js?_v=20250417085727"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250417085727">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250417085727">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -360,10 +360,10 @@
 										<div class="support-chat__message-inner">
 											<div class="support-chat__message-text">Это очень длинный текст, который должен перемещаться на другую строку</div>
 											<div class="support-chat__attached-files">
-												<div class="support-chat__attached-item">
+												<div class="support-chat__attached-item" data-popup="#media" data-image="img/content/media/media__5.webp">
 													<img src="img/pages/support-pages/anketa-uploaded-file.webp" class="">
 												</div>
-												<div class="support-chat__attached-item">
+												<div class="support-chat__attached-item" data-popup="#media" data-image="img/content/media/media__3.webp">
 													<img src="img/pages/support-pages/anketa-uploaded-file.webp" class="">
 												</div>
 											</div>
@@ -384,16 +384,20 @@
 									<img src="img/pages/support-pages/message-upload.svg" class="support-chat__send-upload-icon">
 								</button>
 								<div class="support-chat__send-field">
-									<input type="text" class="support-chat__send-text" placeholder="Написать сообщение">
+									<textarea name="" id="" class="support-chat__send-text _no-bd" placeholder="Написать сообщение"></textarea>
 									<div class="support-chat__upload-files">
 										<div class="support-chat__upload-item">
-											<img src="img/pages/support-pages/anketa-uploaded-file.webp" class="">
+											<div data-popup="#media" data-image="img/content/media/media__3.webp">
+												<img src="img/pages/support-pages/anketa-uploaded-file.webp" class="">
+											</div>
 											<a href="" class="support-chat__upload-item-delete">
 												<img src="img/pages/support-pages/anketa-delete-file.svg" class="">
 											</a>
 										</div>
 										<div class="support-chat__upload-item">
-											<img src="img/pages/support-pages/anketa-uploaded-file.webp" class="">
+											<div data-popup="#media" data-image="img/content/media/media__4.webp">
+												<img src="img/pages/support-pages/anketa-uploaded-file.webp" class="">
+											</div>
 											<a href="" class="support-chat__upload-item-delete">
 												<img src="img/pages/support-pages/anketa-delete-file.svg" class="">
 											</a>
@@ -410,6 +414,25 @@
 									<img src="img/pages/support-pages/message-send.svg" class="support-chat__send-icon">
 								</button>
 							</div>
+							<script>
+								// функция скрола чата вниз
+								function scrollChatToBottom() {
+									const chatBody = document.querySelector('.support-chat__body-inner');
+									if (chatBody) {
+										chatBody.scrollTop = chatBody.scrollHeight;
+									}
+								}
+
+								// пример вызова функции
+								document.addEventListener('DOMContentLoaded', () => {
+									const sendBtn = document.querySelector('.support-chat__send-text');
+									if (sendBtn) {
+										sendBtn.addEventListener('click', () => {
+											scrollChatToBottom();
+										});
+									}
+								});
+							</script>
 						</section>
 					</div>
 					<div class="support-page-sections__side">
@@ -610,7 +633,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250416171020"></script>
+	<script src="js/app.min.js?_v=20250417085727"></script>
 </body>
 
 </html>

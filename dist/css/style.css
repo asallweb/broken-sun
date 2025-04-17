@@ -12426,6 +12426,10 @@ textarea {
 .support-anketa__textarea._error::placeholder {
   color: #e54555
 }
+.support-anketa__textarea._no-bd {
+  border: none;
+  resize: none
+}
 .support-anketa__description {
   color: #c9cccf;
   font-family: "Noto Sans";
@@ -12871,6 +12875,7 @@ textarea {
 .support-chat__body-inner {
   height: 564px;
   overflow-y: auto;
+  scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: #61646b rgba(11,19,29,.7)
 }
@@ -13082,6 +13087,12 @@ textarea {
 }
 .support-chat__send-text::placeholder {
   color: #61646b
+}
+.support-chat__send-text._no-bd {
+  border: none;
+  resize: none;
+  padding: 16px 16px 6px;
+  margin-bottom: 10px
 }
 .support-chat__send-button {
   padding: 16px;

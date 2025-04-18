@@ -12671,13 +12671,7 @@ textarea {
 .support-requests__list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  overflow: hidden;
-  transition: max-height .5s ease-in-out;
-  max-height: 1000px
-}
-.support-requests__list._hidden {
-  max-height: 0
+  gap: 12px
 }
 .support-requests__item {
   -o-border-image: url(../img/pages/support-pages/support-requests-bg-2.webp) 2/2px;
@@ -12906,7 +12900,7 @@ textarea {
   pointer-events: none
 }
 .support-chat__body-inner {
-  height: 564px;
+  min-height: 564px;
   overflow-y: auto;
   scroll-behavior: smooth;
   scrollbar-width: thin;
@@ -20281,6 +20275,14 @@ textarea {
   .support-requests._sidebar .support-requests__list._active {
     height: calc(100vh - 110px)
   }
+  .support-requests__list {
+    overflow: hidden;
+    transition: max-height .5s ease-in-out;
+    max-height: 1000px
+  }
+  .support-requests__list._hidden {
+    max-height: 0
+  }
   .support-requests__breadcrumb {
     display: flex
   }
@@ -20290,7 +20292,8 @@ textarea {
     height: calc(100vh - 150px)
   }
   .support-chat__body-inner {
-    height: calc(100vh - 290px)
+    height: calc(100vh - 290px);
+    min-height: 1px
   }
   .support-chat__message-inner {
     max-width: 270px

@@ -5,10 +5,10 @@
 	<title>Support 10 - Чат</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250418122001">
-	<script src="files/js/preloader.js?_v=20250418122001"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250418122001">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250418122001">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250418152904">
+	<script src="files/js/preloader.js?_v=20250418152904"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250418152904">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250418152904">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -476,72 +476,6 @@
 										<div class="support-requests__item-id"># 70345</div>
 									</div>
 								</a>
-								<a href="" class="support-requests__item">
-									<div class="support-requests__item-inner">
-										<div class="support-requests__item-body">
-											<div class="support-requests__item-category _grey">Архив</div>
-											<div class="support-requests__item-title">Учетная запись</div>
-											<div class="support-requests__item-breadcrumb">
-												<div class="support-requests__item-breadcrumb-item">Поддержка</div>
-												/
-												<div class="support-requests__item-breadcrumb-item">Учетная запись</div>
-												/
-												<div class="support-requests__item-breadcrumb-item">Аккаунт взломан</div>
-											</div>
-										</div>
-										<div class="support-requests__item-side">
-											<div class="support-requests__item-status _complete">Решено</div>
-										</div>
-									</div>
-									<div class="support-requests__item-footer">
-										<div class="support-requests__item-date">24.03.2025</div>
-										<div class="support-requests__item-id"># 70345</div>
-									</div>
-								</a>
-								<a href="" class="support-requests__item">
-									<div class="support-requests__item-inner">
-										<div class="support-requests__item-body">
-											<div class="support-requests__item-category _red">Истек срок рассмотрения заявки</div>
-											<div class="support-requests__item-title">Нe работает</div>
-											<div class="support-requests__item-breadcrumb">
-												<div class="support-requests__item-breadcrumb-item">Поддержка</div>
-												/
-												<div class="support-requests__item-breadcrumb-item">Учетная запись</div>
-												/
-												<div class="support-requests__item-breadcrumb-item">Аккаунт взломан</div>
-											</div>
-										</div>
-										<div class="support-requests__item-side">
-											<div class="support-requests__item-status _closed">Закрыто</div>
-										</div>
-									</div>
-									<div class="support-requests__item-footer">
-										<div class="support-requests__item-date">24.03.2025</div>
-										<div class="support-requests__item-id"># 70345</div>
-									</div>
-								</a>
-								<a href="" class="support-requests__item">
-									<div class="support-requests__item-inner">
-										<div class="support-requests__item-body">
-											<div class="support-requests__item-category _light-blue">Заявка в обработке</div>
-											<div class="support-requests__item-title">Не проходит оплата, статус работы</div>
-											<div class="support-requests__item-breadcrumb">
-												<div class="support-requests__item-breadcrumb-item">Поддержка</div>
-												/
-												<div class="support-requests__item-breadcrumb-item">Учетная запись</div>
-												/
-												<div class="support-requests__item-breadcrumb-item">Аккаунт взломан</div>
-											</div>
-										</div>
-										<div class="support-requests__item-side">
-											<div class="support-requests__item-status _chat">Чат</div>
-										</div>
-									</div>
-									<div class="support-requests__item-footer">
-										<div class="support-requests__item-date">24.03.2025</div>
-										<div class="support-requests__item-id"># 70345</div>
-									</div>
-								</a>
 							</div>
 							<script>
 								document.addEventListener('DOMContentLoaded', () => {
@@ -561,6 +495,26 @@
 							</script>
 						</section>
 					</div>
+					<script>
+						function syncSupportChatHeight() {
+							const chatBody = document.querySelector('.support-chat__body-inner');
+							const requestList = document.querySelector('.support-requests__list');
+							const chatSend = document.querySelector('.support-chat__send');
+
+							if (!chatBody || !requestList || !chatSend) return;
+
+							if (window.innerWidth > 768) {
+								const totalHeight = requestList.offsetHeight;
+								const sendHeight = chatSend.offsetHeight;
+								chatBody.style.height = (totalHeight - sendHeight) + 'px';
+							} else {
+								chatBody.style.height = '';
+							}
+						}
+
+						window.addEventListener('DOMContentLoaded', syncSupportChatHeight);
+						window.addEventListener('resize', syncSupportChatHeight);
+					</script>
 				</div>
 				<div class="separator _bottom-26">
 					<div class="separator__left"></div>
@@ -627,7 +581,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250418122001"></script>
+	<script src="js/app.min.js?_v=20250418152904"></script>
 </body>
 
 </html>

@@ -11056,9 +11056,16 @@ textarea {
   line-height: 1.36;
   border-bottom: 1px solid #29303d
 }
-.support-articles__grid-list {
+.support-articles__grid-list,
+.support-articles__grid-list-hidden {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  gap: 16px
+}
+.support-articles__grid-list-hidden {
+  height: 0;
+  overflow: hidden;
+  transition: height .4s ease-in-out
 }
 .support-articles__grid-item {
   color: #b19f63;
@@ -11068,7 +11075,7 @@ textarea {
   display: flex;
   align-items: baseline;
   gap: 4px;
-  transition: all .3s ease-in-out
+  transition: color .3s ease-in-out
 }
 .support-articles__grid-item:hover {
   text-shadow: 0 0 3px rgba(255,223,136,.8);
@@ -11081,9 +11088,6 @@ textarea {
 }
 .support-articles__grid-item:last-child {
   margin-bottom: 0
-}
-.support-articles__grid-item:not([style*="opacity: 0"]) {
-  margin-bottom: 16px
 }
 .support-articles__grid-item-icon {
   position: relative;
@@ -11129,17 +11133,12 @@ textarea {
   justify-content: center;
   align-items: center;
   position: relative;
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
-  padding-top: 0;
-  transition: all .3s ease-in-out
-}
-.support-articles__show-more-wrapper._visible {
+  transition: all .3s ease-in-out;
   opacity: 1;
   visibility: visible;
   height: auto;
-  padding-top: 16px
+  padding-top: 16px;
+  margin-top: -30px
 }
 .support-articles__show-more-wrapper::after,
 .support-articles__show-more-wrapper::before {
@@ -11154,12 +11153,15 @@ textarea {
 .support-articles__show-more-wrapper::after {
   background: linear-gradient(to right,#776030 0,rgba(119,96,48,.7) 60%,rgba(119,96,48,0) 100%)
 }
-.support-articles__show-more-wrapper._showed {
-  margin-top: -30px
+.support-articles__show-more-wrapper._active {
+  margin-top: 0
 }
-.support-articles__show-more-wrapper._showed svg {
-  -webkit-transform: rotate(0);
-  transform: rotate(0)
+.support-articles__show-more-wrapper._active svg {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
+}
+.support-articles__show-more-wrapper._active .support-articles__show-more-count {
+  display: none
 }
 .support-articles__show-more {
   -o-border-image: url(../img/pages/support-pages/support-articles-button-bg.webp) 0 fill/0;
@@ -11180,8 +11182,8 @@ textarea {
 .support-articles__show-more svg {
   width: 16px;
   height: 16px;
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg)
+  -webkit-transform: rotate(0);
+  transform: rotate(0)
 }
 .support-articles__footer {
   padding: 32px 0;
@@ -11217,6 +11219,9 @@ textarea {
 }
 .support-page._mt-0 {
   margin-top: 0
+}
+.support-page._mb-10 {
+  margin-bottom: 10px
 }
 .support-page._pb-0 {
   padding-bottom: 0
@@ -12237,8 +12242,8 @@ textarea {
   top: 18px
 }
 .support-anketa__info-icon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border: 1px solid #29303d;
   padding: 1px;
   border-radius: 50%;
@@ -12350,6 +12355,11 @@ textarea {
   -webkit-transform: rotate(180deg) translate(0,50%);
   transform: rotate(180deg) translate(0,50%)
 }
+.support-anketa__field .custom-select .select-items {
+  background: rgba(23,32,48,.8);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px)
+}
 .support-anketa__field .custom-select .select-items div {
   font-family: "Noto Sans"
 }
@@ -12436,7 +12446,8 @@ textarea {
   font-size: 16px;
   line-height: 1.37;
   letter-spacing: .32px;
-  padding-left: 16px
+  padding-left: 16px;
+  margin-top: 4px
 }
 .support-anketa__upload-files {
   padding: 24px 8px 10px 8px;
@@ -12514,7 +12525,7 @@ textarea {
   cursor: pointer
 }
 .support-anketa__additional {
-  padding: 20px 20px;
+  padding: 15px 20px;
   -o-border-image: url(../img/pages/support-pages/anketa-additional.webp) 15/15px;
   border-image: url(../img/pages/support-pages/anketa-additional.webp) 15/15px;
   font-family: "Noto Sans"
@@ -12570,12 +12581,30 @@ textarea {
 .support-anketa__form-submit:hover::after {
   opacity: 1
 }
+.support-anketa__form-submit:disabled {
+  background-color: #121417;
+  color: #433421
+}
+.support-anketa__form-submit:disabled::after,
+.support-anketa__form-submit:disabled::before {
+  transition: none;
+  -o-border-image: url(../img/pages/support-pages/submit-bd-disabled.webp) 2 fill/2px;
+  border-image: url(../img/pages/support-pages/submit-bd-disabled.webp) 2 fill/2px
+}
+.support-anketa__form-submit:disabled:hover::after,
+.support-anketa__form-submit:disabled:hover::before {
+  -o-border-image: url(../img/pages/support-pages/submit-bd-disabled.webp) 2 fill/2px!important;
+  border-image: url(../img/pages/support-pages/submit-bd-disabled.webp) 2 fill/2px!important
+}
 .support-anketa__form-submit span {
   position: relative;
   z-index: 1
 }
 .support-requests {
   position: relative
+}
+.support-requests._mt-50 {
+  margin-top: 50px
 }
 .support-requests._mt-40 {
   margin-top: 40px
@@ -12651,8 +12680,8 @@ textarea {
   max-height: 0
 }
 .support-requests__item {
-  -o-border-image: url(../img/pages/support-pages/support-requests-bg.webp) 2/2px;
-  border-image: url(../img/pages/support-pages/support-requests-bg.webp) 2/2px;
+  -o-border-image: url(../img/pages/support-pages/support-requests-bg-2.webp) 2/2px;
+  border-image: url(../img/pages/support-pages/support-requests-bg-2.webp) 2/2px;
   border-radius: 2px;
   background: linear-gradient(180deg,rgba(11,19,29,.7) 0,rgba(9,19,27,.7) 100%);
   -webkit-backdrop-filter: blur(18px);
@@ -12851,7 +12880,7 @@ textarea {
 .support-chat__body {
   border-radius: 2px;
   box-shadow: 0 0 20px 0 rgba(0,0,0,.05) inset;
-  padding: 1px 16px 2px 0;
+  padding: 1px 2px 2px 0;
   position: relative
 }
 .support-chat__body::before {
@@ -12925,37 +12954,35 @@ textarea {
   position: relative;
   z-index: 1;
   padding: 16px;
-  max-width: 400px;
-  border-radius: 12px;
-  border: 1px solid #455c61;
-  background-color: #253032
+  max-width: 400px
 }
 .support-chat__message-inner::after {
   content: "";
-  border-right: 1px solid #455c61;
-  border-bottom: 1px solid #455c61;
-  background-color: #253032;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
   display: block;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 21px;
+  background: url(../img/pages/support-pages/user-message-arrow.webp) 0 0/cover no-repeat;
   position: absolute;
-  right: -7px;
+  right: -9px;
   bottom: 12px
 }
 ._support .support-chat__message-inner::after {
   right: auto;
-  left: -7px;
-  -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
-  border-color: #454f61;
-  background-color: #252932
+  left: -9px;
+  background-color: #252932;
+  background: url(../img/pages/support-pages/user-message-arrow-support.webp) 0 0/cover no-repeat
 }
 ._support .support-chat__message-inner {
   border-radius: 8px;
-  border-color: #454f61;
-  background-color: #252932
+  background-color: #252932;
+  -o-border-image: url(../img/pages/support-pages/user-message-bd-support.webp) 20/20px;
+  border-image: url(../img/pages/support-pages/user-message-bd-support.webp) 20/20px
+}
+._user .support-chat__message-inner {
+  border-radius: 12px;
+  -o-border-image: url(../img/pages/support-pages/user-message-bd.webp) 20/20px;
+  border-image: url(../img/pages/support-pages/user-message-bd.webp) 20/20px;
+  background-color: #242d31
 }
 .support-chat__message-name {
   color: #f9df94;
@@ -13118,6 +13145,10 @@ textarea {
   height: 64px;
   overflow: hidden;
   position: relative
+}
+.support-chat__upload-item div {
+  width: 64px;
+  height: 64px
 }
 .support-chat__upload-item img {
   width: 100%;
@@ -16131,7 +16162,7 @@ textarea {
     font-size: 1.375rem
   }
   .support-requests__head {
-    margin-bottom: 1.5rem
+    margin-bottom: 1.5625rem
   }
   .support-requests__title {
     font-size: 1.625rem
@@ -20258,9 +20289,6 @@ textarea {
     margin-right: -10px;
     height: calc(100vh - 150px)
   }
-  .support-chat__body {
-    padding-right: 4px
-  }
   .support-chat__body-inner {
     height: calc(100vh - 290px)
   }
@@ -21658,7 +21686,7 @@ textarea {
     font-size: clamp(1.125rem ,1.0321428571rem + .380952381vw ,1.375rem)
   }
   .support-requests__head {
-    margin-bottom: clamp(1rem ,.8142857143rem + .7619047619vw ,1.5rem)
+    margin-bottom: clamp(1rem ,.7910714286rem + .8571428571vw ,1.5625rem)
   }
   .support-requests__title {
     font-size: clamp(1.25rem ,1.1107142857rem + .5714285714vw ,1.625rem)

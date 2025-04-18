@@ -5,10 +5,10 @@
 	<title>Support 10 - Чат</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250418152904">
-	<script src="files/js/preloader.js?_v=20250418152904"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250418152904">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250418152904">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250418153924">
+	<script src="files/js/preloader.js?_v=20250418153924"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250418153924">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250418153924">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -476,6 +476,94 @@
 										<div class="support-requests__item-id"># 70345</div>
 									</div>
 								</a>
+								<a href="" class="support-requests__item">
+									<div class="support-requests__item-inner">
+										<div class="support-requests__item-body">
+											<div class="support-requests__item-category _grey">Архив</div>
+											<div class="support-requests__item-title">Учетная запись</div>
+											<div class="support-requests__item-breadcrumb">
+												<div class="support-requests__item-breadcrumb-item">Поддержка</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Учетная запись</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Аккаунт взломан</div>
+											</div>
+										</div>
+										<div class="support-requests__item-side">
+											<div class="support-requests__item-status _complete">Решено</div>
+										</div>
+									</div>
+									<div class="support-requests__item-footer">
+										<div class="support-requests__item-date">24.03.2025</div>
+										<div class="support-requests__item-id"># 70345</div>
+									</div>
+								</a>
+								<a href="" class="support-requests__item">
+									<div class="support-requests__item-inner">
+										<div class="support-requests__item-body">
+											<div class="support-requests__item-category _red">Истек срок рассмотрения заявки</div>
+											<div class="support-requests__item-title">Нe работает</div>
+											<div class="support-requests__item-breadcrumb">
+												<div class="support-requests__item-breadcrumb-item">Поддержка</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Учетная запись</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Аккаунт взломан</div>
+											</div>
+										</div>
+										<div class="support-requests__item-side">
+											<div class="support-requests__item-status _closed">Закрыто</div>
+										</div>
+									</div>
+									<div class="support-requests__item-footer">
+										<div class="support-requests__item-date">24.03.2025</div>
+										<div class="support-requests__item-id"># 70345</div>
+									</div>
+								</a>
+								<a href="" class="support-requests__item">
+									<div class="support-requests__item-inner">
+										<div class="support-requests__item-body">
+											<div class="support-requests__item-category _light-blue">Заявка в обработке</div>
+											<div class="support-requests__item-title">Не проходит оплата, статус работы</div>
+											<div class="support-requests__item-breadcrumb">
+												<div class="support-requests__item-breadcrumb-item">Поддержка</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Учетная запись</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Аккаунт взломан</div>
+											</div>
+										</div>
+										<div class="support-requests__item-side">
+											<div class="support-requests__item-status _chat">Чат</div>
+										</div>
+									</div>
+									<div class="support-requests__item-footer">
+										<div class="support-requests__item-date">24.03.2025</div>
+										<div class="support-requests__item-id"># 70345</div>
+									</div>
+								</a>
+								<a href="" class="support-requests__item _current">
+									<div class="support-requests__item-inner">
+										<div class="support-requests__item-body">
+											<div class="support-requests__item-category _blue">Новое сообщение</div>
+											<div class="support-requests__item-title">Учетная запись</div>
+											<div class="support-requests__item-breadcrumb">
+												<div class="support-requests__item-breadcrumb-item">Поддержка</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Учетная запись</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Аккаунт взломан</div>
+											</div>
+										</div>
+										<div class="support-requests__item-side">
+											<div class="support-requests__item-status _chat">Закрыть запрос</div>
+										</div>
+									</div>
+									<div class="support-requests__item-footer">
+										<div class="support-requests__item-date">24.03.2025</div>
+										<div class="support-requests__item-id"># 70345</div>
+									</div>
+								</a>
 							</div>
 							<script>
 								document.addEventListener('DOMContentLoaded', () => {
@@ -506,14 +594,29 @@
 							if (window.innerWidth > 768) {
 								const totalHeight = requestList.offsetHeight;
 								const sendHeight = chatSend.offsetHeight;
-								chatBody.style.height = (totalHeight - sendHeight) + 'px';
+								const calculatedHeight = totalHeight - sendHeight;
+
+								chatBody.style.height = Math.max(calculatedHeight, 500) + 'px';
 							} else {
 								chatBody.style.height = '';
 							}
 						}
 
+						// Debounce функция
+						function debounce(func, wait) {
+							let timeout;
+							return function() {
+								const context = this;
+								const args = arguments;
+								clearTimeout(timeout);
+								timeout = setTimeout(() => func.apply(context, args), wait);
+							};
+						}
+
+						const debouncedResize = debounce(syncSupportChatHeight, 100);
+
 						window.addEventListener('DOMContentLoaded', syncSupportChatHeight);
-						window.addEventListener('resize', syncSupportChatHeight);
+						window.addEventListener('resize', debouncedResize);
 					</script>
 				</div>
 				<div class="separator _bottom-26">
@@ -581,7 +684,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250418152904"></script>
+	<script src="js/app.min.js?_v=20250418153924"></script>
 </body>
 
 </html>

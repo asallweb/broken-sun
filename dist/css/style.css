@@ -11720,6 +11720,10 @@ textarea {
   letter-spacing: 1.04px;
   transition: all .3s ease-in-out
 }
+.support-results__body-item-title:hover {
+  text-shadow: 0 0 3px rgba(255,223,136,.8);
+  color: #f2f2f3
+}
 .support-results__item-icon {
   position: relative;
   width: 16px;
@@ -13205,6 +13209,9 @@ textarea {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg)
   }
+}
+#mfi-chat {
+  padding: 0!important
 }
 .page._dark-bg {
   background: url(../img/background/dark__blue.webp) 0 0/100% 100% no-repeat

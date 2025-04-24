@@ -12453,7 +12453,7 @@ textarea {
   font-family: "Noto Sans";
   line-height: 1.5;
   padding: 8px 16px;
-  height: 82px;
+  height: 123px;
   resize: vertical
 }
 .support-anketa__textarea._error::-webkit-input-placeholder {
@@ -12715,6 +12715,36 @@ textarea {
   -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
   padding: 12px
+}
+.support-requests__item._loading {
+  height: 124px
+}
+.support-requests__item._empty {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94999e;
+  font-family: "Noto Sans";
+  font-size: 18px;
+  letter-spacing: .36px;
+  background: linear-gradient(0deg,rgba(13,22,33,0) 0,#0d1621 100%)
+}
+@-webkit-keyframes loading-shimmer {
+  0% {
+    background-position: -100% 0
+  }
+  100% {
+    background-position: 100% 0
+  }
+}
+@keyframes loading-shimmer {
+  0% {
+    background-position: -100% 0
+  }
+  100% {
+    background-position: 100% 0
+  }
 }
 .support-requests__item-inner {
   position: relative;
@@ -13028,7 +13058,8 @@ textarea {
   color: #fafafa;
   font-family: "Noto Sans";
   line-height: 1.55;
-  margin-bottom: 12px
+  margin-bottom: 12px;
+  word-break: break-all
 }
 .support-chat__message-info {
   display: flex;
@@ -16030,10 +16061,10 @@ textarea {
     letter-spacing: .055rem
   }
   .support-tiles__item-title {
-    letter-spacing: .05rem
+    letter-spacing: .055rem
   }
   .support-tiles__item-title {
-    font-size: 1.1875rem
+    font-size: 1.375rem
   }
   .support-articles__title {
     letter-spacing: .1rem
@@ -19129,7 +19160,7 @@ textarea {
 }
 @media (max-width:67.5em) {
   .support-tiles__item-title {
-    font-size: .875rem
+    font-size: 1.25rem
   }
 }
 @media (max-width:47.99875em) {
@@ -20148,8 +20179,9 @@ textarea {
   .support-tiles__item-title {
     position: relative;
     padding: 10px;
-    height: 60px;
-    overflow: hidden
+    white-space: initial;
+    overflow: initial;
+    height: 60px
   }
   .support-articles {
     margin-top: 0;
@@ -20997,7 +21029,7 @@ textarea {
     letter-spacing: .04375rem
   }
   .support-tiles__item-title {
-    letter-spacing: .03125rem
+    letter-spacing: .05rem
   }
   .support-articles__title {
     letter-spacing: .07rem
@@ -21560,7 +21592,7 @@ textarea {
     letter-spacing: clamp(.04375rem ,.0395714286rem + .0171428571vw ,.055rem)
   }
   .support-tiles__item-title {
-    letter-spacing: clamp(.03125rem ,.0242857143rem + .0285714286vw ,.05rem)
+    letter-spacing: clamp(.05rem ,.0481428571rem + .0076190476vw ,.055rem)
   }
   .support-articles__title {
     letter-spacing: clamp(.07rem ,.0588571429rem + .0457142857vw ,.1rem)
@@ -21955,7 +21987,7 @@ textarea {
 }
 @media (min-width:67.5em) and (max-width:90em) {
   .support-tiles__item-title {
-    font-size: clamp(.875rem ,-.0625rem + 1.3888888889vw ,1.1875rem)
+    font-size: clamp(1.25rem ,.875rem + .5555555556vw ,1.375rem)
   }
 }
 @media (min-width:48em) and (max-width:87.5em) {

@@ -10656,7 +10656,7 @@ textarea {
 }
 .support-search {
   position: relative;
-  z-index: 2
+  z-index: 6
 }
 .support-search._side-padding {
   padding-right: 230px
@@ -10725,6 +10725,7 @@ textarea {
 .support-search__form-input:focus::placeholder {
   color: #292b2e
 }
+.support-search__form-input-clear,
 .support-search__form-input-submit {
   background: url(../img/icons/form/search-1.svg) center center no-repeat;
   width: 56px;
@@ -10735,6 +10736,13 @@ textarea {
   right: 0
 }
 .support-search__form-wrap:focus-within .support-search__form-input-submit {
+  display: none
+}
+.support-search__form-input-clear {
+  display: none
+}
+.support-search__form-wrap:focus-within .support-search__form-input-clear {
+  display: block;
   background: url(../img/pages/support-pages/close-icon.svg) center center no-repeat
 }
 .support-search__form-submit {

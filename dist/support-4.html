@@ -5,10 +5,10 @@
 	<title>Support 4 - Результаты поиска</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250424124743">
-	<script src="files/js/preloader.js?_v=20250424124743"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250424124743">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250424124743">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250424171759">
+	<script src="files/js/preloader.js?_v=20250424171759"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250424171759">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250424171759">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -442,80 +442,9 @@
 										</span>
 									</a>
 								</div>
-								<div class="support-results__show-more-wrapper _visible">
-									<button class="support-results__show-more">
-										<span class="support-results__show-more-text">Показать все категории</span>
-										<span class="support-results__show-more-count">(2)</span>
-										<svg>
-											<use xlink:href="img/pages/support-pages/sprite.svg#show-more-icon"></use>
-										</svg>
-									</button>
-								</div>
 							</div>
 						</div>
 					</div>
-					<script>
-						document.addEventListener('DOMContentLoaded', () => {
-							const sideBlock = document.querySelector('.support-results__side');
-
-							if (!sideBlock || window.innerWidth >= 768) return;
-
-							const items = sideBlock.querySelectorAll('.support-results__side-item');
-							const showMoreWrapper = sideBlock.querySelector('.support-results__show-more-wrapper');
-							const showMoreButtonWrapper = sideBlock.querySelector('.support-results__show-more-wrapper');
-							const showMoreButton = sideBlock.querySelector('.support-results__show-more');
-							const showMoreButtonText = sideBlock.querySelector('.support-results__show-more-text');
-							const showMoreCount = sideBlock.querySelector('.support-results__show-more-count');
-
-							let isExpanded = false;
-
-							const hiddenCount = items.length - 2;
-
-							if (items.length <= 2) {
-								showMoreWrapper.classList.remove('_visible');
-								return;
-							}
-
-							const hideItems = () => {
-								items.forEach((item, index) => {
-									if (index >= 2) {
-										item.classList.add('_hidden');
-									}
-								});
-
-								setTimeout(() => {
-									items[1].classList.add('_gradient-mask');
-								}, 300);
-
-								showMoreButtonWrapper.classList.add('_showed');
-								showMoreButtonText.textContent = 'Показать все категории';
-								showMoreCount.textContent = `(${hiddenCount})`;
-								isExpanded = false;
-							};
-
-							const showItems = () => {
-								items.forEach((item, index) => {
-									if (index >= 2) {
-										item.classList.remove('_hidden');
-									}
-								});
-
-								items[1].classList.remove('_gradient-mask');
-								showMoreButtonWrapper.classList.remove('_showed');
-								showMoreButtonText.textContent = 'Скрыть все категории';
-								showMoreCount.style.display = 'none';
-								isExpanded = true;
-							};
-
-							// Инициализация
-							hideItems();
-							showMoreWrapper.classList.add('_visible');
-
-							showMoreButton.addEventListener('click', () => {
-								isExpanded ? hideItems() : showItems();
-							});
-						});
-					</script>
 				</section>
 				<div class="separator _bottom-26">
 					<div class="separator__left"></div>
@@ -583,7 +512,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250424124743"></script>
+	<script src="js/app.min.js?_v=20250424171759"></script>
 </body>
 
 </html>

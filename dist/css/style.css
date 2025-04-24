@@ -15814,6 +15814,9 @@ textarea {
   .spollers__item {
     margin-bottom: 1.75rem
   }
+  ._support-page .spollers__item {
+    margin-bottom: 1.5rem
+  }
   .spollers__title {
     font-size: 1.625rem
   }
@@ -20232,7 +20235,7 @@ textarea {
     display: none
   }
   .support-page__content {
-    line-height: 1.3
+    line-height: 1.66
   }
   .support-page__content p {
     margin-bottom: 15px
@@ -20336,6 +20339,9 @@ textarea {
   }
   .support-anketa__body {
     gap: 48px
+  }
+  .support-anketa__textarea {
+    resize: none!important
   }
   .support-requests._sidebar {
     margin-top: -20px
@@ -20571,9 +20577,6 @@ textarea {
   .form__points-wrapper div {
     width: 20%
   }
-  ._support-page .faq__title {
-    text-align: center
-  }
   .character__title {
     display: none
   }
@@ -20808,6 +20811,9 @@ textarea {
   }
   .spollers__item {
     margin-bottom: 1.25rem
+  }
+  ._support-page .spollers__item {
+    margin-bottom: 1rem
   }
   .spollers__title {
     font-size: 1.375rem
@@ -21080,7 +21086,7 @@ textarea {
     letter-spacing: .02rem
   }
   .support-page__content {
-    font-size: 1rem
+    font-size: .9375rem
   }
   .support-page__content h2 {
     letter-spacing: .07rem
@@ -21372,6 +21378,9 @@ textarea {
   .spollers__item {
     margin-bottom: clamp(1.25rem ,1.0642857143rem + .7619047619vw ,1.75rem)
   }
+  ._support-page .spollers__item {
+    margin-bottom: clamp(1rem ,.8142857143rem + .7619047619vw ,1.5rem)
+  }
   .spollers__title {
     font-size: clamp(1.375rem ,1.2821428571rem + .380952381vw ,1.625rem)
   }
@@ -21643,7 +21652,7 @@ textarea {
     letter-spacing: clamp(.02rem ,.0190714286rem + .0038095238vw ,.0225rem)
   }
   .support-page__content {
-    font-size: clamp(1rem ,.9535714286rem + .1904761905vw ,1.125rem)
+    font-size: clamp(.9375rem ,.8678571429rem + .2857142857vw ,1.125rem)
   }
   .support-page__content h2 {
     letter-spacing: clamp(.07rem ,.0644285714rem + .0228571429vw ,.085rem)

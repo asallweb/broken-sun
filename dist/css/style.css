@@ -10789,6 +10789,7 @@ textarea {
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   position: absolute;
+  z-index: 1;
   width: 100%
 }
 .support-search__form-dropdown-link {

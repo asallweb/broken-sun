@@ -3842,7 +3842,7 @@
 body,
 html {
   height: 100%;
-  min-width: 390px
+  min-width: 375px
 }
 body {
   color: #fff;
@@ -13137,6 +13137,10 @@ textarea {
   height: 64px;
   cursor: pointer
 }
+.support-chat__attached-item div {
+  width: 100%;
+  height: 100%
+}
 .support-chat__attached-item img {
   width: 100%;
   height: 100%;
@@ -13261,9 +13265,6 @@ textarea {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg)
   }
-}
-#mfi-chat {
-  padding: 0!important
 }
 .page._dark-bg {
   background: url(../img/background/dark__blue.webp) 0 0/100% 100% no-repeat
@@ -20364,7 +20365,7 @@ textarea {
   .support-chat {
     margin-left: -10px;
     margin-right: -10px;
-    height: calc(100vh - 150px)
+    height: calc(100vh - 110px)
   }
   .support-chat__body-inner {
     height: calc(100vh - 290px);
@@ -20807,6 +20808,14 @@ textarea {
   [class*=__container] {
     padding-right: .625rem
   }
+  .progressbar {
+    margin-left: -.625rem
+  }
+  .progressbar {
+    margin-right: -.625rem
+  }
+}
+@media (max-width:23.4375em) {
   .spollers__item {
     font-size: 1rem
   }
@@ -20821,12 +20830,6 @@ textarea {
   }
   ._support-page .spollers__title {
     font-size: 1.5rem
-  }
-  .progressbar {
-    margin-left: -.625rem
-  }
-  .progressbar {
-    margin-right: -.625rem
   }
   .footer__menu {
     gap: .9375rem
@@ -21373,563 +21376,11 @@ textarea {
   [class*=__container] {
     padding-right: clamp(.625rem ,-.0714285714rem + 2.8571428571vw ,2.5rem)
   }
-  .spollers__item {
-    font-size: clamp(1rem ,.7678571429rem + .9523809524vw ,1.625rem)
-  }
-  .spollers__item {
-    margin-bottom: clamp(1.25rem ,1.0642857143rem + .7619047619vw ,1.75rem)
-  }
-  ._support-page .spollers__item {
-    margin-bottom: clamp(1rem ,.8142857143rem + .7619047619vw ,1.5rem)
-  }
-  .spollers__title {
-    font-size: clamp(1.375rem ,1.2821428571rem + .380952381vw ,1.625rem)
-  }
-  ._support-page .spollers__title {
-    font-size: clamp(1.5rem ,1.4535714286rem + .1904761905vw ,1.625rem)
-  }
   .progressbar {
     margin-left: clamp(-2.5rem ,.0714285714rem + -2.8571428571vw ,-.625rem)
   }
   .progressbar {
     margin-right: clamp(-2.5rem ,.0714285714rem + -2.8571428571vw ,-.625rem)
-  }
-  .footer__menu {
-    gap: clamp(.9375rem ,.6589285714rem + 1.1428571429vw ,1.6875rem)
-  }
-  .footer__menu-item {
-    font-size: clamp(.625rem ,.4857142857rem + .5714285714vw ,1rem)
-  }
-  ._type-2 .footer__socials {
-    margin-bottom: clamp(1.125rem ,.6142857143rem + 2.0952380952vw ,2.5rem)
-  }
-  ._type-2 .footer__text {
-    font-size: clamp(.625rem ,.4392857143rem + .7619047619vw ,1.125rem)
-  }
-  ._type-2 .footer__text-middle {
-    font-size: clamp(.75rem ,.5642857143rem + .7619047619vw ,1.25rem)
-  }
-  ._type-2 .footer__logo {
-    margin-bottom: clamp(.75rem ,.1928571429rem + 2.2857142857vw ,2.25rem)
-  }
-  .presskit-hero__content {
-    font-size: clamp(1rem ,.8607142857rem + .5714285714vw ,1.375rem)
-  }
-  .presskit-hero__content {
-    letter-spacing: clamp(.02rem ,.0172142857rem + .0114285714vw ,.0275rem)
-  }
-  .presskit-hero__title {
-    margin-bottom: clamp(.9375rem ,.5892857143rem + 1.4285714286vw ,1.875rem)
-  }
-  .presskit-hero__title {
-    font-size: clamp(2.125rem ,1.9857142857rem + .5714285714vw ,2.5rem)
-  }
-  .presskit-hero__title {
-    letter-spacing: clamp(.085rem ,.0794285714rem + .0228571429vw ,.1rem)
-  }
-  .presskit-mechanics {
-    padding-top: clamp(3.375rem ,2.5857142857rem + 3.2380952381vw ,5.5rem)
-  }
-  .presskit-mechanics__wrapper {
-    gap: clamp(1.25rem ,1.5928571429rem + -.380952381vw ,1.5rem)
-  }
-  .presskit-mechanics__wrapper {
-    letter-spacing: clamp(.02rem ,.0190714286rem + .0038095238vw ,.0225rem)
-  }
-  .presskit-mechanics__wrapper {
-    font-size: clamp(1rem ,.9535714286rem + .1904761905vw ,1.125rem)
-  }
-  .presskit-mechanics__title {
-    letter-spacing: clamp(.085rem ,.0794285714rem + .0228571429vw ,.1rem)
-  }
-  .presskit-mechanics__title {
-    font-size: clamp(2.125rem ,1.9857142857rem + .5714285714vw ,2.5rem)
-  }
-  .presskit-mechanics__subtitle {
-    letter-spacing: clamp(.06rem ,.0581428571rem + .0076190476vw ,.065rem)
-  }
-  .presskit-mechanics__subtitle {
-    font-size: clamp(1.5rem ,1.4535714286rem + .1904761905vw ,1.625rem)
-  }
-  .presskit-media__title {
-    letter-spacing: clamp(.085rem ,.0794285714rem + .0228571429vw ,.1rem)
-  }
-  .presskit-media__title {
-    font-size: clamp(2.125rem ,1.9857142857rem + .5714285714vw ,2.5rem)
-  }
-  .presskit-media__main {
-    gap: clamp(2rem ,1.8142857143rem + .7619047619vw ,2.5rem)
-  }
-  .presskit-media__grid {
-    gap: clamp(.9375rem ,.3571428571rem + 2.380952381vw ,2.5rem)
-  }
-  .presskit-media__item-title {
-    letter-spacing: clamp(.012375rem ,.0086142857rem + .0154285714vw ,.0225rem)
-  }
-  .presskit-media__item-title {
-    font-size: clamp(.625rem ,.4392857143rem + .7619047619vw ,1.125rem)
-  }
-  .presskit-media__logos-item {
-    gap: clamp(1rem ,.8142857143rem + .7619047619vw ,1.5rem)
-  }
-  .presskit-media__logos-item {
-    padding: clamp(1rem ,.8142857143rem + .7619047619vw ,1.5rem)
-  }
-  .presskit-media__logos-item-images {
-    padding: clamp(1rem ,.8142857143rem + .7619047619vw ,1.5rem)
-  }
-  .landing-vslider__content-slide-text {
-    font-size: clamp(1rem ,.7678571429rem + .9523809524vw ,1.625rem)
-  }
-  .landing-hero-3__content {
-    padding-left: clamp(.5rem ,-2.5178571429rem + 12.380952381vw ,8.625rem)
-  }
-  .landing-hero-3__content {
-    padding-right: clamp(.5rem ,-2.5178571429rem + 12.380952381vw ,8.625rem)
-  }
-  .landing-hero-3__content-title {
-    font-size: clamp(1.3125rem ,1.0107142857rem + 1.2380952381vw ,2.125rem)
-  }
-  .landing-hero-3__content-text {
-    font-size: clamp(1rem ,.8607142857rem + .5714285714vw ,1.375rem)
-  }
-  .landing-section-3__wrapper._pd-top {
-    padding-top: clamp(3.125rem ,2.8rem + 1.3333333333vw ,4rem)
-  }
-  .landing-section-3__title {
-    font-size: clamp(1.5rem ,.9892857143rem + 2.0952380952vw ,2.875rem)
-  }
-  .landing-section-3__title {
-    letter-spacing: clamp(.06rem ,.0395714286rem + .0838095238vw ,.115rem)
-  }
-  .landing-section-3__title {
-    margin-bottom: clamp(1rem ,3.0571428571rem + -2.2857142857vw ,2.5rem)
-  }
-  .landing-section-3__subtitle {
-    font-size: clamp(1.25rem ,1.1107142857rem + .5714285714vw ,1.625rem)
-  }
-  .landing-section-3__subtitle {
-    letter-spacing: clamp(.025rem ,.0222142857rem + .0114285714vw ,.0325rem)
-  }
-  .landing-section-4__wrapper {
-    padding-top: clamp(3.5rem ,2.4785714286rem + 4.1904761905vw ,6.25rem)
-  }
-  .landing-section-4__wrapper {
-    padding-bottom: clamp(3.5rem ,3.0589285714rem + 1.8095238095vw ,4.6875rem)
-  }
-  .landing-section-4__title {
-    font-size: clamp(1.5rem ,.9892857143rem + 2.0952380952vw ,2.875rem)
-  }
-  .landing-section-4__title {
-    letter-spacing: clamp(.06rem ,.0395714286rem + .0838095238vw ,.115rem)
-  }
-  .landing-section-4__title {
-    margin-bottom: clamp(3.125rem ,2.6607142857rem + 1.9047619048vw ,4.375rem)
-  }
-  .landing-section-4__subtitle {
-    font-size: clamp(1.25rem ,1.1107142857rem + .5714285714vw ,1.625rem)
-  }
-  .landing-section-4__subtitle {
-    letter-spacing: clamp(.025rem ,.0222142857rem + .0114285714vw ,.0325rem)
-  }
-  .landing-section-4__subtitle {
-    margin-bottom: clamp(2rem ,2.6857142857rem + -.7619047619vw ,2.5rem)
-  }
-  .landing-section-4__subtitle {
-    margin-top: clamp(-9.375rem ,.0535714286rem + -10.4761904762vw ,-2.5rem)
-  }
-  .about-features__content-coming-soon {
-    font-size: clamp(3.125rem ,2.2428571429rem + 3.619047619vw ,5.5rem)
-  }
-  .featured-news__title {
-    margin-bottom: clamp(1.5rem ,1.0357142857rem + 1.9047619048vw ,2.75rem)
-  }
-  .featured-news__title span {
-    font-size: clamp(2.25rem ,2.1571428571rem + .380952381vw ,2.5rem)
-  }
-  .featured-news__title span {
-    letter-spacing: clamp(.09375rem ,.3971785714rem + -.3371428571vw ,.315rem)
-  }
-  .fresh-news {
-    padding-top: clamp(3.125rem ,2.8rem + 1.3333333333vw ,4rem)
-  }
-  .fresh-news__title {
-    font-size: clamp(2rem ,1.9535714286rem + .1904761905vw ,2.125rem)
-  }
-  .fresh-news__title {
-    letter-spacing: clamp(.085rem ,.1535714286rem + -.0761904762vw ,.135rem)
-  }
-  .fresh-news__title {
-    margin-bottom: clamp(2.5rem ,2.3142857143rem + .7619047619vw ,3rem)
-  }
-  .fresh-news__tabs-item {
-    font-size: clamp(1.25rem ,1.2035714286rem + .1904761905vw ,1.375rem)
-  }
-  .support-search__title {
-    letter-spacing: clamp(.1375rem ,.1245rem + .0533333333vw ,.1725rem)
-  }
-  .support-search__title {
-    font-size: clamp(2.75rem ,2.7035714286rem + .1904761905vw ,2.875rem)
-  }
-  .support-search__form {
-    height: clamp(3rem ,2.8142857143rem + .7619047619vw ,3.5rem)
-  }
-  .support-search__form-input {
-    letter-spacing: clamp(.0225rem ,.0206428571rem + .0076190476vw ,.0275rem)
-  }
-  .support-search__form-input {
-    font-size: clamp(1.125rem ,1.0321428571rem + .380952381vw ,1.375rem)
-  }
-  .support-search__form-submit {
-    font-size: clamp(1.125rem ,1.0321428571rem + .380952381vw ,1.375rem)
-  }
-  .support-search__form-dropdown-link {
-    letter-spacing: clamp(.0225rem ,.0206428571rem + .0076190476vw ,.0275rem)
-  }
-  .support-search__form-dropdown-link {
-    font-size: clamp(1.125rem ,1.0321428571rem + .380952381vw ,1.375rem)
-  }
-  .support-info__title {
-    font-size: clamp(1.75rem ,1.6107142857rem + .5714285714vw ,2.125rem)
-  }
-  .support-info__title {
-    letter-spacing: clamp(.07rem ,.0644285714rem + .0228571429vw ,.085rem)
-  }
-  .support-info__all {
-    font-size: clamp(1.125rem ,1.0321428571rem + .380952381vw ,1.375rem)
-  }
-  .support-info__all {
-    letter-spacing: clamp(.04375rem ,.0395714286rem + .0171428571vw ,.055rem)
-  }
-  .support-tiles__item-title {
-    letter-spacing: clamp(.05rem ,.0481428571rem + .0076190476vw ,.055rem)
-  }
-  .support-articles__title {
-    letter-spacing: clamp(.07rem ,.0588571429rem + .0457142857vw ,.1rem)
-  }
-  .support-articles__title {
-    font-size: clamp(1.75rem ,1.4714285714rem + 1.1428571429vw ,2.5rem)
-  }
-  .support-articles__description {
-    letter-spacing: clamp(.05rem ,.0481428571rem + .0076190476vw ,.055rem)
-  }
-  .support-articles__description {
-    font-size: clamp(1.25rem ,1.2035714286rem + .1904761905vw ,1.375rem)
-  }
-  .support-articles__grid-title {
-    letter-spacing: clamp(.05rem ,.0637142857rem + -.0152380952vw ,.06rem)
-  }
-  .support-articles__grid-title {
-    font-size: clamp(1.375rem ,1.5464285714rem + -.1904761905vw ,1.5rem)
-  }
-  .support-articles__grid-item {
-    letter-spacing: clamp(.0225rem ,.0122857143rem + .0419047619vw ,.05rem)
-  }
-  .support-articles__grid-item {
-    font-size: clamp(1.125rem ,1.0785714286rem + .1904761905vw ,1.25rem)
-  }
-  .support-page__title {
-    letter-spacing: clamp(.085rem ,.0794285714rem + .0228571429vw ,.1rem)
-  }
-  .support-page__title {
-    font-size: clamp(2.125rem ,1.9857142857rem + .5714285714vw ,2.5rem)
-  }
-  .support-page__title {
-    margin-bottom: clamp(.5rem ,1.1rem + -.6666666667vw ,.9375rem)
-  }
-  .support-page__info {
-    letter-spacing: clamp(.0125rem ,.0115714286rem + .0038095238vw ,.015rem)
-  }
-  .support-page__info {
-    font-size: clamp(.625rem ,.5785714286rem + .1904761905vw ,.75rem)
-  }
-  .support-page__toc {
-    margin-top: clamp(1.75rem ,2.7785714286rem + -1.1428571429vw ,2.5rem)
-  }
-  .support-page__toc {
-    margin-bottom: clamp(2.5625rem ,3.5053571429rem + -1.0476190476vw ,3.25rem)
-  }
-  .support-page__content {
-    letter-spacing: clamp(.02rem ,.0190714286rem + .0038095238vw ,.0225rem)
-  }
-  .support-page__content {
-    font-size: clamp(.9375rem ,.8678571429rem + .2857142857vw ,1.125rem)
-  }
-  .support-page__content h2 {
-    letter-spacing: clamp(.07rem ,.0644285714rem + .0228571429vw ,.085rem)
-  }
-  .support-page__content h2 {
-    font-size: clamp(1.75rem ,1.6107142857rem + .5714285714vw ,2.125rem)
-  }
-  .support-page__content h3 {
-    letter-spacing: clamp(.06rem ,.0581428571rem + .0076190476vw ,.065rem)
-  }
-  .support-page__content h3 {
-    font-size: clamp(1.5rem ,1.4535714286rem + .1904761905vw ,1.625rem)
-  }
-  .support-page__content p {
-    margin-bottom: clamp(.9375rem ,.8214285714rem + .4761904762vw ,1.25rem)
-  }
-  .support-page__attention {
-    letter-spacing: clamp(.0225rem ,.0206428571rem + .0076190476vw ,.0275rem)
-  }
-  .support-page__attention {
-    font-size: clamp(1.125rem ,1.0321428571rem + .380952381vw ,1.375rem)
-  }
-  .support-page__attention h3 {
-    letter-spacing: clamp(.055rem ,.0512857143rem + .0152380952vw ,.065rem)
-  }
-  .support-page__attention h3 {
-    font-size: clamp(1.375rem ,1.2821428571rem + .380952381vw ,1.625rem)
-  }
-  .support-page__subtitle {
-    letter-spacing: clamp(.05rem ,.0481428571rem + .0076190476vw ,.055rem)
-  }
-  .support-page__subtitle {
-    font-size: clamp(1.1875rem ,1.1178571429rem + .2857142857vw ,1.375rem)
-  }
-  .support-page__side-title {
-    letter-spacing: clamp(.06rem ,.0581428571rem + .0076190476vw ,.065rem)
-  }
-  .support-page__side-title {
-    font-size: clamp(1.375rem ,1.2821428571rem + .380952381vw ,1.625rem)
-  }
-  .support-page__side-item {
-    letter-spacing: clamp(.0225rem ,.0122857143rem + .0419047619vw ,.05rem)
-  }
-  .support-page__side-item {
-    font-size: clamp(1.125rem ,1.0785714286rem + .1904761905vw ,1.25rem)
-  }
-  .support-anketa__title {
-    font-size: clamp(2.125rem ,1.9857142857rem + .5714285714vw ,2.5rem)
-  }
-  .support-anketa__title {
-    letter-spacing: clamp(.085rem ,.0794285714rem + .0228571429vw ,.1rem)
-  }
-  .support-anketa__row-title {
-    margin-bottom: clamp(.75rem ,1.0928571429rem + -.380952381vw ,1rem)
-  }
-  .support-anketa__row-title {
-    font-size: clamp(1.25rem ,1.2035714286rem + .1904761905vw ,1.375rem)
-  }
-  .support-anketa__row-title {
-    letter-spacing: clamp(.05rem ,.0481428571rem + .0076190476vw ,.055rem)
-  }
-  .support-anketa__row-subtitle {
-    margin-bottom: clamp(.75rem ,1.0928571429rem + -.380952381vw ,1rem)
-  }
-  .support-anketa__row-subtitle {
-    font-size: clamp(1.0625rem ,.9928571429rem + .2857142857vw ,1.25rem)
-  }
-  .support-anketa__row-subtitle {
-    letter-spacing: clamp(.02125rem ,.0105714286rem + .0438095238vw ,.05rem)
-  }
-  .support-anketa__field .custom-select .select-selected {
-    font-size: clamp(1.0625rem ,.9928571429rem + .2857142857vw ,1.25rem)
-  }
-  .support-anketa__field .custom-select .select-selected {
-    letter-spacing: clamp(.02125rem ,.0105714286rem + .0438095238vw ,.05rem)
-  }
-  .support-anketa__field .custom-select .select-items div {
-    letter-spacing: clamp(.0225rem ,.0206428571rem + .0076190476vw ,.0275rem)
-  }
-  .support-anketa__field .custom-select .select-items div {
-    font-size: clamp(1.0625rem ,.9928571429rem + .2857142857vw ,1.25rem)
-  }
-  .support-anketa__input {
-    font-size: clamp(1.0625rem ,.9928571429rem + .2857142857vw ,1.25rem)
-  }
-  .support-anketa__input {
-    letter-spacing: clamp(.02125rem ,.0105714286rem + .0438095238vw ,.05rem)
-  }
-  .support-anketa__textarea {
-    font-size: clamp(1.0625rem ,.9928571429rem + .2857142857vw ,1.25rem)
-  }
-  .support-anketa__textarea {
-    letter-spacing: clamp(.02125rem ,.0105714286rem + .0438095238vw ,.05rem)
-  }
-  .support-anketa__upload-button {
-    font-size: clamp(.9375rem ,.9142857143rem + .0952380952vw ,1rem)
-  }
-  .support-anketa__upload-button {
-    letter-spacing: clamp(.01875rem ,.0182857143rem + .0019047619vw ,.02rem)
-  }
-  .support-anketa__additional-text {
-    font-size: clamp(1.0625rem ,1.0392857143rem + .0952380952vw ,1.125rem)
-  }
-  .support-anketa__additional-text {
-    letter-spacing: clamp(.02125rem ,.0207857143rem + .0019047619vw ,.0225rem)
-  }
-  .support-anketa__form-submit {
-    font-size: clamp(1.125rem ,1.0321428571rem + .380952381vw ,1.375rem)
-  }
-  .support-requests__title {
-    font-size: clamp(1.25rem ,1.1107142857rem + .5714285714vw ,1.625rem)
-  }
-  .support-requests__title {
-    letter-spacing: clamp(.05rem ,.0444285714rem + .0228571429vw ,.065rem)
-  }
-  .support-requests__hide {
-    font-size: clamp(1rem ,.9535714286rem + .1904761905vw ,1.125rem)
-  }
-  .support-chat__body-inner {
-    padding: clamp(.875rem ,.6428571429rem + .9523809524vw ,1.5rem)
-  }
-  .support-chat__message-text {
-    letter-spacing: clamp(.01875rem ,.0173571429rem + .0057142857vw ,.0225rem)
-  }
-  .support-chat__message-text {
-    font-size: clamp(.9375rem ,.8678571429rem + .2857142857vw ,1.125rem)
-  }
-  .support-chat__message-date {
-    font-size: clamp(.75rem ,.7035714286rem + .1904761905vw ,.875rem)
-  }
-  .support-chat__send-text {
-    letter-spacing: clamp(.02125rem ,.0105714286rem + .0438095238vw ,.05rem)
-  }
-  .support-chat__send-text {
-    font-size: clamp(1.0625rem ,.9928571429rem + .2857142857vw ,1.25rem)
-  }
-  .support-chat__send-text {
-    height: clamp(2.75rem ,2.7035714286rem + .1904761905vw ,2.875rem)
-  }
-  .gods__heading {
-    padding-top: clamp(1.875rem ,.8303571429rem + 4.2857142857vw ,4.6875rem)
-  }
-  .gods._landing .gods__heading {
-    padding-bottom: clamp(1.875rem ,.9464285714rem + 3.8095238095vw ,4.375rem)
-  }
-  .gods._landing .gods__title {
-    font-size: clamp(1.5rem ,.9892857143rem + 2.0952380952vw ,2.875rem)
-  }
-  .gods._landing .gods__title {
-    margin-bottom: clamp(1.375rem ,1.1428571429rem + .9523809524vw ,2rem)
-  }
-  .gods._landing .gods__subtitle {
-    font-size: clamp(1.25rem ,1.1107142857rem + .5714285714vw ,1.625rem)
-  }
-  .gods._landing._bg-dark-blue .gods__title {
-    margin-bottom: clamp(.5rem ,.3375rem + .6666666667vw ,.9375rem)
-  }
-  .error404 {
-    font-size: clamp(2.875rem ,1.3892857143rem + 6.0952380952vw ,6.875rem)
-  }
-  .register__title {
-    font-size: clamp(1.25rem ,.7392857143rem + 2.0952380952vw ,2.625rem)
-  }
-  .register__subtitle {
-    font-size: clamp(.9375rem ,.775rem + .6666666667vw ,1.375rem)
-  }
-  .register__item-title {
-    font-size: clamp(.9375rem ,.775rem + .6666666667vw ,1.375rem)
-  }
-  .form {
-    font-size: clamp(.875rem ,.6892857143rem + .7619047619vw ,1.375rem)
-  }
-  .form._mt-100 {
-    margin-top: clamp(3.125rem ,1.9642857143rem + 4.7619047619vw ,6.25rem)
-  }
-  .form__title {
-    font-size: clamp(1.25rem ,.7392857143rem + 2.0952380952vw ,2.625rem)
-  }
-  .form__subtitle {
-    font-size: clamp(1.125rem ,.9392857143rem + .7619047619vw ,1.625rem)
-  }
-  .form .field-wrapper._mt-32 {
-    margin-top: clamp(1rem ,.6285714286rem + 1.5238095238vw ,2rem)
-  }
-  .form .field-wrapper._mt-40 {
-    margin-top: clamp(1.25rem ,.7857142857rem + 1.9047619048vw ,2.5rem)
-  }
-  .form .field-wrapper label {
-    font-size: clamp(1rem ,.7678571429rem + .9523809524vw ,1.625rem)
-  }
-  .form .field-wrapper__sublabel {
-    font-size: clamp(.875rem ,.6892857143rem + .7619047619vw ,1.375rem)
-  }
-  .form .checkbox-wrapper {
-    font-size: clamp(.875rem ,.6892857143rem + .7619047619vw ,1.375rem)
-  }
-  .form .checkbox-wrapper span {
-    font-size: clamp(1rem ,.7678571429rem + .9523809524vw ,1.625rem)
-  }
-  .form .field-title {
-    font-size: clamp(1rem ,.7678571429rem + .9523809524vw ,1.625rem)
-  }
-  .form .field-title._mt-20 {
-    margin-top: clamp(.625rem ,.3928571429rem + .9523809524vw ,1.25rem)
-  }
-  .form .field-title._mt-40 {
-    margin-top: clamp(1.25rem ,.7857142857rem + 1.9047619048vw ,2.5rem)
-  }
-  .form .field-title._mt-45 {
-    margin-top: clamp(1.5625rem ,1.0982142857rem + 1.9047619048vw ,2.8125rem)
-  }
-  .form .radio-wrapper {
-    font-size: clamp(.875rem ,.7821428571rem + .380952381vw ,1.125rem)
-  }
-  .success {
-    padding-top: clamp(2rem ,1.2571428571rem + 3.0476190476vw ,4rem)
-  }
-  .success {
-    padding-bottom: clamp(2rem ,1.2571428571rem + 3.0476190476vw ,4rem)
-  }
-  .success__image {
-    margin-bottom: clamp(1.875rem ,1.4107142857rem + 1.9047619048vw ,3.125rem)
-  }
-  .success__title {
-    font-size: clamp(1.25rem ,.7392857143rem + 2.0952380952vw ,2.625rem)
-  }
-  .success__subtitle {
-    font-size: clamp(1.125rem ,.9392857143rem + .7619047619vw ,1.625rem)
-  }
-  .success__text {
-    font-size: clamp(.875rem ,.6892857143rem + .7619047619vw ,1.375rem)
-  }
-  .success__text {
-    margin-bottom: clamp(1.875rem ,1.4107142857rem + 1.9047619048vw ,3.125rem)
-  }
-  .success__message-text {
-    gap: clamp(.9375rem ,.5428571429rem + 1.619047619vw ,2rem)
-  }
-  .success__message-text {
-    font-size: clamp(.875rem ,.6892857143rem + .7619047619vw ,1.375rem)
-  }
-  .success__socials {
-    gap: clamp(.9375rem ,-.0375rem + 4vw ,3.5625rem)
-  }
-  .cookies__inner {
-    gap: clamp(.625rem ,.5321428571rem + .380952381vw ,.875rem)
-  }
-  .cookies__content {
-    font-size: clamp(.875rem ,.7821428571rem + .380952381vw ,1.125rem)
-  }
-  .cookies__button-wrapper {
-    margin-right: clamp(.0000000625rem ,-.4178570571rem + 1.714285619vw ,1.125rem)
-  }
-  .cookies__button {
-    font-size: clamp(.875rem ,.7821428571rem + .380952381vw ,1.125rem)
-  }
-  .cookies__button {
-    padding-left: clamp(.9375rem ,.5892857143rem + 1.4285714286vw ,1.875rem)
-  }
-  .cookies__button {
-    padding-right: clamp(.9375rem ,.5892857143rem + 1.4285714286vw ,1.875rem)
-  }
-  .faq__inner {
-    padding-top: clamp(2.5rem ,1.8035714286rem + 2.8571428571vw ,4.375rem)
-  }
-  .faq__inner {
-    padding-bottom: clamp(6.875rem ,5.0178571429rem + 7.619047619vw ,11.875rem)
-  }
-  .faq__title {
-    font-size: clamp(1.75rem ,1.425rem + 1.3333333333vw ,2.625rem)
-  }
-  ._support-page .faq__title {
-    font-size: clamp(1.75rem ,1.6107142857rem + .5714285714vw ,2.125rem)
-  }
-  ._support-page .faq__title {
-    margin-bottom: clamp(1.3125rem ,.9875rem + 1.3333333333vw ,2.1875rem)
   }
 }
 @media (min-width:47.99875em) and (max-width:1440px) {
@@ -21948,6 +21399,560 @@ textarea {
     height: auto;
     opacity: 1;
     visibility: visible
+  }
+}
+@media (min-width:23.4375em) and (max-width:90em) {
+  .spollers__item {
+    font-size: clamp(1rem ,.7799295775rem + .9389671362vw ,1.625rem)
+  }
+  .spollers__item {
+    margin-bottom: clamp(1.25rem ,1.073943662rem + .7511737089vw ,1.75rem)
+  }
+  ._support-page .spollers__item {
+    margin-bottom: clamp(1rem ,.823943662rem + .7511737089vw ,1.5rem)
+  }
+  .spollers__title {
+    font-size: clamp(1.375rem ,1.286971831rem + .3755868545vw ,1.625rem)
+  }
+  ._support-page .spollers__title {
+    font-size: clamp(1.5rem ,1.4559859155rem + .1877934272vw ,1.625rem)
+  }
+  .footer__menu {
+    gap: clamp(.9375rem ,.673415493rem + 1.1267605634vw ,1.6875rem)
+  }
+  .footer__menu-item {
+    font-size: clamp(.625rem ,.4929577465rem + .5633802817vw ,1rem)
+  }
+  ._type-2 .footer__socials {
+    margin-bottom: clamp(1.125rem ,.6408450704rem + 2.0657276995vw ,2.5rem)
+  }
+  ._type-2 .footer__text {
+    font-size: clamp(.625rem ,.448943662rem + .7511737089vw ,1.125rem)
+  }
+  ._type-2 .footer__text-middle {
+    font-size: clamp(.75rem ,.573943662rem + .7511737089vw ,1.25rem)
+  }
+  ._type-2 .footer__logo {
+    margin-bottom: clamp(.75rem ,.2218309859rem + 2.2535211268vw ,2.25rem)
+  }
+  .presskit-hero__content {
+    font-size: clamp(1rem ,.8679577465rem + .5633802817vw ,1.375rem)
+  }
+  .presskit-hero__content {
+    letter-spacing: clamp(.02rem ,.0173591549rem + .0112676056vw ,.0275rem)
+  }
+  .presskit-hero__title {
+    margin-bottom: clamp(.9375rem ,.6073943662rem + 1.4084507042vw ,1.875rem)
+  }
+  .presskit-hero__title {
+    font-size: clamp(2.125rem ,1.9929577465rem + .5633802817vw ,2.5rem)
+  }
+  .presskit-hero__title {
+    letter-spacing: clamp(.085rem ,.0797183099rem + .0225352113vw ,.1rem)
+  }
+  .presskit-mechanics {
+    padding-top: clamp(3.375rem ,2.6267605634rem + 3.1924882629vw ,5.5rem)
+  }
+  .presskit-mechanics__wrapper {
+    gap: clamp(1.25rem ,1.588028169rem + -.3755868545vw ,1.5rem)
+  }
+  .presskit-mechanics__wrapper {
+    letter-spacing: clamp(.02rem ,.0191197183rem + .0037558685vw ,.0225rem)
+  }
+  .presskit-mechanics__wrapper {
+    font-size: clamp(1rem ,.9559859155rem + .1877934272vw ,1.125rem)
+  }
+  .presskit-mechanics__title {
+    letter-spacing: clamp(.085rem ,.0797183099rem + .0225352113vw ,.1rem)
+  }
+  .presskit-mechanics__title {
+    font-size: clamp(2.125rem ,1.9929577465rem + .5633802817vw ,2.5rem)
+  }
+  .presskit-mechanics__subtitle {
+    letter-spacing: clamp(.06rem ,.0582394366rem + .0075117371vw ,.065rem)
+  }
+  .presskit-mechanics__subtitle {
+    font-size: clamp(1.5rem ,1.4559859155rem + .1877934272vw ,1.625rem)
+  }
+  .presskit-media__title {
+    letter-spacing: clamp(.085rem ,.0797183099rem + .0225352113vw ,.1rem)
+  }
+  .presskit-media__title {
+    font-size: clamp(2.125rem ,1.9929577465rem + .5633802817vw ,2.5rem)
+  }
+  .presskit-media__main {
+    gap: clamp(2rem ,1.823943662rem + .7511737089vw ,2.5rem)
+  }
+  .presskit-media__grid {
+    gap: clamp(.9375rem ,.3873239437rem + 2.3474178404vw ,2.5rem)
+  }
+  .presskit-media__item-title {
+    letter-spacing: clamp(.012375rem ,.0088098592rem + .0152112676vw ,.0225rem)
+  }
+  .presskit-media__item-title {
+    font-size: clamp(.625rem ,.448943662rem + .7511737089vw ,1.125rem)
+  }
+  .presskit-media__logos-item {
+    gap: clamp(1rem ,.823943662rem + .7511737089vw ,1.5rem)
+  }
+  .presskit-media__logos-item {
+    padding: clamp(1rem ,.823943662rem + .7511737089vw ,1.5rem)
+  }
+  .presskit-media__logos-item-images {
+    padding: clamp(1rem ,.823943662rem + .7511737089vw ,1.5rem)
+  }
+  .landing-vslider__content-slide-text {
+    font-size: clamp(1rem ,.7799295775rem + .9389671362vw ,1.625rem)
+  }
+  .landing-hero-3__content {
+    padding-left: clamp(.5rem ,-2.360915493rem + 12.20657277vw ,8.625rem)
+  }
+  .landing-hero-3__content {
+    padding-right: clamp(.5rem ,-2.360915493rem + 12.20657277vw ,8.625rem)
+  }
+  .landing-hero-3__content-title {
+    font-size: clamp(1.3125rem ,1.0264084507rem + 1.220657277vw ,2.125rem)
+  }
+  .landing-hero-3__content-text {
+    font-size: clamp(1rem ,.8679577465rem + .5633802817vw ,1.375rem)
+  }
+  .landing-section-3__wrapper._pd-top {
+    padding-top: clamp(3.125rem ,2.8169014085rem + 1.3145539906vw ,4rem)
+  }
+  .landing-section-3__title {
+    font-size: clamp(1.5rem ,1.0158450704rem + 2.0657276995vw ,2.875rem)
+  }
+  .landing-section-3__title {
+    letter-spacing: clamp(.06rem ,.0406338028rem + .082629108vw ,.115rem)
+  }
+  .landing-section-3__title {
+    margin-bottom: clamp(1rem ,3.0281690141rem + -2.2535211268vw ,2.5rem)
+  }
+  .landing-section-3__subtitle {
+    font-size: clamp(1.25rem ,1.1179577465rem + .5633802817vw ,1.625rem)
+  }
+  .landing-section-3__subtitle {
+    letter-spacing: clamp(.025rem ,.0223591549rem + .0112676056vw ,.0325rem)
+  }
+  .landing-section-4__wrapper {
+    padding-top: clamp(3.5rem ,2.5316901408rem + 4.1314553991vw ,6.25rem)
+  }
+  .landing-section-4__wrapper {
+    padding-bottom: clamp(3.5rem ,3.0818661972rem + 1.7840375587vw ,4.6875rem)
+  }
+  .landing-section-4__title {
+    font-size: clamp(1.5rem ,1.0158450704rem + 2.0657276995vw ,2.875rem)
+  }
+  .landing-section-4__title {
+    letter-spacing: clamp(.06rem ,.0406338028rem + .082629108vw ,.115rem)
+  }
+  .landing-section-4__title {
+    margin-bottom: clamp(3.125rem ,2.6848591549rem + 1.8779342723vw ,4.375rem)
+  }
+  .landing-section-4__subtitle {
+    font-size: clamp(1.25rem ,1.1179577465rem + .5633802817vw ,1.625rem)
+  }
+  .landing-section-4__subtitle {
+    letter-spacing: clamp(.025rem ,.0223591549rem + .0112676056vw ,.0325rem)
+  }
+  .landing-section-4__subtitle {
+    margin-bottom: clamp(2rem ,2.676056338rem + -.7511737089vw ,2.5rem)
+  }
+  .landing-section-4__subtitle {
+    margin-top: clamp(-9.375rem ,-.0792253521rem + -10.3286384977vw ,-2.5rem)
+  }
+  .about-features__content-coming-soon {
+    font-size: clamp(3.125rem ,2.2887323944rem + 3.5680751174vw ,5.5rem)
+  }
+  .featured-news__title {
+    margin-bottom: clamp(1.5rem ,1.0598591549rem + 1.8779342723vw ,2.75rem)
+  }
+  .featured-news__title span {
+    font-size: clamp(2.25rem ,2.161971831rem + .3755868545vw ,2.5rem)
+  }
+  .featured-news__title span {
+    letter-spacing: clamp(.09375rem ,.3929049296rem + -.3323943662vw ,.315rem)
+  }
+  .fresh-news {
+    padding-top: clamp(3.125rem ,2.8169014085rem + 1.3145539906vw ,4rem)
+  }
+  .fresh-news__title {
+    font-size: clamp(2rem ,1.9559859155rem + .1877934272vw ,2.125rem)
+  }
+  .fresh-news__title {
+    letter-spacing: clamp(.085rem ,.1526056338rem + -.0751173709vw ,.135rem)
+  }
+  .fresh-news__title {
+    margin-bottom: clamp(2.5rem ,2.323943662rem + .7511737089vw ,3rem)
+  }
+  .fresh-news__tabs-item {
+    font-size: clamp(1.25rem ,1.2059859155rem + .1877934272vw ,1.375rem)
+  }
+  .support-search__title {
+    letter-spacing: clamp(.1375rem ,.1251760563rem + .0525821596vw ,.1725rem)
+  }
+  .support-search__title {
+    font-size: clamp(2.75rem ,2.7059859155rem + .1877934272vw ,2.875rem)
+  }
+  .support-search__form {
+    height: clamp(3rem ,2.823943662rem + .7511737089vw ,3.5rem)
+  }
+  .support-search__form-input {
+    letter-spacing: clamp(.0225rem ,.0207394366rem + .0075117371vw ,.0275rem)
+  }
+  .support-search__form-input {
+    font-size: clamp(1.125rem ,1.036971831rem + .3755868545vw ,1.375rem)
+  }
+  .support-search__form-submit {
+    font-size: clamp(1.125rem ,1.036971831rem + .3755868545vw ,1.375rem)
+  }
+  .support-search__form-dropdown-link {
+    letter-spacing: clamp(.0225rem ,.0207394366rem + .0075117371vw ,.0275rem)
+  }
+  .support-search__form-dropdown-link {
+    font-size: clamp(1.125rem ,1.036971831rem + .3755868545vw ,1.375rem)
+  }
+  .support-info__title {
+    font-size: clamp(1.75rem ,1.6179577465rem + .5633802817vw ,2.125rem)
+  }
+  .support-info__title {
+    letter-spacing: clamp(.07rem ,.0647183099rem + .0225352113vw ,.085rem)
+  }
+  .support-info__all {
+    font-size: clamp(1.125rem ,1.036971831rem + .3755868545vw ,1.375rem)
+  }
+  .support-info__all {
+    letter-spacing: clamp(.04375rem ,.0397887324rem + .0169014085vw ,.055rem)
+  }
+  .support-tiles__item-title {
+    letter-spacing: clamp(.05rem ,.0482394366rem + .0075117371vw ,.055rem)
+  }
+  .support-articles__title {
+    letter-spacing: clamp(.07rem ,.0594366197rem + .0450704225vw ,.1rem)
+  }
+  .support-articles__title {
+    font-size: clamp(1.75rem ,1.485915493rem + 1.1267605634vw ,2.5rem)
+  }
+  .support-articles__description {
+    letter-spacing: clamp(.05rem ,.0482394366rem + .0075117371vw ,.055rem)
+  }
+  .support-articles__description {
+    font-size: clamp(1.25rem ,1.2059859155rem + .1877934272vw ,1.375rem)
+  }
+  .support-articles__grid-title {
+    letter-spacing: clamp(.05rem ,.0635211268rem + -.0150234742vw ,.06rem)
+  }
+  .support-articles__grid-title {
+    font-size: clamp(1.375rem ,1.5440140845rem + -.1877934272vw ,1.5rem)
+  }
+  .support-articles__grid-item {
+    letter-spacing: clamp(.0225rem ,.0128169014rem + .041314554vw ,.05rem)
+  }
+  .support-articles__grid-item {
+    font-size: clamp(1.125rem ,1.0809859155rem + .1877934272vw ,1.25rem)
+  }
+  .support-page__title {
+    letter-spacing: clamp(.085rem ,.0797183099rem + .0225352113vw ,.1rem)
+  }
+  .support-page__title {
+    font-size: clamp(2.125rem ,1.9929577465rem + .5633802817vw ,2.5rem)
+  }
+  .support-page__title {
+    margin-bottom: clamp(.5rem ,1.0915492958rem + -.6572769953vw ,.9375rem)
+  }
+  .support-page__info {
+    letter-spacing: clamp(.0125rem ,.0116197183rem + .0037558685vw ,.015rem)
+  }
+  .support-page__info {
+    font-size: clamp(.625rem ,.5809859155rem + .1877934272vw ,.75rem)
+  }
+  .support-page__toc {
+    margin-top: clamp(1.75rem ,2.764084507rem + -1.1267605634vw ,2.5rem)
+  }
+  .support-page__toc {
+    margin-bottom: clamp(2.5625rem ,3.4920774648rem + -1.0328638498vw ,3.25rem)
+  }
+  .support-page__content {
+    letter-spacing: clamp(.02rem ,.0191197183rem + .0037558685vw ,.0225rem)
+  }
+  .support-page__content {
+    font-size: clamp(.9375rem ,.8714788732rem + .2816901408vw ,1.125rem)
+  }
+  .support-page__content h2 {
+    letter-spacing: clamp(.07rem ,.0647183099rem + .0225352113vw ,.085rem)
+  }
+  .support-page__content h2 {
+    font-size: clamp(1.75rem ,1.6179577465rem + .5633802817vw ,2.125rem)
+  }
+  .support-page__content h3 {
+    letter-spacing: clamp(.06rem ,.0582394366rem + .0075117371vw ,.065rem)
+  }
+  .support-page__content h3 {
+    font-size: clamp(1.5rem ,1.4559859155rem + .1877934272vw ,1.625rem)
+  }
+  .support-page__content p {
+    margin-bottom: clamp(.9375rem ,.8274647887rem + .4694835681vw ,1.25rem)
+  }
+  .support-page__attention {
+    letter-spacing: clamp(.0225rem ,.0207394366rem + .0075117371vw ,.0275rem)
+  }
+  .support-page__attention {
+    font-size: clamp(1.125rem ,1.036971831rem + .3755868545vw ,1.375rem)
+  }
+  .support-page__attention h3 {
+    letter-spacing: clamp(.055rem ,.0514788732rem + .0150234742vw ,.065rem)
+  }
+  .support-page__attention h3 {
+    font-size: clamp(1.375rem ,1.286971831rem + .3755868545vw ,1.625rem)
+  }
+  .support-page__subtitle {
+    letter-spacing: clamp(.05rem ,.0482394366rem + .0075117371vw ,.055rem)
+  }
+  .support-page__subtitle {
+    font-size: clamp(1.1875rem ,1.1214788732rem + .2816901408vw ,1.375rem)
+  }
+  .support-page__side-title {
+    letter-spacing: clamp(.06rem ,.0582394366rem + .0075117371vw ,.065rem)
+  }
+  .support-page__side-title {
+    font-size: clamp(1.375rem ,1.286971831rem + .3755868545vw ,1.625rem)
+  }
+  .support-page__side-item {
+    letter-spacing: clamp(.0225rem ,.0128169014rem + .041314554vw ,.05rem)
+  }
+  .support-page__side-item {
+    font-size: clamp(1.125rem ,1.0809859155rem + .1877934272vw ,1.25rem)
+  }
+  .support-anketa__title {
+    font-size: clamp(2.125rem ,1.9929577465rem + .5633802817vw ,2.5rem)
+  }
+  .support-anketa__title {
+    letter-spacing: clamp(.085rem ,.0797183099rem + .0225352113vw ,.1rem)
+  }
+  .support-anketa__row-title {
+    margin-bottom: clamp(.75rem ,1.088028169rem + -.3755868545vw ,1rem)
+  }
+  .support-anketa__row-title {
+    font-size: clamp(1.25rem ,1.2059859155rem + .1877934272vw ,1.375rem)
+  }
+  .support-anketa__row-title {
+    letter-spacing: clamp(.05rem ,.0482394366rem + .0075117371vw ,.055rem)
+  }
+  .support-anketa__row-subtitle {
+    margin-bottom: clamp(.75rem ,1.088028169rem + -.3755868545vw ,1rem)
+  }
+  .support-anketa__row-subtitle {
+    font-size: clamp(1.0625rem ,.9964788732rem + .2816901408vw ,1.25rem)
+  }
+  .support-anketa__row-subtitle {
+    letter-spacing: clamp(.02125rem ,.0111267606rem + .0431924883vw ,.05rem)
+  }
+  .support-anketa__field .custom-select .select-selected {
+    font-size: clamp(1.0625rem ,.9964788732rem + .2816901408vw ,1.25rem)
+  }
+  .support-anketa__field .custom-select .select-selected {
+    letter-spacing: clamp(.02125rem ,.0111267606rem + .0431924883vw ,.05rem)
+  }
+  .support-anketa__field .custom-select .select-items div {
+    letter-spacing: clamp(.0225rem ,.0207394366rem + .0075117371vw ,.0275rem)
+  }
+  .support-anketa__field .custom-select .select-items div {
+    font-size: clamp(1.0625rem ,.9964788732rem + .2816901408vw ,1.25rem)
+  }
+  .support-anketa__input {
+    font-size: clamp(1.0625rem ,.9964788732rem + .2816901408vw ,1.25rem)
+  }
+  .support-anketa__input {
+    letter-spacing: clamp(.02125rem ,.0111267606rem + .0431924883vw ,.05rem)
+  }
+  .support-anketa__textarea {
+    font-size: clamp(1.0625rem ,.9964788732rem + .2816901408vw ,1.25rem)
+  }
+  .support-anketa__textarea {
+    letter-spacing: clamp(.02125rem ,.0111267606rem + .0431924883vw ,.05rem)
+  }
+  .support-anketa__upload-button {
+    font-size: clamp(.9375rem ,.9154929577rem + .0938967136vw ,1rem)
+  }
+  .support-anketa__upload-button {
+    letter-spacing: clamp(.01875rem ,.0183098592rem + .0018779343vw ,.02rem)
+  }
+  .support-anketa__additional-text {
+    font-size: clamp(1.0625rem ,1.0404929577rem + .0938967136vw ,1.125rem)
+  }
+  .support-anketa__additional-text {
+    letter-spacing: clamp(.02125rem ,.0208098592rem + .0018779343vw ,.0225rem)
+  }
+  .support-anketa__form-submit {
+    font-size: clamp(1.125rem ,1.036971831rem + .3755868545vw ,1.375rem)
+  }
+  .support-requests__title {
+    font-size: clamp(1.25rem ,1.1179577465rem + .5633802817vw ,1.625rem)
+  }
+  .support-requests__title {
+    letter-spacing: clamp(.05rem ,.0447183099rem + .0225352113vw ,.065rem)
+  }
+  .support-requests__hide {
+    font-size: clamp(1rem ,.9559859155rem + .1877934272vw ,1.125rem)
+  }
+  .support-chat__body-inner {
+    padding: clamp(.875rem ,.6549295775rem + .9389671362vw ,1.5rem)
+  }
+  .support-chat__message-text {
+    letter-spacing: clamp(.01875rem ,.0174295775rem + .0056338028vw ,.0225rem)
+  }
+  .support-chat__message-text {
+    font-size: clamp(.9375rem ,.8714788732rem + .2816901408vw ,1.125rem)
+  }
+  .support-chat__message-date {
+    font-size: clamp(.75rem ,.7059859155rem + .1877934272vw ,.875rem)
+  }
+  .support-chat__send-text {
+    letter-spacing: clamp(.02125rem ,.0111267606rem + .0431924883vw ,.05rem)
+  }
+  .support-chat__send-text {
+    font-size: clamp(1.0625rem ,.9964788732rem + .2816901408vw ,1.25rem)
+  }
+  .support-chat__send-text {
+    height: clamp(2.75rem ,2.7059859155rem + .1877934272vw ,2.875rem)
+  }
+  .gods__heading {
+    padding-top: clamp(1.875rem ,.8846830986rem + 4.2253521127vw ,4.6875rem)
+  }
+  .gods._landing .gods__heading {
+    padding-bottom: clamp(1.875rem ,.9947183099rem + 3.7558685446vw ,4.375rem)
+  }
+  .gods._landing .gods__title {
+    font-size: clamp(1.5rem ,1.0158450704rem + 2.0657276995vw ,2.875rem)
+  }
+  .gods._landing .gods__title {
+    margin-bottom: clamp(1.375rem ,1.1549295775rem + .9389671362vw ,2rem)
+  }
+  .gods._landing .gods__subtitle {
+    font-size: clamp(1.25rem ,1.1179577465rem + .5633802817vw ,1.625rem)
+  }
+  .gods._landing._bg-dark-blue .gods__title {
+    margin-bottom: clamp(.5rem ,.3459507042rem + .6572769953vw ,.9375rem)
+  }
+  .error404 {
+    font-size: clamp(2.875rem ,1.4665492958rem + 6.0093896714vw ,6.875rem)
+  }
+  .register__title {
+    font-size: clamp(1.25rem ,.7658450704rem + 2.0657276995vw ,2.625rem)
+  }
+  .register__subtitle {
+    font-size: clamp(.9375rem ,.7834507042rem + .6572769953vw ,1.375rem)
+  }
+  .register__item-title {
+    font-size: clamp(.9375rem ,.7834507042rem + .6572769953vw ,1.375rem)
+  }
+  .form {
+    font-size: clamp(.875rem ,.698943662rem + .7511737089vw ,1.375rem)
+  }
+  .form._mt-100 {
+    margin-top: clamp(3.125rem ,2.0246478873rem + 4.6948356808vw ,6.25rem)
+  }
+  .form__title {
+    font-size: clamp(1.25rem ,.7658450704rem + 2.0657276995vw ,2.625rem)
+  }
+  .form__subtitle {
+    font-size: clamp(1.125rem ,.948943662rem + .7511737089vw ,1.625rem)
+  }
+  .form .field-wrapper._mt-32 {
+    margin-top: clamp(1rem ,.6478873239rem + 1.5023474178vw ,2rem)
+  }
+  .form .field-wrapper._mt-40 {
+    margin-top: clamp(1.25rem ,.8098591549rem + 1.8779342723vw ,2.5rem)
+  }
+  .form .field-wrapper label {
+    font-size: clamp(1rem ,.7799295775rem + .9389671362vw ,1.625rem)
+  }
+  .form .field-wrapper__sublabel {
+    font-size: clamp(.875rem ,.698943662rem + .7511737089vw ,1.375rem)
+  }
+  .form .checkbox-wrapper {
+    font-size: clamp(.875rem ,.698943662rem + .7511737089vw ,1.375rem)
+  }
+  .form .checkbox-wrapper span {
+    font-size: clamp(1rem ,.7799295775rem + .9389671362vw ,1.625rem)
+  }
+  .form .field-title {
+    font-size: clamp(1rem ,.7799295775rem + .9389671362vw ,1.625rem)
+  }
+  .form .field-title._mt-20 {
+    margin-top: clamp(.625rem ,.4049295775rem + .9389671362vw ,1.25rem)
+  }
+  .form .field-title._mt-40 {
+    margin-top: clamp(1.25rem ,.8098591549rem + 1.8779342723vw ,2.5rem)
+  }
+  .form .field-title._mt-45 {
+    margin-top: clamp(1.5625rem ,1.1223591549rem + 1.8779342723vw ,2.8125rem)
+  }
+  .form .radio-wrapper {
+    font-size: clamp(.875rem ,.786971831rem + .3755868545vw ,1.125rem)
+  }
+  .success {
+    padding-top: clamp(2rem ,1.2957746479rem + 3.0046948357vw ,4rem)
+  }
+  .success {
+    padding-bottom: clamp(2rem ,1.2957746479rem + 3.0046948357vw ,4rem)
+  }
+  .success__image {
+    margin-bottom: clamp(1.875rem ,1.4348591549rem + 1.8779342723vw ,3.125rem)
+  }
+  .success__title {
+    font-size: clamp(1.25rem ,.7658450704rem + 2.0657276995vw ,2.625rem)
+  }
+  .success__subtitle {
+    font-size: clamp(1.125rem ,.948943662rem + .7511737089vw ,1.625rem)
+  }
+  .success__text {
+    font-size: clamp(.875rem ,.698943662rem + .7511737089vw ,1.375rem)
+  }
+  .success__text {
+    margin-bottom: clamp(1.875rem ,1.4348591549rem + 1.8779342723vw ,3.125rem)
+  }
+  .success__message-text {
+    gap: clamp(.9375rem ,.5633802817rem + 1.5962441315vw ,2rem)
+  }
+  .success__message-text {
+    font-size: clamp(.875rem ,.698943662rem + .7511737089vw ,1.375rem)
+  }
+  .success__socials {
+    gap: clamp(.9375rem ,.0132042254rem + 3.9436619718vw ,3.5625rem)
+  }
+  .cookies__inner {
+    gap: clamp(.625rem ,.536971831rem + .3755868545vw ,.875rem)
+  }
+  .cookies__content {
+    font-size: clamp(.875rem ,.786971831rem + .3755868545vw ,1.125rem)
+  }
+  .cookies__button-wrapper {
+    margin-right: clamp(.0000000625rem ,-.3961266761rem + 1.6901407512vw ,1.125rem)
+  }
+  .cookies__button {
+    font-size: clamp(.875rem ,.786971831rem + .3755868545vw ,1.125rem)
+  }
+  .cookies__button {
+    padding-left: clamp(.9375rem ,.6073943662rem + 1.4084507042vw ,1.875rem)
+  }
+  .cookies__button {
+    padding-right: clamp(.9375rem ,.6073943662rem + 1.4084507042vw ,1.875rem)
+  }
+  .faq__inner {
+    padding-top: clamp(2.5rem ,1.8397887324rem + 2.8169014085vw ,4.375rem)
+  }
+  .faq__inner {
+    padding-bottom: clamp(6.875rem ,5.1144366197rem + 7.5117370892vw ,11.875rem)
+  }
+  .faq__title {
+    font-size: clamp(1.75rem ,1.4419014085rem + 1.3145539906vw ,2.625rem)
+  }
+  ._support-page .faq__title {
+    font-size: clamp(1.75rem ,1.6179577465rem + .5633802817vw ,2.125rem)
+  }
+  ._support-page .faq__title {
+    margin-bottom: clamp(1.3125rem ,1.0044014085rem + 1.3145539906vw ,2.1875rem)
   }
 }
 @media (min-width:48em) and (max-width:90em) {
@@ -21979,15 +21984,15 @@ textarea {
     font-size: clamp(1.375rem ,1.0892857143rem + .5952380952vw ,1.625rem)
   }
 }
-@media (max-height:850px) and (min-width:1080px) and (min-width:24.375em) and (max-width:90em) {
+@media (max-height:850px) and (min-width:1080px) and (min-width:23.4375em) and (max-width:90em) {
   .landing-hero-3__content-title {
-    font-size: clamp(1.3125rem ,1.1035714286rem + .8571428571vw ,1.875rem)
+    font-size: clamp(1.3125rem ,1.1144366197rem + .8450704225vw ,1.875rem)
   }
   .landing-hero-3__content-text {
-    font-size: clamp(1rem ,.9535714286rem + .1904761905vw ,1.125rem)
+    font-size: clamp(1rem ,.9559859155rem + .1877934272vw ,1.125rem)
   }
 }
-@media (max-height:850px) and (min-width:1080px) and (max-width:24.375em) {
+@media (max-height:850px) and (min-width:1080px) and (max-width:23.4375em) {
   .landing-hero-3__content-title {
     font-size: 1.3125rem
   }

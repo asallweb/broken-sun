@@ -21149,6 +21149,39 @@ textarea {
   .rating__body-separator {
     margin-top: 16px
   }
+  .rating__body {
+    margin-left: -10px;
+    margin-right: -10px
+  }
+  .rating__body-head {
+    padding: 0 10px
+  }
+  .rating__body-table td:last-child {
+    max-width: 105px
+  }
+  .rating__body-table-name._level {
+    display: flex
+  }
+  .rating__body-table-name._level::after {
+    content: "."
+  }
+  .rating__body-table-name._level span {
+    display: none
+  }
+  .rating__body-table-name._ta-left {
+    text-align: center
+  }
+  .rating__body-table-content._username {
+    width: 40vw;
+    overflow: hidden;
+    text-overflow: ellipsis
+  }
+  .rating__body-table-content._date {
+    gap: 4px
+  }
+  .rating__body-table-content._ta-left {
+    text-align: center
+  }
   .rating__pagination {
     justify-content: space-between;
     gap: 8px
@@ -21794,7 +21827,7 @@ textarea {
     padding-bottom: .5rem
   }
   .rating__body-table td:not(:last-child) {
-    padding-right: .25rem
+    padding-right: .125rem
   }
   .rating__body-table-name {
     font-size: .9375rem
@@ -21803,7 +21836,7 @@ textarea {
     letter-spacing: .0375rem
   }
   .rating__body-table-content {
-    padding: .25rem
+    padding: .125rem
   }
   .rating__body-table-content {
     font-size: .9375rem
@@ -22473,7 +22506,7 @@ textarea {
     padding-bottom: clamp(.5rem ,.323943662rem + .7511737089vw ,1rem)
   }
   .rating__body-table td:not(:last-child) {
-    padding-right: clamp(.25rem ,-.7183098592rem + 4.1314553991vw ,3rem)
+    padding-right: clamp(.125rem ,-.8873239437rem + 4.3192488263vw ,3rem)
   }
   .rating__body-table-name {
     font-size: clamp(.9375rem ,.7834507042rem + .6572769953vw ,1.375rem)
@@ -22482,7 +22515,7 @@ textarea {
     letter-spacing: clamp(.0375rem ,.0313380282rem + .0262910798vw ,.055rem)
   }
   .rating__body-table-content {
-    padding: clamp(.25rem ,.161971831rem + .3755868545vw ,.5rem)
+    padding: clamp(.125rem ,-.0070422535rem + .5633802817vw ,.5rem)
   }
   .rating__body-table-content {
     font-size: clamp(.9375rem ,.8714788732rem + .2816901408vw ,1.125rem)

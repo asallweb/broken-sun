@@ -12653,6 +12653,9 @@ textarea {
   gap: 5px;
   margin-bottom: 24px
 }
+.support-requests__head._mb-17 {
+  margin-bottom: 17px
+}
 .support-requests__head._jcc {
   justify-content: center
 }
@@ -15800,6 +15803,18 @@ textarea {
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0)
 }
+.rating__filter-icon._default {
+  display: block
+}
+.rating__filter-icon._active {
+  display: none
+}
+._active .rating__filter-icon._default {
+  display: none
+}
+._active .rating__filter-icon._active {
+  display: block
+}
 .rating__body {
   display: flex;
   flex-direction: column
@@ -15935,7 +15950,9 @@ textarea {
   transform: rotate(-90deg)
 }
 .rating__pagination-btn._disabled {
-  color: #776030
+  color: #776030;
+  pointer-events: none;
+  cursor: initial
 }
 .rating__pagination-btn svg {
   width: 100%;

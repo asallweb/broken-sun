@@ -15732,7 +15732,7 @@ textarea {
   height: 2px;
   position: absolute;
   left: 50%;
-  bottom: -2px;
+  bottom: -1px;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
   background: linear-gradient(90deg,rgba(119,96,48,0) 0,#776030 18%,#776030 50%,#776030 68%,rgba(119,96,48,0) 100%)
@@ -15751,14 +15751,10 @@ textarea {
   flex: 0 0 2px
 }
 .rating__filter-item {
-  color: #b19f63;
-  font-family: "Noto Serif";
-  font-weight: 500;
-  line-height: 1.23;
-  text-transform: uppercase;
   padding: 8px;
   width: 100%;
-  position: relative
+  position: relative;
+  color: #b19f63
 }
 .rating__filter-item div {
   display: flex;
@@ -15766,24 +15762,43 @@ textarea {
   justify-content: center;
   gap: 8px;
   position: relative;
-  z-index: 2
+  z-index: 2;
+  font-family: "Noto Serif";
+  font-weight: 500;
+  line-height: 1.23;
+  text-transform: uppercase
 }
 .rating__filter-item img {
   width: 40px;
   height: auto
 }
 .rating__filter-item._active {
-  color: #fff
+  color: #fff;
+  background: radial-gradient(83.96% 100% at 50.17% 100%,rgba(0,241,255,.52) 0,rgba(32,44,50,0) 100%)
 }
 .rating__filter-item._active::after {
   content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,rgba(119,103,64,0) 0,#fceecd 50%,rgba(119,103,64,0) 100%);
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  z-index: 1
+}
+.rating__filter-item._active::before {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 40px;
+  background: url(../img/pages/rating/item-active-icon.webp) 0 0/cover no-repeat;
   position: absolute;
   z-index: 1;
-  bottom: -10px;
-  left: -1px;
-  width: 100%;
-  height: 100%;
-  background: url(../img/pages/rating/item-active-bg.webp) bottom center no-repeat
+  left: 50%;
+  bottom: -9px;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
 }
 .rating__body {
   display: flex;
@@ -15811,12 +15826,46 @@ textarea {
   line-height: 1.5
 }
 .rating__body-separator {
+  position: relative;
   display: flex;
   justify-content: center
 }
-.rating__body-separator img {
+.rating__body-separator-left {
   width: 100%;
-  height: auto
+  height: 100%;
+  margin-right: -1px
+}
+.rating__body-separator-left::after,
+.rating__body-separator-left::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg,rgba(119,96,48,0) 0,#776030 100%)
+}
+.rating__body-separator-left::after {
+  margin-top: 8px;
+  background: linear-gradient(90deg,rgba(67,52,33,0) 0,#433421 100%)
+}
+.rating__body-separator-right {
+  width: 100%;
+  height: 100%;
+  margin-left: -1px
+}
+.rating__body-separator-right::after,
+.rating__body-separator-right::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(-90deg,rgba(119,96,48,0) 0,#776030 100%)
+}
+.rating__body-separator-right::after {
+  margin-top: 8px;
+  background: linear-gradient(-90deg,rgba(67,52,33,0) 0,#433421 100%)
+}
+.rating__body-separator-icon {
+  flex: 0 0 auto
 }
 .rating__body-table {
   max-width: 900px;
@@ -16653,10 +16702,10 @@ textarea {
   .rating__filter {
     margin-bottom: 2.5rem
   }
-  .rating__filter-item {
+  .rating__filter-item div {
     font-size: 1.625rem
   }
-  .rating__filter-item {
+  .rating__filter-item div {
     letter-spacing: .065rem
   }
   .rating__body {
@@ -21128,23 +21177,33 @@ textarea {
     height: 2px;
     flex: 0 0 auto
   }
-  .rating__filter-item._active::after {
-    bottom: 0;
-    left: 0;
+  .rating__filter-item {
+    height: 63px
+  }
+  .rating__filter-item img {
+    width: 32px
+  }
+  .rating__filter-item._active {
     background: radial-gradient(50% 98.41% at 50% 49.21%,rgba(0,241,255,.52) 0,rgba(32,44,50,0) 100%)
   }
   .rating__filter-item._active::before {
+    width: 42px;
+    height: 32px;
+    bottom: -7px
+  }
+  .rating__filter-item._active div {
+    position: relative;
+    height: 100%
+  }
+  .rating__filter-item._active div::before {
     content: "";
     display: block;
-    width: 44px;
-    height: 36px;
+    width: 100%;
+    height: 2px;
     position: absolute;
-    left: 50%;
-    bottom: -12px;
-    -webkit-transform: translate(-50%,0);
-    transform: translate(-50%,0);
-    z-index: 2;
-    background: url(../img/pages/rating/item-active-icon.webp) 0 0 no-repeat
+    left: 0;
+    top: -10px;
+    background: linear-gradient(90deg,rgba(119,103,64,0) 0,#fceecd 50%,rgba(119,103,64,0) 100%)
   }
   .rating__body-separator {
     margin-top: 16px
@@ -21790,10 +21849,10 @@ textarea {
   .rating__filter {
     margin-bottom: 3rem
   }
-  .rating__filter-item {
+  .rating__filter-item div {
     font-size: 1.5rem
   }
-  .rating__filter-item {
+  .rating__filter-item div {
     letter-spacing: .06rem
   }
   .rating__body {
@@ -22469,10 +22528,10 @@ textarea {
   .rating__filter {
     margin-bottom: clamp(2.5rem ,3.176056338rem + -.7511737089vw ,3rem)
   }
-  .rating__filter-item {
+  .rating__filter-item div {
     font-size: clamp(1.5rem ,1.4559859155rem + .1877934272vw ,1.625rem)
   }
-  .rating__filter-item {
+  .rating__filter-item div {
     letter-spacing: clamp(.06rem ,.0582394366rem + .0075117371vw ,.065rem)
   }
   .rating__body {

@@ -12976,6 +12976,8 @@ textarea {
   pointer-events: none
 }
 .support-chat__body-inner {
+  display: flex;
+  flex-direction: column;
   min-height: 564px;
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -13115,6 +13117,9 @@ textarea {
 }
 .support-chat__separator._date::after {
   background: linear-gradient(to right,#61646b 0,rgba(97,100,107,.7) 60%,rgba(97,100,107,0) 100%)
+}
+.support-chat__separator._mt-a {
+  margin-top: auto
 }
 .support-chat__separator-content {
   padding: 6px 21px;

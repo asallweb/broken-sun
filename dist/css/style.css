@@ -12711,6 +12711,14 @@ textarea {
   flex-direction: column;
   gap: 12px
 }
+.support-requests__list._archive {
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+  max-height: 800px
+}
+.support-requests__list._archive._hidden {
+  max-height: 0
+}
 .support-requests__item {
   -o-border-image: url(../img/pages/support-pages/support-requests-bg-2.webp) 2/2px;
   border-image: url(../img/pages/support-pages/support-requests-bg-2.webp) 2/2px;
@@ -16318,7 +16326,7 @@ textarea {
     letter-spacing: .1725rem
   }
   .support-search__title {
-    font-size: 2.875rem
+    font-size: 3.125rem
   }
   .support-search__form {
     height: 3.5rem
@@ -16354,7 +16362,7 @@ textarea {
     letter-spacing: .055rem
   }
   .support-tiles__item-title {
-    font-size: 1.375rem
+    font-size: 1.25rem
   }
   .support-articles__title {
     letter-spacing: .1rem
@@ -19543,7 +19551,7 @@ textarea {
 }
 @media (max-width:67.5em) {
   .support-tiles__item-title {
-    font-size: 1.25rem
+    font-size: 1.125rem
   }
 }
 @media (max-width:47.99875em) {
@@ -20728,14 +20736,6 @@ textarea {
   }
   .support-requests._sidebar .support-requests__list._active {
     height: calc(100vh - 110px)
-  }
-  .support-requests__list {
-    overflow: hidden;
-    transition: max-height .5s ease-in-out;
-    max-height: 1000px
-  }
-  .support-requests__list._hidden {
-    max-height: 0
   }
   .support-requests__breadcrumb {
     display: flex
@@ -22147,7 +22147,7 @@ textarea {
     letter-spacing: clamp(.1375rem ,.1251760563rem + .0525821596vw ,.1725rem)
   }
   .support-search__title {
-    font-size: clamp(2.75rem ,2.7059859155rem + .1877934272vw ,2.875rem)
+    font-size: clamp(2.75rem ,2.6179577465rem + .5633802817vw ,3.125rem)
   }
   .support-search__form {
     height: clamp(3rem ,2.823943662rem + .7511737089vw ,3.5rem)
@@ -22650,7 +22650,7 @@ textarea {
 }
 @media (min-width:67.5em) and (max-width:90em) {
   .support-tiles__item-title {
-    font-size: clamp(1.25rem ,.875rem + .5555555556vw ,1.375rem)
+    font-size: clamp(1.125rem ,.75rem + .5555555556vw ,1.25rem)
   }
 }
 @media (min-width:48em) and (max-width:87.5em) {

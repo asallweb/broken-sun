@@ -5,10 +5,10 @@
 	<title>Support 8 - Loading</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250502181407">
-	<script src="files/js/preloader.js?_v=20250502181407"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250502181407">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250502181407">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250503104607">
+	<script src="files/js/preloader.js?_v=20250503104607"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250503104607">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250503104607">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -418,10 +418,78 @@
 							<div class="support-requests__head _mb-17">
 								<div class="support-requests__title">Мои запросы</div>
 							</div>
-							<div class="support-requests__list">
-								<video src="files/video/loading.webm" autoplay muted playsinline loop></video>
+							<div class="support-requests__list _side-trans _side-hidden">
+								<a href="" class="support-requests__item _current">
+									<div class="support-requests__item-inner">
+										<div class="support-requests__item-body">
+											<div class="support-requests__item-category _blue">Новое сообщение</div>
+											<div class="support-requests__item-title">Учетная запись</div>
+											<div class="support-requests__item-breadcrumb">
+												<div class="support-requests__item-breadcrumb-item">Поддержка</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Учетная запись</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Аккаунт взломан</div>
+											</div>
+										</div>
+										<div class="support-requests__item-side">
+											<div class="support-requests__item-status _chat">Закрыть запрос</div>
+										</div>
+									</div>
+									<div class="support-requests__item-footer">
+										<div class="support-requests__item-date">24.03.2025</div>
+										<div class="support-requests__item-id"># 70345</div>
+									</div>
+								</a>
+								<a href="" class="support-requests__item">
+									<div class="support-requests__item-inner">
+										<div class="support-requests__item-body">
+											<div class="support-requests__item-category _grey">Архив</div>
+											<div class="support-requests__item-title">Учетная запись</div>
+											<div class="support-requests__item-breadcrumb">
+												<div class="support-requests__item-breadcrumb-item">Поддержка</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Учетная запись</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Аккаунт взломан</div>
+											</div>
+										</div>
+										<div class="support-requests__item-side">
+											<div class="support-requests__item-status _complete">Решено</div>
+										</div>
+									</div>
+									<div class="support-requests__item-footer">
+										<div class="support-requests__item-date">24.03.2025</div>
+										<div class="support-requests__item-id"># 70345</div>
+									</div>
+								</a>
+								<a href="" class="support-requests__item">
+									<div class="support-requests__item-inner">
+										<div class="support-requests__item-body">
+											<div class="support-requests__item-category _red">Истек срок рассмотрения заявки</div>
+											<div class="support-requests__item-title">Нe работает</div>
+											<div class="support-requests__item-breadcrumb">
+												<div class="support-requests__item-breadcrumb-item">Поддержка</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Учетная запись</div>
+												/
+												<div class="support-requests__item-breadcrumb-item">Аккаунт взломан</div>
+											</div>
+										</div>
+										<div class="support-requests__item-side">
+											<div class="support-requests__item-status _closed">Закрыто</div>
+										</div>
+									</div>
+									<div class="support-requests__item-footer">
+										<div class="support-requests__item-date">24.03.2025</div>
+										<div class="support-requests__item-id"># 70345</div>
+									</div>
+								</a>
 							</div>
 						</section>
+						<div class="support-requests__loading-wrapper">
+							<video src="files/video/loading.webm" autoplay muted playsinline loop></video>
+						</div>
 					</div>
 				</div>
 				<div class="separator _bottom-26">
@@ -430,6 +498,26 @@
 					<div class="separator__right"></div>
 				</div>
 			</div>
+			<script>
+				function toggleSupportRequestVisibility() {
+					const list = document.querySelector('.support-requests__list');
+					const loadingWrapper = document.querySelector('.support-requests__loading-wrapper');
+
+					if (list && list.classList.contains('_side-hidden')) {
+						list.classList.remove('_side-hidden');
+					}
+
+					if (loadingWrapper && !loadingWrapper.classList.contains('_hidden')) {
+						loadingWrapper.classList.add('_hidden');
+					}
+				}
+
+				// Пример вызова через 2 секунды после загрузки
+				document.addEventListener('DOMContentLoaded', () => {
+					setTimeout(toggleSupportRequestVisibility, 2000);
+				});
+			</script>
+
 			<script>
 				document.addEventListener('DOMContentLoaded', () => {
 					const head = document.querySelector('.support-requests__head');
@@ -505,7 +593,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250502181407"></script>
+	<script src="js/app.min.js?_v=20250503104607"></script>
 </body>
 
 </html>

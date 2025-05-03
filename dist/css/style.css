@@ -12718,6 +12718,23 @@ textarea {
 .support-requests__list._archive._hidden {
   max-height: 0
 }
+.support-requests__list._side-trans {
+  transition: all .3s ease-in-out
+}
+.support-requests__list._side-hidden {
+  opacity: 0;
+  visibility: hidden;
+  height: 0
+}
+.support-requests__loading-wrapper {
+  padding-top: 12px;
+  transition: all .2s ease-in-out
+}
+.support-requests__loading-wrapper._hidden {
+  opacity: 0;
+  visibility: hidden;
+  height: 0
+}
 .support-requests__item {
   -o-border-image: url(../img/pages/support-pages/support-requests-bg-2.webp) 2/2px;
   border-image: url(../img/pages/support-pages/support-requests-bg-2.webp) 2/2px;

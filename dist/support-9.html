@@ -5,10 +5,10 @@
 	<title>Support 9</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250502181407">
-	<script src="files/js/preloader.js?_v=20250502181407"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250502181407">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250502181407">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250503104607">
+	<script src="files/js/preloader.js?_v=20250503104607"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250503104607">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250503104607">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -456,9 +456,29 @@
 							const list = document.querySelector('.support-requests__list._archive');
 
 							if (link && list) {
+								const updateMaxHeight = () => {
+									if (!list.classList.contains('_hidden')) {
+										list.style.maxHeight = list.scrollHeight + 'px';
+									}
+								};
+								updateMaxHeight();
+								window.addEventListener('resize', () => {
+									updateMaxHeight();
+								});
+
 								link.addEventListener('click', () => {
 									link.classList.toggle('_active');
-									list.classList.toggle('_hidden');
+
+									if (list.classList.contains('_hidden')) {
+										list.classList.remove('_hidden');
+										list.style.maxHeight = list.scrollHeight + 'px';
+									} else {
+										list.style.maxHeight = list.scrollHeight + 'px';
+										requestAnimationFrame(() => {
+											list.style.maxHeight = '0';
+										});
+										list.classList.add('_hidden');
+									}
 								});
 							}
 						});
@@ -524,7 +544,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250502181407"></script>
+	<script src="js/app.min.js?_v=20250503104607"></script>
 </body>
 
 </html>

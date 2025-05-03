@@ -5,10 +5,10 @@
 	<title>Support 1</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250503104607">
-	<script src="files/js/preloader.js?_v=20250503104607"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250503104607">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250503104607">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250503124825">
+	<script src="files/js/preloader.js?_v=20250503124825"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250503124825">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250503124825">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -269,6 +269,7 @@
 							</div>
 						</div>
 					</div>
+
 				</section>
 				<section class="support-info">
 					<div class="__container">
@@ -424,6 +425,37 @@
 					<div class="separator__right"></div>
 				</div>
 			</div>
+			<script>
+				document.addEventListener('DOMContentLoaded', () => {
+					const input = document.querySelector('.support-search__form-input');
+					const submitBtn = document.querySelector('.support-search__form-input-submit');
+					const clearBtn = document.querySelector('.support-search__form-input-clear');
+
+					if (input && submitBtn && clearBtn) {
+						const toggleButtons = () => {
+							if (input.value.trim() !== '') {
+								submitBtn.style.display = 'none';
+								clearBtn.style.display = 'block';
+							} else {
+								submitBtn.style.display = 'block';
+								clearBtn.style.display = 'none';
+							}
+						};
+
+						// События: ввод текста и очистка
+						input.addEventListener('input', toggleButtons);
+						clearBtn.addEventListener('click', () => {
+							input.value = '';
+							toggleButtons();
+							input.focus();
+						});
+
+						// Установить правильное состояние при загрузке
+						toggleButtons();
+					}
+				});
+			</script>
+
 		</main>
 		<footer class="footer _type-2">
 			<div class="footer__container">
@@ -483,7 +515,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250503104607"></script>
+	<script src="js/app.min.js?_v=20250503124825"></script>
 </body>
 
 </html>

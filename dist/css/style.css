@@ -8452,12 +8452,6 @@ textarea {
   height: 1px;
   top: 0
 }
-.landing-registration__complete-text::after {
-  content: "";
-  background: url(../img/pages/landing-3/complete-line.svg) center center/cover no-repeat;
-  height: 30px;
-  bottom: -30px
-}
 .landing-registration__complete-button {
   display: flex;
   align-items: center;

@@ -4227,12 +4227,6 @@ body::after {
   transition: transform .5s ease 0s;
   transition: transform .5s ease 0s,-webkit-transform .5s ease 0s
 }
-._spoller-init .spollers__title:hover {
-  color: #f9df94
-}
-._spoller-init .spollers__title:hover::after {
-  background: url(../img/icons/faq_hovered.svg) center center no-repeat
-}
 ._spoller-init .spollers__title._spoller-active::after {
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1)
@@ -10732,11 +10726,11 @@ textarea {
   display: none
 }
 .support-search__form-input-clear {
-  display: none
+  display: none;
+  background: url(../img/pages/support-pages/close-icon.svg) center center no-repeat
 }
 .support-search__form-wrap:focus-within .support-search__form-input-clear {
-  display: block;
-  background: url(../img/pages/support-pages/close-icon.svg) center center no-repeat
+  display: block
 }
 .support-search__form-submit {
   position: relative;
@@ -11574,7 +11568,7 @@ textarea {
   font-size: 20px;
   font-weight: 600;
   letter-spacing: .8px;
-  padding: 10px;
+  padding: 10px 10px 12px;
   width: 230px;
   height: 48px;
   background: linear-gradient(180deg,rgba(0,110,179,.8) 0,rgba(10,60,92,.8) 100%);
@@ -12355,7 +12349,7 @@ textarea {
 .support-anketa__field .custom-select .select-selected {
   font-family: "Noto Sans";
   color: #f1f2f3;
-  padding: 10px 0 10px 16px;
+  padding: 10px 24px 10px 16px;
   border-bottom: 1px solid #29303d;
   display: flex;
   align-items: center
@@ -16034,6 +16028,12 @@ textarea {
     height: auto;
     opacity: 1;
     visibility: visible
+  }
+  ._spoller-init .spollers__title:hover {
+    color: #f9df94
+  }
+  ._spoller-init .spollers__title:hover::after {
+    background: url(../img/icons/faq_hovered.svg) center center no-repeat
   }
   .progressbar._mobile-view {
     display: none
@@ -20525,7 +20525,7 @@ textarea {
   }
   .support-page-sections {
     padding-top: 20px;
-    padding-bottom: 100px
+    padding-bottom: 40px
   }
   .support-page-sections::before {
     aspect-ratio: 390/710;
@@ -20745,6 +20745,20 @@ textarea {
   }
   .support-anketa__textarea {
     resize: none!important
+  }
+  .support-anketa__info-message-wrapper {
+    right: -22px;
+    top: auto;
+    bottom: calc(100% + 20px);
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0)
+  }
+  .support-anketa__info-message-wrapper::after {
+    top: auto;
+    bottom: -16px;
+    right: 24px;
+    -webkit-transform: translate(0,0) rotate(90deg);
+    transform: translate(0,0) rotate(90deg)
   }
   .support-requests._sidebar {
     margin-top: -20px
@@ -20971,6 +20985,9 @@ textarea {
   }
   .form__points-wrapper div {
     width: 20%
+  }
+  ._support-page .faq__title {
+    max-width: 360px
   }
   .character__title {
     display: none

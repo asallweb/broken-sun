@@ -5,10 +5,10 @@
 	<title>Support 1</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250505122508">
-	<script src="files/js/preloader.js?_v=20250505122508"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250505122508">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250505122508">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250506094920">
+	<script src="files/js/preloader.js?_v=20250506094920"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250506094920">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250506094920">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -269,7 +269,6 @@
 							</div>
 						</div>
 					</div>
-
 				</section>
 				<section class="support-info">
 					<div class="__container">
@@ -426,32 +425,38 @@
 				</div>
 			</div>
 			<script>
-				document.addEventListener('DOMContentLoaded', () => {
-					const input = document.querySelector('.support-search__form-input');
-					const submitBtn = document.querySelector('.support-search__form-input-submit');
-					const clearBtn = document.querySelector('.support-search__form-input-clear');
+				document.addEventListener('DOMContentLoaded', function() {
+					const searchForm = document.querySelector('.support-search__form-wrap');
+					const input = searchForm.querySelector('.support-search__form-input');
+					const submitBtn = searchForm.querySelector('.support-search__form-input-submit');
+					const clearBtn = searchForm.querySelector('.support-search__form-input-clear');
 
-					if (input && submitBtn && clearBtn) {
-						const toggleButtons = () => {
-							if (input.value.trim() !== '') {
-								submitBtn.style.display = 'none';
-								clearBtn.style.display = 'block';
-							} else {
-								submitBtn.style.display = 'block';
-								clearBtn.style.display = 'none';
-							}
-						};
+					// Инициализация состояния кнопок
+					toggleButtons();
 
-						// События: ввод текста и очистка
-						input.addEventListener('input', toggleButtons);
-						clearBtn.addEventListener('click', () => {
-							input.value = '';
-							toggleButtons();
-							input.focus();
-						});
-
-						// Установить правильное состояние при загрузке
+					// События, которые влияют на видимость кнопок
+					input.addEventListener('input', toggleButtons);
+					input.addEventListener('focus', toggleButtons);
+					input.addEventListener('blur', function() {
+						// При потере фокуса все равно показываем clear, если есть текст
 						toggleButtons();
+					});
+
+					// Событие для кнопки очистки
+					clearBtn.addEventListener('click', function() {
+						input.value = '';
+						toggleButtons();
+						input.focus();
+					});
+
+					function toggleButtons() {
+						if (input.value.trim() !== '') {
+							clearBtn.style.display = 'block';
+							submitBtn.style.display = 'none';
+						} else {
+							clearBtn.style.display = 'none';
+							submitBtn.style.display = 'block';
+						}
 					}
 				});
 			</script>
@@ -515,7 +520,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250505122508"></script>
+	<script src="js/app.min.js?_v=20250506094920"></script>
 </body>
 
 </html>

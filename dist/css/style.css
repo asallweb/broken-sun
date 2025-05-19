@@ -15863,7 +15863,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 8px;
-  width: 284px;
+  width: 310px;
   height: 52px;
   padding: 8px 12px;
   color: #f9db86;
@@ -15872,6 +15872,16 @@ textarea {
 }
 .rating__filter-choose-item:not(:last-child) {
   margin-bottom: 8px
+}
+.rating__filter-choose-item:not(._main):not(._clear):hover {
+  background: rgba(255,255,255,.11)
+}
+.rating__filter-choose-item:not(._main):not(._clear):hover::after {
+  content: "";
+  background: #94999e;
+  width: 20px;
+  height: 2px;
+  margin-left: auto
 }
 .rating__filter-choose-item._main span {
   position: relative;
@@ -15916,6 +15926,9 @@ textarea {
   width: 36px;
   height: 36px;
   margin-top: 3px
+}
+.rating__filter-choose-icon._all {
+  width: 68px
 }
 .rating__filter-choose-arrow {
   position: relative;

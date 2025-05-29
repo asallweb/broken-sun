@@ -6259,12 +6259,6 @@ textarea {
   right: 12px;
   cursor: pointer
 }
-.treasure-widget:hover ._closed {
-  opacity: 0
-}
-.treasure-widget:hover ._opened {
-  opacity: 1
-}
 .treasure-widget__wrapper {
   padding: 16px;
   flex-direction: column;
@@ -6328,13 +6322,13 @@ textarea {
   opacity: 0;
   background: url(../img/elements/treasure-widget/widget__button-hover.webp) center center/cover no-repeat
 }
-.treasure-widget__button:hover {
+.treasure-widget:hover .treasure-widget__button {
   color: #fafafa
 }
-.treasure-widget__button:hover::before {
+.treasure-widget:hover .treasure-widget__button::before {
   opacity: 0
 }
-.treasure-widget__button:hover::after {
+.treasure-widget:hover .treasure-widget__button::after {
   opacity: 1
 }
 .treasure-widget__button span {
@@ -16354,20 +16348,18 @@ textarea {
   left: 50%;
   -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
-  bottom: 17.5%;
-  width: 50vw;
+  bottom: 21%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  gap: 48px
 }
 .zbt-class__item-wrapper {
   display: flex;
   justify-content: center;
   flex-shrink: 0;
-  width: 35%
-}
-.zbt-class__item-wrapper:nth-child(2) {
-  width: 30%
+  width: 247px
 }
 .zbt-class__item {
   -webkit-backdrop-filter: blur(4px);
@@ -16378,7 +16370,9 @@ textarea {
   clip-path: polygon(8px 0,calc(100% - 9px) 0,100% 9px,100% calc(100% - 9px),calc(100% - 9px) 100%,9px 100%,0 calc(100% - 9px),0 9px);
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
+  padding-top: 21px;
+  padding-bottom: 13px
 }
 .zbt-class__item-name {
   color: #f9db86;
@@ -16386,7 +16380,9 @@ textarea {
   text-shadow: 0 80px 22.4px rgba(0,0,0,.01),0 51.2px 20.8px rgba(0,0,0,.03),0 28.8px 17.6px rgba(0,0,0,.1),0 12.8px 12.8px rgba(0,0,0,.17),0 3.2px 7.2px rgba(0,0,0,.2);
   font-family: "Noto Serif";
   line-height: 1.47;
-  text-transform: uppercase
+  text-transform: uppercase;
+  font-size: 27px;
+  letter-spacing: 1.088px
 }
 .zbt-class__item-btn {
   color: #c4b998;
@@ -16549,23 +16545,20 @@ textarea {
   gap: clamp(30px,5vw,128px);
   position: absolute;
   z-index: 1;
-  top: 50%;
+  top: calc(50% + 60px);
   left: 50%;
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   padding: 15px
 }
 ._active .zbt-path__list {
-  left: -70px;
-  -webkit-transform: translate(0,-50%);
-  transform: translate(0,-50%);
+  left: calc(50% - 400px);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
   width: 1000px
 }
 .zbt-path._active .carouselWrapper {
   width: 1000px
-}
-.zbt-path .carouselWrapper {
-  transition: width .5s cubic-bezier(.3,0,.5,1)
 }
 .tilted-card {
   position: relative;
@@ -16581,19 +16574,18 @@ textarea {
 .tilted-card:hover {
   cursor: pointer
 }
-.tilted-card.active .tilted-card__wrapper::before {
-  box-shadow: 0 0 20px 2px #b19f63
-}
 .carousel-active .tilted-card {
   position: absolute
+}
+.carousel-active .tilted-card.active .tilted-card__wrapper::before {
+  opacity: 1
 }
 .tilted-card__wrapper {
   position: relative;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   width: 100%;
-  height: 100%;
-  transition: box-shadow .1s ease-in-out
+  height: 100%
 }
 .tilted-card__wrapper::after {
   content: "";
@@ -16604,14 +16596,42 @@ textarea {
 }
 .tilted-card__wrapper::before {
   content: "";
+  opacity: 0;
   display: block;
   position: absolute;
-  inset: 0;
-  transition: box-shadow .1s ease-in-out;
-  top: 10px;
-  left: 10px
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  background: url(../img/pages/zbt/tilted-card-hover.webp) 0 0/contain no-repeat;
+  pointer-events: none;
+  transition: opacity .15s ease-in-out
 }
-.carousel-active .tilted-card__inner {
+.carousel-active .tilted-card:not(.active) .tilted-card__wrapper::after {
+  background: url(../img/pages/zbt/tilted-card-border-disabled.webp) 0 0/contain no-repeat;
+  width: calc(100% - 4px);
+  height: calc(100% - 6px);
+  top: calc(50% - 1px);
+  left: calc(50% - 1px);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%)
+}
+.carousel-active .tilted-card:not(.active) .tilted-card__wrapper::before {
+  background: rgba(9,10,17,.5);
+  opacity: 1;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translate(0,0) translateZ(1px);
+  transform: translate(0,0) translateZ(1px)
+}
+.carousel-active .tilted-card:not(.active) .tilted-card__img-weapon {
+  display: none
+}
+.tilted-card__inner {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   position: relative;
   width: 100%;
   height: 100%
@@ -16620,8 +16640,8 @@ textarea {
 .carousel-active .tilted-card__inner::before {
   content: "";
   display: block;
-  width: 89px;
   height: 460px;
+  width: 89px;
   background: url(../img/pages/zbt/tilted-card-active.webp) 0 0/cover no-repeat;
   position: absolute;
   top: 50%;
@@ -16652,16 +16672,15 @@ textarea {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  will-change: transform;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
   overflow: hidden;
   clip-path: polygon(13px 0,calc(100% - 13px) 0,100% 13px,100% calc(100% - 13px),calc(100% - 13px) 100%,13px 100%,0 calc(100% - 13px),0 13px)
 }
 .tilted-card__img-weapon {
   position: absolute;
   z-index: 2;
-  pointer-events: none
+  pointer-events: none;
+  -webkit-transform: translateZ(1px);
+  transform: translateZ(1px)
 }
 .tilted-card__overlay {
   position: absolute;
@@ -16680,14 +16699,21 @@ textarea {
   bottom: 0;
   width: 100%;
   height: 176px;
-  will-change: transform;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 24px;
-  padding-bottom: 30px
+  padding-bottom: 30px;
+  will-change: transform;
+  transition: -webkit-transform .1s ease-in-out;
+  transition: transform .1s ease-in-out;
+  transition: transform .1s ease-in-out,-webkit-transform .1s ease-in-out
+}
+.tilted-card.active:hover .tilted-card__content {
+  -webkit-transform: translateZ(30px);
+  transform: translateZ(30px)
 }
 .tilted-card__title {
   position: relative;
@@ -16698,16 +16724,11 @@ textarea {
   color: #f9df94;
   font-family: "Noto Serif";
   line-height: 1.23;
-  letter-spacing: 1.04px;
-  transition: translateY .2s ease
+  letter-spacing: 1.04px
 }
 .tilted-card__title-icon {
   flex-shrink: 0;
   position: relative
-}
-.tilted-card__overlay .tilted-card__title {
-  -webkit-transform: translateY(-2px);
-  transform: translateY(-2px)
 }
 .tilted-card__detail-link {
   position: relative;
@@ -16797,10 +16818,6 @@ textarea {
   width: 25px;
   height: 34px
 }
-.carouselContainer.carousel-active {
-  height: 520px;
-  justify-content: center
-}
 .zbt-inventories {
   width: 60vw;
   height: 100%;
@@ -16827,7 +16844,7 @@ textarea {
   z-index: 1;
   opacity: 0;
   visibility: hidden;
-  transition: opacity .5s cubic-bezier(.3,0,.5,1),visibility .5s cubic-bezier(.3,0,.5,1);
+  transition: opacity .8s ease-in-out,visibility .8s ease-in-out;
   width: 100%
 }
 .zbt-inventory._active {
@@ -16836,17 +16853,16 @@ textarea {
 }
 .zbt-inventory__wrapper {
   position: absolute;
-  right: -150px;
-  top: -150px;
+  right: -70px;
+  top: -70px;
   opacity: 0;
-  transition: all .6s cubic-bezier(.3,0,.5,1);
+  transition: all .8s cubic-bezier(.3,0,.5,1);
   padding: 15px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  width: 100%;
   height: 100vh;
   max-width: 544px
 }
@@ -16989,6 +17005,16 @@ textarea {
 .zbt-inventory__reward-btn:hover::after {
   opacity: 1
 }
+.zbt-inventory__reward-btn:disabled {
+  color: #776b47!important;
+  cursor: initial
+}
+.zbt-inventory__reward-btn:disabled::after,
+.zbt-inventory__reward-btn:disabled::before {
+  background: url(../img/pages/zbt/zbt-class__item-btn-disabled.webp) center center/cover no-repeat;
+  background-size: 336px auto;
+  opacity: 1
+}
 .zbt-inventory__reward-btn span {
   position: relative;
   z-index: 1
@@ -17052,6 +17078,8 @@ textarea {
 .artifact._is-checkable {
   cursor: pointer
 }
+.artifact._is-checkable._checked::after,
+.artifact._is-checkable._checked::before,
 .artifact._is-checkable:hover::after,
 .artifact._is-checkable:hover::before {
   opacity: 1
@@ -17314,16 +17342,18 @@ textarea {
   height: 100vh;
   z-index: 2;
   pointer-events: none;
-  transition: -webkit-mask-position 1.3s ease-out;
-  transition: mask-position 1.3s ease-out;
-  transition: mask-position 1.3s ease-out,-webkit-mask-position 1.3s ease-out;
+  transition: -webkit-mask-position 1s ease-out;
+  transition: mask-position 1s ease-out;
+  transition: mask-position 1s ease-out,-webkit-mask-position 1s ease-out;
   overflow: hidden;
   -webkit-mask: url(../img/pages/zbt/path-background-mask.webp);
   mask: url(../img/pages/zbt/path-background-mask.webp);
   -webkit-mask-position: center 1650px;
   mask-position: center 1650px;
   -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% calc(100% + 445px);
+  mask-size: 100% calc(100% + 445px)
 }
 .zbt-bg__background-image img {
   width: 100%;
@@ -17349,9 +17379,7 @@ textarea {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  pointer-events: none
-}
-.zbt-bg__background-video-src._mobile {
+  pointer-events: none;
   display: none
 }
 .zbt-popup {
@@ -17542,9 +17570,10 @@ textarea {
 .zbt-popup__sended-wrapper::after,
 .zbt-popup__sended-wrapper::before {
   content: "";
+  background: url(../img/pages/zbt/sended-bg-light-top.webp) center 0 no-repeat;
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 749px;
+  height: 163px;
   position: absolute;
   left: 50%;
   -webkit-transform: translate(-50%,0);
@@ -17552,17 +17581,14 @@ textarea {
   mix-blend-mode: lighten
 }
 .zbt-popup__sended-wrapper::before {
-  background: url(../img/pages/zbt/sended-bg-light-top.webp) center 0 no-repeat;
-  top: -58px;
-  max-height: 58px
+  top: -85px
 }
 .zbt-popup__sended-wrapper::after {
-  background: url(../img/pages/zbt/sended-bg-light-bottom.webp) center 0 no-repeat;
-  bottom: -53px;
-  height: 53px
+  bottom: -81px
 }
 .zbt-popup__sended-inner {
   position: relative;
+  z-index: 1;
   padding: 24px 48px;
   display: flex;
   flex-direction: column;
@@ -18482,23 +18508,8 @@ textarea {
   .zbt__back-btn::before {
     height: 2rem
   }
-  .zbt-class__list {
-    gap: 3rem
-  }
-  .zbt-class__item {
-    padding-top: 1.3125rem
-  }
-  .zbt-class__item {
-    padding-bottom: .8125rem
-  }
   .zbt-class__item-name {
     margin-bottom: 1rem
-  }
-  .zbt-class__item-name {
-    letter-spacing: .068rem
-  }
-  .zbt-class__item-name {
-    font-size: 1.6875rem
   }
   .zbt-class__item-btn {
     margin-bottom: .75rem
@@ -18534,10 +18545,10 @@ textarea {
     height: 33.0625rem
   }
   .tilted-card__wrapper::before {
-    width: 18.125rem
+    width: 32.125rem
   }
   .tilted-card__wrapper::before {
-    height: 31.25rem
+    height: 46rem
   }
   .tilted-card__img-weapon {
     left: -12.125rem
@@ -18751,18 +18762,81 @@ textarea {
     background: url(../img/pages/rating/rating-bg-image_2k.webp) center top -76px/auto no-repeat
   }
   .zbt-class__list {
-    gap: 90px
+    bottom: 25vh;
+    gap: 3vw
   }
-  ._active .zbt-path__list {
-    left: 170px
+  .zbt-class__item-wrapper {
+    width: 280px
+  }
+  .zbt-class__item {
+    width: 100%
   }
   ._active .zbt-inventory__wrapper {
     right: 250px
+  }
+  .zbt-bg__background-video-src._desktop-2k {
+    display: block
   }
 }
 @media (min-width:2360px) {
   .landing-registration {
     height: 1080px
+  }
+}
+@media (min-width:3200px) {
+  .zbt-class__list {
+    bottom: 25%;
+    gap: 40px
+  }
+  .zbt-class__item-wrapper {
+    width: 510px
+  }
+  .zbt-class__item {
+    padding: 32px;
+    width: 100%
+  }
+  .zbt-class__item-name {
+    font-size: 40px;
+    letter-spacing: 1.6px
+  }
+  .zbt-class__item-btn {
+    font-size: 36px;
+    letter-spacing: 1.44px;
+    font-weight: 600;
+    height: 80px;
+    width: 100%
+  }
+  .zbt-class__detail-link {
+    font-size: 40px;
+    gap: 8px
+  }
+  .zbt-class__detail-link-icon {
+    position: relative;
+    width: 30px;
+    height: 39px;
+    top: 3px
+  }
+  .zbt-class__detail-link-icon-left ._visible {
+    width: 9px;
+    height: 18px
+  }
+  .zbt-class__detail-link-icon-left ._hidden {
+    width: 18px;
+    height: 27px;
+    -webkit-transform: translate(-6px,-50%);
+    transform: translate(-6px,-50%)
+  }
+  .zbt-class__detail-link-icon-right ._visible {
+    width: 18px;
+    height: 27px;
+    -webkit-transform: translate(3px,-50%);
+    transform: translate(3px,-50%)
+  }
+  .zbt-class__detail-link-icon-right ._hidden {
+    width: 24px;
+    height: 31.5px;
+    -webkit-transform: translate(4.5px,-50%);
+    transform: translate(4.5px,-50%)
   }
 }
 @media (max-width:1920px) {
@@ -18775,6 +18849,9 @@ textarea {
   }
   .class__content {
     margin-top: 12%
+  }
+  .zbt-bg__background-video-src._desktop {
+    display: block
   }
 }
 @media (max-width:1900px) {
@@ -18807,10 +18884,6 @@ textarea {
     bottom: -100px
   }
   .zbt-path._active .carouselWrapper {
-    width: 700px
-  }
-  ._active .zbt-path__list {
-    left: 20px;
     width: 700px
   }
   ._active .zbt-inventory__wrapper {
@@ -19432,6 +19505,21 @@ textarea {
   }
   .portal-news__image {
     margin-bottom: 8px
+  }
+  .zbt-class__list {
+    bottom: 21.5%;
+    gap: 64px
+  }
+  .zbt-class__item-wrapper {
+    width: 247px
+  }
+  .zbt-class__item {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 8px
+  }
+  .zbt-class__item-name {
+    font-size: 27px
   }
 }
 @media (max-width:1440px) and (any-hover:none) {
@@ -20345,6 +20433,36 @@ textarea {
     margin-right: -.5625rem
   }
 }
+@media (max-width:1024px) {
+  .zbt-class__list {
+    bottom: 21%;
+    gap: 48px
+  }
+  .zbt-class__item-wrapper {
+    width: 150px
+  }
+  .zbt-class__item {
+    padding-top: 12px;
+    padding-bottom: 8px
+  }
+  .zbt-class__item-name {
+    font-size: 20px
+  }
+  .zbt-class__item-btn {
+    font-weight: 600;
+    padding: 0 7px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background: url(../img/pages/zbt/zbt-class__item-btn-mobile.webp) center center/contain no-repeat
+  }
+  .zbt-class__item-btn::after,
+  .zbt-class__item-btn::before {
+    display: none
+  }
+  .zbt-class__item-btn span span {
+    display: none
+  }
+}
 @media (max-width:980px) {
   .landing-section-2 {
     height: 700px
@@ -20698,6 +20816,13 @@ textarea {
   }
   .portal-news__image {
     margin-bottom: 6px
+  }
+  .zbt-class__list {
+    bottom: 21%;
+    gap: 26px
+  }
+  .zbt-class__item-wrapper {
+    width: 175px
   }
 }
 @media (max-width:919px) {
@@ -21514,23 +21639,6 @@ textarea {
   }
   .zbt__head-title br {
     display: block
-  }
-  .zbt-class__list {
-    width: 100%
-  }
-  .zbt-class__item-btn {
-    font-weight: 600;
-    padding: 0 7px;
-    margin-left: 5px;
-    margin-right: 5px;
-    background: url(../img/pages/zbt/zbt-class__item-btn-mobile.webp) center center/contain no-repeat
-  }
-  .zbt-class__item-btn::after,
-  .zbt-class__item-btn::before {
-    display: none
-  }
-  .zbt-class__item-btn span span {
-    display: none
   }
   .zbt-bg__background-video-src._desktop {
     display: none
@@ -23358,6 +23466,17 @@ textarea {
   .zbt__back-btn {
     font-weight: 400
   }
+  .zbt-class__list {
+    bottom: 14%;
+    gap: 8px
+  }
+  .zbt-class__item-wrapper {
+    width: 115px
+  }
+  .zbt-class__detail-link-icon {
+    -webkit-transform: scale(.75);
+    transform: scale(.75)
+  }
   .zbt-path__background-video._desktop {
     display: none
   }
@@ -23367,13 +23486,16 @@ textarea {
   .zbt-path._visible._active .carouselWrapper {
     display: none
   }
-  .carouselContainer {
-    height: 456px
+  .carousel-active .tilted-card__inner::after,
+  .carousel-active .tilted-card__inner::before {
+    transition: none;
+    background-size: contain
   }
   .zbt-inventories {
     width: 100vw
   }
   ._active .zbt-inventory__wrapper {
+    width: 100%;
     right: 0;
     top: 70px;
     height: calc(100vh - 70px)
@@ -24124,23 +24246,8 @@ textarea {
   .zbt__back-btn::before {
     height: 1.25rem
   }
-  .zbt-class__list {
-    gap: .5rem
-  }
-  .zbt-class__item {
-    padding-top: .75rem
-  }
-  .zbt-class__item {
-    padding-bottom: .4375rem
-  }
   .zbt-class__item-name {
     margin-bottom: .625rem
-  }
-  .zbt-class__item-name {
-    letter-spacing: .05rem
-  }
-  .zbt-class__item-name {
-    font-size: 1.25rem
   }
   .zbt-class__item-btn {
     margin-bottom: .5rem
@@ -24176,10 +24283,10 @@ textarea {
     height: 23rem
   }
   .tilted-card__wrapper::before {
-    width: 12.125rem
+    width: 22.125rem
   }
   .tilted-card__wrapper::before {
-    height: 21.75rem
+    height: 32.125rem
   }
   .tilted-card__img-weapon {
     left: -8rem
@@ -25072,23 +25179,8 @@ textarea {
   .zbt__back-btn::before {
     height: clamp(1.25rem ,.985915493rem + 1.1267605634vw ,2rem)
   }
-  .zbt-class__list {
-    gap: clamp(.5rem ,-.3802816901rem + 3.7558685446vw ,3rem)
-  }
-  .zbt-class__item {
-    padding-top: clamp(.75rem ,.5519366197rem + .8450704225vw ,1.3125rem)
-  }
-  .zbt-class__item {
-    padding-bottom: clamp(.4375rem ,.3054577465rem + .5633802817vw ,.8125rem)
-  }
   .zbt-class__item-name {
     margin-bottom: clamp(.625rem ,.4929577465rem + .5633802817vw ,1rem)
-  }
-  .zbt-class__item-name {
-    letter-spacing: clamp(.05rem ,.0436619718rem + .0270422535vw ,.068rem)
-  }
-  .zbt-class__item-name {
-    font-size: clamp(1.25rem ,1.0959507042rem + .6572769953vw ,1.6875rem)
   }
   .zbt-class__item-btn {
     margin-bottom: clamp(.5rem ,.411971831rem + .3755868545vw ,.75rem)
@@ -25124,10 +25216,10 @@ textarea {
     height: clamp(23rem ,19.4568661972rem + 15.117370892vw ,33.0625rem)
   }
   .tilted-card__wrapper::before {
-    width: clamp(12.125rem ,10.0123239437rem + 9.014084507vw ,18.125rem)
+    width: clamp(22.125rem ,18.6038732394rem + 15.0234741784vw ,32.125rem)
   }
   .tilted-card__wrapper::before {
-    height: clamp(21.75rem ,18.4049295775rem + 14.2723004695vw ,31.25rem)
+    height: clamp(32.125rem ,27.2394366197rem + 20.8450704225vw ,46rem)
   }
   .tilted-card__img-weapon {
     left: clamp(-12.125rem ,-6.5475352113rem + -6.1971830986vw ,-8rem)
@@ -25387,10 +25479,5 @@ not all and (min-resolution:0.001dpcm) and (min-resolution:0.001dpcm) {
     .menu__submenu-external-icon {
       margin-top: -5px
     }
-  }
-}
-@media (hover:hover) {
-  .tilted-card:hover .tilted-card__wrapper::before {
-    box-shadow: 0 0 20px 2px #b19f63
   }
 }

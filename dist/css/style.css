@@ -6259,6 +6259,9 @@ textarea {
   right: 12px;
   cursor: pointer
 }
+.treasure-widget:hover ._opened {
+  opacity: 1
+}
 .treasure-widget__wrapper {
   padding: 16px;
   flex-direction: column;
@@ -6290,7 +6293,7 @@ textarea {
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   height: 200px;
-  transition: opacity .6s ease-in-out
+  transition: opacity .4s ease-in
 }
 .treasure-widget__image-src._closed {
   opacity: 1
@@ -16574,6 +16577,9 @@ textarea {
 .tilted-card:hover {
   cursor: pointer
 }
+.tilted-card:hover .tilted-card__wrapper::before {
+  opacity: 1
+}
 .carousel-active .tilted-card {
   position: absolute
 }
@@ -16707,13 +16713,17 @@ textarea {
   gap: 24px;
   padding-bottom: 30px;
   will-change: transform;
-  transition: -webkit-transform .1s ease-in-out;
-  transition: transform .1s ease-in-out;
-  transition: transform .1s ease-in-out,-webkit-transform .1s ease-in-out
+  transition: -webkit-transform .3s cubic-bezier(.3,0,.5,1);
+  transition: transform .3s cubic-bezier(.3,0,.5,1);
+  transition: transform .3s cubic-bezier(.3,0,.5,1),-webkit-transform .3s cubic-bezier(.3,0,.5,1)
 }
-.tilted-card.active:hover .tilted-card__content {
+.tilted-card:hover .tilted-card__content {
   -webkit-transform: translateZ(30px);
   transform: translateZ(30px)
+}
+.carousel-active .tilted-card:not(.active):hover .tilted-card__content {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0)
 }
 .tilted-card__title {
   position: relative;
@@ -17038,7 +17048,8 @@ textarea {
   align-items: center
 }
 .zbt-inventory__double-overlay .artifact:nth-child(2) {
-  transition: margin-left .3s ease
+  transition: margin-left .3s ease;
+  z-index: 1
 }
 .zbt-inventory__double-overlay:hover .artifact:nth-child(2) {
   margin-left: 6px
@@ -23508,12 +23519,35 @@ textarea {
   .zbt-inventory__list-title {
     font-weight: 500
   }
+  .zbt-inventory__row {
+    gap: 8px
+  }
+  .zbt-inventory__row._gap-mobile {
+    gap: 2px
+  }
   .zbt-popup__wrapper {
-    padding: 0;
-    height: 100%
+    padding: 30px 10px;
+    height: auto
+  }
+  .zbt-popup__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+  }
+  .zbt-popup__close {
+    right: 5px;
+    top: 5px
   }
   .zbt-popup__description {
     display: none
+  }
+  .zbt-popup__btn-wrapper {
+    flex-direction: column-reverse;
+    padding: 15px 0;
+    gap: 16px
+  }
+  .zbt-popup__sended-inner {
+    padding: 24px 28px
   }
 }
 @media (max-width:47.99875em) and (max-width:23.4375em) {
@@ -24403,7 +24437,7 @@ textarea {
     width: 16.25rem
   }
   .zbt-popup__btn {
-    height: 2.5rem
+    height: 2.625rem
   }
   .zbt-popup__btn {
     letter-spacing: .045rem
@@ -25336,7 +25370,7 @@ textarea {
     width: clamp(16.25rem ,13.9392605634rem + 9.8591549296vw ,22.8125rem)
   }
   .zbt-popup__btn {
-    height: clamp(2.5rem ,2.1478873239rem + 1.5023474178vw ,3.5rem)
+    height: clamp(2.625rem ,2.3169014085rem + 1.3145539906vw ,3.5rem)
   }
   .zbt-popup__btn {
     letter-spacing: clamp(.045rem ,.0379577465rem + .0300469484vw ,.065rem)

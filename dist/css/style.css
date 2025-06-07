@@ -16171,9 +16171,6 @@ textarea {
   gap: 16px
 }
 .treasure-widget__title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
   padding: 6px 0 4px 0;
   align-self: stretch;
@@ -17410,7 +17407,7 @@ textarea {
 }
 .zbt-popup {
   position: fixed;
-  z-index: 8;
+  z-index: 9;
   inset: 0;
   opacity: 0;
   visibility: hidden;
@@ -17913,7 +17910,7 @@ textarea {
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
   position: absolute;
-  left: -55px;
+  left: -49px;
   top: 50px
 }
 .obt-hero__scroll-image {
@@ -18188,7 +18185,18 @@ textarea {
 }
 .obt-content__block {
   position: relative;
-  display: flex
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translateY(100px) scale(1);
+  transform: translateY(100px) scale(1);
+  transition: all .8s ease 0s
+}
+.obt-content__block._watcher-view {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0) scale(1);
+  transform: translateY(0) scale(1)
 }
 .obt-content__block-content {
   width: 546px;
@@ -19729,6 +19737,10 @@ textarea {
   }
   .zbt-bg__background-video-src._desktop-2k {
     display: block
+  }
+  .obt-hero__content,
+  .obt-hero__wrapper {
+    gap: 80px
   }
 }
 @media (min-width:2360px) {

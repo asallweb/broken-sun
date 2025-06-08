@@ -5,10 +5,10 @@
 	<title>Start OBT</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250607095124">
-	<script src="files/js/preloader.js?_v=20250607095124"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250607095124">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250607095124">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250608151059">
+	<script src="files/js/preloader.js?_v=20250608151059"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250608151059">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250608151059">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -254,6 +254,7 @@
 		<main class="page">
 			<section class="obt">
 				<img src="img/pages/obt/obt-hero.webp" class="obt__hero-image">
+				<img src="img/pages/obt/obt-hero-mobile.webp" class="obt__hero-image _mobile">
 				<div class="obt__wrapper">
 					<div id="obt-hero" class="obt-hero">
 						<div class="obt-hero__inner">
@@ -364,7 +365,10 @@
 						<div class="obt-content__section-list" id="scroll-to">
 							<div class="obt-content__section" id="unions" data-watch="navigator">
 								<div class="obt-content__section-title">
-									<img src="img/pages/obt/section-title-1.webp" class="">
+									<picture>
+										<source media="(max-width: 767px)" srcset="img/pages/obt/section-title-1_mobile.webp">
+										<img src="img/pages/obt/section-title-1.webp" alt="">
+									</picture>
 								</div>
 								<div class="obt-content__block _factions" data-watch-threshold="0.5" data-watch-once data-watch>
 									<div class="obt-content__block-content">
@@ -481,7 +485,10 @@
 							</div>
 							<div class="obt-content__section" id="items" data-watch="navigator">
 								<div class="obt-content__section-title">
-									<img src="img/pages/obt/section-title-2.webp" class="">
+									<picture>
+										<source media="(max-width: 767px)" srcset="img/pages/obt/section-title-2_mobile.webp">
+										<img src="img/pages/obt/section-title-2.webp" alt="">
+									</picture>
 								</div>
 								<div class="obt-content__block" data-watch-threshold="0.5" data-watch-once data-watch>
 									<div class="obt-content__block-decorations">
@@ -714,7 +721,10 @@
 							</div>
 							<div class="obt-content__section" id="fight" data-watch="navigator">
 								<div class="obt-content__section-title">
-									<img src="img/pages/obt/section-title-3.webp" class="">
+									<picture>
+										<source media="(max-width: 767px)" srcset="img/pages/obt/section-title-3_mobile.webp">
+										<img src="img/pages/obt/section-title-3.webp" alt="">
+									</picture>
 								</div>
 								<div class="obt-content__block" data-watch-threshold="0.5" data-watch-once data-watch>
 									<div class="obt-content__block-content">
@@ -873,7 +883,10 @@
 							</div>
 							<div class="obt-content__section" id="map" data-watch="navigator">
 								<div class="obt-content__section-title">
-									<img src="img/pages/obt/section-title-4.webp" class="">
+									<picture>
+										<source media="(max-width: 767px)" srcset="img/pages/obt/section-title-4_mobile.webp">
+										<img src="img/pages/obt/section-title-4.webp" alt="">
+									</picture>
 								</div>
 								<div class="obt-content__block" data-watch-threshold="0.5" data-watch-once data-watch>
 									<div class="obt-content__block-content">
@@ -969,6 +982,7 @@
 					</div>
 				</div>
 				<img src="img/pages/obt/obt-footer.webp" class="obt__footer-image" data-watch="navigator">
+				<img src="img/pages/obt/obt-footer-mobile.webp" class="obt__footer-image _mobile" data-watch="navigator">
 			</section>
 			<script>
 				// Видео проигрывание
@@ -1040,6 +1054,73 @@
 				// Вызываем функцию после загрузки DOM
 				document.addEventListener("DOMContentLoaded", function() {
 					initVideoControls();
+
+					// Функция для управления мобильным сайдбаром
+					const initMobileSidebar = () => {
+						const sidebar = document.querySelector('.obt-content__sidebar');
+						const overviewBtn = document.querySelector('.obt-content__sidebar-link._main');
+
+						if (!sidebar || !overviewBtn) return;
+
+						// Получаем начальное расстояние от верха страницы до сайдбара
+						const sidebarOffsetTop = sidebar.offsetTop - 50;
+
+						// Функция для проверки позиции и добавления класса
+						const checkSidebarPosition = () => {
+							if (window.innerWidth < 768) {
+								const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+								if (scrollTop >= sidebarOffsetTop) {
+									sidebar.classList.add('_mobile-bg');
+								} else {
+									sidebar.classList.remove('_mobile-bg');
+								}
+							} else {
+								sidebar.classList.remove('_mobile-bg');
+							}
+						};
+
+						// Функция для управления атрибутом data-goto
+						const toggleDataGoto = () => {
+							if (window.innerWidth < 768) {
+								overviewBtn.removeAttribute('data-goto');
+							} else {
+								overviewBtn.setAttribute('data-goto', '#obt-hero');
+							}
+						};
+
+						// Обработчик клика по кнопке "Обзор"
+						overviewBtn.addEventListener('click', (e) => {
+							if (window.innerWidth < 768) {
+								e.preventDefault();
+								sidebar.classList.toggle('_mobile-active');
+							}
+						});
+
+						// Обработчик клика внутри сайдбара
+						sidebar.addEventListener('click', (e) => {
+							if (window.innerWidth < 768 && sidebar.classList.contains('_mobile-active')) {
+								// Проверяем, что клик был не по кнопке "Обзор"
+								if (e.target !== overviewBtn && !overviewBtn.contains(e.target)) {
+									sidebar.classList.remove('_mobile-active');
+								}
+							}
+						});
+
+						// Слушаем скролл и ресайз
+						window.addEventListener('scroll', checkSidebarPosition);
+						window.addEventListener('resize', () => {
+							checkSidebarPosition();
+							toggleDataGoto();
+						});
+
+						// Инициализация при загрузке
+						checkSidebarPosition();
+						toggleDataGoto();
+					};
+
+					// Вызываем функцию инициализации мобильного сайдбара
+					initMobileSidebar();
 
 					// Функция для анимации clickhand
 					const initClickHandAnimation = () => {
@@ -1347,7 +1428,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250607095124"></script>
+	<script src="js/app.min.js?_v=20250608151059"></script>
 </body>
 
 </html>

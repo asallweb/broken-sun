@@ -24709,6 +24709,10 @@ textarea {
   .zbt-popup__unavailable br {
     display: none
   }
+  .obt {
+    background: url(../img/pages/obt/obt-background-mobile.webp) 0 0/cover no-repeat;
+    background-attachment: fixed
+  }
   .obt__hero-image {
     display: none
   }
@@ -24914,7 +24918,7 @@ textarea {
     background: url(../img/pages/obt/sidebar-mobile-bg-active.webp) 0 0/100% 100% no-repeat;
     transition: opacity 0s ease-in
   }
-  ._mobile-bg .obt-content__sidebar-wrapper {
+  .obt-content__sidebar-wrapper {
     height: 40px;
     overflow: hidden;
     transition: height .3s ease

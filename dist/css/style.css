@@ -24908,7 +24908,9 @@ textarea {
     left: 0;
     top: 0;
     opacity: 0;
-    transition: opacity .3s ease-in
+    transition: opacity .3s ease-in;
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px)
   }
   .obt-content__sidebar._mobile-bg {
     position: fixed;
@@ -24920,7 +24922,9 @@ textarea {
   }
   .obt-content__sidebar._mobile-active::before {
     background: url(../img/pages/obt/sidebar-mobile-bg-active.webp) 0 0/100% 100% no-repeat;
-    transition: opacity 0s ease-in
+    transition: opacity 0s ease-in;
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px)
   }
   .obt-content__sidebar-wrapper {
     height: 40px;

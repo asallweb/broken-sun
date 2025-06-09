@@ -24692,6 +24692,9 @@ textarea {
   .artifact__tooltip {
     max-width: 380px
   }
+  .artifact__tooltip._active {
+    display: none
+  }
   .zbt-popup__wrapper {
     padding: 30px 10px;
     height: auto
@@ -27022,6 +27025,71 @@ textarea {
 @media (max-width:850px) and (min-width:768px) {
   .teaser__img {
     max-height: 60vh
+  }
+}
+@media (max-height:820px) and (min-width:1080px) and (max-width:1290px) {
+  .zbt-inventory__wrapper {
+    padding: 5px 0
+  }
+}
+@media (max-height:820px) and (min-width:1080px) and (max-width:1290px) and (min-width:90em) {
+  .zbt-inventory__wrapper {
+    gap: .625rem
+  }
+  .zbt-inventory__list-head {
+    margin-bottom: .625rem
+  }
+  .zbt-inventory__list-head._mb-16 {
+    margin-bottom: .625rem
+  }
+  .zbt-inventory__row {
+    margin-bottom: .9375rem
+  }
+  .zbt-inventory__row._mb-24 {
+    margin-bottom: .9375rem
+  }
+  .zbt-inventory__row._mb-28 {
+    margin-bottom: .9375rem
+  }
+}
+@media (max-height:820px) and (min-width:1080px) and (max-width:1290px) and (min-width:23.4375em) and (max-width:90em) {
+  .zbt-inventory__wrapper {
+    gap: clamp(.625rem ,.625rem + 0 ,.625rem)
+  }
+  .zbt-inventory__list-head {
+    margin-bottom: clamp(.625rem ,.625rem + 0 ,.625rem)
+  }
+  .zbt-inventory__list-head._mb-16 {
+    margin-bottom: clamp(.3125rem ,.2024647887rem + .4694835681vw ,.625rem)
+  }
+  .zbt-inventory__row {
+    margin-bottom: clamp(.9375rem ,.9375rem + 0 ,.9375rem)
+  }
+  .zbt-inventory__row._mb-24 {
+    margin-bottom: clamp(.9375rem ,.9375rem + 0 ,.9375rem)
+  }
+  .zbt-inventory__row._mb-28 {
+    margin-bottom: clamp(.9375rem ,.9375rem + 0 ,.9375rem)
+  }
+}
+@media (max-height:820px) and (min-width:1080px) and (max-width:1290px) and (max-width:23.4375em) {
+  .zbt-inventory__wrapper {
+    gap: .625rem
+  }
+  .zbt-inventory__list-head {
+    margin-bottom: .625rem
+  }
+  .zbt-inventory__list-head._mb-16 {
+    margin-bottom: .3125rem
+  }
+  .zbt-inventory__row {
+    margin-bottom: .9375rem
+  }
+  .zbt-inventory__row._mb-24 {
+    margin-bottom: .9375rem
+  }
+  .zbt-inventory__row._mb-28 {
+    margin-bottom: .9375rem
   }
 }
 @media (prefers-reduced-motion:reduce),

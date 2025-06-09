@@ -16203,6 +16203,10 @@ textarea {
 .treasure-widget__image-src._opened {
   opacity: 0
 }
+.treasure-widget__button-wrapper {
+  display: flex;
+  justify-content: center
+}
 .treasure-widget__button {
   color: #c4b998;
   text-align: center;
@@ -16211,7 +16215,9 @@ textarea {
   line-height: 1.77;
   text-transform: uppercase;
   position: relative;
-  transition: color .5s cubic-bezier(.3,0,.5,1)
+  transition: color .5s cubic-bezier(.3,0,.5,1);
+  width: 260px;
+  height: 40px
 }
 .treasure-widget__button::after,
 .treasure-widget__button::before {
@@ -19448,12 +19454,6 @@ textarea {
   }
   .treasure-widget__title {
     letter-spacing: .065rem
-  }
-  .treasure-widget__button {
-    width: 16.25rem
-  }
-  .treasure-widget__button {
-    height: 2.5rem
   }
   .treasure-widget__button {
     letter-spacing: .045rem
@@ -24600,33 +24600,21 @@ textarea {
   }
   .treasure-widget {
     top: 340px;
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
-    background: rgba(23,25,28,.75);
-    transition: right .5s cubic-bezier(.3,0,.5,1)
-  }
-  .treasure-widget._active {
-    right: 0
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    -o-border-image: url(../img/elements/treasure-widget/mobile-bg.webp) 15 fill/15px;
+    border-image: url(../img/elements/treasure-widget/mobile-bg.webp) 15 fill/15px;
+    transition: right .5s cubic-bezier(.3,0,.5,1);
+    right: 0;
+    width: 159px
   }
   .treasure-widget__wrapper {
-    padding: 13px 0;
+    padding: 10px 8px;
     position: relative
   }
   .treasure-widget__title {
     font-size: 16px;
-    -webkit-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    position: absolute;
-    left: -99px;
-    top: 74px;
-    width: 173px;
-    height: 25px;
-    clip-path: polygon(10px 0,calc(100% - 10px) 0,100% 10px,100% 100%,100% 100%,100% 100%,0 100%,0 10px);
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
-    background: rgba(23,25,28,.75);
-    padding-bottom: 0;
-    padding-top: 3px
+    padding: 0
   }
   .treasure-widget__title span {
     display: none
@@ -24642,6 +24630,13 @@ textarea {
   }
   .treasure-widget__image-src {
     height: 120px
+  }
+  .treasure-widget__button {
+    width: 110px;
+    height: 24px
+  }
+  .treasure-widget__button span span {
+    display: none
   }
   .zbt__back-btn {
     font-weight: 400
@@ -24948,11 +24943,6 @@ textarea {
   }
   .obt-footer {
     aspect-ratio: 375/650
-  }
-}
-@media (max-width:47.99875em) and (max-width:23.4375em) {
-  .treasure-widget {
-    right: -9.375rem
   }
 }
 @media (max-width:24.375em) {
@@ -25625,13 +25615,7 @@ textarea {
     letter-spacing: .02rem
   }
   .treasure-widget__button {
-    width: 9.75rem
-  }
-  .treasure-widget__button {
-    height: 1.5rem
-  }
-  .treasure-widget__button {
-    letter-spacing: .027rem
+    letter-spacing: .0275rem
   }
   .treasure-widget__button {
     font-size: .6875rem
@@ -26639,13 +26623,7 @@ textarea {
     letter-spacing: clamp(.02rem ,.0041549296rem + .0676056338vw ,.065rem)
   }
   .treasure-widget__button {
-    width: clamp(9.75rem ,7.4612676056rem + 9.765258216vw ,16.25rem)
-  }
-  .treasure-widget__button {
-    height: clamp(1.5rem ,1.1478873239rem + 1.5023474178vw ,2.5rem)
-  }
-  .treasure-widget__button {
-    letter-spacing: clamp(.027rem ,.0206619718rem + .0270422535vw ,.045rem)
+    letter-spacing: clamp(.0275rem ,.0213380282rem + .0262910798vw ,.045rem)
   }
   .treasure-widget__button {
     font-size: clamp(.6875rem ,.5334507042rem + .6572769953vw ,1.125rem)
@@ -27044,16 +27022,6 @@ textarea {
 @media (max-width:850px) and (min-width:768px) {
   .teaser__img {
     max-height: 60vh
-  }
-}
-@media (max-width:47.99875em) and (min-width:90em) {
-  .treasure-widget {
-    right: -15.5rem
-  }
-}
-@media (max-width:47.99875em) and (min-width:23.4375em) and (max-width:90em) {
-  .treasure-widget {
-    right: clamp(-15.5rem ,-7.2183098592rem + -9.2018779343vw ,-9.375rem)
   }
 }
 @media (prefers-reduced-motion:reduce),

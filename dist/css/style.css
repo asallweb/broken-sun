@@ -17545,6 +17545,24 @@ textarea {
   position: relative;
   z-index: 1
 }
+.zbt-popup__btn._unavailable {
+  color: #25201b;
+  font-family: "Albertus Nova";
+  font-size: 25px;
+  font-weight: 700;
+  line-height: .88;
+  transition: opacity .3s ease-in-out
+}
+.zbt-popup__btn._unavailable::before {
+  display: none
+}
+.zbt-popup__btn._unavailable::after {
+  opacity: 1;
+  background: url(../img/pages/zbt/zbt-class__item-btn-unavailable.webp) center center/cover no-repeat
+}
+.zbt-popup__btn._unavailable:hover {
+  opacity: .9
+}
 .zbt-popup__back-btn {
   position: relative;
   display: flex;
@@ -17666,6 +17684,27 @@ textarea {
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   margin-top: 200px
+}
+.zbt-popup__unavailable {
+  margin: 0 auto
+}
+.zbt-popup__unavailable-title {
+  color: #b19f63;
+  text-align: center;
+  font-family: "Noto Sans";
+  line-height: 1.63
+}
+.zbt-popup__unavailable-text {
+  color: #c9cccf;
+  text-align: center;
+  font-family: "Noto Sans";
+  line-height: 1.55
+}
+.zbt-popup__unavailable-links {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 20px
 }
 .obt {
   position: relative;
@@ -19642,6 +19681,27 @@ textarea {
   }
   .zbt-popup__sended-subtitle {
     font-size: 1.625rem
+  }
+  .zbt-popup__unavailable {
+    max-width: 40rem
+  }
+  .zbt-popup__unavailable-title {
+    font-size: 1.375rem
+  }
+  .zbt-popup__unavailable-title {
+    letter-spacing: .0275rem
+  }
+  .zbt-popup__unavailable-title {
+    margin-bottom: 1.625rem
+  }
+  .zbt-popup__unavailable-text {
+    font-size: 1.125rem
+  }
+  .zbt-popup__unavailable-text {
+    letter-spacing: .0225rem
+  }
+  .zbt-popup__unavailable-text {
+    margin-bottom: 1.625rem
   }
   .obt-hero__subtitle {
     font-size: 1.125rem
@@ -24646,6 +24706,9 @@ textarea {
   .zbt-popup__sended-inner {
     padding: 24px 28px
   }
+  .zbt-popup__unavailable br {
+    display: none
+  }
   .obt__hero-image {
     display: none
   }
@@ -25783,6 +25846,27 @@ textarea {
   .zbt-popup__sended-subtitle {
     font-size: 1.25rem
   }
+  .zbt-popup__unavailable {
+    max-width: 20rem
+  }
+  .zbt-popup__unavailable-title {
+    font-size: 1.0625rem
+  }
+  .zbt-popup__unavailable-title {
+    letter-spacing: .02125rem
+  }
+  .zbt-popup__unavailable-title {
+    margin-bottom: 1.25rem
+  }
+  .zbt-popup__unavailable-text {
+    font-size: .9375rem
+  }
+  .zbt-popup__unavailable-text {
+    letter-spacing: .01875rem
+  }
+  .zbt-popup__unavailable-text {
+    margin-bottom: 1.25rem
+  }
   .obt-hero__subtitle {
     font-size: .9375rem
   }
@@ -26775,6 +26859,27 @@ textarea {
   }
   .zbt-popup__sended-subtitle {
     font-size: clamp(1.25rem ,1.1179577465rem + .5633802817vw ,1.625rem)
+  }
+  .zbt-popup__unavailable {
+    max-width: clamp(20rem ,12.9577464789rem + 30.0469483568vw ,40rem)
+  }
+  .zbt-popup__unavailable-title {
+    font-size: clamp(1.0625rem ,.9524647887rem + .4694835681vw ,1.375rem)
+  }
+  .zbt-popup__unavailable-title {
+    letter-spacing: clamp(.02125rem ,.0190492958rem + .0093896714vw ,.0275rem)
+  }
+  .zbt-popup__unavailable-title {
+    margin-bottom: clamp(1.25rem ,1.1179577465rem + .5633802817vw ,1.625rem)
+  }
+  .zbt-popup__unavailable-text {
+    font-size: clamp(.9375rem ,.8714788732rem + .2816901408vw ,1.125rem)
+  }
+  .zbt-popup__unavailable-text {
+    letter-spacing: clamp(.01875rem ,.0174295775rem + .0056338028vw ,.0225rem)
+  }
+  .zbt-popup__unavailable-text {
+    margin-bottom: clamp(1.25rem ,1.1179577465rem + .5633802817vw ,1.625rem)
   }
   .obt-hero__subtitle {
     font-size: clamp(.9375rem ,.8714788732rem + .2816901408vw ,1.125rem)

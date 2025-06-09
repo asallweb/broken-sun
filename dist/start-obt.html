@@ -5,10 +5,10 @@
 	<title>Start OBT</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250609153326">
-	<script src="files/js/preloader.js?_v=20250609153326"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250609153326">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250609153326">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250609154606">
+	<script src="files/js/preloader.js?_v=20250609154606"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250609154606">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250609154606">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -298,6 +298,9 @@
 										</div>
 										<video poster="img/pages/obt/obt-hero__media.webp" src="files/video/obt/bs_vid043_goldenSetLanding_1920x1080.mp4" class="obt-hero__media-video" playsinline autoplay>
 										</video>
+										<div class="obt-content__block-media-controls _default">
+											<button class="obt-content__block-pause _visible"></button>
+										</div>
 									</div>
 								</div>
 								<div class="obt-hero__btn-wrapper">
@@ -991,21 +994,64 @@
 						const button = mediaItem.querySelector(".obt-hero__media-button");
 						const poster = mediaItem.querySelector(".obt-hero__media-poster");
 						const video = mediaItem.querySelector(".obt-hero__media-video");
+						const mediaControls = mediaItem.querySelector(".obt-content__block-media-controls");
+						const pauseBtn = mediaControls?.querySelector(".obt-content__block-pause");
+						const playBtn = mediaControls?.querySelector(".obt-content__block-play");
 
-						if (poster && video && button) {
+						if (poster && video && button && mediaControls) {
+							// Изначально скрываем элементы управления
+							mediaControls.style.opacity = "0";
+							mediaControls.style.visibility = "hidden";
+							button.style.display = "flex";
+
+							// Функция для управления видимостью элементов
+							const toggleControls = (isPlaying) => {
+								if (isPlaying) {
+									mediaControls.style.opacity = "1";
+									mediaControls.style.visibility = "visible";
+									button.style.display = "none";
+								} else {
+									mediaControls.style.opacity = "0";
+									mediaControls.style.visibility = "hidden";
+									button.style.display = "flex";
+								}
+							};
+
+							// Обработчик клика по кнопке воспроизведения
 							button.addEventListener("click", function() {
 								poster.style.opacity = "0";
 								poster.style.visibility = "hidden";
 								video.style.opacity = "1";
 								video.style.visibility = "visible";
 								video.play();
-								// video.setAttribute("controls", ""); // Включаем кнопки управления
+								toggleControls(true);
+							});
+
+							// Обработчик клика по кнопке паузы
+							if (pauseBtn) {
+								pauseBtn.addEventListener("click", function() {
+									video.pause();
+									toggleControls(false);
+								});
+							}
+
+							// Обработчик клика по кнопке воспроизведения в контролах
+							if (playBtn) {
+								playBtn.addEventListener("click", function() {
+									video.play();
+									toggleControls(true);
+								});
+							}
+
+							// Обработчик окончания видео
+							video.addEventListener("ended", function() {
+								toggleControls(false);
 							});
 
 							// Обработчик выхода из полноэкранного режима
 							document.addEventListener("fullscreenchange", function() {
 								if (!document.fullscreenElement) {
-									video.setAttribute("controls", ""); // Включаем управление после выхода из fullscreen
+									video.setAttribute("controls", "");
 								}
 							});
 						}
@@ -1464,7 +1510,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250609153326"></script>
+	<script src="js/app.min.js?_v=20250609154606"></script>
 </body>
 
 </html>

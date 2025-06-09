@@ -16841,9 +16841,10 @@ textarea {
   display: block;
   position: absolute;
   inset: 0;
-  background: url(../img/pages/zbt/path-inventory-bg.webp) 0 0/cover no-repeat;
+  background: url(../img/pages/zbt/path-inventory-bg.webp) center bottom -60px/cover no-repeat;
   mix-blend-mode: overlay;
-  transition: all 1s cubic-bezier(.3,0,.5,1)
+  transition: all 1s cubic-bezier(.3,0,.5,1);
+  bottom: -50px
 }
 .zbt-inventories._active {
   right: 0;
@@ -17441,8 +17442,8 @@ textarea {
 }
 .zbt-popup__inner {
   position: relative;
-  -o-border-image: url(../img/pages/zbt/zbt-popup__inner-bg.webp) 15 fill/15px;
-  border-image: url(../img/pages/zbt/zbt-popup__inner-bg.webp) 15 fill/15px;
+  -o-border-image: url(../img/pages/zbt/zbt-popup__inner-bg.webp) 180 fill/180px;
+  border-image: url(../img/pages/zbt/zbt-popup__inner-bg.webp) 180 fill/180px;
   padding: 10px 0;
   width: 100%;
   height: 100%
@@ -17489,6 +17490,9 @@ textarea {
   max-width: 656px;
   width: 100%;
   margin: 0 auto
+}
+.zbt-popup__inventory._five-items {
+  max-width: 540px
 }
 .zbt-popup__description {
   color: #c9cccf;

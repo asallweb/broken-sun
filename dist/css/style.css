@@ -16157,7 +16157,7 @@ textarea {
 .treasure-widget {
   position: absolute;
   z-index: 7;
-  top: 124px;
+  top: 200px;
   right: 12px;
   cursor: pointer
 }
@@ -16717,7 +16717,6 @@ textarea {
   z-index: 3;
   bottom: 0;
   width: 100%;
-  height: 176px;
   color: #fff;
   display: flex;
   justify-content: center;
@@ -16934,6 +16933,9 @@ textarea {
   gap: 16px;
   align-self: stretch
 }
+.zbt-inventory__row:last-child {
+  margin-bottom: 0!important
+}
 .zbt-inventory__list-head {
   display: flex;
   justify-content: space-between;
@@ -16954,7 +16956,8 @@ textarea {
   display: flex;
   align-items: flex-start;
   gap: 24px;
-  background: linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,.23) 25%,rgba(0,0,0,.3) 50%,rgba(0,0,0,.23) 75%,rgba(0,0,0,0) 100%)
+  background: linear-gradient(90deg,rgba(0,0,0,0) 0,rgba(0,0,0,.23) 25%,rgba(0,0,0,.3) 50%,rgba(0,0,0,.23) 75%,rgba(0,0,0,0) 100%);
+  padding: 0 5px
 }
 .zbt-inventory__list-reward-item {
   display: flex;
@@ -16963,8 +16966,25 @@ textarea {
   gap: 4px
 }
 .zbt-inventory__list-reward-icon {
-  -o-object-fit: cover;
-  object-fit: cover
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-right: 5px
+}
+.zbt-inventory__list-reward-icon::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%)
+}
+.zbt-inventory__list-reward-icon._money::before {
+  background: url(../img/pages/zbt/reward-icon-1.webp) center center/100% 100% no-repeat
+}
+.zbt-inventory__list-reward-icon._crystal::before {
+  background: url(../img/pages/zbt/reward-icon-2.webp) center center/100% 100% no-repeat
 }
 .zbt-inventory__list-reward-value {
   color: #ddc383;
@@ -17418,6 +17438,15 @@ textarea {
   object-fit: cover;
   pointer-events: none;
   display: none
+}
+.zbt-bg__hand-slide {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  bottom: -45px;
+  -webkit-transform: translate(-50%,0);
+  transform: translate(-50%,0)
 }
 .zbt-popup {
   position: fixed;
@@ -19468,10 +19497,10 @@ textarea {
     padding-right: 3rem
   }
   .zbt__head-title {
-    padding-top: 1.5rem
+    padding-top: .625rem
   }
   .zbt__head-title {
-    padding-bottom: 1.5rem
+    padding-bottom: .875rem
   }
   .zbt__head-title {
     padding-left: 3.75rem
@@ -19604,11 +19633,11 @@ textarea {
   .zbt-inventory__list-title {
     font-size: 1.625rem
   }
-  .zbt-inventory__list-reward-icon {
-    width: 2.5rem
+  .zbt-inventory__list-reward-icon::before {
+    width: 4.0625rem
   }
-  .zbt-inventory__list-reward-icon {
-    height: 2.5rem
+  .zbt-inventory__list-reward-icon::before {
+    height: 4.0625rem
   }
   .zbt-inventory__list-reward-value {
     letter-spacing: .055rem
@@ -19805,6 +19834,20 @@ textarea {
   }
   .counter::before {
     background: url(../img/background/counter/counter_2k.webp) 0 0 no-repeat
+  }
+}
+@media (max-height:720px) and (min-width:90em) {
+  .zbt-inventory__list-head {
+    margin-bottom: 1.5rem
+  }
+  .zbt-inventory__list-head._mb-16 {
+    margin-bottom: 1rem
+  }
+  .zbt-inventory__list-title {
+    font-size: 1.625rem
+  }
+  .zbt-popup__title {
+    font-size: 2.5rem
   }
 }
 @media (min-width:1441px) {
@@ -21869,7 +21912,11 @@ textarea {
     max-width: 288px
   }
   ._zbt .hero__logo {
-    top: 25px
+    top: 25px;
+    text-align: center
+  }
+  .hero__logo-src {
+    width: 90%
   }
   .hero__logo-title {
     font-size: 14px
@@ -24606,14 +24653,14 @@ textarea {
     border-image: url(../img/elements/treasure-widget/mobile-bg.webp) 15 fill/15px;
     transition: right .5s cubic-bezier(.3,0,.5,1);
     right: 0;
-    width: 159px
+    width: 122px
   }
   .treasure-widget__wrapper {
     padding: 10px 8px;
     position: relative
   }
   .treasure-widget__title {
-    font-size: 16px;
+    font-size: 12px;
     padding: 0
   }
   .treasure-widget__title span {
@@ -24629,14 +24676,18 @@ textarea {
     height: 120px
   }
   .treasure-widget__image-src {
-    height: 120px
+    height: 100px
   }
   .treasure-widget__button {
     width: 110px;
-    height: 24px
+    height: 32px
   }
   .treasure-widget__button span span {
     display: none
+  }
+  .treasure-widget__button::after,
+  .treasure-widget__button::before {
+    background-size: 100% 100%!important
   }
   .zbt__back-btn {
     font-weight: 400
@@ -24665,6 +24716,13 @@ textarea {
   .carousel-active .tilted-card__inner::before {
     transition: none;
     background-size: contain
+  }
+  .tilted-card__img {
+    clip-path: polygon(10px 0,calc(100% - 10px) 0,100% 11px,100% calc(100% - 12px),calc(100% - 12px) 100%,11px 100%,0 calc(100% - 12px),0 10px)
+  }
+  .tilted-card__content {
+    gap: 12px;
+    padding-bottom: 25px
   }
   .zbt-inventories {
     width: 100vw
@@ -24695,6 +24753,16 @@ textarea {
   .artifact__tooltip._active {
     display: none
   }
+  .zbt-bg__background-image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover
+  }
+  .tilted-card.active .zbt-bg__hand-slide {
+    opacity: 1;
+    visibility: visible
+  }
   .zbt-popup__wrapper {
     padding: 30px 10px;
     height: auto
@@ -24717,7 +24785,7 @@ textarea {
     gap: 16px
   }
   .zbt-popup__sended-inner {
-    padding: 24px 28px
+    padding: 24px 15px
   }
   .zbt-popup__unavailable br {
     display: none
@@ -25630,10 +25698,10 @@ textarea {
     padding-right: .9375rem
   }
   .zbt__head-title {
-    padding-top: 1rem
+    padding-top: .375rem
   }
   .zbt__head-title {
-    padding-bottom: 1rem
+    padding-bottom: .625rem
   }
   .zbt__head-title {
     padding-left: .0000000625rem
@@ -25645,7 +25713,7 @@ textarea {
     letter-spacing: .06rem
   }
   .zbt__head-title {
-    font-size: 1rem
+    font-size: 1.75rem
   }
   .zbt__head-placeholder {
     width: 10rem
@@ -25737,7 +25805,7 @@ textarea {
     font-size: 1rem
   }
   .zbt-inventory__wrapper {
-    gap: 1rem
+    gap: .75rem
   }
   .zbt-inventory__title {
     font-size: 1.75rem
@@ -25766,11 +25834,11 @@ textarea {
   .zbt-inventory__list-title {
     font-size: 1.5rem
   }
-  .zbt-inventory__list-reward-icon {
-    width: 1.5rem
+  .zbt-inventory__list-reward-icon::before {
+    width: 3.25rem
   }
-  .zbt-inventory__list-reward-icon {
-    height: 1.5rem
+  .zbt-inventory__list-reward-icon::before {
+    height: 3.25rem
   }
   .zbt-inventory__list-reward-value {
     letter-spacing: .05rem
@@ -25936,6 +26004,20 @@ textarea {
   }
   .obt-footer__title {
     font-size: 2.125rem
+  }
+}
+@media (max-height:720px) and (max-width:23.4375em) {
+  .zbt-inventory__list-head {
+    margin-bottom: .625rem
+  }
+  .zbt-inventory__list-head._mb-16 {
+    margin-bottom: .5rem
+  }
+  .zbt-inventory__list-title {
+    font-size: 1.25rem
+  }
+  .zbt-popup__title {
+    font-size: 1.375rem
   }
 }
 @media (min-width:24.375em) and (max-width:90em) {
@@ -26638,10 +26720,10 @@ textarea {
     padding-right: clamp(.9375rem ,.2112676056rem + 3.0985915493vw ,3rem)
   }
   .zbt__head-title {
-    padding-top: clamp(1rem ,.823943662rem + .7511737089vw ,1.5rem)
+    padding-top: clamp(.375rem ,.286971831rem + .3755868545vw ,.625rem)
   }
   .zbt__head-title {
-    padding-bottom: clamp(1rem ,.823943662rem + .7511737089vw ,1.5rem)
+    padding-bottom: clamp(.625rem ,.536971831rem + .3755868545vw ,.875rem)
   }
   .zbt__head-title {
     padding-left: clamp(.0000000625rem ,-1.3204224507rem + 5.633802723vw ,3.75rem)
@@ -26653,7 +26735,7 @@ textarea {
     letter-spacing: clamp(.06rem ,.045915493rem + .0600938967vw ,.1rem)
   }
   .zbt__head-title {
-    font-size: clamp(1rem ,.4718309859rem + 2.2535211268vw ,2.5rem)
+    font-size: clamp(1.75rem ,1.485915493rem + 1.1267605634vw ,2.5rem)
   }
   .zbt__head-placeholder {
     width: clamp(10rem ,8.4595070423rem + 6.5727699531vw ,14.375rem)
@@ -26745,7 +26827,7 @@ textarea {
     font-size: clamp(1rem ,.9559859155rem + .1877934272vw ,1.125rem)
   }
   .zbt-inventory__wrapper {
-    gap: clamp(1rem ,.5818661972rem + 1.7840375587vw ,2.1875rem)
+    gap: clamp(.75rem ,.2438380282rem + 2.1596244131vw ,2.1875rem)
   }
   .zbt-inventory__title {
     font-size: clamp(1.75rem ,1.485915493rem + 1.1267605634vw ,2.5rem)
@@ -26774,11 +26856,11 @@ textarea {
   .zbt-inventory__list-title {
     font-size: clamp(1.5rem ,1.4559859155rem + .1877934272vw ,1.625rem)
   }
-  .zbt-inventory__list-reward-icon {
-    width: clamp(1.5rem ,1.1478873239rem + 1.5023474178vw ,2.5rem)
+  .zbt-inventory__list-reward-icon::before {
+    width: clamp(3.25rem ,2.9639084507rem + 1.220657277vw ,4.0625rem)
   }
-  .zbt-inventory__list-reward-icon {
-    height: clamp(1.5rem ,1.1478873239rem + 1.5023474178vw ,2.5rem)
+  .zbt-inventory__list-reward-icon::before {
+    height: clamp(3.25rem ,2.9639084507rem + 1.220657277vw ,4.0625rem)
   }
   .zbt-inventory__list-reward-value {
     letter-spacing: clamp(.05rem ,.0482394366rem + .0075117371vw ,.055rem)
@@ -27027,12 +27109,20 @@ textarea {
     max-height: 60vh
   }
 }
-@media (max-height:820px) and (min-width:1080px) and (max-width:1290px) {
+@media (max-width:1180px) and (min-width:47.99875em) {
+  .treasure-widget {
+    -webkit-transform: scale(.67);
+    transform: scale(.67);
+    right: -60px;
+    top: 124px
+  }
+}
+@media (max-height:820px) and (min-width:768px) and (max-width:1290px) {
   .zbt-inventory__wrapper {
     padding: 5px 0
   }
 }
-@media (max-height:820px) and (min-width:1080px) and (max-width:1290px) and (min-width:90em) {
+@media (max-height:820px) and (min-width:768px) and (max-width:1290px) and (min-width:90em) {
   .zbt-inventory__wrapper {
     gap: .625rem
   }
@@ -27052,7 +27142,7 @@ textarea {
     margin-bottom: .9375rem
   }
 }
-@media (max-height:820px) and (min-width:1080px) and (max-width:1290px) and (min-width:23.4375em) and (max-width:90em) {
+@media (max-height:820px) and (min-width:768px) and (max-width:1290px) and (min-width:23.4375em) and (max-width:90em) {
   .zbt-inventory__wrapper {
     gap: clamp(.625rem ,.625rem + 0 ,.625rem)
   }
@@ -27072,7 +27162,7 @@ textarea {
     margin-bottom: clamp(.9375rem ,.9375rem + 0 ,.9375rem)
   }
 }
-@media (max-height:820px) and (min-width:1080px) and (max-width:1290px) and (max-width:23.4375em) {
+@media (max-height:820px) and (min-width:768px) and (max-width:1290px) and (max-width:23.4375em) {
   .zbt-inventory__wrapper {
     gap: .625rem
   }
@@ -27090,6 +27180,20 @@ textarea {
   }
   .zbt-inventory__row._mb-28 {
     margin-bottom: .9375rem
+  }
+}
+@media (max-height:720px) and (min-width:23.4375em) and (max-width:90em) {
+  .zbt-inventory__list-head {
+    margin-bottom: clamp(.625rem ,.3169014085rem + 1.3145539906vw ,1.5rem)
+  }
+  .zbt-inventory__list-head._mb-16 {
+    margin-bottom: clamp(.5rem ,.323943662rem + .7511737089vw ,1rem)
+  }
+  .zbt-inventory__list-title {
+    font-size: clamp(1.25rem ,1.1179577465rem + .5633802817vw ,1.625rem)
+  }
+  .zbt-popup__title {
+    font-size: clamp(1.375rem ,.9788732394rem + 1.6901408451vw ,2.5rem)
   }
 }
 @media (prefers-reduced-motion:reduce),
@@ -27111,5 +27215,28 @@ not all and (min-resolution:0.001dpcm) and (min-resolution:0.001dpcm) {
     .menu__submenu-external-icon {
       margin-top: -5px
     }
+  }
+}
+@media (max-height:720px) {
+  .zbt-path__list {
+    -webkit-transform: translate(-50%,-50%) scale(.8);
+    transform: translate(-50%,-50%) scale(.8)
+  }
+  ._active .zbt-path__list {
+    -webkit-transform: translate(-50%,-50%) scale(.8);
+    transform: translate(-50%,-50%) scale(.8)
+  }
+  .zbt-inventory__list-head {
+    gap: 8px
+  }
+  .zbt-popup__title {
+    padding: 5px 10px
+  }
+  .zbt-popup__separator {
+    margin: 5px auto 10px
+  }
+  .zbt-popup__separator._mb-10 {
+    margin-top: 25px;
+    display: none
   }
 }

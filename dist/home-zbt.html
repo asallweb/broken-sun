@@ -5,10 +5,10 @@
 	<title>PORTAL PAGE</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250609203006">
-	<script src="files/js/preloader.js?_v=20250609203006"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250609203006">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250609203006">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250611103506">
+	<script src="files/js/preloader.js?_v=20250611103506"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250611103506">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250611103506">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -353,6 +353,27 @@
 					window.addEventListener('resize', updateLogoPosition);
 				</script>
 				<script>
+					function updateTreasureWidgetPosition() {
+						if (window.innerWidth < 768) {
+							const logo = document.querySelector('.hero__logo');
+							const buttonWrapper = document.querySelector('.treasure-widget');
+
+							if (logo && buttonWrapper) {
+								const logoBottom = logo.getBoundingClientRect().bottom + window.scrollY;
+								buttonWrapper.style.top = `${logoBottom - 10}px`;
+							}
+						} else {
+							const buttonWrapper = document.querySelector('.treasure-widget');
+							if (buttonWrapper) {
+								buttonWrapper.style.top = '';
+							}
+						}
+					}
+
+					window.addEventListener('load', updateTreasureWidgetPosition);
+					window.addEventListener('resize', updateTreasureWidgetPosition);
+				</script>
+				<script>
 					document.addEventListener('DOMContentLoaded', function() {
 						const widgets = document.querySelectorAll('.treasure-widget');
 						let isMobile = window.innerWidth < 768;
@@ -420,7 +441,10 @@
 				<div class="zbt-bg">
 					<div class="zbt-bg__background">
 						<div class="zbt-bg__background-image">
-							<img src="img/pages/zbt/path-background.webp" />
+							<picture>
+								<source media="(max-width: 767px)" srcset="img/pages/zbt/zbt-background-mobile.webp">
+								<img src="img/pages/zbt/path-background.webp" alt="">
+							</picture>
 						</div>
 						<div class="zbt-bg__background-video">
 							<video src="files/video/zbt/OBT_3840х2160px.webm" class="zbt-bg__background-video-src _desktop-2k" autoplay muted playsinline loop></video>
@@ -530,6 +554,7 @@
 											<div class="tilted-card__overlay"></div>
 										</div>
 									</div>
+									<img src="img/pages/zbt/hand-slide.svg" class="zbt-bg__hand-slide">
 								</figure>
 								<figure class="tilted-card _weapon carouselItem" data-artefacts-screen="path-air">
 									<div class="tilted-card__wrapper">
@@ -558,6 +583,7 @@
 											<div class="tilted-card__overlay"></div>
 										</div>
 									</div>
+									<img src="img/pages/zbt/hand-slide.svg" class="zbt-bg__hand-slide">
 								</figure>
 								<figure class="tilted-card _weapon carouselItem" data-artefacts-screen="path-fire">
 									<div class="tilted-card__wrapper">
@@ -586,6 +612,7 @@
 											<div class="tilted-card__overlay"></div>
 										</div>
 									</div>
+									<img src="img/pages/zbt/hand-slide.svg" class="zbt-bg__hand-slide">
 								</figure>
 								<figure class="tilted-card _weapon carouselItem" data-artefacts-screen="path-water">
 									<div class="tilted-card__wrapper">
@@ -614,6 +641,7 @@
 											<div class="tilted-card__overlay"></div>
 										</div>
 									</div>
+									<img src="img/pages/zbt/hand-slide.svg" class="zbt-bg__hand-slide">
 								</figure>
 							</div>
 						</div>
@@ -906,13 +934,13 @@
 											</div>
 											<div class="zbt-inventory__list-reward">
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _money"></div>
 													<div class="zbt-inventory__list-reward-value">
 														25000
 													</div>
 												</div>
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _crystal"></div>
 													<div class="zbt-inventory__list-reward-value">
 														1000
 													</div>
@@ -1370,13 +1398,13 @@
 											</div>
 											<div class="zbt-inventory__list-reward">
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _money"></div>
 													<div class="zbt-inventory__list-reward-value">
 														25000
 													</div>
 												</div>
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _crystal"></div>
 													<div class="zbt-inventory__list-reward-value">
 														1000
 													</div>
@@ -1834,13 +1862,13 @@
 											</div>
 											<div class="zbt-inventory__list-reward">
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _money"></div>
 													<div class="zbt-inventory__list-reward-value">
 														25000
 													</div>
 												</div>
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _crystal"></div>
 													<div class="zbt-inventory__list-reward-value">
 														1000
 													</div>
@@ -2298,13 +2326,13 @@
 											</div>
 											<div class="zbt-inventory__list-reward">
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _money"></div>
 													<div class="zbt-inventory__list-reward-value">
 														25000
 													</div>
 												</div>
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _crystal"></div>
 													<div class="zbt-inventory__list-reward-value">
 														1000
 													</div>
@@ -2506,6 +2534,7 @@
 											<div class="tilted-card__overlay"></div>
 										</div>
 									</div>
+									<img src="img/pages/zbt/hand-slide.svg" class="zbt-bg__hand-slide">
 								</figure>
 								<figure class="tilted-card _weapon carouselItem" data-artefacts-screen="path-trick">
 									<div class="tilted-card__wrapper">
@@ -2533,6 +2562,7 @@
 											<div class="tilted-card__overlay"></div>
 										</div>
 									</div>
+									<img src="img/pages/zbt/hand-slide.svg" class="zbt-bg__hand-slide">
 								</figure>
 								<figure class="tilted-card _weapon carouselItem" data-artefacts-screen="path-anger">
 									<div class="tilted-card__wrapper">
@@ -2561,6 +2591,7 @@
 											<div class="tilted-card__overlay"></div>
 										</div>
 									</div>
+									<img src="img/pages/zbt/hand-slide.svg" class="zbt-bg__hand-slide">
 								</figure>
 							</div>
 						</div>
@@ -2807,13 +2838,13 @@
 											</div>
 											<div class="zbt-inventory__list-reward">
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _money"></div>
 													<div class="zbt-inventory__list-reward-value">
 														25000
 													</div>
 												</div>
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _crystal"></div>
 													<div class="zbt-inventory__list-reward-value">
 														1000
 													</div>
@@ -3225,13 +3256,13 @@
 											</div>
 											<div class="zbt-inventory__list-reward">
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _money"></div>
 													<div class="zbt-inventory__list-reward-value">
 														25000
 													</div>
 												</div>
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _crystal"></div>
 													<div class="zbt-inventory__list-reward-value">
 														1000
 													</div>
@@ -3613,13 +3644,13 @@
 											</div>
 											<div class="zbt-inventory__list-reward">
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _money"></div>
 													<div class="zbt-inventory__list-reward-value">
 														25000
 													</div>
 												</div>
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _crystal"></div>
 													<div class="zbt-inventory__list-reward-value">
 														1000
 													</div>
@@ -3821,6 +3852,7 @@
 											<div class="tilted-card__overlay"></div>
 										</div>
 									</div>
+									<img src="img/pages/zbt/hand-slide.svg" class="zbt-bg__hand-slide">
 								</figure>
 								<figure class="tilted-card _weapon carouselItem" data-artefacts-screen="path-push">
 									<div class="tilted-card__wrapper">
@@ -3849,6 +3881,7 @@
 											<div class="tilted-card__overlay"></div>
 										</div>
 									</div>
+									<img src="img/pages/zbt/hand-slide.svg" class="zbt-bg__hand-slide">
 								</figure>
 							</div>
 						</div>
@@ -4095,13 +4128,14 @@
 											</div>
 											<div class="zbt-inventory__list-reward">
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _money"></div>
 													<div class="zbt-inventory__list-reward-value">
 														25000
 													</div>
 												</div>
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+
+													<div class="zbt-inventory__list-reward-icon _crystal"></div>
 													<div class="zbt-inventory__list-reward-value">
 														1000
 													</div>
@@ -4544,13 +4578,14 @@
 											</div>
 											<div class="zbt-inventory__list-reward">
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+													<div class="zbt-inventory__list-reward-icon _money"></div>
 													<div class="zbt-inventory__list-reward-value">
 														25000
 													</div>
 												</div>
 												<div class="zbt-inventory__list-reward-item">
-													<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+
+													<div class="zbt-inventory__list-reward-icon _crystal"></div>
 													<div class="zbt-inventory__list-reward-value">
 														1000
 													</div>
@@ -4956,13 +4991,13 @@
 									</div>
 									<div class="zbt-inventory__list-reward">
 										<div class="zbt-inventory__list-reward-item">
-											<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+											<div class="zbt-inventory__list-reward-icon _money"></div>
 											<div class="zbt-inventory__list-reward-value">
 												25000
 											</div>
 										</div>
 										<div class="zbt-inventory__list-reward-item">
-											<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+											<div class="zbt-inventory__list-reward-icon _crystal"></div>
 											<div class="zbt-inventory__list-reward-value">
 												1000
 											</div>
@@ -5182,13 +5217,13 @@
 									</div>
 									<div class="zbt-inventory__list-reward">
 										<div class="zbt-inventory__list-reward-item">
-											<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+											<div class="zbt-inventory__list-reward-icon _money"></div>
 											<div class="zbt-inventory__list-reward-value">
 												25000
 											</div>
 										</div>
 										<div class="zbt-inventory__list-reward-item">
-											<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+											<div class="zbt-inventory__list-reward-icon _crystal"></div>
 											<div class="zbt-inventory__list-reward-value">
 												1000
 											</div>
@@ -5378,13 +5413,13 @@
 									</div>
 									<div class="zbt-inventory__list-reward">
 										<div class="zbt-inventory__list-reward-item">
-											<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+											<div class="zbt-inventory__list-reward-icon _money"></div>
 											<div class="zbt-inventory__list-reward-value">
 												25000
 											</div>
 										</div>
 										<div class="zbt-inventory__list-reward-item">
-											<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+											<div class="zbt-inventory__list-reward-icon _crystal"></div>
 											<div class="zbt-inventory__list-reward-value">
 												1000
 											</div>
@@ -5829,13 +5864,13 @@
 									</div>
 									<div class="zbt-inventory__list-reward">
 										<div class="zbt-inventory__list-reward-item">
-											<img src="img/pages/zbt/reward-icon-1.webp" alt="" class="zbt-inventory__list-reward-icon">
+											<div class="zbt-inventory__list-reward-icon _money"></div>
 											<div class="zbt-inventory__list-reward-value">
 												25000
 											</div>
 										</div>
 										<div class="zbt-inventory__list-reward-item">
-											<img src="img/pages/zbt/reward-icon-2.webp" alt="" class="zbt-inventory__list-reward-icon">
+											<div class="zbt-inventory__list-reward-icon _crystal"></div>
 											<div class="zbt-inventory__list-reward-value">
 												1000
 											</div>
@@ -6226,8 +6261,8 @@
 				</div>
 			</section>
 		</main>
-		<script src="https://cdn.jsdelivr.net/npm/motion@12.12.1/dist/motion.js?_v=20250609203006"></script>
-		<script src="files/js/zbt.js?_v=20250609203006"></script>
+		<script src="https://cdn.jsdelivr.net/npm/motion@12.12.1/dist/motion.js?_v=20250611103506"></script>
+		<script src="files/js/zbt.js?_v=20250611103506"></script>
 	</div>
 	<div id="media" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
@@ -6245,7 +6280,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250609203006"></script>
+	<script src="js/app.min.js?_v=20250611103506"></script>
 </body>
 
 </html>

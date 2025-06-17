@@ -9552,6 +9552,12 @@ textarea {
   flex-direction: column;
   justify-content: center
 }
+.featured-news._home {
+  justify-content: flex-start;
+  padding-top: 60px;
+  height: 640px;
+  min-height: 1px
+}
 .featured-news .__container {
   width: 100vw
 }
@@ -9568,6 +9574,9 @@ textarea {
   text-transform: uppercase;
   color: #ddc383;
   text-shadow: 0 2px 4px rgba(0,0,0,.6)
+}
+._home .featured-news__title span {
+  text-transform: none
 }
 .featured-news__slide {
   width: 318px;
@@ -9649,7 +9658,8 @@ textarea {
 }
 .featured-news .swiper {
   overflow: visible;
-  z-index: 3
+  position: relative;
+  z-index: 5
 }
 .featured-article,
 .fresh-article {
@@ -21380,6 +21390,10 @@ textarea {
   .counter__image-src {
     max-width: 485px
   }
+  .zbt-inventory__reward-btn:disabled::after,
+  .zbt-inventory__reward-btn:disabled::before {
+    background-size: 100% auto
+  }
 }
 @media (max-width:1080px) {
   .class-hero._archer {
@@ -24759,7 +24773,7 @@ textarea {
     -o-object-fit: cover;
     object-fit: cover
   }
-  .tilted-card.active .zbt-bg__hand-slide {
+  ._visible .tilted-card.active .zbt-bg__hand-slide {
     opacity: 1;
     visibility: visible
   }
@@ -25200,7 +25214,7 @@ textarea {
     font-size: 2.25rem
   }
   .featured-news__title span {
-    letter-spacing: .315rem
+    letter-spacing: .085rem
   }
   .fresh-news {
     padding-top: 3.125rem
@@ -26222,7 +26236,7 @@ textarea {
     font-size: clamp(2.25rem ,2.161971831rem + .3755868545vw ,2.5rem)
   }
   .featured-news__title span {
-    letter-spacing: clamp(.09375rem ,.3929049296rem + -.3323943662vw ,.315rem)
+    letter-spacing: clamp(.085rem ,.0819190141rem + .0131455399vw ,.09375rem)
   }
   .fresh-news {
     padding-top: clamp(3.125rem ,2.8169014085rem + 1.3145539906vw ,4rem)

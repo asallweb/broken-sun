@@ -5,10 +5,10 @@
 	<title>PORTAL PAGE</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="files/css/preloader.css?_v=20250611103506">
-	<script src="files/js/preloader.js?_v=20250611103506"></script>
-	<link rel="stylesheet" href="css/style.min.css?_v=20250611103506">
-	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250611103506">
+	<link rel="stylesheet" href="files/css/preloader.css?_v=20250617140612">
+	<script src="files/js/preloader.js?_v=20250617140612"></script>
+	<link rel="stylesheet" href="css/style.min.css?_v=20250617140612">
+	<link rel="stylesheet" href="files/css/animated-files.css?_v=20250617140612">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="16x16" href="files/favicons/favicon-16x16.png">
@@ -380,53 +380,645 @@
 					window.addEventListener('resize', updateLogoPosition);
 				</script>
 			</section>
-			<section class="portal-news">
-				<div class="portal-news__wrapper">
-					<div class="__container">
-						<div class="portal-news__head">
-							<div class="portal-news__head-title">
-								Новости
-								<div class="portal-news__head-title-icon">
-									<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-										<path d="M7.99421 2L14 8L7.99999 14L2 7.99851L7.99421 2Z" stroke="#1E2533" stroke-width="2" />
-									</svg>
-
+			<section class="featured-news _home">
+				<div class="__container">
+					<div class="featured-news__title">
+						<span>Новости</span>
+					</div>
+					<div class="featured-news__slider swiper">
+						<div class="featured-news__list swiper-wrapper">
+							<a href="" class="featured-news__slide swiper-slide">
+								<div class="featured-article _high-img">
+									<div class="featured-article__date">
+										<div class="featured-article__date-logo">
+											<img src="img/icons/news/date-logo-src.svg" class="featured-article__date-logo-src">
+										</div>
+										<div class="featured-article__date-text">
+											30 Января 2025
+										</div>
+									</div>
+									<div class="featured-article__image-wrapper">
+										<div class="featured-article__image">
+											<img src="img/content/news/featured-article-1.webp" class="featured-article__src">
+										</div>
+									</div>
+									<div class="featured-article__content-wrapper">
+										<div class="featured-article__content">
+											<div class="featured-article__body">
+												<div class="featured-article__title">Асгард — суровый лепесток Мира-Лотоса</div>
+											</div>
+											<div class="featured-article__tools">
+												<div class="featured-article__comments">
+													<div class="featured-article__comments-count">
+														<span>10+</span>
+														<svg width="21" height="19">
+															<use xlink:href="img/icons/news/tag-icons.svg#comments"></use>
+														</svg>
+													</div>
+													<span>Комментарии</span>
+												</div>
+												<div class="featured-article__detail">
+													<div class="featured-article__detail-link">
+														Подробнее
+														<div class="featured-article__detail-link-icon">
+															<div class="featured-article__detail-link-icon-left">
+																<img src="img/icons/news/detail-link-icon-small.svg" class="_visible">
+																<img src="img/icons/news/detail-link-icon-big-hover.svg" class="_hidden">
+															</div>
+															<div class="featured-article__detail-link-icon-right">
+																<img src="img/icons/news/detail-link-icon-big.svg" class="_visible">
+																<img src="img/icons/news/detail-link-icon-small-hover.svg" class="_hidden">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="portal-news__search">
-								<input type="text" class="portal-news__input" placeholder="Введите поисковый запрос">
-								<button class="portal-news__button">
-									<img src="img/icons/search.webp" class="portal-news__icon">
-								</button>
-							</div>
-						</div>
-						<div class="portal-news__list">
-							<a href="" class="portal-news__item">
-								<div class="portal-news__image">
-									<img src="img/content/portal-news/1.webp" class="portal-news__img">
-								</div>
-								<div class="portal-news__title">Добро пожаловать в мир Broken Sun!</div>
 							</a>
-							<a href="" class="portal-news__item">
-								<div class="portal-news__image">
-									<img src="img/content/portal-news/2.webp" class="portal-news__img">
+							<a href="" class="featured-news__slide swiper-slide">
+								<div class="featured-article _corners">
+									<div class="featured-article__image-wrapper">
+										<div class="featured-article__image">
+											<img src="img/content/news/featured-article-2.webp" class="featured-article__src">
+										</div>
+									</div>
+									<div class="featured-article__content-wrapper">
+										<div class="featured-article__content">
+											<div class="featured-article__date">
+												<div class="featured-article__tag">
+													<svg width="16" height="16">
+														<use xlink:href="img/icons/news/tag-icons.svg#tag-icon-6"></use>
+													</svg>
+													<span>Сообщество</span>
+												</div>
+												<div class="featured-article__date-text">
+													30 Января 2025
+												</div>
+											</div>
+											<div class="featured-article__body">
+												<div class="featured-article__title">Байки "Хмельного Черепа" #2</div>
+												<div class="featured-article__text">В каждом уголке мира есть место, где сходятся судьбы странников, наёмников и искателей приключений. В нашем мире таким местом стал "Хмельной Череп"</div>
+											</div>
+											<div class="featured-article__tools">
+												<div class="featured-article__comments">
+													<div class="featured-article__comments-count">
+														<span>5</span>
+														<svg width="21" height="19">
+															<use xlink:href="img/icons/news/tag-icons.svg#comments"></use>
+														</svg>
+													</div>
+													<span>Комментарии</span>
+												</div>
+												<div class="featured-article__detail">
+													<div class="featured-article__detail-link">
+														Подробнее
+														<div class="featured-article__detail-link-icon">
+															<div class="featured-article__detail-link-icon-left">
+																<img src="img/icons/news/detail-link-icon-small.svg" class="_visible">
+																<img src="img/icons/news/detail-link-icon-big-hover.svg" class="_hidden">
+															</div>
+															<div class="featured-article__detail-link-icon-right">
+																<img src="img/icons/news/detail-link-icon-big.svg" class="_visible">
+																<img src="img/icons/news/detail-link-icon-small-hover.svg" class="_hidden">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="portal-news__title">Боги приглашают на смертельную битву</div>
 							</a>
-							<a href="" class="portal-news__item">
-								<div class="portal-news__image">
-									<img src="img/content/portal-news/3.webp" class="portal-news__img">
+							<a href="" class="featured-news__slide swiper-slide">
+								<div class="featured-article">
+									<div class="featured-article__image-wrapper">
+										<div class="featured-article__image">
+											<img src="img/content/news/featured-article-3.webp" class="featured-article__src">
+											<div class="article-inventory">
+												<div class="article-inventory__item">
+													<img src="img/content/news/featured-article__inventory-1.webp" alt="" class="article-inventory__src">
+													<div class="article-inventory__tooltip">
+														<div class="article-inventory__tooltip-head">
+															<div class="article-inventory__tooltip-image">
+																<img src="img/content/news/featured-article__inventory-1.webp" class="article-inventory__tooltip-src">
+															</div>
+															<div class="article-inventory__tooltip-name">
+																<div class="article-inventory__tooltip-title">Великий меч</div>
+																<img src="img/icons/news/delimeter.svg" />
+																<div class="article-inventory__tooltip-param">
+																	<img src="img/icons/news/tooltip-param-weight.svg">
+																	125.5
+																</div>
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-rarity">
+															<div class="article-inventory__tooltip-rarity-name">
+																<img src="img/icons/news/tooltip-param-rarity.svg">
+																Редкость
+															</div>
+															<div class="article-inventory__tooltip-rarity-title">
+																Легендарная
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-description">
+															Этот массивный меч предназначен для точных прицельных атак. Он идеально подходит для размашистых ударов-чтобы отвлечь противников на себя.
+														</div>
+													</div>
+												</div>
+												<div class="article-inventory__item">
+													<img src="img/content/news/featured-article__inventory-2.webp" alt="" class="article-inventory__src">
+													<div class="article-inventory__tooltip">
+														<div class="article-inventory__tooltip-head">
+															<div class="article-inventory__tooltip-image">
+																<img src="img/content/news/featured-article__inventory-2.webp" class="article-inventory__tooltip-src">
+															</div>
+															<div class="article-inventory__tooltip-name">
+																<div class="article-inventory__tooltip-title">Великий меч</div>
+																<img src="img/icons/news/delimeter.svg" />
+																<div class="article-inventory__tooltip-param">
+																	<img src="img/icons/news/tooltip-param-weight.svg">
+																	125.5
+																</div>
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-rarity">
+															<div class="article-inventory__tooltip-rarity-name">
+																<img src="img/icons/news/tooltip-param-rarity.svg">
+																Редкость
+															</div>
+															<div class="article-inventory__tooltip-rarity-title">
+																Легендарная
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-description">
+															Этот массивный меч предназначен для точных прицельных атак. Он идеально подходит для размашистых ударов-чтобы отвлечь противников на себя.
+														</div>
+													</div>
+												</div>
+												<div class="article-inventory__item">
+													<img src="img/content/news/featured-article__inventory-3.webp" alt="" class="article-inventory__src">
+													<div class="article-inventory__tooltip">
+														<div class="article-inventory__tooltip-head">
+															<div class="article-inventory__tooltip-image">
+																<img src="img/content/news/featured-article__inventory-3.webp" class="article-inventory__tooltip-src">
+															</div>
+															<div class="article-inventory__tooltip-name">
+																<div class="article-inventory__tooltip-title">Великий меч</div>
+																<img src="img/icons/news/delimeter.svg" />
+																<div class="article-inventory__tooltip-param">
+																	<img src="img/icons/news/tooltip-param-weight.svg">
+																	125.5
+																</div>
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-rarity">
+															<div class="article-inventory__tooltip-rarity-name">
+																<img src="img/icons/news/tooltip-param-rarity.svg">
+																Редкость
+															</div>
+															<div class="article-inventory__tooltip-rarity-title">
+																Легендарная
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-description">
+															Этот массивный меч предназначен для точных прицельных атак. Он идеально подходит для размашистых ударов-чтобы отвлечь противников на себя.
+														</div>
+													</div>
+												</div>
+												<div class="article-inventory__item">
+													<img src="img/content/news/featured-article__inventory-4.webp" alt="" class="article-inventory__src">
+													<div class="article-inventory__tooltip">
+														<div class="article-inventory__tooltip-head">
+															<div class="article-inventory__tooltip-image">
+																<img src="img/content/news/featured-article__inventory-4.webp" class="article-inventory__tooltip-src">
+															</div>
+															<div class="article-inventory__tooltip-name">
+																<div class="article-inventory__tooltip-title">Великий меч</div>
+																<img src="img/icons/news/delimeter.svg" />
+																<div class="article-inventory__tooltip-param">
+																	<img src="img/icons/news/tooltip-param-weight.svg">
+																	125.5
+																</div>
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-rarity">
+															<div class="article-inventory__tooltip-rarity-name">
+																<img src="img/icons/news/tooltip-param-rarity.svg">
+																Редкость
+															</div>
+															<div class="article-inventory__tooltip-rarity-title">
+																Легендарная
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-description">
+															Этот массивный меч предназначен для точных прицельных атак. Он идеально подходит для размашистых ударов-чтобы отвлечь противников на себя.
+														</div>
+													</div>
+												</div>
+												<div class="article-inventory__item">
+													<img src="img/content/news/featured-article__inventory-5.webp" alt="" class="article-inventory__src">
+													<div class="article-inventory__tooltip">
+														<div class="article-inventory__tooltip-head">
+															<div class="article-inventory__tooltip-image">
+																<img src="img/content/news/featured-article__inventory-5.webp" class="article-inventory__tooltip-src">
+															</div>
+															<div class="article-inventory__tooltip-name">
+																<div class="article-inventory__tooltip-title">Великий меч</div>
+																<img src="img/icons/news/delimeter.svg" />
+																<div class="article-inventory__tooltip-param">
+																	<img src="img/icons/news/tooltip-param-weight.svg">
+																	125.5
+																</div>
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-rarity">
+															<div class="article-inventory__tooltip-rarity-name">
+																<img src="img/icons/news/tooltip-param-rarity.svg">
+																Редкость
+															</div>
+															<div class="article-inventory__tooltip-rarity-title">
+																Легендарная
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-description">
+															Этот массивный меч предназначен для точных прицельных атак. Он идеально подходит для размашистых ударов-чтобы отвлечь противников на себя.
+														</div>
+													</div>
+												</div>
+												<div class="article-inventory__item">
+													<img src="img/content/news/featured-article__inventory-6.webp" alt="" class="article-inventory__src">
+													<div class="article-inventory__tooltip">
+														<div class="article-inventory__tooltip-head">
+															<div class="article-inventory__tooltip-image">
+																<img src="img/content/news/featured-article__inventory-6.webp" class="article-inventory__tooltip-src">
+															</div>
+															<div class="article-inventory__tooltip-name">
+																<div class="article-inventory__tooltip-title">Великий меч</div>
+																<img src="img/icons/news/delimeter.svg" />
+																<div class="article-inventory__tooltip-param">
+																	<img src="img/icons/news/tooltip-param-weight.svg">
+																	125.5
+																</div>
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-rarity">
+															<div class="article-inventory__tooltip-rarity-name">
+																<img src="img/icons/news/tooltip-param-rarity.svg">
+																Редкость
+															</div>
+															<div class="article-inventory__tooltip-rarity-title">
+																Легендарная
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-description">
+															Этот массивный меч предназначен для точных прицельных атак. Он идеально подходит для размашистых ударов-чтобы отвлечь противников на себя.
+														</div>
+													</div>
+												</div>
+												<div class="article-inventory__item">
+													<img src="img/content/news/featured-article__inventory-7.webp" alt="" class="article-inventory__src">
+													<div class="article-inventory__tooltip">
+														<div class="article-inventory__tooltip-head">
+															<div class="article-inventory__tooltip-image">
+																<img src="img/content/news/featured-article__inventory-7.webp" class="article-inventory__tooltip-src">
+															</div>
+															<div class="article-inventory__tooltip-name">
+																<div class="article-inventory__tooltip-title">Великий меч</div>
+																<img src="img/icons/news/delimeter.svg" />
+																<div class="article-inventory__tooltip-param">
+																	<img src="img/icons/news/tooltip-param-weight.svg">
+																	125.5
+																</div>
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-rarity">
+															<div class="article-inventory__tooltip-rarity-name">
+																<img src="img/icons/news/tooltip-param-rarity.svg">
+																Редкость
+															</div>
+															<div class="article-inventory__tooltip-rarity-title">
+																Легендарная
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-description">
+															Этот массивный меч предназначен для точных прицельных атак. Он идеально подходит для размашистых ударов-чтобы отвлечь противников на себя.
+														</div>
+													</div>
+												</div>
+												<div class="article-inventory__item">
+													<img src="img/content/news/featured-article__inventory-8.webp" alt="" class="article-inventory__src">
+													<div class="article-inventory__tooltip">
+														<div class="article-inventory__tooltip-head">
+															<div class="article-inventory__tooltip-image">
+																<img src="img/content/news/featured-article__inventory-8.webp" class="article-inventory__tooltip-src">
+															</div>
+															<div class="article-inventory__tooltip-name">
+																<div class="article-inventory__tooltip-title">Великий меч</div>
+																<img src="img/icons/news/delimeter.svg" />
+																<div class="article-inventory__tooltip-param">
+																	<img src="img/icons/news/tooltip-param-weight.svg">
+																	125.5
+																</div>
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-rarity">
+															<div class="article-inventory__tooltip-rarity-name">
+																<img src="img/icons/news/tooltip-param-rarity.svg">
+																Редкость
+															</div>
+															<div class="article-inventory__tooltip-rarity-title">
+																Легендарная
+															</div>
+														</div>
+														<div class="article-inventory__tooltip-description">
+															Этот массивный меч предназначен для точных прицельных атак. Он идеально подходит для размашистых ударов-чтобы отвлечь противников на себя.
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="featured-article__content-wrapper">
+										<div class="featured-article__content">
+											<div class="featured-article__date">
+												<div class="featured-article__tag">
+													<svg width="11" height="16">
+														<use xlink:href="img/icons/news/tag-icons.svg#tag-icon-2"></use>
+													</svg>
+													<span>Обновления</span>
+												</div>
+												<div class="featured-article__date-text">
+													30 Января 2025
+												</div>
+											</div>
+											<div class="featured-article__body">
+												<div class="featured-article__title">Новые предметы уже в игре!</div>
+												<div class="featured-article__text">Герои, приготовьтесь к новым возможностям! В наш мир добавлены уникальные предметы, которые изменят ваш игровой процесс и помогут вам стать еще сильнее.</div>
+											</div>
+											<div class="featured-article__tools">
+												<div class="featured-article__comments">
+													<div class="featured-article__comments-count">
+														<span>2</span>
+														<svg width="21" height="19">
+															<use xlink:href="img/icons/news/tag-icons.svg#comments"></use>
+														</svg>
+													</div>
+													<span>Комментарии</span>
+												</div>
+												<div class="featured-article__detail">
+													<div class="featured-article__detail-link">
+														Подробнее
+														<div class="featured-article__detail-link-icon">
+															<div class="featured-article__detail-link-icon-left">
+																<img src="img/icons/news/detail-link-icon-small.svg" class="_visible">
+																<img src="img/icons/news/detail-link-icon-big-hover.svg" class="_hidden">
+															</div>
+															<div class="featured-article__detail-link-icon-right">
+																<img src="img/icons/news/detail-link-icon-big.svg" class="_visible">
+																<img src="img/icons/news/detail-link-icon-small-hover.svg" class="_hidden">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div class="portal-news__title">Великая Война Богов в Broken Sun</div>
+							</a>
+							<a href="" class="featured-news__slide swiper-slide">
+								<div class="featured-article _corners">
+									<div class="featured-article__image-wrapper">
+										<div class="featured-article__image">
+											<img src="img/content/news/featured-article-4.webp" class="featured-article__src">
+										</div>
+									</div>
+									<div class="featured-article__content-wrapper">
+										<div class="featured-article__content">
+											<div class="featured-article__date">
+												<div class="featured-article__tag">
+													<svg width="16" height="16">
+														<use xlink:href="img/icons/news/tag-icons.svg#tag-icon-3"></use>
+													</svg>
+													<span>Анонсы</span>
+												</div>
+												<div class="featured-article__date-text">
+													30 Января 2025
+												</div>
+											</div>
+											<div class="featured-article__body">
+												<div class="featured-article__title">Новые предмете в баре "Хмельной Череп"</div>
+												<div class="featured-article__text  _show-lines-1">Десятки видов вооружения по приятным ценам</div>
+												<div class="article-inventory _relative">
+													<div class="article-inventory__item">
+														<img src="img/content/news/featured-article__inventory-8.webp" alt="" class="article-inventory__src">
+														<div class="article-inventory__tooltip">
+															<div class="article-inventory__tooltip-head">
+																<div class="article-inventory__tooltip-image">
+																	<img src="img/content/news/featured-article__inventory-8.webp" class="article-inventory__tooltip-src">
+																</div>
+																<div class="article-inventory__tooltip-name">
+																	<div class="article-inventory__tooltip-title">Великий меч</div>
+																	<img src="img/icons/news/delimeter.svg" />
+																	<div class="article-inventory__tooltip-param">
+																		<img src="img/icons/news/tooltip-param-weight.svg">
+																		125.5
+																	</div>
+																</div>
+															</div>
+															<div class="article-inventory__tooltip-rarity">
+																<div class="article-inventory__tooltip-rarity-name">
+																	<img src="img/icons/news/tooltip-param-rarity.svg">
+																	Редкость
+																</div>
+																<div class="article-inventory__tooltip-rarity-title">
+																	Легендарная
+																</div>
+															</div>
+															<div class="article-inventory__tooltip-description">
+																Этот массивный меч предназначен для точных прицельных атак. Он идеально подходит для размашистых ударов-чтобы отвлечь противников на себя.
+															</div>
+														</div>
+													</div>
+													<div class="article-inventory__item">
+														<img src="img/content/news/featured-article__inventory-3.webp" alt="" class="article-inventory__src">
+														<div class="article-inventory__tooltip">
+															<div class="article-inventory__tooltip-head">
+																<div class="article-inventory__tooltip-image">
+																	<img src="img/content/news/featured-article__inventory-3.webp" class="article-inventory__tooltip-src">
+																</div>
+																<div class="article-inventory__tooltip-name">
+																	<div class="article-inventory__tooltip-title">Великий меч</div>
+																	<img src="img/icons/news/delimeter.svg" />
+																	<div class="article-inventory__tooltip-param">
+																		<img src="img/icons/news/tooltip-param-weight.svg">
+																		125.5
+																	</div>
+																</div>
+															</div>
+															<div class="article-inventory__tooltip-rarity">
+																<div class="article-inventory__tooltip-rarity-name">
+																	<img src="img/icons/news/tooltip-param-rarity.svg">
+																	Редкость
+																</div>
+																<div class="article-inventory__tooltip-rarity-title">
+																	Легендарная
+																</div>
+															</div>
+															<div class="article-inventory__tooltip-description">
+																Этот массивный меч предназначен для точных прицельных атак. Он идеально подходит для размашистых ударов-чтобы отвлечь противников на себя.
+															</div>
+														</div>
+													</div>
+													<div class="article-inventory__item">
+														<img src="img/content/news/featured-article__inventory-4.webp" alt="" class="article-inventory__src">
+														<div class="article-inventory__tooltip">
+															<div class="article-inventory__tooltip-head">
+																<div class="article-inventory__tooltip-image">
+																	<img src="img/content/news/featured-article__inventory-4.webp" class="article-inventory__tooltip-src">
+																</div>
+																<div class="article-inventory__tooltip-name">
+																	<div class="article-inventory__tooltip-title">Великий меч</div>
+																	<img src="img/icons/news/delimeter.svg" />
+																	<div class="article-inventory__tooltip-param">
+																		<img src="img/icons/news/tooltip-param-weight.svg">
+																		125.5
+																	</div>
+																</div>
+															</div>
+															<div class="article-inventory__tooltip-rarity">
+																<div class="article-inventory__tooltip-rarity-name">
+																	<img src="img/icons/news/tooltip-param-rarity.svg">
+																	Редкость
+																</div>
+																<div class="article-inventory__tooltip-rarity-title">
+																	Легендарная
+																</div>
+															</div>
+															<div class="article-inventory__tooltip-description">
+																Этот массивный меч предназначен для точных прицельных атак. Он идеально подходит для размашистых ударов-чтобы отвлечь противников на себя.
+															</div>
+														</div>
+													</div>
+													<div class="article-inventory__item">
+														<img src="img/content/news/featured-article__inventory-5.webp" alt="" class="article-inventory__src">
+														<div class="article-inventory__tooltip">
+															<div class="article-inventory__tooltip-head">
+																<div class="article-inventory__tooltip-image">
+																	<img src="img/content/news/featured-article__inventory-5.webp" class="article-inventory__tooltip-src">
+																</div>
+																<div class="article-inventory__tooltip-name">
+																	<div class="article-inventory__tooltip-title">Великий меч</div>
+																	<img src="img/icons/news/delimeter.svg" />
+																	<div class="article-inventory__tooltip-param">
+																		<img src="img/icons/news/tooltip-param-weight.svg">
+																		125.5
+																	</div>
+																</div>
+															</div>
+															<div class="article-inventory__tooltip-rarity">
+																<div class="article-inventory__tooltip-rarity-name">
+																	<img src="img/icons/news/tooltip-param-rarity.svg">
+																	Редкость
+																</div>
+																<div class="article-inventory__tooltip-rarity-title">
+																	Легендарная
+																</div>
+															</div>
+															<div class="article-inventory__tooltip-description">
+																Этот массивный меч предназначен для точных прицельных атак. Он идеально подходит для размашистых ударов-чтобы отвлечь противников на себя.
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="featured-article__tools">
+												<div class="featured-article__comments">
+													<div class="featured-article__comments-count">
+														<span>10+</span>
+														<svg width="21" height="19">
+															<use xlink:href="img/icons/news/tag-icons.svg#comments"></use>
+														</svg>
+													</div>
+													<span>Комментарии</span>
+												</div>
+												<div class="featured-article__detail">
+													<div class="featured-article__detail-link">
+														Подробнее
+														<div class="featured-article__detail-link-icon">
+															<div class="featured-article__detail-link-icon-left">
+																<img src="img/icons/news/detail-link-icon-small.svg" class="_visible">
+																<img src="img/icons/news/detail-link-icon-big-hover.svg" class="_hidden">
+															</div>
+															<div class="featured-article__detail-link-icon-right">
+																<img src="img/icons/news/detail-link-icon-big.svg" class="_visible">
+																<img src="img/icons/news/detail-link-icon-small-hover.svg" class="_hidden">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</a>
 						</div>
 					</div>
+					<div class="featured-news__controls">
+						<button type="button" class="featured-news__swiper-button featured-news__prev"></button>
+						<div class="featured-news__swiper-scrollbar-outer">
+							<div class="featured-news__swiper-scrollbar"></div>
+						</div>
+						<button type="button" class="featured-news__swiper-button featured-news__next"></button>
+					</div>
 				</div>
-				<div class="separator">
-					<div class="separator__left"></div>
-					<img src="img/background/separator/separator-middle.svg" class="separator__middle">
-					<div class="separator__right"></div>
-				</div>
+				<script>
+					document.addEventListener('DOMContentLoaded', function() {
+						const items = document.querySelectorAll('.article-inventory__item');
+
+						if (items.length === 0) return;
+
+						items.forEach(function(item) {
+							const tooltip = item.querySelector('.article-inventory__tooltip');
+
+							if (!tooltip) return;
+
+							item.addEventListener('mouseenter', function() {
+								tooltip.classList.add('_active');
+
+								const rect = item.getBoundingClientRect();
+								const spaceFromTop = rect.top;
+								const thresholdTop = 350;
+
+								// Определяем _top или _bottom
+								if (spaceFromTop < thresholdTop) {
+									tooltip.classList.add('_bottom');
+									tooltip.classList.remove('_top');
+								} else {
+									tooltip.classList.add('_top');
+									tooltip.classList.remove('_bottom');
+								}
+
+								// Даём браузеру отрисовать _top/_bottom, чтобы тултип получил размеры
+								requestAnimationFrame(() => {
+									const tooltipRect = tooltip.getBoundingClientRect();
+									const overflowRight = tooltipRect.right - window.innerWidth;
+
+									if (overflowRight > 20) {
+										tooltip.classList.add('_left');
+									} else {
+										tooltip.classList.remove('_left');
+									}
+								});
+							});
+
+							item.addEventListener('mouseleave', function() {
+								tooltip.classList.remove('_active', '_top', '_bottom', '_left');
+							});
+						});
+					});
+				</script>
 			</section>
 			<section class="world" data-watch="navigator" data-watch-threshold="0.3">
 				<div class="world__wrapper">
@@ -1237,7 +1829,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20250611103506"></script>
+	<script src="js/app.min.js?_v=20250617140612"></script>
 </body>
 
 </html>

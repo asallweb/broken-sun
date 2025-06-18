@@ -9406,73 +9406,111 @@ textarea {
 }
 .download__bg {
   width: 100%;
-  height: auto;
-  min-height: 400px;
-  max-height: 545px;
   -o-object-fit: cover;
   object-fit: cover
 }
 .download__inner {
   width: 100%;
-  max-width: 900px;
   margin: 0 auto;
   position: relative
 }
 .download__content {
   position: absolute;
-  bottom: 40px;
-  width: 100%
+  width: 100%;
+  padding: 0 15px
 }
 .download__title {
   color: #f9df94;
-  text-shadow: 0 100px 28px rgba(0,0,0,.01),0 64px 26px rgba(0,0,0,.03),0 36px 22px rgba(0,0,0,.1),0 16px 16px rgba(0,0,0,.17),0 4px 9px rgba(0,0,0,.2);
-  font-size: 68px;
-  font-weight: 700;
-  line-height: 100%;
-  margin-bottom: 40px
+  text-shadow: 0 1px 2px rgba(7,8,8,.5);
+  font-family: "Noto Serif";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  text-align: center
 }
 .download__buttons {
   position: relative;
   display: flex;
-  gap: 10px
+  justify-content: center;
+  flex-wrap: wrap
 }
 .download__button {
-  background: url(../img/pages/download/button__bg.webp) center center/105% 125% no-repeat;
-  padding: 16px;
+  -o-border-image: url(../img/pages/download/button__bg.webp) 10 fill/10px;
+  border-image: url(../img/pages/download/button__bg.webp) 10 fill/10px;
+  padding: 11px 10px;
+  white-space: nowrap;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   color: #f9df94;
   text-shadow: 0 100px 28px rgba(0,0,0,.01),0 64px 26px rgba(0,0,0,.03),0 36px 22px rgba(0,0,0,.1),0 16px 16px rgba(0,0,0,.17),0 4px 9px rgba(0,0,0,.2);
-  font-size: 22px;
-  line-height: 1
+  font-family: "Noto Sans";
+  line-height: 1;
+  letter-spacing: .87px
 }
-.download__button:focus {
-  background-image: url(../img/pages/download/button__bg-click.webp);
-  color: #fafafa
+.download__button-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 5px 24px
 }
-.download__button._ml-auto {
-  margin-left: 72px
+._android .download__button-inner {
+  padding: 5px 11px
 }
 .download__button-src {
   flex: 0
 }
-.download__qr {
-  display: flex;
-  align-items: center
+.download__button-qr {
+  margin-left: 10px;
+  margin-right: 6px;
+  position: relative;
+  width: 32px;
+  height: 32px
+}
+.download__button-show-qr {
+  position: absolute;
+  inset: 0;
+  z-index: 1
+}
+.download__button-show-qr img {
+  width: 100%
 }
 .download-faq {
-  z-index: 1;
-  position: relative
+  z-index: 1
 }
-.download-faq::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg,rgba(255,255,255,.04) 0,rgba(255,255,255,.08) 50%,rgba(255,255,255,.04) 100%)
+.download-faq__inner {
+  max-width: 1120px;
+  margin: 0 auto
+}
+.download-faq__section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-family: "Noto Sans";
+  letter-spacing: .44px;
+  line-height: 1.36
+}
+.download-faq__section:not(:last-child) {
+  margin-bottom: 48px
+}
+.download-faq__section-image {
+  flex-shrink: 0
+}
+.download-faq .faq::after,
+.download-faq .faq::before {
+  display: none
+}
+.download-faq .faq__inner {
+  background: 0 0
+}
+.download-faq .faq__inner::after,
+.download-faq .faq__inner::before {
+  display: none
+}
+.download-faq .faq__wrapper {
+  max-width: 100%
 }
 .download-faq .spollers__body a {
   color: #b19f63
@@ -9492,9 +9530,10 @@ textarea {
   margin-top: 80px
 }
 .download-links__title {
+  font-family: "Noto Serif";
   color: #f9df94;
-  font-size: 26px;
-  line-height: 123%;
+  line-height: 1.23;
+  letter-spacing: 1.04px;
   margin-bottom: 18px
 }
 .download-links__link {
@@ -9502,8 +9541,10 @@ textarea {
   padding: 10px 0;
   margin-bottom: 8px;
   color: #b19f63;
+  font-family: "Noto Sans";
+  line-height: 1.36;
+  letter-spacing: .88px;
   text-decoration: underline;
-  line-height: 1.4;
   transition: all .3s ease-in-out
 }
 .download-links__link:hover {
@@ -9955,10 +9996,9 @@ textarea {
   top: 0;
   width: 100%;
   height: 100%;
-  -webkit-backdrop-filter: blur(25px);
-  backdrop-filter: blur(25px);
-  border: 1px solid rgba(43,50,59,0);
-  background: rgba(17,22,34,.8)
+  -webkit-backdrop-filter: blur(32px);
+  backdrop-filter: blur(32px);
+  background: linear-gradient(0deg,rgba(9,19,27,.8) 0,rgba(11,19,29,.8) 100%)
 }
 ._high-img .featured-article__content-wrapper::before {
   display: none
@@ -9982,9 +10022,9 @@ textarea {
   position: relative
 }
 ._high-img .featured-article__content {
-  background: radial-gradient(50% 100% at 50% 100%,rgba(5,14,36,.7) 0,rgba(7,20,54,.7) 100%);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(0deg,rgba(9,19,27,.8) 0,rgba(11,19,29,.8) 100%);
+  -webkit-backdrop-filter: blur(32px);
+  backdrop-filter: blur(32px);
   position: absolute;
   bottom: 2px;
   height: auto;
@@ -18999,6 +19039,33 @@ textarea {
   .about-features__content-coming-soon {
     font-size: 5.5rem
   }
+  .download__bg {
+    height: 32rem
+  }
+  .download__content {
+    bottom: 2.5rem
+  }
+  .download__title {
+    font-size: 2.5rem
+  }
+  .download__title {
+    margin-bottom: 2.5rem
+  }
+  .download__buttons {
+    gap: 1.5rem
+  }
+  .download__button {
+    font-size: 1.375rem
+  }
+  .download-faq__section {
+    font-size: 1.375rem
+  }
+  .download-links__title {
+    font-size: 1.625rem
+  }
+  .download-links__link {
+    font-size: 1.375rem
+  }
   .featured-news__title {
     margin-bottom: 2.75rem
   }
@@ -21146,25 +21213,6 @@ textarea {
     width: 16px;
     height: 16px
   }
-  .download__inner {
-    max-width: 880px
-  }
-  .download__title {
-    font-size: 42px;
-    margin-bottom: 32px
-  }
-  .download__button {
-    padding: 15px
-  }
-  .download__button._ml-auto {
-    margin-left: 38px
-  }
-  .download__button-src._pc {
-    width: 36px
-  }
-  .download__button-src._android {
-    width: 47px
-  }
   .support-articles__grid-block {
     width: calc(50% - 20px)
   }
@@ -21903,23 +21951,6 @@ textarea {
   }
   .about-hero__text-image {
     width: 280px
-  }
-  .download__bg {
-    min-height: 350px
-  }
-  .download__content {
-    bottom: 24px
-  }
-  .download__title {
-    font-size: 40px;
-    margin-bottom: 24px
-  }
-  .download__button {
-    padding: 10px;
-    font-size: 18px
-  }
-  .download__qr img {
-    width: 34px
   }
   .hero__logo {
     top: 20vh;
@@ -23753,32 +23784,9 @@ textarea {
     -webkit-transform: scale(.7);
     transform: scale(.7)
   }
-  .download__bg {
-    min-height: 365px
-  }
-  .download__content {
-    padding: 0 15px;
-    max-width: 390px
-  }
-  .download__buttons {
-    flex-direction: column;
-    gap: 16px
-  }
-  .download__button {
-    padding: 12px;
-    height: 56px
-  }
-  .download__button._ml-auto {
-    margin-left: 0
-  }
-  .download__button-src._pc {
-    width: 32px
-  }
-  .download__button-src._android {
-    width: 34px
-  }
-  .download__qr {
-    display: none
+  .download__button,
+  .download__button-inner {
+    width: 100%
   }
   .featured-news {
     padding-top: 55px;
@@ -25207,6 +25215,33 @@ textarea {
   .about-features__content-coming-soon {
     font-size: 3.125rem
   }
+  .download__bg {
+    height: 25rem
+  }
+  .download__content {
+    bottom: 1.5rem
+  }
+  .download__title {
+    font-size: 1.75rem
+  }
+  .download__title {
+    margin-bottom: 1.25rem
+  }
+  .download__buttons {
+    gap: .9375rem
+  }
+  .download__button {
+    font-size: 1rem
+  }
+  .download-faq__section {
+    font-size: 1.125rem
+  }
+  .download-links__title {
+    font-size: 1.375rem
+  }
+  .download-links__link {
+    font-size: 1.125rem
+  }
   .featured-news__title {
     margin-bottom: 1.5rem
   }
@@ -26228,6 +26263,33 @@ textarea {
   }
   .about-features__content-coming-soon {
     font-size: clamp(3.125rem ,2.2887323944rem + 3.5680751174vw ,5.5rem)
+  }
+  .download__bg {
+    height: clamp(25rem ,22.5352112676rem + 10.5164319249vw ,32rem)
+  }
+  .download__content {
+    bottom: clamp(1.5rem ,1.1478873239rem + 1.5023474178vw ,2.5rem)
+  }
+  .download__title {
+    font-size: clamp(1.75rem ,1.485915493rem + 1.1267605634vw ,2.5rem)
+  }
+  .download__title {
+    margin-bottom: clamp(1.25rem ,.8098591549rem + 1.8779342723vw ,2.5rem)
+  }
+  .download__buttons {
+    gap: clamp(.9375rem ,.7394366197rem + .8450704225vw ,1.5rem)
+  }
+  .download__button {
+    font-size: clamp(1rem ,.8679577465rem + .5633802817vw ,1.375rem)
+  }
+  .download-faq__section {
+    font-size: clamp(1.125rem ,1.036971831rem + .3755868545vw ,1.375rem)
+  }
+  .download-links__title {
+    font-size: clamp(1.375rem ,1.286971831rem + .3755868545vw ,1.625rem)
+  }
+  .download-links__link {
+    font-size: clamp(1.125rem ,1.036971831rem + .3755868545vw ,1.375rem)
   }
   .featured-news__title {
     margin-bottom: clamp(1.5rem ,1.0598591549rem + 1.8779342723vw ,2.75rem)
